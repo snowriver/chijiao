@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="feedBackManager" class="com.forbes.service.feedback.impl.FeedBackManagerImpl">
+		<property name="feedBackDAO">
+			<ref bean="FeedBackDAO" />
+		</property>
+	</bean>
+	
+	
+	<bean id="feedBackManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="feedBackManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean name="/feedback/SubmitFeedBack" class="com.forbes.struts.action.feedback.SubmitFeedBackAction" singleton="false">
+		<property name="feedBackManager">
+			<ref bean="feedBackManagerService" />
+		</property>
+	</bean>
+	
+
+</beans>

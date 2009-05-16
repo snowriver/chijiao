@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- -->
+	<bean id="ucbbsManager" class="com.forbes.service.ucenter.impl.UcbbsManagerImpl">
+		<property name="cdbThreadsDAO">
+			<ref bean="CdbThreadsDAO" />
+		</property>
+		<property name="cdbForumsDAO">
+			<ref bean="CdbForumsDAO" />
+		</property>
+	</bean>
+	
+	<!-- -->
+	<bean id="ucbbsManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="ucbbsManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- -->
+	<bean name="/GetTopCdbForums" class="com.forbes.struts.action.index.GetTopCdbForumsAction" singleton="false">
+		<property name="ucbbsManager">
+			<ref bean="ucbbsManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/GetTopCdbThreads" class="com.forbes.struts.action.index.GetTopCdbThreadsAction" singleton="false">
+		<property name="ucbbsManager">
+			<ref bean="ucbbsManagerService" />
+		</property>
+	</bean>
+	
+	
+	
+</beans>

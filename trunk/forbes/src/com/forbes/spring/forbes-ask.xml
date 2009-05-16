@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- -->
+	<bean id="askTypeManager" class="com.forbes.service.ask.impl.AskTypeManagerImpl">
+		<property name="askTypeDAO">
+			<ref bean="AskTypeDAO" />
+		</property>
+	</bean>
+	<bean id="askManager" class="com.forbes.service.ask.impl.AskManagerImpl">
+		<property name="askDAO">
+			<ref bean="AskDAO" />
+		</property>
+	</bean>
+	<bean id="askSearchManager" class="com.forbes.service.ask.impl.AskSearchManagerImpl">
+		<property name="askDAO">
+			<ref bean="AskDAO" />
+		</property>
+	</bean>
+	<bean id="askAnswerManager" class="com.forbes.service.ask.impl.AskAnswerManagerImpl">
+		<property name="askAnswerDAO">
+			<ref bean="AskAnswerDAO" />
+		</property>
+	</bean>
+
+	<bean id="askTypeManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="askTypeManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="askManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="askManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="askSearchManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="askSearchManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="askAnswerManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="askAnswerManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<bean name="/admin/AdminManageAskType" class="com.forbes.struts.action.admin.AdminManageAskTypeAction" singleton="false">
+		<property name="askTypeManager">
+			<ref bean="askTypeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/ask/AskQuestion" class="com.forbes.struts.action.ask.AskQuestionAction" singleton="false">
+		<property name="askManager">
+			<ref bean="askManagerService" />
+		</property>
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="clientModifyProfile">
+			<ref bean="clientModifyProfileService" />
+		</property>
+		<property name="askTypeManager">
+			<ref bean="askTypeManagerService" />
+		</property>
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+		<property name="scoreManager">
+			<ref bean="scoreManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/ask/AskSearch" class="com.forbes.struts.action.ask.AskSearchAction" singleton="false">
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="askManager">
+			<ref bean="askManagerService" />
+		</property>
+		<property name="askAnswerManager">
+			<ref bean="askAnswerManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/ask/AnswerQuestion" class="com.forbes.struts.action.ask.AnswerQuestionAction" singleton="false">
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="askAnswerManager">
+			<ref bean="askAnswerManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/ask/AskAnswerSearch" class="com.forbes.struts.action.ask.AskAnswerSearchAction" singleton="false">
+		<property name="askAnswerManager">
+			<ref bean="askAnswerManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/ask/ManageAnswer" class="com.forbes.struts.action.ask.ManageAnswerAction" singleton="false">
+		<property name="askManager">
+			<ref bean="askManagerService" />
+		</property>
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="askAnswerManager">
+			<ref bean="askAnswerManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/ask/UserSearch" class="com.forbes.struts.action.ask.UserSearchAction" singleton="false">
+		<property name="scoreManager">
+			<ref bean="scoreManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/ask/UserView" class="com.forbes.struts.action.ask.UserViewAction" singleton="false">
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="scoreManager">
+			<ref bean="scoreManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/ask/UserReport" class="com.forbes.struts.action.ask.UserReportAction" singleton="false">
+		<property name="askAnswerManager">
+			<ref bean="askAnswerManagerService" />
+		</property>
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="feedBackManager">
+			<ref bean="feedBackManagerService" />
+		</property>
+	</bean>
+	
+</beans>

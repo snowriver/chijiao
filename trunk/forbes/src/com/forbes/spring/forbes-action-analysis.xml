@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- 業務處理类配置開始 -->
+	<bean id="userActionManager" class="com.forbes.service.useraction.impl.UserActionManagerImpl">
+		<property name="userActionTypeDAO">
+			<ref bean="UserActionTypeDAO" />
+		</property>
+		<property name="userActionLogDAO">
+			<ref bean="UserActionLogDAO" />
+		</property>
+	</bean>
+	  
+	<bean id="userActionManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="userActionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+
+     
+	<!-- 業務處理类配置结束 -->
+	
+	<!-- Action配置開始 -->
+	
+    <!-- Action配置结束 -->
+</beans>

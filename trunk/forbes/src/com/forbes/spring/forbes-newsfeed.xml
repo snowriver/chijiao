@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	   
+
+   <bean id="newsFeedManager" class="com.forbes.service.newsfeed.impl.NewsFeedManagerImpl">
+		<property name="nfMsgRelationshipDAO">
+			<ref bean="NfMsgRelationshipDAO" />
+		</property>
+		<property name="disCount">
+			<value>5</value>
+		</property>
+	</bean>
+	<bean id="sendMsgManager" class="com.forbes.service.newsfeed.impl.SendMsgManagerImpl">
+		<property name="nfMsgRelationshipDAO">
+			<ref bean="NfMsgRelationshipDAO" />
+		</property>
+		<property name="nfMsgTypeDAO">
+			<ref bean="NfMsgTypeDAO" />
+		</property>
+		<property name="nfMsgDAO">
+			<ref bean="NfMsgDAO" />
+		</property>
+	</bean>
+	  
+	<bean id="newsFeedManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="newsFeedManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="sendMsgManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="sendMsgManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientListNewsFeeds" class="com.forbes.struts.action.client.ClientListNewsFeedsAction" singleton="false">
+		<property name="newsFeedManager">
+			<ref bean="newsFeedManagerService"/>
+		</property>
+	</bean>
+	
+	<!-- 
+	 <bean name="/client/clientListNewsFeeds" class="com.she.web.action.client.ClientListNewsFeedsAction" singleton="false">
+		<property name="newsFeedManager">
+			<ref bean="newsFeedManagerService"/>
+		</property>
+	</bean>
+    <bean name="/agent/agentListNewsFeeds" class="com.she.web.action.agent.AgentListNewsFeedsAction" singleton="false">
+		<property name="newsFeedManager">
+			<ref bean="newsFeedManagerService"/>
+		</property>
+	</bean>
+	 -->
+</beans>

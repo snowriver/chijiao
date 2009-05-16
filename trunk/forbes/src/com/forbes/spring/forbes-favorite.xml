@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="favoriteManager" class="com.forbes.service.favorite.impl.FavoriteManagerImpl">
+		<property name="favoriteDAO">
+			<ref bean="FavoriteDAO" />
+		</property>
+		<property name="favoriteTypeDAO">
+			<ref bean="FavoriteTypeDAO" />
+		</property>
+	</bean>
+	
+	
+	<bean id="favoriteManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="favoriteManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientManageArticleFavorite" class="com.forbes.struts.action.client.ClientManageArticleFavoriteAction" singleton="false">
+		<property name="favoriteManager">
+			<ref bean="favoriteManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientManageVideoFavorite" class="com.forbes.struts.action.client.ClientManageVideoFavoriteAction" singleton="false">
+		<property name="favoriteManager">
+			<ref bean="favoriteManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientManageNewsFavorite" class="com.forbes.struts.action.client.ClientManageNewsFavoriteAction" singleton="false">
+		<property name="favoriteManager">
+			<ref bean="favoriteManagerService" />
+		</property>
+	</bean>
+
+</beans>

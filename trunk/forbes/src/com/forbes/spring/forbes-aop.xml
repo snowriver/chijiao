@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans> 
+    <bean id="transactionInterceptor"
+	  class="org.springframework.transaction.interceptor.TransactionInterceptor">
+	  <property name="transactionManager" ref="transactionManager"/>
+	  <property name="transactionAttributes">
+	   <props>
+	    <prop key="genMessage">PROPAGATION_REQUIRES_NEW</prop>
+	   </props>
+	  </property>
+	</bean>
+	
+	<bean class="org.springframework.transaction.interceptor.TransactionAttributeSourceAdvisor">
+	  <property name="transactionInterceptor" ref="transactionInterceptor"/>
+	</bean>
+	
+	<bean id="autoProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"> 
+		<property name="beanNames">
+			<list>
+				<value>askManager</value>
+				<value>askAnswerManager</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+			    <value>newsFeedInterceptor</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="newsFeedInterceptor" class="com.forbes.aop.NewsFeedInterceptor"> 
+	   <property name="genClassMap">
+            <map>
+                <entry key="askQuestion">
+                    <value>nfAskMsgGen</value> 
+                </entry>
+                <entry key="answerQuestion">
+                    <value>nfAskMsgGen</value> 
+                </entry>
+            </map>
+        </property>
+    </bean>
+    
+    
+    <bean id="nfDefaultMessageGenerator" class="com.forbes.aop.newsfeed.DefaultMessageGeneratorImpl">
+        <property name="nfMsgTypeDAO">
+			<ref bean="NfMsgTypeDAO"/>
+		</property>
+		<property name="nfMsgDAO">
+			<ref bean="NfMsgDAO"/>
+		</property>
+		<property name="nfMsgRelationshipDAO">
+			<ref bean="NfMsgRelationshipDAO"/>
+		</property>
+    </bean>
+    
+    <bean id="nfAskMsgGen" class="com.forbes.aop.newsfeed.AskMessageGeneratorImpl" parent="nfDefaultMessageGenerator">
+    	<property name="userFriendDAO">
+			<ref bean="UserFriendDAO"/>
+		</property>
+		<property name="ucMembersDAO">
+			<ref bean="UcMembersDAO"/>
+		</property>
+    </bean>
+    
+    <!-- 
+    <bean id="nfDefaultMessageGenerator" class="com.she.aop.newsfeed.DefaultMessageGeneratorImpl">
+        <property name="nfMsgTypeDAO">
+			<ref bean="NfMsgTypeDAO"/>
+		</property>
+		<property name="nfUsrMsgDAO">
+			<ref bean="NfUsrMsgDAO"/>
+		</property>
+		<property name="nfMsgRelationshipDAO">
+			<ref bean="NfMsgRelationshipDAO"/>
+		</property>
+		<property name="usrVisitArrangementDAO">
+			<ref bean="UsrVisitArrangementDAO"/>
+		</property>
+		<property name="usrEstMatchDAO">
+			<ref bean="UsrEstMatchDAO"/>
+		</property>
+    </bean>
+	<bean id="nfClntPostEstMsgGen" class="com.she.aop.newsfeed.ClntPostEstMsgGenImpl" parent="nfDefaultMessageGenerator"></bean>
+	<bean id="nfAgentArrangeVisitMsgGen" class="com.she.aop.newsfeed.AgentArrangeVisitMsgGenImpl" parent="nfDefaultMessageGenerator"></bean>
+	<bean id="nfEAlertMsgGen" class="com.she.aop.newsfeed.EAlertMsgGenImpl" parent="nfDefaultMessageGenerator"></bean>
+	<bean id="nfUserOperateInquiryMsgGen" class="com.she.aop.newsfeed.UserOperateInquiryMsgGenImpl" parent="nfDefaultMessageGenerator">
+	    <property name="postEstateDao">
+			<ref bean="UsrPostEstateDAO"/>
+		</property>
+		<property name="postInquiryDao">
+			<ref bean="UsrPostInquiryDAO"/>
+		</property>
+		<property name="clientDao">
+			<ref bean="UsrClientDAO"/>
+		</property>
+		<property name="agentDao">
+			<ref bean="UsrAgentDAO"/>
+		</property>
+	</bean>
+	<bean id="nfScoreMsgGen" class="com.she.aop.newsfeed.ScoreMsgGenImpl" parent="nfDefaultMessageGenerator">
+	    <property name="scoreProfileDAO">
+			<ref bean="ScoreProfileDAO"/>
+		</property>
+		<property name="usrTsLogFileDAO">
+			<ref bean="UsrTsLogFileDAO"/>
+		</property>
+		<property name="usrEstMatchDAO">
+			<ref bean="UsrEstMatchDAO"/>
+		</property>
+	</bean>
+	<bean id="nfAppointAgentMsgGen" class="com.she.aop.newsfeed.AppointAgentMsgGenImpl" parent="nfDefaultMessageGenerator"></bean>
+	
+	<bean id="defaultPoxy" class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/> 
+    <bean id="authInterceptor" class="com.she.aop.auth.FunctionAuthInterceptor">
+        <property name="rtsRightsDAO">
+			<ref bean="RtsRightsDAO"/>
+		</property>
+		<property name="authManager">
+			<ref bean="authorizeManagerService"/>
+		</property>
+    </bean>
+	<bean id="authAdvisior"
+	      class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+	      <property name="pattern">
+	         <value>.*service.*</value>
+	      </property>
+	      <property name="advice">
+	         <ref bean="authInterceptor"/>
+	      </property>
+	</bean>
+	
+	
+	<bean id="chargeBefore" class="com.she.service.usrservice.aop.UserChargeBeforeMethod">
+        <property name="usrServiceProcessor">
+			<ref bean="usrServiceProcessorService" />
+		</property>
+		<property name="paymentManager">
+			<ref bean="paymentManagerService" />
+		</property>
+		<property name="orderManager">
+			<ref bean="orderManagerService" />
+		</property>
+		<property name="userManager">
+			<ref bean="userManagerService"/>
+		</property>
+    </bean>
+    <bean id="chargeBeforeAdvisior"
+	      class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+	      <property name="pattern">
+	         <value>.*service.*</value>
+	      </property>
+	      <property name="advice">
+	         <ref bean="chargeBefore"/>
+	      </property>
+	</bean>
+	<bean id="chargeAfter" class="com.she.service.usrservice.aop.UserChargeAfterMethod">
+        <property name="usrServiceProcessor">
+			<ref bean="usrServiceProcessorService" />
+		</property>
+		<property name="paymentManager">
+			<ref bean="paymentManagerService" />
+		</property>
+		<property name="orderManager">
+			<ref bean="orderManagerService" />
+		</property>
+		<property name="userManager">
+			<ref bean="userManagerService"/>
+		</property>
+    </bean>
+    <bean id="chargeAfterAdvisior"
+	      class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+	      <property name="pattern">
+	         <value>.*service.*</value>
+	      </property>
+	      <property name="advice">
+	         <ref bean="chargeAfter"/>
+	      </property>
+	</bean>
+	
+	 -->
+</beans>
