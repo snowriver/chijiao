@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/admin/AdminManageAskType.do" location="474,0" dimension="362,100" />
+  <StrutsActivity path="/admin/AdminManageAsk.do" location="1011,0" dimension="362,100" />
+  <StrutsActivity path="/admin/AdminManageAskAnswer.do" location="1492,0" dimension="362,100" />
+  <StrutsActivity path="/ask/AskQuestion.do" location="235,347" dimension="362,100" />
+  <StrutsActivity path="/ask/AskSearch.do" location="230,664" dimension="362,100" />
+  <StrutsActivity path="/ask/AnswerQuestion.do" location="0,961" dimension="362,100" />
+  <StrutsActivity path="/ask/AskAnswerSearch.do" location="407,961" dimension="362,100" />
+  <StrutsActivity path="/ask/ManageAnswer.do" location="726,347" dimension="362,100" />
+  <StrutsActivity path="/ask/UserSearch.do" location="1188,347" dimension="362,100" />
+  <StrutsActivity path="/ask/UserView.do" location="1650,347" dimension="362,100" />
+  <StrutsActivity path="/ask/UserReport.do" location="950,750" dimension="362,100" />
+  <StrutsActivity path="/admin/ask_type_main.jsp" location="0,250" dimension="181,52" />
+  <StrutsActivity path="/admin/ask_type_move.jsp" location="281,250" dimension="185,52" />
+  <StrutsActivity path="/admin/operate_ok.jsp" location="858,250" dimension="164,52" />
+  <StrutsActivity path="/admin/ask_type_modify.jsp" location="566,250" dimension="193,52" />
+  <StrutsActivity path="/admin/operate_fail.jsp" location="1485,250" dimension="166,52" />
+  <StrutsActivity path="/admin/ask_list.jsp" location="1123,250" dimension="139,52" />
+  <StrutsActivity path="/admin/ask_answer_list.jsp" location="1782,250" dimension="185,52" />
+  <StrutsActivity path="/ask/ask_search.jsp" location="0,567" dimension="145,52" />
+  <StrutsActivity path="/ask/question.jsp" location="244,567" dimension="132,52" />
+  <StrutsActivity path="/ask/operate_fail.jsp" location="1065,567" dimension="150,52" />
+  <StrutsActivity path="/ask/ask_ok.jsp" location="476,567" dimension="122,52" />
+  <StrutsActivity path="/ask/ask_view.jsp" location="0,864" dimension="132,52" />
+  <StrutsActivity path="/ask/ask_list.jsp" location="232,864" dimension="123,52" />
+  <StrutsActivity path="/ask/top_ask_list.jsp" location="455,864" dimension="148,52" />
+  <StrutsActivity path="/ask/pop_ask_list.jsp" location="703,864" dimension="152,52" />
+  <StrutsActivity path="/ask/operate_result.jsp" location="98,1161" dimension="165,52" />
+  <StrutsActivity path="/ask/top_answer_list.jsp" location="503,1161" dimension="169,52" />
+  <StrutsActivity path="/ask/operate_ok.jsp" location="718,567" dimension="148,52" />
+  <StrutsActivity path="/ask/top_user_list.jsp" location="1411,567" dimension="153,52" />
+  <StrutsActivity path="/ask/user_promotion_list.jsp" location="650,750" dimension="195,52" />
+  <StrutsActivity path="/ask/user_view_ask.jsp" location="1726,567" dimension="162,52" />
+  <StrutsActivity path="/ask/user_view_answer.jsp" location="1988,567" dimension="183,52" />
+  <StrutsActivity path="/ask/report_ok.jsp" location="950,950" dimension="139,52" />
+  <StrutsActivity path="/ask/report.jsp" location="950,1250" dimension="119,52" />
+  <StrutsActivity path="/ask/opendiv_ok.jsp" location="1550,750" dimension="149,52" />
+  <StrutsActivity path="/ask/ask_extra.jsp" location="1250,950" dimension="136,52" />
+  <StrutsActivity path="/ask/ask_answer_modify.jsp" location="1550,950" dimension="193,52" />
+  <StrutsTransition id="/admin/AdminManageAskType.do,list,/admin/ask_type_main.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="510,100" />
+      <AbsolutePoint location="510,130" />
+      <AbsolutePoint location="90,130" />
+      <AbsolutePoint location="90,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserSearch.do,promot,/ask/user_promotion_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1369,397" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAskAnswer.do,fail,/admin/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1673,100" />
+      <AbsolutePoint location="1673,130" />
+      <AbsolutePoint location="1623,130" />
+      <AbsolutePoint location="1623,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAskType.do,fail,/admin/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="800,100" />
+      <AbsolutePoint location="800,160" />
+      <AbsolutePoint location="1512,160" />
+      <AbsolutePoint location="1512,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserSearch.do,top,/ask/top_user_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1459,447" />
+      <AbsolutePoint location="1459,477" />
+      <AbsolutePoint location="1487,477" />
+      <AbsolutePoint location="1487,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAskType.do,get,/admin/ask_type_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="655,100" />
+      <AbsolutePoint location="655,130" />
+      <AbsolutePoint location="662,130" />
+      <AbsolutePoint location="662,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/ManageAnswer.do,succ,/ask/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="997,447" />
+      <AbsolutePoint location="997,593" />
+      <AbsolutePoint location="1065,593" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AskQuestion.do,second,/ask/ask_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="461,447" />
+      <AbsolutePoint location="461,477" />
+      <AbsolutePoint location="537,477" />
+      <AbsolutePoint location="537,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AskQuestion.do,first,/ask/question.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="371,447" />
+      <AbsolutePoint location="371,477" />
+      <AbsolutePoint location="310,477" />
+      <AbsolutePoint location="310,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAskType.do,move_get,/admin/ask_type_move.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="583,100" />
+      <AbsolutePoint location="583,160" />
+      <AbsolutePoint location="373,160" />
+      <AbsolutePoint location="373,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AskSearch.do,pop,/ask/pop_ask_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="547,764" />
+      <AbsolutePoint location="547,814" />
+      <AbsolutePoint location="779,814" />
+      <AbsolutePoint location="779,864" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/ManageAnswer.do,ok,/ask/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="816,447" />
+      <AbsolutePoint location="816,537" />
+      <AbsolutePoint location="792,537" />
+      <AbsolutePoint location="792,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/ManageAnswer.do,ask,/ask/ask_extra.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="907,447" />
+      <AbsolutePoint location="907,879" />
+      <AbsolutePoint location="1297,879" />
+      <AbsolutePoint location="1297,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserView.do,answer,/ask/user_view_answer.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1952,447" />
+      <AbsolutePoint location="1952,477" />
+      <AbsolutePoint location="2079,477" />
+      <AbsolutePoint location="2079,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AskQuestion.do,fail,/ask/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="552,447" />
+      <AbsolutePoint location="552,507" />
+      <AbsolutePoint location="1083,507" />
+      <AbsolutePoint location="1083,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AskSearch.do,search,/ask/ask_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="366,764" />
+      <AbsolutePoint location="366,814" />
+      <AbsolutePoint location="293,814" />
+      <AbsolutePoint location="293,864" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/ManageAnswer.do,answer,/ask/ask_answer_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="965,447" />
+      <AbsolutePoint location="965,709" />
+      <AbsolutePoint location="1741,709" />
+      <AbsolutePoint location="1741,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserView.do,ask,/ask/user_view_ask.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1831,447" />
+      <AbsolutePoint location="1831,477" />
+      <AbsolutePoint location="1807,477" />
+      <AbsolutePoint location="1807,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAskAnswer.do,list,/admin/ask_answer_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1793,100" />
+      <AbsolutePoint location="1793,130" />
+      <AbsolutePoint location="1874,130" />
+      <AbsolutePoint location="1874,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAsk.do,list,/admin/ask_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1192,100" />
+      <AbsolutePoint location="1192,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAskType.do,ok,/admin/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="727,100" />
+      <AbsolutePoint location="727,190" />
+      <AbsolutePoint location="886,190" />
+      <AbsolutePoint location="886,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AskQuestion.do,search,/ask/ask_search.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="280,447" />
+      <AbsolutePoint location="280,477" />
+      <AbsolutePoint location="72,477" />
+      <AbsolutePoint location="72,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAsk.do,ok,/admin/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1071,100" />
+      <AbsolutePoint location="1071,190" />
+      <AbsolutePoint location="940,190" />
+      <AbsolutePoint location="940,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AnswerQuestion.do,ok,/ask/operate_result.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="181,1061" />
+      <AbsolutePoint location="181,1161" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/ManageAnswer.do,succ,/ask/opendiv_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="907,397" />
+      <AbsolutePoint location="1624,776" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/ManageAnswer.do,fail,/ask/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1027,447" />
+      <AbsolutePoint location="1027,477" />
+      <AbsolutePoint location="1121,477" />
+      <AbsolutePoint location="1121,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserSearch.do,fail,/ask/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1278,447" />
+      <AbsolutePoint location="1278,477" />
+      <AbsolutePoint location="1158,477" />
+      <AbsolutePoint location="1158,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserReport.do,ok,/ask/opendiv_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1312,787" />
+      <AbsolutePoint location="1550,787" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserReport.do,get,/ask/report.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AskAnswerSearch.do,top,/ask/top_answer_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="588,1061" />
+      <AbsolutePoint location="588,1161" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAsk.do,fail,/admin/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1313,100" />
+      <AbsolutePoint location="1313,130" />
+      <AbsolutePoint location="1568,130" />
+      <AbsolutePoint location="1568,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageAskAnswer.do,ok,/admin/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1552,100" />
+      <AbsolutePoint location="1552,220" />
+      <AbsolutePoint location="995,220" />
+      <AbsolutePoint location="995,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AskSearch.do,index,/ask/top_ask_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="456,764" />
+      <AbsolutePoint location="456,814" />
+      <AbsolutePoint location="529,814" />
+      <AbsolutePoint location="529,864" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserView.do,fail,/ask/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1710,447" />
+      <AbsolutePoint location="1710,507" />
+      <AbsolutePoint location="1196,507" />
+      <AbsolutePoint location="1196,567" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserReport.do,fail,/ask/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1140,593" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserReport.do,ok,/ask/report_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1131,800" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/AskSearch.do,view,/ask/ask_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="275,764" />
+      <AbsolutePoint location="275,814" />
+      <AbsolutePoint location="66,814" />
+      <AbsolutePoint location="66,864" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

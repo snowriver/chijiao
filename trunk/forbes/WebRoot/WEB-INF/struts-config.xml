@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	
+	<form-beans >
+
+	</form-beans>
+
+	<global-exceptions />
+	
+	<global-forwards />
+  
+	<action-mappings >
+    	
+    	<!-- ucenter -->
+    	<action
+      		path="/uc/ucenter"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="ucrs" path="/ucenter/UcenterRs.jsp" />
+      		<forward name="index" path="/ucenter/GotoIndex.jsp" />
+    	</action>
+    
+	</action-mappings>
+
+	<message-resources parameter="com.forbes.struts.ApplicationResources" />
+	
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="/WEB-INF/classes/com/forbes/spring/applicationContext.xml" />
+	</plug-in>
+	
+</struts-config>
+

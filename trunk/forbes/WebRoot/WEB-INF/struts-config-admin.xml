@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	
+	<form-beans >
+		<form-bean name="UserLoginForm" type="com.forbes.struts.form.user.UserLoginForm" />
+		<form-bean name="NewsForm" type="com.forbes.struts.form.article.NewsForm" />
+		<form-bean name="AdminAddServiceForm" type="com.forbes.struts.form.admin.AdminAddServiceForm" />
+		<form-bean name="AdminUploadFileForm" type="com.forbes.struts.form.admin.AdminUploadFileForm" />
+	</form-beans>
+
+	<global-exceptions />
+	
+	<global-forwards />
+  
+	<action-mappings >
+    
+		<action
+	      attribute="UserLoginForm"
+	      input="/admin/index.jsp"
+	      name="UserLoginForm"
+	      path="/admin/AdminLogin"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="ok" path="/admin/index_goto.jsp" />
+	      <forward name="fail" path="/admin/index.jsp" />
+	    </action>
+    	
+    	<action
+    		parameter="act"
+      		path="/admin/AdminListUser"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="client" path="/admin/list_user_client.jsp" />
+      		<forward name="member" path="/admin/list_user_member.jsp" />
+      		<forward name="admin" path="/admin/list_user_admin.jsp" />
+    	</action>
+    	
+    	<action
+      		parameter="act"
+      		path="/admin/AdminUpdateUser"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="ok" path="/admin/operate_ok.jsp" />
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+    	</action>
+    	
+    	<action
+      		parameter="act"
+      		path="/admin/AdminUpdateCity"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="ok" path="/admin/operate_ok.jsp" />
+      		<forward name="list" path="/admin/city.jsp" />
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+    	</action>
+    	
+    	<action
+      		parameter="act"
+      		path="/admin/AdminUpdateSector"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="ok" path="/admin/operate_ok.jsp" />
+      		<forward name="list" path="/admin/sector.jsp" />
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+    	</action>
+    	
+    	<action
+      		parameter="act"
+      		attribute="NewsForm"
+	      	name="NewsForm"
+      		path="/admin/AdminManageNews"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="ok" path="/admin/operate_ok.jsp" />
+      		<forward name="list" path="/admin/news_list.jsp" />
+      		<forward name="edit" path="/admin/news_edit.jsp" />
+      		<forward name="select" path="/admin/news_select.jsp" />
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+    	</action>
+    	
+    	<action
+    		parameter="act"
+    		attribute="AdminAddServiceForm"
+	      	name="AdminAddServiceForm"
+    		path="/admin/AdminManageService"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="list" path="/admin/service_list.jsp" />
+      		<forward name="detail" path="/admin/service_edit.jsp" />
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+      		<forward name="ok" path="/admin/operate_ok.jsp" />
+    	</action>
+    	
+    	<action
+      		parameter="act"
+      		path="/admin/AdminManageUserLevel"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="list" path="/admin/user_level_main.jsp" />
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+      		<forward name="ok" path="/admin/operate_ok.jsp" />
+    	</action>
+    	
+    	<action
+      		parameter="act"
+      		attribute="AdminUploadFileForm"
+	      	name="AdminUploadFileForm"
+      		path="/admin/AdminBatchAddArticle"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+      		<forward name="ok" path="/admin/article_add.jsp" />
+      		<forward name="access" path="/admin/article_url.jsp" />
+    	</action>
+    	
+    	<action
+      		parameter="act"
+      		path="/admin/AdminBatchAddVideoUrl"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+      		<forward name="ok" path="/admin/operate_ok.jsp" />
+    	</action>
+    	
+    	<action
+      		path="/admin/AdminTohtml"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="ok" path="/admin/operate_ok.jsp" />
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+    	</action>
+    	
+    	<action
+    		parameter="act"
+      		path="/admin/AdminManageBulletin"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="list" path="/admin/bulletin_list.jsp" />
+      		<forward name="ok" path="/admin/operate_ok.jsp" />
+      		<forward name="fail" path="/admin/operate_fail.jsp" />
+    	</action>
+		
+	</action-mappings>
+	
+</struts-config>
+

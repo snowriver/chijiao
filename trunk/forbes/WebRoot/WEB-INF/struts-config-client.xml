@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	
+	<form-beans >
+		<form-bean name="UserLoginForm" type="com.forbes.struts.form.user.UserLoginForm" />
+		<form-bean name="UserRegisterForm" type="com.forbes.struts.form.user.UserRegisterForm" />
+		<form-bean name="ClientModifyProfileForm" type="com.forbes.struts.form.client.ClientModifyProfileForm" />
+		<form-bean name="ArticleInfoForm" type="com.forbes.struts.form.article.ArticleInfoForm" />
+	</form-beans>
+
+	<global-exceptions />
+	
+	<global-forwards />
+  
+	<action-mappings >    	
+    	
+	<action
+      parameter="act"
+      path="/client/ClientLogin"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="index" path="/include/passport.jsp" />
+      <forward name="relogin" path="/client/ClientReLoginOk.jsp" />
+      <forward name="top" path="/client/include/UserInfo.jsp" />
+      <forward name="login" path="/client/ClientLoginOk.jsp" />
+      <forward name="re_fail" path="/client/ClientReLogin.jsp" />
+      <forward name="ok" path="/client/ClientLoginOk.jsp" />
+      <forward name="verify" path="/client/ClientRegisterOk.jsp" />
+      <forward name="fail" path="/index.jsp" />
+    </action>
+		
+		<action
+			parameter="act"
+			path="/client/ClientLogout"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+	    	<forward name="logout" path="/client/ClientLogout.jsp" />
+	    	<forward name="index" path="/include/passport.jsp" />
+	    </action>
+	    
+	    <action
+	    	parameter="act"
+      		path="/client/ClientVerifyEmail"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="resend" path="/client/ClientRegisterOk.jsp" />
+      		<forward name="ok" path="/client/ClientVerifyEmailOk.jsp" />
+    	</action>
+    	
+    	<action
+      		attribute="UserRegisterForm"
+      		input="/client/ClientRegister.jsp"
+      		name="UserRegisterForm"
+      		path="/client/ClientRegister"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="ok" path="/client/ClientRegisterOk.jsp" />
+      		<forward name="fail" path="/client/ClientRegister.jsp" />
+		</action>		
+		
+		<action
+			attribute="ClientModifyProfileForm"
+      		name="ClientModifyProfileForm"
+	    	parameter="act"
+      		path="/client/ClientModifyProfile"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="modify" path="/client/ClientModifyProfile.jsp" />
+      		<forward name="ok" path="/client/ClientVerifyEmailOk.jsp" />
+      		<forward name="modifypwd" path="/client/ClientModifyPassword.jsp" />
+    	</action>
+    	
+    	<action
+	    	parameter="act"
+      		path="/client/ClientManageFriend"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="list" path="/client/ClientManageFriend.jsp" />
+      		<forward name="ok" path="/client/operate_ok.jsp" />
+      		<forward name="fail" path="/client/operate_fail.jsp" />
+    	</action>
+    	
+    	<action
+	    	parameter="act"
+      		path="/client/ClientManageAsk"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="all" path="/client/ClientListAllAsk.jsp" />
+      		<forward name="unsolved" path="/client/ClientListUnSolvedAsk.jsp" />
+      		<forward name="answer" path="/client/ClientListMyAnswer.jsp" />
+      		<forward name="ok" path="/client/operate_ok.jsp" />
+      		<forward name="fail" path="/client/operate_fail.jsp" />
+    	</action>
+    	
+    	<action
+	    	parameter="act"
+      		path="/client/ClientListNewsFeeds"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="in" path="/client/ClientMessageInBox.jsp" />
+      		<forward name="oin" path="/client/ClientMessageBoxIn.jsp" />
+      		<forward name="out" path="/client/ClientMessageOutBox.jsp" />
+      		<forward name="oin" path="/client/ClientMessageBoxOut.jsp" />
+      		<forward name="fail" path="/client/operate_fail.jsp" />
+    	</action>
+    	
+    	<action
+      		attribute="ArticleInfoForm"
+      		input="/client/ClientPublisArticle.jsp"
+	      	name="ArticleInfoForm"
+	     	parameter="act"
+	      	path="/client/ClientPublishArticle"
+	      	scope="request"
+	      	type="org.springframework.web.struts.DelegatingActionProxy">
+	      	<forward name="fail" path="/client/operate_fail.jsp" />
+	      	<forward name="modify" path="/client/ClientModifyArticle.jsp" />
+	    </action>
+	    
+	    <action
+	    	parameter="act"
+      		path="/client/ClientManageArticle"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="list" path="/client/ClientListArticle.jsp" />
+    	</action>
+    	
+    	
+	</action-mappings>
+	
+</struts-config>
+

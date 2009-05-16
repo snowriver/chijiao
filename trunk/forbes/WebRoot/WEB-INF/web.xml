@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	version="2.4" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	<servlet>
+    	<servlet-name>action</servlet-name>
+    	<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    	<init-param>
+      		<param-name>config</param-name>
+      		<param-value>/WEB-INF/struts-config.xml,/WEB-INF/struts-config-admin.xml,/WEB-INF/struts-config-article.xml,/WEB-INF/struts-config-video.xml,/WEB-INF/struts-config-client.xml,/WEB-INF/struts-config-ask.xml,/WEB-INF/struts-config-index.xml,/WEB-INF/struts-config-favorite.xml</param-value>
+    	</init-param>
+    	<init-param>
+      		<param-name>debug</param-name>
+      		<param-value>3</param-value>
+    	</init-param>
+    	<init-param>
+      		<param-name>detail</param-name>
+      		<param-value>3</param-value>
+    	</init-param>
+    	<load-on-startup>0</load-on-startup>
+	</servlet>
+	
+  	<servlet-mapping>
+    	<servlet-name>action</servlet-name>
+    	<url-pattern>*.do</url-pattern>
+  	</servlet-mapping>
+  	
+	<welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+  	</welcome-file-list>
+  
+  	<jsp-config>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+			<taglib-location>/WEB-INF/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+			<taglib-location>/WEB-INF/fmt.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/fn</taglib-uri>
+			<taglib-location>/WEB-INF/fn.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.fckeditor.net</taglib-uri>
+			<taglib-location>/WEB-INF/FCKeditor.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	
+	<servlet>
+		<servlet-name>Connector</servlet-name>
+		<servlet-class>net.fckeditor.connector.ConnectorServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Connector</servlet-name>
+		<url-pattern>/fckeditor/editor/filemanager/connectors/*</url-pattern>
+	</servlet-mapping>
+	
+ 	<servlet>
+    	<servlet-name>dwr-invoker</servlet-name>
+      	<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+        <init-param>
+    		<param-name>debug</param-name>
+           	<param-value>true</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dwr-invoker</servlet-name>
+        <url-pattern>/dwr/*</url-pattern>
+    </servlet-mapping>
+    
+    <context-param>
+    	<param-name>contextConfigLocation</param-name>
+    	<param-value>/WEB-INF/classes/com/forbes/spring/applicationContext.xml</param-value>
+ 	</context-param>
+ 	<context-param>
+    	<param-name>log4jConfigLocation</param-name>
+    	<param-value>/WEB-INF/log4j.properties</param-value>
+ 	</context-param>
+ 	<listener>
+    	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+ 	</listener>
+ 	
+ 	<filter>
+		<filter-name>charactorEncodeFilter</filter-name>
+    	<filter-class>com.forbes.filter.CharactorEncodeFilter</filter-class>
+ 	</filter>
+ 	<filter-mapping>
+		<filter-name>charactorEncodeFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	  
+	<filter>
+		<filter-name>adminFilter</filter-name>
+		<filter-class>com.forbes.filter.AdminFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>adminFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+	</filter-mapping>
+ 	
+ 	<filter>
+		<filter-name>articleFilter</filter-name>
+		<filter-class>com.forbes.filter.ArticleFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>articleFilter</filter-name>
+		<url-pattern>/article/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>clientFilter</filter-name>
+		<filter-class>com.forbes.filter.ClientFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>clientFilter</filter-name>
+		<url-pattern>/client/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>clientFilter</filter-name>
+		<url-pattern>*.php</url-pattern>
+	</filter-mapping>
+	
+	<!--  改写URL的Web过滤器 	-->
+	<!--
+	<filter> 
+		<filter-name>UrlRewriteFilter</filter-name> 
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class> 
+	</filter> 
+	<filter-mapping> 
+		<filter-name>UrlRewriteFilter</filter-name> 
+		<url-pattern>/*</url-pattern> 
+	</filter-mapping> 
+	-->
+	
+</web-app>
+

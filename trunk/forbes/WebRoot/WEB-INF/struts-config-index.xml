@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	
+	<form-beans >
+		
+	</form-beans>
+
+	<global-exceptions />
+	
+	<global-forwards />
+  
+	<action-mappings >
+    
+    	<action
+	      path="/index"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/index.jsp" />
+	      <forward name="ok" path="/index_bak.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/NewIndex"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/index.jsp" />
+	      <forward name="ok" path="/new_index.jsp" />
+	    </action>
+	    
+		<action
+		  parameter="act"
+	      path="/IndexVideoList"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="commend" path="/include/index_video_list.jsp" />
+	      <forward name="new" path="/index/new_video_list.jsp" />
+	      <forward name="fail" path="/operate_fail.jsp" />
+	    </action>
+    
+    	<action
+    	  parameter="act"
+	      path="/IndexArticleList"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="ok" path="/include/index_article_list.jsp" />
+	      <forward name="commend" path="/index/commend_article_list.jsp" />
+	      <forward name="hot" path="/index/hot_article_list.jsp" />
+	      <forward name="fail" path="/operate_fail.jsp" />
+	    </action>
+	    
+	    <action
+    	  parameter="act"
+	      path="/IndexAskList"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="ok" path="/include/index_article_list.jsp" />
+	      <forward name="hot" path="/index/hot_ask_list.jsp" />
+	      <forward name="fail" path="/operate_fail.jsp" />
+	    </action>
+	    
+	    <action
+    	  parameter="act"
+	      path="/IndexNewsList"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">	     
+	      <forward name="top" path="/index/hot_news_list.jsp" />
+	      <forward name="first" path="/index/first_news_list.jsp" />
+	      <forward name="fail" path="/operate_fail.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/IndexUserList"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">	     
+	      <forward name="ok" path="/index/new_user_list.jsp" />
+	      <forward name="fail" path="/operate_fail.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/GetUCenterInfo"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/operate_fail.jsp" />
+	      <forward name="ok" path="/operate_result.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/GetTopUchomeMtag"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/operate_fail.jsp" />
+	      <forward name="ok" path="/index/hot_home_mtag_list.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/GetTopUchomeFeed"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/operate_fail.jsp" />
+	      <forward name="ok" path="/index/hot_home_feed_list.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/GetTopUchomeDoing"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/operate_fail.jsp" />
+	      <forward name="ok" path="/index/hot_home_doing_list.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/GetTopUchomeBlog"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/operate_fail.jsp" />
+	      <forward name="ok" path="/index/hot_home_blog_list.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/GetTopCdbForums"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/operate_fail.jsp" />
+	      <forward name="ok" path="/index/hot_bbs_forum_list.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/GetTopCdbThreads"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/operate_fail.jsp" />
+	      <forward name="ok" path="/index/hot_bbs_thread_list.jsp" />
+	    </action>
+
+		<action
+		  parameter="act"
+	      path="/feedback/SubmitFeedBack"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/feedback/operate_fail.jsp" />
+	      <forward name="ok" path="/feedback/operate_ok.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/BulletinView"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/operate_fail.jsp" />
+	      <forward name="ok" path="/bulletin_view.jsp" />
+	    </action>
+	    
+	</action-mappings>
+	
+</struts-config>
+

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	
+	<form-beans >
+		<form-bean name="ArticleInfoForm" type="com.forbes.struts.form.article.ArticleInfoForm" />
+	</form-beans>
+
+	<global-exceptions />
+	
+	<global-forwards />
+  
+	<action-mappings >
+    
+	<action
+      parameter="act"
+      path="/admin/AdminUpdateArticleType"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/article_type_main.jsp" />
+      <forward name="move_get" path="/admin/article_type_move.jsp" />
+      <forward name="get" path="/admin/article_type_modify.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+    <action
+      attribute="ArticleInfoForm"
+      input="/admin/article_batch_modify.jsp"
+      name="ArticleInfoForm"
+      parameter="act"
+      path="/admin/AdminUpdateArticle"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/article_list.jsp" />
+      <forward name="select" path="/admin/article_select.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+    <action
+      attribute="ArticleInfoForm"
+      input="/admin/article_add.jsp"
+      name="ArticleInfoForm"
+      parameter="act"
+      path="/admin/AdminEditArticle"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="add" path="/admin/article_add.jsp" />
+      <forward name="edit" path="/admin/article_edit.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    	
+    
+    <action
+      parameter="act"
+      path="/SelectArticleType"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/operate_ok.jsp" />
+      <forward name="fail" path="/operate_fail.jsp" />
+      <forward name="select" path="/include/dialog/select_article_type.jsp" />
+    </action>
+    
+    
+    <action
+      parameter="act"
+      path="/admin/AdminManageArticleKeyword"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/article_keywords_main.jsp" />
+      <forward name="select" path="/admin/article_keywords_select.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/admin/AdminManageSearchKeyword"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/search_keywords_main.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/article/ArticleSearch"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="type" path="/article/top_article_list.jsp" />
+      <forward name="view" path="/article/article_view.jsp" />
+      <forward name="search" path="/article/article_search.jsp" />
+      <forward name="list" path="/article/article_list.jsp" />
+      <forward name="top" path="/article/top_ten_article.jsp" />
+      <forward name="like" path="/article/like_article_list.jsp" />
+    </action>
+    
+    <action
+      path="/article/ArticleContentAdd"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/operate_result.jsp" />
+    </action>
+    
+    <action
+      path="/article/ContentDelete"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/operate_result.jsp" />
+    </action>
+    
+    <action
+      path="/article/NewsContentAdd"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/operate_result.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/article/ArticleContentSearch"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="top" path="/article/top_article_content_list.jsp" />
+      <forward name="list" path="/article/article_content_list.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/article/NewsContentSearch"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="top" path="/article/top_news_content_list.jsp" />
+      <forward name="list" path="/article/news_content_list.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/article/NewsSearch"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="top" path="/article/top_news_list.jsp" />
+      <forward name="view" path="/article/news_view.jsp" />
+      <forward name="like" path="/article/like_news_list.jsp" />
+      <forward name="list" path="/article/news_list.jsp" />
+    </action>
+	
+	<action
+      path="/article/ArticleDigg"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/operate_result.jsp" />
+    </action>
+    
+    <action
+      path="/article/NewsDigg"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/operate_result.jsp" />
+    </action>
+    
+    <action
+      path="/article/NewRegister"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/new_register_list.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/admin/AdminCreateArticleHtml"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/operate_ok.jsp" />
+      <forward name="fail" path="/operate_fail.jsp" />
+    </action>
+    
+    <action
+      path="/article/TopCdbThreads"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/top_ten_bbs_thread.jsp" />
+    </action>
+    
+	</action-mappings>
+	
+</struts-config>
+

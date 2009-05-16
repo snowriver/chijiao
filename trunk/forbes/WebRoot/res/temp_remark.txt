@@ -1,0 +1,6 @@
+几个图：
+没有相关图片   -- 公用		nothumb.jpg(大) nothumbs.jpg(小)
+专辑不存在     -- 专辑订阅等	noexistsp.gif
+视频不存在     -- 视频收藏等	noexistvideo.gif
+没有视频       -- 空专辑封面	novideo.gif
+没有头像       -- 用户头像	noavatarb.gif(大) noavatar.gif(小)
