@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	
+	<form-beans >
+		
+	</form-beans>
+
+	<global-exceptions />
+	
+	<global-forwards />
+  
+	<action-mappings >
+    
+		<action
+	    	parameter="act"
+      		path="/client/ClientManageArticleFavorite"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="add" path="/client/ClientOperateOk.jsp" />
+      		<forward name="list" path="/client/ClientListFavoriteArticle.jsp" />
+    	</action>
+    	
+		<action
+	    	parameter="act"
+      		path="/client/ClientManageVideoFavorite"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="add" path="/client/ClientOperateOk.jsp" />
+      		<forward name="list" path="/client/ClientListFavoriteVideo.jsp" />
+    	</action>
+    	
+    	<action
+	    	parameter="act"
+      		path="/client/ClientManageNewsFavorite"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="add" path="/client/ClientOperateOk.jsp" />
+      		<forward name="list" path="/client/ClientListFavoriteNews.jsp" />
+    	</action>
+    	
+	</action-mappings>
+	
+</struts-config>
+

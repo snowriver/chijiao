@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/client/ClientManageArticleFavorite.do" location="39,0" dimension="362,100" />
+  <StrutsActivity path="/client/ClientManageVideoFavorite.do" location="501,0" dimension="362,100" />
+  <StrutsActivity path="/client/ClientManageNewsFavorite.do" location="963,0" dimension="362,100" />
+  <StrutsActivity path="/client/ClientListFavoriteArticle.jsp" location="0,200" dimension="225,52" />
+  <StrutsActivity path="/client/ClientOperateOk.jsp" location="435,200" dimension="189,52" />
+  <StrutsActivity path="/client/ClientListFavoriteVideo.jsp" location="735,200" dimension="223,52" />
+  <StrutsActivity path="/client/ClientListFavoriteNews.jsp" location="1124,200" dimension="221,52" />
+  <StrutsTransition id="/client/ClientManageVideoFavorite.do,list,/client/ClientListFavoriteVideo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="773,100" />
+      <AbsolutePoint location="773,135" />
+      <AbsolutePoint location="847,135" />
+      <AbsolutePoint location="847,200" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageArticleFavorite.do,list,/client/ClientListFavoriteArticle.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="130,100" />
+      <AbsolutePoint location="130,135" />
+      <AbsolutePoint location="112,135" />
+      <AbsolutePoint location="112,200" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageNewsFavorite.do,add,/client/ClientOperateOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1054,100" />
+      <AbsolutePoint location="1054,165" />
+      <AbsolutePoint location="592,165" />
+      <AbsolutePoint location="592,200" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageArticleFavorite.do,add,/client/ClientOperateOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="311,100" />
+      <AbsolutePoint location="311,135" />
+      <AbsolutePoint location="466,135" />
+      <AbsolutePoint location="466,200" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageVideoFavorite.do,add,/client/ClientOperateOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="592,100" />
+      <AbsolutePoint location="592,135" />
+      <AbsolutePoint location="529,135" />
+      <AbsolutePoint location="529,200" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageNewsFavorite.do,list,/client/ClientListFavoriteNews.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1235,100" />
+      <AbsolutePoint location="1235,200" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

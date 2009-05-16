@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	
+	<form-beans >
+		
+	</form-beans>
+
+	<global-exceptions />
+	
+	<global-forwards />
+  
+	<action-mappings >
+    
+	<action
+      parameter="act"
+      path="/admin/AdminManageAskType"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/ask_type_main.jsp" />
+      <forward name="move_get" path="/admin/ask_type_move.jsp" />
+      <forward name="get" path="/admin/ask_type_modify.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/admin/AdminManageAsk"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/ask_list.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/admin/AdminManageAskAnswer"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/ask_answer_list.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/ask/AskQuestion"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="search" path="/ask/ask_search.jsp" />
+      <forward name="first" path="/ask/question.jsp" />
+      <forward name="second" path="/ask/ask_ok.jsp" />
+      <forward name="fail" path="/ask/operate_fail.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/ask/AskSearch"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="index" path="/ask/top_ask_list.jsp" />
+      <forward name="pop" path="/ask/pop_ask_list.jsp" />
+      <forward name="search" path="/ask/ask_list.jsp" />
+      <forward name="view" path="/ask/ask_view.jsp" />
+    </action>
+    
+    <action
+      path="/ask/AnswerQuestion"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/ask/operate_result.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/ask/AskAnswerSearch"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="top" path="/ask/top_answer_list.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/ask/ManageAnswer"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/ask/operate_ok.jsp" />
+      <forward name="fail" path="/ask/operate_fail.jsp" />
+      <forward name="ask" path="/ask/ask_extra.jsp" />
+      <forward name="answer" path="/ask/ask_answer_modify.jsp" />
+      <forward name="succ" path="/ask/opendiv_ok.jsp" />
+    </action>
+    
+    
+    <action
+      parameter="act"
+      path="/ask/UserSearch"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="top" path="/ask/top_user_list.jsp" />
+      <forward name="promot" path="/ask/user_promotion_list.jsp" />
+      <forward name="fail" path="/ask/operate_fail.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/ask/UserView"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ask" path="/ask/user_view_ask.jsp" />
+      <forward name="answer" path="/ask/user_view_answer.jsp" />
+      <forward name="fail" path="/ask/operate_fail.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/ask/UserReport"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="get" path="/ask/report.jsp" />
+      <forward name="ok" path="/ask/opendiv_ok.jsp" />
+      <forward name="fail" path="/ask/operate_fail.jsp" />
+    </action>
+   
+	</action-mappings>
+	
+</struts-config>
+

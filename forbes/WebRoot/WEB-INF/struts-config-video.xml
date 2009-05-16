@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	
+	<form-beans >
+		<form-bean name="VideoInfoForm" type="com.forbes.struts.form.video.VideoInfoForm" />
+	</form-beans>
+
+	<global-exceptions />
+	
+	<global-forwards />
+  
+	<action-mappings >
+    
+	<action
+      parameter="act"
+      path="/admin/AdminUpdateVideoType"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/video_type_main.jsp" />
+      <forward name="move_get" path="/admin/video_type_move.jsp" />
+      <forward name="get" path="/admin/video_type_modify.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/SelectVideoType"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/operate_ok.jsp" />
+      <forward name="fail" path="/operate_fail.jsp" />
+      <forward name="select" path="/include/dialog/select_video_type.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/admin/AdminUpdateVideo"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/video_list.jsp" />
+      <forward name="select" path="/admin/video_select.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+   <action
+      parameter="act"
+      path="/admin/AdminUpdateVideoUrl"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/admin/video_url_main.jsp" />
+      <forward name="get" path="/admin/video_type_modify.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    	
+    <action
+      attribute="VideoInfoForm"
+      input="/admin/video_add.jsp"
+      name="VideoInfoForm"
+      parameter="act"
+      path="/admin/AdminEditVideo"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="add" path="/admin/video_add.jsp" />
+      <forward name="edit" path="/admin/video_edit.jsp" />
+      <forward name="ok" path="/admin/operate_ok.jsp" />
+      <forward name="fail" path="/admin/operate_fail.jsp" />
+    </action>
+    
+    
+    <action
+      parameter="act"
+      path="/video/VideoTopList"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="list" path="/video/top_video_list.jsp" />
+      <forward name="comp" path="/video/comp_video_list.jsp" />
+    </action>
+    
+    <action
+      path="/video/VideoShow"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/video/video_show.jsp" />
+    </action>
+    
+    <action
+      path="/video/index"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/video/index_video_list.jsp" />
+    </action>
+    
+    <action
+      path="/video/NewIndex"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/video/index_new.jsp" />
+    </action>
+    
+    <action
+      parameter="act"
+      path="/video/VideoSearch"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="type" path="/video/top_video_list.jsp" />
+      <forward name="top" path="/video/top_five_video.jsp" />
+      <forward name="indextop" path="/video/top_six_video.jsp" />
+      <forward name="hot" path="/video/hot_video_list.jsp" />
+      <forward name="search" path="/video/video_list.jsp" />
+    </action>
+    
+	<action
+      path="/video/VideoDigg"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/video/operate_result.jsp" />
+    </action>
+    
+    
+	</action-mappings>
+	
+</struts-config>
+

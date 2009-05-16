@@ -1,0 +1,22 @@
+#
+#Wed May 13 19:39:56 CST 2009
+genBasicCompId=false
+sessionFactoryName=com.forbes.hibernate.HibernateSessionFactory
+profile=
+daoSFId=sessionFactory
+version=3.1
+jndiPath=
+detectM2M=false
+reStrategyClass=
+springDaoFile=src/com/forbes/spring/applicationContext.xml
+useJavaTypes=true
+keyGenerator=native
+libInstallFolder=/WebRoot/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=sessionFactory
+basePersistenceClass=
+reSettingsFile=
+configFile=/forbes/src/com/forbes/spring/applicationContext.xml
+createConfigFile=false
+addLibs2Classpath=true

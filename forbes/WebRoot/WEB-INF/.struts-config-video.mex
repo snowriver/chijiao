@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/admin/AdminUpdateVideoType.do" location="1930,0" dimension="358,84" />
+  <StrutsActivity path="/SelectVideoType.do" location="122,634" dimension="358,84" />
+  <StrutsActivity path="/admin/AdminUpdateVideo.do" location="832,0" dimension="358,84" />
+  <StrutsActivity path="/admin/AdminUpdateVideoUrl.do" location="1401,0" dimension="358,84" />
+  <StrutsActivity path="/admin/AdminEditVideo.do" location="125,0" dimension="358,84" />
+  <StrutsActivity path="/video/VideoTopList.do" location="15,357" dimension="358,84" />
+  <StrutsActivity path="/video/VideoShow.do" location="779,634" dimension="358,84" />
+  <StrutsActivity path="/video/index.do" location="0,911" dimension="358,84" />
+  <StrutsActivity path="/video/VideoSearch.do" location="769,357" dimension="358,84" />
+  <StrutsActivity path="/video/VideoDigg.do" location="403,911" dimension="358,84" />
+  <StrutsActivity path="/admin/video_type_main.jsp" location="2539,264" dimension="196,48" />
+  <StrutsActivity path="/admin/video_type_move.jsp" location="2243,264" dimension="196,48" />
+  <StrutsActivity path="/admin/operate_ok.jsp" location="1348,264" dimension="166,48" />
+  <StrutsActivity path="/admin/video_type_modify.jsp" location="1935,264" dimension="208,48" />
+  <StrutsActivity path="/admin/operate_fail.jsp" location="1070,264" dimension="178,48" />
+  <StrutsActivity path="/operate_ok.jsp" location="0,818" dimension="130,48" />
+  <StrutsActivity path="/operate_fail.jsp" location="230,818" dimension="142,48" />
+  <StrutsActivity path="/include/dialog/select_video_type.jsp" location="472,818" dimension="262,48" />
+  <StrutsActivity path="/admin/video_list.jsp" location="804,264" dimension="166,48" />
+  <StrutsActivity path="/admin/video_select.jsp" location="526,264" dimension="178,48" />
+  <StrutsActivity path="/admin/video_url_main.jsp" location="1614,264" dimension="190,48" />
+  <StrutsActivity path="/admin/video_add.jsp" location="0,264" dimension="160,48" />
+  <StrutsActivity path="/admin/video_edit.jsp" location="260,264" dimension="166,48" />
+  <StrutsActivity path="/video/top_video_list.jsp" location="297,541" dimension="190,48" />
+  <StrutsActivity path="/video/comp_video_list.jsp" location="0,541" dimension="196,48" />
+  <StrutsActivity path="/video/video_show.jsp" location="875,818" dimension="166,48" />
+  <StrutsActivity path="/video/index_video_list.jsp" location="78,1095" dimension="202,48" />
+  <StrutsActivity path="/video/video_list.jsp" location="587,541" dimension="166,48" />
+  <StrutsActivity path="/video/top_five_video.jsp" location="853,541" dimension="190,48" />
+  <StrutsActivity path="/video/hot_video_list.jsp" location="1143,541" dimension="190,48" />
+  <StrutsActivity path="/video/top_six_video.jsp" location="1433,541" dimension="184,48" />
+  <StrutsActivity path="/video/operate_result.jsp" location="487,1095" dimension="190,48" />
+  <StrutsTransition id="/video/VideoSearch.do,indextop,/video/top_six_video.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1091,441" />
+      <AbsolutePoint location="1091,476" />
+      <AbsolutePoint location="1525,476" />
+      <AbsolutePoint location="1525,541" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/video/VideoTopList.do,list,/video/top_video_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="284,441" />
+      <AbsolutePoint location="284,476" />
+      <AbsolutePoint location="344,476" />
+      <AbsolutePoint location="344,541" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideo.do,list,/admin/video_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="967,84" />
+      <AbsolutePoint location="967,234" />
+      <AbsolutePoint location="887,234" />
+      <AbsolutePoint location="887,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/video/VideoDigg.do,ok,/video/operate_result.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="582,995" />
+      <AbsolutePoint location="582,1095" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/video/VideoSearch.do,type,/video/top_video_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="804,441" />
+      <AbsolutePoint location="804,476" />
+      <AbsolutePoint location="439,476" />
+      <AbsolutePoint location="439,541" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/video/VideoShow.do,ok,/video/video_show.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="958,718" />
+      <AbsolutePoint location="958,818" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/SelectVideoType.do,select,/include/dialog/select_video_type.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="420,718" />
+      <AbsolutePoint location="420,768" />
+      <AbsolutePoint location="603,768" />
+      <AbsolutePoint location="603,818" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/video/VideoTopList.do,comp,/video/comp_video_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="105,441" />
+      <AbsolutePoint location="105,476" />
+      <AbsolutePoint location="98,476" />
+      <AbsolutePoint location="98,541" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideoType.do,fail,/admin/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1966,84" />
+      <AbsolutePoint location="1966,204" />
+      <AbsolutePoint location="1225,204" />
+      <AbsolutePoint location="1225,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideoUrl.do,fail,/admin/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1446,84" />
+      <AbsolutePoint location="1446,174" />
+      <AbsolutePoint location="1181,174" />
+      <AbsolutePoint location="1181,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideo.do,ok,/admin/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1146,84" />
+      <AbsolutePoint location="1146,114" />
+      <AbsolutePoint location="1410,114" />
+      <AbsolutePoint location="1410,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/video/index.do,ok,/video/index_video_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="179,995" />
+      <AbsolutePoint location="179,1095" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/video_add.jsp,null,/admin/AdminEditVideo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="120,264" />
+      <AbsolutePoint location="120,144" />
+      <AbsolutePoint location="233,144" />
+      <AbsolutePoint location="233,84" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideoType.do,ok,/admin/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2038,84" />
+      <AbsolutePoint location="2038,234" />
+      <AbsolutePoint location="1493,234" />
+      <AbsolutePoint location="1493,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/SelectVideoType.do,ok,/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="181,718" />
+      <AbsolutePoint location="181,768" />
+      <AbsolutePoint location="65,768" />
+      <AbsolutePoint location="65,818" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideoType.do,list,/admin/video_type_main.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2253,84" />
+      <AbsolutePoint location="2253,114" />
+      <AbsolutePoint location="2637,114" />
+      <AbsolutePoint location="2637,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideoUrl.do,list,/admin/video_url_main.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1625,84" />
+      <AbsolutePoint location="1625,114" />
+      <AbsolutePoint location="1709,114" />
+      <AbsolutePoint location="1709,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/video/VideoSearch.do,hot,/video/hot_video_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1019,441" />
+      <AbsolutePoint location="1019,506" />
+      <AbsolutePoint location="1238,506" />
+      <AbsolutePoint location="1238,541" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/SelectVideoType.do,fail,/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="301,718" />
+      <AbsolutePoint location="301,818" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminEditVideo.do,fail,/admin/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="376,84" />
+      <AbsolutePoint location="376,204" />
+      <AbsolutePoint location="1092,204" />
+      <AbsolutePoint location="1092,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideoUrl.do,ok,/admin/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1535,84" />
+      <AbsolutePoint location="1535,114" />
+      <AbsolutePoint location="1451,114" />
+      <AbsolutePoint location="1451,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/video/VideoSearch.do,search,/video/video_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="876,441" />
+      <AbsolutePoint location="876,506" />
+      <AbsolutePoint location="670,506" />
+      <AbsolutePoint location="670,541" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideoType.do,move_get,/admin/video_type_move.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2181,84" />
+      <AbsolutePoint location="2181,144" />
+      <AbsolutePoint location="2341,144" />
+      <AbsolutePoint location="2341,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideoType.do,get,/admin/video_type_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2109,84" />
+      <AbsolutePoint location="2109,114" />
+      <AbsolutePoint location="2091,114" />
+      <AbsolutePoint location="2091,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminEditVideo.do,add,/admin/video_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="161,84" />
+      <AbsolutePoint location="161,114" />
+      <AbsolutePoint location="40,114" />
+      <AbsolutePoint location="40,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminEditVideo.do,edit,/admin/video_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="304,84" />
+      <AbsolutePoint location="304,114" />
+      <AbsolutePoint location="343,114" />
+      <AbsolutePoint location="343,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminEditVideo.do,ok,/admin/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="447,84" />
+      <AbsolutePoint location="447,144" />
+      <AbsolutePoint location="1368,144" />
+      <AbsolutePoint location="1368,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideo.do,select,/admin/video_select.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="877,84" />
+      <AbsolutePoint location="877,234" />
+      <AbsolutePoint location="615,234" />
+      <AbsolutePoint location="615,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/video/VideoSearch.do,top,/video/top_five_video.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="948,441" />
+      <AbsolutePoint location="948,541" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideo.do,fail,/admin/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1056,84" />
+      <AbsolutePoint location="1056,174" />
+      <AbsolutePoint location="1136,174" />
+      <AbsolutePoint location="1136,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateVideoUrl.do,get,/admin/video_type_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1714,84" />
+      <AbsolutePoint location="1714,114" />
+      <AbsolutePoint location="1987,114" />
+      <AbsolutePoint location="1987,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
