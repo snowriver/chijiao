@@ -1,0 +1,41 @@
+/*
+Offical Style for supeV
+(C) 2001-2008 Comsenz Inc.
+UpDate:2008-02-20
+*/
+
+/* common style */
+
+
+/* Header style */
+#header { position:relative; width:980px; margin:0 auto 8px; }
+	.logo { display:inline; float:left; margin:30px 0 0 1px; }
+	.toolnav { position:absolute; top:46px; left:165px; }
+		.toolnav a { display:block; float:left; width:72px; height:38px; background:url(../res/toolnav_bg.gif) no-repeat 0 -38px; color:#000; font-size:14px; font-weight:bold; text-align:center; line-height:38px; }
+		a.toolnav_on { background:url(../res/toolnav_bg.gif) no-repeat center top; color:#FFF; }
+	.topmenu { float:right; width:770px; height:69px; margin:13px 0 0 0; }
+		.topmenu_tools { height:20px; font-family:simsun; }
+			.topmenu_tools ul { float:right; }
+			.topmenu_tools li { float:left; padding:0 7px; background:url(../res/icon_li_2.gif) no-repeat left 2px; *background:url(../res/icon_li_2.gif) no-repeat left 0; }
+			.topmenu_tools li a { color:#000;}
+			.myname { font-weight:bold; margin:0 2px 0 0; }
+			.myspace { position:relative; }
+				.myspace h3 { margin:0 1px 0 0; font-size:12px; font-weight:normal;}
+				.myspace h3 a { padding-right:13px; background:url(../res/myspace_bg.gif) no-repeat right 4px !important;/* hack for Mozilla+IE7 */ background:url(../res/myspace_bg.gif) no-repeat right 4px; }
+				.myspace h3 a:hover{  background:url(../res/myspace_bg.gif) no-repeat right 5px !important;/* hack for Mozilla+IE7 */ background:url(../res/myspace_bg.gif) no-repeat right 5px; }
+				.myspace_on { position:absolute; top:19px; z-index:999; width:136px; padding:4px; border:1px solid #CFD1D0; background:#FFF; }
+				.myspece_on_l { left:2px; }
+				.myspece_on_r { right:1px; }
+					.myspace_on a { display:block; float:left; width:68px; height:22px; overflow:hidden; color:#0287CA !important; line-height:22px; text-align:center; }
+					.myspace_on a:hover { background:#EDEDED; }
+					.myspace_on_iframebg { position:absolute; top:30px; right:1px; z-index:-1; width:136px; height:30px; border:0;}
+		.searchtool { float:right; width:325px; padding:17px 0 0; }
+			.searchtool input, .searchzone_bar input, .vs_searchbar input, .search_text { float:left; width:202px; line-height:16px; padding:3px 0 1px 3px; border:1px solid #899FB6; background:url(../res/search_bg.gif) no-repeat; }
+			.searchtool select, .searchzone_bar select { float:left; width:55px; height:20px; *height:22px; margin-left:3px; }
+			.searchtool button, .searchzone_bar button, .vs_searchbar button, .help_search button, .hot_tag button { float:left; width:50px; height:22px; margin-left:3px; border:0; background:url(../res/btn_search.gif) no-repeat; text-indent:-9999px; cursor:pointer; }
+	.mainnav { width:980px; height:38px; overflow:hidden; background:url(../res/mainnav_bg.gif) repeat-x; color:#FFF; }
+		.mainnav ul { float:left; width:760px; padding:12px; background:url(../res/mainnav_lr_bg.gif) no-repeat left top;}
+		.mainnav ul li { float:left; background:url(../res/icon_li_1.gif) no-repeat 0 2px; padding:0 11px; *padding:2px 5px 0 11px;/* hack for IE */}
+		.mainnav ul li a { color:#FFF; }
+		.upvideo { float:right; width:155px; height:38px; background:url(../res/mainnav_lr_bg.gif) no-repeat right -38px; }
+		.upvideo a { display:block; width:140px; height:32px; margin:3px 0 0; background:url(../res/btn_upvideo.gif) no-repeat; text-indent:-9999px; overflow:hidden; }
