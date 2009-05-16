@@ -1,0 +1,121 @@
+.city_selector {
+	POSITION: relative
+}
+.city_selector DIV.trigger {
+	COLOR: #999
+}
+.city_selector .trigger A {
+	COLOR: #999
+}
+.city_selector .trigger A:hover {
+	BACKGROUND-COLOR: transparent; COLOR: #999
+}
+.city_selector .cities {
+	BORDER-BOTTOM: #999 1px solid; BORDER-LEFT: #999 1px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #fff; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: #999 1px solid; BORDER-RIGHT: #999 1px solid; PADDING-TOP: 5px
+}
+.city_selector .cities TD {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.city_selector .cities A {
+	TEXT-DECORATION: none
+}
+DIV.corner_links {
+	POSITION: absolute; LINE-HEIGHT: 16px; FONT-SIZE: 12px; TOP: 34px; RIGHT: 20px
+}
+DIV.corner_links STRONG {
+	FONT-WEIGHT: bold
+}
+DIV.corner_links SPAN {
+	MARGIN: 0px 8px
+}
+DIV.corner_links A.my {
+	MARGIN-LEFT: 18px
+}
+DIV.corner_links IMG {
+	POSITION: absolute; MARGIN-TOP: -2px
+}
+
+*.my_login_main {
+	MARGIN: 30px auto 50px; WIDTH: 810px; HEIGHT: 302px
+}
+*.my_login_left {
+	WIDTH: 420px; FLOAT: left
+}
+*.my_login_leftmain {
+	MARGIN-LEFT: 35px
+}
+*.my_login_leftregname {
+	PADDING-BOTTOM: 8px; PADDING-LEFT: 4px
+}
+.my_login_leftword {
+	FONT-SIZE: 14px
+}
+.my_login_leftremember {
+	PADDING-LEFT: 52px; COLOR: #333; FONT-SIZE: 12px
+}
+.my_login_right {
+	MARGIN: 0px auto; WIDTH: 380px; FLOAT: left
+}
+.my_login_right DIV {
+	FLOAT: left
+}
+.my_login_rightmain {
+	BORDER-LEFT: #e1e1e1 1px solid; PADDING-LEFT: 80px; HEIGHT: 280px
+}
+.my_login_rightword {
+	WIDTH: 200px; MARGIN-BOTTOM: 20px; HEIGHT: 30px
+}
+.my_login_rightword SPAN {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 15px; WIDTH: 200px; COLOR: #666; FONT-SIZE: 14px; VERTICAL-ALIGN: middle
+}
+.my_login_rightbt {
+	MARGIN-TOP: 10px; FLOAT: left
+}
+*.my_login_rightbt IMG {
+	FLOAT: left
+}
+*.my_login_subbt {
+	CURSOR: pointer
+}
+*.my_login_leftsbubmit {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; WIDTH: 123px; BACKGROUND: url(../images/btn.login_123x33.gif) no-repeat center 0px; HEIGHT: 33px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none
+}
+*.my_login_logininput {
+	BORDER-BOTTOM: #666 1px solid; BORDER-LEFT: #666 1px solid; WIDTH: 175px; HEIGHT: 18px; BORDER-TOP: #666 1px solid; BORDER-RIGHT: #666 1px solid
+}
+*.my_login_logininput2 {
+	BORDER-BOTTOM: #666 1px solid; BORDER-LEFT: #666 1px solid; WIDTH: 175px; HEIGHT: 18px; COLOR: #999; BORDER-TOP: #666 1px solid; BORDER-RIGHT: #666 1px solid
+}
+BODY {
+	MARGIN: 0px; FONT-FAMILY: Arial, Helvetica, "ËÎÌו", sans-serif; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainbg.gif) repeat-x; COLOR: #333; FONT-SIZE: 12px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+A:link {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #2b7ccd; TEXT-DECORATION: none
+}
+A:visited {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #2b7ccd; TEXT-DECORATION: none
+}
+A:hover {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #f60; TEXT-DECORATION: underline
+}
+A:active {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #2b7ccd; TEXT-DECORATION: none
+}
+IMG {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+*#container {
+	POSITION: relative; MARGIN: auto; WIDTH: 970px
+}
+*#header {
+	POSITION: relative; WIDTH: 100%
+}
+*#footer {
+	POSITION: relative; LINE-HEIGHT: 20px; MARGIN: 5px auto 10px; WIDTH: 100%
+}
+*#content {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}

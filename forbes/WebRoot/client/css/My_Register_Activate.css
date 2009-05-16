@@ -1,0 +1,174 @@
+.city_selector {
+	POSITION: relative
+}
+.city_selector DIV.trigger {
+	COLOR: #999
+}
+*.city_selector *.trigger A {
+	COLOR: #999
+}
+*.city_selector .trigger A:hover {
+	BACKGROUND-COLOR: transparent; COLOR: #999
+}
+.city_selector *.cities {
+	BORDER-BOTTOM: #999 1px solid; BORDER-LEFT: #999 1px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #fff; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: #999 1px solid; BORDER-RIGHT: #999 1px solid; PADDING-TOP: 5px
+}
+.city_selector .cities TD {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.city_selector *.cities A {
+	TEXT-DECORATION: none
+}
+DIV.corner_links {
+	POSITION: absolute; LINE-HEIGHT: 16px; FONT-SIZE: 12px; TOP: 34px; RIGHT: 20px
+}
+DIV.corner_links STRONG {
+	FONT-WEIGHT: bold
+}
+DIV.corner_links SPAN {
+	MARGIN: 0px 8px
+}
+DIV.corner_links A.my {
+	MARGIN-LEFT: 18px
+}
+DIV.corner_links IMG {
+	POSITION: absolute; MARGIN-TOP: -2px
+}
+#header DIV.tabbar {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainmenu.bg02_1x35.gif) repeat-x; HEIGHT: 55px; PADDING-TOP: 0px
+}
+*#header *.tabbar DIV.tabs {
+	FLOAT: left; MARGIN-LEFT: 25px; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+*#header *.tabbar *.tabs A {
+	TEXT-ALIGN: center; LINE-HEIGHT: 31px; WIDTH: 85px; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; HEIGHT: 31px; COLOR: #334f00; TEXT-DECORATION: none; PADDING-TOP: 4px
+}
+*#header *.tabbar *.tabs SPAN {
+	WIDTH: 2px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainmenu.line_2x22.gif) no-repeat right 8px; FLOAT: left; HEIGHT: 33px
+}
+*#header *.tabbar *.tabs A:hover {
+	BACKGROUND: url(http://pages.anjukestatic.com/img/head/nav_hover_85x35.gif) no-repeat
+}
+*#header *.tabbar *.tabs A.actived {
+	BACKGROUND: url(http://pages.anjukestatic.com/img/head/nav_85x35.gif) no-repeat
+}
+*#header *.tabbar *.tabs A:visited {
+	COLOR: #334f00; TEXT-DECORATION: none
+}
+*#header *.tabbar DIV.search {
+	MARGIN: 7px 20px 0px 0px; FLOAT: right
+}
+*#header *.tabbar DIV.search INPUT {
+	MARGIN: 0px 0px 0px 5px; FONT-SIZE: 13px; VERTICAL-ALIGN: top
+}
+#header .tabbar DIV.search SELECT {
+	MARGIN: 0px 0px 0px 5px; FONT-SIZE: 13px
+}
+*#header *.tabbar DIV.splitter {
+	POSITION: relative; BACKGROUND: url(http://pages.anjukestatic.com/img/head/submenu.bg02_1x20.gif) repeat-x; HEIGHT: 20px; CLEAR: both
+}
+*#header *.tabbar .tabs .nw {
+	POSITION: absolute; WIDTH: 4px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainmenu.bg01_4x35.gif) no-repeat; HEIGHT: 35px; TOP: 0px; LEFT: 0px
+}
+*#header .tabbar .tabs .ne {
+	POSITION: absolute; WIDTH: 4px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainmenu.bg03_4x35.gif) no-repeat; HEIGHT: 35px; TOP: 0px; RIGHT: 0px
+}
+#header .tabbar .splitter .se {
+	POSITION: absolute; WIDTH: 4px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/submenu.bg03_4x20.gif) no-repeat; HEIGHT: 20px; TOP: 0px; RIGHT: 0px
+}
+#header .tabbar .splitter .sw {
+	POSITION: absolute; WIDTH: 4px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/submenu.bg01_4x20.gif) no-repeat; HEIGHT: 20px; TOP: 0px; LEFT: 0px
+}
+#header DIV.banner {
+	Z-INDEX: 1; POSITION: relative; HEIGHT: 75px
+}
+*#header DIV.logo {
+	POSITION: absolute; TOP: 13px; LEFT: 45px
+}
+#header .logo A:hover {
+	BACKGROUND-COLOR: transparent
+}
+#header DIV.city {
+	POSITION: absolute; LINE-HEIGHT: 20px; FONT-SIZE: 20px; TOP: 30px; FONT-WEIGHT: bold; LEFT: 183px
+}
+#header DIV.city_selector {
+	LINE-HEIGHT: 12px; DISPLAY: inline; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+#header DIV.city_selector DIV.trigger {
+	DISPLAY: inline
+}
+BODY {
+	MARGIN: 0px; FONT-FAMILY: Arial, Helvetica, "ËÎÌו", sans-serif; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainbg.gif) repeat-x; COLOR: #333; FONT-SIZE: 12px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+A:link {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #2b7ccd; TEXT-DECORATION: none
+}
+A:visited {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #2b7ccd; TEXT-DECORATION: none
+}
+A:hover {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #f60; TEXT-DECORATION: underline
+}
+A:active {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #2b7ccd; TEXT-DECORATION: none
+}
+IMG {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+*#container {
+	POSITION: relative; MARGIN: auto; WIDTH: 970px
+}
+*#header {
+	POSITION: relative; WIDTH: 100%
+}
+*#footer {
+	POSITION: relative; LINE-HEIGHT: 20px; MARGIN: 5px auto 10px; WIDTH: 100%
+}
+*#content {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+*.my_register_actmain {
+	MARGIN-TOP: 30px; WIDTH: 820px; HEIGHT: 350px
+}
+*.my_register_acttitle {
+	WIDTH: 800px; FLOAT: left
+}
+*.my_register_actthank {
+	PADDING-LEFT: 30px; WIDTH: 490px; FLOAT: left; COLOR: #3a7a1f; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 10px
+}
+*.my_register_actbody {
+	MARGIN-TOP: 10px; WIDTH: 800px; FLOAT: left
+}
+.my_register_actbody DIV {
+	FLOAT: left
+}
+.my_register_actmid {
+	BACKGROUND-IMAGE: url(http://pages.anjukestatic.com/img/reg/jh.boxmid_1x287.gif); WIDTH: 680px; FLOAT: left; HEIGHT: 287px
+}
+.my_register_actone {
+	MARGIN-TOP: 35px; PADDING-LEFT: 60px; WIDTH: 400px; FLOAT: left; COLOR: #000; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.my_register_actoneword {
+	PADDING-LEFT: 120px; WIDTH: 400px; FLOAT: left; FONT-SIZE: 14px; PADDING-TOP: 8px
+}
+.my_register_actoneword SPAN {
+	COLOR: #f50; FONT-WEIGHT: bold
+}
+.my_register_actoneagin {
+	PADDING-LEFT: 120px; WIDTH: 400px; FLOAT: left; FONT-SIZE: 12px; PADDING-TOP: 8px
+}
+.my_register_actoneagin SPAN {
+	COLOR: #f50
+}
+.my_register_actbot {
+	TEXT-ALIGN: right; WIDTH: 700px; PADDING-RIGHT: 60px; FLOAT: right; PADDING-TOP: 10px
+}
+.my_register_actoneagin2 {
+	PADDING-LEFT: 120px; WIDTH: 400px; FLOAT: left; FONT-SIZE: 12px; PADDING-TOP: 8px
+}
+.my_register_actoneagin2 SPAN {
+	COLOR: #666
+}
