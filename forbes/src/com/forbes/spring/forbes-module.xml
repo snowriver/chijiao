@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>	
+	
+	<import resource="forbes-admin.xml" />
+    <import resource="forbes-user.xml" />
+	<import resource="forbes-basic.xml" />
+	<import resource="forbes-article.xml" />
+	<import resource="forbes-video.xml" />
+	<import resource="forbes-client.xml" />
+	<import resource="forbes-newsfeed.xml" />
+</beans>

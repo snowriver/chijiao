@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+
+	<bean id="scoreManager" class="com.forbes.service.account.impl.ScoreManagerImpl">
+		<property name="userScoreLogDAO">
+			<ref bean="UserScoreLogDAO" />
+		</property>
+		<property name="userAccountDAO">
+			<ref bean="UserAccountDAO" />
+		</property>
+		<property name="newsFeedManager">
+			<ref bean="newsFeedManagerService" />
+		</property>		
+		<property name="userLevelDAO">
+			<ref bean="UserLevelDAO" />
+		</property>
+		<property name="ucMembersDAO">
+			<ref bean="UcMembersDAO" />
+		</property>
+		<property name="userDetailDAO">
+			<ref bean="UserDetailDAO" />
+		</property>
+		<property name="userLevelPromotionDAO">
+			<ref bean="UserLevelPromotionDAO" />
+		</property>
+	</bean>
+	
+	<bean id="scoreManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="scoreManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 
+	<bean id="DefaultProcessor" class="com.she.service.usrservice.impl.DefaultProcessor">
+		<property name="userServiceDAO">
+			<ref bean="UserServiceDAO" />
+		</property>
+	    <property name="userServiceLogDAO">
+			<ref bean="UserServiceLogDAO" />
+		</property>
+		<property name="usrAccountDAO">
+			<ref bean="UsrAccountDAO" />
+		</property>
+		<property name="ordServiceDAO">
+			<ref bean="OrdServiceDAO" />
+		</property>
+		<property name="messageGeneratorInf">
+			<ref bean="nfDefaultMessageGenerator" />
+		</property>
+		<property name="usrClientEstBoxDAO">
+			<ref bean="UsrClientEstBoxDAO" />
+		</property>
+	</bean>
+	
+	<bean id="MGZServiceProccessor" class="com.she.service.usrservice.impl.MGZServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="OpenDoorServiceProccessor" class="com.she.service.usrservice.impl.OpenDoorServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="PostServiceProccessor" class="com.she.service.usrservice.impl.PostServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="PriceEalerServiceProccessor" class="com.she.service.usrservice.impl.PriceEalerServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="SecServiceForBuyerProccessor" class="com.she.service.usrservice.impl.SecServiceForBuyerProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="SecServiceForSellerProccessor" class="com.she.service.usrservice.impl.SecServiceForSellerProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="SellerPostVerifyServiceProccessor" class="com.she.service.usrservice.impl.SellerPostVerifyServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="TakePhotoServiceProccessor" class="com.she.service.usrservice.impl.TakePhotoServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="TransactionEalertServiceProccessor" class="com.she.service.usrservice.impl.TransactionEalertServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="TransactionServiceProccessor" class="com.she.service.usrservice.impl.TransactionServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="VisitArrangeServiceProccessor" class="com.she.service.usrservice.impl.VisitArrangeServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="SellPostEstServiceProccessor" class="com.she.service.usrservice.impl.SellPostEstServiceProccessor" parent="DefaultProcessor">
+	</bean>
+    <bean id="BuyPostEstServiceProccessor" class="com.she.service.usrservice.impl.BuyPostEstServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="ValidUserServiceProccessor" class="com.she.service.usrservice.impl.ValidUserServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	<bean id="SunPostEstateServiceProccessor" class="com.she.service.usrservice.impl.SunPostEstateServiceProccessor" parent="DefaultProcessor">
+	</bean>
+	
+	<bean id="usrServiceProcessor" class="com.she.service.usrservice.impl.UsrServiceProcessorImpl">
+	    <property name="userServiceDAO">
+			<ref bean="UserServiceDAO" />
+		</property>
+		<property name="ordServiceDAO">
+			<ref bean="OrdServiceDAO" />
+		</property>
+	</bean>
+	<bean id="usrServiceProcessorService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="usrServiceProcessor" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-SheException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<bean id="paymentManager" class="com.she.service.account.impl.PaymentManagerImpl">
+		<property name="ordOrderDAO">
+			<ref bean="OrdOrderDAO" />
+		</property>
+	    <property name="usrPaymentLogDAO">
+			<ref bean="UsrPaymentLogDAO" />
+		</property>
+		<property name="usrAccountDAO">
+			<ref bean="UsrAccountDAO" />
+		</property>
+		<property name="ordAgentBookDAO">
+			<ref bean="OrdAgentBookDAO" />
+		</property>
+		<property name="usrServiceProcessor">
+			<ref bean="usrServiceProcessorService" />
+		</property>
+		<property name="newsFeedManager">
+			<ref bean="newsFeedManagerService" />
+		</property>
+	</bean>
+	  
+	<bean id="paymentManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="paymentManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-SheException</prop>
+			</props>
+		</property>
+	</bean>
+    
+    <bean id="accountantManager" class="com.she.service.account.impl.AccountantManagerImpl">
+		<property name="usrAccountantDAO">
+			<ref bean="UsrAccountantDAO" />
+		</property>
+	</bean>
+	  
+	<bean id="accountantManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="accountantManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-SheException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	-->
+     
+	<!-- 業務處理类配置结束 -->
+	
+	<!-- Action配置開始 
+	<bean name="/account/AccountUpdatePayment" class="com.she.web.action.account.AccountUpdatePaymentAction" singleton="false" >
+		<property name="paymentManager">
+			<ref bean="paymentManagerService" />
+		</property>
+	</bean>
+    <bean name="/account/AccountLogin" class="com.she.web.action.account.AccountLoginAction" singleton="false" >
+		<property name="accountantManager">
+			<ref bean="accountantManagerService" />
+		</property>
+	</bean>
+	<bean name="/account/listUser" class="com.she.web.action.account.ListUserAction" singleton="false" >
+		<property name="paymentManager">
+			<ref bean="paymentManagerService" />
+		</property>
+	</bean>
+	<bean name="/account/AdminChangeUsrAccount" class="com.she.web.action.account.AdminChangeUsrAccountAction" singleton="false" >
+		<property name="paymentManager">
+			<ref bean="paymentManagerService" />
+		</property>
+	</bean>
+	<bean name="/account/listPaymenLog" class="com.she.web.action.account.ListPaymenLogAction" singleton="false" >
+		<property name="paymentManager">
+			<ref bean="paymentManagerService" />
+		</property>
+	</bean>
+	<bean name="/account/listUserService" class="com.she.web.action.account.ListUserServiceAction" singleton="false" >
+		<property name="usrServiceProcessor">
+			<ref bean="usrServiceProcessorService" />
+		</property>
+	</bean>
+	-->
+    <!-- Action配置结束 -->
+</beans>

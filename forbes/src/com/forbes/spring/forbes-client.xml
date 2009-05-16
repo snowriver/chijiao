@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="clientRegister" class="com.forbes.service.client.impl.ClientRegisterImpl">
+		<property name="ucMembersDAO">
+			<ref bean="UcMembersDAO" />
+		</property>
+		<property name="userDAO">
+			<ref bean="UserDAO" />
+		</property>
+		<property name="userDetailDAO">
+			<ref bean="UserDetailDAO" />
+		</property>
+	</bean>
+	
+	<bean id="clientModifyProfile" class="com.forbes.service.client.impl.ClientModifyProfileImpl">
+		<property name="ucMembersDAO">
+			<ref bean="UcMembersDAO" />
+		</property>
+		<property name="userDetailDAO">
+			<ref bean="UserDetailDAO" />
+		</property>
+	</bean>
+	
+	<!-- -->	
+	<bean id="clientRegisterService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="clientRegister" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="clientModifyProfileService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="clientModifyProfile" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<bean name="/client/ClientLogin" class="com.forbes.struts.action.client.ClientLoginAction" singleton="false">
+		<property name="userLogin">
+			<ref bean="userLoginService" />
+		</property>
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientLogout" class="com.forbes.struts.action.client.ClientLogoutAction" singleton="false">
+	</bean>
+	
+	<bean name="/client/ClientVerifyEmail" class="com.forbes.struts.action.client.ClientVerifyEmailAction" singleton="false">
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientRegister" class="com.forbes.struts.action.client.ClientRegisterAction" singleton="false">
+		<property name="clientRegister">
+			<ref bean="clientRegisterService" />
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientModifyProfile" class="com.forbes.struts.action.client.ClientModifyProfileAction" singleton="false">
+		<property name="clientModifyProfile">
+			<ref bean="clientModifyProfileService" />
+		</property>
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
+
+	<bean name="/client/ClientManageFriend" class="com.forbes.struts.action.client.ClientManageFriendAction" singleton="false">
+		<property name="userFriendManager">
+			<ref bean="userFriendManagerService" />
+		</property>
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientManageAsk" class="com.forbes.struts.action.client.ClientManageAskAction" singleton="false">
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientPublishArticle" class="com.forbes.struts.action.client.ClientPublishArticleAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+		<property name="articleTypeManager">
+			<ref bean="articleTypeManagerService" />
+		</property>
+		<property name="scoreManager">
+			<ref bean="scoreManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/client/ClientManageArticle" class="com.forbes.struts.action.client.ClientManageArticleAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+		<property name="articleTypeManager">
+			<ref bean="articleTypeManagerService" />
+		</property>
+	</bean>	
+	
+	<!-- ucenter -->
+	<bean name="/uc/ucenter" class="com.forbes.struts.action.ucenter.UCenterAction" singleton="false" >     
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
+	
+</beans>

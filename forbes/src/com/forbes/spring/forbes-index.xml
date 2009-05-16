@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean name="/index" class="com.forbes.struts.action.index.IndexAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="newsManager">
+			<ref bean="newsManagerService" />
+		</property>
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+		<property name="ucbbsManager">
+			<ref bean="ucbbsManagerService" />
+		</property>
+		<property name="uchomeManager">
+			<ref bean="uchomeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/NewIndex" class="com.forbes.struts.action.index.NewIndexAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="newsManager">
+			<ref bean="newsManagerService" />
+		</property>
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+		<property name="ucbbsManager">
+			<ref bean="ucbbsManagerService" />
+		</property>
+		<property name="uchomeManager">
+			<ref bean="uchomeManagerService" />
+		</property>
+		<property name="bulletinManager">
+			<ref bean="bulletinManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/IndexVideoList" class="com.forbes.struts.action.index.IndexVideoListAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/IndexArticleList" class="com.forbes.struts.action.index.IndexArticleListAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/IndexAskList" class="com.forbes.struts.action.index.IndexAskListAction" singleton="false">
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/IndexNewsList" class="com.forbes.struts.action.index.IndexNewsListAction" singleton="false">
+		<property name="newsManager">
+			<ref bean="newsManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/IndexUserList" class="com.forbes.struts.action.index.IndexUserListAction" singleton="false">
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/GetUCenterInfo" class="com.forbes.struts.action.ucenter.GetUCenterInfoAction" singleton="false"></bean>
+
+	<bean name="/BulletinView" class="com.forbes.struts.action.index.BulletinViewAction" singleton="false">
+		<property name="bulletinManager">
+			<ref bean="bulletinManagerService" />
+		</property>
+	</bean>
+</beans>

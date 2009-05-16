@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- -->
+	<bean id="userLogin" class="com.forbes.service.user.impl.UserLoginImpl">
+		<property name="ucMembersDAO">
+			<ref bean="UcMembersDAO" />
+		</property>
+		<property name="ucAdminsDAO">
+			<ref bean="UcAdminsDAO" />
+		</property>
+	</bean>
+	
+	<bean id="userInfoManager" class="com.forbes.service.user.impl.UserInfoManagerImpl">
+		<property name="ucMembersDAO">
+			<ref bean="UcMembersDAO" />
+		</property>
+		<property name="userDAO">
+			<ref bean="UserDAO" />
+		</property>
+		<property name="userDetailDAO">
+			<ref bean="UserDetailDAO" />
+		</property>
+		<property name="ucAdminsDAO">
+			<ref bean="UcAdminsDAO" />
+		</property>
+	</bean>
+	
+	<bean id="userFriendManager" class="com.forbes.service.user.impl.UserFriendManagerImpl">
+		<property name="userDAO">
+			<ref bean="UserDAO" />
+		</property>
+		<property name="userFriendDAO">
+			<ref bean="UserFriendDAO" />
+		</property>
+	</bean>
+	
+	<bean id="userLevelManager" class="com.forbes.service.user.impl.UserLevelManagerImpl">
+		<property name="userLevelDAO">
+			<ref bean="UserLevelDAO" />
+		</property>
+	</bean>
+	
+	<!-- -->	
+	<bean id="userLoginService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="userLogin" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="userInfoManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="userInfoManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="userFriendManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="userFriendManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="userLevelManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="userLevelManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

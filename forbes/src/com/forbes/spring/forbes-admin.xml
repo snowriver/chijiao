@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+	<bean name="/admin/AdminLogin" class="com.forbes.struts.action.admin.AdminLoginAction" singleton="false">
+		<property name="userLogin">
+			<ref bean="userLoginService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminListUser" class="com.forbes.struts.action.admin.AdminListUserAction" singleton="false">
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
+	<bean name="/admin/AdminUpdateUser" class="com.forbes.struts.action.admin.AdminUpdateUserAction" singleton="false">
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
+	 
+	<bean name="/admin/AdminManageNews" class="com.forbes.struts.action.admin.AdminManageNewsAction" singleton="false">
+		<property name="newsManager">
+			<ref bean="newsManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminManageService" class="com.forbes.struts.action.admin.AdminManageServiceAction" singleton="false" >
+		<property name="orderServiceManager">
+			<ref bean="orderServiceManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminManageAsk" class="com.forbes.struts.action.admin.AdminManageAskAction" singleton="false">
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="askManager">
+			<ref bean="askManagerService" />
+		</property>
+		<property name="askAnswerManager">
+			<ref bean="askAnswerManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminManageAskAnswer" class="com.forbes.struts.action.admin.AdminManageAskAnswerAction" singleton="false">
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="askAnswerManager">
+			<ref bean="askAnswerManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminManageUserLevel" class="com.forbes.struts.action.admin.AdminManageUserLevelAction" singleton="false">
+		<property name="userLevelManager">
+			<ref bean="userLevelManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminBatchAddArticle" class="com.forbes.struts.action.admin.AdminBatchAddArticleAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+		<property name="articleTypeManager">
+			<ref bean="articleTypeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminBatchAddVideoUrl" class="com.forbes.struts.action.admin.AdminBatchAddVideoUrlAction" singleton="false">
+		<property name="videoUrlManager">
+			<ref bean="videoUrlManagerService" />
+		</property>
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminTohtml" class="com.forbes.struts.action.admin.AdminTohtmlAction" singleton="false"></bean>
+	
+	<bean name="/admin/AdminManageBulletin" class="com.forbes.struts.action.admin.AdminManageBulletinAction" singleton="false">
+		<property name="bulletinManager">
+			<ref bean="bulletinManagerService" />
+		</property>
+	</bean>
+</beans>

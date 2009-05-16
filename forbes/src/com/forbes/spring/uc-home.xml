@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- -->
+	<bean id="uchomeManager" class="com.forbes.service.ucenter.impl.UchomeManagerImpl">
+		<property name="uchomeMtagDAO">
+			<ref bean="UchomeMtagDAO" />
+		</property>
+		<property name="uchomeFeedDAO">
+			<ref bean="UchomeFeedDAO" />
+		</property>
+		<property name="uchomeDoingDAO">
+			<ref bean="UchomeDoingDAO" />
+		</property>
+		<property name="uchomeBlogDAO">
+			<ref bean="UchomeBlogDAO" />
+		</property>
+	</bean>
+	
+	<!-- -->
+	<bean id="uchomeManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="uchomeManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- -->
+	<bean name="/GetTopUchomeMtag" class="com.forbes.struts.action.index.GetTopUchomeMtagAction" singleton="false">
+		<property name="uchomeManager">
+			<ref bean="uchomeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/GetTopUchomeFeed" class="com.forbes.struts.action.index.GetTopUchomeFeedAction" singleton="false">
+		<property name="uchomeManager">
+			<ref bean="uchomeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/GetTopUchomeDoing" class="com.forbes.struts.action.index.GetTopUchomeDoingAction" singleton="false">
+		<property name="uchomeManager">
+			<ref bean="uchomeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/GetTopUchomeBlog" class="com.forbes.struts.action.index.GetTopUchomeBlogAction" singleton="false">
+		<property name="uchomeManager">
+			<ref bean="uchomeManagerService" />
+		</property>
+	</bean>
+	
+</beans>

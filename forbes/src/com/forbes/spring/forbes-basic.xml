@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- -->
+	<bean id="cityManager" class="com.forbes.service.basic.impl.CityManagerImpl">
+		<property name="cityDAO">
+			<ref bean="CityDAO" />
+		</property>
+	</bean>
+	
+	<bean id="sectorManager" class="com.forbes.service.basic.impl.SectorManagerImpl">
+		<property name="sectorDAO">
+			<ref bean="SectorDAO" />
+		</property>
+	</bean>
+	
+	<bean id="bulletinManager" class="com.forbes.service.basic.impl.BulletinManagerImpl">
+		<property name="bulletinDAO">
+			<ref bean="BulletinDAO" />
+		</property>
+	</bean>
+	
+	<!-- -->	
+	<bean id="cityManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="cityManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- -->	
+	<bean id="sectorManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="sectorManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="bulletinManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="bulletinManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminUpdateCity" class="com.forbes.struts.action.admin.AdminUpdateCityAction" singleton="false">
+		<property name="cityManager">
+			<ref bean="cityManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminUpdateSector" class="com.forbes.struts.action.admin.AdminUpdateSectorAction" singleton="false">
+		<property name="sectorManager">
+			<ref bean="sectorManagerService" />
+		</property>
+	</bean>
+
+</beans>

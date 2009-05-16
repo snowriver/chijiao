@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- -->
+	<bean id="articleTypeManager" class="com.forbes.service.article.impl.ArticleTypeManagerImpl">
+		<property name="articleTypeDAO">
+			<ref bean="ArticleTypeDAO" />
+		</property>
+	</bean>
+	<bean id="articleListManager" class="com.forbes.service.article.impl.ArticleListManagerImpl">
+		<property name="articleTypeDAO">
+			<ref bean="ArticleTypeDAO" />
+		</property>
+		<property name="articleDAO">
+			<ref bean="ArticleDAO" />
+		</property>
+	</bean>
+	<bean id="articleKeywordManager" class="com.forbes.service.article.impl.ArticleKeywordManagerImpl">
+		<property name="articleKeywordDAO">
+			<ref bean="ArticleKeywordDAO" />
+		</property>
+	</bean>
+	<bean id="searchKeywordManager" class="com.forbes.service.article.impl.SearchKeywordManagerImpl">
+		<property name="searchKeywordDAO">
+			<ref bean="SearchKeywordDAO" />
+		</property>
+	</bean>
+	
+	<bean id="newsManager" class="com.forbes.service.article.impl.NewsManagerImpl">
+		<property name="newsDAO">
+			<ref bean="NewsDAO" />
+		</property>
+	</bean>
+	
+	<!-- -->	
+	<bean id="articleTypeManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="articleTypeManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>	
+	<bean id="articleListManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="articleListManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="articleKeywordManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="articleKeywordManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="searchKeywordManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="searchKeywordManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="newsManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="newsManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!--  -->
+	<bean name="/admin/AdminUpdateArticleType" class="com.forbes.struts.action.admin.AdminUpdateArticleTypeAction" singleton="false">
+		<property name="articleTypeManager">
+			<ref bean="articleTypeManagerService" />
+		</property>
+	</bean>
+	<bean name="/admin/AdminUpdateArticle" class="com.forbes.struts.action.admin.AdminUpdateArticleAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+		<property name="contentManager">
+			<ref bean="contentManagerService" />
+		</property>
+		<property name="scoreManager">
+			<ref bean="scoreManagerService" />
+		</property>
+		<property name="articleTypeManager">
+			<ref bean="articleTypeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminEditArticle" class="com.forbes.struts.action.admin.AdminEditArticleAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+		<property name="articleTypeManager">
+			<ref bean="articleTypeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/SelectArticleType" class="com.forbes.struts.action.article.SelectArticleTypeAction" singleton="false">
+		<property name="articleTypeManager">
+			<ref bean="articleTypeManagerService" />
+		</property>
+	</bean>
+	<bean name="/admin/AdminManageArticleKeyword" class="com.forbes.struts.action.admin.AdminManageArticleKeywordAction" singleton="false">
+		<property name="articleKeywordManager">
+			<ref bean="articleKeywordManagerService" />
+		</property>
+	</bean>
+	<bean name="/admin/AdminManageSearchKeyword" class="com.forbes.struts.action.admin.AdminManageSearchKeywordAction" singleton="false">
+		<property name="searchKeywordManager">
+			<ref bean="searchKeywordManagerService" />
+		</property>
+	</bean>
+	<bean name="/admin/AdminCreateArticleHtml" class="com.forbes.struts.action.admin.AdminCreateArticleHtmlAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/article/ArticleSearch" class="com.forbes.struts.action.article.ArticleSearchAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+		<property name="articleTypeManager">
+			<ref bean="articleTypeManagerService" />
+		</property>
+	</bean>	
+
+	<bean name="/article/NewsSearch" class="com.forbes.struts.action.article.NewsSearchAction" singleton="false">
+		<property name="newsManager">
+			<ref bean="newsManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/article/ArticleDigg" class="com.forbes.struts.action.article.ArticleDiggAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/article/NewsDigg" class="com.forbes.struts.action.article.NewsDiggAction" singleton="false">
+		<property name="newsManager">
+			<ref bean="newsManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/article/NewRegister" class="com.forbes.struts.action.article.NewRegisterAction" singleton="false">
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/article/TopCdbThreads" class="com.forbes.struts.action.article.TopCdbThreadsAction" singleton="false">
+		<property name="ucbbsManager">
+			<ref bean="ucbbsManagerService" />
+		</property>
+	</bean>
+</beans>
