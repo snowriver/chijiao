@@ -1,0 +1,201 @@
+* {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+BODY {
+	TEXT-ALIGN: left; MARGIN: 0px auto; FONT-FAMILY: Arial, "ËÎÌו"; BACKGROUND: #fff; COLOR: #000; FONT-SIZE: 12px
+}
+LI {
+	LIST-STYLE-TYPE: none
+}
+A {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #00abd6; TEXT-DECORATION: underline
+}
+*.left {
+	FLOAT: left
+}
+*.right {
+	FLOAT: right
+}
+*.clear {
+	CLEAR: both
+}
+*.hidden {
+	DISPLAY: none
+}
+*.more {
+	PADDING-RIGHT: 10px
+}
+H2 {
+	FONT-SIZE: 14px
+}
+H2 A.more {
+	FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+*#header {
+	TEXT-ALIGN: left; MARGIN: 0px auto; WIDTH: 1002px
+}
+#wrapper {
+	TEXT-ALIGN: left; MARGIN: 0px auto; WIDTH: 1002px
+}
+#footer {
+	TEXT-ALIGN: left; MARGIN: 0px auto; WIDTH: 1002px
+}
+.wapper {
+	POSITION: relative; MARGIN: 0px auto; WIDTH: 1002px
+}
+.top_banner {
+	MARGIN: 0px auto; WIDTH: 100%; BACKGROUND: url(../images/s60banner08111201.jpg) no-repeat center top; HEIGHT: 145px
+}
+#header {
+	MARGIN-BOTTOM: 8px
+}
+#nav {
+	PADDING-LEFT: 140px; BACKGROUND: url(../images/navbg081117.jpg) no-repeat; HEIGHT: 48px
+}
+#nav UL LI {
+	TEXT-ALIGN: center; WIDTH: 94px; DISPLAY: block; FLOAT: left; HEIGHT: 48px
+}
+#nav UL LI A {
+	TEXT-ALIGN: center; LINE-HEIGHT: 42px; WIDTH: 94px; DISPLAY: block; HEIGHT: 48px; COLOR: #fff; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+*#nav UL LI:hover {
+	BACKGROUND: url(../images/navon08111702.jpg) no-repeat; COLOR: #fff
+}
+*#nav UL LI:hover A {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#footer {
+	PADDING-BOTTOM: 10px; LINE-HEIGHT: 180%; MARGIN-TOP: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/footer_bg.jpg) no-repeat center top; PADDING-TOP: 10px
+}
+#main {
+	WIDTH: 713px; FLOAT: left
+}
+#sidebar {
+	WIDTH: 281px; FLOAT: right
+}
+.search {
+	WIDTH: 281px; MARGIN-BOTTOM: 5px; BACKGROUND: url(../images/rsearch08111102.jpg) no-repeat; HEIGHT: 42px
+}
+.search .input {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; LINE-HEIGHT: 14px; MARGIN: 15px 0px 0px 14px; WIDTH: 150px; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 14px; FONT-SIZE: 12px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+*.search SELECT {
+	MARGIN-TOP: 12px; WIDTH: 55px; HEIGHT: 18px
+}
+*.search_btn {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; MARGIN: 12px 15px 0px 0px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #333; FONT-SIZE: 12px; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px
+}
+*.ndsoft {
+	WIDTH: 281px; MARGIN-BOTTOM: 8px
+}
+*.ndsoft H2 {
+	LINE-HEIGHT: 28px; PADDING-LEFT: 25px; BACKGROUND: url(../images/bar1_081107.jpg) no-repeat; HEIGHT: 28px; COLOR: #fff
+}
+*.ndsoft H2 A.more {
+	COLOR: #fff
+}
+*.ndsoft *.con {
+	BORDER-BOTTOM: #daeef5 1px solid; BORDER-LEFT: #daeef5 1px solid; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: medium none; BORDER-RIGHT: #daeef5 1px solid; PADDING-TOP: 5px
+}
+.ndsoft .con TABLE {
+	LINE-HEIGHT: 180%
+}
+.ndsoft .con TD {
+	BORDER-BOTTOM: #6cf 1px dotted; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+.zhinan {
+	BORDER-BOTTOM: #bbecfa 1px solid; BORDER-LEFT: #bbecfa 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 1px; WIDTH: 279px; PADDING-RIGHT: 1px; MARGIN-BOTTOM: 8px; BORDER-TOP: #bbecfa 1px solid; BORDER-RIGHT: #bbecfa 1px solid; PADDING-TOP: 0px
+}
+.zhinan H2 {
+	LINE-HEIGHT: 28px; MARGIN: 2px; PADDING-LEFT: 35px; BACKGROUND: url(../images/bar2.jpg) no-repeat; HEIGHT: 28px; COLOR: #00abd6
+}
+.zhinan H2 A.more {
+	COLOR: #00abd6
+}
+.zhinan .con {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.zhinan .con UL LI {
+	HEIGHT: 24px
+}
+.zhinan .con UL LI A {
+	LINE-HEIGHT: 24px; PADDING-LEFT: 15px; WIDTH: 110px; BACKGROUND: url(../images/arrow3.gif) no-repeat 0px 8px; FLOAT: left; HEIGHT: 24px; OVERFLOW: hidden
+}
+*.rank {
+	WIDTH: 281px; MARGIN-BOTTOM: 8px
+}
+*.rank UL {
+	HEIGHT: 32px
+}
+*.rank UL LI {
+	BORDER-BOTTOM: #bbedfa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #bbedfa 0px solid; LINE-HEIGHT: 26px; WIDTH: 140px; BACKGROUND: url(../images/rank_li_bg.gif) no-repeat center bottom; FLOAT: left; HEIGHT: 26px; COLOR: #00abd6; FONT-SIZE: 12px; BORDER-TOP: #bbedfa 0px solid; CURSOR: pointer; BORDER-RIGHT: #bbedfa 0px solid; PADDING-TOP: 5px
+}
+*.rank UL LI.on {
+	BORDER-BOTTOM: #bbedfa 0px solid; BORDER-LEFT: #bbedfa 1px solid; LINE-HEIGHT: 31px; WIDTH: 139px; BACKGROUND: #fff; HEIGHT: 31px; COLOR: #32b16c; FONT-SIZE: 14px; BORDER-TOP: #bbedfa 1px solid; CURSOR: pointer; FONT-WEIGHT: bold; BORDER-RIGHT: #bbedfa 1px solid; PADDING-TOP: 0px
+}
+*.rank UL LI A {
+	COLOR: #00abd6
+}
+*.rank UL LI.on A {
+	COLOR: #32b16c
+}
+*.rank UL LI A:hover {
+	TEXT-DECORATION: none
+}
+*.rank *.con {
+	BORDER-BOTTOM: #daeef5 1px solid; BORDER-LEFT: #daeef5 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: medium none; BORDER-RIGHT: #daeef5 1px solid; PADDING-TOP: 10px
+}
+.toptentb {
+	MARGIN: 3px auto
+}
+.toptentb TH {
+	PADDING-LEFT: 5px; HEIGHT: 24px
+}
+.toptentb TD {
+	PADDING-LEFT: 5px; HEIGHT: 24px
+}
+.toptentb TD A {
+	WIDTH: 170px; DISPLAY: block; HEIGHT: 16px; OVERFLOW: hidden
+}
+.sidebox {
+	WIDTH: 281px; MARGIN-BOTTOM: 5px
+}
+.report {
+	WIDTH: 281px; MARGIN-BOTTOM: 5px
+}
+.sidebox H2 {
+	LINE-HEIGHT: 28px; PADDING-LEFT: 25px; BACKGROUND: url(../images/bar3.jpg) no-repeat; HEIGHT: 28px; COLOR: #fff
+}
+.sidebox H2 A.more {
+	COLOR: #fff
+}
+.sidebox .con {
+	BORDER-BOTTOM: #daeef5 1px solid; BORDER-LEFT: #daeef5 1px solid; PADDING-BOTTOM: 10px; LINE-HEIGHT: 23px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; WHITE-SPACE: nowrap; OVERFLOW: hidden; BORDER-TOP: medium none; BORDER-RIGHT: #daeef5 1px solid; PADDING-TOP: 10px
+}
+.ebook {
+	WIDTH: 281px; MARGIN-BOTTOM: 5px
+}
+.ebook H2 {
+	LINE-HEIGHT: 36px; PADDING-LEFT: 25px; BACKGROUND: url(../images/ebookbg08111402.jpg) no-repeat; HEIGHT: 33px; COLOR: #00abd6
+}
+.ebook H2 A.more {
+	COLOR: #00abd6
+}
+.ebook .con {
+	BORDER-BOTTOM: #daeef5 1px solid; BORDER-LEFT: #daeef5 1px solid; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: medium none; BORDER-RIGHT: #daeef5 1px solid; PADDING-TOP: 5px
+}
+.ebook .con .bookpush {
+	BORDER-BOTTOM: #6cf 1px dotted; PADDING-BOTTOM: 3px
+}
+.ebook .con *.booklist TABLE {
+	LINE-HEIGHT: 1.6em; MARGIN: 2px auto; WIDTH: 98%
+}
+*.ebook *.con TD IMG {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: #fff; MARGIN-RIGHT: 5px; PADDING-TOP: 2px
+}

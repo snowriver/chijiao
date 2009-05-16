@@ -1,0 +1,182 @@
+*#flashcontent {
+		BORDER-BOTTOM: #d6dee1 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #d6dee1 1px solid; WIDTH: 304px; MARGIN-BOTTOM: 8px; FLOAT: left; HEIGHT: 428px; BORDER-TOP: #d6dee1 1px solid; BORDER-RIGHT: #d6dee1 1px solid
+	}
+	
+#flasharea {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 2px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 300px; PADDING-TOP: 5px; HEIGHT: 390px
+}
+
+*#news {
+	WIDTH: 395px; MARGIN-BOTTOM: 8px; BACKGROUND: url(images/news_bg.jpg) no-repeat; FLOAT: right
+}
+*#news H2 {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 26px; PADDING-LEFT: 20px; PADDING-RIGHT: 10px; HEIGHT: 26px; COLOR: #00abd6; FONT-SIZE: 14px; PADDING-TOP: 5px
+}
+*#news H2 A.more {
+	COLOR: #fff; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+*.headline {
+	BORDER-BOTTOM: #9e9e9e 1px dotted; PADDING-BOTTOM: 5px; LINE-HEIGHT: 180%; MARGIN: 3px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+*.headline A {
+	FONT-SIZE: 14px
+}
+*.headline P {
+	TEXT-INDENT: 2em; COLOR: #666
+}
+*.headline TABLE {
+	WIDTH: 100%
+}
+*.headline TABLE TD {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; VERTICAL-ALIGN: top; PADDING-TOP: 3px
+}
+.headline IMG {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: #fff; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid; PADDING-TOP: 2px
+}
+#news .headline {
+	LINE-HEIGHT: 1.5em; COLOR: #666; FONT-SIZE: 14px
+}
+#news .headline A {
+	COLOR: #f30; FONT-WEIGHT: bold
+}
+#news .con TABLE {
+	LINE-HEIGHT: 1.8em; MARGIN: 0px auto; WIDTH: 95%; COLOR: #666
+}
+.software {
+	WIDTH: 356px; MARGIN-BOTTOM: 8px; BACKGROUND: url(images/software_bg.jpg) repeat-x center top; FLOAT: left; BORDER-RIGHT: #dbdbdb 1px solid; PADDING-TOP: 10px
+}
+.software H2 {
+	BORDER-BOTTOM: #daeef5 2px solid; LINE-HEIGHT: 160%; MARGIN: 0px 5px; PADDING-LEFT: 20px; BACKGROUND: url(images/ico1.gif) no-repeat 5px 0px; HEIGHT: 24px; COLOR: #00abd6
+}
+.software H2 .left {
+	CURSOR: pointer; MARGIN-RIGHT: 10px
+}
+.software H2 .tit {
+	COLOR: #999; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+.software H2 .tit_on {
+	COLOR: #00abd6; FONT-SIZE: 14px
+}
+.software .con {
+	PADDING-BOTTOM: 10px; BACKGROUND: url(images/swcon_bg1.jpg) no-repeat right bottom
+}
+.software .con TABLE {
+	LINE-HEIGHT: 1.6em; MARGIN: 0px auto; WIDTH: 95%; COLOR: #666
+}
+.software .con TABLE A {
+	PADDING-LEFT: 15px; WIDTH: 245px; DISPLAY: block; BACKGROUND: url(images/arrowicon.gif) no-repeat 2px 5px; HEIGHT: 18px; OVERFLOW: hidden
+}
+.software .more {
+	MARGIN: 5px 5px 0px 0px; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+*.software *.more A {
+	COLOR: #00abd6
+}
+*.swpatch {
+	BORDER-RIGHT: medium none
+}
+*.swpatch A:hover {
+	COLOR: #32b16c
+}
+*.swpatch *.con {
+	PADDING-BOTTOM: 10px; BACKGROUND: url(images/swcon_bg2.jpg) no-repeat left bottom
+}
+*.swpatch H2 {
+	BORDER-BOTTOM: #e6f5da 2px solid; BACKGROUND: url(images/ico2.gif) no-repeat 5px 0px; COLOR: #32b16c
+}
+*.swpatch *.more A {
+	COLOR: #32b16c
+}
+*.swpatch H2 *.tit {
+	COLOR: #999; FONT-SIZE: 12px
+}
+*.swpatch H2 *.tit_on {
+	COLOR: #32b16c; FONT-SIZE: 14px
+}
+*.jiaocheng {
+	WIDTH: 350px; MARGIN-BOTTOM: 8px; BACKGROUND: url(images/tab_head1.jpg) no-repeat 0px 34px; FLOAT: left
+}
+*.jiaocheng H2 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 34px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; MARGIN-BOTTOM: 5px; BACKGROUND: url(images/jiaocheng_h2.jpg) no-repeat; HEIGHT: 34px; COLOR: #00abd6; PADDING-TOP: 0px
+}
+*.jiaocheng H2 A.more {
+	COLOR: #00abd6
+}
+*.jiaocheng *.headline H3 {
+	COLOR: #44494e; FONT-SIZE: 14px; FONT-WEIGHT: normal
+}
+*.jiaocheng *.con TABLE {
+	LINE-HEIGHT: 1.6em; MARGIN: 0px auto; WIDTH: 98%; COLOR: #666
+}
+*.jiaocheng *.con TABLE A {
+	PADDING-LEFT: 15px; WIDTH: 245px; DISPLAY: block; BACKGROUND: url(images/arrow1.gif) no-repeat 2px 4px; HEIGHT: 25px; OVERFLOW: hidden
+}
+*.jiaocheng UL {
+	HEIGHT: 23px
+}
+.jiaocheng UL LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 23px; WIDTH: 91px; BACKGROUND: url(images/tab1.jpg) no-repeat; FLOAT: left; HEIGHT: 23px; CURSOR: pointer; MARGIN-RIGHT: 3px
+}
+.jiaocheng UL LI.on {
+	BACKGROUND: url(images/tab1_on.jpg) no-repeat
+}
+.jiaocheng UL LI A {
+	COLOR: #00abd6
+}
+.pingce {
+	WIDTH: 350px; MARGIN-BOTTOM: 8px; BACKGROUND: url(images/tab_head2.jpg) no-repeat 0px 34px; FLOAT: right
+}
+.pingce A:hover {
+	COLOR: #32b16c
+}
+.pingce H2 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 34px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; MARGIN-BOTTOM: 5px; BACKGROUND: url(images/pingce_h2.jpg) no-repeat; HEIGHT: 34px; COLOR: #32b16c; PADDING-TOP: 0px
+}
+.pingce H2 A.more {
+	COLOR: #32b16c
+}
+.pingce .headline H3 {
+	COLOR: #44494e; FONT-SIZE: 14px; FONT-WEIGHT: normal
+}
+.pingce .con TABLE {
+	LINE-HEIGHT: 1.6em; MARGIN: 0px auto; WIDTH: 98%; COLOR: #666
+}
+.pingce .con TABLE A {
+	PADDING-LEFT: 15px; WIDTH: 245px; DISPLAY: block; BACKGROUND: url(images/arrow2.gif) no-repeat 2px 4px; HEIGHT: 25px; OVERFLOW: hidden
+}
+.pingce UL {
+	HEIGHT: 23px
+}
+.pingce UL LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 23px; WIDTH: 91px; BACKGROUND: url(images/tab2.jpg) no-repeat; FLOAT: left; HEIGHT: 23px; CURSOR: pointer; MARGIN-RIGHT: 3px
+}
+*.pingce UL LI.on {
+	BACKGROUND: url(images/tab2_on.jpg) no-repeat
+}
+*.pingce UL LI A {
+	COLOR: #32b16c
+}
+*.theme {
+	MARGIN-TOP: 10px; WIDTH: 712px
+}
+*.theme H2 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 34px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; BACKGROUND: url(images/book_h2.jpg) no-repeat; HEIGHT: 34px; COLOR: #fff; PADDING-TOP: 0px
+}
+*.theme H2 A.more {
+	COLOR: #fff
+}
+*.theme *.con {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND: url(images/book_bg.jpg) repeat-x; PADDING-TOP: 5px
+}
+*.theme *.con UL {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; WIDTH: 140px; PADDING-RIGHT: 0px; PADDING-TOP: 12px
+}
+*.theme *.con UL LI {
+	PADDING-LEFT: 12px
+}
+*.theme *.con UL LI IMG {
+	BORDER-BOTTOM: #adb9c2 1px solid; BORDER-LEFT: #adb9c2 1px solid; PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; BACKGROUND: #fff; BORDER-TOP: #adb9c2 1px solid; BORDER-RIGHT: #adb9c2 1px solid; PADDING-TOP: 4px
+}
+*.theme *.con UL LI IMG:hover {
+	BACKGROUND: #00abd6
+}
