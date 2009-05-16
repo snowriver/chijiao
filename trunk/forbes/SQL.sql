@@ -5,7 +5,7 @@ CREATE TABLE `forbes_bulletin` (
   `pubdate` datetime DEFAULT NULL,
   `deadline` datetime DEFAULT NULL,
   `color` varchar(10) DEFAULT NULL,
-  `arcrank` smallint(6) DEFAULT '0',
+  `rank` smallint(6) DEFAULT '0',
   `content` mediumtext,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=gbk;
