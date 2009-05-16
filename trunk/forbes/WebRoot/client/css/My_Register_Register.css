@@ -1,0 +1,131 @@
+
+DIV.corner_links {
+	POSITION: absolute; LINE-HEIGHT: 16px; FONT-SIZE: 12px; TOP: 34px; RIGHT: 20px
+}
+DIV.corner_links STRONG {
+	FONT-WEIGHT: bold
+}
+DIV.corner_links SPAN {
+	MARGIN: 0px 8px
+}
+DIV.corner_links A.my {
+	MARGIN-LEFT: 18px
+}
+DIV.corner_links IMG {
+	POSITION: absolute; MARGIN-TOP: -2px
+}
+
+
+*.my_register_td1 {
+	TEXT-ALIGN: right; WIDTH: 15%; HEIGHT: 36px; FONT-SIZE: 14px
+}
+*.my_register_td3 {
+	TEXT-ALIGN: right; WIDTH: 15%; HEIGHT: 36px; FONT-SIZE: 14px
+}
+*.my_register_td2 {
+	WIDTH: 85%
+}
+*.my_register_red {
+	COLOR: #f00
+}
+.my_register_input {
+	FLOAT: left
+}
+*.my_register_input INPUT {
+	BORDER-BOTTOM: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #fff; MARGIN: 5px 5px 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FONT: 12px Tahoma, Verdana; HEIGHT: 20px; COLOR: #333; BORDER-TOP: #7f9db9 1px solid; BORDER-RIGHT: #7f9db9 1px solid; PADDING-TOP: 2px
+}
+*.my_register_input2 {
+	FLOAT: left
+}
+*.my_register_warning {
+	BORDER-BOTTOM: #ff9393 1px solid; BORDER-LEFT: #ff9393 1px solid; PADDING-BOTTOM: 1px; BACKGROUND-COLOR: #ffe1e1; PADDING-LEFT: 0px; WIDTH: 260px; PADDING-RIGHT: 0px; DISPLAY: table-cell; HEIGHT: 20px; BORDER-TOP: #ff9393 1px solid; BORDER-RIGHT: #ff9393 1px solid; PADDING-TOP: 4px
+}
+.my_register_submit {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; WIDTH: 153px; BACKGROUND: url(../images/btn.reg_153x33.gif) no-repeat center 0px; HEIGHT: 33px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none
+}
+.my_register_input SELECT {
+	BORDER-BOTTOM: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #fff; MARGIN: 5px 5px 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; COLOR: #333; BORDER-TOP: #7f9db9 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: #7f9db9 1px solid; PADDING-TOP: 2px
+}
+.my_register_main {
+	BACKGROUND-COLOR: #f0f0f0; MARGIN: 70px auto 50px; WIDTH: 800px; HEIGHT: 227px; PADDING-TOP: 15px
+}
+*.my_register_div {
+	PADDING-LEFT: 30px; WIDTH: 350px; PADDING-RIGHT: 20px; FLOAT: left; HEIGHT: 227px; BORDER-RIGHT: #fff 1px solid
+}
+.my_register_div2 {
+	PADDING-LEFT: 50px; WIDTH: 300px; PADDING-RIGHT: 20px; FLOAT: left; HEIGHT: 227px
+}
+*.my_register_fword {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 10px
+}
+*.my_register_store {
+	MARGIN-TOP: 8px; COLOR: #f60; MARGIN-LEFT: 55px; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+*.my_register_phone {
+	COLOR: #333; MARGIN-LEFT: 55px; FONT-SIZE: 14px
+}
+*.my_register_phone P {
+	LINE-HEIGHT: 100%
+}
+.my_register_wordsmall {
+	MARGIN-TOP: 20px; MARGIN-LEFT: 46px; FONT-SIZE: 14px
+}
+.my_register_wordsmall SPAN {
+	PADDING-LEFT: 8px
+}
+#checkusername {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+*#workcity {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+#checkpassword {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+#checkpassword2 {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+*#checkuseremail {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+#checkseccode {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+#checkturename {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+*#checkturemobile {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+#checkcommname {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+*#workareamsg {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+*#workdatecheck {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+*#checkcompany {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+*#checkphone {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+#checkallow {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: auto; COLOR: #999; PADDING-TOP: 6px
+}
+
+
+*#container {
+	POSITION: relative; MARGIN: auto; WIDTH: 970px
+}
+#header {
+	POSITION: relative; WIDTH: 100%
+}
+#footer {
+	POSITION: relative; LINE-HEIGHT: 20px; MARGIN: 5px auto 10px; WIDTH: 100%
+}
+*#content {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}

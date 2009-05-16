@@ -1,0 +1,174 @@
+.city_selector {
+	POSITION: relative
+}
+.city_selector DIV.trigger {
+	COLOR: #999
+}
+.city_selector .trigger A {
+	COLOR: #999
+}
+.city_selector .trigger A:hover {
+	BACKGROUND-COLOR: transparent; COLOR: #999
+}
+.city_selector .cities {
+	BORDER-BOTTOM: #999 1px solid; BORDER-LEFT: #999 1px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #fff; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: #999 1px solid; BORDER-RIGHT: #999 1px solid; PADDING-TOP: 5px
+}
+.city_selector .cities TD {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.city_selector .cities A {
+	TEXT-DECORATION: none
+}
+DIV.corner_links {
+	POSITION: absolute; LINE-HEIGHT: 16px; FONT-SIZE: 12px; TOP: 34px; RIGHT: 20px
+}
+DIV.corner_links STRONG {
+	FONT-WEIGHT: bold
+}
+DIV.corner_links SPAN {
+	MARGIN: 0px 8px
+}
+DIV.corner_links A.my {
+	MARGIN-LEFT: 18px
+}
+DIV.corner_links IMG {
+	POSITION: absolute; MARGIN-TOP: -2px
+}
+#header DIV.tabbar {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainmenu.bg02_1x35.gif) repeat-x; HEIGHT: 55px; PADDING-TOP: 0px
+}
+#header .tabbar DIV.tabs {
+	FLOAT: left; MARGIN-LEFT: 25px; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+#header .tabbar .tabs A {
+	TEXT-ALIGN: center; LINE-HEIGHT: 31px; WIDTH: 85px; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; HEIGHT: 31px; COLOR: #334f00; TEXT-DECORATION: none; PADDING-TOP: 4px
+}
+#header .tabbar .tabs SPAN {
+	WIDTH: 2px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainmenu.line_2x22.gif) no-repeat right 8px; FLOAT: left; HEIGHT: 33px
+}
+#header .tabbar .tabs A:hover {
+	BACKGROUND: url(http://pages.anjukestatic.com/img/head/nav_hover_85x35.gif) no-repeat
+}
+#header .tabbar .tabs A.actived {
+	BACKGROUND: url(http://pages.anjukestatic.com/img/head/nav_85x35.gif) no-repeat
+}
+#header .tabbar *.tabs A:visited {
+	COLOR: #334f00; TEXT-DECORATION: none
+}
+#header .tabbar DIV.search {
+	MARGIN: 7px 20px 0px 0px; FLOAT: right
+}
+#header .tabbar DIV.search INPUT {
+	MARGIN: 0px 0px 0px 5px; FONT-SIZE: 13px; VERTICAL-ALIGN: top
+}
+#header .tabbar DIV.search SELECT {
+	MARGIN: 0px 0px 0px 5px; FONT-SIZE: 13px
+}
+#header .tabbar DIV.splitter {
+	POSITION: relative; BACKGROUND: url(http://pages.anjukestatic.com/img/head/submenu.bg02_1x20.gif) repeat-x; HEIGHT: 20px; CLEAR: both
+}
+#header .tabbar .tabs .nw {
+	POSITION: absolute; WIDTH: 4px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainmenu.bg01_4x35.gif) no-repeat; HEIGHT: 35px; TOP: 0px; LEFT: 0px
+}
+#header .tabbar .tabs .ne {
+	POSITION: absolute; WIDTH: 4px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainmenu.bg03_4x35.gif) no-repeat; HEIGHT: 35px; TOP: 0px; RIGHT: 0px
+}
+#header .tabbar .splitter .se {
+	POSITION: absolute; WIDTH: 4px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/submenu.bg03_4x20.gif) no-repeat; HEIGHT: 20px; TOP: 0px; RIGHT: 0px
+}
+#header .tabbar .splitter .sw {
+	POSITION: absolute; WIDTH: 4px; BACKGROUND: url(http://pages.anjukestatic.com/img/head/submenu.bg01_4x20.gif) no-repeat; HEIGHT: 20px; TOP: 0px; LEFT: 0px
+}
+#header DIV.banner {
+	Z-INDEX: 1; POSITION: relative; HEIGHT: 75px
+}
+#header DIV.logo {
+	POSITION: absolute; TOP: 13px; LEFT: 45px
+}
+#header .logo A:hover {
+	BACKGROUND-COLOR: transparent
+}
+*#header DIV.city {
+	POSITION: absolute; LINE-HEIGHT: 20px; FONT-SIZE: 20px; TOP: 30px; FONT-WEIGHT: bold; LEFT: 183px
+}
+#header DIV.city_selector {
+	LINE-HEIGHT: 12px; DISPLAY: inline; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+#header DIV.city_selector DIV.trigger {
+	DISPLAY: inline
+}
+BODY {
+	MARGIN: 0px; FONT-FAMILY: Arial, Helvetica, "ËÎÌו", sans-serif; BACKGROUND: url(http://pages.anjukestatic.com/img/head/mainbg.gif) repeat-x; COLOR: #333; FONT-SIZE: 12px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+A:link {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #2b7ccd; TEXT-DECORATION: none
+}
+A:visited {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #2b7ccd; TEXT-DECORATION: none
+}
+A:hover {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #f60; TEXT-DECORATION: underline
+}
+A:active {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #2b7ccd; TEXT-DECORATION: none
+}
+IMG {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+#container {
+	POSITION: relative; MARGIN: auto; WIDTH: 970px
+}
+#header {
+	POSITION: relative; WIDTH: 100%
+}
+#footer {
+	POSITION: relative; LINE-HEIGHT: 20px; MARGIN: 5px auto 10px; WIDTH: 100%
+}
+#content {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.my_register_vermain {
+	MARGIN: 40px 10px 0px 15px; WIDTH: 800px; HEIGHT: 200px
+}
+.my_register_verleft {
+	FLOAT: left
+}
+.my_register_verok {
+	BACKGROUND-IMAGE: url(http://pages.anjukestatic.com/img/reg/jhok.boxmid_1x170.gif); PADDING-LEFT: 20px; WIDTH: 76px; FLOAT: left; HEIGHT: 130px; PADDING-TOP: 40px
+}
+.my_register_verword {
+	BACKGROUND-IMAGE: url(http://pages.anjukestatic.com/img/reg/jhok.boxmid_1x170.gif); PADDING-LEFT: 10px; WIDTH: 200px; FLOAT: left; HEIGHT: 110px; COLOR: #f60; FONT-SIZE: 30px; FONT-WEIGHT: bold; PADDING-TOP: 60px
+}
+.my_register_vermid {
+	BACKGROUND-IMAGE: url(http://pages.anjukestatic.com/img/reg/jhok.boxmid_1x170.gif); WIDTH: 340px; FLOAT: left; HEIGHT: 170px
+}
+.my_register_verwel {
+	FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 25px
+}
+*.my_register_verzhao {
+	FONT-SIZE: 14px; PADDING-TOP: 20px
+}
+.my_register_verbtn {
+	WIDTH: 250px; FLOAT: left; PADDING-TOP: 20px
+}
+.my_register_verbtnimg {
+	WIDTH: 125px; FLOAT: left
+}
+.my_register_verbtnword {
+	PADDING-LEFT: 5px; WIDTH: 120px; FLOAT: left; PADDING-TOP: 10px
+}
+.my_register_verline {
+	BACKGROUND-IMAGE: url(http://pages.anjukestatic.com/img/reg/jhok.boxmid_1x170.gif); PADDING-LEFT: 20px; WIDTH: 20px; PADDING-RIGHT: 60px; FLOAT: left; HEIGHT: 170px
+}
+.my_register_verline DIV {
+	MARGIN-TOP: 35px; FLOAT: left; HEIGHT: 100px; BORDER-RIGHT: #ccc 1px solid
+}
+.my_register_verright {
+	FLOAT: left
+}
+.my_register_vererr {
+	WIDTH: 300px; WORD-WRAP: break-word; HEIGHT: 100px; FONT-SIZE: 14px; PADDING-TOP: 40px
+}
