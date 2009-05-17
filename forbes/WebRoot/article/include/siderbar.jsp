@@ -24,7 +24,7 @@
 				listSideBarArticles("top_article", "click DESC");
 				listSideBarArticles("command_article", "iscommend DESC");
 				
-				$('#bbs_thread').load('TopCdbThreads.do');
+				$('#home_blog').load('TopUchomeBlog.do');
         	}
 		);
 		
@@ -107,8 +107,8 @@
 
 	<!--手机论坛开始-->
 	<DIV class=sidebox>
-		<H2><SPAN class=left>创业论坛</SPAN><A class="more right" target=_blank href="${UC_BBS_URL }">更多内容</A></H2>
-		<DIV class=con id="bbs_thread"><IFRAME height=120 src="" frameBorder=0 width=260 scrolling=no></IFRAME></DIV>
+		<H2><SPAN class=left>创业圈日志</SPAN><A class="more right" target=_blank href="${UC_HOME_URL }">更多内容</A></H2>
+		<DIV class=con id="home_blog"><IFRAME height=120 src="" frameBorder=0 width=260 scrolling=no></IFRAME></DIV>
 	</DIV>
 	<!--手机论坛结束-->
 	
