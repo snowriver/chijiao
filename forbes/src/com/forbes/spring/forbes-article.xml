@@ -191,4 +191,24 @@
 			<ref bean="ucbbsManagerService" />
 		</property>
 	</bean>
+	<bean name="/article/TopUchomeBlog" class="com.forbes.struts.action.article.TopUchomeBlogAction" singleton="false">
+		<property name="uchomeManager">
+			<ref bean="uchomeManagerService" />
+		</property>
+	</bean>
+	<bean name="/article/NewIndex" class="com.forbes.struts.action.article.IndexNewAction" singleton="false">
+		<property name="uchomeManager">
+			<ref bean="uchomeManagerService" />
+		</property>
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+		<property name="newsManager">
+			<ref bean="newsManagerService" />
+		</property>
+	</bean>
+	
 </beans>
