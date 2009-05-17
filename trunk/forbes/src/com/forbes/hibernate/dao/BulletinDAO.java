@@ -69,7 +69,7 @@ public class BulletinDAO extends BaseBulletinDAO {
 		try {
 			String queryString = "SELECT DISTINCT model FROM Bulletin AS model "
 					+ "ORDER BY model." + orderby;
-			System.out.println("queryString = " + queryString);
+			//System.out.println("queryString = " + queryString);
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setFirstResult(beg);
 			query.setMaxResults(len);
