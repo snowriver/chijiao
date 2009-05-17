@@ -187,6 +187,20 @@
       <forward name="ok" path="/article/top_ten_bbs_thread.jsp" />
     </action>
     
+    <action
+      path="/article/TopUchomeBlog"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/top_ten_home_blog.jsp" />
+    </action>
+    
+    <action
+      path="/article/NewIndex"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/new_index.jsp" />
+    </action>
+    
 	</action-mappings>
 	
 </struts-config>
