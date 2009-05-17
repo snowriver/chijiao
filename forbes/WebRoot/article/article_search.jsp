@@ -96,13 +96,9 @@
 					<A class="thumb offsite ct-lifestyle" href="#"><IMG alt="" src="${UC_CENTER_URL }/avatar.php?uid=${article.user.uid}&size=small&type=virtual" width=48 height=48></A>
 					<DIV class=news-body>
 				        <H3><A class="offsite ct-lifestyle" target="_blank" href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A> </H3>
-				        				        
-				        <c:if test="${not empty article.description}">
+				       
 				        	<P>${fn:substring(article.description, 0, 145)}...</P>
-				        </c:if>
-				        <c:if test="${empty article.description}">
-				        	<P>${fn:substring(article.content, 0, 145)}...</P>
-				        </c:if>
+				       
 				        
 				        <DIV class=news-details>
 				        	<A class="tool comments" href="#"><IMG alt="" src="images/sort_icon.gif" alt="分类">分类</A> 
