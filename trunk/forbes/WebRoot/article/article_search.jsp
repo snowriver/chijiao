@@ -97,7 +97,13 @@
 					<DIV class=news-body>
 				        <H3><A class="offsite ct-lifestyle" target="_blank" href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A> </H3>
 				        				        
-				        <P>${fn:substring(article.description, 0, 145)}...</P>
+				        <c:if test="${not empty article.description}">
+				        	<P>${fn:substring(article.description, 0, 145)}...</P>
+				        </c:if>
+				        <c:if test="${empty article.description}">
+				        	<P>${fn:substring(article.content, 0, 145)}...</P>
+				        </c:if>
+				        
 				        <DIV class=news-details>
 				        	<A class="tool comments" href="#"><IMG alt="" src="images/sort_icon.gif" alt="分类">分类</A> 
 				            <A class="tool comments" href="ArticleContentSearch.do?act=list&id=${article.id }" target="_blank"><IMG alt="" src="images/comment_icon.gif" alt="评论">评论(${article.contentCnt })</A> 
