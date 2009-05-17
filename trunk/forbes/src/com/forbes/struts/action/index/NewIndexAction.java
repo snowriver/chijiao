@@ -78,7 +78,7 @@ public class NewIndexAction extends Action {
 			request.setAttribute( "ARTICLE_17_LIST", articleListManager.getTopArticleByArticleType("17", "pubdate DESC", 0, 10));
 			request.setAttribute( "ARTICLE_10_LIST", articleListManager.getTopArticleByArticleType("10", "pubdate DESC", 0, 10));
 			request.setAttribute( "ARTICLE_42_LIST", articleListManager.getTopArticleByArticleType("42", "pubdate DESC", 0, 10));
-			request.setAttribute( "ARTICLE_43_LIST", articleListManager.getTopArticleByArticleType("43", "pubdate DESC", 0, 10));
+			request.setAttribute( "ARTICLE_49_LIST", articleListManager.getTopArticleByArticleType("49", "pubdate DESC", 0, 10));
 			request.setAttribute( "ARTICLE_35_LIST", articleListManager.getTopArticleByArticleType("35", "pubdate DESC", 0, 10));
 			request.setAttribute( "ARTICLE_16_LIST", articleListManager.getTopArticleByArticleType("16", "pubdate DESC", 0, 10));
 			
