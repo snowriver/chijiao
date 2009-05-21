@@ -485,6 +485,7 @@
 			<SPAN><A class="f14 b c_black" target=_blank href="VideoSearch.do?act=search&typeid=1">创业成功学</A></SPAN> 
 			<DIV class=bb>
 				<UL>
+					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=27">&nbsp;励志剧场&nbsp;</A>
 					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=2">&nbsp;励志创业&nbsp;</A>
   					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=3">&nbsp;演讲口才&nbsp;</A>
   					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=21">&nbsp;人际沟通&nbsp;</A>
