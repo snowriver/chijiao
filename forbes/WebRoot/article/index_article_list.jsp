@@ -296,7 +296,7 @@
 
 
 <DIV class=theme>
-<H2><SPAN class=left>最新注册</SPAN><A class="more right" target=_blank href="http://localhost/uc/home/network.php?ac=space">+更多</A></H2>
+<H2><SPAN class=left>最新注册</SPAN><A class="more right" target=_blank href="${UC_HOME_URL }/network.php?ac=space">+更多</A></H2>
 <DIV class=con>
 
 	<DIV id="new_register"> <img src="images/loading.gif" /> </DIV>
