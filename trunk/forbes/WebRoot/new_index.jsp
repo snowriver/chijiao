@@ -113,21 +113,21 @@
 		<div class="blank5 whiteBg"></div><div class="blank5 whiteBg"></div>
 		<h2 class="h2BgB"><img src="images/pic04.gif" width="161" height="21" alt="" /></h2>
 		<div class="pt">
-		<div class="pic"><a href="${UC_HOME_URL }" target="_blank"><img src="images/index/log01.jpg" width="100" height="120" alt="创业圈子" /></a></div>
-			<p>
-				在这里，您可以用一句话记录创业中的点点滴滴，方便快捷地发布日志、上传图片，与好友们一起分享创业信息、讨论感兴趣的创业话题...
-			</p>
-		</div>
-		<div style="width:100%;margin:13px;" align="center">
-			<c:forEach items="${USER_LIST}" var="user">
-			<div style="float:left;margin:10px;">
-				<a href="${UC_HOME_URL }/space.php?uid=${user.uid }" target="_blank">
-					<img src="${UC_CENTER_URL }/avatar.php?uid=${user.uid }&size=middle&type=virtual" border="0" height="64" width="64">
-				</a><BR>
-				<span><a href="${UC_HOME_URL }/space.php?uid=${user.uid }" target="_blank">${user.username }</a></span>						  	
+				<div class="pic"><a href="${UC_HOME_URL }" target="_blank"><img src="images/index/log01.jpg" width="100" height="120" alt="创业圈子" /></a></div>
+				<p>
+					在这里，您可以用一句话记录创业中的点点滴滴，方便快捷地发布日志、上传图片，与好友们一起分享创业信息、讨论感兴趣的创业话题...
+				</p><BR><BR><BR>
+				<div></div>
+				<c:forEach items="${USER_LIST}" var="user">
+				<div style="float:left;margin:8px;">
+					<a href="${UC_HOME_URL }/space.php?uid=${user.uid }" target="_blank">
+						<img src="${UC_CENTER_URL }/avatar.php?uid=${user.uid }&size=middle&type=virtual" border="0" height="64" width="64">
+					</a><BR>
+					<span><a href="${UC_HOME_URL }/space.php?uid=${user.uid }" target="_blank">${user.username }</a></span>						  	
+				</div>
+				</c:forEach>
 			</div>
-			</c:forEach>
-		</div>
+		
 	</div>
 	<div class="line"></div>
 </div>
