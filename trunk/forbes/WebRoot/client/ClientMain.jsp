@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ include file="include/gloable.jsp"%>
 <%
@@ -15,7 +15,7 @@
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>我的管理后台</TITLE>
-<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META content="text/html; charset=gbk" http-equiv=Content-Type>
 <META name=keywords content="">
 <META name=description content=" ">
 
@@ -69,6 +69,8 @@
   		</DIV>
   	</DIV>
   	
+  	<!-- 
+  	
   	<DIV id=user_up class=data_opt_title>
 		<UL>
   			<LI><A id=myupload_btn class=curmenu onclick="aj_settab('myupload', 'tab_my', event);">我上传的视频</A> </LI>
@@ -101,7 +103,7 @@
 			<!--searchzone start--></DIV>
 			<DIV class=clear></DIV>
 			<!--searchzone end-->
-
+	 -->
 
 <!--footer start-->
 <%@ include file="include/Footer.jsp"%>

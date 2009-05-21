@@ -38,7 +38,7 @@
 	<DIV class="side_navbox <c:if test="${p == 'client_manage_msg' || p == 'client_send_msg' }">side_navbox_on</c:if>">
 		<H3>短消息中心</H3>
 		<UL>
-			<LI <c:if test="${p == 'client_manage_msg' }">class="li_page_on"</c:if>><A href="${UC_BBS_URL }/pm.php" target="_blank">消息管理</A> 
+			<LI <c:if test="${p == 'client_manage_msg' }">class="li_page_on"</c:if>><A href="${UC_HOME_URL }/space.php?do=pm" target="_blank">消息管理</A> 
 		</UL>
 	</DIV>
 	
