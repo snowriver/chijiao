@@ -44,9 +44,10 @@ public class AdminTohtmlAction extends Action {
 			
 			String serviceID = serviceIDs[i];
 			//Éú³É¾²Ì¬Ò³Ãæ
+			System.out.println("serviceID=" + Constant.FORBES_URL + "/" +serviceID);
 			try {
 				boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/" +serviceID,
-						request.getRealPath("/") + "index.htm");
+						request.getRealPath("/") + "index.html");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
