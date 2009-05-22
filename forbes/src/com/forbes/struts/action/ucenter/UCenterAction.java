@@ -17,6 +17,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.service.ucenter.AuthCode;
 import com.forbes.service.user.UserInfoManager;
 import com.forbes.service.useraction.UserActionTask;
@@ -63,13 +64,15 @@ public class UCenterAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 		try{
 			String code = request.getParameter("code");
+			System.out.println("----code:" + code );
+			
 			if ( code == null ){
 				return mapping.findForward("index");
 				
 			}
-			//System.out.println("----code:" + code );
+			System.out.println("----code:" + code );
 			String parseStr = AuthCode.authcodeDecode(code, key);
-			//System.out.println("-------------ucneter:" + parseStr);
+			System.out.println("-------------ucneter:" + parseStr);
 			String action = getParam(parseStr,"action");
 			
 			if( action.equals("test")){
@@ -86,9 +89,8 @@ public class UCenterAction extends Action {
 
 			}else if (action.equals("synlogin")) {
 				String uid = getParam(parseStr,"uid");
-				//UsrClient client = clientManager.getClientById( new Integer(uid) );
-				com.forbes.hibernate.bean.UcMembers client = userInfoManager.getUcMember(Integer.parseInt(uid));
-				//System.out.println("synlogin: user id = " + client.getUid());
+				UcMembers client = userInfoManager.getUcMember(Integer.parseInt(uid));
+				System.out.println("synlogin: user id = " + client.getUid());
 				login(client, request);
 				request.setAttribute("RS", API_RETURN_SUCCEED);
 			}else if (action.equals("synlogout")) {
