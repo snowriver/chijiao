@@ -7,8 +7,8 @@ import com.forbes.util.HttpInvoke;
 
 public class UCenterManager{
 	private String appId="3";
-	private String ucUrl="http://localhost/ucenter/index.php";
-	private String ucIp="127.0.0.1";
+	private String ucUrl="http://www.chijiao.org/ucenter/index.php";
+	private String ucIp="116.11.32.120";
 	private String key="123456";//pwd
 	private boolean disable = false;
 	private HttpInvoke httpInvoke = new HttpInvoke();
@@ -132,7 +132,7 @@ public class UCenterManager{
 	public void setKey(String key) {
 		this.key = key;
 	}
-	public static void main( String args [] ){
+	//public static void main( String args [] ){
 		//UCenterManager um = new UCenterManager();
 		/*User client = new User();
 		client.setId(new Integer(11));
@@ -144,5 +144,5 @@ public class UCenterManager{
 		//um.login("admin", "admin");
 		
 		//um.synlogin("1");
-	}
+	//}
 }

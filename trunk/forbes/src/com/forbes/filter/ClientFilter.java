@@ -84,7 +84,7 @@ public class ClientFilter extends HttpServlet implements Filter {
 		        	filterChain.doFilter(request, response);
 		        }
 	        }else{
-	        	if( url.indexOf(".php") > 0 ){
+	        	if( url.indexOf(".sync") > 0 ){
 	        		filterConfig.getServletContext().getRequestDispatcher(
 	                "/uc/ucenter.do").forward(request, response);
 	        	}else{
