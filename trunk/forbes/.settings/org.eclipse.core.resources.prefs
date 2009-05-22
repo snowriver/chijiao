@@ -1,8 +1,11 @@
-#Sun Apr 05 23:19:25 CST 2009
+#Fri May 22 11:23:01 CST 2009
 eclipse.preferences.version=1
 encoding//WebRoot/admin/edit-grid2.js=UTF-8
+encoding//WebRoot/article/js/foot.js=GBK
+encoding//WebRoot/ask/js/foot.js=GBK
 encoding//WebRoot/js/common.js=UTF-8
 encoding//WebRoot/js/jqtool.js=UTF-8
 encoding//WebRoot/js/script_city.js=GBK
+encoding//WebRoot/video/js/zt_foot.js=GBK
 encoding/<project>=GBK
 encoding/WebRoot=GBK
