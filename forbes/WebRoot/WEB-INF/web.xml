@@ -126,7 +126,7 @@
 	</filter-mapping>
 	<filter-mapping>
 		<filter-name>clientFilter</filter-name>
-		<url-pattern>*.php</url-pattern>
+		<url-pattern>*.sync</url-pattern>
 	</filter-mapping>
 	
 	<!--  改写URL的Web过滤器 	-->
