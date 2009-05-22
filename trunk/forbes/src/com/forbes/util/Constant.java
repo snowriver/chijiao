@@ -12,5 +12,5 @@ public interface Constant {
 	public int ASK_USER_CLIENT     = 2;  //CLIENT
 	
 	public String UC_URL	 = "http://localhost/";
-	public String FORBES_URL = "http://211.99.5.192:8080";
+	public String FORBES_URL = "http://localhost:8080/forbes";
 }

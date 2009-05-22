@@ -157,21 +157,21 @@
 
 				
 				<tr align='center' bgcolor="#FFFFFF"  onmousemove="javascript:this.bgColor='#EFEFEF';" onmouseout="javascript:this.bgColor='#FFFFFF';" height="22" oncontextmenu="ShowMenu(this,3,'%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB')">
-					<td><input name="serviceID" type="checkbox" id="serviceID" value="index.jsp" /></td>
+					<td><input name="serviceID" type="checkbox" id="serviceID" value="NewIndex.do" /></td>
 					<td>赤脚网主页</td>
 					<td></td>
 					<td></td>
 				</tr>
 				
 				<tr align='center' bgcolor="#FFFFFF"  onmousemove="javascript:this.bgColor='#EFEFEF';" onmouseout="javascript:this.bgColor='#FFFFFF';" height="22" oncontextmenu="ShowMenu(this,3,'%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB')">
-					<td><input name="serviceID" type="checkbox" id="serviceID" value="article/index.jsp" /></td>
+					<td><input name="serviceID" type="checkbox" id="serviceID" value="article/NewIndex.do" /></td>
 					<td>创业大学主页</td>
 					<td></td>
 					<td></td>
 				</tr>
 
 				<tr align='center' bgcolor="#FFFFFF"  onmousemove="javascript:this.bgColor='#EFEFEF';" onmouseout="javascript:this.bgColor='#FFFFFF';" height="22" oncontextmenu="ShowMenu(this,3,'%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB')">
-					<td><input name="serviceID" type="checkbox" id="serviceID" value="video/index.jsp" /></td>
+					<td><input name="serviceID" type="checkbox" id="serviceID" value="video/NewIndex.do" /></td>
 					<td>学习视频主页</td>
 					<td></td>
 					<td></td>
