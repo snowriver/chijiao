@@ -16,7 +16,7 @@
 </tr>
 <tr>
 <td align="center" height="25">
-客服QQ：746167 客服邮箱：<a href="mailto:xushaomin@foxmail.com" target=_blank>xushaomin@foxmail.com</a>
+客服QQ：746167 客服邮箱：<a href="mailto:xushaomin@vip.qq.com" target=_blank>xushaomin#vip.qq.com</a> <a target="_blank" href="http://www.miibeian.gov.cn">浙ICP备09043797号</a>
 </td>
 </tr>
 </table>
