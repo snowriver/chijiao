@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=utf-8"%>
+<%@ page contentType="text/html;charset=gbk"%>
 <%@ page import="java.io.*,java.awt.Image,java.awt.image.*,com.sun.image.codec.jpeg.*,com.jspsmart.upload.*,java.util.*,java.text.SimpleDateFormat,java.util.Date"%>
 
 <%
@@ -10,27 +10,27 @@
 	
 	long file_size_max = 3000000;
 	String ext = "";
-	//String url = path;  //æ‡‰ä¿è¯åœ¨æ ¹ç›®éŒ„ä¸­æœ‰æ­¤ç›®éŒ„çš„å­˜åœ¨
+	//String url = path;  //‘ª±£Ö¤ÔÚ¸ùÄ¿ä›ÖĞÓĞ´ËÄ¿ä›µÄ´æÔÚ
 	
-	//åˆå§‹åŒ–
+	//³õÊ¼»¯
 	mySmartUpload.initialize(pageContext);
 	
-	String FileListType = "JPG,JPg,JpG,Jpg,jPG,jPg,jpG,jpg,";//åªå…è¨±ä¸Šè½½æ­¤ç±»æ–‡ä»¶,å¯è‡ªè¡Œæ›´æ”¹
-	FileListType 		= FileListType + "GIF,GIf,GiF,Gif,gIF,GiF,giF,gif,";//åªå…è¨±ä¸Šè½½æ­¤ç±»æ–‡ä»¶,å¯è‡ªè¡Œæ›´æ”¹
-	FileListType 		= FileListType + "PNG,PNg,PnG,Png,pNG,PnG,pnG,png,";//åªå…è¨±ä¸Šè½½æ­¤ç±»æ–‡ä»¶,å¯è‡ªè¡Œæ›´æ”¹
-	FileListType 		= FileListType + "JPEG,JPEg,JPeG,JPeg,JpEG,JpEg,JpeG,Jpeg,";//åªå…è¨±ä¸Šè½½æ­¤ç±»æ–‡ä»¶,å¯è‡ªè¡Œæ›´æ”¹
-	FileListType 		= FileListType + "jPEG,jPEg,JPeG,jPeg,jpEG,jpEg,jpeG,jpeg";//åªå…è¨±ä¸Šè½½æ­¤ç±»æ–‡ä»¶,å¯è‡ªè¡Œæ›´æ”¹
+	String FileListType = "JPG,JPg,JpG,Jpg,jPG,jPg,jpG,jpg,";//Ö»ÔÊÔSÉÏÔØ´ËÀàÎÄ¼ş,¿É×ÔĞĞ¸ü¸Ä
+	FileListType 		= FileListType + "GIF,GIf,GiF,Gif,gIF,GiF,giF,gif,";//Ö»ÔÊÔSÉÏÔØ´ËÀàÎÄ¼ş,¿É×ÔĞĞ¸ü¸Ä
+	FileListType 		= FileListType + "PNG,PNg,PnG,Png,pNG,PnG,pnG,png,";//Ö»ÔÊÔSÉÏÔØ´ËÀàÎÄ¼ş,¿É×ÔĞĞ¸ü¸Ä
+	FileListType 		= FileListType + "JPEG,JPEg,JPeG,JPeg,JpEG,JpEg,JpeG,Jpeg,";//Ö»ÔÊÔSÉÏÔØ´ËÀàÎÄ¼ş,¿É×ÔĞĞ¸ü¸Ä
+	FileListType 		= FileListType + "jPEG,jPEg,JPeG,jPeg,jpEG,jpEg,jpeG,jpeg";//Ö»ÔÊÔSÉÏÔØ´ËÀàÎÄ¼ş,¿É×ÔĞĞ¸ü¸Ä
 		
-	//åªå…è¨±ä¸Šè½½æ­¤ç±»æ–‡ä»¶
+	//Ö»ÔÊÔSÉÏÔØ´ËÀàÎÄ¼ş
 	try {
 		mySmartUpload.setAllowedFilesList(FileListType);
-		//ä¸Šè½½æ–‡ä»¶
+		//ÉÏÔØÎÄ¼ş
 		mySmartUpload.upload();
 	} catch (Exception e) {
 		
 		
 			response.getWriter().write("<SCRIPT language=javascript>");
-			response.getWriter().write("alert('åªå…è¨±ä¸Šå‚³jpgï¼Œgifï¼Œpngé¡å‹æ–‡ä»¶');");
+			response.getWriter().write("alert('Ö»ÔÊÔSÉÏ‚÷jpg£¬gif£¬pngîĞÍÎÄ¼ş');");
 			response.getWriter().write("history.back();");
 			response.getWriter().write("</script>");
 		
@@ -43,60 +43,60 @@
 			//String uploadPath = path;
 			if(!new java.io.File(uploadPath).isDirectory()) 
 				new java.io.File(uploadPath).mkdirs(); 
-			ext = myFile.getFileExt();      //å–å¾—å¾Œç¼€å
-   			int file_size=myFile.getSize();     //å–å¾—æ–‡ä»¶çš„å¤§å° 
+			ext = myFile.getFileExt();      //È¡µÃáá×ºÃû
+   			int file_size=myFile.getSize();     //È¡µÃÎÄ¼şµÄ´óĞ¡ 
    			String saveurl="";
    			if(file_size < file_size_max) {
-    				//æ›´æ”¹æ–‡ä»¶åï¼Œå–å¾—ç•¶å‰ä¸Šå‚³æ™‚é–“çš„æ¯«ç§’æ•¸å€¼
+    				//¸ü¸ÄÎÄ¼şÃû£¬È¡µÃ®”Ç°ÉÏ‚÷•régµÄºÁÃë”µÖµ
 			    	Calendar calendar = Calendar.getInstance();
 			    	String filename = String.valueOf(calendar.getTimeInMillis());
 			    	//saveurl = request.getRealPath("/") + url;
-			   		saveurl = uploadPath + filename+"_temp."+ext; //ä¿å­˜è·¯å¾„
+			   		saveurl = uploadPath + filename+"_temp."+ext; //±£´æÂ·¾¶
 			   		myFile.saveAs(saveurl,mySmartUpload.SAVE_PHYSICAL);
     			
-					//-----------------------ä¸Šå‚³å®Œæˆï¼Œé–‹å§‹ç”Ÿæˆç¼©ç•¥åœ–-------------------------    
-			    	java.io.File file_mini = new java.io.File(saveurl);        //è®€å…¥åˆšæ‰ä¸Šå‚³çš„æ–‡ä»¶
-			    	String newurl_mini = uploadPath + filename + "_mini."+ext;  //æ–°çš„ç¼©ç•¥åœ–ä¿å­˜åœ°å€
-			    	Image src = javax.imageio.ImageIO.read(file_mini);                     //æ„é€ Imageå°è±¡
+					//-----------------------ÉÏ‚÷Íê³É£¬é_Ê¼Éú³ÉËõÂÔˆD-------------------------    
+			    	java.io.File file_mini = new java.io.File(saveurl);        //×xÈë¸Õ²ÅÉÏ‚÷µÄÎÄ¼ş
+			    	String newurl_mini = uploadPath + filename + "_mini."+ext;  //ĞÂµÄËõÂÔˆD±£´æµØÖ·
+			    	Image src = javax.imageio.ImageIO.read(file_mini);                     //¹¹ÔìImageŒ¦Ïó
 			  		float tagsize_mini=160;
-			    	int old_w_mini=src.getWidth(null);                                     //å¾—åˆ°æºåœ–å®½
+			    	int old_w_mini=src.getWidth(null);                                     //µÃµ½Ô´ˆD¿í
 			    	int old_h_mini=src.getHeight(null);   
 			    	int new_w_mini=0;
-			    	int new_h_mini=0;                            //å¾—åˆ°æºåœ–é•·
+			    	int new_h_mini=0;                            //µÃµ½Ô´ˆDéL
 			    	//int tempsize_mini;
 			    	float tempdouble_mini; 
 			    	if (old_w_mini>old_h_mini) { tempdouble_mini = old_w_mini/tagsize_mini; }
 			    	else { tempdouble_mini=old_h_mini/tagsize_mini; }
 			    	new_w_mini=Math.round(old_w_mini/tempdouble_mini);
-			    	new_h_mini=Math.round(old_h_mini/tempdouble_mini);//è®¡ç®—æ–°åœ–é•·å®½
+			    	new_h_mini=Math.round(old_h_mini/tempdouble_mini);//¼ÆËãĞÂˆDéL¿í
 			    	
 			    	BufferedImage tag_mini = new BufferedImage(new_w_mini,new_h_mini,BufferedImage.TYPE_INT_RGB);
-			    	tag_mini.getGraphics().drawImage(src,0,0,new_w_mini,new_h_mini,null);       //ç»˜åˆ¶ç¼©å°å¾Œçš„åœ–
-			    	FileOutputStream newimage_mini=new FileOutputStream(newurl_mini);          //è¾“å‡ºåˆ°æ–‡ä»¶æµ
+			    	tag_mini.getGraphics().drawImage(src,0,0,new_w_mini,new_h_mini,null);       //»æÖÆËõĞ¡ááµÄˆD
+			    	FileOutputStream newimage_mini=new FileOutputStream(newurl_mini);          //Êä³öµ½ÎÄ¼şÁ÷
 			    	JPEGImageEncoder encoder_mini = JPEGCodec.createJPEGEncoder(newimage_mini);       
-			    	encoder_mini.encode(tag_mini);                                            //è¿‘JPEGç¼–ç¢¼
+			    	encoder_mini.encode(tag_mini);                                            //½üJPEG±à´a
 			    	newimage_mini.close();
 			   		
-			   		//-----------------------ä¸Šå‚³å®Œæˆï¼Œé–‹å§‹ç”Ÿ400*400çš„åœ–------------------------- 
-			   		//java.io.File file = new java.io.File(saveurl);        //è®€å…¥åˆšæ‰ä¸Šå‚³çš„æ–‡ä»¶
-			    	String newurl = uploadPath + filename + "."+ext;  //æ–°çš„ç¼©ç•¥åœ–ä¿å­˜åœ°å€
+			   		//-----------------------ÉÏ‚÷Íê³É£¬é_Ê¼Éú400*400µÄˆD------------------------- 
+			   		//java.io.File file = new java.io.File(saveurl);        //×xÈë¸Õ²ÅÉÏ‚÷µÄÎÄ¼ş
+			    	String newurl = uploadPath + filename + "."+ext;  //ĞÂµÄËõÂÔˆD±£´æµØÖ·
 			   		float tagsize=400;
-			    	int old_w=src.getWidth(null);                                     //å¾—åˆ°æºåœ–å®½
+			    	int old_w=src.getWidth(null);                                     //µÃµ½Ô´ˆD¿í
 			    	int old_h=src.getHeight(null);   
 			    	int new_w=0;
-			    	int new_h=0;                            //å¾—åˆ°æºåœ–é•·
+			    	int new_h=0;                            //µÃµ½Ô´ˆDéL
 			    	//int tempsize;
 			    	float tempdouble; 
 			    	if (old_w>old_h) { tempdouble = old_w/tagsize; }
 			    	else { tempdouble=old_h/tagsize; }
 			    	new_w=Math.round(old_w/tempdouble);
-			    	new_h=Math.round(old_h/tempdouble);//è®¡ç®—æ–°åœ–é•·å®½
+			    	new_h=Math.round(old_h/tempdouble);//¼ÆËãĞÂˆDéL¿í
 			    	
 			    	BufferedImage tag = new BufferedImage(new_w,new_h,BufferedImage.TYPE_INT_RGB);
-			    	tag.getGraphics().drawImage(src,0,0,new_w,new_h,null);       //ç»˜åˆ¶ç¼©å°å¾Œçš„åœ–
-			    	FileOutputStream newimage=new FileOutputStream(newurl);          //è¾“å‡ºåˆ°æ–‡ä»¶æµ
+			    	tag.getGraphics().drawImage(src,0,0,new_w,new_h,null);       //»æÖÆËõĞ¡ááµÄˆD
+			    	FileOutputStream newimage=new FileOutputStream(newurl);          //Êä³öµ½ÎÄ¼şÁ÷
 			    	JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(newimage);       
-			    	encoder.encode(tag);                                            //è¿‘JPEGç¼–ç¢¼
+			    	encoder.encode(tag);                                            //½üJPEG±à´a
 			    	newimage.close();
 			    	
 			    	java.io.File deleteFile = new java.io.File(saveurl);
@@ -107,20 +107,20 @@
 					
  				} else {
     				out.print("<SCRIPT language='javascript'>");
-    				out.print("alert('ä¸Šå‚³æ–‡ä»¶å¤§å°ä¸èƒ½è¶…è¿‡"+(file_size_max/1000)+"K');");
+    				out.print("alert('ÉÏ‚÷ÎÄ¼ş´óĞ¡²»ÄÜ³¬¹ı"+(file_size_max/1000)+"K');");
     				out.print("history.back();");
     				out.print("</SCRIPT>");
    				}
    				
    				out.print("<SCRIPT language='javascript'>");
-		    	out.print("alert('ä¸Šå‚³æˆåŠŸ');");
+		    	out.print("alert('ÉÏ‚÷³É¹¦');");
 		    	out.print("self.location='select_images.jsp'");
 		    	out.print("</SCRIPT>");
 		   			
 		} else {
 			
 			out.print("<SCRIPT language='javascript'>");
-		    out.print("alert('ä¸Šå‚³å¤±è´¥');");
+		    out.print("alert('ÉÏ‚÷Ê§°Ü');");
 		    out.print("history.back();");
 		    out.print("</SCRIPT>");
 		}

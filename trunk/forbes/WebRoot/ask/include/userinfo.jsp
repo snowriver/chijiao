@@ -1,40 +1,57 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page contentType="text/html; charset=gbk" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
+<script type="text/javascript">
+	
+	function show(obj, showFlag) {
+		if(showFlag == "Y") {
+			$("#"+obj).show();			
+		}
+		else {
+			$("#"+obj).hide();
+		}
+		return false;
+	}
+</script>
+			
 			<!--header start-->
 			<c:if test="${ not empty sessionScope.CLIENT }">
 			
 				<ul style="color:#FFFFFF;">
-				<li class="myname" style="background:none;"><a href="../client/ClientMain.jsp">${sessionScope.CLIENT.username}</a></li>
-				<li class="myspace"><h3><a href="./vspacecp.php?mid=1" onmouseover="hide($(\'myvspace\'), \'\');" >æˆ‘çš„</a></h3>
-				<div class="myspace_on myspece_on_l" style="display:none;" id="myvspace" onmouseover="hide($(\'myvspac), \'\');" onmouseout="hide($(\'myvspace\'), \'none\');">
-					<a href="./vspacecp.php?script=video&action=list">æˆ‘çš„è§†é¢‘</a>
-					<a href="./vspacecp.php?script=specials&action=list">æˆ‘çš„ä¸“è¾‘</a>
-					<a href="./vspacecp.php?script=favs&action=list">æˆ‘çš„æ”¶è—</a>
-					<a href="./vspacecp.php?script=subs&action=list">æˆ‘çš„è®¢é˜…</a>
-					<a href="./vspacecp.php?script=comments&action=list">æˆ‘çš„è¯„è®º</a>
-					<a href="./vspace.php?mid=1">æˆ‘çš„ç©ºé—´</a>
-				</div>
-				</li>
-				<li><a href="../client/ClientLogout.do?act=logout">é€€å‡º</a></li>
-				<li><a href="#" onclick="pmwin(\'open\')">çŸ­æ¶ˆæ¯</a></li>
+					<li class="myname" style="background:none;"><a href="../client/ClientMain.jsp">${sessionScope.CLIENT.username}</a></li>
+					<li class="myspace">
+						<h3><a href="../client/ClientMain.jsp" onmouseover="show('myvspace', 'Y');">ÎÒµÄ</a></h3>
+						<div class="myspace_on myspece_on_l" style="display:none;" id="myvspace"  onclick="show('myvspac', 'N');" onmouseover="show('myvspac', 'Y');"  onmouseout="show('myvspac', 'N');">
+							<a href="../client/ClientManageArticle.do?act=list">ÎÒµÄÎÄÕÂ</a>
+							<a href="../client/ClientManageAsk.do?act=all&status=0_1">ÎÒµÄÌáÎÊ</a>
+							<a href="../client/ClientManageArticleFavorite.do?act=list">ÎÒµÄÊÕ²Ø</a>
+							<a href="${UC_HOME_URL }/space.php?uid=${sessionScope.CLIENT.uid } " target="_blank">ÎÒµÄ¿Õ¼ä</a>
+							<a href="#">ÎÒµÄÆÀÂÛ</a>
+							<a href="javascript:void(0);" onclick="show('myvspace', 'N');">¹Ø±Õ</a>
+						</div>
+					</li>
+					<li><a href="../client/ClientLogout.do?act=logout">ÍË³ö</a></li>
+					<li><a href="javascript:void(0);" onclick="openDIV('¶ÌÏûÏ¢ÖÐÐÄ','../client/ClientListNewsFeeds.do?act=in&go=open','800','500');">¶ÌÏûÏ¢</a></li>
 				
-				<li class="myspace">
-				<h3><a href="#" onmouseover="hide($(\'applist\'), \'\');hide($(\'showiframe\'), \'\');">åº”ç”¨å¯¼èˆª</a></h3>
-				<iframe class="myspace_on_iframebg" name="showiframe" id="showiframe" style="display:none;" frameborder="0" scrolling="no"></iframe>
-				<div class="myspace_on myspece_on_r"  style="display:none;" id="applist" onmouseover="hide($(\'applist\'), \'\');hide($(\'showiframe\'), \'\');"  onmouseout="hide($(\'applist\'), \'none\'); hide($(\'showiframe\'), \'none\');"><a href="http://localhost/upload/home" title="ï¿½ï¿½ï¿½Ë¿Õ¼ï¿½" target="_blank">ï¿½ï¿½ï¿½Ë¿Õ¼ï¿½</a><a href="http://localhost/upload/bbs" title="Discuz! Board" target="_blank">Discuz! Board</a></div>
-				</li>
-				<li><a href="./help.php">å¸®åŠ©</a></li>
+					<li class="myspace">
+						<h3><a href="javascript:void(0);" onmouseover="show('applist', 'Y');">Ó¦ÓÃµ¼º½</a></h3>
+				
+						<div class="myspace_on myspece_on_r"  style="display:none;" id="applist" onmouseover="show('applist', 'Y');"  onmouseout="show('applist', 'N');">
+							<a href="${UC_HOME_URL }/index.php" title="´´ÒµÈ¦×Ó" target="_blank">´´ÒµÈ¦×Ó</a>
+							<a href="${UC_BBS_URL }/index.php" title="´´ÒµÂÛÌ³" target="_blank">´´ÒµÂÛÌ³</a>
+						</div>
+					</li>
+					<li><a href="./help.php">°ïÖú</a></li>
 				</ul>
 
 			</c:if>
 			<c:if test="${ empty sessionScope.CLIENT }">
 			
 				<ul>					
-				<li style="background:none;"><a href="javascript:void(0);" id="loginx" onclick="openDIV('ç™»å½•','../client/ClientReLogin.jsp','500','350');">ç™»å½•</a></li>			
-				<li><a href="../client/ClientRegister.jsp">æ³¨å†Œ</a></li>				
-				<li><a href="./help.php">å¸®åŠ©</a></li>					
+					<li style="background:none;"><a href="javascript:void(0);" id="loginx" onclick="openDIV('µÇÂ¼','../client/ClientReLogin.jsp','500','350');">µÇÂ¼</a></li>			
+					<li><a href="../client/ClientRegister.jsp">×¢²á</a></li>				
+					<li><a href="./help.php">°ïÖú</a></li>					
 				</ul>
 		
 			</c:if>

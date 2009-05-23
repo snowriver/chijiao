@@ -1,8 +1,8 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 
 <%@ page contentType="image/jpeg"
  import="java.awt.*,java.awt.image.*,java.util.*,javax.imageio.*"%>
-<%!Color getRandColor(int fc, int bc) {//ç»™å®šèŒƒå›´èŽ·å¾—éšæœºé¢œè‰²
+<%!Color getRandColor(int fc, int bc) {//¸ø¶¨·¶Î§»ñµÃËæ»úÑÕÉ«
   Random random = new Random();
   if (fc > 255)
    fc = 255;
@@ -14,34 +14,34 @@
   return new Color(r, g, b);
  }%>
 <%
- //è®¾ç½®é¡µé¢ä¸ç¼“å­˜
+ //ÉèÖÃÒ³Ãæ²»»º´æ
  response.setHeader("Pragma", "No-cache");
  response.setHeader("Cache-Control", "no-cache");
  response.setDateHeader("Expires", 0);
 
- // åœ¨å†…å­˜ä¸­åˆ›å»ºå›¾è±¡
+ // ÔÚÄÚ´æÖÐ´´½¨Í¼Ïó
  int width = 60, height = 20;
  BufferedImage image = new BufferedImage(width, height,
    BufferedImage.TYPE_INT_RGB);
 
- // èŽ·å–å›¾å½¢ä¸Šä¸‹æ–‡
+ // »ñÈ¡Í¼ÐÎÉÏÏÂÎÄ
  Graphics g = image.getGraphics();
 
- //ç”Ÿæˆéšæœºç±»
+ //Éú³ÉËæ»úÀà
  Random random = new Random();
 
- // è®¾å®šèƒŒæ™¯è‰²
+ // Éè¶¨±³¾°É«
  g.setColor(getRandColor(200, 250));
  g.fillRect(0, 0, width, height);
 
- //è®¾å®šå­—ä½“
+ //Éè¶¨×ÖÌå
  g.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 
- //ç”»è¾¹æ¡†
+ //»­±ß¿ò
  //g.setColor(new Color());
  //g.drawRect(0,0,width-1,height-1);
 
- // éšæœºäº§ç”Ÿ155æ¡å¹²æ‰°çº¿ï¼Œä½¿å›¾è±¡ä¸­çš„è®¤è¯ç ä¸æ˜“è¢«å…¶å®ƒç¨‹åºæŽ¢æµ‹åˆ°
+ // Ëæ»ú²úÉú155Ìõ¸ÉÈÅÏß£¬Ê¹Í¼ÏóÖÐµÄÈÏÖ¤Âë²»Ò×±»ÆäËü³ÌÐòÌ½²âµ½
  g.setColor(getRandColor(160, 200));
  for (int i = 0; i < 155; i++) {
   int x = random.nextInt(width);
@@ -51,25 +51,25 @@
   g.drawLine(x, y, x + xl, y + yl);
  }
 
- // å–éšæœºäº§ç”Ÿçš„è®¤è¯ç (4ä½æ•°å­—)
+ // È¡Ëæ»ú²úÉúµÄÈÏÖ¤Âë(4Î»Êý×Ö)
  String sRand = "";
  for (int i = 0; i < 4; i++) {
   String rand = String.valueOf(random.nextInt(10));
   sRand += rand;
-  // å°†è®¤è¯ç æ˜¾ç¤ºåˆ°å›¾è±¡ä¸­
+  // ½«ÈÏÖ¤ÂëÏÔÊ¾µ½Í¼ÏóÖÐ
   g.setColor(new Color(20 + random.nextInt(110), 20 + random
   .nextInt(110), 20 + random.nextInt(110)));
-  //è°ƒç”¨å‡½æ•°å‡ºæ¥çš„é¢œè‰²ç›¸åŒï¼Œå¯èƒ½æ˜¯å› ä¸ºç§å­å¤ªæŽ¥è¿‘ï¼Œæ‰€ä»¥åªèƒ½ç›´æŽ¥ç”Ÿæˆ
+  //µ÷ÓÃº¯Êý³öÀ´µÄÑÕÉ«ÏàÍ¬£¬¿ÉÄÜÊÇÒòÎªÖÖ×ÓÌ«½Ó½ü£¬ËùÒÔÖ»ÄÜÖ±½ÓÉú³É
   g.drawString(rand, 13 * i + 6, 16);
  }
 
- // å°†è®¤è¯ç å­˜å…¥SESSION
+ // ½«ÈÏÖ¤Âë´æÈëSESSION
  session.setAttribute("VALIDATE_CODE", sRand);
 
- // å›¾è±¡ç”Ÿæ•ˆ
+ // Í¼ÏóÉúÐ§
  g.dispose();
 
- // è¾“å‡ºå›¾è±¡åˆ°é¡µé¢
+ // Êä³öÍ¼Ïóµ½Ò³Ãæ
  ImageIO.write(image, "JPEG", response.getOutputStream());
 %>
 

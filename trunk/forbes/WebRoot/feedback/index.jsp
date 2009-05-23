@@ -1,13 +1,13 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>BUGæäº¤é¡µ</title>
+<title>BUGÌá½»Ò³</title>
 <style type="text/css">
 <!--
-	*{ font:normal 12px "å®‹ä½“"; color:#fff; text-align:center; line-height:20px; padding:0; margin:0; }
+	*{ font:normal 12px "ËÎÌå"; color:#fff; text-align:center; line-height:20px; padding:0; margin:0; }
 	body{ background-image:url(images/bug_body_bg.gif); margin:20px; }
 	ul{ list-style-type:none; }
 	div{ float:left; }
@@ -22,10 +22,10 @@
 	.bug_input{ text-align:left; } .btn_div input{ margin:0 5px; }
 	.bug_con1{ width:430px; float:none; margin:0 auto; }
 		.bug_con1_l{ width:220px; }
-			.bug_con1_l li{ margin:4px 0; width:185px; height:74px; background-image:url(images/bug_con1_btnbg1.gif); font:bold 16px "å®‹ä½“"; line-height:74px; text-align:left; padding-left:20px; cursor:pointer; }
+			.bug_con1_l li{ margin:4px 0; width:185px; height:74px; background-image:url(images/bug_con1_btnbg1.gif); font:bold 16px "ËÎÌå"; line-height:74px; text-align:left; padding-left:20px; cursor:pointer; }
 		.bug_con1_r img{ margin-top:20px; }
 	.bug_con2{ width:453px; float:none; margin:0 auto; }
-		.bug_con2 h1{ width:100%; background-image:url(images/bug_con2_top.gif); height:133px; overflow:hidden; font:bold 14px "å®‹ä½“"; color:#ff0; line-height:240px; }
+		.bug_con2 h1{ width:100%; background-image:url(images/bug_con2_top.gif); height:133px; overflow:hidden; font:bold 14px "ËÎÌå"; color:#ff0; line-height:240px; }
 		.bug_con2 h2{ text-align:left; padding-left:10px; color:#ff0; background:url(images/bug_icon1.gif) no-repeat left 4px; float:left; }
 		.bug_con2 h3{ float:left; margin-left:15px; }
 			.bug_con2 h3 span{ color:#ff0; }
@@ -38,23 +38,23 @@
 <script type="text/javascript">
 <!--
 	function Page(){
-		Page.ImgUrl = "images/"; //å›¾ç‰‡åœ°å€
-		//å›¾ç‰‡é¢„è¯»
+		Page.ImgUrl = "images/"; //Í¼Æ¬µØÖ·
+		//Í¼Æ¬Ô¤¶Á
 		Page.PreLoadPics = [
 			{ name:"", pic:Page.ImgUrl + "bug_con1_btnbg2.gif" },
 			{ name:"", pic:Page.ImgUrl + "bug_btn_bg2.gif" }
 		];
-		Page.BugPage = "http://chi-jiao/FAQ/Default.jsp"; //é—®é¢˜åé¦ˆé¡µåœ°å€
+		Page.BugPage = "http://chi-jiao/FAQ/Default.jsp"; //ÎÊÌâ·´À¡Ò³µØÖ·
 		Page.EmailExp = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
-		Page.radioPage = [ "èµ„æ–™å‡ºé”™", "é¡µé¢ä»£ç å‡ºé”™", "å›¾ç‰‡å‡ºé”™", "é“¾æ¥å‡ºé”™" ];
+		Page.radioPage = [ "×ÊÁÏ³ö´í", "Ò³Ãæ´úÂë³ö´í", "Í¼Æ¬³ö´í", "Á´½Ó³ö´í" ];
 	}Page();
-	//è®¾ç½®å¯¹è±¡åˆ‡æ¢æ•ˆæœ
+	//ÉèÖÃ¶ÔÏóÇĞ»»Ğ§¹û
 	Page.SetSwap = function(objArray, img, swapImg){
 		function mouseover(){ this.style.backgroundImage = "url(" + swapImg + ")"; }
 		function mouseout(){ this.style.backgroundImage = "url(" + img + ")"; }
 		for(var i = 0; i < objArray.length; i++){ objArray[i].onmouseover = mouseover;objArray[i].onmouseout = mouseout; }
 	}
-	//è®¾ç½®é¦–é¡µåˆ‡æ¢æŒ‰é’®
+	//ÉèÖÃÊ×Ò³ÇĞ»»°´Å¥
 	Page.SetTab = function(){
 		var form1 = $id("form1"), form2 = $id("form2"), con1 = $id("con1"), items = $id("index_tab").getElementsByTagName("li"), lis = $id("bug_radios").getElementsByTagName("label"), title = $id("bug_title"), inputs = $id("bug_radios").getElementsByTagName("input");
 		Page.SetSwap(items, Page.ImgUrl + "bug_con1_btnbg1.gif", Page.ImgUrl + "bug_con1_btnbg2.gif");
@@ -63,63 +63,63 @@
 		function inputclick(){ $id("qq").value = this.parentNode.getElementsByTagName("label")[0].innerText; }
 		for(var i = 0; i < lis.length; i++){ lis[i].onclick = mouseclick; inputs[i].onclick = inputclick; }
 		function form1Display(){ con1.style.display = "none"; form1.style.display = "block"; form2.style.display = "none"; }
-		items[0].onclick = function(){ title.innerText = "Â·æäº¤é¡µé¢é”™è¯¯Â·"; Page.SetRadioTxt(false); $id("name").value =  $id("tellnumber").value = "é¡µé¢é”™è¯¯æäº¤"; form1Display(); }
+		items[0].onclick = function(){ title.innerText = "¡¤Ìá½»Ò³Ãæ´íÎó¡¤"; Page.SetRadioTxt(false); $id("name").value =  $id("tellnumber").value = "Ò³Ãæ´íÎóÌá½»"; form1Display(); }
 		items[1].onclick = function(){ con1.style.display = "none"; form1.style.display = "none"; form2.style.display = "block"; }
 	 }
-	//è®¾ç½®å•é€‰å†…å®¹
+	//ÉèÖÃµ¥Ñ¡ÄÚÈİ
 	Page.SetRadioTxt = function(isMobile){
 		var items = $id("bug_radios").getElementsByTagName("label");
 		for(var i = 0; i < items.length; i++) items[i].innerHTML = (isMobile) ? Page.radioMobile[i] : Page.radioPage[i];
 	}
-	//è®¾ç½®æŒ‰é’®æ ·å¼
+	//ÉèÖÃ°´Å¥ÑùÊ½
 	Page.SetBtn = function(){ Page.SetSwap($cl("btn1", "input"), Page.ImgUrl + "bug_btn_bg1.gif", Page.ImgUrl + "bug_btn_bg2.gif"); }
-	//å›¾ç‰‡é¢„è¯»
+	//Í¼Æ¬Ô¤¶Á
 	Page.PreLoadPic = function(){
 		for(var i = 0; i < Page.PreLoadPics.length; i++ ) document.writeln("<div class=\"preloadPic\"><img src=\"" + Page.PreLoadPics[i].pic + "\" alt=\"" + Page.PreLoadPics[i].name + "\" title=\"" + Page.PreLoadPics[i].name + "\" \/><\/div>");
 	}
-	//éªŒè¯æ§ä»¶
+	//ÑéÖ¤¿Ø¼ş
 	Page.SetInputCheck = function(obj, checkType, inputName, express){
 		var str = "", isSelect = false;
 		switch(checkType){
-			case 1: if(obj.value.length < 1){ str = inputName + "å†…å®¹ä¸èƒ½ä¸ºç©ºï¼\n"; } break;
-			case 2: for(var i = 0; i < obj.length; i++) if(obj[i].checked){ isSelect = true; break; } str = (isSelect) ? "" : "è¯·é€‰æ‹©" + inputName + "\n"; break;
-			case 3: str = (obj.value.length > 0 && !express.test(obj.value)) ? "è¯·æ­£ç¡®è¾“å…¥" + inputName + "\n" : ""; break;
+			case 1: if(obj.value.length < 1){ str = inputName + "ÄÚÈİ²»ÄÜÎª¿Õ£¡\n"; } break;
+			case 2: for(var i = 0; i < obj.length; i++) if(obj[i].checked){ isSelect = true; break; } str = (isSelect) ? "" : "ÇëÑ¡Ôñ" + inputName + "\n"; break;
+			case 3: str = (obj.value.length > 0 && !express.test(obj.value)) ? "ÇëÕıÈ·ÊäÈë" + inputName + "\n" : ""; break;
 		}
 		if(str && !(obj.length)){ obj.focus(); }
 		 return str;
 	}
-	//åˆå§‹åŒ–é¡µé¢
+	//³õÊ¼»¯Ò³Ãæ
 	Page.Init = function(){ 
 		var temp = getUrl("errUrl");
-		var url = (temp != null) ? temp.replace('ï¼Ÿ','?').replace('ï¼†','&') : "";
+		var url = (temp != null) ? temp.replace('£¿','?').replace('£¦','&') : "";
 		var errNum = getUrl("errNum")
 		$id("url").value = url;
 		try{ document.getElementsByName("type")[parseInt(errNum) - 1].click(); } catch(e){ }
 	}
-	//è¡¨å•æ£€æµ‹
+	//±íµ¥¼ì²â
 	Page.FormCheck = function(){
 		$id("form1").onsubmit = function(){
-			var message = Page.SetInputCheck($id("url"), 1, "é”™è¯¯é¡µé¢åœ°å€") + Page.SetInputCheck(document.getElementsByName("type"), 2, "å‡ºé”™ç±»å‹") + Page.SetInputCheck($id("info"), 1, "å‡ºé”™å†…å®¹æè¿°") + Page.SetInputCheck($id("email"), 1, "E-mail") + Page.SetInputCheck($id("email"), 3, "E-mail", Page.EmailExp);if(message){ alert(message); return false; }
+			var message = Page.SetInputCheck($id("url"), 1, "´íÎóÒ³ÃæµØÖ·") + Page.SetInputCheck(document.getElementsByName("type"), 2, "³ö´íÀàĞÍ") + Page.SetInputCheck($id("info"), 1, "³ö´íÄÚÈİÃèÊö") + Page.SetInputCheck($id("email"), 1, "E-mail") + Page.SetInputCheck($id("email"), 3, "E-mail", Page.EmailExp);if(message){ alert(message); return false; }
 		}
 		$id("form2").onsubmit = function(){
-			var message = Page.SetInputCheck($id("idea"), 1, "å»ºè®®å†…å®¹æè¿°") + Page.SetInputCheck($id("iemail"), 1, "E-mail") + Page.SetInputCheck($id("iemail"), 3, "E-mail", Page.EmailExp);if(message){ alert(message); return false; }
+			var message = Page.SetInputCheck($id("idea"), 1, "½¨ÒéÄÚÈİÃèÊö") + Page.SetInputCheck($id("iemail"), 1, "E-mail") + Page.SetInputCheck($id("iemail"), 3, "E-mail", Page.EmailExp);if(message){ alert(message); return false; }
 		}
 	}
-	//è®¾ç½®é“¾æ¥å½¢å¼
+	//ÉèÖÃÁ´½ÓĞÎÊ½
 	Page.SetLinks = function() {
 		if (!document.getElementsByTagName) return;
 		var anchors = document.getElementsByTagName("a"); 
 		for(var i=0; i<anchors.length; i++){ var anchor = anchors[i]; if (anchor.getAttribute("href") && anchor.getAttribute("rel") == "external") anchor.target = "_blank"; }
 	}
-	//è·å–IDå¯¹è±¡
+	//»ñÈ¡ID¶ÔÏó
 	function $id(id){ return document.getElementById(id); }
-	//è·å–classå±æ€§å¯¹è±¡ï¼ˆæ ·å¼åï¼Œè¯¥æ ·å¼çš„å¯¹è±¡tagNameï¼Œçˆ¶å¯¹è±¡ï¼‰
+	//»ñÈ¡classÊôĞÔ¶ÔÏó£¨ÑùÊ½Ãû£¬¸ÃÑùÊ½µÄ¶ÔÏótagName£¬¸¸¶ÔÏó£©
 	var $cl = function(cl, objName, parentNodeObj) {
 		var retnode = [], myclass = new RegExp('\\b' + cl + '\\b'), elem = (parentNodeObj == null) ? document.getElementsByTagName(objName) : parentNodeObj.getElementsByTagName(objName);
 		for (var j = 0; j < elem.length; j++) { var classes = elem[j].className; if (myclass.test(classes)) retnode.push(elem[j]); }
 		return retnode;
 	}
-	//è·å–URLå‚æ•°
+	//»ñÈ¡URL²ÎÊı
 	function getUrl(name){
 		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
 		var r = window.location.search.substr(1).match(reg);
@@ -132,10 +132,10 @@
 	<script type="text/javascript">Page.PreLoadPic();</script>
 	<div class="bug_con1" id="con1">
 		<div class="bug_con1_l">
-			<img src="images/bug_con1_title.gif" alt="è¯·é€‰æ‹©é”™è¯¯ç±»å‹" title="è¯·é€‰æ‹©é”™è¯¯ç±»å‹" />
+			<img src="images/bug_con1_title.gif" alt="ÇëÑ¡Ôñ´íÎóÀàĞÍ" title="ÇëÑ¡Ôñ´íÎóÀàĞÍ" />
 			<ul id="index_tab">
-				<li>ç½‘é¡µé”™è¯¯åé¦ˆ</li>
-				<li>å»ºè®®å’Œæ„è§</li>
+				<li>ÍøÒ³´íÎó·´À¡</li>
+				<li>½¨ÒéºÍÒâ¼û</li>
 			</ul>
 		</div>
 		<div class="bug_con1_r"><img src="images/bug_con1_pic.gif" alt="" /></div>
@@ -143,42 +143,42 @@
 	<p class="cbr"></p>
 	<form action="SubmitFeedBack.do?act=error" method="post" id="form1" style="display:none">
 	<div class="bug_con2">
-		<h1 id="bug_title">Â·æäº¤é¡µé¢é”™è¯¯Â·</h1>
+		<h1 id="bug_title">¡¤Ìá½»Ò³Ãæ´íÎó¡¤</h1>
 		<div class="bug_con2_con">
 			<div class="lineDivM5">
-				<h2>é¡µé¢åœ°å€ï¼š</h2>
+				<h2>Ò³ÃæµØÖ·£º</h2>
 				<div class="bug_input"><input type="text" name="url" id="url" class="input1" style="width:320px;" /></div>
 			</div><br class="cbr" />
 			<div class="lineDivM2" style="margin-top:5px">
-				<h2 id="bug_title2">å‡ºé”™ç±»å‹ï¼š</h2>
+				<h2 id="bug_title2">³ö´íÀàĞÍ£º</h2>
 			</div><br class="cbr" />
 			<div class="lineDivM2" style="margin-bottom:5px">
 				<div class="bug_input" id="bug_radios">
-					<input type="radio" name="type" id="type1" value="1" /><label for="type1">èµ„æ–™å‡ºé”™</label>
-					<input type="radio" name="type" id="type2" value="2" /><label for="type2">é¡µé¢ä»£ç å‡ºé”™</label>
-					<input type="radio" name="type" id="type3" value="3" /><label for="type3">å›¾ç‰‡å‡ºé”™</label>
-					<input type="radio" name="type" id="type4" value="4" /><label for="type4">é“¾æ¥å‡ºé”™</label>					
+					<input type="radio" name="type" id="type1" value="1" /><label for="type1">×ÊÁÏ³ö´í</label>
+					<input type="radio" name="type" id="type2" value="2" /><label for="type2">Ò³Ãæ´úÂë³ö´í</label>
+					<input type="radio" name="type" id="type3" value="3" /><label for="type3">Í¼Æ¬³ö´í</label>
+					<input type="radio" name="type" id="type4" value="4" /><label for="type4">Á´½Ó³ö´í</label>					
 				</div>
 			</div><br class="cbr" />
 			<div class="lineDivM5">
-				<h2>å‡ºé”™å†…å®¹æè¿°ï¼š<span>ï¼ˆå¿…å¡«ï¼‰</span></h2>
+				<h2>³ö´íÄÚÈİÃèÊö£º<span>£¨±ØÌî£©</span></h2>
 			</div><br class="cbr" />
 			<div class="lineDivM5">
 				<textarea rows="1" cols="1" class="input1" style="width:380px; height:150px; padding:5px;" name="info" id="info"></textarea>
-				<input type="hidden" name="name" id="name" value="æ‰‹æœºé”™è¯¯æäº¤" />
-				<input type="hidden" name="tellnumber" id="tellnumber" value="æ‰‹æœºé”™è¯¯æäº¤" />
+				<input type="hidden" name="name" id="name" value="ÊÖ»ú´íÎóÌá½»" />
+				<input type="hidden" name="tellnumber" id="tellnumber" value="ÊÖ»ú´íÎóÌá½»" />
 				<input type="hidden" name="qq" id="qq" value="qq" /></div>
 			<div class="lineDivM5">
-				<h2>ç”¨æˆ·ä¿¡æ¯ï¼šï¼ˆå¸¦æœ‰ * ä¸ºå¿…å¡«é¡¹ï¼‰</h2>
+				<h2>ÓÃ»§ĞÅÏ¢£º£¨´øÓĞ * Îª±ØÌîÏî£©</h2>
 			</div><br class="cbr" />
 			<div class="lineDivM5">
-				<h3><span>*</span> E-Mailï¼š</h3>
+				<h3><span>*</span> E-Mail£º</h3>
 				<div class="bug_input"><input type="text" name="email" id="email" class="input1" style="width:300px;" /></div>
 				<br class="cbr" />
 			</div>
 			<div class="lineDivM5 btn_div">
-				<input type="button" class="btn1" value="è¿”å›é”™è¯¯ç±»å‹é€‰æ‹©" onclick="Page.SetTab.Return();" />
-				<input type="submit" class="btn1" value="ç¡®è®¤æäº¤é”™è¯¯" /></div>
+				<input type="button" class="btn1" value="·µ»Ø´íÎóÀàĞÍÑ¡Ôñ" onclick="Page.SetTab.Return();" />
+				<input type="submit" class="btn1" value="È·ÈÏÌá½»´íÎó" /></div>
 			<div class="ie8bm"><img src="images/bug_con2_bm1.gif" alt="" /></div>
 			<div class="bug_con2_con2"><a href="#" rel="external">
 				<img src="images/bug_bm_pic.gif" /></a></div>
@@ -189,23 +189,23 @@
 	<p class="cbr"></p>
 	<form action="SubmitFeedBack.do?act=feed" method="post" id="form2" style="display:none">
 	<div class="bug_con2">
-		<h1>Â·å»ºè®®å’Œæ„è§Â·</h1>
+		<h1>¡¤½¨ÒéºÍÒâ¼û¡¤</h1>
 		<div class="bug_con2_con">
-			<div class="lineDivM5" style="text-align:left;">ã€€ã€€æ¬¢è¿å¯¹æˆ‘ä»¬çš„ç«™ç‚¹å»ºè®¾æå‡ºæ‚¨çš„å®è´µæ„è§ï¼Œè¯·å°†æ‚¨çš„å»ºè®®æˆ–æ„è§å¡«å†™ä¸‹åœ¨ä¸‹é¢çš„æ–‡æœ¬æ¡†ä¸­ã€‚å¦‚æœæ‚¨çš„æ„è§æˆ–å»ºè®®è¢«é‡‡çº³ï¼Œè¿˜æœ‰æœºä¼šè·å¾—æˆ‘ä»¬é€å‡ºå¥–å“ã€‚</div>
+			<div class="lineDivM5" style="text-align:left;">¡¡¡¡»¶Ó­¶ÔÎÒÃÇµÄÕ¾µã½¨ÉèÌá³öÄúµÄ±¦¹óÒâ¼û£¬Çë½«ÄúµÄ½¨Òé»òÒâ¼ûÌîĞ´ÏÂÔÚÏÂÃæµÄÎÄ±¾¿òÖĞ¡£Èç¹ûÄúµÄÒâ¼û»ò½¨Òé±»²ÉÄÉ£¬»¹ÓĞ»ú»á»ñµÃÎÒÃÇËÍ³ö½±Æ·¡£</div>
 			<br class="cbr" />
 			<div class="lineDivM5">
-				<h2>å»ºè®®æè¿°å†…å®¹ï¼š<span>ï¼ˆå¿…å¡«ï¼‰</span></h2>
+				<h2>½¨ÒéÃèÊöÄÚÈİ£º<span>£¨±ØÌî£©</span></h2>
 			</div><br class="cbr" />
 			<div class="lineDivM5"><textarea rows="1" cols="1" class="input1" style="width:380px; height:150px; padding:5px;" name="idea" id="idea"></textarea></div>
 			<div class="lineDivM5">
-				<h2>ç”¨æˆ·ä¿¡æ¯ï¼šï¼ˆå¸¦æœ‰ * ä¸ºå¿…å¡«é¡¹ï¼‰</h2>
+				<h2>ÓÃ»§ĞÅÏ¢£º£¨´øÓĞ * Îª±ØÌîÏî£©</h2>
 			</div><br class="cbr" />
 			<div class="lineDivM5">
-				<h3><span>*</span> E-Mailï¼š</h3>
+				<h3><span>*</span> E-Mail£º</h3>
 				<div class="bug_input"><input type="text" name="iemail" id="iemail" class="input1" style="width:300px;" /></div>
 				<br class="cbr" />
 			</div>
-			<div class="lineDivM5 btn_div"><input type="button" class="btn1" value="è¿”å›é”™è¯¯ç±»å‹é€‰æ‹©" onclick="Page.SetTab.Return();" /><input type="submit" class="btn1" value="ç¡®è®¤æäº¤é”™è¯¯" /></div>
+			<div class="lineDivM5 btn_div"><input type="button" class="btn1" value="·µ»Ø´íÎóÀàĞÍÑ¡Ôñ" onclick="Page.SetTab.Return();" /><input type="submit" class="btn1" value="È·ÈÏÌá½»´íÎó" /></div>
 			<div class="ie8bm"><img src="images/bug_con2_bm1.gif" alt="" /></div>
 			<div class="bug_con2_con2"><a href="#" rel="external"><img src="images/bug_bm_pic.gif" /></a></div>
 			<div class="ie8bm"><img src="images/bug_con2_bm2.gif" alt="" /></div>

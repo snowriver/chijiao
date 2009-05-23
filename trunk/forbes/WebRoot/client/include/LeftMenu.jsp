@@ -1,50 +1,50 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 
 <DIV class=sidebar>
 	<DIV class="side_nav_title <c:if test="${p == 'client_main' }">side_nav_title_on</c:if>">
-		<H2><A target=_top href="ClientMain.jsp">ç®¡ç†ä¸­å¿ƒé¦–é¡µ</A></H2>
+		<H2><A target=_top href="ClientMain.jsp">¹ÜÀíÖĞĞÄÊ×Ò³</A></H2>
 	</DIV>
 	<DIV class="side_navbox <c:if test="${p == 'client_modify_info' }">side_navbox_on</c:if>">
-		<H3>åŸºæœ¬ä¿¡æ¯</H3>
-		<UL><LI <c:if test="${p == 'client_modify_info' }">class="li_page_on"</c:if>><A href="ClientModifyProfile.do?act=getdetail">ä¿®æ”¹åŸºæœ¬ä¿¡æ¯</A> </LI></UL>
+		<H3>»ù±¾ĞÅÏ¢</H3>
+		<UL><LI <c:if test="${p == 'client_modify_info' }">class="li_page_on"</c:if>><A href="ClientModifyProfile.do?act=getdetail">ĞŞ¸Ä»ù±¾ĞÅÏ¢</A> </LI></UL>
 	</DIV>
 	
 	<DIV class="side_navbox <c:if test="${p == 'client_manage_favorite' || p == 'client_publish_article' || p == 'client_manage_article' }">side_navbox_on</c:if>">
-		<H3>ç®¡ç†èµ„æ–™</H3>
+		<H3>¹ÜÀí×ÊÁÏ</H3>
 		<UL>
-			<LI <c:if test="${p == 'client_publish_article' }">class="li_page_on"</c:if>><A href="ClientPublishArticle.jsp">å‘å¸ƒæ–‡ç« </A> 
-			<LI <c:if test="${p == 'client_manage_article' }">class="li_page_on"</c:if>><A href="ClientManageArticle.do?act=list">æ–‡ç« ç®¡ç†</A> 
-			<LI <c:if test="${p == 'client_manage_favorite' }">class="li_page_on"</c:if>><A href="ClientManageArticleFavorite.do?act=list">æ”¶è—ç®¡ç†</A> 
-  			<LI><A href="#">è®¢é˜…ç®¡ç†</A> 
-  			<LI><A href="#">è¯„è®ºç®¡ç†</A> </LI>
+			<LI <c:if test="${p == 'client_publish_article' }">class="li_page_on"</c:if>><A href="ClientPublishArticle.jsp">·¢²¼ÎÄÕÂ</A> 
+			<LI <c:if test="${p == 'client_manage_article' }">class="li_page_on"</c:if>><A href="ClientManageArticle.do?act=list">ÎÄÕÂ¹ÜÀí</A> 
+			<LI <c:if test="${p == 'client_manage_favorite' }">class="li_page_on"</c:if>><A href="ClientManageArticleFavorite.do?act=list">ÊÕ²Ø¹ÜÀí</A> 
+  			<LI><A href="#">¶©ÔÄ¹ÜÀí</A> 
+  			<LI><A href="#">ÆÀÂÛ¹ÜÀí</A> </LI>
   		</UL>
   	</DIV>
   	
   	<DIV class="side_navbox <c:if test="${p == 'client_manage_friend' }">side_navbox_on</c:if>">
-		<H3>å¥½å‹ç®¡ç†</H3>
+		<H3>ºÃÓÑ¹ÜÀí</H3>
 		<UL>
-			<LI <c:if test="${p == 'client_manage_friend' }">class="li_page_on"</c:if>><A target="_blank" href="${UC_HOME_URL }/space.php?uid=${sessionScope.CLIENT.uid }&do=friend">å¥½å‹ç®¡ç†</A>
+			<LI <c:if test="${p == 'client_manage_friend' }">class="li_page_on"</c:if>><A target="_blank" href="${UC_HOME_URL }/space.php?uid=${sessionScope.CLIENT.uid }&do=friend">ºÃÓÑ¹ÜÀí</A>
 		</UL>
 	</DIV>
 	
 	<DIV class="side_navbox <c:if test="${p == 'client_manage_ask' || p == 'client_ask_question' }">side_navbox_on</c:if>">
-		<H3>æé—®ç®¡ç†</H3>
+		<H3>ÌáÎÊ¹ÜÀí</H3>
 		<UL>
-			<LI <c:if test="${p == 'client_manage_ask' }">class="li_page_on"</c:if>><A href="ClientManageAsk.do?act=all&status=0_1">æé—®ç®¡ç†</A> 
-			<LI <c:if test="${p == 'client_ask_question' }">class="li_page_on"</c:if>><A href="../ask/ask.jsp" target="_blank">å‘å¸ƒæé—®</A> </LI>
+			<LI <c:if test="${p == 'client_manage_ask' }">class="li_page_on"</c:if>><A href="ClientManageAsk.do?act=all&status=0_1">ÌáÎÊ¹ÜÀí</A> 
+			<LI <c:if test="${p == 'client_ask_question' }">class="li_page_on"</c:if>><A href="../ask/ask.jsp" target="_blank">·¢²¼ÌáÎÊ</A> </LI>
 		</UL>
 	</DIV>
 	
 	<DIV class="side_navbox <c:if test="${p == 'client_manage_msg' || p == 'client_send_msg' }">side_navbox_on</c:if>">
-		<H3>çŸ­æ¶ˆæ¯ä¸­å¿ƒ</H3>
+		<H3>¶ÌÏûÏ¢ÖĞĞÄ</H3>
 		<UL>
-			<LI <c:if test="${p == 'client_manage_msg' }">class="li_page_on"</c:if>><A href="${UC_HOME_URL }/space.php?do=pm" target="_blank">æ¶ˆæ¯ç®¡ç†</A> 
+			<LI <c:if test="${p == 'client_manage_msg' }">class="li_page_on"</c:if>><A href="${UC_HOME_URL }/space.php?do=pm" target="_blank">ÏûÏ¢¹ÜÀí</A> 
 		</UL>
 	</DIV>
 	
 	<DIV class=side_navbox>
-		<H3>å…¶å®ƒ</H3>
-		<UL><LI><A href="#">ç§¯åˆ†è§„åˆ™</A> </LI></UL>
+		<H3>ÆäËü</H3>
+		<UL><LI><A href="#">»ı·Ö¹æÔò</A> </LI></UL>
 	</DIV>
 
 </DIV>

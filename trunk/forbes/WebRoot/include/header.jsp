@@ -6,11 +6,11 @@
 <DIV id=header>
 	<DIV class=logo><A href="index.jsp"><IMG alt=赤脚网 src="images/logo.jpg" width=146 height=38></A> </DIV>
 	<DIV class=toolnav>
-		<A class=toolnav_on href="index.jsp">首页</A> 
-		<A href="article/index.jsp">创业大学</A> 
-		<A href="video/index.jsp">学习视频</A> 
+		<A class=toolnav_on href="http://www.chijiao.org">首页</A> 
+		<A href="article/">创业大学</A> 
+		<A href="video/">学习视频</A> 
 		<!-- <A href="#">项目挖贝</A> -->
-		<A href="ask/index.jsp">创业百问</A> 
+		<A href="ask/">创业百问</A> 
 		<A target="_blank" href="${UC_HOME_URL }/index.php">创业圈子</A> 
 		<!-- <A target="_blank" href="${UC_BBS_URL }/index.php">创业论坛</A>   -->
 	</DIV>

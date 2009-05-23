@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=gb2312' />
-<title>æ ç›®é€‰æ‹©</title>
+<title>À¸Ä¿Ñ¡Ôñ</title>
 
 <link type="text/css" rel="stylesheet" href="css/dtree.css" />
 <script language="javascript" src="admin/include/dedeajax2.js"></script>
@@ -26,7 +26,7 @@ function ReSel(tid){
 	}
 	else {
 		window.opener.document.all.${TYPEID}.value='';
-		window.opener.document.all.${SELBTN}.value="è¯·é€‰æ‹©";
+		window.opener.document.all.${SELBTN}.value="ÇëÑ¡Ôñ";
 	}
 	if(document.all) 
 		window.opener=true;
@@ -42,8 +42,8 @@ function ReSel(tid){
 <table width='98%' border='0' align='center' cellpadding='0' cellspacing='0'>
   <tr> 
     <td height='24' background='img/mtbg1.gif'  style='border-left: 1px solid #2FA1DB; border-right: 1px solid #2FA1DB;'>
-		ã€€<strong>âˆšè¯·åœ¨è¦é€‰æ‹©çš„æ ç›®æ‰“å‹¾</strong>
-	  <input type='checkbox' name='nsel' id='selid0' class='np' onclick="ReSel(0)" value="è¯·é€‰æ‹©" />ä¸é™æ ç›®
+		¡¡<strong>¡ÌÇëÔÚÒªÑ¡ÔñµÄÀ¸Ä¿´ò¹´</strong>
+	  <input type='checkbox' name='nsel' id='selid0' class='np' onclick="ReSel(0)" value="ÇëÑ¡Ôñ" />²»ÏŞÀ¸Ä¿
 	</td>
   </tr>
   <tr> 
@@ -52,7 +52,7 @@ function ReSel(tid){
   </tr>
   <tr align="center"> 
     <td height='24' background='img/mtbg1.gif'  style='border-left: 1px solid #2FA1DB; border-right: 1px solid #2FA1DB;'>
-		ã€€<input type="button" value="å…¨éƒ¨å±•å¼€" onclick="javascript: d.openAll();" /> | <input type="button" value="å…¨éƒ¨æ”¶ç¼©" onclick="javascript: d.closeAll();" />
+		¡¡<input type="button" value="È«²¿Õ¹¿ª" onclick="javascript: d.openAll();" /> | <input type="button" value="È«²¿ÊÕËõ" onclick="javascript: d.closeAll();" />
 	  
 	</td>
   </tr>
@@ -67,7 +67,7 @@ function ReSel(tid){
 					  d = new dTree('d');
 					  d.config.folderLinks = true;
 					  //id, pid, name, url, title, target, icon, iconOpen, open		
-					  d.add(0,-1,'ä»£ç†é»ç®¡ç†','','easydone','_self');
+					  d.add(0,-1,'´úÀíüc¹ÜÀí','','easydone','_self');
 					  <c:forEach items="${ARTICLE_TYPE_LIST}" var="atl" varStatus="is">
 						    d.add(${atl.id}, ${atl.pid},"<a href='javascript:void(0);' onclick='ReSel(${atl.id});'>  ${atl.name} </a><input type='checkbox' name='type' id='selid${atl.id}' value='${atl.name}' onclick='ReSel(${atl.id});' >", "#", "${atl.name}", "_self");
 					  </c:forEach>

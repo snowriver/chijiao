@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=utf-8"%>
+<%@ page contentType="text/html;charset=gbk"%>
 <%@ page import="java.io.*,java.util.*" %>
 
 <%
@@ -34,7 +34,7 @@
 			//}
 			//else {
 				//window.opener.document.all.typeid.value='';
-				//window.opener.document.all.selbtn.value="è¯·é€‰æ‹©";
+				//window.opener.document.all.selbtn.value="ÇëÑ¡Ôñ";
 			//}
 			if(document.all) 
 				window.opener=true;
@@ -61,13 +61,13 @@
 	StringBuffer sbFile = new StringBuffer("");
 	
 	try {
- 		out.println("<table border=1 width='100%' bgcolor='#E1ECC8'><tr><td width='30%'>å½“å‰ç›®å½•ï¼š <b>"+strDir+"</b> </td></tr></table><br>\r\n");
+ 		out.println("<table border=1 width='100%' bgcolor='#E1ECC8'><tr><td width='30%'>µ±Ç°Ä¿Â¼£º <b>"+strDir+"</b> </td></tr></table><br>\r\n");
  		File objFile = new File(strDir);
  		File list[]  = objFile.listFiles();
  		fileCnt      = list.length;
  		if(objFile.getAbsolutePath().length()>3) {
   			sb.append("<tr><td >&nbsp;</td><td align='left'><img src='../images/dir2.gif' /><a href='?path="+objFile.getParentFile().getAbsolutePath()+"'>");
-  			sb.append("ä¸Šçº§ç›®å½•</a><br>- - - - - - - - - - - - - - - - -</td></tr>\r\n");
+  			sb.append("ÉÏ¼¶Ä¿Â¼</a><br>- - - - - - - - - - - - - - - - -</td></tr>\r\n");
  		}
  		for(int i=0; i<list.length; i++) {
   			if(list[i].isDirectory()) {
@@ -82,7 +82,7 @@
   				//int index = list[i].getAbsolutePath().indexOf(cp);
   				System.out.println(list[i].getAbsolutePath().substring(list[i].getAbsolutePath().indexOf(cp)+7));
   				String url = "'" + list[i].getAbsolutePath().substring(list[i].getAbsolutePath().indexOf(cp)+7) + "'";
-  				url = url.replace("\\", "/"); //å»æ‰å¼•å·
+  				url = url.replace("\\", "/"); //È¥µôÒıºÅ
   				
 				String strLen = "";
    				String strDT = "";
@@ -108,14 +108,14 @@
 			   	sbFile.append("</td><td>");
 			   	sbFile.append(""+strDT);
 			   	sbFile.append("</td><td align='center'>");
-			   	sbFile.append(" <a href='javascript:void(0);' onclick=ReSel(" + url + ")>é€‰æ‹©</a> ");
+			   	sbFile.append(" <a href='javascript:void(0);' onclick=ReSel(" + url + ")>Ñ¡Ôñ</a> ");
 			   	sbFile.append("</td></tr>\r\n");
 		      	//sbFile.append("</td></tr></table>");
 			}
 		}
 		//out.println(sb.toString()+sbFile.toString());
 	} catch(Exception e) {
-		 out.println("<font color=red>æ“ä½œå¤±è´¥ï¼š "+e.toString()+"</font>");
+		 out.println("<font color=red>²Ù×÷Ê§°Ü£º "+e.toString()+"</font>");
 	}
 %>
 
@@ -136,16 +136,16 @@
 		
 			<table width="98%" border="1" cellspacing="1" cellpadding="4" bordercolorlight="#cccccc" bordercolordark="#FFFFFF">
        			<tr bgcolor="#E1ECC8">
-                	<td width="26%">æ–‡ä»¶åç§°</td>
-                	<td width="19%" align="center">æ–‡ä»¶å¤§å°</td>
-          			<td width="29%" align="center">ä¿®æ”¹æ—¶é—´</td>
-                	<td width="15%" align="center">æ–‡ä»¶æ“ä½œ</td>
+                	<td width="26%">ÎÄ¼şÃû³Æ</td>
+                	<td width="19%" align="center">ÎÄ¼ş´óĞ¡</td>
+          			<td width="29%" align="center">ĞŞ¸ÄÊ±¼ä</td>
+                	<td width="15%" align="center">ÎÄ¼ş²Ù×÷</td>
               	</tr>
  
             	<%=sbFile%>
             	
             	<tr align="center"> 
-                	<td colspan="4"><br />æ€»è®¡æ–‡ä»¶ä¸ªæ•°ï¼š<font color="#FF0000"><%=fileCnt %></font>	</td>
+                	<td colspan="4"><br />×Ü¼ÆÎÄ¼ş¸öÊı£º<font color="#FF0000"><%=fileCnt %></font>	</td>
               	</tr>
 			</table>
 			
@@ -158,11 +158,11 @@
 	<tr valign="middle">
 		<td bgcolor="#99CC00" style="clear:all">
 			<form action="select_images_post.jsp?path=<%=strDir %>" method="post" enctype="multipart/form-data" name='myform'>
-  				&nbsp;ä¸Šã€€ä¼ ï¼š <input type='file' name='imgFile' style='width:200px' style="clear:all" />
-  				&nbsp;<input type='checkbox' name='resize' value='1' class='np' style="clear:all" />è‡ªåŠ¨ç¼©å°
-  				å®½ï¼š<input type='text'  name='iwidth' size='5' value='200' />
-  				é«˜ï¼š<input type='text'  name='iheight' size='5' value='200' />
-  				<input type='submit' name='sb' value='ç¡®å®š' />
+  				&nbsp;ÉÏ¡¡´«£º <input type='file' name='imgFile' style='width:200px' style="clear:all" />
+  				&nbsp;<input type='checkbox' name='resize' value='1' class='np' style="clear:all" />×Ô¶¯ËõĞ¡
+  				¿í£º<input type='text'  name='iwidth' size='5' value='200' />
+  				¸ß£º<input type='text'  name='iheight' size='5' value='200' />
+  				<input type='submit' name='sb' value='È·¶¨' />
   			</form>
 		</td>
 	</tr>
@@ -170,8 +170,8 @@
 	<tr valign="middle">
   		<td bgcolor='#66CC00'> 
   			<form action='select_images_mkdir.jsp?path=<%=strDir %>' method='post' name='myform2'>
-  				&nbsp;æ–°ç›®å½•ï¼š <input type='text' name='dirname' value='' style='width:150' />
-  				<input type='submit' name='sb2' value='åˆ›å»º' style='width:40' />
+  				&nbsp;ĞÂÄ¿Â¼£º <input type='text' name='dirname' value='' style='width:150' />
+  				<input type='submit' name='sb2' value='´´½¨' style='width:40' />
   			</form>
 		</td>
 	</tr>
