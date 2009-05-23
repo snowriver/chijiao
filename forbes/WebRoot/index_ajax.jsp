@@ -17,7 +17,7 @@
 <HEAD>
 	<TITLE>${WEB_TITLE }</TITLE>
 	
-	<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<META http-equiv="Content-Type" content="text/html; charset=gbk" />
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 	
 	<link type="text/css" rel="stylesheet" href="css/index_global.css" />
