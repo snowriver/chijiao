@@ -7,7 +7,7 @@
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
 	<TITLE>赤脚网 - 学习视频 - 全力打造创业者学习和交流平台</TITLE>
-	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+	<META content="text/html; charset=gbk" http-equiv=Content-Type>
 	
 	<LINK rel=stylesheet type=text/css href="css/generl200809.css">
 	<LINK rel=stylesheet type=text/css href="css/index200809.css">
