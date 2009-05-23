@@ -5,11 +5,7 @@
 package com.forbes.struts.action.admin;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,11 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.actions.DispatchAction;
@@ -29,21 +20,12 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
-
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
 import com.forbes.hibernate.bean.ArticleType;
-import com.forbes.hibernate.bean.Sector;
 import com.forbes.hibernate.bean.UcMembers;
-import com.forbes.service.account.ScoreManager;
 import com.forbes.service.article.ArticleTypeManager;
-import com.forbes.service.article.ContentManager;
 import com.forbes.service.article.ArticleListManager;
-import com.forbes.service.basic.SectorManager;
 import com.forbes.struts.form.admin.AdminUploadFileForm;
-import com.forbes.struts.form.article.ArticleInfoForm;
-import com.forbes.util.DictionaryManager;
-import com.forbes.util.Pager;
 import com.forbes.util.UploadFile;
 import com.forbes.util.UrlTool;
 
