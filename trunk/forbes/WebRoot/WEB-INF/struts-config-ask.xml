@@ -125,6 +125,13 @@
       <forward name="ok" path="/ask/opendiv_ok.jsp" />
       <forward name="fail" path="/ask/operate_fail.jsp" />
     </action>
+    
+    <action
+      path="/ask/NewIndex"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/ask/new_index.jsp" />
+    </action>
    
 	</action-mappings>
 	

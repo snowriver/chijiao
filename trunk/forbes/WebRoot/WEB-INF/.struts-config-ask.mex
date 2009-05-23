@@ -28,16 +28,19 @@
   <StrutsActivity path="/ask/pop_ask_list.jsp" location="703,864" dimension="152,52" />
   <StrutsActivity path="/ask/operate_result.jsp" location="98,1161" dimension="165,52" />
   <StrutsActivity path="/ask/top_answer_list.jsp" location="503,1161" dimension="169,52" />
+  <StrutsActivity path="/ask/ask_extra.jsp" location="1250,950" dimension="136,52" />
   <StrutsActivity path="/ask/operate_ok.jsp" location="718,567" dimension="148,52" />
+  <StrutsActivity path="/ask/opendiv_ok.jsp" location="1550,750" dimension="149,52" />
+  <StrutsActivity path="/ask/ask_answer_modify.jsp" location="1550,950" dimension="193,52" />
   <StrutsActivity path="/ask/top_user_list.jsp" location="1411,567" dimension="153,52" />
   <StrutsActivity path="/ask/user_promotion_list.jsp" location="650,750" dimension="195,52" />
   <StrutsActivity path="/ask/user_view_ask.jsp" location="1726,567" dimension="162,52" />
   <StrutsActivity path="/ask/user_view_answer.jsp" location="1988,567" dimension="183,52" />
-  <StrutsActivity path="/ask/report_ok.jsp" location="950,950" dimension="139,52" />
   <StrutsActivity path="/ask/report.jsp" location="950,1250" dimension="119,52" />
-  <StrutsActivity path="/ask/opendiv_ok.jsp" location="1550,750" dimension="149,52" />
-  <StrutsActivity path="/ask/ask_extra.jsp" location="1250,950" dimension="136,52" />
-  <StrutsActivity path="/ask/ask_answer_modify.jsp" location="1550,950" dimension="193,52" />
+  <StrutsActivity path="/ask/report_ok.jsp" location="950,950" dimension="139,52" />
+  <StrutsActivity path="/ask/NewIndex.do" location="1250,1150" dimension="358,84" />
+  <StrutsActivity path="/ask/index_new.jsp" location="50,1350" dimension="148,48" />
+  <StrutsActivity path="/ask/new_index.jsp" location="950,1150" dimension="148,48" />
   <StrutsTransition id="/admin/AdminManageAskType.do,list,/admin/ask_type_main.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="510,100" />
@@ -58,6 +61,19 @@
       <AbsolutePoint location="1673,130" />
       <AbsolutePoint location="1623,130" />
       <AbsolutePoint location="1623,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/NewIndex.do,ok,/ask/new_index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1183" />
+      <AbsolutePoint location="1098,1183" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/NewIndex.do,ok,/ask/index_new.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1429,1234" />
+      <AbsolutePoint location="1429,1374" />
+      <AbsolutePoint location="198,1374" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageAskType.do,fail,/admin/operate_fail.jsp,1" routingType="0">
@@ -82,13 +98,6 @@
       <AbsolutePoint location="655,130" />
       <AbsolutePoint location="662,130" />
       <AbsolutePoint location="662,250" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/ask/ManageAnswer.do,succ,/ask/operate_fail.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="997,447" />
-      <AbsolutePoint location="997,593" />
-      <AbsolutePoint location="1065,593" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/ask/AskQuestion.do,second,/ask/ask_ok.jsp,1" routingType="0">
@@ -131,14 +140,6 @@
       <AbsolutePoint location="792,567" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/ask/ManageAnswer.do,ask,/ask/ask_extra.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="907,447" />
-      <AbsolutePoint location="907,879" />
-      <AbsolutePoint location="1297,879" />
-      <AbsolutePoint location="1297,950" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
   <StrutsTransition id="/ask/UserView.do,answer,/ask/user_view_answer.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="1952,447" />
@@ -161,6 +162,14 @@
       <AbsolutePoint location="366,814" />
       <AbsolutePoint location="293,814" />
       <AbsolutePoint location="293,864" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/ManageAnswer.do,ask,/ask/ask_extra.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="907,447" />
+      <AbsolutePoint location="907,879" />
+      <AbsolutePoint location="1297,879" />
+      <AbsolutePoint location="1297,950" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/ask/ManageAnswer.do,answer,/ask/ask_answer_modify.jsp,1" routingType="0">
@@ -245,16 +254,16 @@
       <AbsolutePoint location="1158,567" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/ask/UserReport.do,ok,/ask/opendiv_ok.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="1312,787" />
-      <AbsolutePoint location="1550,787" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
   <StrutsTransition id="/ask/UserReport.do,get,/ask/report.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="0,0" />
       <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ask/UserReport.do,ok,/ask/opendiv_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1312,787" />
+      <AbsolutePoint location="1550,787" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/ask/AskAnswerSearch.do,top,/ask/top_answer_list.jsp,1" routingType="0">
@@ -299,12 +308,6 @@
     <AutomaticBendpoints>
       <AbsolutePoint location="0,0" />
       <AbsolutePoint location="1140,593" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/ask/UserReport.do,ok,/ask/report_ok.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="1131,800" />
-      <AbsolutePoint location="0,0" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/ask/AskSearch.do,view,/ask/ask_view.jsp,1" routingType="0">

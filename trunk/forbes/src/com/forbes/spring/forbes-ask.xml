@@ -177,4 +177,10 @@
 		</property>
 	</bean>
 	
+	<bean name="/ask/NewIndex" class="com.forbes.struts.action.ask.IndexNewAction" singleton="false">
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+	</bean>
+	
 </beans>
