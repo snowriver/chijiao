@@ -107,7 +107,7 @@
 <body onLoad="ContextMenu.intializeContextMenu()">
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">服务维护</div>
+	<div class="bodytitletxt">页面静态化</div>
 </div>
 
 <table width='96%' border='0' cellpadding='0' cellspacing='0' align="center" class="tbtitle">
@@ -157,29 +157,29 @@
 
 				
 				<tr align='center' bgcolor="#FFFFFF"  onmousemove="javascript:this.bgColor='#EFEFEF';" onmouseout="javascript:this.bgColor='#FFFFFF';" height="22" oncontextmenu="ShowMenu(this,3,'%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB')">
-					<td><input name="serviceID" type="checkbox" id="serviceID" value="NewIndex.do" /></td>
+					<td><input name="serviceID" type="checkbox" id="serviceID" value="1" /></td>
 					<td>赤脚网主页</td>
 					<td></td>
 					<td></td>
 				</tr>
 				
 				<tr align='center' bgcolor="#FFFFFF"  onmousemove="javascript:this.bgColor='#EFEFEF';" onmouseout="javascript:this.bgColor='#FFFFFF';" height="22" oncontextmenu="ShowMenu(this,3,'%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB')">
-					<td><input name="serviceID" type="checkbox" id="serviceID" value="article/NewIndex.do" /></td>
+					<td><input name="serviceID" type="checkbox" id="serviceID" value="2" /></td>
 					<td>创业大学主页</td>
 					<td></td>
 					<td></td>
 				</tr>
 
 				<tr align='center' bgcolor="#FFFFFF"  onmousemove="javascript:this.bgColor='#EFEFEF';" onmouseout="javascript:this.bgColor='#FFFFFF';" height="22" oncontextmenu="ShowMenu(this,3,'%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB')">
-					<td><input name="serviceID" type="checkbox" id="serviceID" value="video/NewIndex.do" /></td>
+					<td><input name="serviceID" type="checkbox" id="serviceID" value="3" /></td>
 					<td>学习视频主页</td>
 					<td></td>
 					<td></td>
 				</tr>
 				
 				<tr align='center' bgcolor="#FFFFFF"  onmousemove="javascript:this.bgColor='#EFEFEF';" onmouseout="javascript:this.bgColor='#FFFFFF';" height="22" oncontextmenu="ShowMenu(this,3,'%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB')">
-					<td><input name="serviceID" type="checkbox" id="serviceID" value="ask/index.jsp" /></td>
-					<td>创业白问主页</td>
+					<td><input name="serviceID" type="checkbox" id="serviceID" value="4" /></td>
+					<td>创业百问主页</td>
 					<td></td>
 					<td></td>
 				</tr>
