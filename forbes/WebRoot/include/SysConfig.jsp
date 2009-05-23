@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@page import="java.util.Map,java.util.TreeMap "%>
 <%@page import="com.forbes.util.SysConfigManager;"%>
 

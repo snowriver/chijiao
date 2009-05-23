@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page contentType="text/html; charset=gbk" %>
 
 <SCRIPT language="javascript" type="text/javascript">
 	function showUserInfo(){
@@ -27,15 +27,15 @@
 
 <!--header start-->
 <DIV id=header>
-	<DIV class=logo><A href="index.jsp"><IMG alt=赤脚网 src="images/logo.jpg" width=146 height=38></A> </DIV>
+	<DIV class=logo><A href="index.jsp"><IMG alt=����� src="images/logo.jpg" width=146 height=38></A> </DIV>
 	<DIV class=toolnav>
-		<A class=toolnav_on href="../index.jsp">首页</A> 
-		<A href="../article/index.jsp">创业大学</A> 
-		<A href="../video/index.jsp">学习视频</A> 
-		<!-- <A href="#">项目挖贝</A> -->
-		<A href="../ask/index.jsp">创业百问</A> 
-		<A target="_blank" href="${UC_HOME_URL }/index.php">创业圈子</A> 
-		<!-- <A target="_blank" href="${UC_BBS_URL }/index.php">创业论坛</A>   -->
+		<A class=toolnav_on href="../">��ҳ</A> 
+		<A href="../article/">��ҵ��ѧ</A> 
+		<A href="../video/">ѧϰ��Ƶ</A> 
+		<!-- <A href="#">��Ŀ�ڱ�</A> -->
+		<A href="../ask/">��ҵ����</A> 
+		<A target="_blank" href="${UC_HOME_URL }/index.php">��ҵȦ��</A> 
+		<!-- <A target="_blank" href="${UC_BBS_URL }/index.php">��ҵ��̳</A>   -->
 	</DIV>
 	<DIV class=topmenu>
 		<DIV class=topmenu_tools id="topmenu">
@@ -55,12 +55,12 @@
 		
 		<UL>
 	  		<LI style="BACKGROUND: none transparent scroll repeat 0% 0%">
-	  		<A title=""  href="JavaScript:void(0);">希望 “赤脚网” 成为你我结交新朋友的天地！是你我互助的平台！是你我知识，经验和心得分享的创业加油站！让我们一起共勉！</A> </LI>
+	  		<A title=""  href="JavaScript:void(0);">ϣ�� ��������� ��Ϊ���ҽύ�����ѵ���أ������һ�����ƽ̨��������֪ʶ��������ĵ÷����Ĵ�ҵ����վ��������һ���㣡</A> </LI>
 
 			<!-- 
-			<LI><A title="" href="#">栏目</A> </LI>
-		  	<LI><A title="" href="#">栏目</A> </LI>
-		  	<LI><A title="" href="#">栏目</A> </LI>
+			<LI><A title="" href="#">��Ŀ</A> </LI>
+		  	<LI><A title="" href="#">��Ŀ</A> </LI>
+		  	<LI><A title="" href="#">��Ŀ</A> </LI>
 		  	 -->
 		</UL>
 

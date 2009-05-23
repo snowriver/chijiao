@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=utf-8"%>
+<%@ page contentType="text/html;charset=gbk"%>
 
 
 <%
@@ -13,13 +13,13 @@
 		if(!new java.io.File(filename).isDirectory()) {
 			new java.io.File(filename).mkdirs(); 
 			response.getWriter().write("<script language='javascript'>");
-			response.getWriter().write("alert('åˆ›å»ºæˆåŠŸï¼è¿”å›ä¸Šä¼ æ ¹ç›®å½•ï¼');");
+			response.getWriter().write("alert('´´½¨³É¹¦£¡·µ»ØÉÏ´«¸ùÄ¿Â¼£¡');");
 			response.getWriter().write("self.location='select_images.jsp';");
 			response.getWriter().write("</script>");
 		}
 		else {
 			response.getWriter().write("<script language='javascript'>");
-			response.getWriter().write("alert('æ–‡ä»¶å¤¹å·²ç»å­˜åœ¨');");
+			response.getWriter().write("alert('ÎÄ¼ş¼ĞÒÑ¾­´æÔÚ');");
 			response.getWriter().write("history.back();");
 			response.getWriter().write("</script>");
 		}

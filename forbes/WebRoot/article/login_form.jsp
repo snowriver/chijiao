@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,22 +7,22 @@
 <UL class=send_comment_tit>
 						<c:if test="${not empty sessionScope.CLIENT}">
 					<FORM id="pubForm" method="post" name="pubForm" action="NewsContentAdd.do">
-					<SCRIPT language=JavaScript>function reply_clearfield(){if(document.formComment.name.value == "èµ¤è„šç½‘ç”¨æˆ·") document.formComment.name.value = "";}</SCRIPT>
+					<SCRIPT language=JavaScript>function reply_clearfield(){if(document.formComment.name.value == "³à½ÅÍøÓÃ»§") document.formComment.name.value = "";}</SCRIPT>
   					<TABLE class="commentSend" border="0" cellSpacing="1" cellPadding="1">
     					<TBODY>
 						 	<TR>
 						    	<TD>&nbsp;</TD>
-						      	<TD>å‰©ä½™å­—ç¬¦ï¼š
+						      	<TD>Ê£Óà×Ö·û£º
 					    			<INPUT id=remLen style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; COLOR: red; BORDER-RIGHT-WIDTH: 0px" 
 					    				readOnly maxLength=4 size=4 value=1000 name=remLen /></TD>
 						  	</TR>
 						  	<!-- 
 						    <TR>
-						      	<TD align=right>æ˜µç§°:</TD>
-						      	<TD height=22><INPUT id=name onfocus=reply_clearfield() value="åŒ¿å" type=text name=name></TD></TR>
+						      	<TD align=right>êÇ³Æ:</TD>
+						      	<TD height=22><INPUT id=name onfocus=reply_clearfield() value="ÄäÃû" type=text name=name></TD></TR>
 						      -->
 						    <TR>
-								<TD align=right>å†…å®¹:</TD>
+								<TD align=right>ÄÚÈİ:</TD>
 						      	<TD height=22><TEXTAREA rows=8 cols=70 id="content" name="content" onMouseUp="textCounter(pubForm.content.value, 1000 )" 
     								onKeyUp="textCounter(pubForm.content.value, 1000)"></TEXTAREA></TD>
 						 	</TR>
@@ -32,18 +32,18 @@
 									
 									<INPUT type="hidden" id="id" name="id" value="${NEWS.id }" >
 									<!--
-									<INPUT type="submit" name=Submit value="æ äº¤" >
+									<INPUT type="submit" name=Submit value="Ìá ½»" >
 									-->
 									<c:if test="${ empty sessionScope.CLIENT }">
 										<DIV id="login">
-										ç”¨æˆ·åï¼š<INPUT type="text" id="loginName" name="loginName" value="" >
-										å¯†ç ï¼š<INPUT type="text" id="password" name="password" value="" >
-										&nbsp;&nbsp;&nbsp;<a href="#">æ³¨å†Œæ–°ç”¨æˆ·?</a>
+										ÓÃ»§Ãû£º<INPUT type="text" id="loginName" name="loginName" value="" >
+										ÃÜÂë£º<INPUT type="text" id="password" name="password" value="" >
+										&nbsp;&nbsp;&nbsp;<a href="#">×¢²áĞÂÓÃ»§?</a>
 										</DIV>								
 									</c:if>
 								
 									<INPUT type="hidden" id="remeber" name="remeber" value="Y" >
-									<input type="button" value=" æäº¤ " class="button" id="submit" onclick="sendJS();"/>
+									<input type="button" value=" Ìá½» " class="button" id="submit" onclick="sendJS();"/>
 								</TD>
 							</TR>
 						</TBODY>
@@ -53,12 +53,12 @@
 					
 					
 					 <c:if test="${empty sessionScope.CLIENT}">
- 						&nbsp;&nbsp;&nbsp;&nbsp;è¯„è®º
+ 						&nbsp;&nbsp;&nbsp;&nbsp;ÆÀÂÛ
 					 	<DIV style="TEXT-ALIGN: center; LINE-HEIGHT: 50px; HEIGHT: 50px" id=show_login>
-						<a href="javascript:void(0);" id="loginx" onclick="openDIV('ç™»å½•','../client/ClientReLogin.jsp','500','350');" style="CURSOR: pointer"><FONT style="TEXT-DECORATION: underline" 
-						color=#ff6600>è¯·å…ˆç™»å½•åå†è¯„è®º</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="javascript:void(0);" id="loginx" onclick="openDIV('µÇÂ¼','../client/ClientReLogin.jsp','500','350');" style="CURSOR: pointer"><FONT style="TEXT-DECORATION: underline" 
+						color=#ff6600>ÇëÏÈµÇÂ¼ºóÔÙÆÀÂÛ</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<A style="CURSOR: pointer" target="_blank" href="../client/ClientRegister.jsp"><FONT style="TEXT-DECORATION: underline" 
-						color=#ff6600>æˆ‘è¦æ³¨å†Œ</FONT></A>
+						color=#ff6600>ÎÒÒª×¢²á</FONT></A>
 						</DIV>			
 					
 					 </c:if>

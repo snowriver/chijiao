@@ -1,10 +1,10 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
 
 
-<!--ç›¸å…³èµ„è®¯å¼€å§‹-->
+<!--Ïà¹Ø×ÊÑ¶¿ªÊ¼-->
 <c:if test="${not empty LIKE_NEWS_LIST}">
 	<c:forEach items="${LIKE_NEWS_LIST}" var="news"> 
 		<LI class=reationNews><A href="NewsSearch.do?act=view&id=${news.id}">${fn:substring(news.title, 0, 20)}</A><FONT color=#828282>(<fmt:formatDate value='${news.pubdate}' pattern='MM-dd' />)</FONT>
@@ -13,6 +13,6 @@
 </c:if>
 
 <c:if test="${empty LIKE_NEWS_LIST}">
-	æ— ç›¸å…³æ–‡ç« 
+	ÎŞÏà¹ØÎÄÕÂ
 </c:if>
-<!--ç›¸å…³èµ„è®¯ç»“æŸ-->
+<!--Ïà¹Ø×ÊÑ¶½áÊø-->

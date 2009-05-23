@@ -1,9 +1,9 @@
-<%@page contentType="text/html; charset=utf-8" %>
+<%@page contentType="text/html; charset=gbk" %>
 <%
     application.setAttribute("UC_CENTER_URL", "http://localhost/uc/ucenter");
 	application.setAttribute("UC_HOME_URL", "http://localhost/uc/home");
 	application.setAttribute("UC_BBS_URL", "http://localhost/uc/bbs");
 	
-	application.setAttribute("WEB_TITLE", "èµ¤è„šç½‘ - å…¨åŠ›æ‰“é€ åˆ›ä¸šè€…å­¦ä¹ å’Œäº¤æµå¹³å°");
-	application.setAttribute("WEB_KEYWORD", "èµ¤è„šç½‘");
+	application.setAttribute("WEB_TITLE", "³à½ÅÍø - È«Á¦´òÔì´´ÒµÕßÑ§Ï°ºÍ½»Á÷Æ½Ì¨");
+	application.setAttribute("WEB_KEYWORD", "³à½ÅÍø");
 %>

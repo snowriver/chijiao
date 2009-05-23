@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -11,9 +11,9 @@
 <TABLE class=post_tb cellSpacing=3 cellPadding=0 border=0>
 	<TBODY>
   		<TR>
-    		<!-- <TD>请选择你要使用的表情</TD> -->
+    		<!-- <TD>��ѡ����Ҫʹ�õı���</TD> -->
     		<TD>
-    			剩余字符：
+    			ʣ���ַ���
     			<INPUT id=remLen style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; COLOR: red; BORDER-RIGHT-WIDTH: 0px" 
     				readOnly maxLength=4 size=4 value=1000 name=remLen />
 			</TD>
@@ -57,8 +57,8 @@
     	</TR>
   		<TR>
     		<TD align=left colSpan=2>
-      			<INPUT class=btn_submit type=button value=提交观点 onclick="sendJS();"/>&nbsp;
-      			<INPUT class=btn_reset type=reset value=重置观点 />
+      			<INPUT class=btn_submit type=button value=�ύ�۵� onclick="sendJS();"/>&nbsp;
+      			<INPUT class=btn_reset type=reset value=���ù۵� />
 			</TD>
 		</TR>
 	</TBODY>
@@ -70,11 +70,11 @@
 					
 <c:if test="${empty sessionScope.CLIENT}">
 	<DIV style="TEXT-ALIGN: center; LINE-HEIGHT: 50px; HEIGHT: 50px" id=show_login>
-		<a href="javascript:void(0);" id="loginx" onclick="openDIV('登录','../client/ClientReLogin.jsp','500','350');" style="CURSOR: pointer">
-			<FONT style="TEXT-DECORATION: underline" color=#ff6600>请先登录后再评论</FONT>
+		<a href="javascript:void(0);" id="loginx" onclick="openDIV('��¼','../client/ClientReLogin.jsp','500','350');" style="CURSOR: pointer">
+			<FONT style="TEXT-DECORATION: underline" color=#ff6600>���ȵ�¼��������</FONT>
 		</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<A style="CURSOR: pointer" target="_blank" href="../client/ClientRegister.jsp">
-			<FONT style="TEXT-DECORATION: underline" color=#ff6600>我要注册</FONT>
+			<FONT style="TEXT-DECORATION: underline" color=#ff6600>��Ҫע��</FONT>
 		</A>
 	</DIV>			
 </c:if>
