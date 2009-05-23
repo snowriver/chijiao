@@ -7,7 +7,7 @@
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
 <TITLE>赤脚网 - 学习视频 - 全力打造创业者学习和交流平台</TITLE>
-<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META content="text/html; charset=gbk" http-equiv=Content-Type>
 <META name=Keywords content="OpenV,天线视频,电视节目,视频,栏目,点播,视频搜索">
 <META name=Description 
 content=在线点播、观看和订阅电视节目与视频，搜索互联网海量的视频内容，享受高清晰视频、电视节目、电影、电视剧的完美体验。汇集中央电视台、凤凰卫视、湖南卫视、上海文广、华娱，以及全国各省市电视台的所有电视节目和港台综艺节目，覆盖新闻、娱乐、体育、奥运、财经、时尚、汽车等栏目。>
