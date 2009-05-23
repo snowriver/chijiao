@@ -9,7 +9,7 @@ public interface Constant {
 	public String UC_HOME_URL	 = "http://www.chijiao.org/home";
 	public String UC_BBS_URL	 = "http://www.chijiao.org/bbs";
 	
-	public String FORBES_URL = "http://www.chijiao.org:8080";
+	public String FORBES_URL 	 = "http://www.chijiao.org:8080";
 	
 	public String FORBES_VIRTUAL_ADDRESS 		 = "D:\\server\\AppServ\\www";
 	public String FORBES_VIRTUAL_ADDRESS_ARTICLE = "D:\\server\\AppServ\\www\\article";
