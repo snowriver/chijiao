@@ -7,7 +7,7 @@
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
 	<TITLE>${VIDEO.title } - 专辑 - 赤脚网在线学习视频</TITLE>
-	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+	<META content="text/html; charset=gbk" http-equiv=Content-Type>
 	<META name=GENERATOR content="MSHTML 8.00.6001.18241">
 	
 	<LINK rel=stylesheet type=text/css href="css/generl.css">

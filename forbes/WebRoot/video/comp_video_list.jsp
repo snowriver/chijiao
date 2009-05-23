@@ -1,20 +1,20 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
 
 <DIV class=siderB_box>
 	<DIV class=siderI_box>
-		<DIV id=right_1 class=sider_right><!-- Âè≥‰æß1 -->
+		<DIV id=right_1 class=sider_right><!-- ”“≤‡1 -->
 			<DIV class=top></DIV>
 			<DIV class=mid>
-				<DIV class=title><SPAN class="c_grey2 f14 b">ÁÉ≠Èó®ÊéíË°å</SPAN></DIV>
+				<DIV class=title><SPAN class="c_grey2 f14 b">»»√≈≈≈––</SPAN></DIV>
 				<UL>
 					<c:forEach items="${HOT_VIDEO_LIST}" var="video" varStatus="is">
   					<LI>
   						<DIV class=numb><IMG src="images/num${is.index+1 }.jpg" width=14 height=11></DIV>
   						<DIV class=bt><A title="" target=_blank href="VideoShow.do?id=${video.id }">${video.shorttitle }</A></DIV>
-  						<DIV class=tjl><DIV align=right><SPAN class=c_grey2><IMG alt=‰∏äÂçá src="images/ico_up.gif" width=9 height=9></SPAN></DIV></DIV>
+  						<DIV class=tjl><DIV align=right><SPAN class=c_grey2><IMG alt=…œ…˝ src="images/ico_up.gif" width=9 height=9></SPAN></DIV></DIV>
   					</c:forEach>
   					</LI>
   				</UL>
@@ -28,16 +28,16 @@
 	
 	
 	<DIV class=siderI_box>
-		<DIV id=right_2 class=sider_right><!-- Âè≥‰æß2 -->
+		<DIV id=right_2 class=sider_right><!-- ”“≤‡2 -->
 			<DIV class=top></DIV>
 			<DIV class=mid>
-				<DIV class=title><SPAN class="c_grey2 f14 b">Êé®ËçêÊéíË°å</SPAN></DIV>
+				<DIV class=title><SPAN class="c_grey2 f14 b">Õ∆ºˆ≈≈––</SPAN></DIV>
 				<UL>
 					<c:forEach items="${COMP_VIDEO_LIST}" var="video" varStatus="is">
   					<LI>
   						<DIV class=numb><IMG src="images/num${is.index + 1 }.jpg" width=14 height=11></DIV>
   						<DIV class=bt><A title="" target=_blank href="VideoShow.do?id=${video.id }">${video.shorttitle }</A></DIV>
-  						<DIV class=tjl><DIV align=right><SPAN class=c_grey2><IMG alt=‰∏äÂçá src="images/ico_up.gif" width=9 height=9></SPAN></DIV></DIV>
+  						<DIV class=tjl><DIV align=right><SPAN class=c_grey2><IMG alt=…œ…˝ src="images/ico_up.gif" width=9 height=9></SPAN></DIV></DIV>
   					</c:forEach>
   					</LI>
   				</UL>
@@ -48,11 +48,11 @@
 	</DIV>
 	<DIV class=clear></DIV>
 	<DIV id=right_3>
-		<!-- Âè≥‰æß3 -->
-		<!-- ÂπøÂëä ÂºÄÂßã -->
+		<!-- ”“≤‡3 -->
+		<!-- π„∏Ê ø™ º -->
 		<DIV class=siderK_box><SCRIPT language=JavaScript1.1 src=""></SCRIPT></DIV>
 		<DIV class=clear></DIV>
 		<DIV class=siderK_box><SCRIPT language=JavaScript1.1 src=""></SCRIPT></DIV>
-		<!-- ÂπøÂëä ÁªìÊùü -->
+		<!-- π„∏Ê Ω· ¯ -->
 	</DIV>
 </DIV>
