@@ -44,10 +44,49 @@ public class AdminTohtmlAction extends Action {
 			
 			String serviceID = serviceIDs[i];
 			//Éú³É¾²Ì¬Ò³Ãæ
-			System.out.println("serviceID=" + Constant.FORBES_URL + "/" +serviceID);
+			System.out.println("serviceID=" + serviceID);
 			try {
-				boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/" +serviceID,
-						request.getRealPath("/") + "index.html");
+				if(serviceID.trim().equals("1")) {
+					System.out.println("URL 	  = "+Constant.FORBES_URL + "/NewIndex.do");
+					System.out.println("LOCALHOST = "+Constant.FORBES_VIRTUAL_ADDRESS + "\\index.html");
+					
+					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS);
+
+					if (!myFilePath.exists()) {
+						myFilePath.mkdir();
+					}
+
+					
+					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/NewIndex.do",
+							Constant.FORBES_VIRTUAL_ADDRESS + "\\index.html");
+				}
+				if(serviceID.trim().equals("2")) {
+					System.out.println("URL 	  = "+Constant.FORBES_URL + "/article/NewIndex.do");
+					System.out.println("LOCALHOST = "+Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE + "\\index.html");
+					
+					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE);
+
+					if (!myFilePath.exists()) {
+						myFilePath.mkdir();
+					}
+					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/NewIndex.do",
+							Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE + "\\index.html");
+				}
+				if(serviceID.trim().equals("3")) {
+					System.out.println("URL 	  = "+Constant.FORBES_URL + "/video/NewIndex.do");
+					System.out.println("LOCALHOST = "+Constant.FORBES_VIRTUAL_ADDRESS_VIDEO + "\\index.html");
+					
+					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS_VIDEO);
+
+					if (!myFilePath.exists()) {
+						myFilePath.mkdir();
+					}
+					
+					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/video/NewIndex.do",
+							Constant.FORBES_VIRTUAL_ADDRESS_VIDEO + "\\index.html");
+				}
+				
+				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
