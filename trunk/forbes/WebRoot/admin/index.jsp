@@ -172,7 +172,7 @@ a:hover{
 
 </head>
 <body>
-<c:set var="cfg_use_vdcode" value="N" />
+<c:set var="cfg_use_vdcode" value="Y" />
 
 	<div class="main">	
 		<div class="title">管理登陆</div>
