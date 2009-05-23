@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -6,8 +6,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
-	<TITLE>èµ¤è„šç½‘ - å­¦ä¹ è§†é¢‘ - å…¨åŠ›æ‰“é€ åˆ›ä¸šè€…å­¦ä¹ å’Œäº¤æµå¹³å°</TITLE>
-	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+	<TITLE>³à½ÅÍø - Ñ§Ï°ÊÓÆµ - È«Á¦´òÔì´´ÒµÕßÑ§Ï°ºÍ½»Á÷Æ½Ì¨</TITLE>
+	<META content="text/html; charset=gbk" http-equiv=Content-Type>
 	
 	<LINK rel=stylesheet type=text/css href="css/generl200809.css">
 	<LINK rel=stylesheet type=text/css href="css/index200809.css">
@@ -26,7 +26,7 @@
 
 
 	<SCRIPT>
-		function M_L_Move(id,pn,m){  //æ˜¾ç¤ºåˆ—è¡¨å·¦å³æ»šåŠ¨
+		function M_L_Move(id,pn,m){  //ÏÔÊ¾ÁĞ±í×óÓÒ¹ö¶¯
 	    	var obj = $('#'+id);
 	    	var p   = parseInt(obj.attr('pn')|0);
 	    	if(typeof(m)=='number'){
@@ -43,7 +43,7 @@
 	    	obj.attr('pn',pn);
 		}
 	  
-	  	function fun_top_tj(){  //é¡¶éƒ¨æ¨èæ»šåŠ¨
+	  	function fun_top_tj(){  //¶¥²¿ÍÆ¼ö¹ö¶¯
 	    	obj  = $('#top_tj');
 	    	obja = $('a',obj);
 			var pn = parseInt(obj.attr('pn')|0);
@@ -66,7 +66,7 @@
 	    	}
 		}
 	  
-		function showzjlist(id,isshow){ //ä¸“è¾‘æ¨èè§†é¢‘åˆ—è¡¨
+		function showzjlist(id,isshow){ //×¨¼­ÍÆ¼öÊÓÆµÁĞ±í
 	    	var obj = $('#zjlist_'+id);
 	    	if(isshow){
 	      	obj.fadeIn('fast');
@@ -75,12 +75,12 @@
 	    	}
 		}
 	  
-	  function showDq(){ //ç”µè§†å¤§å…¨æ˜¾ç¤ºæ§åˆ¶
+	  function showDq(){ //µçÊÓ´óÈ«ÏÔÊ¾¿ØÖÆ
 	    showTag(0);
 	    $('#dsjmdq').toggle();
 	  }
 	  
-	  function showTag(id){ //åŠ¨æ€è·å–ç”µè§†å¤§å…¨æ•°æ®å¹¶æ˜¾ç¤º
+	  function showTag(id){ //¶¯Ì¬»ñÈ¡µçÊÓ´óÈ«Êı¾İ²¢ÏÔÊ¾
 	    var tmp = $('#dsjmdq .tab').eq(id);
 	    var obj = $('#dsjmdq');
 	    if(tmp.html().length < 100){
@@ -110,7 +110,7 @@
 	    }
 	  }
 	  
-	  function fun_swf_tag(pn){ //é¦–å±çƒ­ç‚¹æ ‡ç­¾åˆ‡æ¢
+	  function fun_swf_tag(pn){ //Ê×ÆÁÈÈµã±êÇ©ÇĞ»»
 	  	alert(pn);
 	    var p = parseInt(_swftag.attr('pn')|0);
 	    if(pn==p)return;
@@ -163,7 +163,7 @@
 	    playComm("PAUSE");
 	  }
 	  
-	  function getPlaycount(){  //è·å–æ’­æ”¾æ•°
+	  function getPlaycount(){  //»ñÈ¡²¥·ÅÊı
 	    $("span[name='playcount']").each(function(){
 	     var $_ = $(this);
 	     var pid = $_.attr('pid');
@@ -175,7 +175,7 @@
 	    });
 	  }
 	  
-	  function videoStatus(id,ty,cs){ //æ’­æ”¾å™¨çŠ¶æ€
+	  function videoStatus(id,ty,cs){ //²¥·ÅÆ÷×´Ì¬
 	    if(ty!='ad' && cs == 'playOverAll'){
 	      p_END();
 	    }
@@ -184,7 +184,7 @@
 	  function flvPlayEndCall(){
 	  }
 	  
-	  function chBord(){ //çƒ­ç‚¹è§†é¢‘é¼ æ ‡æ•ˆæœ
+	  function chBord(){ //ÈÈµãÊÓÆµÊó±êĞ§¹û
 	    $(".img[name='chborder']").each(function(){
 	      var $_ = $(this);
 	      $_.mouseover(function(){
@@ -210,7 +210,7 @@
 	    ob.SetVariable("Command", comm);
 	  }
 	  
-	  function playerInner(pid,title){ //é¢„è§ˆæ§åˆ¶
+	  function playerInner(pid,title){ //Ô¤ÀÀ¿ØÖÆ
 	    var sFV      = '';
 	    var swf_path = pid;
 	    _qval        = 'tv=0';
@@ -233,7 +233,7 @@
 	  }
 	  
 	  var b_imgval = [],imgS,divF;
-	  function b_imgchange(id){ //ç„¦ç‚¹å›¾åˆ‡æ¢
+	  function b_imgchange(id){ //½¹µãÍ¼ÇĞ»»
 	    if(typeof(imgS)=='undefined'){
 	      imgS = $("#M_L_0_UL .img[name='chborder']");
 	    }
@@ -265,7 +265,7 @@
 	    divF.attr('pn',id);
 	  }
 	  
-	  function b_imgchangeauto(){ //ç„¦ç‚¹å›¾åˆ‡æ¢å®šæ—¶è°ƒç”¨
+	  function b_imgchangeauto(){ //½¹µãÍ¼ÇĞ»»¶¨Ê±µ÷ÓÃ
 	    if(typeof(divF)=='undefined')divF=$('div:first','#play_swf');
 	    var id = parseInt(divF.attr('pn')|0); 
 	    if(divF.css('display') != 'none') b_imgchange(id+1);
@@ -343,39 +343,39 @@
 
 <DIV id=wrapper>
 
-	<!-- å¤´å¼•ç”¨ å¼€å§‹ -->
+	<!-- Í·ÒıÓÃ ¿ªÊ¼ -->
 
 	<%@ include file="include/header.jsp"%>
 
-	<!-- å¤´å¼•ç”¨ ç»“æŸ -->
+	<!-- Í·ÒıÓÃ ½áÊø -->
 	
 	<DIV class=clear></DIV>
 	
-	<!-- å¯¼èˆª å¼€å§‹ --> 
+	<!-- µ¼º½ ¿ªÊ¼ --> 
 	
-	<!-- å¯¼èˆª ç»“æŸ -->
+	<!-- µ¼º½ ½áÊø -->
 	
 	<DIV class=clear></DIV>
 	
-	<!-- å¹¿å‘Š å¼€å§‹ -->
+	<!-- ¹ã¸æ ¿ªÊ¼ -->
 	<!--
 	<SCRIPT language=JavaScript1.1 src=""></SCRIPT>
 	-->
 	<DIV class=clear></DIV>
-	<!-- å¹¿å‘Š ç»“æŸ -->
+	<!-- ¹ã¸æ ½áÊø -->
 	
-	<!-- äºŒçº§å¯¼èˆª å¼€å§‹ --><!--script src="http://t.openv.com/zt/inc/openv_sub_nvg.js"></script--><!-- äºŒçº§å¯¼èˆª ç»“æŸ -->
+	<!-- ¶ş¼¶µ¼º½ ¿ªÊ¼ --><!--script src="http://t.openv.com/zt/inc/openv_sub_nvg.js"></script--><!-- ¶ş¼¶µ¼º½ ½áÊø -->
 	
 	<DIV class=clear></DIV>
 	
-	<DIV class=tj><!-- æ»šåŠ¨æ¨è -->
-		<DIV class="title c_grey2 b">ç«è¾£æ’­æŠ¥ï¼š 
+	<DIV class=tj><!-- ¹ö¶¯ÍÆ¼ö -->
+		<DIV class="title c_grey2 b">»ğÀ±²¥±¨£º 
 			<SPAN id=top_tj>
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://hd.openv.com/pro_play-hdprog_20081022_6819657.html">&nbsp;å°åº¦å«æ˜Ÿæ’å›½æ——ä¸Šæœˆçƒç´§é€¼ä¸­å›½&nbsp;</A> 
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://www.openv.com/play/CCTVNEWSnews_20081021_6810868_0.html">&nbsp;å¾®è½¯â€œé»‘å±â€è¡ŒåŠ¨é­åå¯¹å£°æµª&nbsp;</A> 
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://hd.openv.com/tv_play-hdteleplay_20081019_6804247.html">&nbsp;ä¸‘å¥³æ— æ•Œå®Œæ•´ç‰ˆ&nbsp;</A> 
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://hd.openv.com/tv_play-hdteleplay_20081023_6822371.html">&nbsp;éƒ­æ™‹å®‰è’™å˜‰æ…§ã€Šä¸æ•ŒåŒè¡Œã€‹ç²¾å½©æ¬£èµ &nbsp;</A> 
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://www.openv.com/play/dvdprogramme_20081022_6816299_0.html">&nbsp;é»å§¿å«æ³ªå®£å¸ƒé€€å‡ºå¨±ä¹åœˆ&nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://hd.openv.com/pro_play-hdprog_20081022_6819657.html">&nbsp;Ó¡¶ÈÎÀĞÇ²å¹úÆìÉÏÔÂÇò½ô±ÆÖĞ¹ú&nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://www.openv.com/play/CCTVNEWSnews_20081021_6810868_0.html">&nbsp;Î¢Èí¡°ºÚÆÁ¡±ĞĞ¶¯Ôâ·´¶ÔÉùÀË&nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://hd.openv.com/tv_play-hdteleplay_20081019_6804247.html">&nbsp;³óÅ®ÎŞµĞÍêÕû°æ&nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://hd.openv.com/tv_play-hdteleplay_20081023_6822371.html">&nbsp;¹ù½ú°²ÃÉ¼Î»Û¡¶ÓëµĞÍ¬ĞĞ¡·¾«²ÊĞÀÉÍ &nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="http://www.openv.com/play/dvdprogramme_20081022_6816299_0.html">&nbsp;Àè×Ëº¬ÀáĞû²¼ÍË³öÓéÀÖÈ¦&nbsp;</A> 
 			</SPAN>
 		</DIV>
 		<SCRIPT>
@@ -390,31 +390,31 @@
 
 		<DIV class=clear></DIV>
 		
-		<!-- å†…å®¹ å¼€å§‹  -->
+		<!-- ÄÚÈİ ¿ªÊ¼  -->
 		<DIV class=content>
 			
-			<!-- Loadding å¼€å§‹ -->
+			<!-- Loadding ¿ªÊ¼ -->
 			<DIV style="Z-INDEX: 99; POSITION: absolute; MARGIN: 265px 0px 0px 875px; DISPLAY: none" id=M_L_MSG>
 				<IMG src="images/loading.gif" width=50 height=50> 
 			</DIV>
-			<!-- Loadding ç»“æŸ -->
+			<!-- Loadding ½áÊø -->
 			
 			<DIV id=M_L_0>
 				<DIV class=left></DIV>
 				<DIV class=mid>
 				
-					<!-- æ’­æ”¾å™¨ å¼€å§‹ -->
+					<!-- ²¥·ÅÆ÷ ¿ªÊ¼ -->
 					<DIV id=play_swf class=swf>
-						<DIV pn="-1"><!-- å¤§å›¾ --></DIV>
-						<DIV style="DISPLAY: none"><!-- æ’­æ”¾å™¨ --></DIV>
+						<DIV pn="-1"><!-- ´óÍ¼ --></DIV>
+						<DIV style="DISPLAY: none"><!-- ²¥·ÅÆ÷ --></DIV>
 					</DIV>
-					<!-- æ’­æ”¾å™¨ ç»“æŸ -->
+					<!-- ²¥·ÅÆ÷ ½áÊø -->
 					
 					<DIV class=js>
 						<DIV class=js_top></DIV>
 						<DIV class=js_mid>
 							<DIV class=title1>
-								<A class="f14 b c_white" href="http://www.openv.com/">ç²¾å½©æ¨è</A> 
+								<A class="f14 b c_white" href="http://www.openv.com/">¾«²ÊÍÆ¼ö</A> 
 								<DIV id=M_L_0_UL_C class=fy>
 									<IMG class=hand onClick="M_L_Move('M_L_0_UL',0,-1)" align=absMiddle src="images/js_jian1.jpg" width=8 height=16> 
 									<IMG class=M_L onClick="M_L_Move('M_L_0_UL',0)" align=absMiddle src="images/ico_2.jpg" width=8 height=8> 
@@ -441,13 +441,13 @@
 	  									
 	  									<DIV class=height><A class=c_white title=${video.shorttitle } target=_play href="http://www.openv.com/play/dvdprogramme_20081024_6826943_0.html">${video.shorttitle }&nbsp;</A></DIV>
 	  									
-	  									<DIV class=height1><SPAN class=c_grey>ä¸»è®²ï¼š</SPAN><A class=c_green target=_blank href="http://t.openv.com/zj/show.php?pid=finance_2008_1906">${video.writer }</A></DIV>
+	  									<DIV class=height1><SPAN class=c_grey>Ö÷½²£º</SPAN><A class=c_green target=_blank href="http://t.openv.com/zj/show.php?pid=finance_2008_1906">${video.writer }</A></DIV>
 	  									<DIV><SPAN class=c_grey></SPAN> </DIV>
 	  									<DIV>
 	  										<A class=c_grey href="javascript:playerInner('dvdprogramme_20081024_6826943','${video.shorttitle }')">
-	  											<IMG align=absMiddle src="images/ico_5.gif" width=13 height=13>&nbsp;&nbsp;é¢„è§ˆ 
+	  											<IMG align=absMiddle src="images/ico_5.gif" width=13 height=13>&nbsp;&nbsp;Ô¤ÀÀ 
 	  										</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	  										<A class=c_grey title=${video.shorttitle } target=_play href="http://www.openv.com/play/dvdprogramme_20081024_6826943_0.html">å®Œæ•´æ’­æ”¾</A>
+	  										<A class=c_grey title=${video.shorttitle } target=_play href="http://www.openv.com/play/dvdprogramme_20081024_6826943_0.html">ÍêÕû²¥·Å</A>
 	  									</DIV>
 	  									<DIV class=line></DIV>
 	  							
@@ -460,18 +460,18 @@
 								</UL>
 							
 								<SCRIPT>
-						       		getPlaycount(); //è·å–æ’­æ”¾æ•°
-						       		chBord();       //è¾¹æ¡†å˜è‰²
-						       		b_imgchangeauto(); //å¤§å›¾åˆ‡æ¢
+						       		getPlaycount(); //»ñÈ¡²¥·ÅÊı
+						       		chBord();       //±ß¿ò±äÉ«
+						       		b_imgchangeauto(); //´óÍ¼ÇĞ»»
 					     		</SCRIPT>
 							</DIV>
 							
 							<DIV class=list_font>
 								<UL>
-									<LI><A class=c_grey target=_play href="#">[çƒ­ç‚¹]å¤®è§†ç»æµé¢‘é“é‡ç£…æ”¹ç‰ˆ</A> 
-								  	<LI><A class=c_grey target=_play href="#">[å®æ‹]å·è½¦è´¼é­å›´è§‚è€…æš´æ‰“</A> 
-								  	<LI><A class=c_grey target=_play href="#">[çƒ­ç‚¹]08æ–°å‰§å¤çµç²¾æ¢ç¬¬1é›†</A> 
-								  	<LI><A class=c_grey target=_play href="#">[æ¨è]CCTV-2ç›´å‡»åå°”è¡—é‡‘èé£æš´</A> 
+									<LI><A class=c_grey target=_play href="#">[ÈÈµã]ÑëÊÓ¾­¼ÃÆµµÀÖØ°õ¸Ä°æ</A> 
+								  	<LI><A class=c_grey target=_play href="#">[ÊµÅÄ]Íµ³µÔôÔâÎ§¹ÛÕß±©´ò</A> 
+								  	<LI><A class=c_grey target=_play href="#">[ÈÈµã]08ĞÂ¾ç¹ÅÁé¾«Ì½µÚ1¼¯</A> 
+								  	<LI><A class=c_grey target=_play href="#">[ÍÆ¼ö]CCTV-2Ö±»÷»ª¶û½Ö½ğÈÚ·ç±©</A> 
 									</LI>
 								</UL>
 							</DIV>
@@ -490,7 +490,7 @@
 			<DIV id=M_L_1>
 			</DIV>
 		</DIV>
-		<!-- å†…å®¹ç»“æŸ  -->
+		<!-- ÄÚÈİ½áÊø  -->
 		
 		<DIV class=clear></DIV>
 		
@@ -498,14 +498,14 @@
 			<DIV class=left></DIV>
 			<DIV class=mid>
 			<UL id=swf_tag>
-			  	<LI class="hand expli c_white b f14">çƒ­ç‚¹
-			  	<LI class="hand c_black b f14">åˆ›ä¸šäººç”Ÿ
-			  	<LI class="hand c_black b f14">åŠ±å¿—æˆåŠŸ
-			  	<LI class="hand c_black b f14">è¥é”€ç®¡ç†
-			  	<LI class="hand c_black b f14">ç»æµé‡‘è
-			  	<LI class="hand c_black b f14">æŠ•èµ„ç†è´¢
-			  	<LI class="hand c_black b f14">è´¢å¯Œè§‚å¿µ
-			  	<LI class="hand c_black b f14">åå¸ˆåå®¶ </LI>
+			  	<LI class="hand expli c_white b f14">ÈÈµã
+			  	<LI class="hand c_black b f14">´´ÒµÈËÉú
+			  	<LI class="hand c_black b f14">ÀøÖ¾³É¹¦
+			  	<LI class="hand c_black b f14">ÓªÏú¹ÜÀí
+			  	<LI class="hand c_black b f14">¾­¼Ã½ğÈÚ
+			  	<LI class="hand c_black b f14">Í¶×ÊÀí²Æ
+			  	<LI class="hand c_black b f14">²Æ¸»¹ÛÄî
+			  	<LI class="hand c_black b f14">ÃûÊ¦Ãû¼Ò </LI>
 			</UL>
 			<SCRIPT>
      			var _con = $('.content:first','.tj');
@@ -532,22 +532,22 @@
 <DIV class=clear></DIV>
 <DIV id=contain>
 <DIV class=siderA_box>
-<!-- å¹¿å‘Š å¼€å§‹ -->
+<!-- ¹ã¸æ ¿ªÊ¼ -->
 <!--
 <SCRIPT language=JavaScript1.1 src="images/page=1&amp;pindao=homepage&amp;position=bottom_1"></SCRIPT>
 -->
-<!-- å¹¿å‘Š ç»“æŸ -->
+<!-- ¹ã¸æ ½áÊø -->
 
-<!-- æ¨èä¸“è¾‘ -->
+<!-- ÍÆ¼ö×¨¼­ -->
 <DIV class=siderC_box>
 	<DIV class=title>
 		<DIV class=left></DIV>
 		<DIV class=mid>
-			<SPAN><A class="f14 b c_black" target=_blank href="#">åˆ›ä¸šåŠ±å¿—</A></SPAN> 
+			<SPAN><A class="f14 b c_black" target=_blank href="#">´´ÒµÀøÖ¾</A></SPAN> 
 			<DIV class=bb>
 				<UL>
-					<LI><A class=c_grey2 target=_play href="#">&nbsp;åˆ›ä¸š&nbsp;</A> 
-  					<LI><A class=c_grey2 target=_play href="#">&nbsp;åŠ±å¿—&nbsp;</A> 
+					<LI><A class=c_grey2 target=_play href="#">&nbsp;´´Òµ&nbsp;</A> 
+  					<LI><A class=c_grey2 target=_play href="#">&nbsp;ÀøÖ¾&nbsp;</A> 
 					</LI>
 				</UL>
 			</DIV>
@@ -569,7 +569,7 @@
   		</DIV>
 	</UL>
 	
-	<DIV class="tright more"><A class="b c_grey2" target=_blank href="#">æ›´å¤š&gt;&gt;</A></DIV>
+	<DIV class="tright more"><A class="b c_grey2" target=_blank href="#">¸ü¶à&gt;&gt;</A></DIV>
 	<DIV class=clear></DIV>
 </DIV>
 
@@ -577,22 +577,22 @@
 
 <DIV class=clear></DIV></DIV>
 <DIV style="HEIGHT: 12px" class=clear></DIV>
-<!-- å¹¿å‘Š å¼€å§‹ -->
+<!-- ¹ã¸æ ¿ªÊ¼ -->
 <!--
 <SCRIPT language=JavaScript1.1 src=""></SCRIPT>
 -->
-<!-- å¹¿å‘Š ç»“æŸ -->
+<!-- ¹ã¸æ ½áÊø -->
 
-<!-- é«˜æ¸…èŠ‚ç›® -->
+<!-- ¸ßÇå½ÚÄ¿ -->
 <DIV class=siderC_box>
 	<DIV class=title>
 		<DIV class=left></DIV>
 		<DIV class=mid>
-			<SPAN><A class="f14 b c_black" target=_blank href="http://hd.openv.com/index_list.php?t=1">è¥é”€ç®¡ç†</A></SPAN> 
+			<SPAN><A class="f14 b c_black" target=_blank href="http://hd.openv.com/index_list.php?t=1">ÓªÏú¹ÜÀí</A></SPAN> 
 			<DIV class=bb>
 			<UL>
-  				<LI><A class=c_grey2 target=_play href="http://tv.openv.com/col_293.html">&nbsp;ç®¡ç†&nbsp;</A> 
-  				<LI><A class=c_grey2 target=_play href="http://tv.openv.com/col_231.html">&nbsp;è¥é”€&nbsp;</A> 
+  				<LI><A class=c_grey2 target=_play href="http://tv.openv.com/col_293.html">&nbsp;¹ÜÀí&nbsp;</A> 
+  				<LI><A class=c_grey2 target=_play href="http://tv.openv.com/col_231.html">&nbsp;ÓªÏú&nbsp;</A> 
   				</LI>
   			</UL>
   		</DIV>
@@ -616,29 +616,29 @@
   	</DIV>
 </UL>
 <DIV class=clear></DIV>
-<DIV class="tright more"><A class="b c_grey2" target=_blank href="http://hd.openv.com/index_list.php?t=1">æ›´å¤š&gt;&gt;</A></DIV>
+<DIV class="tright more"><A class="b c_grey2" target=_blank href="http://hd.openv.com/index_list.php?t=1">¸ü¶à&gt;&gt;</A></DIV>
 
 <DIV class=clear></DIV></DIV>
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV style="HEIGHT: 12px" class=clear></DIV>
-<!-- å¹¿å‘Š å¼€å§‹ -->
+<!-- ¹ã¸æ ¿ªÊ¼ -->
 <!--
 <SCRIPT language=JavaScript1.1 src=""></SCRIPT>
 -->
-<!-- å¹¿å‘Š ç»“æŸ -->
+<!-- ¹ã¸æ ½áÊø -->
 
-<!-- ç»¼è‰ºèŠ‚ç›® -->
+<!-- ×ÛÒÕ½ÚÄ¿ -->
 
 <DIV class=siderC_box>
 	<DIV class=title>
 		<DIV class=left></DIV>
 		<DIV class=mid>
-			<SPAN><A class="f14 b c_black" href="#">è´¢å¯Œäººç”Ÿ</A></SPAN> 
+			<SPAN><A class="f14 b c_black" href="#">²Æ¸»ÈËÉú</A></SPAN> 
 			<DIV class=bb>
 				<UL>
-					<LI><A class=c_grey2 target=_play href="#">&nbsp;è´¢å¯Œ&nbsp;</A> 
-					<LI><A class=c_grey2 target=_play href="#">&nbsp;äººç”Ÿ&nbsp;</A> 
+					<LI><A class=c_grey2 target=_play href="#">&nbsp;²Æ¸»&nbsp;</A> 
+					<LI><A class=c_grey2 target=_play href="#">&nbsp;ÈËÉú&nbsp;</A> 
   					</LI>
   				</UL>
   			</DIV>
@@ -662,21 +662,21 @@
 </UL>
 
 <DIV class=clear></DIV>
-<DIV class="tright more"><A class="b c_grey2" target=_blank href="#">æ›´å¤š&gt;&gt;</A></DIV>
+<DIV class="tright more"><A class="b c_grey2" target=_blank href="#">¸ü¶à&gt;&gt;</A></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV style="HEIGHT: 12px" class=clear></DIV>
 
-<!-- ä½“è‚²èµ›äº‹ -->
+<!-- ÌåÓıÈüÊÂ -->
 <DIV class=siderC_box>
 <DIV class=title>
 <DIV class=left></DIV>
-<DIV class=mid><SPAN><A class="f14 b c_black" href="#">ç»æµé‡‘è</A></SPAN> 
+<DIV class=mid><SPAN><A class="f14 b c_black" href="#">¾­¼Ã½ğÈÚ</A></SPAN> 
 <DIV class=bb>
 <UL>
-  <LI><A class=c_grey2 target=_play href="#">&nbsp;ç»æµ&nbsp;</A> 
-  <LI><A class=c_grey2 target=_play href="#">&nbsp;é‡‘è&nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="#">&nbsp;¾­¼Ã&nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="#">&nbsp;½ğÈÚ&nbsp;</A> 
   </LI>
 </UL>
 </DIV>
@@ -697,19 +697,19 @@
 
 </UL>
 <DIV class=clear></DIV>
-<DIV class="tright more"><A class="b c_grey2" target=_blank href="http://sports.openv.com/">æ›´å¤š&gt;&gt;</A></DIV>
+<DIV class="tright more"><A class="b c_grey2" target=_blank href="http://sports.openv.com/">¸ü¶à&gt;&gt;</A></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
-<DIV style="HEIGHT: 12px" class=clear></DIV><!-- é«˜æ¸…å½±è§†å‰§ -->
+<DIV style="HEIGHT: 12px" class=clear></DIV><!-- ¸ßÇåÓ°ÊÓ¾ç -->
 <DIV class=siderC_box>
 <DIV class=title>
 <DIV class=left></DIV>
-<DIV class=mid><SPAN><A class="f14 b c_black" href="http://hd.openv.com/index.shtml">æˆåŠŸæ¿€åŠ±</A></SPAN> 
+<DIV class=mid><SPAN><A class="f14 b c_black" href="http://hd.openv.com/index.shtml">³É¹¦¼¤Àø</A></SPAN> 
 <DIV class=bb>
 <UL>
-  <LI><A class=c_grey2 target=_play href="#">&nbsp;ç™¾ä¸‡å¯Œç¿çš„åˆæ‹ &nbsp;</A> 
-  <LI><A class=c_grey2 target=_play href="#">&nbsp;å¹•åå¥³è‹±é›„&nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="#">&nbsp;°ÙÍò¸»ÎÌµÄ³õÁµ &nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="#">&nbsp;Ä»ºóÅ®Ó¢ĞÛ&nbsp;</A> 
 
 
   </LI></UL></DIV>
@@ -729,21 +729,21 @@
   	</DIV>
 </UL>
 <DIV class=clear></DIV>
-<DIV class="tright more"><A class="b c_grey2" target=_blank href="http://hd.openv.com/index.shtml">æ›´å¤š&gt;&gt;</A></DIV>
+<DIV class="tright more"><A class="b c_grey2" target=_blank href="http://hd.openv.com/index.shtml">¸ü¶à&gt;&gt;</A></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV style="HEIGHT: 12px" class=clear></DIV>
-<!-- å¤§åƒä¸–ç•Œ -->
-<!-- ç½‘å‹çƒ­æœ -->
+<!-- ´óÇ§ÊÀ½ç -->
+<!-- ÍøÓÑÈÈËÑ -->
 
 </DIV>
 
-<!-- æ’è¡Œæ¦œ -->
+<!-- ÅÅĞĞ°ñ -->
 <DIV id=sider_box>
 	<img src="images/loading.gif" />
 </DIV>
-<!-- ç”µè§†èŠ‚ç›®å¤§å…¨ -->
+<!-- µçÊÓ½ÚÄ¿´óÈ« -->
 <DIV class=clear></DIV>
 
 <DIV style="DISPLAY: none" id=dsjmdq class=dq_content><!-- -->
@@ -757,6 +757,6 @@
 <DIV style="PADDING-TOP: 2px"></DIV></DIV>
 <DIV class=clear></DIV></DIV>
 
-<!-- ç»Ÿè®¡ å¼€å§‹-->
+<!-- Í³¼Æ ¿ªÊ¼-->
 
-<!-- ç»Ÿè®¡ ç»“æŸ--><!--usetime:0.180598974228--></BODY></HTML>
+<!-- Í³¼Æ ½áÊø--><!--usetime:0.180598974228--></BODY></HTML>

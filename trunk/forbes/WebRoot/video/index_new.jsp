@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="GBK"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -6,7 +6,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
-	<TITLE>èµ¤è„šç½‘ - å­¦ä¹ è§†é¢‘ - å…¨åŠ›æ‰“é€ åˆ›ä¸šè€…å­¦ä¹ å’Œäº¤æµå¹³å°</TITLE>
+	<TITLE>³à½ÅÍø - Ñ§Ï°ÊÓÆµ - È«Á¦´òÔì´´ÒµÕßÑ§Ï°ºÍ½»Á÷Æ½Ì¨</TITLE>
 	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
 	
 	<LINK rel=stylesheet type=text/css href="css/generl200809.css">
@@ -26,7 +26,7 @@
 
 
 	<SCRIPT>
-		function M_L_Move(id,pn,m){  //æ˜¾ç¤ºåˆ—è¡¨å·¦å³æ»šåŠ¨
+		function M_L_Move(id,pn,m){  //ÏÔÊ¾ÁĞ±í×óÓÒ¹ö¶¯
 	    	var obj = $('#'+id);
 	    	var p   = parseInt(obj.attr('pn')|0);
 	    	if(typeof(m)=='number'){
@@ -43,7 +43,7 @@
 	    	obj.attr('pn',pn);
 		}
 	  
-	  	function fun_top_tj(){  //é¡¶éƒ¨æ¨èæ»šåŠ¨
+	  	function fun_top_tj(){  //¶¥²¿ÍÆ¼ö¹ö¶¯
 	    	obj  = $('#top_tj');
 	    	obja = $('a',obj);
 			var pn = parseInt(obj.attr('pn')|0);
@@ -66,7 +66,7 @@
 	    	}
 		}
 	  
-		function showzjlist(id,isshow){ //ä¸“è¾‘æ¨èè§†é¢‘åˆ—è¡¨
+		function showzjlist(id,isshow){ //×¨¼­ÍÆ¼öÊÓÆµÁĞ±í
 	    	var obj = $('#zjlist_'+id);
 	    	if(isshow){
 	      	obj.fadeIn('fast');
@@ -75,12 +75,12 @@
 	    	}
 		}
 	  
-	  function showDq(){ //ç”µè§†å¤§å…¨æ˜¾ç¤ºæ§åˆ¶
+	  function showDq(){ //µçÊÓ´óÈ«ÏÔÊ¾¿ØÖÆ
 	    showTag(0);
 	    $('#dsjmdq').toggle();
 	  }
 	  
-	  function showTag(id){ //åŠ¨æ€è·å–ç”µè§†å¤§å…¨æ•°æ®å¹¶æ˜¾ç¤º
+	  function showTag(id){ //¶¯Ì¬»ñÈ¡µçÊÓ´óÈ«Êı¾İ²¢ÏÔÊ¾
 	    var tmp = $('#dsjmdq .tab').eq(id);
 	    var obj = $('#dsjmdq');
 	    if(tmp.html().length < 100){
@@ -110,7 +110,7 @@
 	    }
 	  }
 	  
-	  function fun_swf_tag(pn){ //é¦–å±çƒ­ç‚¹æ ‡ç­¾åˆ‡æ¢
+	  function fun_swf_tag(pn){ //Ê×ÆÁÈÈµã±êÇ©ÇĞ»»
 	  	
 	    var p = parseInt(_swftag.attr('pn')|0);
 	    if(pn==p)return;
@@ -159,7 +159,7 @@
 	    playComm("PAUSE");
 	  }
 	  
-	  function getPlaycount(){  //è·å–æ’­æ”¾æ•°
+	  function getPlaycount(){  //»ñÈ¡²¥·ÅÊı
 	    $("span[name='playcount']").each(function(){
 	     var $_ = $(this);
 	     var pid = $_.attr('pid');
@@ -171,7 +171,7 @@
 	    });
 	  }
 	  
-	  function videoStatus(id,ty,cs){ //æ’­æ”¾å™¨çŠ¶æ€
+	  function videoStatus(id,ty,cs){ //²¥·ÅÆ÷×´Ì¬
 	    if(ty!='ad' && cs == 'playOverAll'){
 	      p_END();
 	    }
@@ -180,7 +180,7 @@
 	  function flvPlayEndCall(){
 	  }
 	  
-	  function chBord(){ //çƒ­ç‚¹è§†é¢‘é¼ æ ‡æ•ˆæœ
+	  function chBord(){ //ÈÈµãÊÓÆµÊó±êĞ§¹û
 	    $(".img[name='chborder']").each(function(){
 	      var $_ = $(this);
 	      $_.mouseover(function(){
@@ -206,7 +206,7 @@
 	    ob.SetVariable("Command", comm);
 	  }
 	  
-	  function playerInner(pid,title){ //é¢„è§ˆæ§åˆ¶
+	  function playerInner(pid,title){ //Ô¤ÀÀ¿ØÖÆ
 	  	
 	    var sFV      = '';
 	    var swf_path = pid;
@@ -230,7 +230,7 @@
 	  }
 	  
 	  var b_imgval = [],imgS,divF;
-	  function b_imgchange(id){ //ç„¦ç‚¹å›¾åˆ‡æ¢
+	  function b_imgchange(id){ //½¹µãÍ¼ÇĞ»»
 	    if(typeof(imgS)=='undefined'){
 	      imgS = $("#M_L_0_UL .img[name='chborder']");
 	    }
@@ -262,7 +262,7 @@
 	    divF.attr('pn',id);
 	  }
 	  
-	  function b_imgchangeauto(){ //ç„¦ç‚¹å›¾åˆ‡æ¢å®šæ—¶è°ƒç”¨
+	  function b_imgchangeauto(){ //½¹µãÍ¼ÇĞ»»¶¨Ê±µ÷ÓÃ
 	    if(typeof(divF)=='undefined')divF=$('div:first','#play_swf');
 	    var id = parseInt(divF.attr('pn')|0); 
 	    if(divF.css('display') != 'none') b_imgchange(id+1);
@@ -277,39 +277,39 @@
 
 <DIV id=wrapper>
 
-	<!-- å¤´å¼•ç”¨ å¼€å§‹ -->
+	<!-- Í·ÒıÓÃ ¿ªÊ¼ -->
 
 	<%@ include file="include/header.jsp"%>
 
-	<!-- å¤´å¼•ç”¨ ç»“æŸ -->
+	<!-- Í·ÒıÓÃ ½áÊø -->
 	
 	<DIV class=clear></DIV>
 	
-	<!-- å¯¼èˆª å¼€å§‹ --> 
+	<!-- µ¼º½ ¿ªÊ¼ --> 
 	
-	<!-- å¯¼èˆª ç»“æŸ -->
+	<!-- µ¼º½ ½áÊø -->
 	
 	<DIV class=clear></DIV>
 	
-	<!-- å¹¿å‘Š å¼€å§‹ -->
+	<!-- ¹ã¸æ ¿ªÊ¼ -->
 	<!--
 	<SCRIPT language=JavaScript1.1 src=""></SCRIPT>
 	-->
 	<DIV class=clear></DIV>
-	<!-- å¹¿å‘Š ç»“æŸ -->
+	<!-- ¹ã¸æ ½áÊø -->
 	
-	<!-- äºŒçº§å¯¼èˆª å¼€å§‹ --><!--script src=""></script--><!-- äºŒçº§å¯¼èˆª ç»“æŸ -->
+	<!-- ¶ş¼¶µ¼º½ ¿ªÊ¼ --><!--script src=""></script--><!-- ¶ş¼¶µ¼º½ ½áÊø -->
 	
 	<DIV class=clear></DIV>
 	
-	<DIV class=tj><!-- æ»šåŠ¨æ¨è -->
-		<DIV class="title c_grey2 b">ç«è¾£æ’­æŠ¥ï¼š 
+	<DIV class=tj><!-- ¹ö¶¯ÍÆ¼ö -->
+		<DIV class="title c_grey2 b">»ğÀ±²¥±¨£º 
 			<SPAN id=top_tj>
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=5">&nbsp;èµ¢åœ¨ä¸­å›½ç¬¬ä¸€èµ›å­£&nbsp;</A> 
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=6">&nbsp;èµ¢åœ¨ä¸­å›½ç¬¬äºŒèµ›å­£&nbsp;</A> 
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=7">&nbsp;èµ¢åœ¨ä¸­å›½ç¬¬ä¸‰èµ›å­£&nbsp;</A> 
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=1">&nbsp;ä½™ä¸–ç»´ æˆåŠŸç»ç†äºº&nbsp;</A> 
-				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=8">&nbsp;ä½™ä¸–ç»´ å¦‚ä½•å¡‘é€ ç®¡ç†è€…çš„æ€§æ ¼é­…åŠ›&nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=5">&nbsp;Ó®ÔÚÖĞ¹úµÚÒ»Èü¼¾&nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=6">&nbsp;Ó®ÔÚÖĞ¹úµÚ¶şÈü¼¾&nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=7">&nbsp;Ó®ÔÚÖĞ¹úµÚÈıÈü¼¾&nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=1">&nbsp;ÓàÊÀÎ¬ ³É¹¦¾­ÀíÈË&nbsp;</A> 
+				<A style="DISPLAY: none" class="c_green nob" target=_blank href="VideoShow.do?id=8">&nbsp;ÓàÊÀÎ¬ ÈçºÎËÜÔì¹ÜÀíÕßµÄĞÔ¸ñ÷ÈÁ¦&nbsp;</A> 
 			</SPAN>
 		</DIV>
 		<SCRIPT>
@@ -324,31 +324,31 @@
 
 		<DIV class=clear></DIV>
 		
-		<!-- å†…å®¹ å¼€å§‹  -->
+		<!-- ÄÚÈİ ¿ªÊ¼  -->
 		<DIV class=content>
 			
-			<!-- Loadding å¼€å§‹ -->
+			<!-- Loadding ¿ªÊ¼ -->
 			<DIV style="Z-INDEX: 99; POSITION: absolute; MARGIN: 265px 0px 0px 875px; DISPLAY: none" id=M_L_MSG>
 				<IMG src="images/loading.gif" width=50 height=50> 
 			</DIV>
-			<!-- Loadding ç»“æŸ -->
+			<!-- Loadding ½áÊø -->
 			
 			<DIV id=M_L_0>
 				<DIV class=left></DIV>
 				<DIV class=mid>
 				
-					<!-- æ’­æ”¾å™¨ å¼€å§‹ -->
+					<!-- ²¥·ÅÆ÷ ¿ªÊ¼ -->
 					<DIV id=play_swf class=swf>
-						<DIV pn="-1"><!-- å¤§å›¾ --></DIV>
-						<DIV style="DISPLAY: none"><!-- æ’­æ”¾å™¨ --></DIV>
+						<DIV pn="-1"><!-- ´óÍ¼ --></DIV>
+						<DIV style="DISPLAY: none"><!-- ²¥·ÅÆ÷ --></DIV>
 					</DIV>
-					<!-- æ’­æ”¾å™¨ ç»“æŸ -->
+					<!-- ²¥·ÅÆ÷ ½áÊø -->
 					
 					<DIV class=js>
 						<DIV class=js_top></DIV>
 						<DIV class=js_mid>
 							<DIV class=title1>
-								<A class="f14 b c_white" href="VideoSearch.do?act=search&orderby=iscommend Desc">ç²¾å½©æ¨è</A> 
+								<A class="f14 b c_white" href="VideoSearch.do?act=search&orderby=iscommend Desc">¾«²ÊÍÆ¼ö</A> 
 								<DIV id=M_L_0_UL_C class=fy>
 									<IMG class=hand onClick="M_L_Move('M_L_0_UL',0,-1)" align=absMiddle src="images/js_jian1.jpg" width=8 height=16> 
 									<IMG class=M_L onClick="M_L_Move('M_L_0_UL',0)" align=absMiddle src="images/ico_2.jpg" width=8 height=8> 
@@ -374,13 +374,13 @@
 	  									
 	  									<DIV class=height><A class=c_white title=${video.shorttitle } target=_play href="VideoShow.do?id=${video.id }">${video.shorttitle }&nbsp;</A></DIV>
 	  									
-	  									<DIV class=height1><SPAN class=c_grey>ä¸»è®²ï¼š</SPAN><A class=c_green target=_blank href="VideoSearch.do?act=search&keyword=${video.writer }">${video.writer }</A></DIV>
+	  									<DIV class=height1><SPAN class=c_grey>Ö÷½²£º</SPAN><A class=c_green target=_blank href="VideoSearch.do?act=search&keyword=${video.writer }">${video.writer }</A></DIV>
 	  									<DIV><SPAN class=c_grey></SPAN> </DIV>
 	  									<DIV>
 	  										<A class=c_grey href="javascript:playerInner('${video.firstVideoUrl.url }','${video.shorttitle }')">
-	  											<IMG align=absMiddle src="images/ico_5.gif" width=13 height=13>&nbsp;&nbsp;é¢„è§ˆ 
+	  											<IMG align=absMiddle src="images/ico_5.gif" width=13 height=13>&nbsp;&nbsp;Ô¤ÀÀ 
 	  										</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	  										<A class=c_grey title=${video.shorttitle } target=_play href="VideoShow.do?id=${video.id }">å®Œæ•´æ’­æ”¾</A>
+	  										<A class=c_grey title=${video.shorttitle } target=_play href="VideoShow.do?id=${video.id }">ÍêÕû²¥·Å</A>
 	  									</DIV>
 	  									<DIV class=line></DIV>
 	  							
@@ -393,16 +393,16 @@
 								</UL>
 							
 								<SCRIPT>
-						       		getPlaycount(); //è·å–æ’­æ”¾æ•°
-						       		chBord();       //è¾¹æ¡†å˜è‰²
-						       		b_imgchangeauto(); //å¤§å›¾åˆ‡æ¢
+						       		getPlaycount(); //»ñÈ¡²¥·ÅÊı
+						       		chBord();       //±ß¿ò±äÉ«
+						       		b_imgchangeauto(); //´óÍ¼ÇĞ»»
 					     		</SCRIPT>
 							</DIV>
 							
 							<DIV class=list_font>
 								<UL>
 									<c:forEach items="${COMMEND_VIDEO_LIST}" var="video">
-									<LI><A class=c_grey target=_play href="VideoShow.do?id=${video.id }">[æ¨è]${video.title }</A> 
+									<LI><A class=c_grey target=_play href="VideoShow.do?id=${video.id }">[ÍÆ¼ö]${video.title }</A> 
 								  	</c:forEach>
 								  	</LI>
 								</UL>
@@ -422,7 +422,7 @@
 			<DIV id=M_L_1>
 			</DIV>
 		</DIV>
-		<!-- å†…å®¹ç»“æŸ  -->
+		<!-- ÄÚÈİ½áÊø  -->
 		
 		<DIV class=clear></DIV>
 		
@@ -430,12 +430,12 @@
 			<DIV class=left></DIV>
 			<DIV class=mid>
 			<UL id=swf_tag>
-			  	<LI class="hand expli c_white b f14">çƒ­ç‚¹
-			  	<LI class="hand c_black b f14">åˆ›ä¸šæˆåŠŸå­¦
-			  	<LI class="hand c_black b f14">ä¼ä¸šå•†å­¦é™¢
-			  	<LI class="hand c_black b f14">æŠ•èµ„ç†è´¢
-			  	<LI class="hand c_black b f14">èŒåœºäººç”Ÿ
-			  	<LI class="hand c_black b f14">å¥åº·å…»ç”Ÿ</LI>
+			  	<LI class="hand expli c_white b f14">ÈÈµã
+			  	<LI class="hand c_black b f14">´´Òµ³É¹¦Ñ§
+			  	<LI class="hand c_black b f14">ÆóÒµÉÌÑ§Ôº
+			  	<LI class="hand c_black b f14">Í¶×ÊÀí²Æ
+			  	<LI class="hand c_black b f14">Ö°³¡ÈËÉú
+			  	<LI class="hand c_black b f14">½¡¿µÑøÉú</LI>
 			</UL>
 			<SCRIPT>
      			var _con = $('.content:first','.tj');
@@ -466,26 +466,26 @@
 
 
 <DIV class=siderA_box>
-<!-- å¹¿å‘Š å¼€å§‹ -->
+<!-- ¹ã¸æ ¿ªÊ¼ -->
 <!--
 
 <SCRIPT language=JavaScript1.1 src="#"></SCRIPT>
 -->
-<!-- å¹¿å‘Š ç»“æŸ -->
+<!-- ¹ã¸æ ½áÊø -->
 
 
-<!-- æ¨èä¸“è¾‘ -->
+<!-- ÍÆ¼ö×¨¼­ -->
 <DIV class=siderC_box>
 	<DIV class=title>
 		<DIV class=left></DIV>
 		<DIV class=mid>
-			<SPAN><A class="f14 b c_black" target=_blank href="VideoSearch.do?act=search&typeid=1">åˆ›ä¸šæˆåŠŸå­¦</A></SPAN> 
+			<SPAN><A class="f14 b c_black" target=_blank href="VideoSearch.do?act=search&typeid=1">´´Òµ³É¹¦Ñ§</A></SPAN> 
 			<DIV class=bb>
 				<UL>
-					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=2">&nbsp;åŠ±å¿—åˆ›ä¸š&nbsp;</A>
-  					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=3">&nbsp;æ¼”è®²å£æ‰&nbsp;</A>
-  					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=21">&nbsp;äººé™…æ²Ÿé€š&nbsp;</A>
-  					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=23">&nbsp;æ½œèƒ½å¼€å‘&nbsp;</A>
+					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=2">&nbsp;ÀøÖ¾´´Òµ&nbsp;</A>
+  					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=3">&nbsp;Ñİ½²¿Ú²Å&nbsp;</A>
+  					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=21">&nbsp;ÈË¼Ê¹µÍ¨&nbsp;</A>
+  					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=23">&nbsp;Ç±ÄÜ¿ª·¢&nbsp;</A>
 					</LI>
 				</UL>
 			</DIV>
@@ -506,8 +506,8 @@
 					  					<DIV class=tc></DIV>
 					  					<DIV class=tcc>
 					  						<DIV class=title>
-					  							<SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  							<SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  						</DIV>
 					  						<DIV class=content1>
 					  							<c:set var="urlcount" value="0"></c:set>
@@ -528,11 +528,11 @@
 									</A>
 								</DIV>
 					  			<DIV><A class="f14 b" title="${video.title}" target=_play href="#">${video.shorttitle}</A></DIV>
-					  			<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  			<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  			<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  			<DIV class=sm>
 					  				<A class=c_black title="${video.title}" target=_play href="#">
-					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  				</A> 
 					  			</DIV>
 					  		<LI>
@@ -543,8 +543,8 @@
 					  			<DIV style="DISPLAY: none" id=zjlist_1 class="t mab">
 					  				<DIV class=tc></DIV>
 					  				<DIV class=tcc>
-					  					<DIV class=title><SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  					<DIV class=title><SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  					</DIV>
 					  					<DIV class=content1>
 					  						<c:set var="urlcount" value="0"></c:set>
@@ -564,11 +564,11 @@
 					  			</A>
 					  		</DIV>
 					  		<DIV><A class="f14 b" title="${video.shorttitle}" target=_play href="VideoShow.do?id=${video.id}">${video.shorttitle}</A></DIV>
-					  		<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  		<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  		<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  		<DIV class=sm>
 					  			<A class=c_black title="${video.title}" target=_play href="VideoShow.do?id=${video.id}">
-					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  			</A>
 					  		</DIV>
 					  	</c:if>						
@@ -577,7 +577,7 @@
   		</DIV>
 	</UL>
 	
-	<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=1">æ›´å¤š&gt;&gt;</A></DIV>
+	<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=1">¸ü¶à&gt;&gt;</A></DIV>
 	<DIV class=clear></DIV>
 </DIV>
 
@@ -585,24 +585,24 @@
 
 <DIV class=clear></DIV></DIV>
 <DIV style="HEIGHT: 12px" class=clear></DIV>
-<!-- å¹¿å‘Š å¼€å§‹ -->
+<!-- ¹ã¸æ ¿ªÊ¼ -->
 <!--
 <SCRIPT language=JavaScript1.1 src=""></SCRIPT>
 -->
-<!-- å¹¿å‘Š ç»“æŸ -->
+<!-- ¹ã¸æ ½áÊø -->
 
-<!-- é«˜æ¸…èŠ‚ç›® -->
+<!-- ¸ßÇå½ÚÄ¿ -->
 <DIV class=siderC_box>
 	<DIV class=title>
 		<DIV class=left></DIV>
 		<DIV class=mid>
-			<SPAN><A class="f14 b c_black" target=_blank href="VideoSearch.do?act=search&typeid=5">ä¼ä¸šå•†å­¦é™¢</A></SPAN> 
+			<SPAN><A class="f14 b c_black" target=_blank href="VideoSearch.do?act=search&typeid=5">ÆóÒµÉÌÑ§Ôº</A></SPAN> 
 			<DIV class=bb>
 			<UL>
-  				<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=6">&nbsp;å¸‚åœºè¥é”€&nbsp;</A> 
-  				<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=7">&nbsp;ç»è¥ç®¡ç†&nbsp;</A>
-  				<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=17">&nbsp;é¢†å¯¼è‰ºæœ¯&nbsp;</A> 
-  				<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=19">&nbsp;è´¢åŠ¡ç®¡ç†&nbsp;</A> 
+  				<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=6">&nbsp;ÊĞ³¡ÓªÏú&nbsp;</A> 
+  				<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=7">&nbsp;¾­Óª¹ÜÀí&nbsp;</A>
+  				<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=17">&nbsp;Áìµ¼ÒÕÊõ&nbsp;</A> 
+  				<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=19">&nbsp;²ÆÎñ¹ÜÀí&nbsp;</A> 
   				</LI>
   			</UL>
   		</DIV>
@@ -623,8 +623,8 @@
 					  					<DIV class=tc></DIV>
 					  					<DIV class=tcc>
 					  						<DIV class=title>
-					  							<SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  							<SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  						</DIV>
 					  						<DIV class=content1>
 					  							<c:set var="urlcount" value="0"></c:set>
@@ -645,11 +645,11 @@
 									</A>
 								</DIV>
 					  			<DIV><A class="f14 b" title="${video.title}" target=_play href="#">${video.shorttitle}</A></DIV>
-					  			<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  			<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  			<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  			<DIV class=sm>
 					  				<A class=c_black title="${video.title}" target=_play href="#">
-					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  				</A> 
 					  			</DIV>
 					  		<LI>
@@ -660,8 +660,8 @@
 					  			<DIV style="DISPLAY: none" id=zjlist_1 class="t mab">
 					  				<DIV class=tc></DIV>
 					  				<DIV class=tcc>
-					  					<DIV class=title><SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  					<DIV class=title><SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  					</DIV>
 					  					<DIV class=content1>
 					  						<c:set var="urlcount" value="0"></c:set>
@@ -681,11 +681,11 @@
 					  			</A>
 					  		</DIV>
 					  		<DIV><A class="f14 b" title="${video.shorttitle}" target=_play href="VideoShow.do?id=${video.id}">${video.shorttitle}</A></DIV>
-					  		<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  		<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  		<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  		<DIV class=sm>
 					  			<A class=c_black title="${video.title}" target=_play href="VideoShow.do?id=${video.id}">
-					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  			</A>
 					  		</DIV>
 					  	</c:if>						
@@ -695,31 +695,31 @@
   	</DIV>
 </UL>
 <DIV class=clear></DIV>
-<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=5">æ›´å¤š&gt;&gt;</A></DIV>
+<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=5">¸ü¶à&gt;&gt;</A></DIV>
 
 <DIV class=clear></DIV></DIV>
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV style="HEIGHT: 12px" class=clear></DIV>
-<!-- å¹¿å‘Š å¼€å§‹ -->
+<!-- ¹ã¸æ ¿ªÊ¼ -->
 <!--
 <SCRIPT language=JavaScript1.1 src=""></SCRIPT>
 -->
-<!-- å¹¿å‘Š ç»“æŸ -->
+<!-- ¹ã¸æ ½áÊø -->
 
-<!-- ç»¼è‰ºèŠ‚ç›® -->
+<!-- ×ÛÒÕ½ÚÄ¿ -->
 
 <DIV class=siderC_box>
 	<DIV class=title>
 		<DIV class=left></DIV>
 		<DIV class=mid>
-			<SPAN><A class="f14 b c_black" href="VideoSearch.do?act=search&typeid=8">æŠ•èµ„ç†è´¢</A></SPAN> 
+			<SPAN><A class="f14 b c_black" href="VideoSearch.do?act=search&typeid=8">Í¶×ÊÀí²Æ</A></SPAN> 
 			<DIV class=bb>
 				<UL>
-					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=9">&nbsp;ç»æµé‡‘è&nbsp;</A> 
-					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=10">&nbsp;è¯åˆ¸æŠ•èµ„&nbsp;</A> 
-					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=11">&nbsp;åŸºé‡‘æŠ•èµ„&nbsp;</A>
-					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=15">&nbsp;ä¸ªäººç†è´¢&nbsp;</A>
+					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=9">&nbsp;¾­¼Ã½ğÈÚ&nbsp;</A> 
+					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=10">&nbsp;Ö¤È¯Í¶×Ê&nbsp;</A> 
+					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=11">&nbsp;»ù½ğÍ¶×Ê&nbsp;</A>
+					<LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=15">&nbsp;¸öÈËÀí²Æ&nbsp;</A>
   					</LI>
   				</UL>
   			</DIV>
@@ -739,8 +739,8 @@
 					  					<DIV class=tc></DIV>
 					  					<DIV class=tcc>
 					  						<DIV class=title>
-					  							<SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  							<SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  						</DIV>
 					  						<DIV class=content1>
 					  							<c:set var="urlcount" value="0"></c:set>
@@ -761,11 +761,11 @@
 									</A>
 								</DIV>
 					  			<DIV><A class="f14 b" title="${video.title}" target=_play href="#">${video.shorttitle}</A></DIV>
-					  			<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  			<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  			<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  			<DIV class=sm>
 					  				<A class=c_black title="${video.title}" target=_play href="#">
-					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  				</A> 
 					  			</DIV>
 					  		<LI>
@@ -776,8 +776,8 @@
 					  			<DIV style="DISPLAY: none" id=zjlist_1 class="t mab">
 					  				<DIV class=tc></DIV>
 					  				<DIV class=tcc>
-					  					<DIV class=title><SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  					<DIV class=title><SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  					</DIV>
 					  					<DIV class=content1>
 					  						<c:set var="urlcount" value="0"></c:set>
@@ -797,11 +797,11 @@
 					  			</A>
 					  		</DIV>
 					  		<DIV><A class="f14 b" title="${video.shorttitle}" target=_play href="VideoShow.do?id=${video.id}">${video.shorttitle}</A></DIV>
-					  		<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  		<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  		<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  		<DIV class=sm>
 					  			<A class=c_black title="${video.title}" target=_play href="VideoShow.do?id=${video.id}">
-					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  			</A>
 					  		</DIV>
 					  	</c:if>						
@@ -812,21 +812,21 @@
 </UL>
 
 <DIV class=clear></DIV>
-<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=8">æ›´å¤š&gt;&gt;</A></DIV>
+<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=8">¸ü¶à&gt;&gt;</A></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV style="HEIGHT: 12px" class=clear></DIV>
 
-<!-- ä½“è‚²èµ›äº‹ -->
+<!-- ÌåÓıÈüÊÂ -->
 <DIV class=siderC_box>
 <DIV class=title>
 <DIV class=left></DIV>
-<DIV class=mid><SPAN><A class="f14 b c_black" href="VideoSearch.do?act=search&typeid=12">èŒåœºäººç”Ÿ</A></SPAN> 
+<DIV class=mid><SPAN><A class="f14 b c_black" href="VideoSearch.do?act=search&typeid=12">Ö°³¡ÈËÉú</A></SPAN> 
 <DIV class=bb>
 <UL>
-  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=13">&nbsp;èŒä¸šè§„åˆ’&nbsp;</A> 
-  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=14">&nbsp;èŒåœºæŒ‡å—&nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=13">&nbsp;Ö°Òµ¹æ»®&nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=14">&nbsp;Ö°³¡Ö¸ÄÏ&nbsp;</A> 
   </LI>
 </UL>
 </DIV>
@@ -845,8 +845,8 @@
 					  					<DIV class=tc></DIV>
 					  					<DIV class=tcc>
 					  						<DIV class=title>
-					  							<SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  							<SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  						</DIV>
 					  						<DIV class=content1>
 					  							<c:set var="urlcount" value="0"></c:set>
@@ -867,11 +867,11 @@
 									</A>
 								</DIV>
 					  			<DIV><A class="f14 b" title="${video.title}" target=_play href="#">${video.shorttitle}</A></DIV>
-					  			<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  			<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  			<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  			<DIV class=sm>
 					  				<A class=c_black title="${video.title}" target=_play href="#">
-					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  				</A> 
 					  			</DIV>
 					  		<LI>
@@ -882,8 +882,8 @@
 					  			<DIV style="DISPLAY: none" id=zjlist_1 class="t mab">
 					  				<DIV class=tc></DIV>
 					  				<DIV class=tcc>
-					  					<DIV class=title><SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  					<DIV class=title><SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  					</DIV>
 					  					<DIV class=content1>
 					  						<c:set var="urlcount" value="0"></c:set>
@@ -903,11 +903,11 @@
 					  			</A>
 					  		</DIV>
 					  		<DIV><A class="f14 b" title="${video.shorttitle}" target=_play href="VideoShow.do?id=${video.id}">${video.shorttitle}</A></DIV>
-					  		<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  		<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  		<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  		<DIV class=sm>
 					  			<A class=c_black title="${video.title}" target=_play href="VideoShow.do?id=${video.id}">
-					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  			</A>
 					  		</DIV>
 					  	</c:if>						
@@ -917,20 +917,20 @@
 
 </UL>
 <DIV class=clear></DIV>
-<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=12">æ›´å¤š&gt;&gt;</A></DIV>
+<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=12">¸ü¶à&gt;&gt;</A></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
-<DIV style="HEIGHT: 12px" class=clear></DIV><!-- é«˜æ¸…å½±è§†å‰§ -->
+<DIV style="HEIGHT: 12px" class=clear></DIV><!-- ¸ßÇåÓ°ÊÓ¾ç -->
 <DIV class=siderC_box>
 <DIV class=title>
 <DIV class=left></DIV>
-<DIV class=mid><SPAN><A class="f14 b c_black" href="VideoSearch.do?act=search&typeid=16">å¥åº·å…»ç”Ÿ</A></SPAN> 
+<DIV class=mid><SPAN><A class="f14 b c_black" href="VideoSearch.do?act=search&typeid=16">½¡¿µÑøÉú</A></SPAN> 
 <DIV class=bb>
 <UL>
-  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=24">&nbsp;å…»ç”Ÿå¸¸è¯† &nbsp;</A> 
-  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=25">&nbsp;è¿åŠ¨å¥èº«&nbsp;</A> 
-  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=26">&nbsp;é£Ÿç–—è¯è†³&nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=24">&nbsp;ÑøÉú³£Ê¶ &nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=25">&nbsp;ÔË¶¯½¡Éí&nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=26">&nbsp;Ê³ÁÆÒ©ÉÅ&nbsp;</A> 
   </LI></UL></DIV>
 </DIV>
 	<DIV class=right></DIV>
@@ -947,8 +947,8 @@
 					  					<DIV class=tc></DIV>
 					  					<DIV class=tcc>
 					  						<DIV class=title>
-					  							<SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  							<SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  							<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  						</DIV>
 					  						<DIV class=content1>
 					  							<c:set var="urlcount" value="0"></c:set>
@@ -969,11 +969,11 @@
 									</A>
 								</DIV>
 					  			<DIV><A class="f14 b" title="${video.title}" target=_play href="#">${video.shorttitle}</A></DIV>
-					  			<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  			<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  			<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  			<DIV class=sm>
 					  				<A class=c_black title="${video.title}" target=_play href="#">
-					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  				</A> 
 					  			</DIV>
 					  		<LI>
@@ -984,8 +984,8 @@
 					  			<DIV style="DISPLAY: none" id=zjlist_1 class="t mab">
 					  				<DIV class=tc></DIV>
 					  				<DIV class=tcc>
-					  					<DIV class=title><SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+					  					<DIV class=title><SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+					  						<DIV class="close c_orange hand" onclick=showzjlist(${status.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
 					  					</DIV>
 					  					<DIV class=content1>
 					  						<c:set var="urlcount" value="0"></c:set>
@@ -1005,11 +1005,11 @@
 					  			</A>
 					  		</DIV>
 					  		<DIV><A class="f14 b" title="${video.shorttitle}" target=_play href="VideoShow.do?id=${video.id}">${video.shorttitle}</A></DIV>
-					  		<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+					  		<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
 					  		<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
 					  		<DIV class=sm>
 					  			<A class=c_black title="${video.title}" target=_play href="VideoShow.do?id=${video.id}">
-					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+					  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
 					  			</A>
 					  		</DIV>
 					  	</c:if>						
@@ -1018,30 +1018,30 @@
   	</DIV>
 </UL>
 <DIV class=clear></DIV>
-<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=16">æ›´å¤š&gt;&gt;</A></DIV>
+<DIV class="tright more"><A class="b c_grey2" target=_blank href="VideoSearch.do?act=search&typeid=16">¸ü¶à&gt;&gt;</A></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV style="HEIGHT: 12px" class=clear></DIV>
-<!-- å¤§åƒä¸–ç•Œ -->
-<!-- ç½‘å‹çƒ­æœ -->
+<!-- ´óÇ§ÊÀ½ç -->
+<!-- ÍøÓÑÈÈËÑ -->
 
 </DIV>
 
-<!-- æ’è¡Œæ¦œ -->
+<!-- ÅÅĞĞ°ñ -->
 <DIV id=sider_box>
 	<DIV class=siderB_box>
 		<DIV class=siderI_box>
-			<DIV id=right_1 class=sider_right><!-- å³ä¾§1 -->
+			<DIV id=right_1 class=sider_right><!-- ÓÒ²à1 -->
 				<DIV class=top></DIV>
 				<DIV class=mid>
-					<DIV class=title><SPAN class="c_grey2 f14 b">çƒ­é—¨æ’è¡Œ</SPAN></DIV>
+					<DIV class=title><SPAN class="c_grey2 f14 b">ÈÈÃÅÅÅĞĞ</SPAN></DIV>
 					<UL>
 						<c:forEach items="${HOT_VIDEO_LIST}" var="video" varStatus="is">
 	  					<LI>
 	  						<DIV class=numb><IMG src="images/num${is.index+1 }.jpg" width=14 height=11></DIV>
 	  						<DIV class=bt><A title="" target=_blank href="VideoShow.do?id=${video.id }">${video.shorttitle }</A></DIV>
-	  						<DIV class=tjl><DIV align=right><SPAN class=c_grey2><IMG alt=ä¸Šå‡ src="images/ico_up.gif" width=9 height=9></SPAN></DIV></DIV>
+	  						<DIV class=tjl><DIV align=right><SPAN class=c_grey2><IMG alt=ÉÏÉı src="images/ico_up.gif" width=9 height=9></SPAN></DIV></DIV>
 	  					</c:forEach>
 	  					</LI>
 	  				</UL>
@@ -1057,16 +1057,16 @@
 		<a href="http://www.vancl.com/websource/websource.aspx?url=http://www.vancl.com/&source=xushaomin" target="_blank"><img src="http://union.vancl.com/adpic.aspx?w=300&h=80" border="0" width=270/></a>
 		
 		<DIV class=siderI_box>
-			<DIV id=right_2 class=sider_right><!-- å³ä¾§2 -->
+			<DIV id=right_2 class=sider_right><!-- ÓÒ²à2 -->
 				<DIV class=top></DIV>
 				<DIV class=mid>
-					<DIV class=title><SPAN class="c_grey2 f14 b">æ¨èæ’è¡Œ</SPAN></DIV>
+					<DIV class=title><SPAN class="c_grey2 f14 b">ÍÆ¼öÅÅĞĞ</SPAN></DIV>
 					<UL>
 						<c:forEach items="${COMP_VIDEO_LIST}" var="video" varStatus="is">
 	  					<LI>
 	  						<DIV class=numb><IMG src="images/num${is.index + 1 }.jpg" width=14 height=11></DIV>
 	  						<DIV class=bt><A title="" target=_blank href="VideoShow.do?id=${video.id }">${video.shorttitle }</A></DIV>
-	  						<DIV class=tjl><DIV align=right><SPAN class=c_grey2><IMG alt=ä¸Šå‡ src="images/ico_up.gif" width=9 height=9></SPAN></DIV></DIV>
+	  						<DIV class=tjl><DIV align=right><SPAN class=c_grey2><IMG alt=ÉÏÉı src="images/ico_up.gif" width=9 height=9></SPAN></DIV></DIV>
 	  					</c:forEach>
 	  					</LI>
 	  				</UL>
@@ -1077,16 +1077,16 @@
 		</DIV>
 		<DIV class=clear></DIV>
 		<DIV id=right_3>
-			<!-- å³ä¾§3 -->
-			<!-- å¹¿å‘Š å¼€å§‹ -->
+			<!-- ÓÒ²à3 -->
+			<!-- ¹ã¸æ ¿ªÊ¼ -->
 			<DIV class=siderK_box><SCRIPT language=JavaScript1.1 src=""></SCRIPT></DIV>
 			<DIV class=clear></DIV>
 			<DIV class=siderK_box><SCRIPT language=JavaScript1.1 src=""></SCRIPT></DIV>
-			<!-- å¹¿å‘Š ç»“æŸ -->
+			<!-- ¹ã¸æ ½áÊø -->
 		</DIV>
 	</DIV>
 </DIV>
-<!-- ç”µè§†èŠ‚ç›®å¤§å…¨ -->
+<!-- µçÊÓ½ÚÄ¿´óÈ« -->
 <DIV class=clear></DIV>
 
 <DIV style="DISPLAY: none" id=dsjmdq class=dq_content><!-- -->
@@ -1105,7 +1105,7 @@
 <DIV class=clear></DIV></DIV>
 
 
-<!-- ç»Ÿè®¡ å¼€å§‹-->
+<!-- Í³¼Æ ¿ªÊ¼-->
 
-<!-- ç»Ÿè®¡ ç»“æŸ-->
+<!-- Í³¼Æ ½áÊø-->
 </BODY></HTML>

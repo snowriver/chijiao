@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -11,8 +11,8 @@
   					<DIV class=tc></DIV>
   					<DIV class=tcc>
   						<DIV class=title>
-  							<SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-  							<DIV class="close c_orange hand" onclick=showzjlist(${vs.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+  							<SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+  							<DIV class="close c_orange hand" onclick=showzjlist(${vs.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
   						</DIV>
   						<DIV class=content1>
   							<c:set var="urlcount" value="0"></c:set>
@@ -33,11 +33,11 @@
 				</A>
 			</DIV>
   			<DIV><A class="f14 b" title="${video.title}" target=_play href="#">${video.shorttitle}</A></DIV>
-  			<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+  			<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
   			<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
   			<DIV class=sm>
   				<A class=c_black title="${video.title}" target=_play href="#">
-  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+  					<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
   				</A> 
   			</DIV>
   		<LI>
@@ -48,8 +48,8 @@
   			<DIV style="DISPLAY: none" id=zjlist_1 class="t mab">
   				<DIV class=tc></DIV>
   				<DIV class=tcc>
-  					<DIV class=title><SPAN class="b c_blue">ä¸“è¾‘æ¨è</SPAN>
-  						<DIV class="close c_orange hand" onclick=showzjlist(${vs.index},false);>[&nbsp;å…³é—­&nbsp;]</DIV>
+  					<DIV class=title><SPAN class="b c_blue">×¨¼­ÍÆ¼ö</SPAN>
+  						<DIV class="close c_orange hand" onclick=showzjlist(${vs.index},false);>[&nbsp;¹Ø±Õ&nbsp;]</DIV>
   					</DIV>
   					<DIV class=content1>
   						<c:set var="urlcount" value="0"></c:set>
@@ -69,11 +69,11 @@
   			</A>
   		</DIV>
   		<DIV><A class="f14 b" title="${video.shorttitle}" target=_play href="VideoShow.do?id=${video.id}">${video.shorttitle}</A></DIV>
-  		<DIV><SPAN class=c_grey3>è§†é¢‘æ•°ï¼š</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
+  		<DIV><SPAN class=c_grey3>ÊÓÆµÊı£º</SPAN><SPAN class=c_orange>${fn:length(video.videoUrls)}</SPAN></DIV>
   		<DIV><SPAN class="c_grey1 l18">${fn:substring(video.description, 0, 30)}..</SPAN></DIV>
   		<DIV class=sm>
   			<A class=c_black title="${video.title}" target=_play href="VideoShow.do?id=${video.id}">
-  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> è§‚ çœ‹
+  				<IMG align=absMiddle src="images/ico_10.jpg" width=13 height=13> ¹Û ¿´
   			</A>
   		</DIV>
   	</c:if>

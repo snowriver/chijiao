@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -12,8 +12,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
-	<TITLE>èµ¤è„šç½‘ - å­¦ä¹ è§†é¢‘ - å…¨åŠ›æ‰“é€ åˆ›ä¸šè€…å­¦ä¹ å’Œäº¤æµå¹³å°</TITLE>
-	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+	<TITLE>³à½ÅÍø - Ñ§Ï°ÊÓÆµ - È«Á¦´òÔì´´ÒµÕßÑ§Ï°ºÍ½»Á÷Æ½Ì¨</TITLE>
+	<META content="text/html; charset=gbk" http-equiv=Content-Type>
 	
 	<LINK rel=stylesheet type=text/css href="../js/jquery/pagination.css" />
 	<LINK rel=stylesheet type=text/css href="css/generl200809.css">
@@ -168,10 +168,10 @@
 
 <DIV id=wrapper>
 
-	<!-- å¤´å¼•ç”¨ å¼€å§‹ -->
+	<!-- Í·ÒıÓÃ ¿ªÊ¼ -->
 
 	<%@ include file="include/header.jsp"%>
-	<!-- å¤´å¼•ç”¨ ç»“æŸ -->
+	<!-- Í·ÒıÓÃ ½áÊø -->
 	
 	<DIV class=clear></DIV>
 	
@@ -253,7 +253,7 @@
              <tr>
   <td><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td background="#"><table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td height="26" class="f14"><strong class="c_grey">æœ€openæ ‡ç­¾</strong></td>
+      <td height="26" class="f14"><strong class="c_grey">×îopen±êÇ©</strong></td>
     </tr>
     <tr>
       <td height="1" bgcolor="#B0B0B0"></td>
@@ -268,7 +268,7 @@
                   <td height="10"></td>
                 </tr>
                 <tr>
-                  <td height="25"><img src="images/ico_7.jpg" width="10" height="7" align="absmiddle" /> <a href="javascript:void(0);" class="c_red"><span class="f14"><strong>åäººåå®¶</strong></span></a></td>
+                  <td height="25"><img src="images/ico_7.jpg" width="10" height="7" align="absmiddle" /> <a href="javascript:void(0);" class="c_red"><span class="f14"><strong>ÃûÈËÃû¼Ò</strong></span></a></td>
                 </tr>
                 <tr>
                   <td height="1" background="images/line1.jpg"></td>
@@ -279,11 +279,11 @@
 
                 <tr>
                   <td background="#">
-                  	<a href="VideoSearch.do?act=search&keyword=ä½™ä¸–ç»´" target="_blank" class="c_grey">ä½™ä¸–ç»´</a>&nbsp;&nbsp;
-                  	<a href="VideoSearch.do?act=search&keyword=æ›¾ä»•å¼º" target="_blank" class="c_grey">æ›¾ä»•å¼º</a>&nbsp;&nbsp;
-                  	<a href="VideoSearch.do?act=search&keyword=é™ˆå®‰ä¹‹" target="_blank" class="c_grey">é™ˆå®‰ä¹‹</a>&nbsp;&nbsp;
-                  	<a href="VideoSearch.do?act=search&keyword=æ—ä¼Ÿè´¤" target="_blank" class="c_grey">æ—ä¼Ÿè´¤</a>&nbsp;&nbsp;
-                  	<a href="VideoSearch.do?act=search&keyword=é©¬äº‘" target="_blank" class="c_grey">é©¬äº‘</a>&nbsp;&nbsp;</td>
+                  	<a href="VideoSearch.do?act=search&keyword=ÓàÊÀÎ¬" target="_blank" class="c_grey">ÓàÊÀÎ¬</a>&nbsp;&nbsp;
+                  	<a href="VideoSearch.do?act=search&keyword=ÔøÊËÇ¿" target="_blank" class="c_grey">ÔøÊËÇ¿</a>&nbsp;&nbsp;
+                  	<a href="VideoSearch.do?act=search&keyword=³Â°²Ö®" target="_blank" class="c_grey">³Â°²Ö®</a>&nbsp;&nbsp;
+                  	<a href="VideoSearch.do?act=search&keyword=ÁÖÎ°ÏÍ" target="_blank" class="c_grey">ÁÖÎ°ÏÍ</a>&nbsp;&nbsp;
+                  	<a href="VideoSearch.do?act=search&keyword=ÂíÔÆ" target="_blank" class="c_grey">ÂíÔÆ</a>&nbsp;&nbsp;</td>
                 </tr>
             </table></td>
           </tr>
@@ -330,8 +330,8 @@
 						       	
 						       	
 						       	
-						       		<DIV class=list_r><!--æœ¬ç±»è§†é¢‘å¼€å§‹-->
-										<DIV class=list_tit><SPAN class=left>æ¨èè§†é¢‘</SPAN><A class=more href="VideoSearch.do?act=search">&gt;&gt;æ›´å¤šè§†é¢‘</A></DIV>
+						       		<DIV class=list_r><!--±¾ÀàÊÓÆµ¿ªÊ¼-->
+										<DIV class=list_tit><SPAN class=left>ÍÆ¼öÊÓÆµ</SPAN><A class=more href="VideoSearch.do?act=search">&gt;&gt;¸ü¶àÊÓÆµ</A></DIV>
 										<DIV class=list_con>
 										<DIV class=listcon1><!---->
 										
@@ -355,7 +355,7 @@
 												<DIV class=listcon_tit>
 													<UL>
 										  				<LI class=softname><A target="_blank" href="VideoShow.do?id=${video.id }">${video.title }</A> </LI>
-										  				<LI>æ¨èæŒ‡æ•°ï¼š </LI>
+										  				<LI>ÍÆ¼öÖ¸Êı£º </LI>
 										  				<LI>
 										  					<DIV class=star>
 																<UL>
@@ -366,7 +366,7 @@
 										  						<DIV class=clear></DIV>
 										  					</DIV>
 										  				</LI>
-										  				<LI>&nbsp;&nbsp;&nbsp;æ›´æ–°æ—¥æœŸï¼š<SPAN class=c_blue><fmt:formatDate value="${video.pubdate }" pattern="yyyy-MM-dd"/></SPAN>&nbsp;&nbsp;&nbsp;è§‚çœ‹æ¬¡æ•°ï¼š<STRONG class=c_red>${video.click }</STRONG> </LI>
+										  				<LI>&nbsp;&nbsp;&nbsp;¸üĞÂÈÕÆÚ£º<SPAN class=c_blue><fmt:formatDate value="${video.pubdate }" pattern="yyyy-MM-dd"/></SPAN>&nbsp;&nbsp;&nbsp;¹Û¿´´ÎÊı£º<STRONG class=c_red>${video.click }</STRONG> </LI>
 										  			</UL>
 													<DIV class=clear></DIV>
 												</DIV>
@@ -375,14 +375,14 @@
 										  				<LI><A target="_blank" href="VideoShow.do?id=${video.id }"><IMG title="${video.title }" src="../${video.litpic }" border=0></A> </LI>
 										  				<LI>
 										  					<DIV class=soft_info>
-										  						<DIV>è§†é¢‘æ•°ï¼š${fn:length(video.videoUrls)} </DIV>
-															  	<DIV>è§†é¢‘åˆ†ç±»ï¼š
+										  						<DIV>ÊÓÆµÊı£º${fn:length(video.videoUrls)} </DIV>
+															  	<DIV>ÊÓÆµ·ÖÀà£º
 															  		<c:if test="${not empty video.videoType}"><A class=c_color1 target=_blank href="VideoSearch.do?act=search&typeid=${video.videoType.id }">${video.videoType.name }</A></c:if>
 																	<c:if test="${not empty video.videoType2}"> - <A class=c_color1 target=_blank href="VideoSearch.do?act=search&typeid=${video.videoType.id }">${video.videoType2.name }</A></c:if>
 															  	</DIV>
 															  	<DIV class=soft_text>${fn:substring(video.description, 0, 110)}..</DIV>
 															  	<DIV class=soft_btn>
-															  		<A class=btn_blue target="_blank" href="VideoShow.do?id=${video.id }">ç‚¹å‡»æ’­æ”¾</A>
+															  		<A class=btn_blue target="_blank" href="VideoShow.do?id=${video.id }">µã»÷²¥·Å</A>
 															  	</DIV>
 															</DIV>
 														</LI>
@@ -395,23 +395,23 @@
 											<c:if test="${empty VIDEO_LIST}">
 												<DIV class=soft_list>
 													<BR><BR><BR>
-													æ²¡æœ‰æ‰¾åˆ°æ‚¨æƒ³è¦è§†é¢‘ï¼Œè¯·é‡æ–°æœç´¢ï¼
+													Ã»ÓĞÕÒµ½ÄúÏëÒªÊÓÆµ£¬ÇëÖØĞÂËÑË÷£¡
 												</DIV>
 											</c:if>
 										</DIV>
 										
-										<!--åˆ†é¡µå¼€å§‹-->
+										<!--·ÖÒ³¿ªÊ¼-->
 										<DIV class=pagess>
 											<DIV class="pagescroll">			     
 												<DIV id="Pagination" class="pagination"></DIV>
 											</DIV> 
 										</DIV>
-										<!--åˆ†é¡µç»“æŸ-->
+										<!--·ÖÒ³½áÊø-->
 									
 									</DIV>
 									<DIV class=list_btm></DIV>
 									
-									<!--æœ¬ç±»è§†é¢‘ç»“æŸ-->
+									<!--±¾ÀàÊÓÆµ½áÊø-->
 								</DIV>
 						       	
 						       	
@@ -488,15 +488,15 @@
 
                 <table width="95%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td width="33%" height="25"><a href="VideoSearch.do?act=search&typeid=2" class="c_grey2">åŠ±å¿—åˆ›ä¸š</a></td>
-                      <td width="33%"><a href="VideoSearch.do?act=search&typeid=7" class="c_grey2">ç»è¥ç®¡ç†</a></td>
-                      <td width="33%"><a href="VideoSearch.do?act=search&typeid=10" class="c_grey2">è¯åˆ¸æŠ•èµ„</a></td>
+                      <td width="33%" height="25"><a href="VideoSearch.do?act=search&typeid=2" class="c_grey2">ÀøÖ¾´´Òµ</a></td>
+                      <td width="33%"><a href="VideoSearch.do?act=search&typeid=7" class="c_grey2">¾­Óª¹ÜÀí</a></td>
+                      <td width="33%"><a href="VideoSearch.do?act=search&typeid=10" class="c_grey2">Ö¤È¯Í¶×Ê</a></td>
                     </tr>
                     <tr>
 
-                      <td width="33%" height="25"><a href="VideoSearch.do?act=search&typeid=11" class="c_grey2">ä¸ªäººç†è´¢</a></td>
-                      <td width="33%" height="25"><a href="VideoSearch.do?act=search&typeid=3" class="c_grey2">æ¼”è®²å£æ‰</a></td>
-                      <td width="33%" height="25"><a href="VideoSearch.do?act=search&typeid=22" class="c_grey2">æ—¶é—´ç®¡ç†</a></td>
+                      <td width="33%" height="25"><a href="VideoSearch.do?act=search&typeid=11" class="c_grey2">¸öÈËÀí²Æ</a></td>
+                      <td width="33%" height="25"><a href="VideoSearch.do?act=search&typeid=3" class="c_grey2">Ñİ½²¿Ú²Å</a></td>
+                      <td width="33%" height="25"><a href="VideoSearch.do?act=search&typeid=22" class="c_grey2">Ê±¼ä¹ÜÀí</a></td>
                     </tr>
                               </table>
               </div></td>
@@ -513,15 +513,15 @@
               <td width="40">&nbsp;</td>
 
               <td class="c_grey3 rmss">
-               	<strong>çƒ­é—¨æœç´¢ï¼š</strong>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=èµ¢åœ¨ä¸­å›½" target="_blank">èµ¢åœ¨ä¸­å›½</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=ç®¡ç†" target="_blank">ç®¡ç†</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=æ‰§è¡Œ" target="_blank">æ‰§è¡Œ</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=ç»ç†äºº" target="_blank">ç»ç†äºº</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=é¢†å¯¼" target="_blank">é¢†å¯¼</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=æ²Ÿé€š" target="_blank">æ²Ÿé€š</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=æˆåŠŸ" target="_blank">æˆåŠŸ</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=ç†è´¢" target="_blank">ç†è´¢</a>              
+               	<strong>ÈÈÃÅËÑË÷£º</strong>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=Ó®ÔÚÖĞ¹ú" target="_blank">Ó®ÔÚÖĞ¹ú</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=¹ÜÀí" target="_blank">¹ÜÀí</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=Ö´ĞĞ" target="_blank">Ö´ĞĞ</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=¾­ÀíÈË" target="_blank">¾­ÀíÈË</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=Áìµ¼" target="_blank">Áìµ¼</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=¹µÍ¨" target="_blank">¹µÍ¨</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=³É¹¦" target="_blank">³É¹¦</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=Àí²Æ" target="_blank">Àí²Æ</a>              
 				</td>
             </tr>
 
