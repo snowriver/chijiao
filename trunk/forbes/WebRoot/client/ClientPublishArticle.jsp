@@ -159,7 +159,7 @@
 					<TR>
 					    <TD align=right>文章内容:</TD>
 					    <TD>
-					    	<FCK:editor instanceName="content" height="500">
+					    	<FCK:editor instanceName="content" height="500" toolbarSet="Basic">
 								<jsp:attribute name="value"></jsp:attribute>
 							</FCK:editor>
 					    </TD>
