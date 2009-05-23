@@ -11,8 +11,8 @@ public interface Constant {
 	
 	public String FORBES_URL = "http://www.chijiao.org:8080";
 	
-	public String FORBES_VIRTUAL_ADDRESS 		 = "C:\\AppServ\\www";
-	public String FORBES_VIRTUAL_ADDRESS_ARTICLE = "C:\\AppServ\\www\\article";
-	public String FORBES_VIRTUAL_ADDRESS_VIDEO 	 = "C:\\AppServ\\www\\video";
-	public String FORBES_VIRTUAL_ADDRESS_ASK	 = "C:\\AppServ\\www\\ask";
+	public String FORBES_VIRTUAL_ADDRESS 		 = "D:\\server\\AppServ\\www";
+	public String FORBES_VIRTUAL_ADDRESS_ARTICLE = "D:\\server\\AppServ\\www\\article";
+	public String FORBES_VIRTUAL_ADDRESS_VIDEO 	 = "D:\\server\\AppServ\\www\\video";
+	public String FORBES_VIRTUAL_ADDRESS_ASK	 = "D:\\server\\AppServ\\www\\ask";
 }
