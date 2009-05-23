@@ -58,7 +58,7 @@ public class AdminTohtmlAction extends Action {
 
 					
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/NewIndex.do",
-							Constant.FORBES_VIRTUAL_ADDRESS + "\\index.html");
+							Constant.FORBES_VIRTUAL_ADDRESS + "\\index.html", "gbk", "gbk");
 				}
 				if(serviceID.trim().equals("2")) {
 					System.out.println("URL 	  = "+Constant.FORBES_URL + "/article/NewIndex.do");
@@ -70,7 +70,7 @@ public class AdminTohtmlAction extends Action {
 						myFilePath.mkdir();
 					}
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/NewIndex.do",
-							Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE + "\\index.html");
+							Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE + "\\index.html", "gbk", "gbk");
 				}
 				if(serviceID.trim().equals("3")) {
 					System.out.println("URL 	  = "+Constant.FORBES_URL + "/video/NewIndex.do");
@@ -83,7 +83,7 @@ public class AdminTohtmlAction extends Action {
 					}
 					
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/video/NewIndex.do",
-							Constant.FORBES_VIRTUAL_ADDRESS_VIDEO + "\\index.html");
+							Constant.FORBES_VIRTUAL_ADDRESS_VIDEO + "\\index.html", "gbk", "gbk");
 				}
 				
 				
