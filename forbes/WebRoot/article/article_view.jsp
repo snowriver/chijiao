@@ -8,7 +8,7 @@
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
 	<TITLE>ЁЮ╫емЬ - ${ARTICLE.title }</TITLE>
-	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+	<META content="text/html; charset=gbk" http-equiv=Content-Type>
 	<LINK rel=stylesheet type=text/css href="css/article.css">
 	<LINK rel=stylesheet type=text/css href="css/article_view.css">
 	<LINK rel=stylesheet type=text/css href="../css/supev.css">
