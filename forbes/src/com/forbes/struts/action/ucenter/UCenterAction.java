@@ -47,9 +47,9 @@ public class UCenterAction extends Action {
 	 */
     private String key = "123456";
 	
-	private String API_RETURN_SUCCEED="1";
-	private String API_RETURN_FAILED="-1";
-	private String API_RETURN_FORBIDDEN="-2";
+	private String API_RETURN_SUCCEED	= "1";
+	private String API_RETURN_FAILED	= "-1";
+	private String API_RETURN_FORBIDDEN	= "-2";
 	
 	private  UserInfoManager userInfoManager;
 	/** 
