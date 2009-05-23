@@ -7,7 +7,6 @@ package com.forbes.struts.action.admin;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,18 +16,8 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
-
-import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
-import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.hibernate.bean.News;
-import com.forbes.hibernate.bean.Sector;
-import com.forbes.hibernate.bean.User;
-import com.forbes.service.article.ContentManager;
-import com.forbes.service.article.ArticleListManager;
 import com.forbes.service.article.NewsManager;
-import com.forbes.service.basic.SectorManager;
-import com.forbes.struts.form.article.ArticleInfoForm;
 import com.forbes.struts.form.article.NewsForm;
 import com.forbes.util.Pager;
 import com.forbes.util.UploadFile;
