@@ -1,5 +1,6 @@
 package com.forbes.hibernate.bean;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -36,6 +37,12 @@ public abstract class AbstractNews implements java.io.Serializable {
 	private String content;
 	private Integer contentCnt;
 
+	private String pubdateString;
+	
+	public String getPubdateString() {
+		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
+		return sdf.format(pubdate);
+	}
 	// Constructors
 
 	public Integer getContentCnt() {
