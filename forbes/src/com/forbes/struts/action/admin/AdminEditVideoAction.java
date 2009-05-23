@@ -13,11 +13,9 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
-
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.hibernate.bean.Video;
 import com.forbes.hibernate.bean.VideoType;
-import com.forbes.hibernate.bean.User;
 import com.forbes.service.video.VideoListManager;
 import com.forbes.service.video.VideoTypeManager;
 import com.forbes.struts.form.video.VideoInfoForm;
