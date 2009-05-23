@@ -66,7 +66,7 @@
 					  			<c:forEach items="${NEWS_LIST}" var="news" begin="1"> 
 					  			<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
 									<TD><A target=_blank href="NewsSearch.do?act=view&id=${news.id }">${news.title}</A></TD>
-									<TD>[<fmt:formatDate value='${news.pubdate}' pattern='MM-dd' />]</TD>
+									<TD>[${news.pubdateString } ]</TD>
 								</TR>
 								</c:forEach>
 							</TBODY>
@@ -97,7 +97,7 @@
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_5}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
 							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
-							    		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
+							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
 								</TBODY>
@@ -126,7 +126,7 @@
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_26}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
 							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
-							    		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
+							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
 								</TBODY>
@@ -160,7 +160,7 @@
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_42}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
 							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
-							    		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
+							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
 								</TBODY>
@@ -187,7 +187,7 @@
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_17}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
 							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
-							    		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
+							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
 								</TBODY>
@@ -213,7 +213,7 @@
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_10}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
 							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
-							    		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
+							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
 								</TBODY>
@@ -245,7 +245,7 @@
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_49}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
 							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
-							    		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
+							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
 								</TBODY>
@@ -276,7 +276,7 @@
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_35}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
 							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
-							    		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
+							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
 								</TBODY>
@@ -305,7 +305,7 @@
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_16}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
 							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
-							    		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
+							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
 								</TBODY>
