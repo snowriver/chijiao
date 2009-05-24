@@ -15,7 +15,7 @@
 			<DIV class=corner_links>
 				<A title=Ê×Ò³ href="../index.jsp">Ê×Ò³</A><SPAN>|</SPAN>
 				<A title=µÇÂ¼ href="#">µÇÂ¼</A><SPAN>|</SPAN>
-				<A title=×¢²á href="../client/ClientRegister.jsp">×¢²á</A><SPAN>|</SPAN>
+				<A title=×¢²á target="_blank" href="../GotoUCenter.do?act=register">×¢²á</A><SPAN>|</SPAN>
 				<A href="#">°ïÖú</A> 
 			</DIV>
 		</DIV>
