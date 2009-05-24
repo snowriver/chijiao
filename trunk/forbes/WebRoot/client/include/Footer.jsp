@@ -1,3 +1,3 @@
 <div id="footer">
-	<script language="javascript" type="text/javascript" src="js/foot.js" charset="gb2312"></script>
+	<script language="javascript" type="text/javascript" src="js/foot.js"></script>
 </div>
