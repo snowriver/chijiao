@@ -166,6 +166,7 @@
                    	</td>
                     <td align="center" width="60%">
                    		URL：<input name="url" type="text" id="url" style="width:80%" value="" />
+                   		<input name="page" type="text" id="page" style="width:5%" value="" />页
                    		<input name="returnUrl" type="hidden" value="|AdminUpdateVideoUrl.do|act=list|pno=${PAGER.curPage}|videoid=${PARA['videoid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|" />
                    	</td>
                     <td width="39%"> <input type="submit" name="Submit" value="添加" class="inputbut" /> </td>
