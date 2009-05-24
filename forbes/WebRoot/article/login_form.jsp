@@ -57,7 +57,7 @@
 					 	<DIV style="TEXT-ALIGN: center; LINE-HEIGHT: 50px; HEIGHT: 50px" id=show_login>
 						<a href="javascript:void(0);" id="loginx" onclick="openDIV('登录','../client/ClientReLogin.jsp','500','350');" style="CURSOR: pointer"><FONT style="TEXT-DECORATION: underline" 
 						color=#ff6600>请先登录后再评论</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<A style="CURSOR: pointer" target="_blank" href="../client/ClientRegister.jsp"><FONT style="TEXT-DECORATION: underline" 
+						<A style="CURSOR: pointer" target="_blank" href="../GotoUCenter.do?act=register"><FONT style="TEXT-DECORATION: underline" 
 						color=#ff6600>我要注册</FONT></A>
 						</DIV>			
 					
