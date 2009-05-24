@@ -47,9 +47,7 @@ public class AdminTohtmlAction extends Action {
 			System.out.println("serviceID=" + serviceID);
 			try {
 				if(serviceID.trim().equals("1")) {
-					System.out.println("URL 	  = "+Constant.FORBES_URL + "/NewIndex.do");
-					System.out.println("LOCALHOST = "+Constant.FORBES_VIRTUAL_ADDRESS + "\\index.html");
-					
+										
 					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS);
 
 					if (!myFilePath.exists()) {
@@ -60,9 +58,7 @@ public class AdminTohtmlAction extends Action {
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/NewIndex.do",
 							Constant.FORBES_VIRTUAL_ADDRESS + "\\index.html", "gbk", "gbk");
 				}
-				if(serviceID.trim().equals("2")) {
-					System.out.println("URL 	  = "+Constant.FORBES_URL + "/article/NewIndex.do");
-					System.out.println("LOCALHOST = "+Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE + "\\index.html");
+				if(serviceID.trim().equals("2")) {					
 					
 					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE);
 
@@ -72,9 +68,7 @@ public class AdminTohtmlAction extends Action {
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/NewIndex.do",
 							Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE + "\\index.html", "gbk", "gbk");
 				}
-				if(serviceID.trim().equals("3")) {
-					System.out.println("URL 	  = "+Constant.FORBES_URL + "/video/NewIndex.do");
-					System.out.println("LOCALHOST = "+Constant.FORBES_VIRTUAL_ADDRESS_VIDEO + "\\index.html");
+				if(serviceID.trim().equals("3")) {		
 					
 					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS_VIDEO);
 
@@ -84,6 +78,17 @@ public class AdminTohtmlAction extends Action {
 					
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/video/NewIndex.do",
 							Constant.FORBES_VIRTUAL_ADDRESS_VIDEO + "\\index.html", "gbk", "gbk");
+				}
+				if(serviceID.trim().equals("4")) {					
+					
+					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS_ASK);
+
+					if (!myFilePath.exists()) {
+						myFilePath.mkdir();
+					}
+					
+					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/ask/NewIndex.do",
+							Constant.FORBES_VIRTUAL_ADDRESS_ASK + "\\index.html", "gbk", "gbk");
 				}
 				
 				
