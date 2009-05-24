@@ -152,6 +152,14 @@
 	      <forward name="ok" path="/bulletin_view.jsp" />
 	    </action>
 	    
+	    <action
+	      path="/GotoUCenter"
+	      scope="request"
+	      type="org.springframework.web.struts.DelegatingActionProxy">
+	      <forward name="fail" path="/ucenter/GotoUcenter.jsp" />
+	      <forward name="ok" path="/ucenter/GotoUcenter.jsp" />
+	    </action>
+	    
 	</action-mappings>
 	
 </struts-config>
