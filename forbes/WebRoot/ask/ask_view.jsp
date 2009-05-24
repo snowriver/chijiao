@@ -224,7 +224,7 @@
 										            		</c:if>
 										            		 -->
 										            		<c:if test="${empty sessionScope.CLIENT}">
-										            			<INPUT style="CURSOR: pointer" class=s_button onclick="window.open('../client/ClientRegister.jsp');" value=" " src="images/btn_reg.gif" type=image name=button1>
+										            			<INPUT style="CURSOR: pointer" class=s_button onclick="window.open('../GotoUCenter.do?act=register');" value=" " src="images/btn_reg.gif" type=image name=button1>
 										            		</c:if>
 										            	 </DIV>
 										            </TD>
