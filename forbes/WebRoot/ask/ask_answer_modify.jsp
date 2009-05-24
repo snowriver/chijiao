@@ -7,7 +7,7 @@
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
 	<TITLE>赤脚网 - 全力打造创业者学习和交流平台</TITLE>
-	<META http-equiv=Content-Type content="text/html; charset=utf=8">
+	<META http-equiv=Content-Type content="text/html; charset=gbk">
 	<META content="" name=description>
 	<META content="" name=keywords>
 	<META content="MSHTML 6.00.6000.16809" name=GENERATOR>
