@@ -50,7 +50,7 @@
 			
 				<ul>					
 					<li style="background:none;"><a href="javascript:void(0);" id="loginx" onclick="openDIV('µÇÂ¼','../client/ClientReLogin.jsp','500','350');">µÇÂ¼</a></li>			
-					<li><a href="../client/ClientRegister.jsp">×¢²á</a></li>				
+					<li><a target="_blank" href="../GotoUCenter.do?act=register">×¢²á</a></li>				
 					<li><a href="./help.php">°ïÖú</a></li>					
 				</ul>
 		
