@@ -91,4 +91,10 @@
 			<ref bean="bulletinManagerService" />
 		</property>
 	</bean>
+	
+	<bean name="/GotoUCenter" class="com.forbes.struts.action.ucenter.GotoUCenterAction" singleton="false">
+		<property name="userInfoManager">
+			<ref bean="userInfoManagerService" />
+		</property>
+	</bean>
 </beans>
