@@ -40,7 +40,7 @@
 						<li>密　码 <input name="password" class="ppinput" autocomplete="off" disableautocomplete="" type="password"></li><dt>
 						<span><input name="remember" value="Y" type="checkbox" />记住密码</span>
 						<input class="sign" value="登 录" src="../images/index/spacer.gif" alt="登 录" type="submit"></dt><dl>
-						<a href="${UC_HOME_URL }/do.php?ac=3c7495bde72b124b806ed64fb89785db" target="_blank">注册新用户</a><a href="${UC_HOME_URL }/do.php?ac=lostpasswd" target="_blank">忘记密码</a><a href="#" target="_blank">帮助中心</a></dl>
+						<a href="../GotoUCenter.do?act=register" target="_blank">注册新用户</a><a href="../GotoUCenter.do?act=lostpasswd" target="_blank">忘记密码</a><a href="#" target="_blank">帮助中心</a></dl>
 					</ul>
 				</div>
 			</form>
@@ -63,13 +63,13 @@
 					    <td rowspan="2">&nbsp;</td>
 					    <td rowspan="2" align="right" valign="bottom"><IMG width="50" height="50" src="${UC_CENTER_URL }/avatar.php?uid=${sessionScope.CLIENT.uid }&size=mid&type=virtual"></td>
 					    <td rowspan="2">&nbsp;</td>
-					    <td valign="bottom"><a href='${UC_HOME_URL }/space.php?do=pm' target='_parent'>短消息(${NEW_SMS_COUNT })</a></td>
+					    <td valign="bottom"><a href='../GotoUCenter.do?act=pm' target='_blank'>短消息(${NEW_SMS_COUNT })</a></td>
 					    <td valign="bottom"><a href='${UC_HOME_URL }/space.php?uid=${sessionScope.CLIENT.uid }&do=friend&view=online&type=friend' target='_parent'>在线好友(0)</a></td>
 					    <td rowspan="2">&nbsp;</td>
 					  </tr>
 					  <tr height="35%">
-					    <td valign="middle"><a href='${UC_HOME_URL }/cp.php?ac=profile' target='_parent'>个人资料</a></td>
-					    <td valign="middle"><a href='${UC_HOME_URL }/space.php?do=home' target='_parent'>空间管理</a></td>
+					    <td valign="middle"><a href='${UC_HOME_URL }/cp.php?ac=profile' target='_blank'>个人资料</a></td>
+					    <td valign="middle"><a href='${UC_HOME_URL }/space.php?do=home' target='_blank'>空间管理</a></td>
 					  </tr>
 					  <tr height="35%">
 					    <td colspan="6">&nbsp;</td>
@@ -79,7 +79,7 @@
 				</div>
 				<div class="middle">
 					<ul>     
-	  					<li class="current">${ sessionScope.CLIENT.username }，欢迎您!  <a href="${UC_HOME_URL }/space.php?uid=${sessionScope.CLIENT.uid }">转到我的主页>></a></li>
+	  					<li class="current">${ sessionScope.CLIENT.username }，欢迎您!  <a target="_blank" href="../GotoUCenter.do?act=space">转到我的主页>></a></li>
 						<li><img src="../images/spacer.gif" alt="去"/></li>
 					</ul>
 				</div>
