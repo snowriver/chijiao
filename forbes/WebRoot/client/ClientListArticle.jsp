@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
@@ -7,8 +7,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
-<TITLE>æˆ‘çš„ç®¡ç†åå° - ç™¾é—®ç®¡ç†</TITLE>
-<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<TITLE>ÎÒµÄ¹ÜÀíºóÌ¨ - °ÙÎÊ¹ÜÀí</TITLE>
+<META content="text/html; charset=gbk" http-equiv=Content-Type>
 <META name=keywords content="">
 <META name=description content=" ">
 
@@ -55,7 +55,7 @@
 	    			 flag = true;
 	   		}
 			if(flag == false) {
-				alert("è¯·é€‰æ‹©ä½ è¦åˆ é™¤çš„æé—®ï¼");
+				alert("ÇëÑ¡ÔñÄãÒªÉ¾³ıµÄÌáÎÊ£¡");
 				return false;
 			}
 		}
@@ -63,7 +63,7 @@
 		function deleteArticle(id, pid){
 				$.ajax({
 					beforeSend: function(){
-				     $("#RESULTE_MSG").html("åˆ é™¤ä¸­...");
+				     $("#RESULTE_MSG").html("É¾³ıÖĞ...");
 				   },
 					url: 'ClientManageArticle.do',
 					type: 'post',
@@ -72,10 +72,10 @@
 					timeout: 10000,
 					error: function(){
 						//alert('System error');
-						alert("åˆ é™¤å¤±è´¥");
+						alert("É¾³ıÊ§°Ü");
 					},
 					success: function(rsHtml){
-						//alert("åˆ é™¤æˆåŠŸ!");
+						//alert("É¾³ı³É¹¦!");
 						pageselectCallback(pid, "jq");
 						
 					}
@@ -103,12 +103,12 @@
 
 
 <DIV class=mainbody>
-	<H1>æ–‡ç« ç®¡ç†</H1>
+	<H1>ÎÄÕÂ¹ÜÀí</H1>
 	<DIV class=data_opt_title>
 		<UL>
-  			<LI><A <c:if test="${empty param.isverify || param.isverify == '0_1'}">class="curmenu"</c:if> <c:if test="${ param.isverify == '0' || param.isverify == '1'}">class="ocurmenu"</c:if> href="ClientManageArticle.do?act=list&isverify=0_1">å…¨éƒ¨æ–‡ç« </A> </LI>
-  			<LI><A <c:if test="${param.isverify == '1'}">class="curmenu"</c:if> <c:if test="${param.isverify != '1'}">class="ocurmenu"</c:if> href="ClientManageArticle.do?act=list&isverify=1">å®¡æ ¸æ–‡ç« </A> </LI>
-  			<LI><A <c:if test="${param.isverify == '0'}">class="curmenu"</c:if> <c:if test="${param.isverify != '0'}">class="ocurmenu"</c:if> href="ClientManageArticle.do?act=list&isverify=0">æœªå®¡æ ¸æ–‡ç« </A> </LI>
+  			<LI><A <c:if test="${empty param.isverify || param.isverify == '0_1'}">class="curmenu"</c:if> <c:if test="${ param.isverify == '0' || param.isverify == '1'}">class="ocurmenu"</c:if> href="ClientManageArticle.do?act=list&isverify=0_1">È«²¿ÎÄÕÂ</A> </LI>
+  			<LI><A <c:if test="${param.isverify == '1'}">class="curmenu"</c:if> <c:if test="${param.isverify != '1'}">class="ocurmenu"</c:if> href="ClientManageArticle.do?act=list&isverify=1">ÉóºËÎÄÕÂ</A> </LI>
+  			<LI><A <c:if test="${param.isverify == '0'}">class="curmenu"</c:if> <c:if test="${param.isverify != '0'}">class="ocurmenu"</c:if> href="ClientManageArticle.do?act=list&isverify=0">Î´ÉóºËÎÄÕÂ</A> </LI>
   		</UL>
   	</DIV><!--data_opt_title end-->
   	
@@ -119,16 +119,16 @@
 			<TBODY>
 		  		<TR class=datelist_opt_title>
 		    		<TD style="TEXT-ALIGN: center; WIDTH: 10%"><INPUT onclick="CheckAll(this.form)" type=checkbox name=chkall></TD>
-				    <TD style="WIDTH: 10%">ç±»å‹</TD>
-				    <TD style="WIDTH: 50%">æ ‡é¢˜</TD>			
-				    <TD style="WIDTH: 20%">å‘å¸ƒæ—¶é—´</TD>
-		    		<TD style="TEXT-ALIGN: center; WIDTH: 10%">æ“ä½œ</TD>
+				    <TD style="WIDTH: 10%">ÀàĞÍ</TD>
+				    <TD style="WIDTH: 50%">±êÌâ</TD>			
+				    <TD style="WIDTH: 20%">·¢²¼Ê±¼ä</TD>
+		    		<TD style="TEXT-ALIGN: center; WIDTH: 10%">²Ù×÷</TD>
 		    	</TR>
 		    	
 		    	
 		    	<c:if test="${empty ARTICLE_LIST}">
 		    		<TR>
-		    			<TD colspan="5" align="center">æ‚¨è¿˜æ²¡æœ‰æ–‡ç« æ”¶è—ï¼</TD>
+		    			<TD colspan="5" align="center">Äú»¹Ã»ÓĞÎÄÕÂÊÕ²Ø£¡</TD>
 		    		</TR>
 		    	</c:if>
 		    	
@@ -140,8 +140,8 @@
 			    		
 			    		<TD><fmt:formatDate value='${art.pubdate}' pattern='yyyy-MM-dd' /></TD>
 			    		<TD align="center">
-			    			<A href="ClientPublishArticle.do?act=get&id=${art.id }">ä¿®æ”¹</A> | 
-			    			<A href="javascript:void(0);" onclick="deleteArticle(${art.id },${PAGER.curPage-1});">åˆ é™¤</A>
+			    			<A href="ClientPublishArticle.do?act=get&id=${art.id }">ĞŞ¸Ä</A> | 
+			    			<A href="javascript:void(0);" onclick="deleteArticle(${art.id },${PAGER.curPage-1});">É¾³ı</A>
 			      		</TD>
 			      	</TR>
 		      		</c:forEach>
@@ -157,7 +157,7 @@
 		</DIV>
 		<!-- 
 		<DIV class="pagescroll">
-			<DIV class="pagination"><input name="del" type="submit" value="åˆ é™¤" /></DIV>
+			<DIV class="pagination"><input name="del" type="submit" value="É¾³ı" /></DIV>
 		</DIV>
 		 -->
 		</FORM>

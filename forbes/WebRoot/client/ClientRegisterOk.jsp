@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -6,8 +6,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML>
 <HEAD>
-	<TITLE>èµ¤è„šç½‘æ³¨å†Œ</TITLE>
-	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+	<TITLE>³à½ÅÍø×¢²á</TITLE>
+	<META content="text/html; charset=gbk" http-equiv=Content-Type>
 	<META name=GENERATOR content="MSHTML 8.00.6001.18241">
 	<LINK rel=stylesheet type=text/css href="css/My_Register_Register.css" rev=stylesheet></LINK>
 	<LINK rel=icon type=image/ico href="http://pages.anjukestatic.com/favicon.ico"></LINK>
@@ -22,7 +22,7 @@
 <BODY>
 <c:if test="${RESEND == 'Y'}">
 	<SCRIPT type="text/javascript">
-		alert("å‘é€æ¿€æ´»é‚®ä»¶æˆåŠŸï¼");
+		alert("·¢ËÍ¼¤»îÓÊ¼þ³É¹¦£¡");
 	</SCRIPT>
 </c:if>
 <DIV id=container>
@@ -32,26 +32,26 @@
 	<DIV id=content>
 		<DIV class=my_register_actmain>
 			<DIV class=my_register_acttitle>
-				<DIV class=my_register_actthank><SPAN>æ„Ÿè°¢æ‚¨æ³¨å†Œèµ¤è„šç½‘ï¼çŽ°åœ¨è¯·æŒ‰ä»¥ä¸‹æ­¥éª¤æ¿€æ´»æ‚¨çš„å¸å·</SPAN></DIV>
+				<DIV class=my_register_actthank><SPAN>¸ÐÐ»Äú×¢²á³à½ÅÍø£¡ÏÖÔÚÇë°´ÒÔÏÂ²½Öè¼¤»îÄúµÄÕÊºÅ</SPAN></DIV>
 				<DIV><IMG src="images/jh.step2_250x27.gif"></DIV>
 			</DIV>
 			<DIV class=my_register_actbody>
 				<DIV><IMG src="images/jh.boxleft_85x287.gif"></DIV>
 				<DIV class=my_register_actmid>
-					<DIV class=my_register_actone>ç¬¬ä¸€æ­¥ï¼šæŸ¥çœ‹æ‚¨çš„ç”µå­é‚®ç®±</DIV>
-					<DIV class=my_register_actoneagin2>æˆ‘ä»¬ç»™æ‚¨å‘é€äº†æç¤ºé‚®ä»¶ï¼Œåœ°å€ä¸ºï¼š<SPAN>${CLIENT.email }</SPAN> </DIV>
-					<DIV class=my_register_actoneword>è¯·ç™»å½•æ‚¨çš„é‚®ç®±æ”¶ä¿¡ï¼Œ<A target=_blank href="http://www.${fn:substringAfter(CLIENT.email, '@')}">http://www.${fn:substringAfter(CLIENT.email, "@")}</A></DIV>
+					<DIV class=my_register_actone>µÚÒ»²½£º²é¿´ÄúµÄµç×ÓÓÊÏä</DIV>
+					<DIV class=my_register_actoneagin2>ÎÒÃÇ¸øÄú·¢ËÍÁËÌáÊ¾ÓÊ¼þ£¬µØÖ·Îª£º<SPAN>${CLIENT.email }</SPAN> </DIV>
+					<DIV class=my_register_actoneword>ÇëµÇÂ¼ÄúµÄÓÊÏäÊÕÐÅ£¬<A target=_blank href="http://www.${fn:substringAfter(CLIENT.email, '@')}">http://www.${fn:substringAfter(CLIENT.email, "@")}</A></DIV>
 					<DIV class=my_register_actoneagin>
-						<SPAN>å¦‚æžœæ²¡æœ‰æ”¶åˆ°æ¿€æ´»é‚®ä»¶ï¼Œ</SPAN><A href="ClientVerifyEmail.do?act=resend&id=${CLIENT.uid }">è¯·ç‚¹å‡»è¿™é‡Œ</A> 
-						<SPAN>é‡æ–°å‘é€éªŒè¯ä¿¡ã€‚</SPAN>
+						<SPAN>Èç¹ûÃ»ÓÐÊÕµ½¼¤»îÓÊ¼þ£¬</SPAN><A href="ClientVerifyEmail.do?act=resend&id=${CLIENT.uid }">Çëµã»÷ÕâÀï</A> 
+						<SPAN>ÖØÐÂ·¢ËÍÑéÖ¤ÐÅ¡£</SPAN>
 					</DIV>
-					<DIV class=my_register_actone>ç¬¬äºŒæ­¥ï¼šç‚¹å‡»ä¿¡ä¸­ç¡®è®¤æŒ‰é’®</DIV>
-					<DIV class=my_register_actoneword>å‡»æ¿€æ´»é‚®ä»¶ä¸­çš„é“¾æŽ¥ï¼Œå³å¯æ¿€æ´»æ‚¨çš„å¸å·ï¼ </DIV>
-					<DIV class=my_register_actoneword>è¯·åœ¨24å°æ—¶å†…æ¿€æ´»æ‚¨çš„å¸å·ã€‚</DIV>
+					<DIV class=my_register_actone>µÚ¶þ²½£ºµã»÷ÐÅÖÐÈ·ÈÏ°´Å¥</DIV>
+					<DIV class=my_register_actoneword>»÷¼¤»îÓÊ¼þÖÐµÄÁ´½Ó£¬¼´¿É¼¤»îÄúµÄÕÊºÅ£¡ </DIV>
+					<DIV class=my_register_actoneword>ÇëÔÚ24Ð¡Ê±ÄÚ¼¤»îÄúµÄÕÊºÅ¡£</DIV>
 				</DIV>
 				<DIV><IMG src="images/jh.boxright_16x287.gif"></DIV>
 			</DIV>
-			<DIV class=my_register_actbot><A href="http://my.anjuke.com/v2/reg/modifyemail">æ›´æ”¹é‚®ä»¶åœ°å€é‡æ–°æ”¶å–æ¿€æ´»ä¿¡</A></DIV>
+			<DIV class=my_register_actbot><A href="http://my.anjuke.com/v2/reg/modifyemail">¸ü¸ÄÓÊ¼þµØÖ·ÖØÐÂÊÕÈ¡¼¤»îÐÅ</A></DIV>
 		</DIV>
 	</DIV>
 

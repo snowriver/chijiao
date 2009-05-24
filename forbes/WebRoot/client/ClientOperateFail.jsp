@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=utf-8" %>
+<%@page contentType="text/html; charset=gbk" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <SCRIPT type="text/javascript" src="../js/openDiv.js" charset="gb2312"></SCRIPT>

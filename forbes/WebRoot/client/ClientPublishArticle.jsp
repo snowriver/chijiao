@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="FCK" uri="http://java.fckeditor.net" %>
@@ -14,8 +14,8 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <!-- saved from url=(0056)http://localhost/sv/vspacecp.php -->
-<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>æˆ‘çš„ç®¡ç†åŽå°</TITLE>
-<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>ÎÒµÄ¹ÜÀíºóÌ¨</TITLE>
+<META content="text/html; charset=gbk" http-equiv=Content-Type>
 <META name=keywords content="">
 <META name=description content=" ">
 
@@ -43,7 +43,7 @@
 		arr = response.replace(/(^\s*)|(\s*$)/g,"").split("#");
 		var op = new Array();
 		$("#typeid").empty();
-        $("<option value='0'>è¯·é€‰æ‹©å‰¯ç±»åž‹</option>").appendTo("#typeid");
+        $("<option value='0'>ÇëÑ¡Ôñ¸±ÀàÐÍ</option>").appendTo("#typeid");
 		for( var i = 0; i < arr.length-1; i++ ){
 			op = arr[i].split("&");
 			$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#typeid");
@@ -71,7 +71,7 @@
 
 
 <DIV class=mainbody>
-	<H1>å‘å¸ƒæ–‡ç« </H1>
+	<H1>·¢²¼ÎÄÕÂ</H1>
 	  	
   	<DIV style="PADDING-LEFT: 2%">
 		<FORM method=post action="ClientPublishArticle.do?act=add">
@@ -81,7 +81,7 @@
   				
   					<TR height="10">
     					<TD align=right>&nbsp;</TD>
-    					<TD>&nbsp;&nbsp;<font color=red>è¯·å‘å¸ƒæœ‰å…³åˆ›ä¸šåŠ±å¿—æ–¹é¢çš„æ–‡ç« ï¼Œæ‚¨å‘å¸ƒçš„æ–‡ç« æˆ‘ä»¬å®¡æ ¸åŽå°†ä¼šè¢«æ”¾åˆ°ä¸»é¡µå’Œåˆ›ä¸šå¤§å­¦æ ç›®ä¸Šï¼</font></TD>
+    					<TD>&nbsp;&nbsp;<font color=red>Çë·¢²¼ÓÐ¹Ø´´ÒµÀøÖ¾·½ÃæµÄÎÄÕÂ£¬Äú·¢²¼µÄÎÄÕÂÎÒÃÇÉóºËºó½«»á±»·Åµ½Ö÷Ò³ºÍ´´Òµ´óÑ§À¸Ä¿ÉÏ£¡</font></TD>
     				</TR>
     				
     				<TR height="10">
@@ -89,7 +89,7 @@
     				</TR>
     				
   					<TR>
-    					<TD style="TEXT-ALIGN: right; WIDTH: 10%">æ–‡ç« æ ‡é¢˜:</TD>
+    					<TD style="TEXT-ALIGN: right; WIDTH: 10%">ÎÄÕÂ±êÌâ:</TD>
     					<TD style="TEXT-ALIGN: left;  WIDTH: 90%">&nbsp;&nbsp;
     						<INPUT name="title" value="" size="50" />
     					</TD>
@@ -100,7 +100,7 @@
     				</TR>
     				
   					<TR style="HEIGHT: 27px">
-    					<TD align=right>æ–‡ç« æ¥æº:</TD>
+    					<TD align=right>ÎÄÕÂÀ´Ô´:</TD>
     					<TD>&nbsp;&nbsp;
     						<INPUT name="source" value="" size="50" />
     					</TD>    					
@@ -111,7 +111,7 @@
     				</TR>
     				
   					<TR>
-    					<TD align=right>ä½œè€…:</TD>
+    					<TD align=right>×÷Õß:</TD>
     					<TD>&nbsp;&nbsp;
     						<INPUT name="writer" value="" size="50" />
 						</TD>    					
@@ -122,17 +122,17 @@
     				</TR>
     				
   					<TR>
-					    <TD align=right>æ–‡ç« ç±»åž‹:</TD>
+					    <TD align=right>ÎÄÕÂÀàÐÍ:</TD>
 					    <TD>&nbsp;&nbsp;
 							<select id="maintypeid" name="maintypeid" style="width:170px" onchange="onSelectTopArticleType(this)">
-	            				<option value="0">è¯·é€‰æ‹©ä¸»ç±»åž‹</option>
+	            				<option value="0">ÇëÑ¡ÔñÖ÷ÀàÐÍ</option>
 	            				<c:forEach items="${TOP_ARTICLE_TYPE_LIST}" var="at" varStatus="is">
 	            					<option value="${at.id }">${at.name }</option>
 	            				</c:forEach>
 	            				
 	            			</select>&nbsp;&nbsp;
                      		<select id="typeid" name="typeid" style="width:170px">
-	            				<option value="0">è¯·é€‰æ‹©å‰¯ç±»åž‹</option>            				
+	            				<option value="0">ÇëÑ¡Ôñ¸±ÀàÐÍ</option>            				
 	            			 </select>
 						</TD>
 						
@@ -143,7 +143,7 @@
     				</TR>
     				
 					<TR>
-					    <TD align=right>æ–‡ç« æ‘˜è¦:</TD>
+					    <TD align=right>ÎÄÕÂÕªÒª:</TD>
 					    <TD>&nbsp;&nbsp; 
 							<TEXTAREA style="WIDTH: 360px; HEIGHT: 100px" name=description></TEXTAREA>
  
@@ -157,7 +157,7 @@
     				</TR>
     				
 					<TR>
-					    <TD align=right>æ–‡ç« å†…å®¹:</TD>
+					    <TD align=right>ÎÄÕÂÄÚÈÝ:</TD>
 					    <TD>
 					    	<FCK:editor instanceName="content" height="500" toolbarSet="Basic">
 								<jsp:attribute name="value"></jsp:attribute>
@@ -175,8 +175,8 @@
 					<TR>
 					    <TD></TD>
 					    <TD class=padding_top8>
-					    	<BUTTON class=add_del name=submit_btn type=submit value="true">æäº¤</BUTTON>
-					    	<BUTTON class=add_del name=reset_btn type=reset value="true">é‡ç½®</BUTTON>
+					    	<BUTTON class=add_del name=submit_btn type=submit value="true">Ìá½»</BUTTON>
+					    	<BUTTON class=add_del name=reset_btn type=reset value="true">ÖØÖÃ</BUTTON>
 					   	</TD>
 					</TR>
 				</TBODY>

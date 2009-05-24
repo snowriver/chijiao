@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
@@ -7,8 +7,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
-<TITLE>æˆ‘çš„ç®¡ç†åŽå° - ç™¾é—®ç®¡ç†</TITLE>
-<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<TITLE>ÎÒµÄ¹ÜÀíºóÌ¨ - °ÙÎÊ¹ÜÀí</TITLE>
+<META content="text/html; charset=gbk" http-equiv=Content-Type>
 <META name=keywords content="">
 <META name=description content=" ">
 
@@ -55,7 +55,7 @@
 	    			 flag = true;
 	   		}
 			if(flag == false) {
-				alert("è¯·é€‰æ‹©ä½ è¦åˆ é™¤çš„æé—®ï¼");
+				alert("ÇëÑ¡ÔñÄãÒªÉ¾³ýµÄÌáÎÊ£¡");
 				return false;
 			}
 		}
@@ -81,13 +81,13 @@
 
 
 <DIV class=mainbody>
-	<H1>æé—®ç®¡ç†</H1>
+	<H1>ÌáÎÊ¹ÜÀí</H1>
 	<DIV class=data_opt_title>
 		<UL>
-  			<LI><A class=curmenu>æˆ‘çš„æé—®</A> </LI>
-  			<LI><A class=ocurmenu href="ClientManageAsk.do?act=answer">æˆ‘çš„å›žç­”</A> </LI>
-  			<LI><A class=ocurmenu href="ClientManageAsk.do?act=unsolved&status=0">å¾…å¤„ç†çš„é—®é¢˜</A> </LI>
-  			<!-- <LI><A class=ocurmenu href="#">æˆ‘æŠ•ç¥¨è¿‡çš„é—®é¢˜</A> </LI> -->
+  			<LI><A class=curmenu>ÎÒµÄÌáÎÊ</A> </LI>
+  			<LI><A class=ocurmenu href="ClientManageAsk.do?act=answer">ÎÒµÄ»Ø´ð</A> </LI>
+  			<LI><A class=ocurmenu href="ClientManageAsk.do?act=unsolved&status=0">´ý´¦ÀíµÄÎÊÌâ</A> </LI>
+  			<!-- <LI><A class=ocurmenu href="#">ÎÒÍ¶Æ±¹ýµÄÎÊÌâ</A> </LI> -->
   		</UL>
   	</DIV><!--data_opt_title end-->
   	
@@ -98,16 +98,16 @@
 			<TBODY>
 		  		<TR class=datelist_opt_title>
 		    		<TD style="TEXT-ALIGN: center; WIDTH: 10%"><INPUT onclick="CheckAll(this.form)" type=checkbox name=chkall></TD>
-				    <TD style="WIDTH: 10%">ç±»åž‹</TD>
-				    <TD style="WIDTH: 50%">æ ‡é¢˜</TD>			
-				    <TD style="WIDTH: 20%">æé—®æ—¶é—´</TD>
-		    		<TD style="TEXT-ALIGN: center; WIDTH: 10%">çŠ¶æ€</TD>
+				    <TD style="WIDTH: 10%">ÀàÐÍ</TD>
+				    <TD style="WIDTH: 50%">±êÌâ</TD>			
+				    <TD style="WIDTH: 20%">ÌáÎÊÊ±¼ä</TD>
+		    		<TD style="TEXT-ALIGN: center; WIDTH: 10%">×´Ì¬</TD>
 		    	</TR>
 		    	
 		    	
 		    	<c:if test="${empty ASK_LIST}">
 		    		<TR>
-		    			<TD colspan="5" align="center">æ‚¨è¿˜æ²¡æœ‰æè¿‡é—®é¢˜</TD>
+		    			<TD colspan="5" align="center">Äú»¹Ã»ÓÐÌá¹ýÎÊÌâ</TD>
 		    		</TR>
 		    	</c:if>
 		    	
@@ -121,8 +121,8 @@
 			    		
 			    		<TD><fmt:formatDate value='${ask.expiredTime}' pattern='yyyy-MM-dd' /></TD>
 			    		<TD align="center">
-			    			<c:if test="${ask.status == 1}"><img src="../ask/images/Solved_ico.gif" title="å·²ç»è§£å†³"></c:if>
-			    			<c:if test="${ask.status == 0}"><img src="../ask/images/UnSolved_ico.gif" title="ç­‰å¾…å¤„ç†"></c:if>
+			    			<c:if test="${ask.status == 1}"><img src="../ask/images/Solved_ico.gif" title="ÒÑ¾­½â¾ö"></c:if>
+			    			<c:if test="${ask.status == 0}"><img src="../ask/images/UnSolved_ico.gif" title="µÈ´ý´¦Àí"></c:if>
 			      		</TD>
 			      	</TR>
 		      		</c:forEach>
@@ -138,7 +138,7 @@
 		</DIV>
 		<!-- 
 		<DIV class="pagescroll">
-			<DIV class="pagination"><input name="del" type="submit" value="åˆ é™¤" /></DIV>
+			<DIV class="pagination"><input name="del" type="submit" value="É¾³ý" /></DIV>
 		</DIV>
 		 -->
 		</FORM>

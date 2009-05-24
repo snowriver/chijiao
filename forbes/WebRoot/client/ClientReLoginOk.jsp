@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=utf-8" %>
+<%@page contentType="text/html; charset=gbk" %>
 <%@ taglib uri="http://jakarta.apache.org/struts/tags-bean" prefix="bean"%> 
 <%@ taglib uri="http://jakarta.apache.org/struts/tags-html" prefix="html"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
@@ -13,11 +13,11 @@
 	String http= "http://" + serverIp + ":" + serverPort + context + "/client/";
 %>
 
-<!--鍚屾鐧诲綍浠ｇ爜-->
+<!--同步登录代码-->
 ${SYN_LGIN}
 
  <script language="javascript" >
-    //alert("鐧诲綍鎴愬姛");
+    //alert("登录成功");
     //parent.location=reload();
     
     //window.parent.closeDiv();

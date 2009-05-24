@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
@@ -26,8 +26,8 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <!-- saved from url=(0056)http://localhost/sv/vspacecp.php -->
-<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>æˆ‘çš„ç®¡ç†åå°</TITLE>
-<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>ÎÒµÄ¹ÜÀíºóÌ¨</TITLE>
+<META content="text/html; charset=gbk" http-equiv=Content-Type>
 <META name=keywords content="">
 <META name=description content=" ">
 
@@ -64,7 +64,7 @@
 		arr = response.replace(/(^\s*)|(\s*$)/g,"").split("#");
 		var op = new Array();
 		$("#homeCityId").empty();
-        $("<option value='-1'>è¯·é€‰æ‹©</option>").appendTo("#homeCityId");
+        $("<option value='-1'>ÇëÑ¡Ôñ</option>").appendTo("#homeCityId");
 		for( var i = 0; i < arr.length-1; i++ ){
 			op = arr[i].split("&");
 			$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#homeCityId");
@@ -80,7 +80,7 @@
 		arr = response.split("#");
 		var op = new Array();
 		$("#liveCityId").empty();
-        $("<option value='-1'>è¯·é€‰æ‹©</option>").appendTo("#liveCityId");
+        $("<option value='-1'>ÇëÑ¡Ôñ</option>").appendTo("#liveCityId");
 		for( var i = 0; i < arr.length-1; i++ ){
 			op = arr[i].split("&");
 			$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#liveCityId");
@@ -91,7 +91,7 @@
 	    if( obj.value == -1 ){
 			return ;
 		}
-		$("#estlist").html("è«‹ç¨å€™ <img src='../image/wait.gif'>");
+		$("#estlist").html("ÕˆÉÔºò <img src='../image/wait.gif'>");
 		$.ajax({
 			url: '../ajax/estateselector.jsp',
 			type: 'get',
@@ -131,10 +131,10 @@
 	}
 	function selectEst(estid,estname){
 		
-	    $("#estlist").html("[<a href='javascript:void(0)' onClick='reSelectEst()'>é‡æ–°é¸æ“‡å±‹è‹‘</a>] <span class='estName'>" + estname +"</span> [<a href='javascript:void(0)' onClick='showEstFormNoBlock(" + estid + ",\"" + estname+"\")'>ä¸é¸æ“‡æœŸåº§</a>] ") ;
+	    $("#estlist").html("[<a href='javascript:void(0)' onClick='reSelectEst()'>ÖØĞÂßx“ñÎİÔ·</a>] <span class='estName'>" + estname +"</span> [<a href='javascript:void(0)' onClick='showEstFormNoBlock(" + estid + ",\"" + estname+"\")'>²»ßx“ñÆÚ×ù</a>] ") ;
         
 		$("#selectdiv").css("display","none");
-		$("#EstateDetailInfo").html("è«‹ç¨å€™ <img src='../image/wait.gif'>");
+		$("#EstateDetailInfo").html("ÕˆÉÔºò <img src='../image/wait.gif'>");
 		$("#selectdiv").css("display","block");
 		$.ajax({
 			url: '../ajax/estateselector.jsp',
@@ -167,7 +167,7 @@
 	   // document.all["estInfoDiv"].style.display="block";
 		$("#EstateDetailInfo").html("");
 		$("#estlist").html( $("#estlist").html()+">>" );
-		$("#selectinf").html( "[<a href='javascript:void(0)' onClick='reSelectEst()'>é‡æ–°é¸æ“‡ç‰©æ¥­</a>]<span class='estName'> "
+		$("#selectinf").html( "[<a href='javascript:void(0)' onClick='reSelectEst()'>ÖØĞÂßx“ñÎï˜I</a>]<span class='estName'> "
 		+ $("#selectdiv .estName").html() +" </span>" );
 		$("#estateId").val(estId);
 	}
@@ -187,7 +187,7 @@
 	     $("#selectdiv").css("display","none");
 	     var disp = "<div id='standblock'>";
 		 if ( stageNo !="null" && stageNo > 0 ){
-		 	disp = disp + stageNo + "æœŸ";
+		 	disp = disp + stageNo + "ÆÚ";
 		 }
 		 if ( stageName !="null" && stageName.length > 1){
 		 	disp = disp + stageName ;
@@ -196,7 +196,7 @@
 		 	disp = disp + ">>";
 		 }
 		 if( blockNo != "null"){
-		 	disp = disp + blockNo + "åº§";
+		 	disp = disp + blockNo + "×ù";
 		 }
 	     if ( blockName != "null"){
 		    disp = disp + " " + blockName;		
@@ -210,52 +210,52 @@
 		$("#estlist").html( $("#estlist").html() + ">>" + disp );
 		$("#selectinf").html( $("#estlist").html() );
 		
-		$("#selectinf").html( "[<a href='javascript:void(0)' onClick='reSelectEst()'>é‡æ–°é¸æ“‡ç‰©æ¥­</a>]<span class='estName'> "
+		$("#selectinf").html( "[<a href='javascript:void(0)' onClick='reSelectEst()'>ÖØĞÂßx“ñÎï˜I</a>]<span class='estName'> "
 			+ $("#selectdiv .estName").html() +" </span> " + $("#selectdiv #standblock").html());
 		$("#blockId").val(blockid);
 		
 	}
 	
 	function postEstate(obj){
-        //è‡ªå·±å¡«å¯«å±‹è‹‘ä¿¡æ¯
+        //×Ô¼ºÌîŒ‘ÎİÔ·ĞÅÏ¢
 		
 		if( $("#blockId").val()=="" && $("#estateId").val()==""){
-			if( !notNull( $("#estName"),"ç‰©æ¥­åç¨±ä¸èƒ½ç‚ºç©º") ){
+			if( !notNull( $("#estName"),"Îï˜IÃû·Q²»ÄÜé¿Õ") ){
 				return false;
 			}
 		}
 		
 		if( $("#floor").val().length > 0 ){
-			if( !isnumeric(  $("#floor"),"æ¨“å±¤å¿…é¡»æ˜¯æ•¸å­—") ){
+			if( !isnumeric(  $("#floor"),"˜ÇŒÓ±ØĞëÊÇ”µ×Ö") ){
 				return false;
 			}
 		}
 	
-		if( !notNull(  $("#area"),"ç‰©æ¥­é¢ç©ä¸èƒ½ç‚ºç©º") ){
+		if( !notNull(  $("#area"),"Îï˜IÃæ·e²»ÄÜé¿Õ") ){
 			return false;
 		}
 		
-		if( !isnumeric( $("#area"),"ç‰©æ¥­é¢ç©å¿…é¡»æ˜¯æ•¸å­—") ){
+		if( !isnumeric( $("#area"),"Îï˜IÃæ·e±ØĞëÊÇ”µ×Ö") ){
 			return false;
 		}
-		if( !notNull( $("#sellBuyPrice"),"ç‰©æ¥­æœŸæœ›å”®åƒ¹ä¸èƒ½ç‚ºç©º") ){
+		if( !notNull( $("#sellBuyPrice"),"Îï˜IÆÚÍûÊÛƒr²»ÄÜé¿Õ") ){
 			return false;
 		}
-		if( !isnumeric( $("#sellBuyPrice"),"ç‰©æ¥­æœŸæœ›å”®åƒ¹å¿…é¡»æ˜¯æ•¸å­—") ){
+		if( !isnumeric( $("#sellBuyPrice"),"Îï˜IÆÚÍûÊÛƒr±ØĞëÊÇ”µ×Ö") ){
 			return false;
 		}
 		if(  $("#sellBuyPrice").val() < 50 ){
-			if ( confirm("è¼¸å…¥çš„å”®åƒ¹å°äº50è¬ï¼Œæ˜¯å¦ç¢ºå®šï¼Ÿ")==false ){
+			if ( confirm("İ”ÈëµÄÊÛƒrĞ¡ÓÚ50Èf£¬ÊÇ·ñ´_¶¨£¿")==false ){
 				return false;
 			}
 		}
 		if(  $("#sellBuyPrice").val() > 5000 ){
-			if ( confirm("è¼¸å…¥çš„å”®åƒ¹å¤§äº5000è¬ï¼Œæ˜¯å¦ç¢ºå®šï¼Ÿ")==false ){
+			if ( confirm("İ”ÈëµÄÊÛƒr´óÓÚ5000Èf£¬ÊÇ·ñ´_¶¨£¿")==false ){
 				return false;
 			}
 		}
 		if(  $("#managementFee").val().length > 0 ){
-			if( !isnumeric( $("#managementFee"),"ç®¡ç†è´¹å¿…é¡»æ˜¯æ•¸å­—") ){
+			if( !isnumeric( $("#managementFee"),"¹ÜÀí·Ñ±ØĞëÊÇ”µ×Ö") ){
 				return false;
 			}
 		}
@@ -287,12 +287,12 @@
 
 
 <DIV class=mainbody>
-	<H1>ä¿®æ”¹ä¸ªäººä¿¡æ¯</H1>
+	<H1>ĞŞ¸Ä¸öÈËĞÅÏ¢</H1>
 	<DIV class=data_opt_title>
 		<UL>
-  			<LI><A class=curmenu>ä¸ªäººä¿¡æ¯</A> </LI>
-  			<LI><A class=ocurmenu href="${UC_HOME_URL }/cp.php?ac=avatar" target="_blank">æ›´æ¢å¤´åƒ</A> </LI>
-  			<LI><A class=ocurmenu href="ClientModifyPassword.jsp">ä¿®æ”¹å¯†ç </A> </LI>
+  			<LI><A class=curmenu>¸öÈËĞÅÏ¢</A> </LI>
+  			<LI><A class=ocurmenu href="${UC_HOME_URL }/cp.php?ac=avatar" target="_blank">¸ü»»Í·Ïñ</A> </LI>
+  			<LI><A class=ocurmenu href="ClientModifyPassword.jsp">ĞŞ¸ÄÃÜÂë</A> </LI>
   		</UL>
   	</DIV><!--data_opt_title end-->
   	
@@ -316,7 +316,7 @@
     				</TR>
     				
   					<TR>
-    					<TD style="TEXT-ALIGN: right; WIDTH: 200px">å¸å·:</TD>
+    					<TD style="TEXT-ALIGN: right; WIDTH: 200px">ÕÊºÅ:</TD>
     					<TD style="TEXT-ALIGN: left;  WIDTH: 40%">&nbsp;&nbsp;<INPUT name="loginName" value="${sessionScope.CLIENT.username}" size="30" disabled></TD>
     					<TD></TD>
     				</TR>
@@ -330,12 +330,12 @@
     				</TR>
     				
   					<TR style="HEIGHT: 27px">
-    					<TD align=right>æ€§åˆ«:</TD>
+    					<TD align=right>ĞÔ±ğ:</TD>
     					<TD>&nbsp;&nbsp;
-    						<INPUT style="VERTICAL-ALIGN: middle" id=sex value=F type=radio name=sex <c:if test="${USER_DETAIL.sex == 'F'}">CHECKED</c:if> />&nbsp;<LABEL>ç”·</LABEL> 
-    						<INPUT style="VERTICAL-ALIGN: middle" id=sex value=M type=radio name=sex <c:if test="${USER_DETAIL.sex == 'M'}">CHECKED</c:if> />&nbsp;<LABEL>å¥³</LABEL> 
+    						<INPUT style="VERTICAL-ALIGN: middle" id=sex value=F type=radio name=sex <c:if test="${USER_DETAIL.sex == 'F'}">CHECKED</c:if> />&nbsp;<LABEL>ÄĞ</LABEL> 
+    						<INPUT style="VERTICAL-ALIGN: middle" id=sex value=M type=radio name=sex <c:if test="${USER_DETAIL.sex == 'M'}">CHECKED</c:if> />&nbsp;<LABEL>Å®</LABEL> 
     					</TD>
-    					<TD><input type="checkbox" value="Y" name="sexLock" <c:if test="${USER_DETAIL.sexLock == 'Y'}">CHECKED</c:if> />ä¿å¯†</TD>
+    					<TD><input type="checkbox" value="Y" name="sexLock" <c:if test="${USER_DETAIL.sexLock == 'Y'}">CHECKED</c:if> />±£ÃÜ</TD>
     				</TR>
   
   					<TR height="10">
@@ -343,11 +343,11 @@
     				</TR>
     				
   					<TR>
-    					<TD align=right>ç”Ÿæ—¥:</TD>
+    					<TD align=right>ÉúÈÕ:</TD>
     					<TD>&nbsp;&nbsp;
     						<select id="birthType" name="birthType">
-					  			<option value="S" <c:if test="${USER_DETAIL.birthType == 'S'}">selected</c:if>>å†œå†</option>
-					  			<option value="L" <c:if test="${USER_DETAIL.birthType == 'L'}">selected</c:if>>é˜³å†</option>
+					  			<option value="S" <c:if test="${USER_DETAIL.birthType == 'S'}">selected</c:if>>Å©Àú</option>
+					  			<option value="L" <c:if test="${USER_DETAIL.birthType == 'L'}">selected</c:if>>ÑôÀú</option>
                      		</select> -
     						<select id="birthYear" name="birthYear">
 					  			<c:if test="${empty USER_DETAIL.birthYear}">
@@ -360,7 +360,7 @@
 										<option value="${year}" <c:if test="${USER_DETAIL.birthYear == year}">selected</c:if> >${year}</option>									
 									</c:forEach>
 								</c:if>
-                     		</select> å¹´
+                     		</select> Äê
                      		<select id="birthMonth" name="birthMonth">
 					  			<c:if test="${empty USER_DETAIL.birthMonth}">
 									<c:forEach var="month" begin="1" end="12" step="1">
@@ -372,7 +372,7 @@
 										<option value="${month}" <c:if test="${USER_DETAIL.birthMonth == month}">selected</c:if>>${month}</option>
 									</c:forEach>
 								</c:if>
-                     		</select> æœˆ
+                     		</select> ÔÂ
                      		<select id="birthDay" name="birthDay">
 					  			<c:if test="${empty USER_DETAIL.birthDay}">
 									<c:forEach var="day" begin="1" end="31" step="1">
@@ -384,14 +384,14 @@
 										<option value="${day}" <c:if test="${USER_DETAIL.birthDay == day}">selected</c:if> >${day}</option>
 									</c:forEach>
 								</c:if>
-                     		</select> æ—¥
+                     		</select> ÈÕ
 						</TD>
-    					<TD><input type="checkbox" value="Y" name="birthLock" <c:if test="${USER_DETAIL.birthLock == 'Y'}">CHECKED</c:if> />ä¿å¯†</TD>
+    					<TD><input type="checkbox" value="Y" name="birthLock" <c:if test="${USER_DETAIL.birthLock == 'Y'}">CHECKED</c:if> />±£ÃÜ</TD>
     				</TR>
     				
     				<TR>
     					<TD align=right>&nbsp;</TD>
-    					<TD>&nbsp;&nbsp;* æ ¹æ®è‡ªå·±è¿‡ç”Ÿæ—¥çš„ä¹ æƒ¯è®¾å®šï¼Œè¿‡å†œå†çš„å°±é€‰æ‹©â€œå†œå†â€
+    					<TD>&nbsp;&nbsp;* ¸ù¾İ×Ô¼º¹ıÉúÈÕµÄÏ°¹ßÉè¶¨£¬¹ıÅ©ÀúµÄ¾ÍÑ¡Ôñ¡°Å©Àú¡±
     						
     						
 						</TD>
@@ -403,39 +403,39 @@
     				</TR>
     				
   					<TR>
-					    <TD align=right>å®¶ä¹¡:</TD>
+					    <TD align=right>¼ÒÏç:</TD>
 					    <TD>&nbsp;&nbsp;
 							<select id="homeProvinceId" name="homeProvinceId" onChange="onSelectHomeProvince(this)">
 								<c:if test="${empty USER_DETAIL.homeProvinceId}">
-									<option value="-1" selected>è¯·é€‰æ‹©</option>
+									<option value="-1" selected>ÇëÑ¡Ôñ</option>
 									<c:forEach items="${PROVINCE_LIST}" var="pro"> 
 	                         			<option value="${pro.id}">${pro.name}</option>
 									</c:forEach>
 								</c:if>
                          		<c:if test="${not empty USER_DETAIL.homeProvinceId}">
-                         			<option value="-1">è¯·é€‰æ‹©</option>
+                         			<option value="-1">ÇëÑ¡Ôñ</option>
 	                         		<c:forEach items="${PROVINCE_LIST}" var="pro"> 
 	                         			<option value="${pro.id}" <c:if test="${USER_DETAIL.homeProvinceId == pro.id}">selected</c:if> >${pro.name}</option>	     
 									</c:forEach>
 								</c:if>
-							</select> çœ&nbsp;
+							</select> Ê¡&nbsp;
                      		<select id="homeCityId" name="homeCityId" onChange="onSelectHomeCity()">
                      			<c:if test="${empty USER_DETAIL.homeCityId}">
-									<option value="-1" selected>è¯·é€‰æ‹©</option>
+									<option value="-1" selected>ÇëÑ¡Ôñ</option>
 									<c:forEach items="${HOME_CITY_LIST}" var="city"> 
 	                         			<option value="${city.id}">${city.name}</option>
 									</c:forEach>
 								</c:if>
                          		<c:if test="${not empty USER_DETAIL.homeCityId}">
-                         			<option value="-1">è¯·é€‰æ‹©</option>
+                         			<option value="-1">ÇëÑ¡Ôñ</option>
 	                         		<c:forEach items="${HOME_CITY_LIST}" var="city"> 
 	                         			<option value="${city.id}" <c:if test="${USER_DETAIL.homeCityId == city.id}">selected</c:if> >${city.name}</option>	     
 									</c:forEach>
 								</c:if>
 					  			
-                     		</select> å¸‚
+                     		</select> ÊĞ
 						</TD>
-						<TD><input type="checkbox" value="Y" name="homeLock" <c:if test="${USER_DETAIL.homeLock == 'Y'}">CHECKED</c:if> />ä¿å¯†</TD>
+						<TD><input type="checkbox" value="Y" name="homeLock" <c:if test="${USER_DETAIL.homeLock == 'Y'}">CHECKED</c:if> />±£ÃÜ</TD>
 					</TR>
 					
 					<TR height="10">
@@ -443,40 +443,40 @@
     				</TR>
     				
 					<TR>
-					    <TD align=right>ç°å±…åœ°:</TD>
+					    <TD align=right>ÏÖ¾ÓµØ:</TD>
 					    <TD>&nbsp;&nbsp;
 							<select id="liveProvinceId" name="liveProvinceId" onChange="onSelectLiveProvince(this)">
 								<c:if test="${empty USER_DETAIL.homeProvinceId}">
-									<option value="-1" selected>è¯·é€‰æ‹©</option>
+									<option value="-1" selected>ÇëÑ¡Ôñ</option>
 									<c:forEach items="${PROVINCE_LIST}" var="pro"> 
 	                         			<option value="${pro.id}">${pro.name}</option>
 									</c:forEach>
 								</c:if>
                          		<c:if test="${not empty USER_DETAIL.liveProvinceId}">
-                         			<option value="-1">è¯·é€‰æ‹©</option>
+                         			<option value="-1">ÇëÑ¡Ôñ</option>
 	                         		<c:forEach items="${PROVINCE_LIST}" var="pro"> 	                         			
 	                         			<option value="${pro.id}" <c:if test="${USER_DETAIL.liveProvinceId == pro.id}">selected</c:if> >${pro.name}</option>	                         			
 									</c:forEach>
 								</c:if>
-							</select> çœ&nbsp;
+							</select> Ê¡&nbsp;
                      		<select id="liveCityId" name="liveCityId">
 					  			<c:if test="${empty USER_DETAIL.liveCityId}">
-									<option value="-1" selected>è¯·é€‰æ‹©</option>
+									<option value="-1" selected>ÇëÑ¡Ôñ</option>
 									<c:forEach items="${LIVE_CITY_LIST}" var="city"> 
 	                         			<option value="${city.id}">${city.name}</option>
 									</c:forEach>
 								</c:if>
                          		<c:if test="${not empty USER_DETAIL.liveCityId}">
-                         			<option value="-1">è¯·é€‰æ‹©</option>
+                         			<option value="-1">ÇëÑ¡Ôñ</option>
 	                         		<c:forEach items="${LIVE_CITY_LIST}" var="city"> 
 	                         			<option value="${city.id}" <c:if test="${USER_DETAIL.liveCityId == city.id}">selected</c:if> >${city.name}</option>	     
 									</c:forEach>
 								</c:if>
-                     		</select> å¸‚
+                     		</select> ÊĞ
 
 
 						</TD>
-						<TD><input type="checkbox" value="Y" name="liveLock" <c:if test="${USER_DETAIL.liveLock == 'Y'}">CHECKED</c:if> />ä¿å¯†</TD>
+						<TD><input type="checkbox" value="Y" name="liveLock" <c:if test="${USER_DETAIL.liveLock == 'Y'}">CHECKED</c:if> />±£ÃÜ</TD>
 					</TR>
 					
 					<TR height="10">
@@ -486,7 +486,7 @@
 					<TR>
 					    <TD align=right>QQ:</TD>
 					    <TD>&nbsp;&nbsp;<INPUT size=30 name=qq value="${USER_DETAIL.qq}"></TD>
-					    <TD><input type="checkbox" value="Y" name="qqLock" <c:if test="${USER_DETAIL.qqLock == 'Y'}">CHECKED</c:if> />ä¿å¯†</TD>
+					    <TD><input type="checkbox" value="Y" name="qqLock" <c:if test="${USER_DETAIL.qqLock == 'Y'}">CHECKED</c:if> />±£ÃÜ</TD>
 					</TR>
 					
 					<TR height="10">
@@ -496,7 +496,7 @@
 					<TR>
 					    <TD align=right>MSN:</TD>
 					    <TD>&nbsp;&nbsp;<INPUT size=30 name=msn value="${USER_DETAIL.msn}"></TD>
-					    <TD><input type="checkbox" value="Y" name="msnLock" <c:if test="${USER_DETAIL.msnLock == 'Y'}">CHECKED</c:if> />ä¿å¯†</TD>
+					    <TD><input type="checkbox" value="Y" name="msnLock" <c:if test="${USER_DETAIL.msnLock == 'Y'}">CHECKED</c:if> />±£ÃÜ</TD>
 					</TR>
 					
 					<TR height="10">
@@ -504,9 +504,9 @@
     				</TR>
     				
 					<TR>
-					    <TD align=right>æ‰‹æœº:</TD>
+					    <TD align=right>ÊÖ»ú:</TD>
 					    <TD>&nbsp;&nbsp;<INPUT size=30 name=mobile value="${USER_DETAIL.mobile}"></TD>
-					    <TD><input type="checkbox" value="Y" name="mobileLock" <c:if test="${USER_DETAIL.mobileLock == 'Y'}">CHECKED</c:if> />ä¿å¯†</TD>
+					    <TD><input type="checkbox" value="Y" name="mobileLock" <c:if test="${USER_DETAIL.mobileLock == 'Y'}">CHECKED</c:if> />±£ÃÜ</TD>
 					</TR>
 					
 					<TR height="10">
@@ -514,9 +514,9 @@
     				</TR>
     				
 					<TR>
-					    <TD align=right>å›ºè¯/å°çµé€š:</TD>
+					    <TD align=right>¹Ì»°/Ğ¡ÁéÍ¨:</TD>
 					    <TD>&nbsp;&nbsp;<INPUT size=30 name=phone value="${USER_DETAIL.phone}"></TD>
-					    <TD><input type="checkbox" value="Y" name="phoneLock" <c:if test="${USER_DETAIL.phoneLock == 'Y'}">CHECKED</c:if> />ä¿å¯†</TD>
+					    <TD><input type="checkbox" value="Y" name="phoneLock" <c:if test="${USER_DETAIL.phoneLock == 'Y'}">CHECKED</c:if> />±£ÃÜ</TD>
 					</TR>
 					
 					<TR height="10">
@@ -524,24 +524,24 @@
     				</TR>
     				
 					<TR>
-					    <TD align=right>è¡Œä¸š:</TD>
+					    <TD align=right>ĞĞÒµ:</TD>
 					    <TD>&nbsp;&nbsp;
 					    	<select id="calling" name="calling">
 								<c:if test="${empty USER_DETAIL.calling}">
-									<option value="-1" selected>è¯·é€‰æ‹©</option>
+									<option value="-1" selected>ÇëÑ¡Ôñ</option>
 									<c:forEach items="${SECTOR_LIST}" var="pro"> 
 	                         			<option value="${pro.id}">${pro.name}</option>
 									</c:forEach>
 								</c:if>
                          		<c:if test="${not empty USER_DETAIL.calling}">
-                         			<option value="-1">è¯·é€‰æ‹©</option>
+                         			<option value="-1">ÇëÑ¡Ôñ</option>
 	                         		<c:forEach items="${SECTOR_LIST}" var="pro"> 	                         			
 	                         			<option value="${pro.id}" <c:if test="${USER_DETAIL.calling == pro.id}">selected</c:if> >${pro.name}</option>	                         			
 									</c:forEach>
 								</c:if>
 							</select>
 						</TD>
-					    <TD><input type="checkbox" value="Y" name="callingLock" <c:if test="${USER_DETAIL.callingLock == 'Y'}">CHECKED</c:if> />ä¿å¯†</TD>
+					    <TD><input type="checkbox" value="Y" name="callingLock" <c:if test="${USER_DETAIL.callingLock == 'Y'}">CHECKED</c:if> />±£ÃÜ</TD>
 					</TR>
 			
 					<TR height="10">
@@ -549,7 +549,7 @@
     				</TR>
 					
 					<TR>
-					    <TD align=right>ä¸ªäººè¯´æ˜:</TD>
+					    <TD align=right>¸öÈËËµÃ÷:</TD>
 					    <TD>&nbsp;&nbsp;<TEXTAREA style="WIDTH: 250px" name=description>${USER_DETAIL.description}</TEXTAREA></TD>
 					    <TD></TD>
 					</TR>
@@ -561,8 +561,8 @@
 					<TR>
 					    <TD></TD>
 					    <TD class=padding_top8>
-					    	<BUTTON class=add_del name=submit_btn type=submit value="true">æäº¤</BUTTON>
-					    	<BUTTON class=add_del name=reset_btn type=reset value="true">é‡ç½®</BUTTON>
+					    	<BUTTON class=add_del name=submit_btn type=submit value="true">Ìá½»</BUTTON>
+					    	<BUTTON class=add_del name=reset_btn type=reset value="true">ÖØÖÃ</BUTTON>
 					   	</TD>
 					</TR>
 				</TBODY>
