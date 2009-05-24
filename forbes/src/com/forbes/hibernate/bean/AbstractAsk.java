@@ -1,5 +1,6 @@
 package com.forbes.hibernate.bean;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -42,17 +43,22 @@ public abstract class AbstractAsk implements java.io.Serializable {
 	private String extra;
 	
 	private Integer answerCnt;
-
+	private String expiredTimeString;
 	// Constructors
-
+	
+	public String getExpiredTimeString() {
+		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
+		return sdf.format(expiredTime);
+	}
+	
 	public Integer getAnswerCnt() {
 		return answerCnt;
 	}
-
+	
 	public void setAnswerCnt(Integer answerCnt) {
 		this.answerCnt = answerCnt;
 	}
-
+	
 	/** default constructor */
 	public AbstractAsk() {
 	}
