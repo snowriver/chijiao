@@ -1,11 +1,11 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML>
 <HEAD>
-	<TITLE>èµ¤è„šç½‘æ³¨å†Œ</TITLE>
-	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+	<TITLE>³à½ÅÍø×¢²á</TITLE>
+	<META content="text/html; charset=gbk" http-equiv=Content-Type>
 	<META name=GENERATOR content="MSHTML 8.00.6001.18241">
 	<LINK rel=stylesheet type=text/css href="css/My_Register_Register.css" rev=stylesheet></LINK>
 	<LINK rel=icon type=image/ico href="http://pages.anjukestatic.com/favicon.ico"></LINK>
@@ -42,7 +42,7 @@
 				
     	function showCheckLoginNameRs(rs){	
 			if(rs.indexOf("OK")>=0){
-				$("#checkloginname").html("<img src='../images/reg4.gif'><font color='#000000'>è¯¥ç”¨æˆ·åå¯ä»¥æ³¨å†Œ</font>");
+				$("#checkloginname").html("<img src='../images/reg4.gif'><font color='#000000'>¸ÃÓÃ»§Ãû¿ÉÒÔ×¢²á</font>");
 			}
 			else{
 				$("#checkloginname").html("<img src='../images/reg3.gif'><font color=red>"+rs + "</font>");
@@ -54,11 +54,11 @@
 		function checkEmail(){
 			if( $("#email").val().length < 1  ||  !chkemail( $("#email") ) ){
 				//	alert( $("#email").val().length);
-				$("#checkemail").html("<img src='../images/reg3.gif'><font color=red>é‚®ä»¶æ ¼å¼ä¸æ­£ç¡®ï¼Œè¯·é‡æ–°è¾“å…¥</font>");
+				$("#checkemail").html("<img src='../images/reg3.gif'><font color=red>ÓÊ¼ş¸ñÊ½²»ÕıÈ·£¬ÇëÖØĞÂÊäÈë</font>");
 				//$("#email").focus();
 			}
 			else {
-				$("#checkemail").html("<img src='../images/reg4.gif'><font color='#000000'>è¯¥é‚®ä»¶å¯ä»¥ä½¿ç”¨</font>");
+				$("#checkemail").html("<img src='../images/reg4.gif'><font color='#000000'>¸ÃÓÊ¼ş¿ÉÒÔÊ¹ÓÃ</font>");
 				//ClientRegisterManager.checkEmail( ""+$("#email").val(),showCheckEmailRs);
 			}
 		}
@@ -66,11 +66,11 @@
 		function checkPassword(){
 			if( $("#password").val().length < 6 || $("#password").val().length > 16 ){
 				//	alert( $("#email").val().length);
-				$("#checkpassword").html("<img src='../images/reg3.gif'><font color=red>6-16ä¸ªå­—ç¬¦ï¼Œè‹±æ–‡å­—æ¯åŠ æ•°å­—æˆ–ç¬¦å·çš„ç»„åˆå¯†ç </font>");
+				$("#checkpassword").html("<img src='../images/reg3.gif'><font color=red>6-16¸ö×Ö·û£¬Ó¢ÎÄ×ÖÄ¸¼ÓÊı×Ö»ò·ûºÅµÄ×éºÏÃÜÂë</font>");
 				//$("#checkpassword").focus();
 			}
 			else {
-				$("#checkpassword").html("<img src='../images/reg4.gif'><font color='#000000'>æ­£ç¡®</font>");
+				$("#checkpassword").html("<img src='../images/reg4.gif'><font color='#000000'>ÕıÈ·</font>");
 				//ClientRegisterManager.checkEmail( ""+$("#email").val(),showCheckEmailRs);
 			}
 		}
@@ -78,15 +78,15 @@
 		function checkConfirmPassword(){
 			if( $("#confirmPassword").val().length < 6 || $("#confirmPassword").val().length > 16 ){
 				//	alert( $("#email").val().length);
-				$("#checkconfirmpassword").html("<img src='../images/reg3.gif'><font color=red>6-16ä¸ªå­—ç¬¦ï¼Œè‹±æ–‡å­—æ¯åŠ æ•°å­—æˆ–ç¬¦å·çš„ç»„åˆå¯†ç </font>");
+				$("#checkconfirmpassword").html("<img src='../images/reg3.gif'><font color=red>6-16¸ö×Ö·û£¬Ó¢ÎÄ×ÖÄ¸¼ÓÊı×Ö»ò·ûºÅµÄ×éºÏÃÜÂë</font>");
 				//$("#confirmPassword").focus();
 			}
 			else {
 				if( $("#confirmPassword").val().length == $("#password").val().length ){
-					$("#checkconfirmpassword").html("<img src='../images/reg4.gif'><font color='#000000'>æ­£ç¡®</font>");
+					$("#checkconfirmpassword").html("<img src='../images/reg4.gif'><font color='#000000'>ÕıÈ·</font>");
 				}
 				else {
-					$("#checkconfirmpassword").html("<img src='../images/reg3.gif'><font color=red>ä½ è¾“å…¥çš„ä¸¤æ¬¡å¯†ç ä¸ç›¸åŒï¼Œè¯·é‡æ–°è¾“å…¥</font>");
+					$("#checkconfirmpassword").html("<img src='../images/reg3.gif'><font color=red>ÄãÊäÈëµÄÁ½´ÎÃÜÂë²»ÏàÍ¬£¬ÇëÖØĞÂÊäÈë</font>");
 				}				
 				//ClientRegisterManager.checkEmail( ""+$("#email").val(),showCheckEmailRs);
 			}
@@ -94,11 +94,11 @@
 		
 	    function showCheckEmailRs(rs){
 			if( rs == false) {
-				$("#checkemail").html("<img src='../images/reg4.gif'><font color='#000000'>è¯¥é‚®ä»¶å¯ä»¥ä½¿ç”¨</font>");
+				$("#checkemail").html("<img src='../images/reg4.gif'><font color='#000000'>¸ÃÓÊ¼ş¿ÉÒÔÊ¹ÓÃ</font>");
 				//$("#email").focus();
 			}
 			if( rs == true) {
-				$("#checkemail").html("<img src='../images/reg3.gif'><font color=red>è¯¥é‚®ä»¶å·²ç»è¢«å…¶ä»–ç”¨æˆ·ä½¿ç”¨</font>");
+				$("#checkemail").html("<img src='../images/reg3.gif'><font color=red>¸ÃÓÊ¼şÒÑ¾­±»ÆäËûÓÃ»§Ê¹ÓÃ</font>");
 				//$("#email").focus();
 			}
 			
@@ -122,11 +122,11 @@
 		function showCode(rsHtml){
 			var code = (rsHtml).replace(/(^\s*)|(\s*$)/g, "");
 			if( $("#validateCode").val() == code) {
-				$("#checkvalidatecode").html("<img src='../images/reg4.gif'><font color='#000000'>éªŒè¯ç æ­£ç¡®</font>");
+				$("#checkvalidatecode").html("<img src='../images/reg4.gif'><font color='#000000'>ÑéÖ¤ÂëÕıÈ·</font>");
 				//$("#email").focus();
 			}
 			else {
-				$("#checkvalidatecode").html("<img src='../images/reg3.gif'><font color=red>æ‚¨è¾“å…¥çš„éªŒè¯ç ä¸æ­£ç¡®ï¼Œè¯·é‡æ–°è¾“å…¥</font>");
+				$("#checkvalidatecode").html("<img src='../images/reg3.gif'><font color=red>ÄúÊäÈëµÄÑéÖ¤Âë²»ÕıÈ·£¬ÇëÖØĞÂÊäÈë</font>");
 				//$("#email").focus();
 			}
 			//$("#checkvalidatecode").html(rsHtml);
@@ -135,37 +135,37 @@
 
 
     	function checkVal(){
-		    if( !notNull( $("#loginName"),"ä¼šå‘˜åä¸èƒ½ä¸ºç©º") ){
+		    if( !notNull( $("#loginName"),"»áÔ±Ãû²»ÄÜÎª¿Õ") ){
 				return false;
 			}
 			
-			if( !notNull( $("#name"),"æ˜µç§°ä¸èƒ½ä¸ºç©º") ){
+			if( !notNull( $("#name"),"êÇ³Æ²»ÄÜÎª¿Õ") ){
 				return false;
 			}
 
-			if(!notNull($("#password"),"å¯†ç ä¸èƒ½ä¸ºç©º")){
+			if(!notNull($("#password"),"ÃÜÂë²»ÄÜÎª¿Õ")){
 				return false;
 			}
 			if($("#password").val().length < 6 || $("#password").val().length > 16 ){
-			    alert("å¯†ç é•¿åº¦å¿…é¡»æ˜¯6åˆ°16ä½");
+			    alert("ÃÜÂë³¤¶È±ØĞëÊÇ6µ½16Î»");
 				return false;
 			}
 			if($("#password").val() != $("#confirmPassword").val() ){
-		    	alert("ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€è‡´");
+		    	alert("Á½´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ");
 				return false;
 			}
 		
-			if( !notNull( $("#email"),"é‚®ä»¶ä¸èƒ½ä¸ºç©º") ){
+			if( !notNull( $("#email"),"ÓÊ¼ş²»ÄÜÎª¿Õ") ){
 				return false;
 			}
 			
 			if( $("#email").val().length > 1 ){
-				if(!isemail($("#email"),"é‚®ä»¶åœ°å€ä¸æ­£ç¢º")){
+				if(!isemail($("#email"),"ÓÊ¼şµØÖ·²»Õı´_")){
 					return false;
 				}
 			}
 			
-			if( !notNull( $("#validateCode"),"éªŒè¯ç ä¸èƒ½ä¸ºç©º") ){
+			if( !notNull( $("#validateCode"),"ÑéÖ¤Âë²»ÄÜÎª¿Õ") ){
 				return false;
 			}
 
@@ -185,7 +185,7 @@
 						success: function(rsHtml){
 					     	var code = (rsHtml).replace(/(^\s*)|(\s*$)/g, "");
 							if( $("#validateCode").val() != code) {
-								alert("æ‚¨è¾“å…¥çš„éªŒè¯ç ä¸æ­£ç¡®ï¼Œè¯·é‡æ–°è¾“å…¥");
+								alert("ÄúÊäÈëµÄÑéÖ¤Âë²»ÕıÈ·£¬ÇëÖØĞÂÊäÈë");
 								return false;
 							}
 					   }
@@ -219,10 +219,10 @@
   				<TR>
     				<TD class=my_register_td1><IMG src="images/icon.broker_34x31.gif"> </TD>
     				<TD class=my_register_td2>
-    					è¯·å¡«å†™ä»¥ä¸‹ä¿¡æ¯
+    					ÇëÌîĞ´ÒÔÏÂĞÅÏ¢
     					<SPAN style="COLOR: #999; FONT-SIZE: 12px">(</SPAN>
     					<SPAN class=my_register_red>*</SPAN> 
-    					<SPAN style="COLOR: #999; FONT-SIZE: 12px">ä¸ºå¿…å¡«)</SPAN> &nbsp;&nbsp;
+    					<SPAN style="COLOR: #999; FONT-SIZE: 12px">Îª±ØÌî)</SPAN> &nbsp;&nbsp;
     					<font color=red>${FAIL_MESSAGE }</font>
     				</TD>
     			</TR>
@@ -235,13 +235,13 @@
     			</TR>
     			 -->
   				<TR>  					
-    				<TD class=my_register_td1>ç”¨æˆ·å<SPAN class=my_register_red>*</SPAN>ï¼š</TD>
+    				<TD class=my_register_td1>ÓÃ»§Ãû<SPAN class=my_register_red>*</SPAN>£º</TD>
     				<TD class=my_register_td2>
       					<DIV class=my_register_input>
       					<INPUT id=loginName maxLength=15 size=25 type=text name=loginName onblur="checkLoginName()" value="${CLIENT.loginName }"> </DIV>
       					<DIV id=checkloginname>
       						<c:if test="${empty ERROR_LOGIN_NAME}">
-      								<img src="../images/reg1.gif">5-18ä¸ªå­—ç¬¦(åŒ…æ‹¬è‹±æ–‡å­—æ¯ã€æ•°å­—ã€ä¸‹åˆ’çº¿) 
+      								<img src="../images/reg1.gif">5-18¸ö×Ö·û(°üÀ¨Ó¢ÎÄ×ÖÄ¸¡¢Êı×Ö¡¢ÏÂ»®Ïß) 
       							</c:if>
       							<c:if test="${not empty ERROR_LOGIN_NAME}">
       								<img src="../images/reg4.gif"> <font color=red>${ERROR_LOGIN_NAME }</font>
@@ -251,37 +251,37 @@
       			</TR>      			
       			
 				<TR>
-				    	<TD class=my_register_td1>å¯†ç <SPAN class=my_register_red>*</SPAN>ï¼š</TD>
+				    	<TD class=my_register_td1>ÃÜÂë<SPAN class=my_register_red>*</SPAN>£º</TD>
 				    	<TD class=my_register_td2>
 				      		<DIV class=my_register_input><INPUT id=password maxLength=16 size=25 type=password name=password onblur="checkPassword()" /> </DIV>
-				      		<DIV id=checkpassword><img src="../images/reg1.gif">6-16ä¸ªå­—ç¬¦ï¼Œè‹±æ–‡å­—æ¯åŠ æ•°å­—æˆ–ç¬¦å·çš„ç»„åˆå¯†ç </DIV>
+				      		<DIV id=checkpassword><img src="../images/reg1.gif">6-16¸ö×Ö·û£¬Ó¢ÎÄ×ÖÄ¸¼ÓÊı×Ö»ò·ûºÅµÄ×éºÏÃÜÂë</DIV>
 				      	</TD>
 					</TR>
   					<TR>
-    					<TD class=my_register_td1>ç¡®è®¤å¯†ç <SPAN class=my_register_red>*</SPAN>ï¼š</TD>
+    					<TD class=my_register_td1>È·ÈÏÃÜÂë<SPAN class=my_register_red>*</SPAN>£º</TD>
     					<TD class=my_register_td2>
       						<DIV class=my_register_input>
       							<INPUT id="confirmPassword" maxLength=16 size=25 type=password name="confirmPassword" onblur="checkConfirmPassword()" />
       						</DIV>
-      						<DIV id=checkconfirmpassword><img src="../images/reg1.gif">è¯·å†è¾“å…¥ä¸€éæ‚¨ä¸Šé¢è¾“å…¥çš„å¯†ç  </DIV>
+      						<DIV id=checkconfirmpassword><img src="../images/reg1.gif">ÇëÔÙÊäÈëÒ»±éÄúÉÏÃæÊäÈëµÄÃÜÂë </DIV>
       					</TD>
       				</TR>
   					<TR>
-    					<TD class=my_register_td1>é‚®ç®±<SPAN class=my_register_red>*</SPAN>ï¼š</TD>
+    					<TD class=my_register_td1>ÓÊÏä<SPAN class=my_register_red>*</SPAN>£º</TD>
     					<TD class=my_register_td2>
       						<DIV class=my_register_input>
       							<INPUT id=email maxLength=30 size=25 type=text name=email onblur="checkEmail()" value="${CLIENT.email }" /> 
       						</DIV>
-      						<DIV id=checkemail><img src="../images/reg1.gif">è¯·è¾“å…¥é‚®ç®±</DIV>
+      						<DIV id=checkemail><img src="../images/reg1.gif">ÇëÊäÈëÓÊÏä</DIV>
       					</TD>
       				</TR>
   					<TR>
-    					<TD class=my_register_td1>æ ¡éªŒç <SPAN class=my_register_red>*</SPAN>ï¼š</TD>
+    					<TD class=my_register_td1>Ğ£ÑéÂë<SPAN class=my_register_red>*</SPAN>£º</TD>
     					<TD class=my_register_td2>
       						<DIV class=my_register_input><INPUT id="validateCode" maxLength=4 size=25 type=text name="validateCode" onblur="checkValidateCode()"> </DIV>
       						<DIV id=checkvalidatecode>
       							<c:if test="${empty ERROR_VALIDATE_CODE}">
-      								<img src="../images/reg1.gif">è¯·è¾“å…¥éªŒè¯ç 
+      								<img src="../images/reg1.gif">ÇëÊäÈëÑéÖ¤Âë
       							</c:if>
       							<c:if test="${not empty ERROR_VALIDATE_CODE}">
       								<img src="../images/reg4.gif"> <font color=red>${ERROR_VALIDATE_CODE }</font>
@@ -293,7 +293,7 @@
   					<TR>
   						<TD class=my_register_td1></TD>
     					<TD class=my_register_td2>
-      						<DIV><IMG title=å¦‚æœçœ‹ä¸æ¸…æ•°å­—ï¼Œè¯·ç‚¹å›¾ç‰‡åˆ·æ–°éªŒè¯ç  onclick="javascript:this.src='../include/validateCode.jsp?cn=cyreg&amp;x=120&amp;y=40&amp;s=30&amp;x1=2&amp;y1=46&amp;x2=12&amp;y2=38&amp;id=' + Math.round(Math.random()*1000);" 
+      						<DIV><IMG title=Èç¹û¿´²»ÇåÊı×Ö£¬ÇëµãÍ¼Æ¬Ë¢ĞÂÑéÖ¤Âë onclick="javascript:this.src='../include/validateCode.jsp?cn=cyreg&amp;x=120&amp;y=40&amp;s=30&amp;x1=2&amp;y1=46&amp;x2=12&amp;y2=38&amp;id=' + Math.round(Math.random()*1000);" 
       								align=absMiddle src="../include/validateCode.jsp" width="80" height="30">
       						</DIV>
       					</TD>
@@ -302,8 +302,8 @@
     					<TD class=my_register_td1></TD>
     					<TD class=my_register_td2>
       						<DIV class=my_register_input2>
-      							<INPUT id=acceptanjuke value=1 CHECKED type=checkbox name=acceptanjuke>æˆ‘å·²é˜…è¯»å¹¶æ¥å—ã€Š
-      							<A target=_blank href="user-agreement.html">ç”¨æˆ·æœåŠ¡åè®®</A>ã€‹ 
+      							<INPUT id=acceptanjuke value=1 CHECKED type=checkbox name=acceptanjuke>ÎÒÒÑÔÄ¶Á²¢½ÓÊÜ¡¶
+      							<A target=_blank href="user-agreement.html">ÓÃ»§·şÎñĞ­Òé</A>¡· 
       						</DIV>
       						<DIV id=checkallow></DIV>
       					</TD>

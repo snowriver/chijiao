@@ -1,9 +1,9 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>æˆ‘çš„ç®¡ç†åå°</TITLE>
-<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>ÎÒµÄ¹ÜÀíºóÌ¨</TITLE>
+<META content="text/html; charset=gbk" http-equiv=Content-Type>
 <META name=keywords content="">
 <META name=description content=" ">
 
@@ -63,7 +63,7 @@
 
 								<div id="append"></div>
 <div class="ucbody">
-	<h1>çŸ­æ¶ˆæ¯ä¸­å¿ƒ</h1>
+	<h1>¶ÌÏûÏ¢ÖĞĞÄ</h1>
 	<script type="text/javascript">
 		function checkall(form, prefix, checkall) {
 			var checkall = checkall ? checkall : 'chkall';
@@ -95,14 +95,14 @@
 	</script>
 
 	<div class="ucnav">
-		<a class="ucontype" href="ClientListNewsFeeds.do?act=in">æ”¶ä»¶ç®±<strong>[1]</strong></a>		
-		<a href="index.php?m=pm_client&a=ls&folder=outbox">å‘ä»¶ç®±</a>
-		<a href="index.php?m=pm_client&a=ls&folder=inbox&filter=announcepm">å…¬å…±æ¶ˆæ¯[1]</a>
-		<a  class="sendpm" href="index.php?m=pm_client&a=send">å‘é€çŸ­æ¶ˆæ¯</a>
+		<a class="ucontype" href="ClientListNewsFeeds.do?act=in">ÊÕ¼şÏä<strong>[1]</strong></a>		
+		<a href="index.php?m=pm_client&a=ls&folder=outbox">·¢¼şÏä</a>
+		<a href="index.php?m=pm_client&a=ls&folder=inbox&filter=announcepm">¹«¹²ÏûÏ¢[1]</a>
+		<a  class="sendpm" href="index.php?m=pm_client&a=send">·¢ËÍ¶ÌÏûÏ¢</a>
 
 		<span class="navinfo">
 			<img src="images/default/newpm.gif" />
-			<strong>1</strong> <a href="index.php?m=pm_client&a=ls&folder=newbox">æ¡æœªè¯»æ¶ˆæ¯</a>
+			<strong>1</strong> <a href="index.php?m=pm_client&a=ls&folder=newbox">ÌõÎ´¶ÁÏûÏ¢</a>
 		</span>
 	</div>
 	
@@ -113,14 +113,14 @@
 				<tbody>
 				<tr class="ctrlbar">
 					<td class="sel"><input type="checkbox" name="chkall" onclick="checkall(this.form, 'delete')" /></td>
-					<td class="ava"><button name="pmsend" type="submit">åˆ é™¤</button></td>
+					<td class="ava"><button name="pmsend" type="submit">É¾³ı</button></td>
 					<td class="pef"></td>
 					<td class=""></td>
 				</tr>
 				<tr class="onset">
 					<td class="sel"><input type="checkbox" name="delete[]" value="8" /></td>
 					<td class="ava"><img src="avatar.php?uid=2&size=small" /></td>
-					<td class="per">xushaomin<p>ä»Šå¤©  15:49</p></td>
+					<td class="per">xushaomin<p>½ñÌì  15:49</p></td>
 					<td class="title">
 						<h2><a class="boldtext" href="index.php?m=pm_client&a=view&pmid=8&folder=inbox&filter=&extra=page%3D" id="pm_view_8">admin</a></h2>
 						<p>admin</p>
@@ -130,7 +130,7 @@
 				<tfoot>
 				<tr class="ctrlbar">
 					<td class="sel"><input type="checkbox" onclick="this.form.chkall.click()" /></td>
-					<td class="ava"><button onclick="this.form.pmsend.click()" type="button">åˆ é™¤</button></td>
+					<td class="ava"><button onclick="this.form.pmsend.click()" type="button">É¾³ı</button></td>
 					<td class="pef"></td>
 					<td class="">
 						<DIV class="pagescroll"><DIV id="Pagination" class="pagination"></DIV></DIV>  

@@ -1,12 +1,12 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>æˆ‘çš„ç®¡ç†åŽå°</TITLE>
-<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>ÎÒµÄ¹ÜÀíºóÌ¨</TITLE>
+<META content="text/html; charset=gbk" http-equiv=Content-Type>
 <META name=keywords content="">
 <META name=description content=" ">
 
@@ -60,13 +60,13 @@
 
 
 <DIV class=mainbody>
-	<H1>æé—®ç®¡ç†</H1>
+	<H1>ÌáÎÊ¹ÜÀí</H1>
 	<DIV class=data_opt_title>
 		<UL>
-  			<LI><A class=ocurmenu href="ClientManageAsk.do?act=all&status=0_1">æˆ‘çš„æé—®</A> </LI>
-  			<LI><A class=ocurmenu href="ClientManageAsk.do?act=answer">æˆ‘çš„å›žç­”</A> </LI>
-  			<LI><A class=curmenu>å¾…å¤„ç†çš„é—®é¢˜</A> </LI>
-  			<!-- <LI><A class=ocurmenu href="#">æˆ‘æŠ•ç¥¨è¿‡çš„é—®é¢˜</A> </LI> -->
+  			<LI><A class=ocurmenu href="ClientManageAsk.do?act=all&status=0_1">ÎÒµÄÌáÎÊ</A> </LI>
+  			<LI><A class=ocurmenu href="ClientManageAsk.do?act=answer">ÎÒµÄ»Ø´ð</A> </LI>
+  			<LI><A class=curmenu>´ý´¦ÀíµÄÎÊÌâ</A> </LI>
+  			<!-- <LI><A class=ocurmenu href="#">ÎÒÍ¶Æ±¹ýµÄÎÊÌâ</A> </LI> -->
   		</UL>
   	</DIV><!--data_opt_title end-->
   	
@@ -77,16 +77,16 @@
 			<TBODY>
 		  		<TR class=datelist_opt_title>
 		    		<TD style="TEXT-ALIGN: center; WIDTH: 50px"><INPUT onclick="checkall(this.form, 'friendid')" type=checkbox name=chkall></TD>
-				    <TD style="WIDTH: 130px">ç±»åž‹</TD>
-				    <TD>æ ‡é¢˜</TD>			
-				    <TD style="WIDTH: 100px">æé—®æ—¶é—´</TD>
-		    		<TD style="TEXT-ALIGN: center; WIDTH: 100px">çŠ¶æ€</TD>
+				    <TD style="WIDTH: 130px">ÀàÐÍ</TD>
+				    <TD>±êÌâ</TD>			
+				    <TD style="WIDTH: 100px">ÌáÎÊÊ±¼ä</TD>
+		    		<TD style="TEXT-ALIGN: center; WIDTH: 100px">×´Ì¬</TD>
 		    	</TR>
 		    	
 		    	
 		    	<c:if test="${empty ASK_LIST}">
 		    		<TR>
-		    			<TD colspan="5" align="center">æ— å¾…å¤„ç†çš„é—®é¢˜</TD>
+		    			<TD colspan="5" align="center">ÎÞ´ý´¦ÀíµÄÎÊÌâ</TD>
 		    		</TR>
 		    	</c:if>
 		    	
@@ -100,8 +100,8 @@
 			    		
 			    		<TD><fmt:formatDate value='${ask.expiredTime}' pattern='MM-dd' /></TD>
 			    		<TD class=collection_video_opt>
-			    			<c:if test="${ask.status == 0}"><img src="../ask/images/UnSolved_ico.gif" title="å·²ç»è§£å†³"></c:if>
-			    			<c:if test="${ask.status == 1}"><img src="../ask/images/Solved_ico.gif" title="ç­‰å¾…å¤„ç†"></c:if>
+			    			<c:if test="${ask.status == 0}"><img src="../ask/images/UnSolved_ico.gif" title="ÒÑ¾­½â¾ö"></c:if>
+			    			<c:if test="${ask.status == 1}"><img src="../ask/images/Solved_ico.gif" title="µÈ´ý´¦Àí"></c:if>
 			      		</TD>
 			      	</TR>
 		      		</c:forEach>

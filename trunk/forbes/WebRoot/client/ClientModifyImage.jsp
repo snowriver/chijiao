@@ -1,11 +1,11 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>æˆ‘çš„ç®¡ç†åå°</TITLE>
-<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>ÎÒµÄ¹ÜÀíºóÌ¨</TITLE>
+<META content="text/html; charset=gbk" http-equiv=Content-Type>
 <META name=keywords content="">
 <META name=description content=" ">
 
@@ -42,7 +42,7 @@
 		arr = response.replace(/(^\s*)|(\s*$)/g,"").split("#");
 		var op = new Array();
 		$("#homeCityId").empty();
-        $("<option value='-1'>è¯·é€‰æ‹©</option>").appendTo("#homeCityId");
+        $("<option value='-1'>ÇëÑ¡Ôñ</option>").appendTo("#homeCityId");
 		for( var i = 0; i < arr.length-1; i++ ){
 			op = arr[i].split("&");
 			$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#homeCityId");
@@ -58,7 +58,7 @@
 		arr = response.split("#");
 		var op = new Array();
 		$("#liveCityId").empty();
-        $("<option value='-1'>è¯·é€‰æ‹©</option>").appendTo("#liveCityId");
+        $("<option value='-1'>ÇëÑ¡Ôñ</option>").appendTo("#liveCityId");
 		for( var i = 0; i < arr.length-1; i++ ){
 			op = arr[i].split("&");
 			$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#liveCityId");
@@ -69,7 +69,7 @@
 	    if( obj.value == -1 ){
 			return ;
 		}
-		$("#estlist").html("è«‹ç¨å€™ <img src='../image/wait.gif'>");
+		$("#estlist").html("ÕˆÉÔºò <img src='../image/wait.gif'>");
 		$.ajax({
 			url: '../ajax/estateselector.jsp',
 			type: 'get',
@@ -109,10 +109,10 @@
 	}
 	function selectEst(estid,estname){
 		
-	    $("#estlist").html("[<a href='javascript:void(0)' onClick='reSelectEst()'>é‡æ–°é¸æ“‡å±‹è‹‘</a>] <span class='estName'>" + estname +"</span> [<a href='javascript:void(0)' onClick='showEstFormNoBlock(" + estid + ",\"" + estname+"\")'>ä¸é¸æ“‡æœŸåº§</a>] ") ;
+	    $("#estlist").html("[<a href='javascript:void(0)' onClick='reSelectEst()'>ÖØĞÂßx“ñÎİÔ·</a>] <span class='estName'>" + estname +"</span> [<a href='javascript:void(0)' onClick='showEstFormNoBlock(" + estid + ",\"" + estname+"\")'>²»ßx“ñÆÚ×ù</a>] ") ;
         
 		$("#selectdiv").css("display","none");
-		$("#EstateDetailInfo").html("è«‹ç¨å€™ <img src='../image/wait.gif'>");
+		$("#EstateDetailInfo").html("ÕˆÉÔºò <img src='../image/wait.gif'>");
 		$("#selectdiv").css("display","block");
 		$.ajax({
 			url: '../ajax/estateselector.jsp',
@@ -145,7 +145,7 @@
 	   // document.all["estInfoDiv"].style.display="block";
 		$("#EstateDetailInfo").html("");
 		$("#estlist").html( $("#estlist").html()+">>" );
-		$("#selectinf").html( "[<a href='javascript:void(0)' onClick='reSelectEst()'>é‡æ–°é¸æ“‡ç‰©æ¥­</a>]<span class='estName'> "
+		$("#selectinf").html( "[<a href='javascript:void(0)' onClick='reSelectEst()'>ÖØĞÂßx“ñÎï˜I</a>]<span class='estName'> "
 		+ $("#selectdiv .estName").html() +" </span>" );
 		$("#estateId").val(estId);
 	}
@@ -165,7 +165,7 @@
 	     $("#selectdiv").css("display","none");
 	     var disp = "<div id='standblock'>";
 		 if ( stageNo !="null" && stageNo > 0 ){
-		 	disp = disp + stageNo + "æœŸ";
+		 	disp = disp + stageNo + "ÆÚ";
 		 }
 		 if ( stageName !="null" && stageName.length > 1){
 		 	disp = disp + stageName ;
@@ -174,7 +174,7 @@
 		 	disp = disp + ">>";
 		 }
 		 if( blockNo != "null"){
-		 	disp = disp + blockNo + "åº§";
+		 	disp = disp + blockNo + "×ù";
 		 }
 	     if ( blockName != "null"){
 		    disp = disp + " " + blockName;		
@@ -188,52 +188,52 @@
 		$("#estlist").html( $("#estlist").html() + ">>" + disp );
 		$("#selectinf").html( $("#estlist").html() );
 		
-		$("#selectinf").html( "[<a href='javascript:void(0)' onClick='reSelectEst()'>é‡æ–°é¸æ“‡ç‰©æ¥­</a>]<span class='estName'> "
+		$("#selectinf").html( "[<a href='javascript:void(0)' onClick='reSelectEst()'>ÖØĞÂßx“ñÎï˜I</a>]<span class='estName'> "
 			+ $("#selectdiv .estName").html() +" </span> " + $("#selectdiv #standblock").html());
 		$("#blockId").val(blockid);
 		
 	}
 	
 	function postEstate(obj){
-        //è‡ªå·±å¡«å¯«å±‹è‹‘ä¿¡æ¯
+        //×Ô¼ºÌîŒ‘ÎİÔ·ĞÅÏ¢
 		
 		if( $("#blockId").val()=="" && $("#estateId").val()==""){
-			if( !notNull( $("#estName"),"ç‰©æ¥­åç¨±ä¸èƒ½ç‚ºç©º") ){
+			if( !notNull( $("#estName"),"Îï˜IÃû·Q²»ÄÜé¿Õ") ){
 				return false;
 			}
 		}
 		
 		if( $("#floor").val().length > 0 ){
-			if( !isnumeric(  $("#floor"),"æ¨“å±¤å¿…é¡»æ˜¯æ•¸å­—") ){
+			if( !isnumeric(  $("#floor"),"˜ÇŒÓ±ØĞëÊÇ”µ×Ö") ){
 				return false;
 			}
 		}
 	
-		if( !notNull(  $("#area"),"ç‰©æ¥­é¢ç©ä¸èƒ½ç‚ºç©º") ){
+		if( !notNull(  $("#area"),"Îï˜IÃæ·e²»ÄÜé¿Õ") ){
 			return false;
 		}
 		
-		if( !isnumeric( $("#area"),"ç‰©æ¥­é¢ç©å¿…é¡»æ˜¯æ•¸å­—") ){
+		if( !isnumeric( $("#area"),"Îï˜IÃæ·e±ØĞëÊÇ”µ×Ö") ){
 			return false;
 		}
-		if( !notNull( $("#sellBuyPrice"),"ç‰©æ¥­æœŸæœ›å”®åƒ¹ä¸èƒ½ç‚ºç©º") ){
+		if( !notNull( $("#sellBuyPrice"),"Îï˜IÆÚÍûÊÛƒr²»ÄÜé¿Õ") ){
 			return false;
 		}
-		if( !isnumeric( $("#sellBuyPrice"),"ç‰©æ¥­æœŸæœ›å”®åƒ¹å¿…é¡»æ˜¯æ•¸å­—") ){
+		if( !isnumeric( $("#sellBuyPrice"),"Îï˜IÆÚÍûÊÛƒr±ØĞëÊÇ”µ×Ö") ){
 			return false;
 		}
 		if(  $("#sellBuyPrice").val() < 50 ){
-			if ( confirm("è¼¸å…¥çš„å”®åƒ¹å°äº50è¬ï¼Œæ˜¯å¦ç¢ºå®šï¼Ÿ")==false ){
+			if ( confirm("İ”ÈëµÄÊÛƒrĞ¡ÓÚ50Èf£¬ÊÇ·ñ´_¶¨£¿")==false ){
 				return false;
 			}
 		}
 		if(  $("#sellBuyPrice").val() > 5000 ){
-			if ( confirm("è¼¸å…¥çš„å”®åƒ¹å¤§äº5000è¬ï¼Œæ˜¯å¦ç¢ºå®šï¼Ÿ")==false ){
+			if ( confirm("İ”ÈëµÄÊÛƒr´óÓÚ5000Èf£¬ÊÇ·ñ´_¶¨£¿")==false ){
 				return false;
 			}
 		}
 		if(  $("#managementFee").val().length > 0 ){
-			if( !isnumeric( $("#managementFee"),"ç®¡ç†è´¹å¿…é¡»æ˜¯æ•¸å­—") ){
+			if( !isnumeric( $("#managementFee"),"¹ÜÀí·Ñ±ØĞëÊÇ”µ×Ö") ){
 				return false;
 			}
 		}
@@ -265,12 +265,12 @@
 
 
 <DIV class=mainbody>
-	<H1>æ›´æ¢å¤´åƒ</H1>
+	<H1>¸ü»»Í·Ïñ</H1>
 	<DIV class=data_opt_title>
 	<UL>
-  		<LI><A class=ocurmenu href="ClientModifyProfile.do?act=getdetail">ä¸ªäººä¿¡æ¯</A> </LI>
-  		<LI><A class=curmenu>æ›´æ¢å¤´åƒ</A> </LI>
-  		<LI><A class=ocurmenu href="ClientModifyPassword.jsp">ä¿®æ”¹å¯†ç </A> </LI>
+  		<LI><A class=ocurmenu href="ClientModifyProfile.do?act=getdetail">¸öÈËĞÅÏ¢</A> </LI>
+  		<LI><A class=curmenu>¸ü»»Í·Ïñ</A> </LI>
+  		<LI><A class=ocurmenu href="ClientModifyPassword.jsp">ĞŞ¸ÄÃÜÂë</A> </LI>
   	</UL>
 </DIV><!--data_opt_title end-->
 

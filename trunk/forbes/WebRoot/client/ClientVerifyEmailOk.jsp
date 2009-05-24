@@ -1,10 +1,10 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML>
 <HEAD>
-	<TITLE>èµ¤è„šç½‘æ³¨å†Œ</TITLE>
-	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+	<TITLE>³à½ÅÍø×¢²á</TITLE>
+	<META content="text/html; charset=gbk" http-equiv=Content-Type>
 	<META name=GENERATOR content="MSHTML 8.00.6001.18241">
 	<LINK rel=stylesheet type=text/css href="css/My_Register_Register.css" rev=stylesheet></LINK>
 	<LINK rel=icon type=image/ico href="http://pages.anjukestatic.com/favicon.ico"></LINK>
@@ -22,16 +22,16 @@
 		<DIV class=my_register_vermain>
 			<DIV class=my_register_verleft><IMG src="images/jhok.boxleft_10x170.gif"></DIV>
 			<DIV class=my_register_verok><IMG src="images/icon.right_76x76.gif"> </DIV>
-			<DIV class=my_register_verword>æ¿€æ´»æˆåŠŸå•¦ï¼ </DIV>
+			<DIV class=my_register_verword>¼¤»î³É¹¦À²£¡ </DIV>
 			<DIV class=my_register_verline><DIV>
 		</DIV>
 	</DIV>
 	<DIV class=my_register_vermid>
-		<DIV class=my_register_verwel>${sessionScope.CLIENT.loginName },æ¬¢è¿Žæ‚¨åŠ å…¥ èµ¤è„šç½‘ï¼</DIV>
-		<DIV class=my_register_verzhao>ç¥ä½ èƒ½åœ¨å­¦åˆ°æ›´å¤šï¼</DIV>
+		<DIV class=my_register_verwel>${sessionScope.CLIENT.loginName },»¶Ó­Äú¼ÓÈë ³à½ÅÍø£¡</DIV>
+		<DIV class=my_register_verzhao>×£ÄãÄÜÔÚÑ§µ½¸ü¶à£¡</DIV>
 		<DIV class=my_register_verbtn>
 			<DIV class=my_register_verbtnimg><A href="http://www.anjuke.com/v2/sale/"><IMG src="images/btn.control_125x35.gif"> </A></DIV>
-			<DIV class=my_register_verbtnword><A href="http://my.anjuke.com/myanjuke/anjuke_modify_profile2.php">å®Œå–„æˆ‘çš„ä¸ªäººèµ„æ–™ &gt;&gt;</A></DIV>
+			<DIV class=my_register_verbtnword><A href="http://my.anjuke.com/myanjuke/anjuke_modify_profile2.php">ÍêÉÆÎÒµÄ¸öÈË×ÊÁÏ &gt;&gt;</A></DIV>
 		</DIV>
 	</DIV>
 	<DIV class=my_register_verright><IMG src="images/jhok.boxright_10x170.gif"></DIV>
