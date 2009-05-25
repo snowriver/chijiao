@@ -238,7 +238,7 @@ a:hover{
 	</div>
 	
 	<div class="copyright">
-		Powered by <a href="http://www.chi-jiao.com">赤脚网 </a> Copyright &copy;2004-2008 
+		Powered by <a href="http://www.chijiao.org">赤脚网 </a> Copyright &copy;2004-2008 
 	</div>
 
 </body>
