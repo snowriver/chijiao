@@ -291,7 +291,7 @@ public class AdminManageNewsAction extends DispatchAction {
 							ext = file.getFileName().substring(file.getFileName().lastIndexOf("."));
 							if( ext.toLowerCase().equals(".jpg") || ext.toLowerCase().equals(".gif") 
 									|| ext.toLowerCase().equals(".png") || ext.toLowerCase().equals(".jpeg") ) {
-								 String litpic = new UploadFile().upload(file, request, "UploadFile/news", 400, 400);
+								 String litpic = UploadFile.upload(file, request, "UploadFile/news", 400, 400);
 								 System.out.println(litpic);
 								 a.setLitpic(litpic);
 							}

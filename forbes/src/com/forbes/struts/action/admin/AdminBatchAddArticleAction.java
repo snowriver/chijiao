@@ -135,7 +135,7 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 				
 				ext = file.getFileName().substring(file.getFileName().lastIndexOf("."));
 				if( ext.toLowerCase().equals(".mdb") ) {
-					 String accessurl = new UploadFile().upload(file, request, "UploadFile/access");
+					 String accessurl = UploadFile.upload(file, request, "UploadFile/access");
 					 System.out.println(accessurl);
 					 
 					 
