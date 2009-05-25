@@ -19,6 +19,8 @@ import com.forbes.hibernate.bean.VideoType;
 import com.forbes.service.video.VideoListManager;
 import com.forbes.service.video.VideoTypeManager;
 import com.forbes.struts.form.video.VideoInfoForm;
+import com.forbes.util.Constant;
+import com.forbes.util.FileAccess;
 import com.forbes.util.UploadFile;
 import com.forbes.util.UrlTool;
 
@@ -123,7 +125,7 @@ public class AdminEditVideoAction extends DispatchAction {
 							ext = file.getFileName().substring(file.getFileName().lastIndexOf("."));
 							if( ext.toLowerCase().equals(".jpg") || ext.toLowerCase().equals(".gif") 
 									|| ext.toLowerCase().equals(".png") || ext.toLowerCase().equals(".jpeg") ) {
-								 String litpic = new UploadFile().upload(file, request, "UploadFile/video", 400, 400);
+								 String litpic = UploadFile.upload(file, request, "UploadFile/video", 400, 400);
 								 System.out.println(litpic);
 								 v.setLitpic(litpic);
 							}
@@ -298,9 +300,11 @@ public class AdminEditVideoAction extends DispatchAction {
 							ext = file.getFileName().substring(file.getFileName().lastIndexOf("."));
 							if( ext.toLowerCase().equals(".jpg") || ext.toLowerCase().equals(".gif") 
 									|| ext.toLowerCase().equals(".png") || ext.toLowerCase().equals(".jpeg") ) {
-								 String litpic = new UploadFile().upload(file, request, "UploadFile/video", 400, 400);
+								 String litpic = UploadFile.upload(file, request, "UploadFile/video", 400, 400);
 								 System.out.println(litpic);
 								 v.setLitpic(litpic);
+								 FileAccess.Copy(request.getRealPath("/") + litpic, 
+										 Constant.FORBES_VIRTUAL_ADDRESS + "\\" + litpic);
 							}
 							else {
 								request.setAttribute("FAIL_MESSAGE", "只能上传jpeg,jpg,gif,png类型图片!");
