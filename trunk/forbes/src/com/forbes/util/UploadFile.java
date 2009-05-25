@@ -20,7 +20,7 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
 public class UploadFile {
 
 
-	public String upload(FormFile file, HttpServletRequest request, String path, float width, float height)  {
+	public static String upload(FormFile file, HttpServletRequest request, String path, float width, float height)  {
 		
 		try {
 
@@ -94,7 +94,7 @@ public class UploadFile {
 		System.out.println(t.getUrl2(url,"[|]"));
 	}*/
 	
-	public String upload(FormFile file, HttpServletRequest request, String path )  {
+	public static String upload(FormFile file, HttpServletRequest request, String path )  {
 		
 		try {
 			
