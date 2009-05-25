@@ -15,7 +15,7 @@
 				var swf_height=show_text==1?pic_height+20:pic_height;
 				var pics="", mylinks="", texts="";
 				var pics="ad/01.jpg|ad/02.jpg|ad/03.jpg|ad/04.jpg|ad/05.jpg";
-				var mylinks="${UC_HOME_URL}|article/index.jsp|video/VideoShow.do?id=5|video/index.jsp|ask/index.jsp";
+				var mylinks="${UC_HOME_URL}|article/|video/VideoShow.do?id=5|video/|ask/";
 				var texts="赶快加入创业圈，需要您的创业伙伴|创业大学|赢在中国|创业视频|创业百问";
 
 				var indexFlash = new indexFlash("flash/focus.swf", "focus_01", pic_width, swf_height, "6");
