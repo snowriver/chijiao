@@ -2,14 +2,14 @@ document.write("\
 <table class='cmsTable' >\
 	<tr>\
 		<td align=center  >\
-			<a href='../video/index.jsp' target=_blank>\
+			<a href='../video/' target=_blank>\
 				<img src='ad/001.jpg' border=0  width=294   height=385  title='创投知识竟在掌握'>\
 			</a>\
 		</td>\
 	</tr>\
 	<tr>\
 		<td align=center  >\
-			<a href='../ask/index.jsp' target=_blank>\
+			<a href='../ask/' target=_blank>\
 				<img src='ad/002.jpg' border=0  width=294   height=385  title='创业百问'>\
 			</a>\
 		</td>\
@@ -23,7 +23,7 @@ document.write("\
 	</tr>\
 	<tr>\
 		<td align=center  >\
-			<a href='../index.jsp' target=_blank>\
+			<a href='../' target=_blank>\
 				<img src='ad/004.jpg' border=0  width=294   height=385  title='创业天下'>\
 			</a>\
 		</td>\
