@@ -303,6 +303,9 @@ public class AdminEditVideoAction extends DispatchAction {
 								 String litpic = UploadFile.upload(file, request, "UploadFile/video", 400, 400);
 								 System.out.println(litpic);
 								 v.setLitpic(litpic);
+								 
+								 System.out.println(request.getRealPath("/") + litpic);
+								 System.out.println(Constant.FORBES_VIRTUAL_ADDRESS + "\\" + litpic);
 								 FileAccess.Copy(request.getRealPath("/") + litpic, 
 										 Constant.FORBES_VIRTUAL_ADDRESS + "\\" + litpic);
 							}
