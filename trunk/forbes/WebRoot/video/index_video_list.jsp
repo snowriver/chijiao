@@ -8,6 +8,8 @@
 <HEAD>
 	<TITLE>赤脚网 - 学习视频 - 全力打造创业者学习和交流平台</TITLE>
 	<META content="text/html; charset=gbk" http-equiv=Content-Type>
+	<META name="Keywords" content="在线学习视频 ${WEB_KEYWORD }" />
+	<META name="Description" content="在线学习视频 ${WEB_DESCRIPTION }" />
 	
 	<LINK rel=stylesheet type=text/css href="css/generl200809.css">
 	<LINK rel=stylesheet type=text/css href="css/index200809.css">

@@ -8,6 +8,8 @@
 <HEAD>
 	<TITLE>${VIDEO.title } - 专辑 - 赤脚网在线学习视频</TITLE>
 	<META content="text/html; charset=gbk" http-equiv=Content-Type>
+	<META name="Keywords" content="${VIDEO.title }" />
+	<META name="Description" content="${VIDEO.title }" />
 	<META name=GENERATOR content="MSHTML 8.00.6001.18241">
 	
 	<LINK rel=stylesheet type=text/css href="css/generl.css">
