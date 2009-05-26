@@ -8,6 +8,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta name="Keywords" content="${WEB_KEYWORD }" />
+<meta name="Description" content="${WEB_DESCRIPTION }" />
 <title>${WEB_TITLE }</title>
 <script type="text/javascript" src="js/index_flash_1.js"></script>
 <link type="text/css" rel="stylesheet" href="css/new_index_global.css" />
