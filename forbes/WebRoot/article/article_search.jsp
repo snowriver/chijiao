@@ -93,7 +93,7 @@
 			
 			<c:forEach items="${ARTICLE_LIST}" var="article"> 
 				<DIV style="Z-INDEX: 955" id=enclosure8 class=news-summary>
-					<A class="thumb offsite ct-lifestyle" href="#"><IMG alt="" src="${UC_CENTER_URL }/avatar.php?uid=${article.user.uid}&size=small&type=virtual" width=48 height=48></A>
+					<A class="thumb offsite ct-lifestyle" target="_blank" href="${UC_HOME_URL }/space.php?uid=${article.user.uid}"><IMG alt="" src="${UC_CENTER_URL }/avatar.php?uid=${article.user.uid}&size=small&type=virtual" width=48 height=48></A>
 					<DIV class=news-body>
 				        <H3><A class="offsite ct-lifestyle" target="_blank" href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A> </H3>
 				       
