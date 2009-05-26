@@ -7,8 +7,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
-	<TITLE>赤脚网 - 学习库 - 全力打造创业者学习和交流平台</TITLE>
+	<TITLE>赤脚网 - 创业大学 - ${NEWS.title }</TITLE>
 	<META content="text/html; charset=GBK" http-equiv=Content-Type>
+	<META name="Keywords" content="${NEWS.title }" />
+	<META name="Description" content="${NEWS.title }" />
 	<LINK rel=stylesheet type=text/css href="css/article.css">
 	<LINK rel=stylesheet type=text/css href="css/article_view.css">
 	<LINK rel=stylesheet type=text/css href="../css/supev.css">

@@ -9,6 +9,8 @@
 <HEAD>
 	<TITLE>赤脚网 - ${ARTICLE.title }</TITLE>
 	<META content="text/html; charset=gbk" http-equiv=Content-Type>
+	<META name="Keywords" content="${ARTICLE.title }" />
+	<META name="Description" content="${ARTICLE.title }" />
 	<LINK rel=stylesheet type=text/css href="css/article.css">
 	<LINK rel=stylesheet type=text/css href="css/article_view.css">
 	<LINK rel=stylesheet type=text/css href="../css/supev.css">

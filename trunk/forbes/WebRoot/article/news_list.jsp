@@ -9,6 +9,8 @@
 <HEAD>
 	<TITLE>赤脚网 - 学习库 - 全力打造创业者学习和交流平台</TITLE>
 	<META content="text/html;charset=GBK" http-equiv="Content-Type">
+	<META name="Keywords" content="${WEB_KEYWORD }" />
+	<META name="Description" content="${WEB_DESCRIPTION }" />
 	<META name="GENERATOR" content="MSHTML 8.00.6001.18241">
 	
 	<LINK rel=stylesheet type=text/css href="css/article.css">
