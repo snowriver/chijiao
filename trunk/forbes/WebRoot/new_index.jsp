@@ -99,13 +99,13 @@
 		</div>
 	</div>
 	<div class="right">
-		<iframe src='client/ClientLogin.do?act=select' width=280 height=160 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe>
+		<iframe width=280 height=160 frameborder=0 marginheight=0 marginwidth=0 scrolling=no src='client/ClientLogin.do?act=select'></iframe>
  
 		<div class="blank5 whiteBg"></div><div class="blank5 whiteBg"></div>
 		<h2><img src="images/pic03.gif" width="132" height="18" alt="" /></h2>
 		<ul>
 			<c:forEach items="${UC_HOME_BLOG_LIST}" var="blog" begin="0" varStatus="is"> 
-				<li><span>${blog.viewnum }</span><em><img src="images/top0${is.index + 1 }.gif" width="30" height="9" alt="" /></em><a href="${UC_HOME_URL }/space.php?uid=${blog.uid}&do=blog&id=${blog.blogid}" target="_blank">${fn:substring(blog.subject, 0, 20)}</a></li>
+				<li><span>${blog.viewnum }</span><em><img src="images/top0${is.index + 1 }.gif" width="30" height="9" alt="" /></em><a href="${UC_HOME_URL }/space.php?uid=${blog.uid}&do=blog&id=${blog.blogid}" target="_blank">${fn:substring(blog.subject, 0, 13)}</a></li>
 			</c:forEach>
 			
 			</ul>
