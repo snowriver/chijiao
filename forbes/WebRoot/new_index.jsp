@@ -40,7 +40,7 @@
 			<div class="blank5"></div>
 			<div class="l">
 				<div class="boxA clear">
-					<h2><img src="images/pic05.gif" width="74" height="16" alt="" /></h2>
+					<h2><img src="images/pic05.gif" width="43" height="16" alt="" /></h2>
 					<table border="0" cellpadding="0" cellspacing="0">
 					
 					<c:set var="mtag_width" value="98"></c:set>
