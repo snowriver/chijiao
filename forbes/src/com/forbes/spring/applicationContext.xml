@@ -19,6 +19,7 @@
 	<import resource="forbes-order.xml" />
 	<import resource="forbes-account.xml" />
 	<import resource="forbes-sms.xml" />
+	<import resource="forbes-task.xml" />
 	<import resource="uc-home.xml" />
 	<import resource="uc-bbs.xml" />
 	
