@@ -11,8 +11,13 @@ public interface Constant {
 	
 	public String FORBES_URL 	 = "http://www.chijiao.org:8080";
 	
-	public String FORBES_VIRTUAL_ADDRESS 		 = "D:\\server\\AppServ\\www";
-	public String FORBES_VIRTUAL_ADDRESS_ARTICLE = "D:\\server\\AppServ\\www\\article";
-	public String FORBES_VIRTUAL_ADDRESS_VIDEO 	 = "D:\\server\\AppServ\\www\\video";
-	public String FORBES_VIRTUAL_ADDRESS_ASK	 = "D:\\server\\AppServ\\www\\ask";
+	public String APPSERV_VIRTUAL_ADDRESS 		  = "D:\\server\\AppServ\\www";
+	public String APPSERV_VIRTUAL_ADDRESS_ARTICLE = "D:\\server\\AppServ\\www\\article";
+	public String APPSERV_VIRTUAL_ADDRESS_VIDEO   = "D:\\server\\AppServ\\www\\video";
+	public String APPSERV_VIRTUAL_ADDRESS_ASK	  = "D:\\server\\AppServ\\www\\ask";
+	
+	public String TOMCAT_VIRTUAL_ADDRESS 		 = "D:\\server\\Tomcat\\webapps\\ROOT";
+	public String TOMCAT_VIRTUAL_ADDRESS_ARTICLE = "D:\\server\\Tomcat\\webapps\\ROOT\\article";
+	public String TOMCAT_VIRTUAL_ADDRESS_VIDEO 	 = "D:\\server\\Tomcat\\webapps\\ROOT\\video";
+	public String TOMCAT_VIRTUAL_ADDRESS_ASK	 = "D:\\server\\Tomcat\\webapps\\ROOT\\ask";
 }
