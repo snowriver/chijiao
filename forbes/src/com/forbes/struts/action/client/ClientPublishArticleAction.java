@@ -270,7 +270,7 @@ public class ClientPublishArticleAction extends DispatchAction {
 								 //System.out.println(litpic);
 								 a.setLitpic(litpic);
 								 FileAccess.Copy(request.getRealPath("/") + litpic, 
-										 Constant.FORBES_VIRTUAL_ADDRESS + "\\" + litpic);
+										 Constant.APPSERV_VIRTUAL_ADDRESS + "\\" + litpic);
 							}
 							else {
 								request.setAttribute("FAIL_MESSAGE", "只能上传jpeg,jpg,gif,png类型图片!");
