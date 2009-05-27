@@ -129,7 +129,7 @@ public class AdminEditArticleAction extends DispatchAction {
 								 System.out.println(litpic);
 								 a.setLitpic(litpic);
 								 FileAccess.Copy(request.getRealPath("/") + litpic, 
-										 Constant.FORBES_VIRTUAL_ADDRESS + "\\" + litpic);
+										 Constant.APPSERV_VIRTUAL_ADDRESS + "\\" + litpic);
 							}
 							else {
 								request.setAttribute("FAIL_MESSAGE", "只能上传jpeg,jpg,gif,png类型图片!");
@@ -303,6 +303,9 @@ public class AdminEditArticleAction extends DispatchAction {
 								 String litpic = new UploadFile().upload(file, request, "UploadFile/article", 400, 400);
 								 System.out.println(litpic);
 								 a.setLitpic(litpic);
+								 
+								 FileAccess.Copy(request.getRealPath("/") + litpic, 
+										 Constant.APPSERV_VIRTUAL_ADDRESS + "\\" + litpic);
 							}
 							else {
 								request.setAttribute("FAIL_MESSAGE", "只能上传jpeg,jpg,gif,png类型图片!");

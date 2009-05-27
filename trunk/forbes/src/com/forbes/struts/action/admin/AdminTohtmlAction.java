@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.forbes.util.Constant;
+import com.forbes.util.FileAccess;
 import com.forbes.util.ToHtml;
 
 
@@ -48,47 +49,52 @@ public class AdminTohtmlAction extends Action {
 			try {
 				if(serviceID.trim().equals("1")) {
 										
-					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS);
+					java.io.File myFilePath = new java.io.File(Constant.APPSERV_VIRTUAL_ADDRESS);
 
 					if (!myFilePath.exists()) {
 						myFilePath.mkdir();
-					}
-
-					
+					}					
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/NewIndex.do",
-							Constant.FORBES_VIRTUAL_ADDRESS + "\\index.html", "gbk", "gbk");
+							Constant.APPSERV_VIRTUAL_ADDRESS + "\\index.html", "gbk", "gbk");
+					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS + "\\index.html", 
+							Constant.TOMCAT_VIRTUAL_ADDRESS + "\\index.html");
 				}
 				if(serviceID.trim().equals("2")) {					
 					
-					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE);
+					java.io.File myFilePath = new java.io.File(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE);
 
 					if (!myFilePath.exists()) {
 						myFilePath.mkdir();
 					}
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/NewIndex.do",
-							Constant.FORBES_VIRTUAL_ADDRESS_ARTICLE + "\\index.html", "gbk", "gbk");
+							Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\index.html", "gbk", "gbk");
+					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\index.html", 
+							Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\index.html");
 				}
 				if(serviceID.trim().equals("3")) {		
 					
-					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS_VIDEO);
+					java.io.File myFilePath = new java.io.File(Constant.APPSERV_VIRTUAL_ADDRESS_VIDEO);
 
 					if (!myFilePath.exists()) {
 						myFilePath.mkdir();
-					}
-					
+					}					
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/video/NewIndex.do",
-							Constant.FORBES_VIRTUAL_ADDRESS_VIDEO + "\\index.html", "gbk", "gbk");
+							Constant.APPSERV_VIRTUAL_ADDRESS_VIDEO + "\\index.html", "gbk", "gbk");
+					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_VIDEO + "\\index.html", 
+							Constant.TOMCAT_VIRTUAL_ADDRESS_VIDEO + "\\index.html");
 				}
 				if(serviceID.trim().equals("4")) {					
 					
-					java.io.File myFilePath = new java.io.File(Constant.FORBES_VIRTUAL_ADDRESS_ASK);
+					java.io.File myFilePath = new java.io.File(Constant.APPSERV_VIRTUAL_ADDRESS_ASK);
 
 					if (!myFilePath.exists()) {
 						myFilePath.mkdir();
 					}
 					
 					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/ask/NewIndex.do",
-							Constant.FORBES_VIRTUAL_ADDRESS_ASK + "\\index.html", "gbk", "gbk");
+							Constant.APPSERV_VIRTUAL_ADDRESS_ASK + "\\index.html", "gbk", "gbk");
+					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ASK + "\\index.html", 
+							Constant.TOMCAT_VIRTUAL_ADDRESS_ASK + "\\index.html");
 				}
 				
 				
