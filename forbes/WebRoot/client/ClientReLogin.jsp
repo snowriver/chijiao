@@ -33,7 +33,7 @@
 						<INPUT id=loginName class="my_login_logininput2" onfocus="javascript:if(this.value=='用户名或者email')this.value='';this.className='my_login_logininput';" value="${LOGIN_NAME }" type=text name=loginName><BR><BR>
 						<SPAN class=my_login_leftword>密　码：</SPAN>
 						<INPUT style="BORDER-BOTTOM: #666 1px solid; BORDER-LEFT: #666 1px solid; WIDTH: 175px; HEIGHT: 18px; BORDER-TOP: #666 1px solid; BORDER-RIGHT: #666 1px solid" type=password name=password>&nbsp;&nbsp;
-						<A href="http://my.anjuke.com/forgetpwd.php">忘记密码？</A><BR><BR>
+						<A href="../GotoUCenter.do?act=lostpasswd" target="_blank">忘记密码？</A><BR><BR>
 						<SPAN class=my_login_leftremember>
 							<INPUT value=1 CHECKED type=checkbox name=remember>下次自动登录
 						</SPAN> <BR><BR>
