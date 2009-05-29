@@ -104,6 +104,9 @@ public class AdminBatchAddVideoUrlAction extends DispatchAction {
 						String title  = urls[i].substring(urls[i].lastIndexOf("alt")+5, 
 								urls[i].lastIndexOf("title")-2);
 						
+						String litpic  = urls[i].substring(urls[i].lastIndexOf("img src")+9, 
+								urls[i].indexOf("alt")-2);
+						
 						//youku ÐÂµÄ²¥·ÅURL
 						String urlx = "http://player.youku.com/player.php/Type/Folder/Fid/"
 							+ url.substring(31, 38)+ "/Ob/" + url.substring(39, 40) + "/Pt/" + url.substring(41, 42) + "/sid/" + id + "/v.swf";
@@ -113,12 +116,15 @@ public class AdminBatchAddVideoUrlAction extends DispatchAction {
 						
 						System.out.println(title);
 						System.out.println(urlx);
+						System.out.println(litpic);
 						
 						VideoUrl vu = new VideoUrl();
 						vu.setVideo(video);
 						vu.setTitle(title);					
 						vu.setFromweb(fromweb);
 						vu.setUrl(urlx);
+						vu.setLitpictype(new Short("4"));
+						vu.setLitpic(litpic);
 						videoUrlManager.addVideoUrl(vu);
 					}
 				}
