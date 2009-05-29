@@ -227,8 +227,12 @@
 			var listCategory = "×¨¼­";
 			<c:forEach items="${VIDEO.videoUrls}" var="url" varStatus="is">
 				
-				v[${is.index}]='${url.title}||dvdprogramme_20081015_6787765||../${VIDEO.litpic}||${url.url}||${url.title}';
-
+				<c:if test="${url.litpictype ==4}">
+					v[${is.index}]='${url.title}||dvdprogramme_20081015_6787765||${url.litpic}||${url.url}||${url.title}';
+				</c:if>
+				<c:if test="${url.litpictype !=4}">
+					v[${is.index}]='${url.title}||dvdprogramme_20081015_6787765||../${VIDEO.litpic}||${url.url}||${url.title}';
+				</c:if>
 			</c:forEach>
 			//alert(v.length);
 </SCRIPT>
