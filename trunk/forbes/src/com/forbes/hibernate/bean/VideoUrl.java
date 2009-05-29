@@ -14,8 +14,9 @@ public class VideoUrl extends AbstractVideoUrl implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public VideoUrl(String title, String url, Integer width, Integer height, String fromweb) {
-		super(title, url, width, height, fromweb);
+	public VideoUrl(String title, String url, Integer width, Integer height,
+			String fromweb, Short litpictype, String litpic) {
+		super(title, url, width, height, fromweb, litpictype, litpic);
 	}
 
 }
