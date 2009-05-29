@@ -16,9 +16,10 @@
 <link type="text/css" rel="stylesheet" href="css/new_index_style.css" />
 <link type="text/css" rel="stylesheet" href="css/index_top.css" />
  
+
  
 </head>
-<body>
+<body onload="document.frames('login_iframe').location.reload();">
 
 <!--header¿ªÊ¼-->
 <%@ include file="include/header.jsp"%>
@@ -101,7 +102,7 @@
 		</div>
 	</div>
 	<div class="right">
-		<iframe width=280 height=160 frameborder=0 marginheight=0 marginwidth=0 scrolling=no src='client/ClientLogin.do?act=select'></iframe>
+		<iframe name="login_iframe" width=280 height=160 frameborder=0 marginheight=0 marginwidth=0 scrolling=no src='client/ClientLogin.do?act=select'></iframe>
  
 		<div class="blank5 whiteBg"></div><div class="blank5 whiteBg"></div>
 		<h2><img src="images/pic03.gif" width="132" height="18" alt="" /></h2>
