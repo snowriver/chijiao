@@ -26,6 +26,12 @@
         <property name="fromweb" type="java.lang.String">
             <column name="fromweb" length="50" />
         </property>
+        <property name="litpic" type="java.lang.String">
+            <column name="litpic" length="100" />
+        </property>
+        <property name="litpictype" type="java.lang.Short">
+            <column name="litpictype" />
+        </property>
         
         <many-to-one name="video" class="com.forbes.hibernate.bean.Video" fetch="join" lazy="false">
             <column name="video_id" />
