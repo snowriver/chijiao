@@ -2,35 +2,34 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-    
-	<!-- 定時执行日期更新任務触發器 begin-->
+
 	<bean name="tohtmlTask" class="com.forbes.task.TohtmlTask">
 	</bean>
-	
+
 	<bean id="tohtmlTaskJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-       <property name="targetObject">
-           <ref bean="tohtmlTask" />
-       </property>
-       <property name="targetMethod">
-           <value>doTask</value>
-       </property>
-    </bean>
-    <bean id="tohtmlTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
-       	<property name="jobDetail">
+    	<property name="targetObject">
+        	<ref bean="tohtmlTask" />
+		</property>
+		<property name="targetMethod">
+        	<value>doTask</value>
+		</property>
+	</bean>
+	
+	<bean id="tohtmlTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
 			<ref bean="tohtmlTaskJobDetail" />
 		</property>
-       	<property name="cronExpression">
-  			<value>0 */2 * * *</value>
-       	</property>
+		<property name="cronExpression">
+			<value>0 */2 * * *</value>
+		</property>
 	</bean>	
-
-	<!-- 定時执行日期更新任務触發器 end-->   
-    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-       <!-- 添加触發器 -->
-       <property name="triggers">
-           <list>
-              <ref local="tohtmlTaskTrigger" />
-           </list>
-       </property>
-    </bean>
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="tohtmlTaskTrigger" />
+			</list>
+		</property>
+	</bean>
+	
 </beans>
