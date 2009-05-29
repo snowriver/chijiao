@@ -14,11 +14,14 @@ public abstract class AbstractVideoUrl implements java.io.Serializable {
 	private Integer id;
 	private String title;
 	private String url;
-	
+
 	private Integer width;
 	private Integer height;
 	private String fromweb;
-	
+
+	private String litpic;
+	private Short litpictype;
+
 	private Video video;
 
 	// Constructors
@@ -36,13 +39,17 @@ public abstract class AbstractVideoUrl implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractVideoUrl(String title, String url, Integer width, Integer height, String fromweb ) {
+	public AbstractVideoUrl(String title, String url, Integer width,
+			Integer height, String fromweb, Short litpictype, String litpic) {
 		this.title = title;
 		this.url = url;
-		
+
 		this.width = width;
 		this.height = height;
 		this.fromweb = fromweb;
+		
+		this.litpictype = litpictype;
+		this.litpic = litpic;
 	}
 
 	// Property accessors
@@ -93,6 +100,22 @@ public abstract class AbstractVideoUrl implements java.io.Serializable {
 
 	public void setFromweb(String fromweb) {
 		this.fromweb = fromweb;
+	}
+
+	public String getLitpic() {
+		return litpic;
+	}
+
+	public void setLitpic(String litpic) {
+		this.litpic = litpic;
+	}
+
+	public Short getLitpictype() {
+		return litpictype;
+	}
+
+	public void setLitpictype(Short litpictype) {
+		this.litpictype = litpictype;
 	}
 
 }
