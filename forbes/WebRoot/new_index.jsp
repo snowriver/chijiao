@@ -135,7 +135,7 @@
 	<div class="line"></div>
 </div>
 <div class="area blank5"></div>
-<%@ include file="ad/ad_index_950x120.jsp"%>
+<%@ include file="ad/ad_index_middle_01_950x120.jsp"%>
 <div class="area blank5"></div>
 <div class="area" id="contentB">
 	<h2><a name="picture"><img src="images/pic08.gif" width="134" height="18" alt="" border="0" /></a></h2>
@@ -326,15 +326,17 @@
 </div>
 
  -->
-<div class="area blank5"></div><div class="area blank5"></div>
+<div class="area blank5"></div>
+<%@ include file="ad/ad_index_bottom_01_950x120.jsp"%>
+<div class="area blank5"></div>
 <div class="area" id="contentE">
 	<span class="lineA"></span>
 	<div class="boxA">
 		<div class="boxB clear">
-<h2>友情连接</h2>
+			<h2>友情连接</h2>
 			<ul>
-			<li><a href="http://www.cyease.com.cn" target="_blank">创业加油站</a></li>
-			<li><a href="http://www.cyease.com.cn" target="_blank">创业加油站</a></li>
+			<li><a href="http://union.dangdang.com/transfer/transfer.aspx?from=P-269582&backurl=http://www.dangdang.com/" target="_blank">当当网</a></li>
+			<li><a href="http://www.amazon.cn/mn/browseApp?source=xushaomin&nodeid=286104" target="_blank">卓越网</a></li>
 			<li><a href="http://www.cyease.com.cn" target="_blank">创业加油站</a></li>
 			<li><a href="http://www.cyease.com.cn" target="_blank">创业加油站</a></li>
 			<li><a href="http://www.cyease.com.cn" target="_blank">创业加油站</a></li>
