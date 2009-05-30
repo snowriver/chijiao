@@ -456,13 +456,14 @@
 	</DIV>
 	<!--手机论坛结束-->
 	
+		
 	<DIV class=report>
 		<A href="javascript:win_open_bug();">
 			<IMG title=如有问题或建议，请点击这里提交 alt=如有问题或建议，请点击这里提交 src="../images/report.jpg" width=281 height=75>
 		</A> 
 	</DIV>
 	
-	
+	<%@ include file="ad/ad_index_left_01_281x120.jsp"%>
 	
 </DIV>
 <!--右边栏结束-->
