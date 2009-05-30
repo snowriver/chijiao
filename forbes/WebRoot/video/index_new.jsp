@@ -1055,8 +1055,7 @@
 		<DIV class=clear></DIV>
 		<DIV style="HEIGHT: 10px"></DIV>
 		
-		
-		<a href="http://www.vancl.com/websource/websource.aspx?url=http://www.vancl.com/&source=xushaomin" target="_blank"><img src="http://union.vancl.com/adpic.aspx?w=300&h=80" border="0" width=270/></a>
+		<%@ include file="ad/ad_index_left_01_281x120.jsp"%>
 		
 		<DIV class=siderI_box>
 			<DIV id=right_2 class=sider_right><!-- 右侧2 -->
@@ -1076,8 +1075,14 @@
 				</DIV>
 				<DIV class=bot1></DIV>
 			</DIV>
+		
 		</DIV>
+		
+		<%@ include file="ad/ad_index_left_02_281x120.jsp"%>
 		<DIV class=clear></DIV>
+		
+		
+		
 		<DIV id=right_3>
 			<!-- 右侧3 -->
 			<!-- 广告 开始 -->
