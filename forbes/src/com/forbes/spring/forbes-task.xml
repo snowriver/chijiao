@@ -20,7 +20,7 @@
 			<ref bean="tohtmlTaskJobDetail" />
 		</property>
 		<property name="cronExpression">
-			<value>0 */2 * * *</value>
+			<value>0 0 */2 * * ?</value>
 		</property>
 	</bean>	
 	
