@@ -5,6 +5,7 @@
 package com.forbes.struts.action.admin;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -62,6 +63,7 @@ public class AdminEditVideoAction extends DispatchAction {
 				v.setUsername(user.getUsername());
 				v.setUserip( request.getLocalAddr() );
 				v.setPubdate( formatter.parse(videoInfoForm.getPubdate()) );
+				v.setLastpost(new Date());
 				v.setTitle( videoInfoForm.getTitle() );
 				v.setContent( videoInfoForm.getContent() );
 				/*v.setVideourl( videoInfoForm.getVideourl() );
@@ -244,6 +246,7 @@ public class AdminEditVideoAction extends DispatchAction {
 				v.setPubdate( formatter.parse(videoInfoForm.getPubdate()) );
 				v.setTitle( videoInfoForm.getTitle() );
 				v.setContent( videoInfoForm.getContent() );
+				v.setLastpost(new Date());
 				/*v.setVideourl( videoInfoForm.getVideourl() );
 				v.setWidth( videoInfoForm.getWidth() );
 				v.setHeight( videoInfoForm.getHeight() );*/
