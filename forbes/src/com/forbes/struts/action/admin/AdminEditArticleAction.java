@@ -5,6 +5,8 @@
 package com.forbes.struts.action.admin;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.actions.DispatchAction;
@@ -67,6 +69,7 @@ public class AdminEditArticleAction extends DispatchAction {
 				a.setUsername(user.getUsername());
 				a.setUserip( request.getLocalAddr() );
 				a.setPubdate( formatter.parse(articleInfoForm.getPubdate()) );
+				a.setLastpost(new Date());
 				a.setTitle( articleInfoForm.getTitle() );
 				a.setContent( articleInfoForm.getContent() );
 				a.setClick( 0 );
@@ -244,6 +247,7 @@ public class AdminEditArticleAction extends DispatchAction {
 				a.setPubdate( formatter.parse(articleInfoForm.getPubdate()) );
 				a.setTitle( articleInfoForm.getTitle() );
 				a.setContent( articleInfoForm.getContent() );
+				a.setLastpost(new Date());
 				//a.setClick( 0 );
 				//a.setIscommend( new Short("0") );
 				//a.setIsverify( new Short("0") );
