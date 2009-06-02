@@ -5,7 +5,7 @@
 <table width="99%" border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td align="center">
-<a href="javascript:void(0);" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.chi-jiao.com');return false;">设置首页</a> -
+<a href="javascript:void(0);" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.chijiao.org');return false;">设置首页</a> -
 <a href="#" target=_blank>广告服务</a> -
 <a href="#" target=_blank>客服中心 </a> -
 <a href="#" target=_blank>联系方式 </a> -
