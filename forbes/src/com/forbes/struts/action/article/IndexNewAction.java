@@ -81,7 +81,7 @@ public class IndexNewAction extends Action {
 			request.setAttribute( "TOP_ARTICLE_LIST", articleListManager.getTopArticleByArticleType(null, "click DESC", 0, 10));
 			request.setAttribute( "COMMEND_ARTICLE_LIST", articleListManager.getTopArticleByArticleType(null, "iscommend DESC", 0, 10));
 			
-			request.setAttribute( "UC_HOME_BLOG_LIST", uchomeManager.getUchomeBlogs("viewnum", 0, 10));
+			request.setAttribute( "UC_HOME_BLOG_LIST", uchomeManager.getUchomeBlogs("viewnum DESC", 0, 10));
 						
 			return mapping.findForward("ok");
 
