@@ -99,7 +99,7 @@ public class NewIndexAction extends Action {
 			request.setAttribute( "UC_HOME_MTAG_LIST", uchomeManager.getUchomeMtags(null, 0, 14));
 			
 			//home blog
-			request.setAttribute( "UC_HOME_BLOG_LIST", uchomeManager.getUchomeBlogs("viewnum", 0, 10));
+			request.setAttribute( "UC_HOME_BLOG_LIST", uchomeManager.getUchomeBlogs("viewnum DESC", 0, 10));
 
 			//bbs forums
 			String fup     = "1";
