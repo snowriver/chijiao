@@ -41,7 +41,7 @@ public class TopUchomeBlogAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
-		List list = uchomeManager.getUchomeBlogs("viewnum", 0, 10);
+		List list = uchomeManager.getUchomeBlogs("viewnum DESC", 0, 10);
 		request.setAttribute("UC_HOME_BLOG_LIST", list);
 		return mapping.findForward("ok");
 	}
