@@ -343,7 +343,7 @@
 			<ul>
 			<li><a href="http://union.dangdang.com/transfer/transfer.aspx?from=P-269582&backurl=http://www.dangdang.com/" target="_blank">当当网</a></li>
 			<li><a href="http://www.amazon.cn/mn/browseApp?source=xushaomin&nodeid=286104" target="_blank">卓越网</a></li>
-			<li><a href="http://www.weilida888.cn/" target="_blank">信利</a></li>
+			<li><a href="http://www.weilida888.cn/" target="_blank">信利广告用品</a></li>
 			<li><a href="http://www.cyease.com.cn" target="_blank">创业加油站</a></li>
 			<li><a href="http://www.cyease.com.cn" target="_blank">创业加油站</a></li>
 			<li><a href="http://www.cyease.com.cn" target="_blank">创业加油站</a></li>
