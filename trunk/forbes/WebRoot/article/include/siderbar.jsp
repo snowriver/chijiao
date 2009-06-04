@@ -28,8 +28,14 @@
         	}
 		);
 		
-		function Search() {
-		
+		function search_y(){
+			if($("#channel").val() == '2'){
+				location.href="ArticleSearch.do?act=search&keyword=" +$("#keyword").val() + "&orderby=pubdate desc"; 
+			}
+			else {
+				location.href="NewsSearch.do?act=list&keyword=" +$("#keyword").val() + "&orderby=pubdate desc"; 
+			}
+			
 		}
 </SCRIPT>
 	
@@ -46,12 +52,12 @@
 			</DIV>
 			<DIV class=left>
 				<SELECT id=channel name=channel> 
-					<OPTION value="article" selected>资讯</OPTION> 
-					<OPTION value="news">文章</OPTION>
+					<OPTION value="1" selected>资讯</OPTION> 
+					<OPTION value="2">文章</OPTION>
 				</SELECT> 
 			</DIV>
 			<DIV class=right>
-				<INPUT class=search_btn id=button onclick="Search();" type=submit value="搜 索" name=button> 
+				<INPUT class=search_btn id=button onclick="search_y();" type=button value="搜 索" name=button> 
 			</DIV>
 			<DIV class=clear></DIV>
 		</FORM>

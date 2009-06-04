@@ -22,6 +22,17 @@
 			showUserInfo();
         }
 	);
+	
+	
+	function search_x(){
+		if($("#stype").val() == '2'){
+			location.href="ArticleSearch.do?act=search&keyword=" +$("#keyword").val() + "&orderby=pubdate desc"; 
+		}
+		else {
+			location.href="NewsSearch.do?act=list&keyword=" +$("#keyword").val() + "&orderby=pubdate desc"; 
+		}
+		
+	}
 
 </SCRIPT>
 
@@ -46,14 +57,14 @@
 		 	-->		 	
 		</DIV>
 		<DIV class=searchtool>
-			<FORM method=post name=searchform_header action="AskSearch.do?act=search&orderby=expiredTime desc">
+			<FORM method=post name=searchform_header>
 				<FIELDSET><LEGEND>搜索</LEGEND>
-					<INPUT size=15 name=keyword> 
-					<SELECT name=stype> 
-	  					<OPTION value="news">资讯</OPTION>
-	  					<OPTION value="article">文章</OPTION>
+					<INPUT size=15 name=keyword id="keyword"> 
+					<SELECT id="stype" name=stype> 
+	  					<OPTION value="1">资讯</OPTION>
+	  					<OPTION value="2">文章</OPTION>
 	  				</SELECT>
-	  				<BUTTON name=search type=submit value="true">搜索</BUTTON> 
+	  				<BUTTON name=search type=button value="true" onclick="search_x();">搜索</BUTTON> 
   				</FIELDSET> 
   			</FORM>
   		</DIV>
