@@ -46,7 +46,7 @@ public class IndexNewAction extends Action {
 			request.setAttribute( "HOT_VIDEO_LIST", videoListManager.getTopVideoByVideoType(null, "click Desc", 0, 10));
 			request.setAttribute( "COMP_VIDEO_LIST", videoListManager.getTopVideoByVideoType(null, "iscommend Desc", 0, 10));
 			
-			request.setAttribute( "VIDEO_LIST", videoListManager.getTopVideoByVideoType(null, null, 0, 8));
+			request.setAttribute( "VIDEO_LIST", videoListManager.getTopVideoByVideoType(null, null, 0, 9));
 			request.setAttribute( "COMMEND_VIDEO_LIST", videoListManager.getTopVideoByVideoType(null, "iscommend Desc", 0, 4));
 						
 			return mapping.findForward("ok");
