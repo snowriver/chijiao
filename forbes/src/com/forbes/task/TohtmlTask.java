@@ -10,7 +10,7 @@ public class TohtmlTask {
 	
 	public void doTask(){
 		try {
-			System.out.println(" Start ............");
+				
 				
 				java.io.File myFilePath = new java.io.File(Constant.APPSERV_VIRTUAL_ADDRESS);
 				if (!myFilePath.exists()) {
@@ -20,7 +20,6 @@ public class TohtmlTask {
 						Constant.APPSERV_VIRTUAL_ADDRESS + "\\index.html", "gbk", "gbk");
 				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS + "\\index.html", 
 						Constant.TOMCAT_VIRTUAL_ADDRESS + "\\index.html");
-			
 				
 				
 				myFilePath = new java.io.File(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE);
@@ -41,7 +40,7 @@ public class TohtmlTask {
 						Constant.APPSERV_VIRTUAL_ADDRESS_VIDEO + "\\index.html", "gbk", "gbk");
 				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_VIDEO + "\\index.html", 
 						Constant.TOMCAT_VIRTUAL_ADDRESS_VIDEO + "\\index.html");
-						
+				
 				
 				myFilePath = new java.io.File(Constant.APPSERV_VIRTUAL_ADDRESS_ASK);
 				if (!myFilePath.exists()) {
@@ -52,10 +51,8 @@ public class TohtmlTask {
 				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ASK + "\\index.html", 
 						Constant.TOMCAT_VIRTUAL_ADDRESS_ASK + "\\index.html");
 				
-			System.out.println(" end ............");
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
