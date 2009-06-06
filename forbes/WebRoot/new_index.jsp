@@ -65,7 +65,7 @@
 					<p>
 						<c:forEach items="${BULLETIN_LIST}" var="bulletin">
 						<a href="javascript:void(0)" 
-						onclick="window.open('BulletinView.do?id=${bulletin.id }', 'newwindow', 'height=400,width=600,top=100,left=100,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no')">${bulletin.title }</a><br />
+						onclick="window.open('BulletinView.do?id=${bulletin.id }', 'newwindow', 'height=400,width=680,top=100,left=100,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no')">${bulletin.title }</a><br />
 						</c:forEach>
 					</p>
 					<div class="blank5"></div>
