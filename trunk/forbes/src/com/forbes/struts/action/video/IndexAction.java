@@ -11,12 +11,7 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import com.forbes.service.article.ArticleTypeManager;
 import com.forbes.service.video.VideoListManager;
-import com.forbes.service.video.VideoTypeManager;
-import com.forbes.util.Pager;
-
-
 
 /** 
  * MyEclipse Struts
@@ -42,8 +37,6 @@ public class IndexAction extends Action {
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		//System.out.println(" index top video list...");
-
 		
 		try {
 			

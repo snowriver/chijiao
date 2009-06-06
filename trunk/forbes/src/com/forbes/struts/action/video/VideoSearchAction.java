@@ -7,19 +7,14 @@ package com.forbes.struts.action.video;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
-import com.forbes.hibernate.bean.Article;
 import com.forbes.hibernate.bean.Video;
-import com.forbes.service.article.ArticleTypeManager;
 import com.forbes.service.video.VideoListManager;
-import com.forbes.service.video.VideoTypeManager;
 import com.forbes.util.Pager;
 
 
@@ -47,19 +42,11 @@ public class VideoSearchAction extends DispatchAction {
 	 * @return ActionForward
 	 */
 	public ActionForward index(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
-		//System.out.println(" index top video list...");
-
-		
+			HttpServletRequest request, HttpServletResponse response) {				
 		try {
-			
 			List list = videoListManager.getTopVideoByVideoType(null, null, 0, 8);
-
-			request.setAttribute( "VIDEO_LIST", list);
-			//System.out.println(list.size());
-			
+			request.setAttribute( "VIDEO_LIST", list);			
 			return mapping.findForward("index");
-
 		}catch( Exception e ){
 			e.printStackTrace();
 			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
@@ -70,16 +57,11 @@ public class VideoSearchAction extends DispatchAction {
 	public ActionForward type(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		
-
 		String typeid = request.getParameter("typeid");
-		
-		//System.out.println(" index type video list...typeid=" + typeid);
 		try {
 			
 			List list = videoListManager.getTopVideoByVideoType(typeid, null, 0, 8);
-
 			request.setAttribute( "VIDEO_LIST", list);
-			//System.out.println(list.size());
 			
 			List commendlist = videoListManager.getTopVideoByVideoType(typeid, "iscommend Desc", 0, 3);
 			/*if(commendlist.size()==0)
@@ -199,7 +181,6 @@ public class VideoSearchAction extends DispatchAction {
 	
 	public ActionForward hot(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		//System.out.println(" index top video list...");
 		
 		try {
 			
@@ -220,7 +201,7 @@ public class VideoSearchAction extends DispatchAction {
 	
 	public ActionForward search(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		//System.out.println(" index top video list...");
+		
 		String keyword   = request.getParameter("keyword");
 		String orderby   = request.getParameter("orderby");
 		String pageNo    = request.getParameter("pno");
