@@ -1,0 +1,396 @@
+@charset "gb2312";
+/* CSS Document */
+
+body {
+	font-size: 12px;
+	color: #000000;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: "宋体";
+}
+.box
+{
+	border: 1px solid #C8C8C8;
+}
+.topBox
+{
+	border-top-width: 4px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #B8B4AD;
+	border-bottom-color: #C1C1C1;
+	background-color: #F5EFF1;
+}
+.bottomLink
+{
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999999;
+}
+
+.bottomLinka
+{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+}
+
+.rightLink
+{
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #B9B9B9;
+}
+.tdc {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: normal;
+	color: #FFFFFF;
+	border: 1px solid #F3F3F3;
+}
+.tdb {
+	font-family:"宋体";
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: normal;
+	color: #FFFFFF;
+	border: 1px solid #808080;
+	background-color: #E0E0E0;
+}
+
+td,th {
+	font-size: 12px;
+	color: #333333;
+	line-height: 20px;
+	font-family: "宋体";
+}
+
+.wBox {
+	font-size: 12px;
+	color: #333333;
+	line-height: 20px;
+	border: 1px solid #DBDBDB;
+	font-family: "宋体";
+}
+.inputdd
+{
+	background-color: #D9D9D9;
+	border: 1px solid #8A8A8A;
+	font-family: "宋体";
+	color: #5A5A5A;
+}
+
+.rBox {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 20px;
+	border: 1px solid #757575;
+	background-color: #DDDDDD;
+	font-family: "宋体";
+}
+
+
+
+.rBoxa {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 22px;
+	border: 1px solid #C8C8C8;
+	background-color: #F7F7F7;
+	font-family: "宋体";
+}
+.rBoxa_bold {
+	font-size: 12px;
+	color: #663333;
+	line-height: 22px;
+	font-family: "宋体";
+	font-weight: bold;
+}
+
+
+.rBoxb {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 22px;
+	background-color: #E8E8E8;
+	font-family: "宋体";
+	font-weight: bold;
+	border-top: 1px solid #6E6E6E;
+	border-right: 1px solid #6E6E6E;
+	border-left: 1px solid #6E6E6E;
+}
+.rBoxb_ {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 22px;
+	background-color: #E8E8E8;
+	font-family: "宋体";
+	font-weight: bold;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom-style: none;
+}
+.rBoxbNow {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 20px;
+	background-color: #D0D0D0;
+	font-family: "宋体";
+	border-top: 1px solid #848484;
+	border-right: 1px solid #848484;
+	border-bottom: #848484;
+	border-left: 1px solid #848484;
+}
+.rBoxbNowOver {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 20px;
+	background-color: #EEEEEE;
+	font-family: "宋体";
+	border-top: 1px solid #848484;
+	border-right: 1px solid #848484;
+	border-bottom: #848484;
+	border-left: 1px solid #848484;
+}
+
+
+.rBoxc {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 18px;
+	font-family: "宋体";
+	border: 1px solid #FFFFFF;
+}
+.rBoxcOver {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 18px;
+	background-color: #F5F5F5;
+	font-family: "宋体";
+	border: 1px solid #AAAAAA;
+}
+
+.rBoxd {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 20px;
+	background-color: #D0D0D0;
+	font-family: "宋体";
+	border-top: 1px solid #848484;
+	border-right: #848484;
+	border-bottom: #848484;
+	border-left: 1px solid #848484;
+}
+
+.rBoxdOver {
+	font-size: 12px;
+	color: #D20000;
+	line-height: 20px;
+	background-color: #F6F6F6;
+	font-family: "宋体";
+	border-top: 1px solid #848484;
+	border-right: #848484;
+	border-bottom: #848484;
+	border-left: 1px solid #848484;
+}
+
+
+.tdA {
+	font-size: 12px;
+	color: #3A3A3A;
+	line-height: 20px;
+	font-family: "宋体";
+}
+
+.tdA_Write {
+	font-size: 12px;
+	color: #F2F2F2;
+	line-height: 20px;
+	font-family: "宋体";
+}
+
+
+.tdA_Red {
+	font-size: 12px;
+	color: #FF0000;
+	line-height: 20px;
+	font-weight: bold;
+	font-family: "宋体";
+}
+
+
+.ulink
+{
+	text-decoration: underline;
+}
+
+a:link
+{
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 20px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: normal;
+}
+a:visited
+{
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 20px;
+	color: #666666;
+	text-decoration: none;
+	font-weight: normal;
+}
+a:hover {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 20px;
+	color: #FF0000;
+	text-decoration: none;
+	font-weight: normal;
+}
+.Title1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+}
+.Title1_Red {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	color: red;
+	text-decoration: none;
+	font-weight: bold;
+}
+.Title2 {
+	font-family: "宋体";
+	font-size: 16px;
+	line-height: 20px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: bold;
+}
+.Title2H {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: bold;
+	
+}
+.Title2H_ {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	color: #BD0000;
+	text-decoration: underline;
+	font-weight: bold;
+	
+}
+.Title2H_Yellow {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	color: #FFCC00;
+	text-decoration: underline;
+	font-weight: bold;
+	
+}
+.Title2H_Red {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	color: #FF0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.Title2H_RedBox {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	color: #CC0000;
+	text-decoration: none;
+	font-weight: bold;
+	border: 1px solid #FFFFFF;
+}
+
+.Title2H_Write {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+.Title2H_WriteBox {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	color: #CCCCCC;
+	text-decoration: none;
+	font-weight: bold;
+	border: 1px solid #4D506A;
+}
+
+.Title1H {
+	font-family: "宋体";
+	font-size: 13px;
+	line-height: 20px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: bold;
+}
+.TitleaH {
+	font-family: "宋体";
+	font-size: 13px;
+	line-height: 18px;
+	color: #333333;
+	text-decoration: none;
+}
+.news {
+	font-size: 13px;
+	color: #484848;
+	line-height: 22px;
+}
+
+.raBox
+{
+	background-color: #FF9900;
+	color: #FFFFFF;
+	line-height: 15px;
+}
+
+.uBox
+{
+	border-top: 1px none;
+	border-right: 1px none;
+	border-bottom: 1px none;
+	border-left: 1px none;
+	line-height: 15px;
+}
+.input
+{
+	font-family: "宋体";
+	color: #000000;
+	text-decoration: none;
+	border: 1px solid #919191;
+}
+.Title2H_Blue
+{
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight: bold;
+	color: #000066;
+	text-decoration: underline;
+}
