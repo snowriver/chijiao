@@ -33,7 +33,7 @@
 	      		<tbody>
 		      		<tr>
 		        		<td class="bottomLinka" background="newsInfoa.asp_files/toBg_1.htm" height="31">
-		        			<div class="Title2H" align="center">${BULLETIN.title }</div>
+		        			<div class="Title2H" align="center"><H1><span style="font-size:24px;font-weight: bold;">${BULLETIN.title }</span></H1></div>
 		        		</td>
 		      		</tr>
 	    		</tbody>
