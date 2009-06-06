@@ -115,7 +115,7 @@
 				             
 				     		</SPAN>
 				     		<SPAN class="tool share">				            	
-								<IMG alt="" src="images/pubdate_icon.gif" width=13 height=13 alt="发布时间"><SPAN class=d>${article.pubdate }</SPAN> 				            
+								<IMG alt="" src="images/pubdate_icon.gif" width=13 height=13 alt="发布时间"><SPAN class=d>${fn:substring(article.pubdate, 0, 10)}</SPAN> 				            
 				             
 				     		</SPAN>
 				 		</DIV>

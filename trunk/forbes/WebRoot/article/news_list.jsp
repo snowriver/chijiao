@@ -110,7 +110,7 @@
 				            
 				            
 				     		<SPAN class="tool share">				            	
-								<IMG alt="" src="images/pubdate_icon.gif" width=13 height=13 alt="发布时间"><SPAN class=d>${news.pubdate }</SPAN> 				            
+								<IMG alt="" src="images/pubdate_icon.gif" width=13 height=13 alt="发布时间"><SPAN class=d>${fn:substring(news.pubdate, 0, 16)}</SPAN> 				            
 				             
 				     		</SPAN>
 				 		</DIV>
