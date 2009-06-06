@@ -22,13 +22,13 @@
 	
 	<SCRIPT language="javascript" type="text/javascript">
   
-		function listComments(id, divid){
+		function listComments(divid){
 			
 			$.ajax({
 				url: 'ArticleContentSearch.do',
 				type: 'post',
 				dataType: 'html',
-				data:'act=top&id=' + id,
+				data:'act=top&id=' + ${ARTICLE.id },
 				timeout: 10000,
 				error: function(){
 					alert('System error');
@@ -41,12 +41,12 @@
 			});
 		}
 
-		function listLikes(id, divid){
+		function listLikes(divid){
 			$.ajax({
 				url: 'ArticleSearch.do',
 				type: 'post',
 				dataType: 'html',
-				data:"act=like&id=" + id,
+				data:"act=like&id=" + ${ARTICLE.id },
 				timeout: 10000,
 				error: function(){
 					//alert('System error');
@@ -75,8 +75,8 @@
 		}
 		
 		$(window).bind("load",function(){
-			listComments(${ARTICLE.id }, "commentinfoDiv1");
-			listLikes(${ARTICLE.id }, "news_about_list");
+			listComments("commentinfoDiv1");
+			listLikes("news_about_list");
 			listLoginForm();
 	    });
     
@@ -107,7 +107,7 @@
 								//alert(result);
 								if(result == 'SUCCESS') {
 									alert("ÆÀÂÛ³É¹¦!");								
-									listComments($("#id").val(), "commentinfoDiv1");
+									listComments("commentinfoDiv1");
 									$("#login").html("");
 									showUserInfo();
 								}
