@@ -78,10 +78,7 @@ public class ArticleContentSearchAction extends DispatchAction {
 	
 	public ActionForward list(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		System.out.println(" index top video list...");
-
-		
-		
+				
 		String orderby = "pubdate DESC";
 		String pageNo  = request.getParameter("pno");
 		String id 	   = request.getParameter("id");
@@ -123,12 +120,5 @@ public class ArticleContentSearchAction extends DispatchAction {
 	public void setArticleListManager(ArticleListManager articleListManager) {
 		this.articleListManager = articleListManager;
 	}
-
-	
-
-	
-	
-	
-	
 	
 }
