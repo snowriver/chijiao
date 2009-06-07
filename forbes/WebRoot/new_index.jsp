@@ -227,7 +227,7 @@
 		</div>
  
 		<div>
-			<h3><span>职场规划</span><a href="article/ArticleSearch.do?act=list&typeid=35&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
+			<h3><span>职场晋级</span><a href="article/ArticleSearch.do?act=list&typeid=35&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
 			<ul>
 				<c:forEach items="${ARTICLE_35_LIST}" var="article" begin="0"> 
 					<li><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
