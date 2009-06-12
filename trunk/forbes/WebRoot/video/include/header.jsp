@@ -64,8 +64,7 @@
 			<LI><A title="" href="VideoSearch.do?act=search&typeid=1">创业成功学</A> </LI>
 		  	<LI><A title="" href="VideoSearch.do?act=search&typeid=5">企业商学院</A> </LI>
 		  	<LI><A title="" href="VideoSearch.do?act=search&typeid=8">投资理财</A> </LI>
-		  	<LI><A title="" href="VideoSearch.do?act=search&typeid=12">职场人生</A> </LI>
-		  	<LI><A title="" href="VideoSearch.do?act=search&typeid=16">健康养生</A> </LI>
+		  	<LI><A title="" href="VideoSearch.do?act=search&typeid=12">专业讲座</A> </LI>
 		  	     
 		</UL>
 	</DIV>
