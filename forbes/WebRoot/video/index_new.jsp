@@ -132,7 +132,6 @@
 		    if(pn==2) typeid= 5;
 		    if(pn==3) typeid= 8;
 		    if(pn==4) typeid= 12;
-		    if(pn==5) typeid= 16;
 		 
 		    
 		    tmp = $('#'+sid);   
@@ -436,8 +435,7 @@
 			  	<LI class="hand c_black b f14">创业成功学
 			  	<LI class="hand c_black b f14">企业商学院
 			  	<LI class="hand c_black b f14">投资理财
-			  	<LI class="hand c_black b f14">职场人生
-			  	<LI class="hand c_black b f14">健康养生</LI>
+			  	<LI class="hand c_black b f14">专业讲座</LI>
 			</UL>
 			<SCRIPT>
      			var _con = $('.content:first','.tj');
@@ -824,11 +822,11 @@
 <DIV class=siderC_box>
 <DIV class=title>
 <DIV class=left></DIV>
-<DIV class=mid><SPAN><A class="f14 b c_black" href="VideoSearch.do?act=search&typeid=12">职场人生</A></SPAN> 
+<DIV class=mid><SPAN><A class="f14 b c_black" href="VideoSearch.do?act=search&typeid=12">专业讲座</A></SPAN> 
 <DIV class=bb>
 <UL>
-  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=13">&nbsp;职业规划&nbsp;</A> 
   <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=14">&nbsp;职场指南&nbsp;</A> 
+  <LI><A class=c_grey2 target=_play href="VideoSearch.do?act=search&typeid=29">&nbsp;健康养生&nbsp;</A> 
   </LI>
 </UL>
 </DIV>
@@ -923,7 +921,9 @@
 <DIV class=clear></DIV></DIV>
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
-<DIV style="HEIGHT: 12px" class=clear></DIV><!-- 高清影视剧 -->
+<DIV style="HEIGHT: 12px" class=clear></DIV>
+<!-- 高清影视剧 -->
+<!-- 
 <DIV class=siderC_box>
 <DIV class=title>
 <DIV class=left></DIV>
@@ -1025,6 +1025,8 @@
 <DIV class=bot></DIV>
 <DIV class=clear></DIV></DIV>
 <DIV style="HEIGHT: 12px" class=clear></DIV>
+ -->
+
 <!-- 大千世界 -->
 <!-- 网友热搜 -->
 
