@@ -41,7 +41,7 @@ public class IndexNewAction extends Action {
 			request.setAttribute( "COMMEND_VIDEO_LIST_TYPE_5", videoListManager.getTopVideoByVideoType("5", "iscommend Desc", 0, 4));
 			request.setAttribute( "COMMEND_VIDEO_LIST_TYPE_8", videoListManager.getTopVideoByVideoType("8", "iscommend Desc", 0, 4));
 			request.setAttribute( "COMMEND_VIDEO_LIST_TYPE_12", videoListManager.getTopVideoByVideoType("12", "iscommend Desc", 0, 4));
-			request.setAttribute( "COMMEND_VIDEO_LIST_TYPE_16", videoListManager.getTopVideoByVideoType("16", "iscommend Desc", 0, 4));
+			//request.setAttribute( "COMMEND_VIDEO_LIST_TYPE_16", videoListManager.getTopVideoByVideoType("16", "iscommend Desc", 0, 4));
 						
 			request.setAttribute( "HOT_VIDEO_LIST", videoListManager.getTopVideoByVideoType(null, "click Desc", 0, 10));
 			request.setAttribute( "COMP_VIDEO_LIST", videoListManager.getTopVideoByVideoType(null, "iscommend Desc", 0, 10));
