@@ -98,7 +98,7 @@
 			
 			<UL class=news_con_main>
   				<LI>
-  					您访问的资讯不存在或者已经被删除！  					
+  					您访问的资讯不存在或者已经被删除！ 
   					<P align=center>&nbsp;</P>
   					<!-- <P align=right>&nbsp;<A target=_blank href="#">进入论坛</A></P> -->
   				</LI>
