@@ -62,9 +62,9 @@ public class VideoShowAction extends Action {
 			return mapping.findForward("ok");
 
 		}catch( Exception e ){
-			e.printStackTrace();
+			//e.printStackTrace();
 			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
-			return mapping.findForward("fail");
+			return mapping.findForward("error");
 		}
 	}
 	/*public VideoTypeManager getVideoTypeManager() {
