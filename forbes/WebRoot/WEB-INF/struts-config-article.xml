@@ -94,6 +94,7 @@
       type="org.springframework.web.struts.DelegatingActionProxy">
       <forward name="type" path="/article/top_article_list.jsp" />
       <forward name="view" path="/article/article_view.jsp" />
+      <forward name="error" path="/article/article_view_error.jsp" />
       <forward name="search" path="/article/article_search.jsp" />
       <forward name="list" path="/article/article_list.jsp" />
       <forward name="top" path="/article/top_ten_article.jsp" />
@@ -146,6 +147,7 @@
       type="org.springframework.web.struts.DelegatingActionProxy">
       <forward name="top" path="/article/top_news_list.jsp" />
       <forward name="view" path="/article/news_view.jsp" />
+      <forward name="error" path="/article/news_view_error.jsp" />
       <forward name="like" path="/article/like_news_list.jsp" />
       <forward name="list" path="/article/news_list.jsp" />
     </action>
