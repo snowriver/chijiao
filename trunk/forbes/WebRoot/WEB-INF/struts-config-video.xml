@@ -87,6 +87,7 @@
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">
       <forward name="ok" path="/video/video_show.jsp" />
+      <forward name="error" path="/video/video_show_error.jsp" />
     </action>
     
     <action
