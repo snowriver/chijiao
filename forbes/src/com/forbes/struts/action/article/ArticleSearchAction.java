@@ -115,9 +115,9 @@ public class ArticleSearchAction extends DispatchAction {
 			return mapping.findForward("view");
 
 		}catch( Exception e ){
-			e.printStackTrace();
-			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
-			return mapping.findForward("fail");
+			//e.printStackTrace();
+			//request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
+			return mapping.findForward("error");
 		}
 	}
 	

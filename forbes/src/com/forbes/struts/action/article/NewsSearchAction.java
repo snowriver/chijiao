@@ -128,9 +128,9 @@ public class NewsSearchAction extends DispatchAction {
 			return mapping.findForward("view");
 
 		}catch( Exception e ){
-			e.printStackTrace();
+			//e.printStackTrace();
 			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
-			return mapping.findForward("fail");
+			return mapping.findForward("error");
 		}
 	}
 	
