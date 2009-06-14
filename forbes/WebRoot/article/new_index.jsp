@@ -463,7 +463,7 @@
 		</A> 
 	</DIV>
 	
-	<%@ include file="ad/ad_index_left_01_281x120.jsp"%>
+	
 	
 </DIV>
 <!--ÓÒ±ßÀ¸½áÊø-->
