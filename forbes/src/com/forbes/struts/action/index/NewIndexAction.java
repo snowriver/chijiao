@@ -82,14 +82,14 @@ public class NewIndexAction extends Action {
 			request.setAttribute( "ARTICLE_35_LIST", articleListManager.getTopArticleByArticleType("35", "pubdate DESC", 0, 10));
 			request.setAttribute( "ARTICLE_16_LIST", articleListManager.getTopArticleByArticleType("16", "pubdate DESC", 0, 10));
 			
-			request.setAttribute( "HOT_ARTICLE_LIST", articleListManager.getTopArticleByArticleType(null, "iscommend DESC", 0, 5));
+			request.setAttribute( "HOT_ARTICLE_LIST", articleListManager.getTopArticleByArticleType(null, "iscommend DESC", 0, 7));
 			
 			
 			//ask
 			request.setAttribute( "ASK_LIST", askSearchManager.getTopAsk(null, null, "views DESC", 0, 5));
 			
 			//new
-			request.setAttribute( "TOP_NEWS_LIST", newsManager.getTopNews("pubdate DESC", 1, 6));
+			request.setAttribute( "TOP_NEWS_LIST", newsManager.getTopNews("pubdate DESC", 1, 8));
 			request.setAttribute( "FIRST_NEWS_LIST", newsManager.getTopNews("pubdate DESC", 0, 1));
 			
 			//user
