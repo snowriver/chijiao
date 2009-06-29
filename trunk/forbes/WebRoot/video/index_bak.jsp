@@ -25,7 +25,7 @@
 	</STYLE>
 
 	<SCRIPT src="../js/jquery/jquery-1.2.6.min.js"></SCRIPT>
-
+	<SCRIPT src="../js/openDiv.js"></SCRIPT>
 
 	<SCRIPT>
 		function M_L_Move(id,pn,m){  //显示列表左右滚动
