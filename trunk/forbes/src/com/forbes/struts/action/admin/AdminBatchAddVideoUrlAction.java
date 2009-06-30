@@ -76,7 +76,7 @@ public class AdminBatchAddVideoUrlAction extends DispatchAction {
 		try {
 			Video video = videoListManager.getVideo(Integer.parseInt(videoid));
 
-			if (page != null && page.length() > 0) {
+			if ( page != null ) {
 				for (int j = 1; j <= Integer.parseInt(page); j++) {
 					URL readUrl = new URL(fromUrl + j + ".html");// 建立URL对象，并实例化为url，获得要抓取的网页地址
 					BufferedReader reader = new BufferedReader(
