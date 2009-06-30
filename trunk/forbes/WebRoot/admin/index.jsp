@@ -8,8 +8,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+  	if(request.getSession().getAttribute("ADMIN") != null ) {
+		try{
+			request.getRequestDispatcher("index_main.jsp").forward(request,response);
+		} catch(Exception e){
+			e.printStackTrace();
+		}	
+  	}
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
