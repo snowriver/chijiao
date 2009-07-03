@@ -116,7 +116,9 @@
 				<value>com/forbes/hibernate/hbm/UserScoreLog.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserService.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/FeedBack.hbm.xml</value>
-				<value>com/forbes/hibernate/hbm/Bulletin.hbm.xml</value></list>
+				<value>com/forbes/hibernate/hbm/Bulletin.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/UserDailyPlan.hbm.xml</value>
+			</list>
 		</property></bean>
 	
 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
@@ -369,6 +371,12 @@
     	</property>
     </bean>
     <bean id="BulletinDAO" class="com.forbes.hibernate.dao.BulletinDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="UserDailyPlanDAO"
+    	class="com.forbes.hibernate.dao.UserDailyPlanDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
