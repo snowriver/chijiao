@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- -->
+	<bean id="videoTypeManager" class="com.forbes.service.video.impl.VideoTypeManagerImpl">
+		<property name="videoTypeDAO">
+			<ref bean="VideoTypeDAO" />
+		</property>
+	</bean>
+	<bean id="videoUrlManager" class="com.forbes.service.video.impl.VideoUrlManagerImpl">
+		<property name="videoUrlDAO">
+			<ref bean="VideoUrlDAO" />
+		</property>
+	</bean>
+	<bean id="videoListManager" class="com.forbes.service.video.impl.VideoListManagerImpl">
+		<property name="videoTypeDAO">
+			<ref bean="VideoTypeDAO" />
+		</property>
+		<property name="videoDAO">
+			<ref bean="VideoDAO" />
+		</property>
+	</bean>
+	
+
+	
+	<!-- -->	
+	<bean id="videoTypeManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="videoTypeManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>	
+	
+	<bean id="videoUrlManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="videoUrlManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>	
+	
+	<bean id="videoListManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="videoListManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+
+	<!--  -->
+	<bean name="/admin/AdminUpdateVideoType" class="com.forbes.struts.action.admin.AdminUpdateVideoTypeAction" singleton="false">
+		<property name="videoTypeManager">
+			<ref bean="videoTypeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/SelectVideoType" class="com.forbes.struts.action.video.SelectVideoTypeAction" singleton="false">
+		<property name="videoTypeManager">
+			<ref bean="videoTypeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminUpdateVideo" class="com.forbes.struts.action.admin.AdminUpdateVideoAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminUpdateVideoUrl" class="com.forbes.struts.action.admin.AdminUpdateVideoUrlAction" singleton="false">
+		<property name="videoUrlManager">
+			<ref bean="videoUrlManagerService" />
+		</property>
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/admin/AdminEditVideo" class="com.forbes.struts.action.admin.AdminEditVideoAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+		<property name="videoTypeManager">
+			<ref bean="videoTypeManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/video/VideoTopList" class="com.forbes.struts.action.video.VideoTopListAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/video/index" class="com.forbes.struts.action.video.IndexAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/video/NewIndex" class="com.forbes.struts.action.video.IndexNewAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/video/VideoSearch" class="com.forbes.struts.action.video.VideoSearchAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/video/VideoShow" class="com.forbes.struts.action.video.VideoShowAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+		<property name="favoriteManager">
+			<ref bean="favoriteManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/video/VideoDigg" class="com.forbes.struts.action.video.VideoDiggAction" singleton="false">
+		<property name="videoListManager">
+			<ref bean="videoListManagerService" />
+		</property>
+	</bean>
+
+</beans>
