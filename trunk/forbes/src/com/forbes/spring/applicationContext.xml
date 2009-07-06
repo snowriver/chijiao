@@ -22,6 +22,7 @@
 	<import resource="forbes-task.xml" />
 	<import resource="uc-home.xml" />
 	<import resource="uc-bbs.xml" />
+	<import resource="forbes-plan.xml" />
 	
 	<!-- 
 	<bean id="config" class="com.forbes.util.Config">
