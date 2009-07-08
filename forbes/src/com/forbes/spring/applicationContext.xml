@@ -137,86 +137,103 @@
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserDetailDAO" class="com.forbes.hibernate.dao.UserDetailDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserFriendDAO" class="com.forbes.hibernate.dao.UserFriendDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
 	<bean id="SysConfigDAO" class="com.forbes.hibernate.dao.SysConfigDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="CityDAO" class="com.forbes.hibernate.dao.CityDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="SectorDAO" class="com.forbes.hibernate.dao.SectorDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="ArticleTypeDAO" class="com.forbes.hibernate.dao.ArticleTypeDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="AskTypeDAO" class="com.forbes.hibernate.dao.AskTypeDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="AskDAO" class="com.forbes.hibernate.dao.AskDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="AskAnswerDAO" class="com.forbes.hibernate.dao.AskAnswerDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="ContentDAO" class="com.forbes.hibernate.dao.ContentDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="ContentTypeDAO" class="com.forbes.hibernate.dao.ContentTypeDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="VideoTypeDAO" class="com.forbes.hibernate.dao.VideoTypeDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="VideoUrlDAO" class="com.forbes.hibernate.dao.VideoUrlDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="ArticleDAO" class="com.forbes.hibernate.dao.ArticleDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="VideoDAO" class="com.forbes.hibernate.dao.VideoDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="ArticleKeywordDAO" class="com.forbes.hibernate.dao.ArticleKeywordDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="SearchKeywordDAO" class="com.forbes.hibernate.dao.SearchKeywordDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
@@ -228,11 +245,13 @@
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="NfMsgRelationshipDAO" class="com.forbes.hibernate.dao.NfMsgRelationshipDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="NfMsgTypeDAO" class="com.forbes.hibernate.dao.NfMsgTypeDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
@@ -273,112 +292,133 @@
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
-    </bean>    
+    </bean>
+      
     <bean id="UcMembersDAO" class="com.forbes.hibernate.dao.UcMembersDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
-    </bean>	
+    </bean>
+    
 	<bean id="UcAdminsDAO" class="com.forbes.hibernate.dao.UcAdminsDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
-    </bean>    
+    </bean>
+    
     <bean id="UchomeFeedDAO" class="com.forbes.hibernate.dao.UchomeFeedDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
-    </bean>    
+    </bean>
+    
     <bean id="UchomeDoingDAO" class="com.forbes.hibernate.dao.UchomeDoingDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
-    </bean>    
+    </bean>
+    
     <bean id="UchomeBlogDAO" class="com.forbes.hibernate.dao.UchomeBlogDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
-    </bean>    
+    </bean>
+    
     <bean id="CdbForumsDAO" class="com.forbes.hibernate.dao.CdbForumsDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
-    </bean>    
+    </bean>
+    
     <bean id="CdbThreadsDAO" class="com.forbes.hibernate.dao.CdbThreadsDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
     
-    
     <bean id="OrderServiceDAO" class="com.forbes.hibernate.dao.OrderServiceDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserOrderDAO" class="com.forbes.hibernate.dao.UserOrderDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserOrderItemDAO" class="com.forbes.hibernate.dao.UserOrderItemDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserPaymentLogDAO" class="com.forbes.hibernate.dao.UserPaymentLogDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserServiceDAO" class="com.forbes.hibernate.dao.UserServiceDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
 	<bean id="DictionaryDAO" class="com.forbes.hibernate.dao.DictionaryDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserLevelDAO" class="com.forbes.hibernate.dao.UserLevelDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserAccountDAO" class="com.forbes.hibernate.dao.UserAccountDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserScoreLogDAO" class="com.forbes.hibernate.dao.UserScoreLogDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserLevelPromotionDAO" class="com.forbes.hibernate.dao.UserLevelPromotionDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="FeedBackDAO" class="com.forbes.hibernate.dao.FeedBackDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UcPmsDAO" class="com.forbes.hibernate.dao.UcPmsDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="BulletinDAO" class="com.forbes.hibernate.dao.BulletinDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
+    
     <bean id="UserDailyPlanDAO"
     	class="com.forbes.hibernate.dao.UserDailyPlanDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
-    </bean></beans>
+    </bean>
+	
+</beans>
