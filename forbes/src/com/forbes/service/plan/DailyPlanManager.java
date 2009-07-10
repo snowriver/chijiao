@@ -15,7 +15,7 @@ public interface DailyPlanManager {
 	public void setUserDailyPlanDAO(UserDailyPlanDAO userDailyPlanDAO);
 
 	public List getDailyPlanByPage(Pager pager, int pageNo, String userid,
-			Date date, Integer iscomplete, String keyword, String orderby)
+			String date, String iscomplete, String keyword, String orderby)
 			throws ForbesException;
 
 	public void addDailyPlan(UserDailyPlan userDailyPlan);
