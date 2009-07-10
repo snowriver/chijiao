@@ -25,13 +25,13 @@
 		</property>
 	</bean>	
 	
-	<!--  
-	<bean name="/admin/AdminUpdateVideoType" class="com.forbes.struts.action.admin.AdminUpdateVideoTypeAction" singleton="false">
-		<property name="videoTypeManager">
-			<ref bean="videoTypeManagerService" />
+	
+	<bean name="/client/ClientManageUserDailyPlan" class="com.forbes.struts.action.client.ClientManageUserDailyPlanAction" singleton="false">
+		<property name="dailyPlanManager">
+			<ref bean="dailyPlanManagerService" />
 		</property>
 	</bean>
-	-->
+	
 
 
 </beans>

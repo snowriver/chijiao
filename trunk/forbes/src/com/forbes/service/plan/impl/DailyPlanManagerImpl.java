@@ -21,7 +21,7 @@ public class DailyPlanManagerImpl implements DailyPlanManager {
 		this.userDailyPlanDAO = userDailyPlanDAO;
 	}
 
-	public List getDailyPlanByPage(Pager pager, int pageNo, String userid, Date date, Integer iscomplete, String keyword, String orderby ) throws ForbesException{
+	public List getDailyPlanByPage(Pager pager, int pageNo, String userid, String date, String iscomplete, String keyword, String orderby ) throws ForbesException{
 		/*if( typeid != null ){
 			typeid = typeid.replaceAll("_", ",");
 		}*/
