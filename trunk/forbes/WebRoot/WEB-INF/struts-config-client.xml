@@ -127,6 +127,13 @@
       		<forward name="list" path="/client/ClientListArticle.jsp" />
     	</action>
     	
+    	<action
+	    	parameter="act"
+      		path="/client/ClientManageUserDailyPlan"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="list" path="/client/ClientListUserDailyPlan.jsp" />
+    	</action>
     	
 	</action-mappings>
 	
