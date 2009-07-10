@@ -1,14 +1,8 @@
 package com.forbes.hibernate.dao;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.LockMode;
-import org.springframework.context.ApplicationContext;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-
 import com.forbes.hibernate.basedao.BaseUserDailyPlanDAO;
 
 /**
