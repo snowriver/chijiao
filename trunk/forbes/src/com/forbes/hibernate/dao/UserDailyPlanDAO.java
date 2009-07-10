@@ -1,5 +1,6 @@
 package com.forbes.hibernate.dao;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import org.apache.commons.logging.Log;
@@ -24,54 +25,64 @@ import com.forbes.hibernate.basedao.BaseUserDailyPlanDAO;
 
 public class UserDailyPlanDAO extends BaseUserDailyPlanDAO {
 	private static final Log log = LogFactory.getLog(UserDailyPlanDAO.class);
+
 	// property constants
-	
-	public int getCount( String userid, Date date, Integer iscomplete, String keyword) {
-		
-		if (keyword == null) keyword = "";
-		
+
+	public int getCount(String userid, String date, String iscomplete,
+			String keyword) {
+
+		if (keyword == null)
+			keyword = "";
+
 		try {
 
-			String queryString = "SELECT COUNT(*) FROM UserDailyPlan AS model WHERE model.userId = ? " +
-					"AND (model.title LIKE ? OR model.content LIKE ? ) ";
-			
-			if( date != null )
-				queryString += " AND model.date = " + date;
-			if(iscomplete != null && !iscomplete.equals(""))
+			String queryString = "SELECT COUNT(*) FROM UserDailyPlan AS model WHERE model.userId = ? "
+					+ "AND (model.title LIKE ? OR model.content LIKE ? ) ";
+
+			if (date != null) {
+				queryString += " AND model.date = '" + date + "'";
+			} 
+
+			if (iscomplete != null && !iscomplete.equals(""))
 				queryString += " AND model.iscomplete = " + iscomplete;
-			
-			
-			//System.out.println("queryString = "+queryString);
+
+			// System.out.println("queryString = "+queryString);
 			org.hibernate.Query query = getSession().createQuery(queryString);
-			query.setParameter(0, userid );
-			query.setParameter(1, "%" + keyword + "%" );
-			query.setParameter(2, "%" + keyword + "%" );
-			
+			query.setParameter(0, userid);
+			query.setParameter(1, "%" + keyword + "%");
+			query.setParameter(2, "%" + keyword + "%");
+
 			return Integer.parseInt("" + query.list().get(0));
 		} catch (RuntimeException re) {
 			throw re;
 		}
 	}
-	
-	public List findDailyPlanByPage(String userid, Date date, Integer iscomplete, String keyword, String orderby, int beg, int len) {
-		
-		if (keyword == null) keyword = "";
-		if (orderby == null || orderby.equals("")) orderby = "sn ASC ";
-		
-		try {			
-			String queryString = "SELECT DISTINCT model FROM UserDailyPlan AS model WHERE model.userId = ? " +
-					"AND (model.title LIKE ? OR model.content LIKE ? ) ";
 
-			if( date != null )
-				queryString += " AND model.date = " + date;
-			if(iscomplete != null && !iscomplete.equals(""))
+	public List findDailyPlanByPage(String userid, String date,
+			String iscomplete, String keyword, String orderby, int beg, int len) {
+
+		if (keyword == null)
+			keyword = "";
+		if (orderby == null || orderby.equals(""))
+			orderby = "sn ASC ";
+
+		try {
+			String queryString = "SELECT DISTINCT model FROM UserDailyPlan AS model WHERE model.userId = ? "
+					+ "AND (model.title LIKE ? OR model.content LIKE ? ) ";
+
+			if (date != null) {
+				queryString += " AND model.date = '" + date + "'";
+			} 
+			if (iscomplete != null && !iscomplete.equals(""))
 				queryString += " AND model.iscomplete = " + iscomplete;
-			
+
+			System.out.println(" userID = " + userid);
+			System.out.println(" SQL = " + queryString);
 			org.hibernate.Query query = getSession().createQuery(queryString);
-			query.setParameter(0, userid );
-			query.setParameter(1, "%" + keyword + "%" );
-			query.setParameter(2, "%" + keyword + "%" );
-			
+			query.setParameter(0, userid);
+			query.setParameter(1, "%" + keyword + "%");
+			query.setParameter(2, "%" + keyword + "%");
+
 			query.setFirstResult(beg);
 			query.setMaxResults(len);
 			return query.list();
