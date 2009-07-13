@@ -205,11 +205,11 @@ public class VideoSearchAction extends DispatchAction {
 		String keyword   = request.getParameter("keyword");
 		String orderby   = request.getParameter("orderby");
 		String pageNo    = request.getParameter("pno");
-		String typeid = request.getParameter("typeid");
+		String typeid	 = request.getParameter("typeid");
 		String parameter = "keyword=" + ( (keyword==null)?" ":keyword );
 		
 		Map map = new TreeMap();
-		map.put("keyWord", keyword);
+		map.put("keyword", keyword);
 		map.put("orderby", orderby);
 		map.put("typeid", typeid);
 		
@@ -239,7 +239,7 @@ public class VideoSearchAction extends DispatchAction {
 			request.setAttribute( "COMMEND_VIDEO_LIST", commendlist);
 
 			
-			//System.out.println(list.size());
+			System.out.println(keyword);
 			
 			return mapping.findForward("search");
 
