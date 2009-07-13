@@ -40,7 +40,7 @@
 	
 		function pageselectCallback(page_id, jq){
 		 
-		  window.location="VideoSearch.do?act=search&typeid=${param.typeid}&keyword=${param.keyword}&orderby=${param.orderby}&pno=" + (page_id+1);
+		  window.location="VideoSearch.do?act=search&typeid=${PARA['typeid']}&keyword=${PARA['keyword']}&orderby=${PARA['orderby']}&pno=" + (page_id+1);
 	      //$('#Searchresult').text("Showing search results "+((page_id*10)+1)+"-"+((page_id*10)+10));
 	    }
 		
@@ -56,20 +56,6 @@
 			}
 		);
 		
-		
-		function getAgoCategoryInfo(pcId,page,perPageCount,level,flag){
-			var domain_name = 'auto.openv.com';
-			var url = "jsproxy.php";
-			$.ajax({
-		     type: "POST",
-		     url: url,
-		     data: "pcId="+pcId+"&page="+page+"&count="+perPageCount+"&domain_name="+domain_name+"&level="+level+"&flag="+flag,
-		     success: function(data){       
-		     		document.getElementById('category_info').innerHTML = data;
-		     		replaceMsnPlay(domain_name);  
-		     }   
-			}); 
-		}
 		
 		function showlist(i){
 		  var o = {
@@ -123,32 +109,7 @@
 		  });
 		}
 		
-		function replaceMsnPlay(domain_name){
-			if(domain_name.indexOf("msn") > 0){
-				var patt = /msn\.openv\.com/i;
-				var re = /^http\:\/\/([\w]+)\.msn\.openv\.com\/play\/[^\/]+?\.html$/i;
-				var _pytest = /openv\.com.*?([\/|_]play[\/|\-])[^\/]+?\.html$/i;
-				jQuery("A").each(function(){
-				  var h = jQuery.trim(this.href);
-				  if(!patt.test(h)){
-				    var h1 = h.replace(/\.openv\.com/i,".msn.openv.com");
-				    var arr;   
-				    if((arr=re.exec(h1)) != null && arr[1]!='tv')  {
-				      h1 = h1.replace(arr[1]+".","");
-				    }
-				    if(h!=h1){
-				      this.href=h1;
-				    }
-				  }else if((arr=re.exec(h)) != null && arr[1]!='tv'){
-				   	h = h.replace(arr[1]+".","");
-				   	this.href=h;
-				  }
-				  if(_pytest.test(h)){
-				    this.target="_play";
-				  }
-				});  
-			}
-		}	
+	
 		
 		function SP()
 	  {
