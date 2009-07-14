@@ -16,7 +16,6 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="../js/jquery/pagination.css" />
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan.css">
-<script type="text/javascript" src="../js/common.js" ></script>
 <script type="text/javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="../js/jquery/jquery.pagination.js" charset="gb2312"></script>
 
@@ -143,25 +142,17 @@
 		<a  class="sendpm" href="index.php?m=pm_client&a=send"></a>
 
 		<span class="navinfo">
-			<img src="images/default/newpm.gif" />
+			<img src="../res/icon_uptime.gif" />
 			<strong><a href="index.php?m=pm_client&a=ls&folder=newbox">添加今日事项</a></strong> 
 		</span>
 	</div>
 	
-	<div class="ucinfo">
+	<div>
 		<form method="post" action="index.php?m=pm_client&a=delete&folder=inbox&filter=&extra=page%3D">
 			
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
 				<tbody>
 				
-				<!-- 
-				<tr class="ctrlbar">
-					<td class="sel"><input type="checkbox" name="chkall" onclick="checkall(this.form, 'delete')" /></td>
-					<td class="ava"><button name="pmsend" type="submit">删除</button></td>
-					<td class="pef"></td>
-					<td class=""></td>
-				</tr>
-				 -->
 				<c:if test="${empty USER_PLAN_LIST}">
 		    		<tr class="onset">
 		    			<TD colspan="5" align="center">您还没有写今日计划！</TD>
@@ -169,42 +160,48 @@
 		    	</c:if>
 		    	
 		    	<c:if test="${not empty USER_PLAN_LIST}">
-		   
+		   		<tr align="center" style="font-weight:bold">
+					<td width="5%"></td>
+					<td width="5%">序号</td>
+					<td width="15%">时间</td>
+					<td width="35%">事项内容</td>
+					<td width="15%">期限</td>
+					<td width="15%">是否完成</td>
+					<td width="10%">备注</td>
+				</tr>
+				
 		    	
 		    	<c:forEach items="${USER_PLAN_LIST}" var="plan" varStatus="status">
 				<tr class="onset">
-					<td class="sel"><input type="checkbox" name="delete[]" value="8" /></td>
-					<td class="ava">${status.index + 1 }</td>
-					<td class="per">
+					<td width="5%"><input type="checkbox" name="delete[]" value="8" /></td>
+					<td width="5%">${status.index + 1 }</td>
+					<td >
 						<fmt:formatDate value="${plan.startTime}" pattern="HH:mm"/>-
 						<fmt:formatDate value="${plan.endTime}" pattern="HH:mm"/>
 					</td>
-					<td class="title">${fn:substring(plan.title, 0,15) }</td>
-					<td class="title">
+					<td >${fn:substring(plan.title, 0,30) }</td>
+					<td >
 						<fmt:formatDate value="${plan.limitTime}" pattern="yyyy-MM-dd HH:mm"/>
 					</td>
-					<td class="title">
+					<td >
 						<input name="ww" type="checkbox" value="" />						
 					</td>
-					<td class="title">${fn:substring(plan.note, 0,15) }</td>
+					<td >${fn:substring(plan.note, 0,15) }</td>
 				</tr>
 				</c:forEach>
 				</c:if>
 				
 				</tbody>
 				<tfoot>
-				<tr class="ctrlbar">
-					<td class="sel"><input type="checkbox" onclick="this.form.chkall.click()" /></td>
-					<td class="ava">
-						<div style="float:left"><button onclick="this.form.pmsend.click()" type="button">删除</button></div>
-						<div style="float:right">
-							<div class="pagescroll">
-								<div id="Pagination" class="pagination"></div>
-							</div>
-						</div>						
+				<tr >
+					<td ><input type="checkbox" onclick="this.form.chkall.click()" /></td>
+					<td ><button onclick="this.form.pmsend.click()" type="button">删除</button></td>
+					<td ></td>
+					<td >
+						<div class="pagescroll">
+							<div id="Pagination" class="pagination"></div>
+						</div>
 					</td>
-					<td class="pef"></td>
-					<td class=""></td>
 				</tr>
 				</tfoot>
 			</table>
