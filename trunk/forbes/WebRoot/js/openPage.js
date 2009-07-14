@@ -1,6 +1,6 @@
 var shield = document.createElement("DIV"); 
 var alertFram = document.createElement("DIV"); 
-function openDIV(title,url,width,height) 
+function openPage(title, url, left, top, width, height) 
 { 
 widthx= width -2;
 shield.id = "shield"; 
@@ -19,8 +19,8 @@ alertFram.id="alertFram";
 alertFram.style.position = "absolute"; 
 //负边界居中法,相对于shield层的顶部时 
 
-alertFram.style.left = "25%"; 
-alertFram.style.top = "20%"; 
+alertFram.style.left = left + "%"; 
+alertFram.style.top = top + "%"; 
 //alertFram.style.marginLeft = "-125px"; 
 //alertFram.style.marginTop = "-75px"; 
 
