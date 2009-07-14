@@ -7,7 +7,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>我的管理后台 - 百问管理</title>
+<title>我的管理后台 - 计划管理</title>
 <meta content="text/html; charset=gbk" http-equiv="Content-Type">
 <meta name="keywords" content="">
 <meta name="description" content=" ">
@@ -18,6 +18,7 @@
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan.css">
 <script type="text/javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="../js/jquery/jquery.pagination.js" charset="gb2312"></script>
+<script type="text/javascript" src="../js/openPage.js" charset="gb2312"></script>
 
 <script language="javascript" type="text/javascript">
 	
@@ -104,7 +105,7 @@
 <div class=mainbody>
 	<div id="append"></div>
 <div class="ucbody">
-	<h1>今日计划</h1>
+	<h1>今日计划[${PARA['date'] }]</h1>
 	<script type="text/javascript">
 		function checkall(form, prefix, checkall) {
 			var checkall = checkall ? checkall : 'chkall';
@@ -136,14 +137,14 @@
 	</script>
 	
 	<div class="ucnav">
-		<a class="ucontype" href="ClientListNewsFeeds.do?act=in">今日事项<strong>[1]</strong></a>
+		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[1]</strong></a>
 		<a href="index.php?m=pm_client&a=ls&folder=inbox&filter=announcepm">今日授权[1]</a>
 		<a href="index.php?m=pm_client&a=ls&folder=outbox">今日反省[1]</a>
-		<a  class="sendpm" href="index.php?m=pm_client&a=send"></a>
+		
 
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
-			<strong><a href="index.php?m=pm_client&a=ls&folder=newbox">添加今日事项</a></strong> 
+			<strong><a href="javascript:void(0);" onclick="openPage('添加今日事项','ClientEditUserDailyPlan.jsp', '15', '10', '700','500');">添加今日事项</a></strong> 
 		</span>
 	</div>
 	
@@ -194,7 +195,7 @@
 				</tbody>
 				<tfoot>
 				<tr >
-					<td ><input type="checkbox" onclick="this.form.chkall.click()" /></td>
+					<td ><input type="checkbox" onclick="checkall(this.form, 'delete')" /></td>
 					<td ><button onclick="this.form.pmsend.click()" type="button">删除</button></td>
 					<td ></td>
 					<td >
