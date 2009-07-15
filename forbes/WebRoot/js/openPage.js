@@ -38,7 +38,7 @@ alertFram.style.lineHeight = "150px";
 alertFram.style.zIndex = "10002"; 
 strHtml = "<div style=\"list-style:none;margin:0px;padding:0px;border-width:1px;border-color:#6699FF;border-style:solid;width:" + width + "\">\n"; 
 strHtml += "<div onmousedown=\"oMove(parentNode.parentNode);\" style=\"cursor:move;background:#6699FF;text-align:left;padding-left:5px;font-size:14px;font-weight:bold;color: #FFFFFF;height:25px;line-height:25px;border-left:1px solid #FFFFFF;border-top:1px solid #FFFFFF;border-right:1px solid #FFFFFF;\">";
-strHtml += "<div ><div style=\"float:left;width:50%\">[" + title +"]</div><div style=\"float:right;width:10%\"><a href='#' onClick=\"remove()\"> <font color=white> [¹Ø±Õ]</font> </a></div></div></div>\n"; 
+strHtml += "<div style='background:url(../images/b_top_m.gif) repeat-x;'><div style=\"float:left;width:50%\">[" + title +"]</div><div style=\"float:right;width:10%\"><a href='#' onClick=\"remove()\"> <font color=white> [¹Ø±Õ]</font> </a></div></div></div>\n"; 
 strHtml += "<iframe id=openIframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=NO src=\"" + url + "\" width=" + widthx +" height="+height+"></iframe>";
 strHtml += "</div>\n"; 
 alertFram.innerHTML = strHtml; 
