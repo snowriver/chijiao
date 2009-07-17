@@ -15,10 +15,10 @@
 
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan_edit.css" />
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan.css" />
-<link rel="stylesheet" type="text/css" href="../css/datePicker.css" />
+<link rel="stylesheet" type="text/css" href="../js/jquery/ui.datepicker.css" />
 
 <script type="text/javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
-<script type="text/javascript" src="../js/jquery/jquery.datePicker-min.js"></script>
+<script type="text/javascript" src="../js/jquery/ui.datepicker.js"></script>
 
 <script language="javascript" type="text/javascript">
 	
