@@ -23,7 +23,7 @@
 <script language="javascript" type="text/javascript">
 	
 	$(window).ready(function(){
-		$('.date-pick').datePicker({clickInput:true});
+		$('#date-pick').datepicker();
 	});
 
 </script>
@@ -54,7 +54,7 @@
 				    <TD class=tellmeNameTd>Ê±¼ä:</TD>
 				    <TD class=tellmeInputTd>
 				    	<UL>
-				        	<LI><INPUT class="importInput2 it date-pick" id=datex name=datex></LI>
+				        	<LI><INPUT class="importInput2 it date-pick" id=date-pick name=datex></LI>
 				       		<LI>
 				       			<select name="ss" id="ss">
 							      <option value="" selected="selected">Please Choose</option>
