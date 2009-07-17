@@ -13,48 +13,69 @@
 <meta name="description" content=" ">
 <meta name="generator" content="MSHTML 8.00.6001.18241">
 
-<link rel="stylesheet" type="text/css" href="css/user_daily_plan_edit.css">
-<link rel="stylesheet" type="text/css" href="css/user_daily_plan.css">
-<script type="text/javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/user_daily_plan_edit.css" />
+<link rel="stylesheet" type="text/css" href="css/user_daily_plan.css" />
+<link rel="stylesheet" type="text/css" href="../css/datePicker.css" />
 
+<script type="text/javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.datePicker-min.js"></script>
 
 <script language="javascript" type="text/javascript">
 	
-	
+	$(window).ready(function(){
+		$('.date-pick').datePicker({clickInput:true});
+	});
 
 </script>
 </head>
 <body>
 
-<div class="ucbody">
+<DIV class="ucbody">
 	
 	<DIV class=addBday id=main_container>
-<DIV class=tabDiv>
-<UL>
-  <LI><A class=current id=switch_birthday_button 
-  href="javascript:void(0)">生日提醒</A> </LI>
-  <LI><A id=switch_commemo_button href="javascript:void(0)">纪念日提醒</A> 
-</LI></UL></DIV>
-<DIV class=blockNoBorder>
-<TABLE class=tellmeTable>
-  <TBODY>
-  <TR>
-    <TD class=tellmeNameTd id=name_title_caption>姓名:</TD>
-    <TD class=tellmeInputTd><INPUT class=importInput id=name name=name></TD>
-    <TD class=inputDesSpanTd><SPAN class=inputDesSpan>必填, 
-  2-16个字母或汉字</SPAN></TD></TR>
-  <TR id=sex_form_row>
-    <TD class=tellmeNameTd>性别:</TD>
-    <TD class=tellmeInputTd>
-      <UL>
-        <LI><LABEL class=pretty_radio for=sex-male><INPUT id=sex-male type=radio 
-        CHECKED value=1 name=sex>男</LABEL> </LI>
-        <LI><LABEL class=pretty_radio for=sex-female><INPUT id=sex-female 
-        type=radio value=2 name=sex>女</LABEL> </LI>
-        <LI><LABEL class=pretty_radio for=sex-unknow><INPUT id=sex-unknow 
-        type=radio value=0 name=sex>保密</LABEL> </LI></UL></TD>
-    <TD class=inputDesSpanTd></TD></TR>
-  <TR>
+	<DIV class=tabDiv>
+		<UL>
+  			<LI><A class=current id=switch_birthday_button href="javascript:void(0)">今日计划</A> </LI>
+  			<LI><A id=switch_commemo_button href="javascript:void(0)">今日授权</A></LI>
+  			<LI><A id=switch_commemo_button href="javascript:void(0)">今日反省</A></LI>
+  		</UL>
+  	</DIV>
+  	
+  	<DIV class=blockNoBorder>
+  		<form>
+		<TABLE class=tellmeTable>
+  			<TBODY>
+  				<TR>
+				    <TD class=tellmeNameTd id=name_title_caption>事项标题:</TD>
+				    <TD class=tellmeInputTd><INPUT class=importInput id=name name=name></TD>
+				    <TD class=inputDesSpanTd><SPAN class=inputDesSpan>必填</SPAN></TD>
+				</TR>
+  				<TR id=sex_form_row>
+				    <TD class=tellmeNameTd>时间:</TD>
+				    <TD class=tellmeInputTd>
+				    	<UL>
+				        	<LI><INPUT class="importInput2 it date-pick" id=datex name=datex></LI>
+				       		<LI>
+				       			<select name="ss" id="ss">
+							      <option value="" selected="selected">Please Choose</option>
+							      <option value="1">Option 1</option>
+							      <option value="2">Option 2</option>
+							      <option value="3">Option 3</option>
+							      <option value="4">Option 4</option>
+							      <option value="5">Option 5</option>
+							      <option value="6">Option 6</option>
+							      <option value="7">Option 7</option>
+							      <option value="8">Option 8</option>
+							      <option value="9">Option 9 with a really long line, that should wrap</option>
+							      <option value="10">Option 10</option>
+							      <option value="11">Option 11</option>
+							    </select>
+				       		</LI>
+				       	</UL>
+				 	</TD>
+				    <TD class=inputDesSpanTd></TD>
+				</TR>
+				<TR>
     <TD class=tellmeNameTd id=select_day_caption>生日:</TD>
     <TD class=tellmeInputTd id=select_day_container>
       <DIV class=bdayTab><A id=dateinputer_solar_btn title=公历 
@@ -75,44 +96,10 @@
       <DIV id=birthday_category_area></DIV>
       <DIV id=commemo_category_area style="DISPLAY: none"></DIV></TD>
     <TD class=inputDesSpanTd></TD></TR></TBODY></TABLE>
-<DIV class=openMore><A id=detail_switcher_button 
-href="javascript:void(0);">显示更多设置信息</A></DIV>
-<TABLE class=tellmeTable>
-  <TBODY>
-  <TR id=tel_form_row>
-    <TD class=tellmeNameTd>联系电话:</TD>
-    <TD class=tellmeInputTd><INPUT class=importInput id=tel name=tel> </TD>
-    <TD class=inputDesSpanTd></TD></TR>
-  <TR id=address_form_row>
-    <TD class=tellmeNameTd>联系地址:</TD>
-    <TD class=tellmeInputTd><INPUT class=importInput id=address name=address> 
-    </TD>
-    <TD class=inputDesSpanTd></TD></TR>
-  <TR id=detail_form_row>
-    <TD class=tellmeNameTd>详情:</TD>
-    <TD class=tellmeInputTd><TEXTAREA id=description name=description rows=3></TEXTAREA> 
-    </TD>
-    <TD class=inputDesSpanTd></TD></TR>
-  <TR id=email_notify_form_row>
-    <TD class=tellmeNameTd>Email提醒:</TD>
-    <TD class=tellmeInputTd>
-      <DIV id=email_notify_rule_selector></DIV>
-      <DIV class=bottomBorder2><!----></DIV></TD>
-    <TD class=inputDesSpanTd></TD></TR>
-  <TR id=phone_notify_form_row>
-    <TD class=tellmeNameTd>手机提醒:</TD>
-    <TD class=tellmeInputTd>
-      <DIV id=phone_notify_rule_selector></DIV>
-      <DIV class=bottomBorder2><!----></DIV></TD>
-    <TD class=inputDesSpanTd></TD></TR>
-  <TR>
-    <TD class=tellmeNameTd></TD>
-    <TD class=tellmeInputTd>
-      <DIV class=erronotice id=erronotice_container style="DISPLAY: none"></DIV>
-      <P><INPUT class=confirmBtn id=submit_button type=button value=确定><SPAN><A 
-      class=cancelBtn id=cancel_button href="javascript:void(0)">取消</A></SPAN> 
-      </P></TD>
-    <TD class=inputDesSpanTd></TD></TR></TBODY></TABLE></DIV></DIV>
+    </form>
+    
+
+</DIV></DIV>
 <DIV class=addBdaySuccessful id=submit_loading style="DISPLAY: none">
 <DIV class=successBlock>
 <DIV class=blockTitleDiv2>
