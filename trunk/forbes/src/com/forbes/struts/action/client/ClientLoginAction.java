@@ -109,11 +109,11 @@ public class ClientLoginAction extends DispatchAction {
 				
 				} else{
 						request.setAttribute("FAIL_MESSAGE", "密码错误，或者该用户已被注销。");
-						return mapping.findForward("fail");
+						return mapping.findForward("index");
 				}
 			} else {
 				request.setAttribute("FAIL_MESSAGE", "本系统中无该用户。");
-				return mapping.findForward("fail");
+				return mapping.findForward("index");
 			}
 			
 
