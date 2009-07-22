@@ -144,7 +144,7 @@
 
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
-			<strong><a href="javascript:void(0);" onclick="openPage('添加今日事项','ClientEditUserDailyPlan.jsp', '15', '10', '700','500');">添加今日事项</a></strong> 
+			<strong><a href="javascript:void(0);" onclick="openPage('添加今日事项','ClientEditUserDailyPlan.jsp', '15', '0', '700','550');">添加今日事项</a></strong> 
 		</span>
 	</div>
 	

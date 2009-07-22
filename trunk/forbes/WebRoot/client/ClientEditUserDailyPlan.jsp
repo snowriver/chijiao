@@ -16,9 +16,11 @@
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan_edit.css" />
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan.css" />
 <link rel="stylesheet" type="text/css" href="../js/jquery/ui.datepicker.css" />
+<link rel="stylesheet" type="text/css" href="../js/jquery/jquery.wysiwyg.css" />
 
 <script type="text/javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="../js/jquery/ui.datepicker.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.wysiwyg.js"></script>
 
 <script language="javascript" type="text/javascript">
 	
@@ -27,6 +29,9 @@
 		$('#date-pick').datepicker('option', {dateFormat: 'yy-mm-dd'});		
 	});
 
+	$(function() {
+    	$('#wysiwyg').wysiwyg();
+  	});
 </script>
 </head>
 <body>
@@ -65,24 +70,73 @@
 						<TD class=tellmeInputTd id=select_day_container>
 	      					<DIV class=bdaySelectDiv>
 	      						<SELECT id=dateinputer_year> 
-	      							<OPTION selected>选择年...</OPTION>
+	      							<OPTION value="00:00">00:00</OPTION>
+	      							<OPTION value="00:15">00:15</OPTION>
+	      							<OPTION value="00:30">00:30</OPTION>
+	      							<OPTION value="01:00">01:00</OPTION>
+	      							<OPTION value="01:15">01:15</OPTION>
+	      							
+	      							<OPTION value="08:15">08:15</OPTION>
+	      							<OPTION value="09:15">09:15</OPTION>
 	      						</SELECT> 
 	      						<SELECT id=dateinputer_month> 
-	      							<OPTION selected>选择月...</OPTION>
+	      							<OPTION value="00:00">00:00</OPTION>
+	      							<OPTION value="00:15">00:15</OPTION>
+	      							<OPTION value="00:30">00:30</OPTION>
+	      							<OPTION value="01:00">01:00</OPTION>
+	      							<OPTION value="01:15">01:15</OPTION>
+	      							
+	      							<OPTION value="08:15">08:15</OPTION>
+	      							<OPTION value="09:15">09:15</OPTION>
 	      						</SELECT>  
 	      						<DIV class=clear><!----></DIV>
 	      					</DIV>
 	      				</TD>
-	      				<TD class=inputDesSpanTd><SPAN class=inputDesSpan>必填, 持公历农历转换</SPAN></TD>
+	      				<TD class=inputDesSpanTd><SPAN class=inputDesSpan>必填</SPAN></TD>
 	      			</TR>
+	      			<TR id=sex_form_row>
+					    <TD class=tellmeNameTd>期限:</TD>
+					    <TD class=tellmeInputTd>
+					    	<UL>
+					        	<LI><INPUT class="importInput2 it date-pick" id=date-pick name=datex></LI>				       		
+					       	</UL>
+					 	</TD>
+					    <TD class=inputDesSpanTd></TD>
+					</TR>
 				  	<TR>
-				    	<TD class=tellmeNameTd id=relation_caption>与你的关系:</TD>
+				    	<TD class=tellmeNameTd id=relation_caption>是否完成:</TD>
 				    	<TD class=tellmeInputTd>
-				      		<DIV id=birthday_category_area></DIV>
-				      		<DIV id=commemo_category_area style="DISPLAY: none"></DIV>
+				      		<UL>
+				      			<LI>
+				      				<LABEL class=pretty_radio for=sex-male>
+				      					<INPUT id=sex-male type=radio CHECKED value=1 name=sex>已完成
+				      				</LABEL>
+				      			</LI>
+				      			<LI>
+				      				<LABEL class=pretty_radio for=sex-female>
+				      					<INPUT id=sex-female type=radio value=2 name=sex>处理中
+				      				</LABEL> 
+				      			</LI>
+      						</UL>
 				      	</TD>
 				    	<TD class=inputDesSpanTd></TD>
 				    </TR>
+				    <TR>
+					    <TD class=tellmeNameTd>备注:</TD>
+					    <TD colspan="2">
+					    	<textarea id="wysiwyg" rows="11" cols="90"></textarea> 
+					 	</TD>					 
+					</TR>
+					<TR>
+						<TD class=tellmeNameTd></TD>
+						<TD class=tellmeInputTd>
+							<DIV class=erronotice id=erronotice_container style="DISPLAY: none"></DIV>
+      						<P><INPUT class=confirmBtn id=submit_button type=button value=确定>
+      						<SPAN><A class=cancelBtn id=cancel_button href="javascript:void(0)">取消</A></SPAN> 
+      						</P>
+      					</TD>
+    					<TD class=inputDesSpanTd></TD>
+    				</TR>
 				</TBODY>
 			</TABLE>
 	    	</form>
