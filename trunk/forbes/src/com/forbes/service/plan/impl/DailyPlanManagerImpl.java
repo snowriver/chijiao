@@ -36,7 +36,15 @@ public class DailyPlanManagerImpl implements DailyPlanManager {
 		}
 	}
 	
-
+	public int getDailyPlanCount(String userid, String date, String iscomplete ) throws ForbesException{		
+		try {			
+			return userDailyPlanDAO.getCount(userid, date, iscomplete, null);
+			
+		} catch (Exception se) {
+			se.printStackTrace();
+			throw new ForbesException(se.getMessage());
+		}
+	}
 	
 
 	public void addDailyPlan(UserDailyPlan userDailyPlan) {
