@@ -1,7 +1,19 @@
 <%@ page language="java" pageEncoding="gbk"%>
+<%@ page import="com.forbes.hibernate.bean.UcMembers,java.text.SimpleDateFormat,java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
+
+<%
+	UcMembers ucMembers = (UcMembers)request.getSession().getAttribute("CLIENT");
+	String date = request.getParameter("date");
+	if(date == null) {
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		date   = df.format(new Date()) ;
+	}
+	com.forbes.ajax.UserPlanCount upc = new com.forbes.ajax.UserPlanCount();
+	request.setAttribute("USER_DAILY_PLAN_COUNT", upc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
+%>
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -137,7 +149,7 @@
 	</script>
 	
 	<div class="ucnav">
-		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[1]</strong></a>
+		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
 		<a href="index.php?m=pm_client&a=ls&folder=inbox&filter=announcepm">今日授权[1]</a>
 		<a href="index.php?m=pm_client&a=ls&folder=outbox">今日反省[1]</a>
 		
