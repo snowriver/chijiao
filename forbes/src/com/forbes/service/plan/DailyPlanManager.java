@@ -18,12 +18,15 @@ public interface DailyPlanManager {
 			String date, String iscomplete, String keyword, String orderby)
 			throws ForbesException;
 
+	public int getDailyPlanCount(String userid, String date, String iscomplete)
+			throws ForbesException;
+
 	public void addDailyPlan(UserDailyPlan userDailyPlan);
 
 	public void deleteDailyPlan(UserDailyPlan userDailyPlan);
 
 	public UserDailyPlan getDailyPlan(Integer id);
-	
+
 	public void updateDailyPlan(UserDailyPlan userDailyPlan);
 
 }
