@@ -1,15 +1,17 @@
 <%@ page language="java" pageEncoding="gbk"%>
-<%@ page import="com.forbes.hibernate.bean.UcMembers"%>
+<%@ page import="java.text.SimpleDateFormat,java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
 
 <%
-	UcMembers ucMembers = (UcMembers)request.getSession().getAttribute("CLIENT");
+	
 	String date = request.getParameter("date");
-	com.forbes.ajax.UserPlanCount upc = new com.forbes.ajax.UserPlanCount();
-	upc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, "Y");
-	request.setAttribute("USER_DAILY_PLAN_COUNT", upc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, "Y"));
+	if(date == null) {
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		date   = df.format(new Date()) ;
+	}
+	request.setAttribute("DATE", date);
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -33,12 +35,12 @@
 <script language="javascript" type="text/javascript">
 	
 	$(window).ready(function(){
-		$('#date-pick').datepicker();
-		$('#date-pick').datepicker('option', {dateFormat: 'yy-mm-dd'});		
+		$('#date').datepicker();
+		$('#date').datepicker('option', {dateFormat: 'yy-mm-dd'});		
 	});
 
 	$(function() {
-    	$('#wysiwyg').wysiwyg();
+    	$('#content').wysiwyg();
   	});
 </script>
 </head>
@@ -56,19 +58,19 @@
 	  	</DIV>
 	  	
 	  	<DIV class=blockNoBorder>
-	  		<form>
+	  		<form method="post" action="ClientManageUserDailyPlan.do?act=add">
 			<TABLE class=tellmeTable>
 	  			<TBODY>
 	  				<TR>
 					    <TD class=tellmeNameTd id=name_title_caption>事项标题:</TD>
-					    <TD class=tellmeInputTd><INPUT class=importInput id=name name=name></TD>
+					    <TD class=tellmeInputTd><INPUT class=importInput id=title name=title></TD>
 					    <TD class=inputDesSpanTd><SPAN class=inputDesSpan>必填</SPAN></TD>
 					</TR>
 	  				<TR id=sex_form_row>
 					    <TD class=tellmeNameTd>日期:</TD>
 					    <TD class=tellmeInputTd>
 					    	<UL>
-					        	<LI><INPUT class="importInput2 it date-pick" id=date-pick name=datex></LI>				       		
+					        	<LI><INPUT class="importInput2" id=date name=date value="${DATE }"></LI>				       		
 					       	</UL>
 					 	</TD>
 					    <TD class=inputDesSpanTd></TD>
@@ -77,7 +79,7 @@
 						<TD class=tellmeNameTd id=select_day_caption>起至时间:</TD>
 						<TD class=tellmeInputTd id=select_day_container>
 	      					<DIV class=bdaySelectDiv>
-	      						<SELECT id=dateinputer_year> 
+	      						<SELECT id=start_time name=start_time> 
 	      							<OPTION value="00:00">00:00</OPTION>
 	      							<OPTION value="00:15">00:15</OPTION>
 	      							<OPTION value="00:30">00:30</OPTION>
@@ -87,7 +89,7 @@
 	      							<OPTION value="08:15">08:15</OPTION>
 	      							<OPTION value="09:15">09:15</OPTION>
 	      						</SELECT> 
-	      						<SELECT id=dateinputer_month> 
+	      						<SELECT id=end_time name=end_time> 
 	      							<OPTION value="00:00">00:00</OPTION>
 	      							<OPTION value="00:15">00:15</OPTION>
 	      							<OPTION value="00:30">00:30</OPTION>
@@ -106,7 +108,7 @@
 					    <TD class=tellmeNameTd>期限:</TD>
 					    <TD class=tellmeInputTd>
 					    	<UL>
-					        	<LI><INPUT class="importInput2 it date-pick" id=date-pick name=datex></LI>				       		
+					        	<LI><INPUT class="importInput2" id=limit_time name=limit_time></LI>				       		
 					       	</UL>
 					 	</TD>
 					    <TD class=inputDesSpanTd></TD>
@@ -114,32 +116,23 @@
 				  	<TR>
 				    	<TD class=tellmeNameTd id=relation_caption>是否完成:</TD>
 				    	<TD class=tellmeInputTd>
-				      		<UL>
-				      			<LI>
-				      				<LABEL class=pretty_radio for=sex-male>
-				      					<INPUT id=sex-male type=radio CHECKED value=1 name=sex>已完成
-				      				</LABEL>
-				      			</LI>
-				      			<LI>
-				      				<LABEL class=pretty_radio for=sex-female>
-				      					<INPUT id=sex-female type=radio value=2 name=sex>处理中
-				      				</LABEL> 
-				      			</LI>
-      						</UL>
+				      		<INPUT type=radio CHECKED value=0 name=is_complete>处理中/计划中
+				      		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				      		<INPUT type=radio value=1 name=is_complete>已完成	
 				      	</TD>
 				    	<TD class=inputDesSpanTd></TD>
 				    </TR>
 				    <TR>
-					    <TD class=tellmeNameTd>备注:</TD>
+					    <TD class=tellmeNameTd>详细内容:</TD>
 					    <TD colspan="2">
-					    	<textarea id="wysiwyg" rows="11" cols="90"></textarea> 
+					    	<textarea id="content" name="content" rows="11" cols="90"></textarea> 
 					 	</TD>					 
 					</TR>
 					<TR>
 						<TD class=tellmeNameTd></TD>
 						<TD class=tellmeInputTd>
 							<DIV class=erronotice id=erronotice_container style="DISPLAY: none"></DIV>
-      						<P><INPUT class=confirmBtn id=submit_button type=button value=确定>
+      						<P><INPUT class=confirmBtn id=submit_button type=submit value=确定>
       						<SPAN><A class=cancelBtn id=cancel_button href="javascript:void(0)">取消</A></SPAN> 
       						</P>
       					</TD>
