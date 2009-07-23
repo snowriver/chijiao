@@ -37,7 +37,7 @@ public class UserDailyPlanDAO extends BaseUserDailyPlanDAO {
 				queryString += " AND model.date = '" + date + "'";
 			} 
 
-			if (iscomplete != null && !iscomplete.equals(""))
+			if (iscomplete != null && iscomplete.length() > 0)
 				queryString += " AND model.iscomplete = " + iscomplete;
 
 			// System.out.println("queryString = "+queryString);
