@@ -17,6 +17,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import com.forbes.hibernate.bean.UcMembers;
+import com.forbes.hibernate.bean.UserDailyPlan;
 import com.forbes.service.plan.DailyPlanManager;
 import com.forbes.util.Pager;
 
@@ -132,21 +133,43 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 		}
 	}
 
-	/*
-	 * public ActionForward delete(ActionMapping mapping, ActionForm form,
-	 * HttpServletRequest request, HttpServletResponse response) {
-	 * 
-	 * String id = request.getParameter("id");
-	 * 
-	 * try{ Favorite favorite =
-	 * favoriteManager.getFavorite(Integer.parseInt(id));
-	 * 
-	 * favoriteManager.deleteFavorite(favorite);
-	 * //request.setAttribute("RESULT_MESSAGE", "É¾³ý³É¹¦£¡");
-	 * 
-	 * return mapping.findForward(null); }catch( Exception e ){
-	 * e.printStackTrace(); return mapping.findForward("fail"); } }
-	 */
+	public ActionForward add(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		UcMembers user = (UcMembers) request.getSession()
+				.getAttribute("CLIENT");
+
+		String title = request.getParameter("title");
+		String date = request.getParameter("date");
+		String limitTime = request.getParameter("limit_time");
+		String startTime = request.getParameter("start_time");
+		String endTime = request.getParameter("end_time");
+		String content = request.getParameter("content");
+
+		
+		
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
+		SimpleDateFormat fullFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+		try {
+			UserDailyPlan plan = new UserDailyPlan();
+			plan.setUserId(user.getUid());
+			plan.setDate(dateFormatter.parse(date));
+			plan.setTitle(title);
+			plan.setContent(content);
+			plan.setStartTime(timeFormatter.parse(startTime+":00"));
+			plan.setEndTime(timeFormatter.parse(endTime+":00"));
+			plan.setLimitTime(fullFormatter.parse(limitTime));
+			
+			dailyPlanManager.addDailyPlan(plan);
+
+			return mapping.findForward("list");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return mapping.findForward("fail");
+		}
+	}
 
 	public DailyPlanManager getDailyPlanManager() {
 		return dailyPlanManager;
