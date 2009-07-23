@@ -1,8 +1,16 @@
 <%@ page language="java" pageEncoding="gbk"%>
+<%@ page import="com.forbes.hibernate.bean.UcMembers"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
 
+<%
+	UcMembers ucMembers = (UcMembers)request.getSession().getAttribute("CLIENT");
+	String date = request.getParameter("date");
+	com.forbes.ajax.UserPlanCount upc = new com.forbes.ajax.UserPlanCount();
+	upc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, "Y");
+	request.setAttribute("USER_DAILY_PLAN_COUNT", upc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, "Y"));
+%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
