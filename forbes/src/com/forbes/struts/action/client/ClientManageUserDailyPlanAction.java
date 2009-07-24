@@ -4,7 +4,6 @@
  */
 package com.forbes.struts.action.client;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -142,10 +141,14 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 		String title = request.getParameter("title");
 		String date = request.getParameter("date");
 		String limitTime = request.getParameter("limit_time");
-		String startTime = request.getParameter("start_time");
-		String endTime = request.getParameter("end_time");
+		String startTimeHh = request.getParameter("start_time_hh");
+		String startTimeMm = request.getParameter("start_time_mm");
+		
+		String endTimeHh = request.getParameter("end_time_hh");
+		String endTimeMm = request.getParameter("end_time_mm");
+		
 		String content = request.getParameter("content");
-
+		String isComplete = request.getParameter("is_complete");
 		
 		
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -158,9 +161,11 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			plan.setDate(dateFormatter.parse(date));
 			plan.setTitle(title);
 			plan.setContent(content);
-			plan.setStartTime(timeFormatter.parse(startTime+":00"));
-			plan.setEndTime(timeFormatter.parse(endTime+":00"));
+			plan.setStartTime(timeFormatter.parse(startTimeHh +":" + startTimeMm +":00"));
+			plan.setEndTime(timeFormatter.parse(endTimeHh +":" + endTimeMm +":00"));
 			plan.setLimitTime(fullFormatter.parse(limitTime));
+			plan.setIsComplete(new Short(isComplete));
+			plan.setSn(0);
 			
 			dailyPlanManager.addDailyPlan(plan);
 
