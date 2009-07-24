@@ -539,7 +539,7 @@ IMG {
 	WIDTH: 320px
 }
 .reg TD.input SELECT {
-	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; MARGIN-TOP: 2px; DISPLAY: block; PADDING-LEFT: 5px; FLOAT: left; BORDER-LEFT: #ccc 1px solid; WIDTH: 100px; COLOR: #666; MARGIN-RIGHT: 8px; PADDING-TOP: 3px; BORDER-BOTTOM: #ccc 1px solid; HEIGHT: 22px
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; MARGIN-TOP: 2px; DISPLAY: block; PADDING-LEFT: 5px; FLOAT: left; BORDER-LEFT: #ccc 1px solid; WIDTH: 50px; COLOR: #666; MARGIN-RIGHT: 8px; PADDING-TOP: 3px; BORDER-BOTTOM: #ccc 1px solid; HEIGHT: 22px
 }
 .reg .status {
 	WIDTH: 30px
@@ -1547,7 +1547,7 @@ IMG {
 	DISPLAY: inline; FLOAT: left; WIDTH: 60px; MARGIN-RIGHT: 16px
 }
 .tellmeTable TD.tellmeInputTd SELECT {
-	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; MARGIN-TOP: 2px; DISPLAY: block; PADDING-LEFT: 5px; FLOAT: left; BORDER-LEFT: #ccc 1px solid; WIDTH: 100px; COLOR: #666; MARGIN-RIGHT: 8px; PADDING-TOP: 3px; BORDER-BOTTOM: #ccc 1px solid; HEIGHT: 22px
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; MARGIN-TOP: 2px; DISPLAY: block; PADDING-LEFT: 5px; FLOAT: left; BORDER-LEFT: #ccc 1px solid; WIDTH: 50px; COLOR: #666; MARGIN-RIGHT: 8px; PADDING-TOP: 3px; BORDER-BOTTOM: #ccc 1px solid; HEIGHT: 22px
 }
 .tellmeContentDiv {
 	BORDER-RIGHT: #e0e0e0 1px solid; BORDER-TOP: #e0e0e0 1px solid; PADDING-LEFT: 8px; BORDER-LEFT: #e0e0e0 1px solid; PADDING-TOP: 8px; BORDER-BOTTOM: #e0e0e0 1px solid
