@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
+import org.hibernate.Query;
+import org.hibernate.criterion.Example;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -23,7 +25,8 @@ import com.forbes.hibernate.bean.UserDailyPlan;
  */
 
 public class BaseUserDailyPlanDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(BaseUserDailyPlanDAO.class);
+	private static final Log log = LogFactory
+			.getLog(BaseUserDailyPlanDAO.class);
 	// property constants
 	public static final String USER_ID = "userId";
 	public static final String SN = "sn";
@@ -32,14 +35,10 @@ public class BaseUserDailyPlanDAO extends HibernateDaoSupport {
 	public static final String IS_COMPLETE = "isComplete";
 	public static final String NOTE = "note";
 
-	protected void initDao() {
-		// do nothing
-	}
-
 	public void save(UserDailyPlan transientInstance) {
 		log.debug("saving UserDailyPlan instance");
 		try {
-			getHibernateTemplate().save(transientInstance);
+			getSession().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -50,7 +49,7 @@ public class BaseUserDailyPlanDAO extends HibernateDaoSupport {
 	public void delete(UserDailyPlan persistentInstance) {
 		log.debug("deleting UserDailyPlan instance");
 		try {
-			getHibernateTemplate().delete(persistentInstance);
+			getSession().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -61,8 +60,8 @@ public class BaseUserDailyPlanDAO extends HibernateDaoSupport {
 	public UserDailyPlan findById(java.lang.Integer id) {
 		log.debug("getting UserDailyPlan instance with id: " + id);
 		try {
-			UserDailyPlan instance = (UserDailyPlan) getHibernateTemplate()
-					.get("com.forbes.hibernate.bean.UserDailyPlan", id);
+			UserDailyPlan instance = (UserDailyPlan) getSession().get(
+					"com.forbes.hibernate.bean.UserDailyPlan", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -73,7 +72,9 @@ public class BaseUserDailyPlanDAO extends HibernateDaoSupport {
 	public List findByExample(UserDailyPlan instance) {
 		log.debug("finding UserDailyPlan instance by example");
 		try {
-			List results = getHibernateTemplate().findByExample(instance);
+			List results = getSession().createCriteria(
+					"com.forbes.hibernate.bean.UserDailyPlan").add(
+					Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -124,7 +125,8 @@ public class BaseUserDailyPlanDAO extends HibernateDaoSupport {
 		log.debug("finding all UserDailyPlan instances");
 		try {
 			String queryString = "from UserDailyPlan";
-			return getHibernateTemplate().find(queryString);
+			Query queryObject = getSession().createQuery(queryString);
+			return queryObject.list();
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -147,7 +149,7 @@ public class BaseUserDailyPlanDAO extends HibernateDaoSupport {
 	public void attachDirty(UserDailyPlan instance) {
 		log.debug("attaching dirty UserDailyPlan instance");
 		try {
-			getHibernateTemplate().saveOrUpdate(instance);
+			getSession().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -158,7 +160,7 @@ public class BaseUserDailyPlanDAO extends HibernateDaoSupport {
 	public void attachClean(UserDailyPlan instance) {
 		log.debug("attaching clean UserDailyPlan instance");
 		try {
-			getHibernateTemplate().lock(instance, LockMode.NONE);
+			getSession().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -166,8 +168,4 @@ public class BaseUserDailyPlanDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static BaseUserDailyPlanDAO getFromApplicationContext(
-			ApplicationContext ctx) {
-		return (BaseUserDailyPlanDAO) ctx.getBean("UserDailyPlanDAO");
-	}
 }
