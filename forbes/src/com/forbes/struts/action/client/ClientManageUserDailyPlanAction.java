@@ -169,7 +169,7 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			
 			dailyPlanManager.addDailyPlan(plan);
 
-			return mapping.findForward("list");
+			return mapping.findForward("ok");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return mapping.findForward("fail");
