@@ -219,10 +219,10 @@
 					<TR>
 						<TD class=tellmeNameTd></TD>
 						<TD class=tellmeInputTd>
-							<DIV class=erronotice id=erronotice_container style="DISPLAY: none"></DIV>
-      						<P><INPUT class=confirmBtn id=submit_button type=submit value=确定>
-      						<SPAN><A class=cancelBtn id=cancel_button href="javascript:void(0)">取消</A></SPAN> 
-      						</P>
+							<P>
+								<INPUT class=confirmBtn id=continue_button type=button value=确定> 
+								<INPUT class=confirmBtn id=continue_button type=button value=关闭>
+							</P>
       					</TD>
     					<TD class=inputDesSpanTd></TD>
     				</TR>
