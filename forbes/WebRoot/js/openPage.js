@@ -125,8 +125,9 @@ window.closeDiv = function(){
     alertFram.style.textAlign = ""; 
     alertFram.style.lineHeight = ""; 
     alertFram.style.zIndex = ""; 
-	//alert(self.parent.location);
-	self.location=self.parent.location;
+	alert(self.parent.location);
+	//self.location=self.parent.location;
+	self.parent.location=self.parent.location;
 }
 
 

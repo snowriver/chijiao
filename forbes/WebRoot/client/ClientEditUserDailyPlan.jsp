@@ -31,9 +31,9 @@
 <SCRIPT type="text/javascript" src="../js/jquery/jquery-1.3.2.min.js"></SCRIPT>
 <SCRIPT type="text/javascript" src="../js/jquery/ui.core.js"></SCRIPT>
 <SCRIPT type="text/javascript" src="../js/jquery/ui.datepicker.js"></SCRIPT>
-<SCRIPT type="text/javascript" src="../js/jquery/ui.datepicker-zh-CN.js"></SCRIPT>
   
 <script type="text/javascript" src="../js/jquery/jquery.wysiwyg.js"></script>
+
 
 <script language="javascript" type="text/javascript">
 	
@@ -220,8 +220,8 @@
 						<TD class=tellmeNameTd></TD>
 						<TD class=tellmeInputTd>
 							<P>
-								<INPUT class=confirmBtn id=continue_button type=button value=确定> 
-								<INPUT class=confirmBtn id=continue_button type=button value=关闭>
+								<INPUT class=confirmBtn id=continue_button type=submit value=确定> 
+								<INPUT class=confirmBtn id=continue_button type=button value=关闭 onclick="parent.closeDiv();">
 							</P>
       					</TD>
     					<TD class=inputDesSpanTd></TD>
@@ -230,33 +230,7 @@
 			</TABLE>
 	    	</form>
     	</DIV>
-    </DIV>
-    
-    <DIV class=addBdaySuccessful id=submit_loading style="DISPLAY: none">
-		<DIV class=successBlock>
-			<DIV class=blockTitleDiv2>
-				<DIV class=orderPayOk>保存中...</DIV>
-			</DIV>
-			<DIV class=loading><!----></DIV>
-			<DIV class=payOkDes><!----></DIV>
-		</DIV>
-	</DIV>
-	<DIV></DIV>
-	<DIV class=addBdaySuccessful id=submit_success style="DISPLAY: none">
-		<DIV class=successBlock>
-			<DIV class=blockTitleDiv>
-				<SPAN class=orderPayOk id=submit_success_msg>保存成功!</SPAN> 
-				<DIV class=clear><!----></DIV>
-			</DIV>
-			<DIV class=payOkDes><!----></DIV>
-		</DIV>
-		<DIV class=addBdaySuccessfulBtn>
-			<P>
-				<INPUT class=confirmBtn id=continue_button type=button value=继续添加> 
-				<SPAN><A class=cancelBtn id=close_button href="javascript:void(0)">关闭</A></SPAN> 
-			</P>
-		</DIV>
-	</DIV>
+    </DIV>   
 	
 </DIV>
 
