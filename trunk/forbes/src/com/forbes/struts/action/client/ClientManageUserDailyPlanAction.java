@@ -168,7 +168,9 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			plan.setSn(0);
 			
 			dailyPlanManager.addDailyPlan(plan);
-
+			
+			request.setAttribute("RETURN_URL", "ClientEditUserDailyPlan.jsp");
+			
 			return mapping.findForward("ok");
 		} catch (Exception e) {
 			e.printStackTrace();

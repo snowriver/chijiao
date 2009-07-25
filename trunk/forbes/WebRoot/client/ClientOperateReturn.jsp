@@ -26,10 +26,6 @@
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan_edit.css" />
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan.css" />
 
-
-<SCRIPT type="text/javascript" src="../js/jquery/jquery-1.3.2.min.js"></SCRIPT>
-  
-
 </head>
 <body>
 
@@ -56,8 +52,8 @@
 		</DIV>
 		<DIV class=addBdaySuccessfulBtn>
 			<P>
-				<INPUT class=confirmBtn id=continue_button type=button value=继续添加> 
-				<INPUT class=confirmBtn id=continue_button type=button value=关闭>
+				<INPUT class=confirmBtn id=continue_button type=button value=继续添加 onclick="self.location='${RETURN_URL }'"> 
+				<INPUT class=confirmBtn id=continue_button type=button value=关闭 onclick="window.parent.closeDiv();">
 			</P>
 		</DIV>
 	</DIV>
