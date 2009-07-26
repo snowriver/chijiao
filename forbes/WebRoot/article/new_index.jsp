@@ -376,16 +376,16 @@
 		<H2>热门资讯标签</H2>
 		<DIV class=hotkeys>
 
-			<A href="ArticleSearch.do?act=search&keyword=创业&orderby=pubdate desc" target=_blank><FONT color=#d38f64>创业</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=激情&orderby=pubdate desc" target=_blank><FONT color=#97591c>激情</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=财富&orderby=pubdate desc" target=_blank><FONT color=#dba0bd>财富</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=人生&orderby=pubdate desc" target=_blank><FONT color=#ca1762>人生</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=理财&orderby=pubdate desc" target=_blank><FONT color=#c1cd63>理财</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=职业&orderby=pubdate desc" target=_blank><FONT color=#9732d6>职业</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=规划&orderby=pubdate desc" target=_blank><FONT color=#b12765>规划</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=项目&orderby=pubdate desc" target=_blank><FONT color=#ebc054>项目</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=健康&orderby=pubdate desc" target=_blank><FONT color=#9edd4>健康</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=经济&orderby=pubdate desc" target=_blank><FONT color=#a4535d>经济</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','创业');"><FONT color=#d38f64>创业</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','激情');"><FONT color=#97591c>激情</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','财富');"><FONT color=#dba0bd>财富</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','人生');"><FONT color=#ca1762>人生</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','理财');"><FONT color=#c1cd63>理财</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','职业');"><FONT color=#9732d6>职业</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','规划');"><FONT color=#b12765>规划</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','项目');"><FONT color=#ebc054>项目</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','健康');"><FONT color=#9edd4>健康</FONT></A> 
+			<A href="javascript:void(0);" onclick="getSearchPage('article','经济');"><FONT color=#a4535d>经济</FONT></A> 
 
 	</DIV>
 </DIV>
@@ -476,6 +476,7 @@
 <div id="footer">
         <script language="javascript" type="text/javascript" src="js/foot.js" charset="gb2312"></script>
     </div>
+    <SCRIPT language=javascript src="../js/search.js" type=text/javascript></SCRIPT>
 <!--footer结束-->
 <!--footer结束-->
 </BODY></HTML>
