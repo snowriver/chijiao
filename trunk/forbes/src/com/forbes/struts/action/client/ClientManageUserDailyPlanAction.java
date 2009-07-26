@@ -155,11 +155,14 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			plan.setIsComplete(new Short(isComplete));
 			
 			dailyPlanManager.updateDailyPlan(plan);
+			request.setAttribute("RESULT_MESSAGE", "OK");
 			
 			return mapping.findForward("ok");
 		} catch (Exception e) {
 			e.printStackTrace();
-			return mapping.findForward("fail");
+			request.setAttribute("RESULT_MESSAGE", "FAIL");
+			return mapping.findForward("ok");
+			
 		}
 	}
 
