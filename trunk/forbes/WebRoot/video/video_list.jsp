@@ -242,11 +242,11 @@
 
                 <tr>
                   <td background="#">
-                  	<a href="VideoSearch.do?act=search&keyword=余世维" target="_blank" class="c_grey">余世维</a>&nbsp;&nbsp;
-                  	<a href="VideoSearch.do?act=search&keyword=曾仕强" target="_blank" class="c_grey">曾仕强</a>&nbsp;&nbsp;
-                  	<a href="VideoSearch.do?act=search&keyword=陈安之" target="_blank" class="c_grey">陈安之</a>&nbsp;&nbsp;
-                  	<a href="VideoSearch.do?act=search&keyword=林伟贤" target="_blank" class="c_grey">林伟贤</a>&nbsp;&nbsp;
-                  	<a href="VideoSearch.do?act=search&keyword=马云" target="_blank" class="c_grey">马云</a>&nbsp;&nbsp;</td>
+                  	<a href="javascript:void(0);" onclick="getSearchPage('video','余世维');" class="c_grey">余世维</a>&nbsp;&nbsp;
+                  	<a href="javascript:void(0);" onclick="getSearchPage('video','曾仕强');" class="c_grey">曾仕强</a>&nbsp;&nbsp;
+                  	<a href="javascript:void(0);" onclick="getSearchPage('video','陈安之');" class="c_grey">陈安之</a>&nbsp;&nbsp;
+                  	<a href="javascript:void(0);" onclick="getSearchPage('video','林伟贤');" class="c_grey">林伟贤</a>&nbsp;&nbsp;
+                  	<a href="javascript:void(0);" onclick="getSearchPage('video','马云');" class="c_grey">马云</a>&nbsp;&nbsp;</td>
                 </tr>
             </table></td>
           </tr>
@@ -477,14 +477,14 @@
 
               <td class="c_grey3 rmss">
                	<strong>热门搜索：</strong>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=赢在中国" target="_blank">赢在中国</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=管理" target="_blank">管理</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=执行" target="_blank">执行</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=经理人" target="_blank">经理人</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=领导" target="_blank">领导</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=沟通" target="_blank">沟通</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=成功" target="_blank">成功</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="VideoSearch.do?act=search&keyword=理财" target="_blank">理财</a>              
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="getSearchPage('video','赢在中国');">赢在中国</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="getSearchPage('video','管理');">管理</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="getSearchPage('video','执行');">执行</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="getSearchPage('video','经理人');">经理人</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="getSearchPage('video','领导');">领导</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="getSearchPage('video','沟通');">沟通</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="getSearchPage('video','成功');">成功</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="getSearchPage('video','理财');">理财</a>              
 				</td>
             </tr>
 
@@ -510,4 +510,5 @@
 	<script src="js/zt_foot.js" charset="gb2312"></script>
 	<DIV class=clear></DIV>
 </DIV>
+<SCRIPT language=javascript src="../js/search.js" type=text/javascript></SCRIPT>
 </BODY></HTML>
