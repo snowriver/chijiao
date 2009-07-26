@@ -187,7 +187,9 @@
 		    	<c:forEach items="${USER_PLAN_LIST}" var="plan" varStatus="status">
 				<tr class="onset">
 					<td width="5%"><input type="checkbox" name="delete[]" value="8" /></td>
-					<td width="5%">${status.index + 1 }</td>
+					<td width="5%">
+						${ (PAGER.curPage -1) * 10 + status.index + 1 }
+					</td>
 					<td >
 						<fmt:formatDate value="${plan.startTime}" pattern="HH:mm"/>-
 						<fmt:formatDate value="${plan.endTime}" pattern="HH:mm"/>
@@ -197,7 +199,7 @@
 						<fmt:formatDate value="${plan.limitTime}" pattern="yyyy-MM-dd HH:mm"/>
 					</td>
 					<td >
-						<input name="ww" type="checkbox" value="" />						
+						<input name="iscomplete" type="checkbox" value="${plan.id}" onclick=""/>						
 					</td>
 					<td >${fn:substring(plan.note, 0,15) }</td>
 				</tr>

@@ -39,40 +39,6 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 
 	private DailyPlanManager dailyPlanManager;
 
-	/**
-	 * 客户登錄
-	 * 
-	 * @param mapping
-	 * @param form
-	 * @param request
-	 * @param response
-	 * @return ActionForward
-	 * @throws Exception 
-	 */
-	/*
-	 * public ActionForward add(ActionMapping mapping, ActionForm form,
-	 * HttpServletRequest request, HttpServletResponse response) {
-	 * 
-	 * String id = request.getParameter("id");
-	 * 
-	 * UcMembers user = (UcMembers)request.getSession().getAttribute("CLIENT");
-	 * 
-	 * try{ FavoriteType favoriteType = favoriteManager.getFavoriteType(new
-	 * Short("2"));
-	 * 
-	 * if(favoriteManager.checkFavorite(favoriteType, id)) { Favorite favorite =
-	 * new Favorite(); favorite.setFavoriteType(favoriteType);
-	 * favorite.setUserId(user.getUid());
-	 * favorite.setObjectId(Integer.parseInt(id));
-	 * 
-	 * favoriteManager.addFavorite(favorite);
-	 * request.setAttribute("RESULT_MESSAGE", "添加成功！"); } else {
-	 * request.setAttribute("RESULT_MESSAGE", "您收藏的资讯已经存在！"); }
-	 * 
-	 * 
-	 * return mapping.findForward("add"); }catch( Exception e ){
-	 * e.printStackTrace(); return mapping.findForward("fail"); } }
-	 */
 
 	public ActionForward list(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -170,6 +136,25 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			dailyPlanManager.addDailyPlan(plan);
 			
 			request.setAttribute("RETURN_URL", "ClientEditUserDailyPlan.jsp");
+			
+			return mapping.findForward("return");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return mapping.findForward("fail");
+		}
+	}
+	
+	public ActionForward complete(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String id = request.getParameter("id");
+		String isComplete = request.getParameter("is_complete");
+
+		try {
+			UserDailyPlan plan = dailyPlanManager.getDailyPlan(Integer.parseInt(id));
+			plan.setIsComplete(new Short(isComplete));
+			
+			dailyPlanManager.updateDailyPlan(plan);
 			
 			return mapping.findForward("ok");
 		} catch (Exception e) {

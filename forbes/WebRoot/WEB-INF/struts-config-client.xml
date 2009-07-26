@@ -14,9 +14,9 @@
 	<global-exceptions />
 	
 	<global-forwards />
-  
-	<action-mappings >    	
-    	
+	
+	<action-mappings >
+	
 	<action
       parameter="act"
       path="/client/ClientLogin"
@@ -84,7 +84,7 @@
     	</action>
     	
     	<action
-	    	parameter="act"
+			parameter="act"
       		path="/client/ClientManageAsk"
       		scope="request"
       		type="org.springframework.web.struts.DelegatingActionProxy">
@@ -96,7 +96,7 @@
     	</action>
     	
     	<action
-	    	parameter="act"
+			parameter="act"
       		path="/client/ClientListNewsFeeds"
       		scope="request"
       		type="org.springframework.web.struts.DelegatingActionProxy">
@@ -133,7 +133,8 @@
       		scope="request"
       		type="org.springframework.web.struts.DelegatingActionProxy">
       		<forward name="list" path="/client/ClientListUserDailyPlan.jsp" />
-      		<forward name="ok" path="/client/ClientOperateReturn.jsp" />
+      		<forward name="return" path="/client/ClientOperateReturn.jsp" />
+      		<forward name="ok" path="/client/operate_result.jsp" />
     	</action>
     	
 	</action-mappings>
