@@ -16,10 +16,24 @@
 <link type="text/css" rel="stylesheet" href="css/new_index_style.css" />
 <link type="text/css" rel="stylesheet" href="css/index_top.css" />
  
+<script type="text/javascript">
+		
 
+		function loadLoginBox(){
+¡¡¡¡			var browser=navigator.appName 
+			var b_version=navigator.appVersion 
+			var version=b_version.split(";"); 
+			var trim_Version=version[1].replace(/[ ]/g,""); 
+			
+			if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") { 
+				document.frames('login_iframe').location.reload();
+			}
+			
+		}
+</script>
  
 </head>
-<body onload="document.frames('login_iframe').location.reload();">
+<body onload="loadLoginBox();">
 
 <!--header¿ªÊ¼-->
 <%@ include file="include/header.jsp"%>
