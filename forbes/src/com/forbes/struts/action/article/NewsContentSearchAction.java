@@ -5,6 +5,9 @@
 package com.forbes.struts.action.article;
 
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.actions.DispatchAction;
@@ -80,6 +83,10 @@ public class NewsContentSearchAction extends DispatchAction {
 		String pageNo  = request.getParameter("pno");
 		String id 	   = request.getParameter("id");
 		
+		Map map = new TreeMap();
+		map.put("id", id);
+		map.put("orderby", orderby);
+		request.setAttribute("PARA", map);
 		
 		int iPageNo = 1;
 		try {

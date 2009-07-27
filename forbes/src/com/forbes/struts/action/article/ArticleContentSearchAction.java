@@ -83,6 +83,10 @@ public class ArticleContentSearchAction extends DispatchAction {
 		String pageNo  = request.getParameter("pno");
 		String id 	   = request.getParameter("id");
 		
+		Map map = new TreeMap();
+		map.put("id", id);
+		map.put("orderby", orderby);
+		request.setAttribute("PARA", map);
 		
 		int iPageNo = 1;
 		try {

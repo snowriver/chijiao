@@ -131,7 +131,7 @@ public class ArticleSearchAction extends DispatchAction {
 		String parameter = "keyword=" + ( (keyword==null)?" ":keyword );
 		
 		Map map = new TreeMap();
-		map.put("keyWord", keyword);
+		map.put("keyword", keyword);
 		map.put("orderby", orderby);
 
 		
@@ -182,7 +182,7 @@ public class ArticleSearchAction extends DispatchAction {
 		String parameter = "keyword=" + ( (keyword==null)?" ":keyword );
 		
 		Map map = new TreeMap();
-		map.put("keyWord", keyword);
+		map.put("keyword", keyword);
 		map.put("typeid", typeid);
 		map.put("orderby", orderby);
 
