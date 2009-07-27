@@ -24,4 +24,15 @@ CREATE TABLE `forbes_user_daily_plan` (
   `note` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
-INSERT INTO `forbes_user_daily_plan` VALUES (1,NULL,0,'01:01:01','01:01:01','2009-07-01',NULL,NULL,'2009-07-01',0,NULL);
+
+CREATE TABLE `forbes_user_daily_accredit` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `sn` int(11) unsigned DEFAULT '0' COMMENT 'ÐòºÅ',
+  `title` varchar(255) DEFAULT NULL,
+  `content` text,
+  `limit_time` datetime DEFAULT NULL,
+  `is_complete` tinyint(3) DEFAULT '0',
+  `note` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=gbk;
