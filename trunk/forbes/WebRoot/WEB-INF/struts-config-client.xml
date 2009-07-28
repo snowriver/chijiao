@@ -133,6 +133,7 @@
       		scope="request"
       		type="org.springframework.web.struts.DelegatingActionProxy">
       		<forward name="list" path="/client/ClientListUserDailyPlan.jsp" />
+      		<forward name="get" path="/client/ClientEditUserDailyPlan.jsp" />
       		<forward name="return" path="/client/ClientOperateReturn.jsp" />
       		<forward name="ok" path="/client/operate_result.jsp" />
     	</action>
