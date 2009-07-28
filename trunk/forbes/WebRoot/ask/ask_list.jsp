@@ -21,7 +21,7 @@
   
 		function pageselectCallback(page_id, jq){
 		 
-		  window.location="AskSearch.do?act=search&typeid=${param.typeid}&status=${param.status}&keyword=${param.keyword}&flag=${param.flag}&orderby=${param.orderby}&pno=" + (page_id+1);
+		  window.location="AskSearch.do?act=search&typeid=${PARA['typeid']}&status=${PARA['status']}&keyword=${PARA['keyword']}&flag=${PARA['flag']}&orderby=${PARA['orderby']}&pno=" + (page_id+1);
 	      //$('#Searchresult').text("Showing search results "+((page_id*10)+1)+"-"+((page_id*10)+10));
 	    }
 		

@@ -21,7 +21,7 @@
   
 		function pageselectCallback(page_id, jq){
 		 
-		  window.location="UserView.do?act=answer&uid=${param.uid}&pno=" + (page_id+1);
+		  window.location="UserView.do?act=answer&uid=${PARA['uid']}&pno=" + (page_id+1);
 	      //$('#Searchresult').text("Showing search results "+((page_id*10)+1)+"-"+((page_id*10)+10));
 	    }
 		
