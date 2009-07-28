@@ -25,16 +25,16 @@ public class UcAdminsDAO extends BaseUcAdminsDAO {
 	private static final Log log = LogFactory.getLog(UcAdminsDAO.class);
 	// property constants
 	
-	public int getCount( String keyWord ) {
+	public int getCount( String keyword ) {
 		try {
-			if( keyWord == null ) keyWord = "";
+			if( keyword == null ) keyword = "";
     		
 			String queryString = "SELECT COUNT(*) FROM UcAdmins AS model WHERE model.username LIKE ? ";			
 			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
-			query.setParameter(0, "%" + keyWord + "%" );
+			query.setParameter(0, "%" + keyword + "%" );
 			
 			
 			return Integer.parseInt("" + query.list().get(0));
@@ -43,9 +43,9 @@ public class UcAdminsDAO extends BaseUcAdminsDAO {
 		}
 	}
 	
-	public List findAdminByPage( String keyWord, String orderBy, int beg, int len) {
+	public List findAdminByPage( String keyword, String orderBy, int beg, int len) {
 		try {
-			if( keyWord == null ) keyWord = "";
+			if( keyword == null ) keyword = "";
 			if (orderBy == null || orderBy.equals("")) orderBy = "uid ASC ";
 			
 			String queryString = "SELECT DISTINCT model FROM UcAdmins AS model WHERE " +
@@ -56,7 +56,7 @@ public class UcAdminsDAO extends BaseUcAdminsDAO {
 			//System.out.println("queryString = "+queryString);
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
-			query.setParameter(0, "%" + keyWord + "%" );
+			query.setParameter(0, "%" + keyword + "%" );
 			
 			query.setFirstResult(beg);
 			query.setMaxResults(len);

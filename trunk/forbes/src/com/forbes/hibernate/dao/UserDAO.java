@@ -25,9 +25,9 @@ public class UserDAO extends BaseUserDAO {
 	private static final Log log = LogFactory.getLog(UserDAO.class);
 	// property constants
 	
-	public int getCount(String type, String keyWord) {
+	public int getCount(String type, String keyword) {
 		try {
-			if( keyWord == null ) keyWord = "";
+			if( keyword == null ) keyword = "";
     		
 			String queryString = "SELECT COUNT(*) FROM User AS model WHERE model.deleteFlag = 'N' " +
 								 "AND ( model.loginName LIKE ? OR model.name LIKE ? OR model.email LIKE ? ) ";			
@@ -37,9 +37,9 @@ public class UserDAO extends BaseUserDAO {
 			//System.out.println("queryString = "+queryString);
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
-			query.setParameter(0, "%" + keyWord + "%" );
-			query.setParameter(1, "%" + keyWord + "%" );
-			query.setParameter(2, "%" + keyWord + "%" );
+			query.setParameter(0, "%" + keyword + "%" );
+			query.setParameter(1, "%" + keyword + "%" );
+			query.setParameter(2, "%" + keyword + "%" );
 			
 			return Integer.parseInt("" + query.list().get(0));
 		} catch (RuntimeException re) {
@@ -47,9 +47,9 @@ public class UserDAO extends BaseUserDAO {
 		}
 	}
 	
-	public List findUserByPage(String type, String keyWord, String orderBy, int beg, int len) {
+	public List findUserByPage(String type, String keyword, String orderBy, int beg, int len) {
 		try {
-			if( keyWord == null ) keyWord = "";
+			if( keyword == null ) keyword = "";
 			if (orderBy == null || orderBy.equals("")) orderBy = "id DESC ";
 			
 			String queryString = "SELECT DISTINCT model FROM User AS model WHERE model.deleteFlag = 'N' " +
@@ -61,9 +61,9 @@ public class UserDAO extends BaseUserDAO {
 			//System.out.println("queryString = "+queryString);
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
-			query.setParameter(0, "%" + keyWord + "%" );
-			query.setParameter(1, "%" + keyWord + "%" );
-			query.setParameter(2, "%" + keyWord + "%" );
+			query.setParameter(0, "%" + keyword + "%" );
+			query.setParameter(1, "%" + keyword + "%" );
+			query.setParameter(2, "%" + keyword + "%" );
 			query.setFirstResult(beg);
 			query.setMaxResults(len);
 			return query.list();
