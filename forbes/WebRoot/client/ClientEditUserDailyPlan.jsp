@@ -84,19 +84,20 @@
 	  	</DIV>
 	  	
 	  	<DIV class=blockNoBorder>
-	  		<form name="planForm" method="post" action="ClientManageUserDailyPlan.do?act=add" onsubmit="Check();return false;">
+	  		<form name="planForm" method="post" action="ClientManageUserDailyPlan.do?act=edit" onsubmit="Check();return false;">
+			<INPUT type=hidden id=id name=id value="${USER_DETAILY_PLAN.id }">
 			<TABLE class=tellmeTable>
 	  			<TBODY>
 	  				<TR>
 					    <TD class=tellmeNameTd id=name_title_caption>事项标题:</TD>
-					    <TD class=tellmeInputTd><INPUT class=importInput id=title name=title></TD>
+					    <TD class=tellmeInputTd><INPUT class=importInput id=title name=title value="${USER_DETAILY_PLAN.title }"></TD>
 					    <TD class=inputDesSpanTd><SPAN class=inputDesSpan id=inputTitle>必填</SPAN></TD>
 					</TR>
 	  				<TR id=sex_form_row>
 					    <TD class=tellmeNameTd>日期:</TD>
 					    <TD class=tellmeInputTd>
 					    	<UL>
-					        	<LI><INPUT class="importInput2" id=date name=date value="${DATE }" readonly></LI>				       		
+					        	<LI><INPUT class="importInput2" id=date name=date value="${USER_DETAILY_PLAN.date }" readonly></LI>				       		
 					       	</UL>
 					 	</TD>
 					    <TD class=inputDesSpanTd></TD>
@@ -213,7 +214,7 @@
 				    <TR>
 					    <TD class=tellmeNameTd>详细内容:</TD>
 					    <TD colspan="2">
-					    	<textarea id="content" name="content" rows="11" cols="90"></textarea> 
+					    	<textarea id="content" name="content" rows="11" cols="90">${USER_DETAILY_PLAN.content }</textarea> 
 					 	</TD>					 
 					</TR>
 					<TR>
