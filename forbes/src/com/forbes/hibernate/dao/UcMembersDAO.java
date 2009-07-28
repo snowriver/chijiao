@@ -54,17 +54,17 @@ public class UcMembersDAO extends BaseUcMembersDAO {
 	}
 	
 	
-	public int getCount( String keyWord ) {
+	public int getCount( String keyword ) {
 		try {
-			if( keyWord == null ) keyWord = "";
+			if( keyword == null ) keyword = "";
     		
 			String queryString = "SELECT COUNT(*) FROM UcMembers AS model WHERE ( model.username LIKE ? OR model.email LIKE ? ) ";			
 			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
-			query.setParameter(0, "%" + keyWord + "%" );
-			query.setParameter(1, "%" + keyWord + "%" );
+			query.setParameter(0, "%" + keyword + "%" );
+			query.setParameter(1, "%" + keyword + "%" );
 			
 			
 			return Integer.parseInt("" + query.list().get(0));
@@ -73,9 +73,9 @@ public class UcMembersDAO extends BaseUcMembersDAO {
 		}
 	}
 	
-	public List findUserByPage( String keyWord, String orderBy, int beg, int len) {
+	public List findUserByPage( String keyword, String orderBy, int beg, int len) {
 		try {
-			if( keyWord == null ) keyWord = "";
+			if( keyword == null ) keyword = "";
 			if (orderBy == null || orderBy.equals("")) orderBy = "id DESC ";
 			
 			String queryString = "SELECT DISTINCT model FROM UcMembers AS model WHERE " +
@@ -86,8 +86,8 @@ public class UcMembersDAO extends BaseUcMembersDAO {
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			
-			query.setParameter(0, "%" + keyWord + "%" );
-			query.setParameter(1, "%" + keyWord + "%" );
+			query.setParameter(0, "%" + keyword + "%" );
+			query.setParameter(1, "%" + keyword + "%" );
 			
 			query.setFirstResult(beg);
 			query.setMaxResults(len);
