@@ -118,7 +118,7 @@ public class ClientListNewsFeedsAction extends DispatchAction {
 		String msgType  = request.getParameter("mtype");
 		String startTime  = request.getParameter("st");
 		String endTime  = request.getParameter("et");
-		String keyWord  = request.getParameter("key");
+		String keyword  = request.getParameter("key");
 		
 		//System.out.println("----------utype:" + userType);
 		
@@ -132,7 +132,7 @@ public class ClientListNewsFeedsAction extends DispatchAction {
 		Pager pager = new Pager();
 		pager.setCntOfPage( this.cntOfPage );
 		pager.setCurPage( iPageNo );
-		List <NfMsgRelationship> newsFeedList = newsFeedManager.searchNewsFeedByPage(userId, msgType, startTime, endTime, keyWord, pager);
+		List <NfMsgRelationship> newsFeedList = newsFeedManager.searchNewsFeedByPage(userId, msgType, startTime, endTime, keyword, pager);
 		request.setAttribute("MSG_LIST", newsFeedList );
 		request.setAttribute("PAGER", pager );
 		return mapping.findForward("search");
