@@ -28,7 +28,9 @@ CREATE TABLE `forbes_user_daily_plan` (
 CREATE TABLE `forbes_user_daily_accredit` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned DEFAULT NULL,
+  `date` date DEFAULT NULL,
   `sn` int(11) unsigned DEFAULT '0' COMMENT 'ÐòºÅ',
+  `receiver` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `content` text,
   `limit_time` datetime DEFAULT NULL,
