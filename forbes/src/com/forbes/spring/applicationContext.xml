@@ -119,6 +119,7 @@
 				<value>com/forbes/hibernate/hbm/FeedBack.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/Bulletin.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserDailyPlan.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/UserDailyAccredit.hbm.xml</value>
 			</list>
 		</property></bean>
 	
@@ -421,4 +422,9 @@
     	</property>
     </bean>
 	
-</beans>
+    <bean id="UserDailyAccreditDAO"
+    	class="com.forbes.hibernate.dao.UserDailyAccreditDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean></beans>

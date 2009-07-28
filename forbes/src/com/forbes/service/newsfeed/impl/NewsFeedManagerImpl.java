@@ -101,15 +101,15 @@ public class NewsFeedManagerImpl implements NewsFeedManager{
 		}
 	}
 	public  List <NfMsgRelationship> searchNewsFeedByPage( String userId, String msgType, 
-			String startTime,String endTime ,String keyWord, Pager pager){
+			String startTime,String endTime ,String keyword, Pager pager){
 		try{
 			if( msgType != null ){
 				msgType = msgType.replaceAll("_", ",");
 			}
 			
-			pager.setTotoalCnt( nfMsgRelationshipDAO.getCount(userId, msgType, startTime,endTime,keyWord) );
+			pager.setTotoalCnt( nfMsgRelationshipDAO.getCount(userId, msgType, startTime,endTime,keyword) );
 			List <NfMsgRelationship> newsFeedList = nfMsgRelationshipDAO.searchMsgByPage(
-					userId, msgType, startTime,endTime,keyWord, (pager.getCurPage()-1) * pager.getCntOfPage(),pager.getCntOfPage() );
+					userId, msgType, startTime,endTime,keyword, (pager.getCurPage()-1) * pager.getCntOfPage(),pager.getCntOfPage() );
 			for(NfMsgRelationship msgRs : newsFeedList){
 				try{
 					msgRs.setViewTimes( (short)(msgRs.getViewTimes().intValue() + 1) );

@@ -43,10 +43,10 @@ public class OrderServiceManagerImpl implements OrderServiceManager {
 		return orderServiceDAO.findByActive("Y");
 	}
 	
-	public List getOrderServiceByPage( Pager pager, int pageNo, String type, String keyWord, String orderBy ) throws ForbesException{
+	public List getOrderServiceByPage( Pager pager, int pageNo, String type, String keyword, String orderBy ) throws ForbesException{
 		try {			
-			pager.setTotoalCnt(orderServiceDAO.getCount(type, keyWord));
-			List list = orderServiceDAO.findOrderServiceByPage( type, keyWord, orderBy, 
+			pager.setTotoalCnt(orderServiceDAO.getCount(type, keyword));
+			List list = orderServiceDAO.findOrderServiceByPage( type, keyword, orderBy, 
 					(pageNo - 1) * pager.getCntOfPage(), pager.getCntOfPage());			
 			return list;
 		} catch (Exception se) {

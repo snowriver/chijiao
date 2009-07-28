@@ -25,6 +25,6 @@ public interface OrderServiceManager {
 	
 	public List listOrderService();
 	
-	public List getOrderServiceByPage( Pager pager, int pageNo, String type, String keyWord, String orderBy ) throws ForbesException;
+	public List getOrderServiceByPage( Pager pager, int pageNo, String type, String keyword, String orderBy ) throws ForbesException;
 	
 }
