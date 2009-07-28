@@ -15,15 +15,10 @@ import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
-import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
 import com.forbes.hibernate.bean.UcMembers;
-import com.forbes.hibernate.bean.UserDailyPlan;
+import com.forbes.hibernate.bean.UserDailyAccredit;
 import com.forbes.service.plan.DailyAccreditManager;
-import com.forbes.service.plan.DailyPlanManager;
 import com.forbes.util.Pager;
-import com.forbes.util.UrlTool;
 
 /**
  * MyEclipse Struts Creation date: 07-09-2007
@@ -96,7 +91,7 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 			pager.setCntOfPage(10);
 			pager.setCurPage(iPageNo);
 
-			List plans = dailyAccreditManager.getDailyPlanByPage(pager, iPageNo,
+			List plans = dailyAccreditManager.getDailyAccreditByPage(pager, iPageNo,
 					user.getUid().toString(), date, iscomplete, keyword,
 					orderby);
 
@@ -108,6 +103,28 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return mapping.findForward("fail");
+		}
+	}
+	
+	public ActionForward complete(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String id = request.getParameter("id");
+		String isComplete = request.getParameter("is_complete");
+
+		try {
+			UserDailyAccredit accredit = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
+			accredit.setIsComplete(new Short(isComplete));
+			
+			dailyAccreditManager.updateDailyAccredit(accredit);
+			request.setAttribute("RESULT_MESSAGE", "OK");
+			
+			return mapping.findForward("ok");
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("RESULT_MESSAGE", "FAIL");
+			return mapping.findForward("ok");
+			
 		}
 	}
 
@@ -135,7 +152,7 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 		SimpleDateFormat fullFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 		try {
-			UserDailyPlan plan = new UserDailyPlan();
+			UserDailyAccredit plan = new UserDailyAccredit();
 			plan.setUserId(user.getUid());
 			plan.setDate(dateFormatter.parse(date));
 			plan.setTitle(title);
@@ -146,9 +163,9 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 			plan.setIsComplete(new Short(isComplete));
 			plan.setSn(0);
 			
-			dailyAccreditManager.addDailyPlan(plan);
+			dailyAccreditManager.addDailyAccredit(plan);
 			
-			request.setAttribute("RETURN_URL", "ClientAddUserDailyPlan.jsp");
+			request.setAttribute("RETURN_URL", "ClientAddUserDailyAccredit.jsp");
 			
 			return mapping.findForward("return");
 		} catch (Exception e) {
@@ -179,7 +196,7 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 		SimpleDateFormat fullFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 		try {
-			UserDailyPlan plan = dailyAccreditManager.getDailyPlan(Integer.parseInt(id));
+			UserDailyAccredit plan = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
 			plan.setDate(dateFormatter.parse(date));
 			plan.setTitle(title);
 			plan.setContent(content);
@@ -189,36 +206,14 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 			plan.setIsComplete(new Short(isComplete));
 			plan.setSn(0);
 			
-			dailyAccreditManager.updateDailyPlan(plan);
+			dailyAccreditManager.updateDailyAccredit(plan);
 			
-			request.setAttribute("RETURN_URL", "ClientManageUserDailyPlan.do?act=edit&id="+id);
+			request.setAttribute("RETURN_URL", "ClientManageUserDailyAccredit.do?act=edit&id="+id);
 			
 			return mapping.findForward("return");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return mapping.findForward("fail");
-		}
-	}
-	
-	public ActionForward complete(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		String id = request.getParameter("id");
-		String isComplete = request.getParameter("is_complete");
-
-		try {
-			UserDailyPlan plan = dailyAccreditManager.getDailyPlan(Integer.parseInt(id));
-			plan.setIsComplete(new Short(isComplete));
-			
-			dailyAccreditManager.updateDailyPlan(plan);
-			request.setAttribute("RESULT_MESSAGE", "OK");
-			
-			return mapping.findForward("ok");
-		} catch (Exception e) {
-			e.printStackTrace();
-			request.setAttribute("RESULT_MESSAGE", "FAIL");
-			return mapping.findForward("ok");
-			
 		}
 	}
 
@@ -233,8 +228,8 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 			for(int i=0; i<planIDs.length; i++) {
 				id = planIDs[i];
 				System.out.println(id);
-				UserDailyPlan plan = dailyAccreditManager.getDailyPlan(Integer.parseInt(id));
-				dailyAccreditManager.deleteDailyPlan(plan);
+				UserDailyAccredit plan = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
+				dailyAccreditManager.deleteDailyAccredit(plan);
 			}
 			request.setAttribute("RESULT_MESSAGE", "OK");
 			return mapping.findForward("ok");
@@ -251,7 +246,7 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 		String id = request.getParameter("id");
 
 		try {
-			UserDailyPlan plan = dailyAccreditManager.getDailyPlan(Integer.parseInt(id));
+			UserDailyAccredit plan = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
 			request.setAttribute("USER_DETAILY_PLAN", plan);
 			return mapping.findForward("get");
 		}catch( Exception e ){
