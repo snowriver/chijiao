@@ -7,9 +7,10 @@
 <%
 	UcMembers ucMembers = (UcMembers)request.getSession().getAttribute("CLIENT");
 	String date = request.getParameter("date");
-	if(date == null) {
+	System.out.println(date);
+	if(date == null || date.length() < 1) {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		date   = df.format(new Date()) ;
+		date   = df.format(new Date()) ;		
 	}
 	com.forbes.ajax.UserPlanCount upc = new com.forbes.ajax.UserPlanCount();
 	request.setAttribute("USER_DAILY_PLAN_COUNT", upc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
@@ -36,7 +37,7 @@
 	
 		function pageselectCallback(page_id, jq){
 		
-		  window.location="ClientManageUserDailyPlan.do?act=list&keyword=${param.keyword}&iscomplete=${param.iscomplete}&date=${param.date}&orderby=${param.orderby}&pno=" + (page_id+1);
+		  window.location="ClientManageUserDailyPlan.do?act=list&keyword=${PARA['keyword']}&iscomplete=${PARA['iscomplete']}&date=${PARA['date']}&orderby=${PARA['orderby']}&pno=" + (page_id+1);
 	      //$('#Searchresult').text("Showing search results "+((page_id*10)+1)+"-"+((page_id*10)+10));
 	    }
 		
@@ -52,12 +53,16 @@
 			}
 		);
   
-	  	function CheckAll(form)  {
-			for (var i=0;i<form.elements.length;i++) {
+	  	function checkall(form, prefix, checkall) {
+			var checkall = checkall ? checkall : 'chkall';
+		
+			for(var i = 0; i < form.elements.length; i++) {
 				var e = form.elements[i];
-	    		if (e.name != 'chkall') e.checked = form.chkall.checked; 
-	   		}
-	  	}
+				if(e.name && e.name != checkall && (!prefix || (prefix && e.name.match(prefix)))) {
+					e.checked = form.elements[checkall].checked;
+				}
+			}
+		}
 	  	
 	  	function Check(form) {
 	  		var flag = false;
@@ -72,28 +77,80 @@
 			}
 		}
 		
-		function deleteArticleFavorite(fid, pid){
+		function deletePlan(){
+			var plans = getCheckboxItem();
+			if(plans == '') {
+				alert("请选择其中一个计划！");
+			}
+			else {
 				$.ajax({
 					beforeSend: function(){
-				     $("#RESULTE_MSG").html("删除中...");
-				   },
-					url: 'ClientManageArticleFavorite.do',
+						//$("#RESULTE_MSG").html("删除中...");
+					},
+					url: 'ClientManageUserDailyPlan.do',
 					type: 'post',
 					dataType: 'html',
-					data:"act=delete&id=" + fid,
+					data:"act=delete&planID=" + plans,
 					timeout: 10000,
 					error: function(){
 						//alert('System error');
 						alert("删除失败");
 					},
 					success: function(rsHtml){
-						//alert("删除成功!");
-						pageselectCallback(pid, "jq");
-						
+						var code = (rsHtml).replace(/(^\s*)|(\s*$)/g, "");
+						if(code == 'OK') {
+							location.reload();
+						}
+						else {
+							alert("删除失败，请稍后再试！");
+						}
 					}
 				});
 			}
+		}
+		
+		function completePlan(id){
+			var iscomplete = $("#iscomplete_"+id).val();
+			var data = "act=complete&id=" + id;
+			if(iscomplete == 0) {
+				data = data + "&is_complete=1"
+			}
+			else {
+				data = data + "&is_complete=0"
+			}
+			$.ajax({
+				beforeSend: function(){
+					//$("#RESULTE_MSG").html("完成中...");
+				},
+				url: 'ClientManageUserDailyPlan.do',
+				type: 'post',
+				dataType: 'html',
+				data:data,
+				timeout: 10000,
+				error: function(){
+					//alert('System error');
+					alert("设置失败");
+				},
+				success: function(rsHtml){
+					//alert(rsHtml);				
+				}
+			});
+		}
 
+		
+		function getCheckboxItem() {
+			var allSel="";
+			if(document.form2.planID.value) return document.form2.planID.value;
+			for(i=0;i<document.form2.planID.length;i++) {
+				if(document.form2.planID[i].checked) {
+					if(allSel=="")
+						allSel=document.form2.planID[i].value;
+					else
+						allSel=allSel+"`"+document.form2.planID[i].value;
+				}
+			}
+			return allSel;	
+		}
 </script>
 </head>
 <body>
@@ -118,50 +175,20 @@
 	<div id="append"></div>
 <div class="ucbody">
 	<h1>今日计划[${PARA['date'] }]</h1>
-	<script type="text/javascript">
-		function checkall(form, prefix, checkall) {
-			var checkall = checkall ? checkall : 'chkall';
-			for(var i = 0; i < form.elements.length; i++) {
-				var e = form.elements[i];
-				if(e.name && e.name != checkall && (!prefix || (prefix && e.name.match(prefix)))) {
-					e.checked = form.elements[checkall].checked;
-				}
-			}
-		}
-
-		function toggle_collapse(objname, ctrlobj) {
-			var obj = document.getElementById(objname);
-			if(obj.style.display == '') {
-				obj.style.display = 'none';
-				ctrlobj.innerHTML = '<img src="images/default/spread.gif" />';
-			} else {
-				obj.style.display = '';
-				ctrlobj.innerHTML = '<img src="images/default/shrink.gif" />';
-			}
-		}
-
-		function ctlent(event) {
-			if((event.ctrlKey && event.keyCode == 13) || (event.altKey && event.keyCode == 83)) {
-				document.getElementById('postpmform').saveoutbox.value = 0;
-				document.getElementById('postpmform').submit();
-			}
-		}
-	</script>
-	
+		
 	<div class="ucnav">
 		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
 		<a href="index.php?m=pm_client&a=ls&folder=inbox&filter=announcepm">今日授权[1]</a>
 		<a href="index.php?m=pm_client&a=ls&folder=outbox">今日反省[1]</a>
 		
-
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
-			<strong><a href="javascript:void(0);" onclick="openPage('添加今日事项','ClientEditUserDailyPlan.jsp', '15', '0', '700','550');">添加今日事项</a></strong> 
+			<strong><a href="javascript:void(0);" onclick="openPage('添加今日事项','ClientAddUserDailyPlan.jsp', '15', '0', '700','550');">添加今日事项</a></strong> 
 		</span>
 	</div>
 	
 	<div>
-		<form method="post" action="index.php?m=pm_client&a=delete&folder=inbox&filter=&extra=page%3D">
+		<form method="post" name="form2" action="index.php?m=pm_client&a=delete&folder=inbox&filter=&extra=page%3D">
 			
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
 				<tbody>
@@ -186,7 +213,7 @@
 		    	
 		    	<c:forEach items="${USER_PLAN_LIST}" var="plan" varStatus="status">
 				<tr class="onset">
-					<td width="5%"><input type="checkbox" name="delete[]" value="8" /></td>
+					<td width="5%"><input type="checkbox" name="planID" value="${plan.id}" /></td>
 					<td width="5%">
 						${ (PAGER.curPage -1) * 10 + status.index + 1 }
 					</td>
@@ -194,12 +221,12 @@
 						<fmt:formatDate value="${plan.startTime}" pattern="HH:mm"/>-
 						<fmt:formatDate value="${plan.endTime}" pattern="HH:mm"/>
 					</td>
-					<td >${fn:substring(plan.title, 0,30) }</td>
+					<td ><a href="javascript:void(0)" onclick="openPage('修改今日事项','ClientManageUserDailyPlan.do?act=get&id=${plan.id }', '15', '0', '700','550');">${fn:substring(plan.title, 0,30) }</a></td>
 					<td >
 						<fmt:formatDate value="${plan.limitTime}" pattern="yyyy-MM-dd HH:mm"/>
 					</td>
 					<td >
-						<input name="iscomplete" type="checkbox" value="${plan.id}" onclick=""/>						
+						<input id="iscomplete_${plan.id}" name="iscomplete_${plan.id}" type="checkbox" value="${plan.isComplete}" onclick="completePlan(${plan.id});" <c:if test="${plan.isComplete == 1}">checked</c:if> />						
 					</td>
 					<td >${fn:substring(plan.note, 0,15) }</td>
 				</tr>
@@ -209,8 +236,8 @@
 				</tbody>
 				<tfoot>
 				<tr >
-					<td ><input type="checkbox" onclick="checkall(this.form, 'delete')" /></td>
-					<td ><button onclick="this.form.pmsend.click()" type="button">删除</button></td>
+					<td ><input name="chkall" type="checkbox" onclick="checkall(this.form, 'planID')" /></td>
+					<td ><button onclick="deletePlan();" type="button">删除</button></td>
 					<td ></td>
 					<td >
 						<div class="pagescroll">
