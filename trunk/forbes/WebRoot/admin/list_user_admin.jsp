@@ -159,7 +159,7 @@
 		</td> 
     	<td> 
 	   		<a href='sys_admin_user_edit.php?ID=1&dopost=edit'><u>更改</u></a> | 
-     		<a href="#" onclick="return deleteConfirm('AdminUpdateUser.do?act=deladmin&id=${user.uid}','|AdminListUser.do|act=admin|pno=${PAGER.curPage}|keyWord=${PARA['keyWord'] }|','此操作 无法恢复！！！请慎重！！！\n\n确定要删除该用户吗？');"><u>删除</u></a> |
+     		<a href="#" onclick="return deleteConfirm('AdminUpdateUser.do?act=deladmin&id=${user.uid}','|AdminListUser.do|act=admin|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|','此操作 无法恢复！！！请慎重！！！\n\n确定要删除该用户吗？');"><u>删除</u></a> |
      		<a href='content_list.php?adminid=1'><u>文档</u></a> |
      		<a href='sys_admin_user_tj.php?ID=1'><u>详细统计</u></a>　　
     	</td> 
