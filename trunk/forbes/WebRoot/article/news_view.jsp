@@ -56,11 +56,7 @@
 				}
 			});
 		}
-		//function pageselectCallback(page_id, jq){
-			//window.location="ClientListMessage.do?act=receiveMessage&pno=" + (page_id+1);
-			//$('#Searchresult').text("Showing search results "+((page_id*10)+1)+"-"+((page_id*10)+10));
-  		//}
-  		
+
   		function listLoginForm(){
 			$.ajax({
 				url: 'login_form.jsp',
