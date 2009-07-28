@@ -15,10 +15,14 @@ import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+
+import com.forbes.hibernate.bean.Article;
+import com.forbes.hibernate.bean.Content;
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.hibernate.bean.UserDailyPlan;
 import com.forbes.service.plan.DailyPlanManager;
 import com.forbes.util.Pager;
+import com.forbes.util.UrlTool;
 
 /**
  * MyEclipse Struts Creation date: 07-09-2007
@@ -135,7 +139,50 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			
 			dailyPlanManager.addDailyPlan(plan);
 			
-			request.setAttribute("RETURN_URL", "ClientEditUserDailyPlan.jsp");
+			request.setAttribute("RETURN_URL", "ClientAddUserDailyPlan.jsp");
+			
+			return mapping.findForward("return");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return mapping.findForward("fail");
+		}
+	}
+	
+	public ActionForward edit(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String id = request.getParameter("id");
+		String title = request.getParameter("title");
+		String date = request.getParameter("date");
+		String limitTime = request.getParameter("limit_time");
+		String startTimeHh = request.getParameter("start_time_hh");
+		String startTimeMm = request.getParameter("start_time_mm");
+		
+		String endTimeHh = request.getParameter("end_time_hh");
+		String endTimeMm = request.getParameter("end_time_mm");
+		
+		String content = request.getParameter("content");
+		String isComplete = request.getParameter("is_complete");
+		
+		
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
+		SimpleDateFormat fullFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+		try {
+			UserDailyPlan plan = dailyPlanManager.getDailyPlan(Integer.parseInt(id));
+			plan.setDate(dateFormatter.parse(date));
+			plan.setTitle(title);
+			plan.setContent(content);
+			plan.setStartTime(timeFormatter.parse(startTimeHh +":" + startTimeMm +":00"));
+			plan.setEndTime(timeFormatter.parse(endTimeHh +":" + endTimeMm +":00"));
+			plan.setLimitTime(fullFormatter.parse(limitTime));
+			plan.setIsComplete(new Short(isComplete));
+			plan.setSn(0);
+			
+			dailyPlanManager.updateDailyPlan(plan);
+			
+			request.setAttribute("RETURN_URL", "ClientManageUserDailyPlan.do?act=edit&id="+id);
 			
 			return mapping.findForward("return");
 		} catch (Exception e) {
@@ -174,4 +221,42 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 		this.dailyPlanManager = dailyPlanManager;
 	}
 
+	public ActionForward delete(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		//String returnUrl = request.getParameter("returnUrl");
+		String planID     = request.getParameter("planID");
+		String id = ""; //`
+		System.out.println(planID);
+		String planIDs [] = planID.split("`");
+		try {
+			for(int i=0; i<planIDs.length; i++) {
+				id = planIDs[i];
+				System.out.println(id);
+				UserDailyPlan plan = dailyPlanManager.getDailyPlan(Integer.parseInt(id));
+				dailyPlanManager.deleteDailyPlan(plan);
+			}
+			request.setAttribute("RESULT_MESSAGE", "OK");
+			return mapping.findForward("ok");
+		}catch( Exception e ){
+			e.printStackTrace();
+			request.setAttribute("RESULT_MESSAGE", "FAIL");
+			return mapping.findForward("ok");
+		}
+	}
+	
+	public ActionForward get(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		//String returnUrl = request.getParameter("returnUrl");
+		String id = request.getParameter("id");
+
+		try {
+			UserDailyPlan plan = dailyPlanManager.getDailyPlan(Integer.parseInt(id));
+			request.setAttribute("USER_DETAILY_PLAN", plan);
+			return mapping.findForward("get");
+		}catch( Exception e ){
+			e.printStackTrace();
+			request.setAttribute("RESULT_MESSAGE", "FAIL");
+			return mapping.findForward("ok");
+		}
+	}
 }
