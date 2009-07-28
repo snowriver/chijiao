@@ -38,7 +38,7 @@
 	
 		function pageselectCallback(page_id, jq){
 		
-		  window.location="ClientManageUserDailyPlan.do?act=list&keyword=${PARA['keyword']}&iscomplete=${PARA['iscomplete']}&date=${PARA['date']}&orderby=${PARA['orderby']}&pno=" + (page_id+1);
+		  window.location="ClientManageUserDailyAccredit.do?act=list&keyword=${PARA['keyword']}&iscomplete=${PARA['iscomplete']}&date=${PARA['date']}&orderby=${PARA['orderby']}&pno=" + (page_id+1);
 	      //$('#Searchresult').text("Showing search results "+((page_id*10)+1)+"-"+((page_id*10)+10));
 	    }
 		
@@ -178,13 +178,13 @@
 	<h1>今日计划[${PARA['date'] }]</h1>
 		
 	<div class="ucnav">
-		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
-		<a href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
+		<a href="ClientManageUserDailyPlan.do?act=list">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
+		<a class="ucontype" href="javascript:void(0);">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
 		<a href="index.php?m=pm_client&a=ls&folder=outbox">今日反省[1]</a>
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
-			<strong><a href="javascript:void(0);" onclick="openPage('添加今日事项','ClientAddUserDailyPlan.jsp', '15', '0', '700','550');">添加今日事项</a></strong> 
+			<strong><a href="javascript:void(0);" onclick="openPage('添加今日授权','ClientAddUserDailyPlan.jsp', '15', '0', '700','550');">添加今日事项</a></strong> 
 		</span>
 	</div>
 	
@@ -194,13 +194,13 @@
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
 				<tbody>
 				
-				<c:if test="${empty USER_PLAN_LIST}">
+				<c:if test="${empty USER_ACCREDIT_LIST}">
 		    		<tr class="onset">
 		    			<TD colspan="5" align="center">您还没有写今日计划！</TD>
 		    		</tr>
 		    	</c:if>
 		    	
-		    	<c:if test="${not empty USER_PLAN_LIST}">
+		    	<c:if test="${not empty USER_ACCREDIT_LIST}">
 		   		<tr align="center" style="font-weight:bold">
 					<td width="5%"></td>
 					<td width="5%">序号</td>
@@ -212,7 +212,7 @@
 				</tr>
 				
 		    	
-		    	<c:forEach items="${USER_PLAN_LIST}" var="plan" varStatus="status">
+		    	<c:forEach items="${USER_ACCREDIT_LIST}" var="accredit" varStatus="status">
 				<tr class="onset">
 					<td width="5%"><input type="checkbox" name="planID" value="${plan.id}" /></td>
 					<td width="5%">

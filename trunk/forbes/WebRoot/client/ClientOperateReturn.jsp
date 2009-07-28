@@ -30,7 +30,6 @@
 <body>
 
 <DIV class="ucbody">
-	
 	    
     <DIV class=addBdaySuccessful id=submit_loading style="DISPLAY: none">
 		<DIV class=successBlock>
