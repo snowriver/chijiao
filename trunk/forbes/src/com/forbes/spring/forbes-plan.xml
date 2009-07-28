@@ -9,6 +9,11 @@
 			<ref bean="UserDailyPlanDAO" />
 		</property>
 	</bean>
+	<bean id="dailyAccreditManager" class="com.forbes.service.plan.impl.DailyAccreditManagerImpl">
+		<property name="userDailyAccreditDAO">
+			<ref bean="UserDailyAccreditDAO" />
+		</property>
+	</bean>
 	
 	<!-- -->	
 	<bean id="dailyPlanManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
@@ -23,6 +28,19 @@
 				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
 			</props>
 		</property>
+	</bean>
+	<bean id="dailyAccreditManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="dailyAccreditManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
 	</bean>	
 	
 	
@@ -31,7 +49,11 @@
 			<ref bean="dailyPlanManagerService" />
 		</property>
 	</bean>
-	
+	<bean name="/client/ClientManageUserDailyAccredit" class="com.forbes.struts.action.client.ClientManageUserDailyAccreditAction" singleton="false">
+		<property name="dailyAccreditManager">
+			<ref bean="dailyAccreditManagerService" />
+		</property>
+	</bean>
 
 
 </beans>

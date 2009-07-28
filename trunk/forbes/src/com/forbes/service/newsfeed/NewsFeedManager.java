@@ -12,7 +12,7 @@ public interface NewsFeedManager {
 	public List <NfMsgRelationship> getRecentNewsFeed( String userId, String msgType );
 	public  List <NfMsgRelationship> getNewsFeedByPage( String userId, String msgType, Pager pager );
 	public  List <NfMsgRelationship> searchNewsFeedByPage( String userId, String msgType, 
-			String startTime,String endTime ,String keyWord, Pager pager);
+			String startTime,String endTime ,String keyword, Pager pager);
 	public int getCount( String userId, String msgType );
 	public int getNotViewCount( String userId, String msgType );
 	public NfMsgRelationshipDAO getNfMsgRelationshipDAO();

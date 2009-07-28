@@ -30,9 +30,9 @@ public interface UserInfoManager {
 
 	public void setUserDetailDAO(UserDetailDAO userDetailDAO);
 	
-	public List getUserByPage( Pager pager, int pageNo, String keyWord, String orderBy ) throws ForbesException;
+	public List getUserByPage( Pager pager, int pageNo, String keyword, String orderBy ) throws ForbesException;
 	
-	public List getAdminByPage( Pager pager, int pageNo, String keyWord, String orderBy ) throws ForbesException;
+	public List getAdminByPage( Pager pager, int pageNo, String keyword, String orderBy ) throws ForbesException;
 	
 	public List getUser( int begin, int length ) throws ForbesException;
 	

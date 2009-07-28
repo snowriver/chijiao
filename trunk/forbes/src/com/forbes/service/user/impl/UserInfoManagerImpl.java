@@ -56,10 +56,10 @@ public class UserInfoManagerImpl implements UserInfoManager {
 		this.userDetailDAO = userDetailDAO;
 	}
 	
-	public List getUserByPage( Pager pager, int pageNo, String keyWord, String orderBy ) throws ForbesException{
+	public List getUserByPage( Pager pager, int pageNo, String keyword, String orderBy ) throws ForbesException{
 		try {			
-			pager.setTotoalCnt(ucMembersDAO.getCount(keyWord));
-			List list = ucMembersDAO.findUserByPage( keyWord, orderBy, (pageNo - 1) * pager.getCntOfPage(), pager.getCntOfPage());			
+			pager.setTotoalCnt(ucMembersDAO.getCount(keyword));
+			List list = ucMembersDAO.findUserByPage( keyword, orderBy, (pageNo - 1) * pager.getCntOfPage(), pager.getCntOfPage());			
 			return list;
 		} catch (Exception se) {
 			se.printStackTrace();
@@ -67,10 +67,10 @@ public class UserInfoManagerImpl implements UserInfoManager {
 		}
 	}
 	
-	public List getAdminByPage( Pager pager, int pageNo, String keyWord, String orderBy ) throws ForbesException{
+	public List getAdminByPage( Pager pager, int pageNo, String keyword, String orderBy ) throws ForbesException{
 		try {			
-			pager.setTotoalCnt(ucAdminsDAO.getCount(keyWord));
-			List list = ucAdminsDAO.findAdminByPage( keyWord, orderBy, (pageNo - 1) * pager.getCntOfPage(), pager.getCntOfPage());			
+			pager.setTotoalCnt(ucAdminsDAO.getCount(keyword));
+			List list = ucAdminsDAO.findAdminByPage( keyword, orderBy, (pageNo - 1) * pager.getCntOfPage(), pager.getCntOfPage());			
 			return list;
 		} catch (Exception se) {
 			se.printStackTrace();
