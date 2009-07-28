@@ -83,11 +83,11 @@
 			<BR>
 			<DIV align="right">
 				<UL id=sorts>
-					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyWord'] }&orderby=pubdate desc"> 最新文章 </A>
-					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'click desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyWord'] }&orderby=click desc">	最多点击 </A> 
-					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'contentCnt desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyWord'] }&orderby=contentCnt desc"> 最多评论 </A> 
-					<!-- <FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyWord'] }&orderby=pubdate desc">	最多收藏 </A> -->
-					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'digg desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyWord'] }&orderby=digg desc"> 最多顶</A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=pubdate desc"> 最新文章 </A>
+					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'click desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=click desc">	最多点击 </A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'contentCnt desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=contentCnt desc"> 最多评论 </A> 
+					<!-- <FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=pubdate desc">	最多收藏 </A> -->
+					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'digg desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=digg desc"> 最多顶</A> 
 					<FONT style="COLOR: #ccc">|</FONT>  
 				</UL>
   			</DIV>
