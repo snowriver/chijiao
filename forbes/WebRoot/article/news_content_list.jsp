@@ -33,7 +33,7 @@
   
 		function pageselectCallback(page_id, jq){
 		 
-		  window.location="NewsContentSearch.do?act=list&id=${param.id}&pno=" + (page_id+1);
+		  window.location="NewsContentSearch.do?act=list&id=${PARA['id']}&pno=" + (page_id+1);
 	      //$('#Searchresult').text("Showing search results "+((page_id*10)+1)+"-"+((page_id*10)+10));
 	    }
 		

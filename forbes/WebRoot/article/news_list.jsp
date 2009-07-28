@@ -31,7 +31,7 @@
   
 		function pageselectCallback(page_id, jq){
 		 
-		  window.location="NewsSearch.do?act=list&keyword=${param.keyword}&orderby=${param.orderby}&pno=" + (page_id+1);
+		  window.location="NewsSearch.do?act=list&keyword=${PARA['keyword']}&orderby=${PARA['orderby']}&pno=" + (page_id+1);
 	      //$('#Searchresult').text("Showing search results "+((page_id*10)+1)+"-"+((page_id*10)+10));
 	    }
 		
