@@ -131,6 +131,7 @@ public class UserViewAction extends DispatchAction {
 		try{
 			Map map = new TreeMap();
 			map.put("orderby", orderby);
+			map.put("uid", uid);
 
 			
 			int iPageNo = 1;
