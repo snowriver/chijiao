@@ -49,7 +49,7 @@
           		<tr>
           			<td>&nbsp;关键字：</td> 
             		<td width="110" align="center"> 
-            			<input name="keyWord" type="text" id="keyWord" size="12" style="width:100" value="${PARA['keyWord'] }" /> 
+            			<input name="keyword" type="text" id="keyword" size="12" style="width:100" value="${PARA['keyword'] }" /> 
             		</td>             		
             		<td width="100" align="center">
             			<input name="imageField" type="submit" class="inputbut" value="搜索" /> 
@@ -114,7 +114,7 @@
           				<a href="member_view.php?ID=1">资料</a> | 
           				<a href="member_do.php?ID=1&dopost=recommend&matt=1">推荐</a>
           				<a href="content_list.php?memberid=1" target="_blank"></a> | 
-          				<a href="#" onclick="return deleteConfirm('AdminUpdateUser.do?act=delete&id=${user.uid}','|AdminListUser.do|act=client|pno=${PAGER.curPage}|keyWord=${PARA['keyWord'] }|','此操作 无法恢复！！！请慎重！！！\n\n确定要删除该用户吗？');">删除</a>
+          				<a href="#" onclick="return deleteConfirm('AdminUpdateUser.do?act=delete&id=${user.uid}','|AdminListUser.do|act=client|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|','此操作 无法恢复！！！请慎重！！！\n\n确定要删除该用户吗？');">删除</a>
           			</td> 
         		</tr> 
         		<tr> 

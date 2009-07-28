@@ -38,7 +38,7 @@
           		<tr>
           			<td>&nbsp;关键字：</td> 
             		<td width="110" align="center"> 
-            			<input name="keyWord" type="text" id="keyWord" size="12" style="width:100" value="${PARA['keyWord'] }" /> 
+            			<input name="keyword" type="text" id="keyword" size="12" style="width:100" value="${PARA['keyword'] }" /> 
             		</td>             		
             		<td width="100" align="center">
             			<input name="imageField" type="submit" class="inputbut" value="搜索" /> 
@@ -88,7 +88,7 @@
 		</td> 
     	<td> 
 	   		<a href='sys_admin_user_edit.php?ID=1&dopost=edit'><u>更改</u></a> | 
-     		<a href="#" onclick="return deleteConfirm('AdminUpdateUser.do?act=delete&id=${user.id}','|AdminListUser.do|act=member|pno=${PAGER.curPage}|keyWord=${PARA['keyWord'] }|','此操作 无法恢复！！！请慎重！！！\n\n确定要删除该用户吗？');"><u>删除</u></a> |
+     		<a href="#" onclick="return deleteConfirm('AdminUpdateUser.do?act=delete&id=${user.id}','|AdminListUser.do|act=member|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|','此操作 无法恢复！！！请慎重！！！\n\n确定要删除该用户吗？');"><u>删除</u></a> |
      		<a href='content_list.php?adminid=1'><u>文档</u></a> |
      		<a href='sys_admin_user_tj.php?ID=1'><u>详细统计</u></a>　　
     	</td> 
