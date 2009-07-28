@@ -56,7 +56,7 @@ public class AdminManageServiceAction extends DispatchAction {
 		   				   "&keyword=" + ( (keyword==null)?"":keyword );
 		
 		Map map = new TreeMap();
-		map.put("keyWord", keyword);
+		map.put("keyword", keyword);
 		map.put("orderby", orderby);
 		map.put("type", type);
 		map.put("parameter", parameter);
