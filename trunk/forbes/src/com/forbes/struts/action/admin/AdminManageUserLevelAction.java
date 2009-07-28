@@ -57,7 +57,7 @@ public class AdminManageUserLevelAction extends DispatchAction {
 		String parameter = "keyword=" + ( (keyword==null)?" ":keyword );
 		
 		Map map = new TreeMap();
-		map.put("keyWord", keyword);
+		map.put("keyword", keyword);
 		map.put("parameter", parameter);
 		
 		int iPageNo = 1;

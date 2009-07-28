@@ -42,13 +42,13 @@ public class AdminListUserAction extends DispatchAction {
 	public ActionForward admin(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		
-		String keyWord   = request.getParameter("keyWord");
+		String keyword   = request.getParameter("keyword");
 		String orderBy   = request.getParameter("orderBy");
 		String pageNo    = request.getParameter("pno");
-		String parameter = "keyWord=" + ( (keyWord==null)?" ":keyWord );
+		String parameter = "keyword=" + ( (keyword==null)?" ":keyword );
 		
 		Map map = new TreeMap();
-		map.put("keyWord", keyWord);
+		map.put("keyword", keyword);
 		map.put("parameter", parameter);
 		
 		int iPageNo = 1;
@@ -65,7 +65,7 @@ public class AdminListUserAction extends DispatchAction {
 		
 		try {
 		
-			list = userInfoManager.getAdminByPage(pager, iPageNo, keyWord, orderBy);
+			list = userInfoManager.getAdminByPage(pager, iPageNo, keyword, orderBy);
 			
 			request.setAttribute( "PARA", map );
 			request.setAttribute( "PAGER", pager );
@@ -82,13 +82,13 @@ public class AdminListUserAction extends DispatchAction {
 	public ActionForward client(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		
-		String keyWord   = request.getParameter("keyWord");
+		String keyword   = request.getParameter("keyword");
 		String orderBy   = request.getParameter("orderBy");
 		String pageNo    = request.getParameter("pno");
-		String parameter = "keyWord=" + ( (keyWord==null)?" ":keyWord );
+		String parameter = "keyword=" + ( (keyword==null)?" ":keyword );
 		
 		Map map = new TreeMap();
-		map.put("keyWord", keyWord);
+		map.put("keyword", keyword);
 		map.put("parameter", parameter);
 		
 		int iPageNo = 1;
@@ -105,7 +105,7 @@ public class AdminListUserAction extends DispatchAction {
 		
 		try {
 		
-			list = userInfoManager.getUserByPage(pager, iPageNo, keyWord, orderBy);
+			list = userInfoManager.getUserByPage(pager, iPageNo, keyword, orderBy);
 			
 			request.setAttribute( "PARA", map );
 			request.setAttribute( "PAGER", pager );
