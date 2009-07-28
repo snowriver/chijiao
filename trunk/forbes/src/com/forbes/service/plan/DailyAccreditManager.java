@@ -13,18 +13,18 @@ public interface DailyAccreditManager {
 	public void setUserDailyAccreditDAO(
 			UserDailyAccreditDAO userDailyAccreditDAO);
 
-	public List getDailyPlanByPage(Pager pager, int pageNo, String userid,
+	public List getDailyAccreditByPage(Pager pager, int pageNo, String userid,
 			String date, String iscomplete, String keyword, String orderby)
 			throws ForbesException;
 
 	public int getDailyAccreditCount(String userid, String date, String iscomplete)
 			throws ForbesException;
 
-	public void addDailyPlan(UserDailyAccredit userDailyAccredit);
+	public void addDailyAccredit(UserDailyAccredit userDailyAccredit);
 
-	public void deleteDailyPlan(UserDailyAccredit userDailyAccredit);
+	public void deleteDailyAccredit(UserDailyAccredit userDailyAccredit);
 
-	public UserDailyAccredit getDailyPlan(Integer id);
+	public UserDailyAccredit getDailyAccredit(Integer id);
 
-	public void updateDailyPlan(UserDailyAccredit userDailyAccredit);
+	public void updateDailyAccredit(UserDailyAccredit userDailyAccredit);
 }

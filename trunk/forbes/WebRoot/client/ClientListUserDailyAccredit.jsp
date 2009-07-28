@@ -123,7 +123,7 @@
 				beforeSend: function(){
 					//$("#RESULTE_MSG").html("完成中...");
 				},
-				url: 'ClientManageUserDailyPlan.do',
+				url: 'ClientManageUserDailyAccredit.do',
 				type: 'post',
 				dataType: 'html',
 				data:data,
@@ -184,7 +184,7 @@
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
-			<strong><a href="javascript:void(0);" onclick="openPage('添加今日授权','ClientAddUserDailyPlan.jsp', '15', '0', '700','550');">添加今日事项</a></strong> 
+			<strong><a href="javascript:void(0);" onclick="openPage('添加今日授权','ClientAddUserDailyPlan.jsp', '15', '0', '700','550');">添加今日授权</a></strong> 
 		</span>
 	</div>
 	
@@ -204,8 +204,8 @@
 		   		<tr align="center" style="font-weight:bold">
 					<td width="5%"></td>
 					<td width="5%">序号</td>
-					<td width="15%">时间</td>
-					<td width="35%">事项内容</td>
+					<td width="15%">授权人</td>
+					<td width="35%">授权内容</td>
 					<td width="15%">期限</td>
 					<td width="15%">是否完成</td>
 					<td width="10%">备注</td>
@@ -215,21 +215,14 @@
 		    	<c:forEach items="${USER_ACCREDIT_LIST}" var="accredit" varStatus="status">
 				<tr class="onset">
 					<td width="5%"><input type="checkbox" name="planID" value="${plan.id}" /></td>
-					<td width="5%">
-						${ (PAGER.curPage -1) * 10 + status.index + 1 }
-					</td>
+					<td width="5%">${ (PAGER.curPage -1) * 10 + status.index + 1 }</td>
+					<td >${accredit.receiver}</td>
+					<td ><a href="javascript:void(0)" onclick="openPage('修改今日事项','ClientManageUserDailyPlan.do?act=get&id=${accredit.id }', '15', '0', '700','550');">${fn:substring(accredit.title, 0,30) }</a></td>
+					<td ><fmt:formatDate value="${accredit.limitTime}" pattern="yyyy-MM-dd HH:mm"/></td>
 					<td >
-						<fmt:formatDate value="${plan.startTime}" pattern="HH:mm"/>-
-						<fmt:formatDate value="${plan.endTime}" pattern="HH:mm"/>
+						<input id="iscomplete_${accredit.id}" name="iscomplete_${accredit.id}" type="checkbox" value="${accredit.isComplete}" onclick="completePlan(${accredit.id});" <c:if test="${accredit.isComplete == 1}">checked</c:if> />						
 					</td>
-					<td ><a href="javascript:void(0)" onclick="openPage('修改今日事项','ClientManageUserDailyPlan.do?act=get&id=${plan.id }', '15', '0', '700','550');">${fn:substring(plan.title, 0,30) }</a></td>
-					<td >
-						<fmt:formatDate value="${plan.limitTime}" pattern="yyyy-MM-dd HH:mm"/>
-					</td>
-					<td >
-						<input id="iscomplete_${plan.id}" name="iscomplete_${plan.id}" type="checkbox" value="${plan.isComplete}" onclick="completePlan(${plan.id});" <c:if test="${plan.isComplete == 1}">checked</c:if> />						
-					</td>
-					<td >${fn:substring(plan.note, 0,15) }</td>
+					<td >${fn:substring(accredit.note, 0,15) }</td>
 				</tr>
 				</c:forEach>
 				</c:if>
