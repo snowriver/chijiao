@@ -127,6 +127,29 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 			
 		}
 	}
+	
+	public ActionForward delete(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		//String returnUrl = request.getParameter("returnUrl");
+		String accreditID     = request.getParameter("accreditID");
+		String id = ""; //`
+		System.out.println(accreditID);
+		String accreditIDs [] = accreditID.split("`");
+		try {
+			for(int i=0; i<accreditIDs.length; i++) {
+				id = accreditIDs[i];
+				System.out.println(id);
+				UserDailyAccredit accredit = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
+				dailyAccreditManager.deleteDailyAccredit(accredit);
+			}
+			request.setAttribute("RESULT_MESSAGE", "OK");
+			return mapping.findForward("ok");
+		}catch( Exception e ){
+			e.printStackTrace();
+			request.setAttribute("RESULT_MESSAGE", "FAIL");
+			return mapping.findForward("ok");
+		}
+	}
 
 	/*public ActionForward add(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -217,28 +240,7 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 		}
 	}
 
-	public ActionForward delete(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
-		//String returnUrl = request.getParameter("returnUrl");
-		String planID     = request.getParameter("planID");
-		String id = ""; //`
-		System.out.println(planID);
-		String planIDs [] = planID.split("`");
-		try {
-			for(int i=0; i<planIDs.length; i++) {
-				id = planIDs[i];
-				System.out.println(id);
-				UserDailyAccredit plan = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
-				dailyAccreditManager.deleteDailyAccredit(plan);
-			}
-			request.setAttribute("RESULT_MESSAGE", "OK");
-			return mapping.findForward("ok");
-		}catch( Exception e ){
-			e.printStackTrace();
-			request.setAttribute("RESULT_MESSAGE", "FAIL");
-			return mapping.findForward("ok");
-		}
-	}
+	
 	
 	public ActionForward get(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {

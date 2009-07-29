@@ -79,19 +79,19 @@
 		}
 		
 		function deletePlan(){
-			var plans = getCheckboxItem();
-			if(plans == '') {
-				alert("请选择其中一个计划！");
+			var accredits = getCheckboxItem();
+			if(accredits == '') {
+				alert("请选择其中一个授权！");
 			}
 			else {
 				$.ajax({
 					beforeSend: function(){
 						//$("#RESULTE_MSG").html("删除中...");
 					},
-					url: 'ClientManageUserDailyPlan.do',
+					url: 'ClientManageUserDailyAccredit.do',
 					type: 'post',
 					dataType: 'html',
-					data:"act=delete&planID=" + plans,
+					data:"act=delete&accreditID=" + accredits,
 					timeout: 10000,
 					error: function(){
 						//alert('System error');
@@ -141,13 +141,13 @@
 		
 		function getCheckboxItem() {
 			var allSel="";
-			if(document.form2.planID.value) return document.form2.planID.value;
-			for(i=0;i<document.form2.planID.length;i++) {
-				if(document.form2.planID[i].checked) {
+			if(document.form2.accreditID.value) return document.form2.accreditID.value;
+			for(i=0;i<document.form2.accreditID.length;i++) {
+				if(document.form2.accreditID[i].checked) {
 					if(allSel=="")
-						allSel=document.form2.planID[i].value;
+						allSel=document.form2.accreditID[i].value;
 					else
-						allSel=allSel+"`"+document.form2.planID[i].value;
+						allSel=allSel+"`"+document.form2.accreditID[i].value;
 				}
 			}
 			return allSel;	
@@ -184,19 +184,19 @@
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
-			<strong><a href="javascript:void(0);" onclick="openPage('添加今日授权','ClientAddUserDailyPlan.jsp', '15', '0', '700','550');">添加今日授权</a></strong> 
+			<strong><a href="javascript:void(0);" onclick="openPage('添加今日授权','ClientAddUserDailyAccredit.jsp', '15', '0', '700','550');">添加今日授权</a></strong> 
 		</span>
 	</div>
 	
 	<div>
-		<form method="post" name="form2" action="index.php?m=pm_client&a=delete&folder=inbox&filter=&extra=page%3D">
+		<form method="post" name="form2" action="#">
 			
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
 				<tbody>
 				
 				<c:if test="${empty USER_ACCREDIT_LIST}">
 		    		<tr class="onset">
-		    			<TD colspan="5" align="center">您还没有写今日计划！</TD>
+		    			<TD colspan="5" align="center">您还没有写今日授权！</TD>
 		    		</tr>
 		    	</c:if>
 		    	
@@ -214,12 +214,12 @@
 		    	
 		    	<c:forEach items="${USER_ACCREDIT_LIST}" var="accredit" varStatus="status">
 				<tr class="onset">
-					<td width="5%"><input type="checkbox" name="planID" value="${plan.id}" /></td>
-					<td width="5%">${ (PAGER.curPage -1) * 10 + status.index + 1 }</td>
-					<td >${accredit.receiver}</td>
-					<td ><a href="javascript:void(0)" onclick="openPage('修改今日事项','ClientManageUserDailyPlan.do?act=get&id=${accredit.id }', '15', '0', '700','550');">${fn:substring(accredit.title, 0,30) }</a></td>
-					<td ><fmt:formatDate value="${accredit.limitTime}" pattern="yyyy-MM-dd HH:mm"/></td>
-					<td >
+					<td width="5%"><input type="checkbox" name="accreditID" value="${accredit.id}" /></td>
+					<td width="5%">${(PAGER.curPage -1) * 10 + status.index + 1 }</td>
+					<td>${accredit.receiver}</td>
+					<td><a href="javascript:void(0)" onclick="openPage('修改今日事项','ClientManageUserDailyPlan.do?act=get&id=${accredit.id }', '15', '0', '700','550');">${fn:substring(accredit.title, 0,30) }</a></td>
+					<td><fmt:formatDate value="${accredit.limitTime}" pattern="yyyy-MM-dd HH:mm"/></td>
+					<td>
 						<input id="iscomplete_${accredit.id}" name="iscomplete_${accredit.id}" type="checkbox" value="${accredit.isComplete}" onclick="completePlan(${accredit.id});" <c:if test="${accredit.isComplete == 1}">checked</c:if> />						
 					</td>
 					<td >${fn:substring(accredit.note, 0,15) }</td>
@@ -230,7 +230,7 @@
 				</tbody>
 				<tfoot>
 				<tr >
-					<td ><input name="chkall" type="checkbox" onclick="checkall(this.form, 'planID')" /></td>
+					<td ><input name="chkall" type="checkbox" onclick="checkall(this.form, 'accreditID')" /></td>
 					<td ><button onclick="deletePlan();" type="button">删除</button></td>
 					<td ></td>
 					<td >
