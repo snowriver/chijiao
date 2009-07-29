@@ -189,7 +189,7 @@
 	</div>
 	
 	<div>
-		<form method="post" name="form2" action="index.php?m=pm_client&a=delete&folder=inbox&filter=&extra=page%3D">
+		<form method="post" name="form2" action="#">
 			
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
 				<tbody>
