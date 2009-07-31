@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 
 public class SampleTokenFactory implements ETagTokenFactory, ModifiedObjectTracker {
+	
 	// track entity -> list of views. initialized at start, so no need to synchronize
 	private Map<String, List<String>> entityViewMap = null;
 
