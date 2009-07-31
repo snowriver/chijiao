@@ -15,7 +15,6 @@ import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
 import com.forbes.hibernate.bean.Article;
 import com.forbes.hibernate.bean.Content;
 import com.forbes.hibernate.bean.UcMembers;
