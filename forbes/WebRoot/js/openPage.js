@@ -2,7 +2,7 @@ var shield = document.createElement("DIV");
 var alertFram = document.createElement("DIV"); 
 function openPage(title, url, left, top, width, height) 
 { 
-widthx= width -2;
+widthx= width -5;
 shield.id = "shield"; 
 shield.style.position = "absolute"; 
 shield.style.left = "0px"; 
@@ -125,7 +125,7 @@ window.closeDiv = function(){
     alertFram.style.textAlign = ""; 
     alertFram.style.lineHeight = ""; 
     alertFram.style.zIndex = ""; 
-	alert(self.parent.location);
+	//alert(self.parent.location);
 	//self.location=self.parent.location;
 	self.parent.location=self.parent.location;
 }
