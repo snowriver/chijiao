@@ -141,8 +141,7 @@
 	</filter-mapping> 
 	-->
 	
-	<!--  ETag Content Filter 	-->
-	<!--
+	<!--  ETag Content Filter 	-->	
 	<filter>
 		<filter-name>ETagContentFilter</filter-name>
        		<filter-class>com.forbes.filter.ETagContentFilter</filter-class>
@@ -151,6 +150,6 @@
        		<filter-name>ETagContentFilter</filter-name>
        	<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	-->
+	
 </web-app>
 
