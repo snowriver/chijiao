@@ -13,11 +13,11 @@ public class DeleteHandler extends DefaultDeleteEventListener {
 	public void onDelete(DeleteEvent event) throws HibernateException {
 		getModifiedObjectTracker().notifyModified(event.getEntityName());
 	}
-
+	
 	public ModifiedObjectTracker getModifiedObjectTracker() {
 		return tracker;
 	}
-
+	
 	public void setModifiedObjectTracker(ModifiedObjectTracker tracker) {
 		this.tracker = tracker;
 	}
