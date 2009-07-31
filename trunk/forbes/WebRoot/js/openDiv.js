@@ -2,7 +2,7 @@ var shield = document.createElement("DIV");
 var alertFram = document.createElement("DIV"); 
 function openDIV(title,url,width,height) 
 { 
-widthx= width -2;
+widthx= width -5;
 shield.id = "shield"; 
 shield.style.position = "absolute"; 
 shield.style.left = "0px"; 
@@ -36,10 +36,10 @@ alertFram.style.background = "#000";
 alertFram.style.textAlign = "center"; 
 alertFram.style.lineHeight = "150px"; 
 alertFram.style.zIndex = "10002"; 
-strHtml = "<div style=\"list-style:none;margin:0px;padding:0px;border-width:1px;border-color:#6699FF;border-style:solid;width:" + width + "\">\n"; 
-strHtml += "<div onmousedown=\"oMove(parentNode.parentNode);\" style=\"cursor:move;background:#6699FF;text-align:left;padding-left:5px;font-size:14px;font-weight:bold;color: #FFFFFF;height:25px;line-height:25px;border-left:1px solid #FFFFFF;border-top:1px solid #FFFFFF;border-right:1px solid #FFFFFF;\">";
-strHtml += "<div ><div style=\"float:left;width:50%\">[" + title +"]</div><div style=\"float:right;width:10%\"><a href='#' onClick=\"remove()\"> <font color=white> [¹Ø±Õ]</font> </a></div></div></div>\n"; 
-strHtml += "<iframe id=openIframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=NO src=\"" + url + "\" width=" + widthx +" height="+height+"></iframe>";
+strHtml = "<div style=\"list-style:none;margin:0px;padding:0px;border-width:3px;border-color:#777777;border-style:solid;width:" + width + "\">\n"; 
+strHtml += "<div onmousedown=\"oMove(parentNode.parentNode);\" style=\"cursor:move;background:url(../images/openbar.gif) repeat-x ;text-align:left;padding-left:5px;font-size:13px;font-weight:bold;color: #F0F0F0;height:27px;line-height:27px;\">";
+strHtml += "<div ><div style=\"float:left;width:50%;color:#cccccc\">[" + title +"]</div><div style=\"float:right;width:10%\"><a href='#' onClick=\"remove()\"><img src='../images/off.gif' border='0'/></a></div></div></div>\n"; 
+strHtml += "<iframe id=openIframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 border='0' VSPACE=0 FRAMEBORDER=0 SCROLLING=NO width=" + widthx +" height="+height+" src=\"" + url + "\"></iframe>";
 strHtml += "</div>\n"; 
 alertFram.innerHTML = strHtml; 
 document.body.appendChild(alertFram); 
