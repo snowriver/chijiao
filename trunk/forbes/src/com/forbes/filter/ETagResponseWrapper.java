@@ -5,6 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class ETagResponseWrapper extends HttpServletResponseWrapper {
+	
 	private HttpServletResponse response = null;
 	private ServletOutputStream stream = null;
 	private PrintWriter writer = null;
