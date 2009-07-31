@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class ETagInterceptor extends HandlerInterceptorAdapter {
+	
 	private ETagTokenFactory tokenFactory;
 
 	public final boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
