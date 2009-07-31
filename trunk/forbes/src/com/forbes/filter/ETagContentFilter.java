@@ -33,7 +33,7 @@ public class ETagContentFilter implements Filter {
 		if (queryString != null) 
 			id += queryString;
 		logger.debug(id);
-		//System.out.println(id);
+		System.out.println(id);
 				
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		ETagResponseWrapper wrappedResponse = new ETagResponseWrapper(servletResponse, baos);
