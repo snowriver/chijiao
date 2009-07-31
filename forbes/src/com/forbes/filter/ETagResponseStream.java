@@ -5,6 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class ETagResponseStream extends ServletOutputStream {
+	
 	private boolean closed = false;
 	private OutputStream stream = null;
 

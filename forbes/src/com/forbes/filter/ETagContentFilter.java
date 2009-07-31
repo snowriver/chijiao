@@ -21,6 +21,7 @@ import org.apache.commons.logging.LogFactory;
 import com.forbes.util.ETagComputeUtils;
 
 public class ETagContentFilter implements Filter {
+	
 	protected final Log logger = LogFactory.getLog(getClass());
 	
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
