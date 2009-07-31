@@ -25,29 +25,13 @@
 
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan_edit.css" />
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan.css" />
-<link type="text/css" rel="stylesheet"  href="../js/jquery/css/ui.all.css" type=text/css rel=stylesheet>
 <link rel="stylesheet" type="text/css" href="../js/jquery/jquery.wysiwyg.css" />
 
-<SCRIPT type="text/javascript" src="../js/jquery/jquery-1.3.2.min.js"></SCRIPT>
-<SCRIPT type="text/javascript" src="../js/jquery/ui.core.js"></SCRIPT>
-<SCRIPT type="text/javascript" src="../js/jquery/ui.datepicker.js"></SCRIPT>
-  
+<SCRIPT type="text/javascript" src="../js/jquery/jquery-1.3.2.min.js"></SCRIPT>  
 <script type="text/javascript" src="../js/jquery/jquery.wysiwyg.js"></script>
-
+<script language="javascript" type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
 
 <script language="javascript" type="text/javascript">
-	
-	$(window).ready(function(){
-		$('#date').datepicker();
-		$('#date').datepicker('option', {dateFormat: 'yy-mm-dd'});	
-		$('#date').datepicker('option', 'dayNamesMin', ['日', '一', '二', '三', '四', '五', '六']);
-		$('#date').datepicker('option', 'monthNamesShort', ['一','二','三','四','五','六',	'七','八','九','十','十一','十二']);
-		$('#date').datepicker('option', 'monthNames', ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']);
-	
-		$('#date').datepicker('option', 'closeText', '关闭');
-		$('#date').datepicker('option', 'prevText', '&#x3c;上月');
-		$('#date').datepicker('option', 'nextText', '下月&#x3e;');
-	});
 
 	$(function() {
     	$('#content').wysiwyg();
@@ -96,7 +80,7 @@
 					    <TD class=tellmeNameTd>日期:</TD>
 					    <TD class=tellmeInputTd>
 					    	<UL>
-					        	<LI><INPUT class="importInput2" id=date name=date value="${DATE }" readonly></LI>				       		
+					        	<LI><INPUT class="importInput2" id=date name=date value="${DATE }" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"></LI>				       		
 					       	</UL>
 					 	</TD>
 					    <TD class=inputDesSpanTd></TD>
@@ -196,7 +180,7 @@
 					    <TD class=tellmeNameTd>期限:</TD>
 					    <TD class=tellmeInputTd>
 					    	<UL>
-					        	<LI><INPUT class="importInput2" id=limit_time name=limit_time></LI>				       		
+					        	<LI><INPUT class="importInput2" id=limit_time name=limit_time readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:00'})"></LI>				       		
 					       	</UL>
 					 	</TD>
 					    <TD class=inputDesSpanTd></TD>
