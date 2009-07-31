@@ -9,6 +9,7 @@ import com.forbes.interceptor.ModifiedObjectTracker;
 
 @SuppressWarnings("serial")
 public class SaveOrUpdateHandler implements SaveOrUpdateEventListener {
+	
 	private ModifiedObjectTracker tracker;
 
 	public Serializable onSaveOrUpdate(SaveOrUpdateEvent event) throws HibernateException {
