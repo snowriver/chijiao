@@ -133,7 +133,9 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			plan.setContent(content);
 			plan.setStartTime(timeFormatter.parse(startTimeHh +":" + startTimeMm +":00"));
 			plan.setEndTime(timeFormatter.parse(endTimeHh +":" + endTimeMm +":00"));
-			plan.setLimitTime(fullFormatter.parse(limitTime));
+			
+			if(limitTime !=null && limitTime.length() >0)
+				plan.setLimitTime(fullFormatter.parse(limitTime));
 			plan.setIsComplete(new Short(isComplete));
 			plan.setSn(0);
 			
@@ -176,7 +178,8 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			plan.setContent(content);
 			plan.setStartTime(timeFormatter.parse(startTimeHh +":" + startTimeMm +":00"));
 			plan.setEndTime(timeFormatter.parse(endTimeHh +":" + endTimeMm +":00"));
-			plan.setLimitTime(fullFormatter.parse(limitTime));
+			if(limitTime !=null && limitTime.length() >0)
+				plan.setLimitTime(fullFormatter.parse(limitTime));
 			plan.setIsComplete(new Short(isComplete));
 			plan.setSn(0);
 			
