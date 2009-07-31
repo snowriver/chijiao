@@ -141,10 +141,10 @@
 	<bean id="sysConfigMap" class="com.forbe.util.SysConfigMap" scope="global session"></bean>
 	-->
 	
-	 <bean id="sampleTokenFactory" class="com.lingju.interceptor.SampleTokenFactory">
+	 <bean id="sampleTokenFactory" class="com.forbes.interceptor.SampleTokenFactory">
 		<property name="entityViewMap">
 			<map>
-				<entry key="com.lingju.hibernate.bean.UchomeSpacefield">
+				<entry key="com.forbes.hibernate.bean.UchomeSpacefield">
 					<list>
 						<value>/liveall/*</value>
 					</list>
@@ -153,11 +153,11 @@
 		</property>
     </bean>
     
-	<bean id="saveUpdateHandler" class="com.lingju.interceptor.SaveOrUpdateHandler">
+	<bean id="saveUpdateHandler" class="com.forbes.interceptor.SaveOrUpdateHandler">
 		<property name="modifiedObjectTracker" ref="sampleTokenFactory"/>
 	</bean>
 	
-	<bean id="deleteHandler" class="com.lingju.interceptor.DeleteHandler">
+	<bean id="deleteHandler" class="com.forbes.interceptor.DeleteHandler">
 		<property name="modifiedObjectTracker" ref="sampleTokenFactory"/>
 	</bean>
 
