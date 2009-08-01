@@ -14,7 +14,7 @@
 ${SYN_LGIN}
 
  <script language="javascript" >
-    //alert("登錄成功");
+    alert("登錄成功");
     ///client/ClientMain.jsp
     <c:if test="${ not empty RETURN_URL}">
     	self.location="${RETURN_URL}";
