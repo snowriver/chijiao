@@ -120,15 +120,18 @@
 				<value>com/forbes/hibernate/hbm/Bulletin.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserDailyPlan.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserDailyAccredit.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/UserDailySumup.hbm.xml</value>
 			</list>
 		</property>
+		<!-- 
 		<property name="eventListeners">
 			<map>
 				<entry key="merge"><bean class="org.springframework.orm.hibernate3.support.IdTransferringMergeEventListener"/></entry>
 				<entry key="save-update"><ref local="saveUpdateHandler"/></entry>
 				<entry key="delete"><ref local="deleteHandler"/></entry>
 			</map>
-		</property>	
+		</property>
+		 -->
 	</bean>
 	
 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
@@ -141,7 +144,8 @@
 	<bean id="sysConfigMap" class="com.forbe.util.SysConfigMap" scope="global session"></bean>
 	-->
 	
-	 <bean id="sampleTokenFactory" class="com.forbes.interceptor.SampleTokenFactory">
+	<!--
+	<bean id="sampleTokenFactory" class="com.forbes.interceptor.SampleTokenFactory">
 		<property name="entityViewMap">
 			<map>
 				<entry key="com.forbes.hibernate.bean.UchomeSpacefield">
@@ -160,7 +164,8 @@
 	<bean id="deleteHandler" class="com.forbes.interceptor.DeleteHandler">
 		<property name="modifiedObjectTracker" ref="sampleTokenFactory"/>
 	</bean>
-
+	-->
+	
 	<bean id="UserDAO" class="com.forbes.hibernate.dao.UserDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
@@ -455,4 +460,12 @@
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
-    </bean></beans>
+    </bean>
+    <bean id="UserDailySumupDAO"
+    	class="com.forbes.hibernate.dao.UserDailySumupDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+
+</beans>

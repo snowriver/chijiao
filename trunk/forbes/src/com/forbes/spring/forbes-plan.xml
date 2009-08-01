@@ -14,6 +14,11 @@
 			<ref bean="UserDailyAccreditDAO" />
 		</property>
 	</bean>
+	<bean id="dailySumupManager" class="com.forbes.service.plan.impl.DailySumupManagerImpl">
+		<property name="userDailySumupDAO">
+			<ref bean="UserDailySumupDAO" />
+		</property>
+	</bean>
 	
 	<!-- -->	
 	<bean id="dailyPlanManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
@@ -41,7 +46,20 @@
 				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
 			</props>
 		</property>
-	</bean>	
+	</bean>
+	<bean id="dailySumupManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="dailySumupManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
 	
 	
 	<bean name="/client/ClientManageUserDailyPlan" class="com.forbes.struts.action.client.ClientManageUserDailyPlanAction" singleton="false">
