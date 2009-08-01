@@ -12,8 +12,7 @@ public interface DailySumupManager {
 
 	public void setUserDailySumupDAO(UserDailySumupDAO userDailySumupDAO);
 
-	public List getDailySumupByPage(Pager pager, int pageNo, String userid,
-			String date, String keyword, String orderby) throws ForbesException;
+	public UserDailySumup getDailySumup( String userid, String date ) throws ForbesException;
 
 	public int getDailySumupCount(String userid, String date)
 			throws ForbesException;
