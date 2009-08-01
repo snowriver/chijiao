@@ -102,7 +102,7 @@
 					    <TD class=tellmeNameTd>фзоч:</TD>
 					    <TD class=tellmeInputTd>
 					    	<UL>
-					        	<LI><INPUT class="importInput2" id=limit_time name=limit_time readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:00'})" value="${fn:substring(USER_DETAILY_ACCREDIT.limitTime, 0, 16)}" /></LI>				       		
+					        	<LI><INPUT class="importInput2" id=limit_time name=limit_time readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:00'})" value="<fmt:formatDate value='${USER_DETAILY_ACCREDIT.limitTime}' pattern='yyyy-MM-dd HH:mm:ss'/>" /></LI>				       		
 					       	</UL>
 					 	</TD>
 					    <TD class=inputDesSpanTd></TD>
