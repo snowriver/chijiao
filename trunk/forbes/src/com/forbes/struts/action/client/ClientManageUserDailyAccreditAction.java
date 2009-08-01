@@ -151,37 +151,30 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 		}
 	}
 
-	/*public ActionForward add(ActionMapping mapping, ActionForm form,
+	public ActionForward add(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		UcMembers user = (UcMembers) request.getSession()
 				.getAttribute("CLIENT");
 
+		String receiver = request.getParameter("receiver");
 		String title = request.getParameter("title");
 		String date = request.getParameter("date");
-		String limitTime = request.getParameter("limit_time");
-		String startTimeHh = request.getParameter("start_time_hh");
-		String startTimeMm = request.getParameter("start_time_mm");
-		
-		String endTimeHh = request.getParameter("end_time_hh");
-		String endTimeMm = request.getParameter("end_time_mm");
-		
+		String limitTime = request.getParameter("limit_time");		
 		String content = request.getParameter("content");
 		String isComplete = request.getParameter("is_complete");
 		
 		
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
 		SimpleDateFormat fullFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 		try {
 			UserDailyAccredit plan = new UserDailyAccredit();
 			plan.setUserId(user.getUid());
+			plan.setReceiver(receiver);
 			plan.setDate(dateFormatter.parse(date));
 			plan.setTitle(title);
 			plan.setContent(content);
-			plan.setStartTime(timeFormatter.parse(startTimeHh +":" + startTimeMm +":00"));
-			plan.setEndTime(timeFormatter.parse(endTimeHh +":" + endTimeMm +":00"));
 			plan.setLimitTime(fullFormatter.parse(limitTime));
 			plan.setIsComplete(new Short(isComplete));
 			plan.setSn(0);
@@ -197,34 +190,43 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 		}
 	}
 	
+	public ActionForward get(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		//String returnUrl = request.getParameter("returnUrl");
+		String id = request.getParameter("id");
+
+		try {
+			UserDailyAccredit accredit = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
+			request.setAttribute("USER_DETAILY_ACCREDIT", accredit);
+			return mapping.findForward("get");
+		}catch( Exception e ){
+			e.printStackTrace();
+			request.setAttribute("RESULT_MESSAGE", "FAIL");
+			return mapping.findForward("ok");
+		}
+	}
+	
+	
 	public ActionForward edit(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		String id = request.getParameter("id");
+		String receiver = request.getParameter("receiver");
 		String title = request.getParameter("title");
 		String date = request.getParameter("date");
-		String limitTime = request.getParameter("limit_time");
-		String startTimeHh = request.getParameter("start_time_hh");
-		String startTimeMm = request.getParameter("start_time_mm");
-		
-		String endTimeHh = request.getParameter("end_time_hh");
-		String endTimeMm = request.getParameter("end_time_mm");
-		
+		String limitTime = request.getParameter("limit_time");		
 		String content = request.getParameter("content");
 		String isComplete = request.getParameter("is_complete");
 		
-		
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
 		SimpleDateFormat fullFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 		try {
 			UserDailyAccredit plan = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
 			plan.setDate(dateFormatter.parse(date));
+			plan.setReceiver(receiver);			
 			plan.setTitle(title);
 			plan.setContent(content);
-			plan.setStartTime(timeFormatter.parse(startTimeHh +":" + startTimeMm +":00"));
-			plan.setEndTime(timeFormatter.parse(endTimeHh +":" + endTimeMm +":00"));
 			plan.setLimitTime(fullFormatter.parse(limitTime));
 			plan.setIsComplete(new Short(isComplete));
 			plan.setSn(0);
@@ -239,22 +241,5 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 			return mapping.findForward("fail");
 		}
 	}
-
 	
-	
-	public ActionForward get(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
-		//String returnUrl = request.getParameter("returnUrl");
-		String id = request.getParameter("id");
-
-		try {
-			UserDailyAccredit plan = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
-			request.setAttribute("USER_DETAILY_PLAN", plan);
-			return mapping.findForward("get");
-		}catch( Exception e ){
-			e.printStackTrace();
-			request.setAttribute("RESULT_MESSAGE", "FAIL");
-			return mapping.findForward("ok");
-		}
-	}*/
 }
