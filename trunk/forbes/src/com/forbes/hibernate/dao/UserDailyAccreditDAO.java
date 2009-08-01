@@ -74,9 +74,7 @@ public class UserDailyAccreditDAO extends BaseUserDailyAccreditDAO {
 			} 
 			if (iscomplete != null && !iscomplete.equals(""))
 				queryString += " AND model.iscomplete = " + iscomplete;
-
-			System.out.println(" userID = " + userid);
-			System.out.println(" SQL = " + queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, userid);
 			query.setParameter(1, "%" + keyword + "%");

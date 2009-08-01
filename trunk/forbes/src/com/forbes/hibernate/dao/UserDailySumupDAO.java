@@ -1,44 +1,45 @@
 package com.forbes.hibernate.dao;
 
+import java.util.Date;
 import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.forbes.hibernate.basedao.BaseUserDailyPlanDAO;
+import org.hibernate.LockMode;
+import org.springframework.context.ApplicationContext;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.forbes.hibernate.basedao.BaseUserDailySumupDAO;
 
 /**
  * A data access object (DAO) providing persistence and search support for
- * UserDailyPlan entities. Transaction control of the save(), update() and
+ * UserDailySumup entities. Transaction control of the save(), update() and
  * delete() operations can directly support Spring container-managed
  * transactions or they can be augmented to handle user-managed Spring
  * transactions. Each of these methods provides additional information for how
  * to configure it for the desired type of transaction control.
  * 
- * @see com.forbes.hibernate.UserDailyPlan
+ * @see com.forbes.hibernate.UserDailySumup
  * @author MyEclipse Persistence Tools
  */
 
-public class UserDailyPlanDAO extends BaseUserDailyPlanDAO {
-	private static final Log log = LogFactory.getLog(UserDailyPlanDAO.class);
-
+public class UserDailySumupDAO extends BaseUserDailySumupDAO {
+	private static final Log log = LogFactory.getLog(UserDailySumupDAO.class);
 	// property constants
 
-	public int getCount(String userid, String date, String iscomplete,
-			String keyword) {
+	
+	public int getCount(String userid, String date, String keyword) {
 
 		if (keyword == null)
 			keyword = "";
 
 		try {
 
-			String queryString = "SELECT COUNT(*) FROM UserDailyPlan AS model WHERE model.userId = ? "
-					+ "AND (model.title LIKE ? OR model.content LIKE ? ) ";
+			String queryString = "SELECT COUNT(*) FROM UserDailySumup AS model WHERE model.userId = ? "
+					+ "AND ( model.advance LIKE ? OR model.meditate LIKE ? ) ";
 
 			if (date != null) {
 				queryString += " AND model.date = '" + date + "'";
-			} 
-
-			if (iscomplete != null && iscomplete.length() > 0)
-				queryString += " AND model.iscomplete = " + iscomplete;
+			}
 
 			// System.out.println("queryString = "+queryString);
 			org.hibernate.Query query = getSession().createQuery(queryString);
@@ -52,8 +53,8 @@ public class UserDailyPlanDAO extends BaseUserDailyPlanDAO {
 		}
 	}
 
-	public List findDailyPlanByPage(String userid, String date,
-			String iscomplete, String keyword, String orderby, int beg, int len) {
+	public List findDailySumupByPage(String userid, String date,
+			String keyword, String orderby, int beg, int len) {
 
 		if (keyword == null)
 			keyword = "";
@@ -61,15 +62,13 @@ public class UserDailyPlanDAO extends BaseUserDailyPlanDAO {
 			orderby = "sn ASC ";
 
 		try {
-			String queryString = "SELECT DISTINCT model FROM UserDailyPlan AS model WHERE model.userId = ? "
-					+ "AND (model.title LIKE ? OR model.content LIKE ? ) ";
+			String queryString = "SELECT DISTINCT model FROM UserDailySumup AS model WHERE model.userId = ? "
+					+ "AND ( model.advance LIKE ? OR model.meditate LIKE ? ) ";
 
 			if (date != null) {
 				queryString += " AND model.date = '" + date + "'";
-			} 
-			if (iscomplete != null && !iscomplete.equals(""))
-				queryString += " AND model.iscomplete = " + iscomplete;
-
+			}			
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, userid);
 			query.setParameter(1, "%" + keyword + "%");
