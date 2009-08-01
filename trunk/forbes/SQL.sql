@@ -38,3 +38,14 @@ CREATE TABLE `forbes_user_daily_accredit` (
   `note` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=gbk;
+
+CREATE TABLE `forbes_user_daily_sumup` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `sn` int(11) unsigned DEFAULT '0',
+  `advance` text,
+  `meditate` text,
+  `note` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
