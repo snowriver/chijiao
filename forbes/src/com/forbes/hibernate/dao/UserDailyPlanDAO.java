@@ -58,7 +58,7 @@ public class UserDailyPlanDAO extends BaseUserDailyPlanDAO {
 		if (keyword == null)
 			keyword = "";
 		if (orderby == null || orderby.equals(""))
-			orderby = "sn ASC ";
+			orderby = "startTime ASC ";
 
 		try {
 			String queryString = "SELECT DISTINCT model FROM UserDailyPlan AS model WHERE model.userId = ? "
@@ -70,6 +70,8 @@ public class UserDailyPlanDAO extends BaseUserDailyPlanDAO {
 			if (iscomplete != null && !iscomplete.equals(""))
 				queryString += " AND model.iscomplete = " + iscomplete;
 
+			queryString += " ORDER BY model." + orderby;
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, userid);
 			query.setParameter(1, "%" + keyword + "%");
