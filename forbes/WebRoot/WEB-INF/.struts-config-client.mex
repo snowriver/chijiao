@@ -10,8 +10,11 @@
   <StrutsActivity path="/client/ClientListNewsFeeds.do" location="2152,152" dimension="362,100" />
   <StrutsActivity path="/client/ClientPublishArticle.do" location="1552,152" dimension="362,100" />
   <StrutsActivity path="/client/ClientManageArticle.do" location="0,786" dimension="362,100" />
+  <StrutsActivity path="/client/ClientManageUserDailyPlan.do" location="1550,850" dimension="331,100" />
+  <StrutsActivity path="/client/ClientManageUserDailyAccredit.do" location="350,1050" dimension="331,100" />
   <StrutsActivity path="/include/passport.jsp" location="2696,689" dimension="155,52" />
   <StrutsActivity path="/client/ClientReLoginOk.jsp" location="1676,689" dimension="188,52" />
+  <StrutsActivity path="/client/include/UserInfo.jsp" location="1250,850" dimension="188,52" />
   <StrutsActivity path="/client/ClientReLogin.jsp" location="2425,689" dimension="171,52" />
   <StrutsActivity path="/client/ClientLoginOk.jsp" location="2152,689" dimension="173,52" />
   <StrutsActivity path="/client/ClientRegisterOk.jsp" location="1387,689" dimension="189,52" />
@@ -33,31 +36,36 @@
   <StrutsActivity path="/client/ClientModifyArticle.jsp" location="1776,372" dimension="201,52" />
   <StrutsActivity path="/client/ClientPublisArticle.jsp" location="1636,0" dimension="194,52" />
   <StrutsActivity path="/client/ClientListArticle.jsp" location="91,986" dimension="179,52" />
+  <StrutsActivity path="/client/ClientListUserDailyPlan.jsp" location="650,1450" dimension="207,52" />
+  <StrutsActivity path="/client/operate_result.jsp" location="950,1450" dimension="161,52" />
+  <StrutsActivity path="/client/ClientEditUserDailyPlan.jsp" location="1250,1450" dimension="209,52" />
+  <StrutsActivity path="/client/ClientOperateReturn.jsp" location="1550,1450" dimension="194,52" />
+  <StrutsActivity path="/client/ClientListUserDailyAccredit.jsp" location="50,1550" dimension="228,52" />
   <StrutsActivity path="/article/userinfo.jsp" location="650,850" dimension="144,52" />
   <StrutsActivity path="/article/include/userinfo.jsp" location="950,850" dimension="190,52" />
-  <StrutsActivity path="/client/include/UserInfo.jsp" location="1250,850" dimension="188,52" />
+  <StrutsActivity path="/client/ClientEditUserDailyAccredit.jsp" />
+  <StrutsTransition id="/client/ClientManageUserDailyPlan.do,return,/client/ClientOperateReturn.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1715,950" />
+      <AbsolutePoint location="1715,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
   <StrutsTransition id="/client/ClientPublishArticle.do,modify,/client/ClientModifyArticle.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1823,252" />
-      <AbsolutePoint location="1823,282" />
-      <AbsolutePoint location="1877,282" />
-      <AbsolutePoint location="1877,372" />
+      <AbsolutePoint location="1791,252" />
+      <AbsolutePoint location="1791,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientRegister.jsp,null,/client/ClientRegister.do,2" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="847,689" />
-      <AbsolutePoint location="847,659" />
-      <AbsolutePoint location="883,659" />
-      <AbsolutePoint location="883,569" />
+      <AbsolutePoint location="804,689" />
+      <AbsolutePoint location="804,569" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogin.do,ok,/client/ClientLoginOk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2224,569" />
-      <AbsolutePoint location="2224,659" />
-      <AbsolutePoint location="2281,659" />
-      <AbsolutePoint location="2281,689" />
+      <AbsolutePoint location="2233,569" />
+      <AbsolutePoint location="2233,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageAsk.do,answer,/client/ClientListMyAnswer.jsp,1" routingType="0">
@@ -66,20 +74,24 @@
       <AbsolutePoint location="698,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageUserDailyAccredit.do,return,/client/ClientOperateReturn.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="681,1070" />
+      <AbsolutePoint location="1647,1070" />
+      <AbsolutePoint location="1647,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
   <StrutsTransition id="/client/ClientManageAsk.do,unsolved,/client/ClientListUnSolvedAsk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="553,252" />
-      <AbsolutePoint location="553,282" />
-      <AbsolutePoint location="109,282" />
+      <AbsolutePoint location="517,202" />
+      <AbsolutePoint location="109,202" />
       <AbsolutePoint location="109,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientVerifyEmail.do,ok,/client/ClientVerifyEmailOk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1254,569" />
-      <AbsolutePoint location="1254,629" />
-      <AbsolutePoint location="1213,629" />
-      <AbsolutePoint location="1213,689" />
+      <AbsolutePoint location="1249,569" />
+      <AbsolutePoint location="1249,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageFriend.do,list,/client/ClientManageFriend.jsp,1" routingType="0">
@@ -90,114 +102,105 @@
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogout.do,index,/include/passport.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2819,569" />
-      <AbsolutePoint location="2819,599" />
-      <AbsolutePoint location="2812,599" />
-      <AbsolutePoint location="2812,689" />
+      <AbsolutePoint location="2836,569" />
+      <AbsolutePoint location="2836,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogout.do,logout,/client/ClientLogout.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="3000,569" />
-      <AbsolutePoint location="3000,599" />
-      <AbsolutePoint location="3033,599" />
-      <AbsolutePoint location="3033,689" />
+      <AbsolutePoint location="2966,569" />
+      <AbsolutePoint location="2966,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientPublishArticle.do,fail,/client/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1642,252" />
-      <AbsolutePoint location="1642,282" />
-      <AbsolutePoint location="1599,282" />
-      <AbsolutePoint location="1599,372" />
+      <AbsolutePoint location="1609,252" />
+      <AbsolutePoint location="1609,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientListNewsFeeds.do,in,/client/ClientMessageInBox.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2469,252" />
-      <AbsolutePoint location="2469,282" />
-      <AbsolutePoint location="2822,282" />
+      <AbsolutePoint location="2514,202" />
+      <AbsolutePoint location="2822,202" />
       <AbsolutePoint location="2822,372" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/client/ClientLogin.do,top,/article/userinfo.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="1992,519" />
-      <AbsolutePoint location="1621,519" />
-      <AbsolutePoint location="1621,876" />
-      <AbsolutePoint location="794,876" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogin.do,index,/include/passport.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2328,569" />
-      <AbsolutePoint location="2328,599" />
-      <AbsolutePoint location="2734,599" />
-      <AbsolutePoint location="2734,689" />
+      <AbsolutePoint location="2354,519" />
+      <AbsolutePoint location="2702,519" />
+      <AbsolutePoint location="2702,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageAsk.do,ok,/client/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="770,252" />
-      <AbsolutePoint location="770,342" />
-      <AbsolutePoint location="939,342" />
-      <AbsolutePoint location="939,372" />
+      <AbsolutePoint location="879,202" />
+      <AbsolutePoint location="979,202" />
+      <AbsolutePoint location="979,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/client/ClientLogin.do,top,/article/include/userinfo.jsp,1" routingType="0">
+  <StrutsTransition id="/client/ClientManageUserDailyAccredit.do,list,/client/ClientListUserDailyAccredit.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1992,519" />
-      <AbsolutePoint location="1621,519" />
-      <AbsolutePoint location="1621,876" />
-      <AbsolutePoint location="1140,876" />
+      <AbsolutePoint location="350,1100" />
+      <AbsolutePoint location="164,1100" />
+      <AbsolutePoint location="164,1550" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientRegister.do,ok,/client/ClientRegisterOk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1004,569" />
-      <AbsolutePoint location="1004,599" />
-      <AbsolutePoint location="1418,599" />
-      <AbsolutePoint location="1418,689" />
+      <AbsolutePoint location="875,569" />
+      <AbsolutePoint location="875,644" />
+      <AbsolutePoint location="1402,644" />
+      <AbsolutePoint location="1402,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogin.do,verify,/client/ClientRegisterOk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2017,569" />
-      <AbsolutePoint location="2017,599" />
-      <AbsolutePoint location="1544,599" />
-      <AbsolutePoint location="1544,689" />
+      <AbsolutePoint location="1992,519" />
+      <AbsolutePoint location="1541,519" />
+      <AbsolutePoint location="1541,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientModifyProfile.do,ok,/client/ClientVerifyEmailOk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="533,569" />
-      <AbsolutePoint location="533,629" />
-      <AbsolutePoint location="1111,629" />
-      <AbsolutePoint location="1111,689" />
+      <AbsolutePoint location="442,569" />
+      <AbsolutePoint location="442,614" />
+      <AbsolutePoint location="1179,614" />
+      <AbsolutePoint location="1179,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogin.do,fail,/index.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2121,569" />
-      <AbsolutePoint location="2121,659" />
-      <AbsolutePoint location="2008,659" />
-      <AbsolutePoint location="2008,689" />
+      <AbsolutePoint location="2037,569" />
+      <AbsolutePoint location="2037,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogin.do,re_fail,/client/ClientReLogin.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2276,569" />
-      <AbsolutePoint location="2276,629" />
-      <AbsolutePoint location="2510,629" />
+      <AbsolutePoint location="2354,549" />
+      <AbsolutePoint location="2510,549" />
       <AbsolutePoint location="2510,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogin.do,relogin,/client/ClientReLoginOk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2069,569" />
-      <AbsolutePoint location="2069,629" />
-      <AbsolutePoint location="1770,629" />
-      <AbsolutePoint location="1770,689" />
+      <AbsolutePoint location="1992,549" />
+      <AbsolutePoint location="1761,549" />
+      <AbsolutePoint location="1761,689" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageUserDailyAccredit.do,get,/client/ClientEditUserDailyPlan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="681,1100" />
+      <AbsolutePoint location="1354,1100" />
+      <AbsolutePoint location="1354,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageUserDailyPlan.do,ok,/client/operate_result.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,947" />
+      <AbsolutePoint location="1060,947" />
+      <AbsolutePoint location="1060,1450" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientPublisArticle.jsp,null,/client/ClientPublishArticle.do,2" routingType="0">
@@ -214,74 +217,86 @@
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageFriend.do,ok,/client/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1141,252" />
-      <AbsolutePoint location="1141,342" />
-      <AbsolutePoint location="1018,342" />
-      <AbsolutePoint location="1018,372" />
+      <AbsolutePoint location="1081,202" />
+      <AbsolutePoint location="1009,202" />
+      <AbsolutePoint location="1009,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientListNewsFeeds.do,fail,/client/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2198,252" />
-      <AbsolutePoint location="2198,312" />
-      <AbsolutePoint location="1639,312" />
-      <AbsolutePoint location="1639,372" />
+      <AbsolutePoint location="2333,252" />
+      <AbsolutePoint location="2333,327" />
+      <AbsolutePoint location="1644,327" />
+      <AbsolutePoint location="1644,372" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageUserDailyPlan.do,get,/client/ClientEditUserDailyPlan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,887" />
+      <AbsolutePoint location="1453,887" />
+      <AbsolutePoint location="1453,1450" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageAsk.do,fail,/client/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="843,252" />
-      <AbsolutePoint location="843,312" />
-      <AbsolutePoint location="1519,312" />
-      <AbsolutePoint location="1519,372" />
+      <AbsolutePoint location="728,252" />
+      <AbsolutePoint location="728,297" />
+      <AbsolutePoint location="1579,297" />
+      <AbsolutePoint location="1579,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientListNewsFeeds.do,out,/client/ClientMessageOutBox.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2288,252" />
-      <AbsolutePoint location="2288,342" />
-      <AbsolutePoint location="2187,342" />
-      <AbsolutePoint location="2187,372" />
+      <AbsolutePoint location="2282,252" />
+      <AbsolutePoint location="2282,372" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageUserDailyPlan.do,list,/client/ClientListUserDailyPlan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,917" />
+      <AbsolutePoint location="753,917" />
+      <AbsolutePoint location="753,1450" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogin.do,top,/client/include/UserInfo.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1992,519" />
-      <AbsolutePoint location="1621,519" />
-      <AbsolutePoint location="1621,876" />
-      <AbsolutePoint location="1438,876" />
+      <AbsolutePoint location="2173,569" />
+      <AbsolutePoint location="2173,614" />
+      <AbsolutePoint location="1344,614" />
+      <AbsolutePoint location="1344,850" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageAsk.do,all,/client/ClientListAllAsk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="626,252" />
-      <AbsolutePoint location="626,312" />
-      <AbsolutePoint location="408,312" />
+      <AbsolutePoint location="517,232" />
+      <AbsolutePoint location="408,232" />
       <AbsolutePoint location="408,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/client/ClientRegister.do,fail,/client/ClientRegister.jsp,1" routingType="0">
+  <StrutsTransition id="/client/ClientManageUserDailyAccredit.do,ok,/client/operate_result.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="762,569" />
-      <AbsolutePoint location="762,659" />
-      <AbsolutePoint location="761,659" />
-      <AbsolutePoint location="761,689" />
+      <AbsolutePoint location="681,1130" />
+      <AbsolutePoint location="1030,1130" />
+      <AbsolutePoint location="1030,1450" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientLogin.do,login,/client/ClientLoginOk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2173,569" />
-      <AbsolutePoint location="2173,599" />
-      <AbsolutePoint location="2195,599" />
-      <AbsolutePoint location="2195,689" />
+      <AbsolutePoint location="2203,569" />
+      <AbsolutePoint location="2203,689" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientRegister.do,fail,/client/ClientRegister.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="845,569" />
+      <AbsolutePoint location="845,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageFriend.do,fail,/client/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1382,252" />
-      <AbsolutePoint location="1382,282" />
-      <AbsolutePoint location="1559,282" />
-      <AbsolutePoint location="1559,372" />
+      <AbsolutePoint location="1443,202" />
+      <AbsolutePoint location="1537,202" />
+      <AbsolutePoint location="1537,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageArticle.do,list,/client/ClientListArticle.jsp,1" routingType="0">
@@ -290,27 +305,28 @@
       <AbsolutePoint location="181,986" />
     </AutomaticBendpoints>
   </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageUserDailyAccredit.do,get,/client/ClientEditUserDailyAccredit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="515,1100" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
   <StrutsTransition id="/client/ClientModifyProfile.do,modify,/client/ClientModifyProfile.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="291,569" />
-      <AbsolutePoint location="291,599" />
-      <AbsolutePoint location="101,599" />
+      <AbsolutePoint location="231,519" />
+      <AbsolutePoint location="101,519" />
       <AbsolutePoint location="101,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientListNewsFeeds.do,oin,/client/ClientMessageBoxOut.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2379,252" />
-      <AbsolutePoint location="2379,312" />
-      <AbsolutePoint location="2507,312" />
-      <AbsolutePoint location="2507,372" />
+      <AbsolutePoint location="2412,252" />
+      <AbsolutePoint location="2412,372" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientVerifyEmail.do,resend,/client/ClientRegisterOk.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1435,569" />
-      <AbsolutePoint location="1435,599" />
-      <AbsolutePoint location="1481,599" />
+      <AbsolutePoint location="1481,569" />
       <AbsolutePoint location="1481,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
