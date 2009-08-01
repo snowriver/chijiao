@@ -82,4 +82,21 @@ public class UserDailySumupDAO extends BaseUserDailySumupDAO {
 			throw re;
 		}
 	}
+	
+	public List findDailySumup(String userid, String date) {
+		
+		try {
+			String queryString = "SELECT DISTINCT model FROM UserDailySumup AS model WHERE model.userId = ? "
+					+ "AND model.date = ? ";
+			
+			org.hibernate.Query query = getSession().createQuery(queryString);
+			query.setParameter(0, userid);
+			query.setParameter(1, date);
+			
+			return query.list();
+		} catch (RuntimeException re) {
+			log.error("find by property name failed", re);
+			throw re;
+		}
+	}
 }
