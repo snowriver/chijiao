@@ -133,8 +133,12 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			plan.setStartTime(timeFormatter.parse(startTimeHh +":" + startTimeMm +":00"));
 			plan.setEndTime(timeFormatter.parse(endTimeHh +":" + endTimeMm +":00"));
 			
-			if(limitTime !=null && limitTime.length() >0)
+			if(limitTime !=null && limitTime.length() >0) {
 				plan.setLimitTime(fullFormatter.parse(limitTime));
+			}
+			else {
+				plan.setLimitTime(null);				
+			}
 			plan.setIsComplete(new Short(isComplete));
 			plan.setSn(0);
 			
@@ -177,14 +181,18 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 			plan.setContent(content);
 			plan.setStartTime(timeFormatter.parse(startTimeHh +":" + startTimeMm +":00"));
 			plan.setEndTime(timeFormatter.parse(endTimeHh +":" + endTimeMm +":00"));
-			if(limitTime !=null && limitTime.length() >0)
+			if(limitTime !=null && limitTime.length() >0) {
 				plan.setLimitTime(fullFormatter.parse(limitTime));
+			}
+			else {
+				plan.setLimitTime(null);				
+			}
 			plan.setIsComplete(new Short(isComplete));
 			plan.setSn(0);
 			
 			dailyPlanManager.updateDailyPlan(plan);
 			
-			request.setAttribute("RETURN_URL", "ClientManageUserDailyPlan.do?act=edit&id="+id);
+			//request.setAttribute("RETURN_URL", "ClientManageUserDailyPlan.do?act=edit&id="+id);
 			
 			return mapping.findForward("return");
 		} catch (Exception e) {
