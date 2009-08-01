@@ -87,7 +87,7 @@
 					<ul>
 						
 						
-						<li><a href="../client/ClientMain.jsp" target="_blank">评论管理</a></li>
+						<li><a href="../client/ClientManageUserDailyPlan.do?act=list" target="_blank">成功计划</a></li>
 						<li>|</li>
 						
 						<li><a href="${UC_HOME_URL }/cp.php" target="_blank">圈子管理</a></li>
