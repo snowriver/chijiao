@@ -64,9 +64,7 @@
 	<DIV class=addBday id=main_container>
 		<DIV class=tabDiv>
 			<UL>
-	  			<LI><A class=current id=switch_birthday_button href="javascript:void(0)">今日计划</A> </LI>
-	  			<LI><A id=switch_commemo_button href="javascript:void(0)">今日授权</A></LI>
-	  			<LI><A id=switch_commemo_button href="javascript:void(0)">今日反省</A></LI>
+	  			<LI><A class=current id=switch_birthday_button href="javascript:void(0)">修改今日事项</A> </LI>
 	  		</UL>
 	  	</DIV>
 	  	
