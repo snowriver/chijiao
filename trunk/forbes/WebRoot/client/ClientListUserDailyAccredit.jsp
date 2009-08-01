@@ -217,7 +217,7 @@
 					<td width="5%"><input type="checkbox" name="accreditID" value="${accredit.id}" /></td>
 					<td width="5%">${(PAGER.curPage -1) * 10 + status.index + 1 }</td>
 					<td>${accredit.receiver}</td>
-					<td><a href="javascript:void(0)" onclick="openPage('修改今日事项','ClientManageUserDailyPlan.do?act=get&id=${accredit.id }', '15', '0', '700','550');">${fn:substring(accredit.title, 0,30) }</a></td>
+					<td><a href="javascript:void(0)" onclick="openPage('修改今日授权','ClientManageUserDailyAccredit.do?act=get&id=${accredit.id }', '15', '0', '700','550');">${fn:substring(accredit.title, 0,30) }</a></td>
 					<td><fmt:formatDate value="${accredit.limitTime}" pattern="yyyy-MM-dd HH:mm"/></td>
 					<td>
 						<input id="iscomplete_${accredit.id}" name="iscomplete_${accredit.id}" type="checkbox" value="${accredit.isComplete}" onclick="completePlan(${accredit.id});" <c:if test="${accredit.isComplete == 1}">checked</c:if> />						
