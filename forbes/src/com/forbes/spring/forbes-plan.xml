@@ -72,6 +72,10 @@
 			<ref bean="dailyAccreditManagerService" />
 		</property>
 	</bean>
-
+	<bean name="/client/ClientManageUserDailySumup" class="com.forbes.struts.action.client.ClientManageUserDailySumupAction" singleton="false">
+		<property name="dailySumupManager">
+			<ref bean="dailySumupManagerService" />
+		</property>
+	</bean>
 
 </beans>

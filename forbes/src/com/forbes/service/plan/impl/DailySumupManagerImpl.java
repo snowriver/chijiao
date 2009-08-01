@@ -20,12 +20,17 @@ public class DailySumupManagerImpl implements DailySumupManager {
 		this.userDailySumupDAO = userDailySumupDAO;
 	}
 
-	public List getDailySumupByPage(Pager pager, int pageNo, String userid, String date, String keyword, String orderby ) throws ForbesException{
+	public UserDailySumup getDailySumup( String userid, String date ) throws ForbesException{
 				
-		try {			
-			pager.setTotoalCnt(userDailySumupDAO.getCount(userid, date, keyword));
-			List list = userDailySumupDAO.findDailySumupByPage(userid, date, keyword, orderby, (pageNo - 1) * pager.getCntOfPage(), pager.getCntOfPage());			
-			return list;
+		try {		
+			
+			List list = userDailySumupDAO.findDailySumup(userid, date);
+			if(list.size() >0) {
+				return (UserDailySumup)list.get(0);
+			}
+			else {
+				return null;
+			}
 		} catch (Exception se) {
 			se.printStackTrace();
 			throw new ForbesException(se.getMessage());
