@@ -51,7 +51,9 @@
 		</DIV>
 		<DIV class=addBdaySuccessfulBtn>
 			<P>
-				<INPUT class=confirmBtn id=continue_button type=button value=继续添加 onclick="self.location='${RETURN_URL }'"> 
+				<c:if test="${not empty RETURN_URL}">
+					<INPUT class=confirmBtn id=continue_button type=button value=继续添加 onclick="self.location='${RETURN_URL }'"> 
+				</c:if>				
 				<INPUT class=confirmBtn id=continue_button type=button value=关闭 onclick="window.parent.closeDiv();">
 			</P>
 		</DIV>

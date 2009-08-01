@@ -7,7 +7,6 @@
 <%
 	UcMembers ucMembers = (UcMembers)request.getSession().getAttribute("CLIENT");
 	String date = request.getParameter("date");
-	System.out.println(date);
 	if(date == null || date.length() < 1) {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		date   = df.format(new Date()) ;		
