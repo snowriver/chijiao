@@ -14,6 +14,7 @@
 	com.forbes.ajax.UserDailyCount udc = new com.forbes.ajax.UserDailyCount();
 	request.setAttribute("USER_DAILY_PLAN_COUNT", udc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
 	request.setAttribute("USER_DAILY_ACCREDIT_COUNT", udc.getUserDailyAccreditCount(ucMembers.getUid().toString(), date, null));
+	request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
 %>
 
 
@@ -179,7 +180,7 @@
 	<div class="ucnav">
 		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
 		<a href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
-		<a href="index.php?m=pm_client&a=ls&folder=outbox">今日反省[1]</a>
+		<a href="ClientManageUserDailySumup.do?act=list">今日反省[${USER_DAILY_SUMUP_COUNT }]</a>
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
