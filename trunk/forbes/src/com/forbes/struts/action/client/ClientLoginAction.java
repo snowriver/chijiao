@@ -12,15 +12,12 @@ import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
 import com.forbes.hibernate.bean.UcMembers;
-import com.forbes.hibernate.bean.User;
 import com.forbes.service.ucenter.UCenterManager;
 import com.forbes.service.user.UserInfoManager;
 import com.forbes.service.user.UserLogin;
 import com.forbes.service.useraction.UserActionTask;
 import com.forbes.service.useraction.action.UserLoginAction;
-import com.forbes.struts.form.user.UserLoginForm;
 import com.forbes.thread.TaskManager;
 import com.forbes.util.BaseEncode;
 import com.forbes.util.MD5;
@@ -213,13 +210,20 @@ public class ClientLoginAction extends DispatchAction {
 	
 		String history       = request.getParameter("history");
 		
-		if(history != null && history.length() > 0)
+		System.out.println("loginName=" + loginName);
+		
+		if(history != null && history.length() > 0) {
 			request.setAttribute("RETURN_URL", BaseEncode.getFromBASE64(history));
+		}
+		/*else {
+			request.setAttribute("RETURN_URL", "ClientMain.jsp");
+		}*/
+			
 		
 		try {
 		
 				int userCount = userLogin.getCount( "username", loginName.trim());
-				//System.out.println( "userCount = " + userCount);
+				System.out.println( "userCount = " + userCount);
 				if( userCount >=1) {
 					UcMembers user = userLogin.clientVerifyPassword( loginName, password );
 					//System.out.println("user is null = " + (user != null) );
@@ -272,13 +276,13 @@ public class ClientLoginAction extends DispatchAction {
 					else{
 						request.setAttribute("LOGIN_NAME", loginName);
 						request.setAttribute("FAIL_MESSAGE", "密码错误，或者该用户已被注销。");
-						return mapping.findForward("fail");
+						return mapping.findForward("login_fail");
 					}
 				}
 				else {
 					request.setAttribute("LOGIN_NAME", loginName);
 					request.setAttribute("FAIL_MESSAGE", "本系统中无该用户。");
-					return mapping.findForward("fail");
+					return mapping.findForward("login_fail");
 				}
 				
 			
@@ -287,7 +291,7 @@ public class ClientLoginAction extends DispatchAction {
 			request.setAttribute("LOGIN_NAME", loginName);
 			//System.out.println(e.getMessage());
 			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
-			return mapping.findForward("fail");
+			return mapping.findForward("login_fail");
 		}
 
 	}
