@@ -149,6 +149,15 @@
       		<forward name="ok" path="/client/operate_result.jsp" />
     	</action>
     	
+    	<action
+	    	parameter="act"
+      		path="/client/ClientManageUserDailySumup"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="list" path="/client/ClientListUserDailySumup.jsp" />
+      		<forward name="ok" path="/client/operate_ok.jsp" />
+    	</action>
+    	
 	</action-mappings>
 	
 </struts-config>
