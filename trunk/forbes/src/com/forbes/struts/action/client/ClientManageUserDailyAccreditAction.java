@@ -169,17 +169,22 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 		SimpleDateFormat fullFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 		try {
-			UserDailyAccredit plan = new UserDailyAccredit();
-			plan.setUserId(user.getUid());
-			plan.setReceiver(receiver);
-			plan.setDate(dateFormatter.parse(date));
-			plan.setTitle(title);
-			plan.setContent(content);
-			plan.setLimitTime(fullFormatter.parse(limitTime));
-			plan.setIsComplete(new Short(isComplete));
-			plan.setSn(0);
+			UserDailyAccredit accredit = new UserDailyAccredit();
+			accredit.setUserId(user.getUid());
+			accredit.setReceiver(receiver);
+			accredit.setDate(dateFormatter.parse(date));
+			accredit.setTitle(title);
+			accredit.setContent(content);
+			if(limitTime !=null && limitTime.length() >0) {
+				accredit.setLimitTime(fullFormatter.parse(limitTime));
+			}
+			else {
+				accredit.setLimitTime(null);
+			}
+			accredit.setIsComplete(new Short(isComplete));
+			accredit.setSn(0);
 			
-			dailyAccreditManager.addDailyAccredit(plan);
+			dailyAccreditManager.addDailyAccredit(accredit);
 			
 			request.setAttribute("RETURN_URL", "ClientAddUserDailyAccredit.jsp");
 			
@@ -222,18 +227,24 @@ public class ClientManageUserDailyAccreditAction extends DispatchAction {
 		SimpleDateFormat fullFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 		try {
-			UserDailyAccredit plan = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
-			plan.setDate(dateFormatter.parse(date));
-			plan.setReceiver(receiver);			
-			plan.setTitle(title);
-			plan.setContent(content);
-			plan.setLimitTime(fullFormatter.parse(limitTime));
-			plan.setIsComplete(new Short(isComplete));
-			plan.setSn(0);
+			UserDailyAccredit accredit = dailyAccreditManager.getDailyAccredit(Integer.parseInt(id));
+			accredit.setDate(dateFormatter.parse(date));
+			accredit.setReceiver(receiver);			
+			accredit.setTitle(title);
+			accredit.setContent(content);
+			if(limitTime !=null && limitTime.length() >0) {
+				accredit.setLimitTime(fullFormatter.parse(limitTime));
+			}
+			else {
+				accredit.setLimitTime(null);
+			}
 			
-			dailyAccreditManager.updateDailyAccredit(plan);
+			accredit.setIsComplete(new Short(isComplete));
+			accredit.setSn(0);
 			
-			request.setAttribute("RETURN_URL", "ClientManageUserDailyAccredit.do?act=edit&id="+id);
+			dailyAccreditManager.updateDailyAccredit(accredit);
+			
+			//request.setAttribute("RETURN_URL", "ClientManageUserDailyAccredit.do?act=edit&id="+id);
 			
 			return mapping.findForward("return");
 		} catch (Exception e) {
