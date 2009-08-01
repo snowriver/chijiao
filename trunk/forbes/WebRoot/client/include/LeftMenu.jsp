@@ -20,11 +20,15 @@
 	<DIV class="side_navbox <c:if test="${p == 'client_manage_favorite' || p == 'client_publish_article' || p == 'client_manage_article' }">side_navbox_on</c:if>">
 		<H3>管理资料</H3>
 		<UL>
+			<!-- 
 			<LI <c:if test="${p == 'client_publish_article' }">class="li_page_on"</c:if>><A href="ClientPublishArticle.jsp">发布文章</A> 
 			<LI <c:if test="${p == 'client_manage_article' }">class="li_page_on"</c:if>><A href="ClientManageArticle.do?act=list">文章管理</A> 
 			<LI <c:if test="${p == 'client_manage_favorite' }">class="li_page_on"</c:if>><A href="ClientManageArticleFavorite.do?act=list">收藏管理</A> 
   			<LI><A href="#">订阅管理</A> 
   			<LI><A href="#">评论管理</A> </LI>
+			 -->
+			
+			<LI <c:if test="${p == 'client_manage_favorite' }">class="li_page_on"</c:if>><A href="ClientManageArticleFavorite.do?act=list">收藏管理</A> 
   		</UL>
   	</DIV>
   	
@@ -50,9 +54,12 @@
 		</UL>
 	</DIV>
 	
+	<!-- 
 	<DIV class=side_navbox>
 		<H3>其它</H3>
 		<UL><LI><A href="#">积分规则</A> </LI></UL>
 	</DIV>
+	 -->
+	
 
 </DIV>
