@@ -63,7 +63,7 @@
 			<UL>
 	  			<LI><A class=current id=switch_birthday_button href="javascript:void(0)">今日计划</A> </LI>
 	  			<LI><A id=switch_commemo_button href="ClientAddUserDailyAccredit.jsp">今日授权</A></LI>
-	  			<LI><A id=switch_commemo_button href="javascript:void(0)">今日反省</A></LI>
+	  			<!-- <LI><A id=switch_commemo_button href="javascript:void(0)">今日反省</A></LI> -->
 	  		</UL>
 	  	</DIV>
 	  	
