@@ -35,9 +35,9 @@ public class ETagContentFilter implements Filter {
 		logger.debug(id);
 		System.out.println(id);
 		
-		if(id.indexOf(".css")>0 && id.indexOf(".gif") > 0
-				&& id.indexOf(".jpg") > 0 && id.indexOf(".js") > 0
-				&& id.indexOf(".png") > 0 && id.indexOf(".bmp") > 0){
+		if(id.indexOf(".css")>0 || id.indexOf(".gif") > 0
+				|| id.indexOf(".jpg") > 0 || id.indexOf(".js") > 0
+				|| id.indexOf(".png") > 0 || id.indexOf(".bmp") > 0){
 			
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			ETagResponseWrapper wrappedResponse = new ETagResponseWrapper(servletResponse, baos);
@@ -61,7 +61,7 @@ public class ETagContentFilter implements Filter {
 			    cal.set(Calendar.MILLISECOND, 0);
 			    Date lastModified = cal.getTime();
 				servletResponse.setDateHeader("Last-Modified", lastModified.getTime());
-				servletResponse.setHeader("Cache-Control", "max-age=" + 24*60*60*365);
+				servletResponse.setHeader("Cache-Control", "max-age=" + 24*60*60);
 				//logger.debug("Writing body content");
 			    servletResponse.setContentLength(bytes.length);
 			    ServletOutputStream sos = servletResponse.getOutputStream();
