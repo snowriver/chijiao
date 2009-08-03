@@ -175,7 +175,7 @@
 <div class=mainbody>
 	<div id="append"></div>
 <div class="ucbody">
-	<h1>今日计划[${PARA['date'] }]</h1>
+	<h1>今日计划 [${DATE }]</h1>
 	<h2>今日事项：诵读成功誓言并复习你的人生目标，再写下你的今日计划，付诸行动。</h2>
 	<div class="ucnav">
 		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
