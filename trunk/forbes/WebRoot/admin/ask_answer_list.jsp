@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
-	<title>ๅ็ญ”็ฎก็</title>
+	<title>ปุด๐นÜภํ</title>
 	<link href="css_body.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" src="js/context_menu.js"></script>
 	<script language="javascript" src="js/ieemu.js"></script>
@@ -69,7 +69,7 @@
 <body>
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">ๅ็ญ”็ปดๆค</div>
+	<div class="bodytitletxt">ปุด๐ฮฌปค</div>
 </div>
 
 <table width='96%' border='0' cellpadding='0' cellspacing='0' align="center" class="tbtitle">
@@ -104,13 +104,13 @@
 			<form name="form2" action="catalog_do.php?dopost=upRankAll" method="post">
 				<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center" style="margin:0px auto" class="tblist">
 					<tr align="center">
-						<td width="7%" class="tbsname">้€ๆฉ</td>
+						<td width="7%" class="tbsname">ักิ๑</td>
 						<td width="6%" class="tbsname">ID</td>
-						<td width="40%" class="tbsname">ๅ็ญ”ๅ…ๅฎน</td>
-						<td width="10%" class="tbsname">ๅ็ญ”ๆ—ถ้—ด</td>
-						<td width="10%" class="tbsname">ๆ€ไฝณ็ญ”ๆก</td>
-						<td width="10%" class="tbsname">ๅๅคไบบ</td>
-						<td width="10%" class="tbsname">็ฎก็</td>
+						<td width="40%" class="tbsname">ปุด๐ฤฺศÝ</td>
+						<td width="10%" class="tbsname">ปุด๐สฑผไ</td>
+						<td width="10%" class="tbsname">ื๎ผัด๐ฐธ</td>
+						<td width="10%" class="tbsname">ปุธดศห</td>
+						<td width="10%" class="tbsname">นÜภํ</td>
 					</tr>
 				</table>
 
@@ -125,11 +125,11 @@
 							
 						</td>
 						<td width='10%'><fmt:formatDate value='${answer.pubdate }' type='date'/></td>
-						<td width='10%'><c:if test="${ASK.bestAnswer == answer.id}">ๆฏ</c:if></td>
+						<td width='10%'><c:if test="${ASK.bestAnswer == answer.id}">สว</c:if></td>
 						<td width='10%'><a href="${answer.loginName }">${answer.loginName }</a></td>
 						<td width='10%' align='center' style='letter-spacing:1px;'>
-							<a href='javascript:void(0);' onclick="updateContent(${answer.id }, '|AdminManageAskAnswer.do|act=list|pno=${PAGER.curPage}|askid=${ASK.id }|');">ไฟฎๆ”น</a>
-							| <a href="AdminManageAskAnswer.do?act=delete&levelID=${answer.id }&returnUrl=|AdminManageAskAnswer.do|act=list|pno=${PAGER.curPage}|askid=${ASK.id }|">ๅ ้ค</a>
+							<a href='javascript:void(0);' onclick="updateContent(${answer.id }, '|AdminManageAskAnswer.do|act=list|pno=${PAGER.curPage}|askid=${ASK.id }|');">ะÞธฤ</a>
+							| <a href="AdminManageAskAnswer.do?act=delete&levelID=${answer.id }&returnUrl=|AdminManageAskAnswer.do|act=list|pno=${PAGER.curPage}|askid=${ASK.id }|">ษพณý</a>
 						</td>
 						
 					</tr>
@@ -159,17 +159,17 @@
 
 	<tr bgcolor="#F8FBFB">
 					<td height="28" colspan="11" align="left" style="padding-left:6px;padding-top:8px">
-						<a href="javascript:selAll()" class="inputbutx">ๅ…จ้€</a>
-						<a href="javascript:noSelAll()" class="inputbutx">ๅ–ๆถ</a>
-						<a href="javascript:delAskAnswer('|AdminManageAskAnswer.do|act=list|pno=${PAGER.curPage}|askid=${ASK.id }|')" class="inputbutx">ๅ ้ค</a>
+						<a href="javascript:selAll()" class="inputbutx">ศซัก</a>
+						<a href="javascript:noSelAll()" class="inputbutx">ศกฯ๛</a>
+						<a href="javascript:delAskAnswer('|AdminManageAskAnswer.do|act=list|pno=${PAGER.curPage}|askid=${ASK.id }|')" class="inputbutx">ษพณý</a>
 					</td>
 				</tr>
 				
 	<tr>
         <td height="20" bgcolor="#EDF9D5" align="center" valign="middle">
-			ๅ…ฑ ${PAGER.totoalPage} ้กต&nbsp;&nbsp;${PAGER.totoalCnt} ๆก่ฎฐๅฝ•&nbsp;&nbsp;
-			<A href="AdminManageAskAnswer.do?act=list&pno=1&${PARA['parameter'] }">้ฆ–้กต</A>&nbsp;&nbsp;
-        	<A href="AdminManageAskAnswer.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ไธ้กต</A>&nbsp;&nbsp;
+			นฒ ${PAGER.totoalPage} าณ&nbsp;&nbsp;${PAGER.totoalCnt} ฬ๕ผวยผ&nbsp;&nbsp;
+			<A href="AdminManageAskAnswer.do?act=list&pno=1&${PARA['parameter'] }">สืาณ</A>&nbsp;&nbsp;
+        	<A href="AdminManageAskAnswer.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ษฯาณ</A>&nbsp;&nbsp;
         
 			<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminManageAskAnswer.do?act=list&${PARA['parameter'] }')"> 
 				<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -182,8 +182,8 @@
 				</c:forEach>
  			</SELECT>&nbsp;&nbsp;
                   
-        	<A href="AdminManageAskAnswer.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ไธ้กต</A>&nbsp;&nbsp;
-        	<A href="AdminManageAskAnswer.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">ๆซ้กต</A>&nbsp;&nbsp;
+        	<A href="AdminManageAskAnswer.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ฯยาณ</A>&nbsp;&nbsp;
+        	<A href="AdminManageAskAnswer.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">ฤฉาณ</A>&nbsp;&nbsp;
 		</td>
     </tr>
 </table>
@@ -204,9 +204,9 @@
 				 					<td>
 				 						<table border='0' cellpadding='0' cellspacing='0'>
 									  		<tr>
-									  			<td width='70'>ๅ…ณ้”ฎๅญ—๏ผ</td>
+									  			<td width='70'>นุผüืึฃบ</td>
 									    		<td width='160'><input type='text' name='keyword' value='' style='width:150' /></td>									    		
-									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="ๆ็ดข" /></td>
+									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="หัห๗" /></td>
 									    	</tr>
 										</table>
 									</td>       

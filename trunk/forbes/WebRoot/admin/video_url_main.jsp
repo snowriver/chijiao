@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æœç´¢å…³é”®å­—ç®¡ç†</title>
+<title>ËÑË÷¹Ø¼ü×Ö¹ÜÀí</title>
 <link href="css_body.css" rel="stylesheet" type="text/css" />
 <link href="div.css" rel="stylesheet" type="text/css"/>
 <style>
@@ -39,8 +39,8 @@
 			//var kws = $Obj('spwords'+nid).value;
 			//var ct  = $Obj('count'+nid).value;
 		
-			//var errMsg = "ç½‘ç»œé€šä¿¡å‡ºé”™ï¼<br>[<a href=\"javascript:LoadPage('"+pageno+"')\"><u>ç‚¹å‡»æ­¤é‡æ–°åŠ è½½åˆ—è¡¨</u></a>]";
-			//var myajax = new DedeAjax(listArea,true,true,"",errMsg,"æ­£åœ¨å¤„ç†...");
+			//var errMsg = "ÍøÂçÍ¨ĞÅ³ö´í£¡<br>[<a href=\"javascript:LoadPage('"+pageno+"')\"><u>µã»÷´ËÖØĞÂ¼ÓÔØÁĞ±í</u></a>]";
+			//var myajax = new DedeAjax(listArea,true,true,"",errMsg,"ÕıÔÚ´¦Àí...");
 		  	//myajax.SendGet("search_keywords_main.php?dopost=update&aid="+nid+"&keyword="+kw+"&spwords="+kws+"&count="+ct+"&pageno="+pageno);
 		  	
 		}
@@ -66,7 +66,7 @@
 <body>
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">è§†é¢‘URLç®¡ç†--${VIDEO.title }</div>
+	<div class="bodytitletxt">ÊÓÆµURL¹ÜÀí--${VIDEO.title }</div>
 </div>
 
 <div class="main">
@@ -75,15 +75,15 @@
       <td height="35" colspan="8" valign="bottom" bgcolor="#EDF9D5">
         <table width="96%" border="0" cellpadding="0" cellspacing="0">
           <tr>
-            <td width="20%" style="padding-top:6px"><strong>&nbsp;æœç´¢è§†é¢‘ç»´æŠ¤</strong></td>
+            <td width="20%" style="padding-top:6px"><strong>&nbsp;ËÑË÷ÊÓÆµÎ¬»¤</strong></td>
             <td width="60%" style="padding-top:6px">
             	<form action="AdminUpdateVideoUrl.do?act=list&videoid=${PARA['videoid'] }" name="form1" method="post">            	
 				<table width="400" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td align="center" width="61%">
-                   		å…³é”®å­—ï¼š<input name="keyword" type="text" id="keywordse" style="width:150px" value="${PARA['keyword'] }" />
+                   		¹Ø¼ü×Ö£º<input name="keyword" type="text" id="keywordse" style="width:150px" value="${PARA['keyword'] }" />
                    	</td>
-                    <td width="39%"> <input type="submit" name="Submit" value="æœç´¢" class="inputbut" /> </td>
+                    <td width="39%"> <input type="submit" name="Submit" value="ËÑË÷" class="inputbut" /> </td>
                   </tr>
             	</table>
             	</form>
@@ -100,21 +100,21 @@
       	<form action="AdminUpdateVideoUrl.do?act=add&videoid=${PARA['videoid'] }&returnUrl=|AdminUpdateVideoUrl.do|act=list|pno=${PAGER.curPage}|videoid=${PARA['videoid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|" method="post" name="addkeyword">
 	    <table border='0' cellpadding='1' cellspacing='1'>
         <tr align='center' bgcolor='#ffffff'>
-          <td width="66" height='28' bgcolor="#EFFAC9">æ ‡é¢˜ï¼š</td>
+          <td width="66" height='28' bgcolor="#EFFAC9">±êÌâ£º</td>
           <td width="180" colspan="3" bgcolor="#EFFAC9" align="left">
           	<input name='title' style="width:350px" type='text' id='title' value='' class='ininput' /></td>
           
           
-          <td width="72" bgcolor="#EFFAC9">æ¥æºï¼š</td>
+          <td width="72" bgcolor="#EFFAC9">À´Ô´£º</td>
           <td width="80" bgcolor="#EFFAC9" colspan="2">
           	<select id="fromweb" name="fromweb">
-            	<option value="0">è¯·é€‰æ‹©</option>
-            	<option value="youku">ä¼˜é…·ç½‘</option>
-            	<option value="tudou">åœŸè±†ç½‘</option>
-            	<option value="6">å…­é—´æˆ¿</option>
-            	<option value="56">56ç½‘</option>
-            	<option value="sina">æ–°æµªæ’­å®¢</option>
-            	<option value="ku6">é…·6è§†é¢‘</option>
+            	<option value="0">ÇëÑ¡Ôñ</option>
+            	<option value="youku">ÓÅ¿áÍø</option>
+            	<option value="tudou">ÍÁ¶¹Íø</option>
+            	<option value="6">Áù¼ä·¿</option>
+            	<option value="56">56Íø</option>
+            	<option value="sina">ĞÂÀË²¥¿Í</option>
+            	<option value="ku6">¿á6ÊÓÆµ</option>
             	<option value="youtube">YouTube</option>
             	
            	</select>
@@ -122,7 +122,7 @@
          
         </tr>
         <tr align='center' bgcolor='#ffffff'>
-          <td width="66" height='28' bgcolor="#EFFAC9">URLï¼š</td>
+          <td width="66" height='28' bgcolor="#EFFAC9">URL£º</td>
           <td width="180" bgcolor="#EFFAC9" colspan="6" align="left">
           
           	<textarea name="url" cols="50" rows="6" id="url" style="width:500px;height:75px;float:left;margin-right:10px"></textarea>
@@ -132,7 +132,7 @@
        <tr align='center' bgcolor='#ffffff'>
           <td width="66" height='28' bgcolor="#EFFAC9">&nbsp;</td>
           <td width="180" bgcolor="#EFFAC9" colspan="6" align="left">
-          	<input type="submit" name="Submit" value="æ·»åŠ " class="inputbut" />
+          	<input type="submit" name="Submit" value="Ìí¼Ó" class="inputbut" />
           	
           </td>
           
@@ -146,30 +146,30 @@
       <td height="35" colspan="8" valign="bottom" bgcolor="#EDF9D5">
         <table width="96%" border="0" cellpadding="0" cellspacing="0">
           <tr>
-            <td width="10%" style="padding-top:6px"><strong>&nbsp;æ‰¹é‡æ·»åŠ </strong></td>
+            <td width="10%" style="padding-top:6px"><strong>&nbsp;ÅúÁ¿Ìí¼Ó</strong></td>
             <td width="90%" style="padding-top:6px">
             	<form action="AdminBatchAddVideoUrl.do?act=url&videoid=${PARA['videoid'] }" name="form1" method="post">            	
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                   	<td align="center" width="20%">
-                   		æ¥æºï¼š
+                   		À´Ô´£º
                    		<select id="fromweb" name="fromweb">
-			            	<option value="0">è¯·é€‰æ‹©</option>
-			            	<option value="youku">ä¼˜é…·ç½‘</option>
-			            	<option value="tudou">åœŸè±†ç½‘</option>
-			            	<option value="6">å…­é—´æˆ¿</option>
-			            	<option value="56">56ç½‘</option>
-			            	<option value="sina">æ–°æµªæ’­å®¢</option>
-			            	<option value="ku6">é…·6è§†é¢‘</option>
+			            	<option value="0">ÇëÑ¡Ôñ</option>
+			            	<option value="youku">ÓÅ¿áÍø</option>
+			            	<option value="tudou">ÍÁ¶¹Íø</option>
+			            	<option value="6">Áù¼ä·¿</option>
+			            	<option value="56">56Íø</option>
+			            	<option value="sina">ĞÂÀË²¥¿Í</option>
+			            	<option value="ku6">¿á6ÊÓÆµ</option>
 			            	<option value="youtube">YouTube</option>			            	
 			           	</select>
                    	</td>
                     <td align="center" width="60%">
-                   		URLï¼š<input name="url" type="text" id="url" style="width:80%" value="" />
-                   		<input name="page" type="text" id="page" style="width:5%" value="" />é¡µ
+                   		URL£º<input name="url" type="text" id="url" style="width:80%" value="" />
+                   		<input name="page" type="text" id="page" style="width:5%" value="" />Ò³
                    		<input name="returnUrl" type="hidden" value="|AdminUpdateVideoUrl.do|act=list|pno=${PAGER.curPage}|videoid=${PARA['videoid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|" />
                    	</td>
-                    <td width="39%"> <input type="submit" name="Submit" value="æ·»åŠ " class="inputbut" /> </td>
+                    <td width="39%"> <input type="submit" name="Submit" value="Ìí¼Ó" class="inputbut" /> </td>
                   </tr>
             	</table>
             	</form>
@@ -189,11 +189,11 @@
     <table width='96%' border='0' cellpadding='1' cellspacing='1' bgcolor='#E2F5BC' style='margin-bottom:3px' align='center'>
     <tr align='center' bgcolor='' height='24'>
       <td width='6%' height='28'><a href="AdminUpdateVideoUrl.do?act=list&videoid=${PARA['videoid'] }&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=id"><u>ID</u></a></td>
-      <td width='20%'><a href="AdminUpdateVideoUrl.do?act=list&videoid=${PARA['videoid'] }&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=title"><u>æ ‡é¢˜</u></a></td>
+      <td width='20%'><a href="AdminUpdateVideoUrl.do?act=list&videoid=${PARA['videoid'] }&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=title"><u>±êÌâ</u></a></td>
       <td width='50%'>URL</td>
-      <td width='6%'><a href="AdminUpdateVideoUrl.do?act=list&videoid=${PARA['videoid'] }&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=title"><u>æ¥æº</u></a></td>
-      <td width='6%'>é€‰æ‹©</td>
-      <td>ç®¡ç†</td>
+      <td width='6%'><a href="AdminUpdateVideoUrl.do?act=list&videoid=${PARA['videoid'] }&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=title"><u>À´Ô´</u></a></td>
+      <td width='6%'>Ñ¡Ôñ</td>
+      <td>¹ÜÀí</td>
     </tr>
     
     <c:forEach items="${VIDEO_URL_LIST}" var="vu" varStatus="is">
@@ -207,8 +207,8 @@
       	${vu.fromweb }</td>
       <td><input type='checkbox' id='vus${vu.id }' name='vus' class='np' value='${vu.id }' /></td>
       <td>
-      	<a href="#" onclick="UpdateUrl(${vu.id }, '|AdminUpdateVideoUrl.do|act=list|pno=${PAGER.curPage}|videoid=${PARA['videoid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|');">æ›´æ–°</a> |
-      	<a href="AdminUpdateVideoUrl.do?act=delete&id=${vu.id }&returnUrl=|AdminUpdateVideoUrl.do|act=list|pno=${PAGER.curPage}|videoid=${PARA['videoid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|" name="addkeyword">åˆ é™¤</a>
+      	<a href="#" onclick="UpdateUrl(${vu.id }, '|AdminUpdateVideoUrl.do|act=list|pno=${PAGER.curPage}|videoid=${PARA['videoid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|');">¸üĞÂ</a> |
+      	<a href="AdminUpdateVideoUrl.do?act=delete&id=${vu.id }&returnUrl=|AdminUpdateVideoUrl.do|act=list|pno=${PAGER.curPage}|videoid=${PARA['videoid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|" name="addkeyword">É¾³ı</a>
       </td>
     </tr>
     </c:forEach>
@@ -216,7 +216,7 @@
     </table>
     </span>
     <center>
- 		 <input type="submit" name="submit" value="åˆ é™¤é€‰ä¸­çš„è§†é¢‘" />
+ 		 <input type="submit" name="submit" value="É¾³ıÑ¡ÖĞµÄÊÓÆµ" />
 	</center> 
     
     </form>
@@ -226,9 +226,9 @@
     <tr align="center">
       <td height="35" colspan="8" bgcolor="#F9FCF1">
       <span id='pagelist'></span>
-      			å…± ${PAGER.totoalPage} é¡µ&nbsp;&nbsp;${PAGER.totoalCnt} æ¡è®°å½•&nbsp;&nbsp;
-						<A href="AdminUpdateVideoUrl.do?act=list&pno=1&${PARA['parameter'] }">é¦–é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminUpdateVideoUrl.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ä¸Šé¡µ</A>&nbsp;&nbsp;
+      			¹² ${PAGER.totoalPage} Ò³&nbsp;&nbsp;${PAGER.totoalCnt} Ìõ¼ÇÂ¼&nbsp;&nbsp;
+						<A href="AdminUpdateVideoUrl.do?act=list&pno=1&${PARA['parameter'] }">Ê×Ò³</A>&nbsp;&nbsp;
+        				<A href="AdminUpdateVideoUrl.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ÉÏÒ³</A>&nbsp;&nbsp;
         
 						<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminUpdateVideoUrl.do?act=list${PARA['parameter'] }')"> 
 							<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -241,8 +241,8 @@
 							</c:forEach>
 			 			</SELECT>&nbsp;&nbsp;
                   
-        				<A href="AdminUpdateVideoUrl.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ä¸‹é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminUpdateVideoUrl.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">æœ«é¡µ</A>&nbsp;&nbsp;
+        				<A href="AdminUpdateVideoUrl.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ÏÂÒ³</A>&nbsp;&nbsp;
+        				<A href="AdminUpdateVideoUrl.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">Ä©Ò³</A>&nbsp;&nbsp;
       </td>
     </tr>
 </table>

@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=gb2312' />
-<title>æ ç›®ç®¡ç†</title>
+<title>À¸Ä¿¹ÜÀí</title>
 <link href="css_body.css" rel="stylesheet" type="text/css" />
 <script language="javascript">
 var channelArray = new Array();
@@ -81,7 +81,7 @@ function ParTemplet(obj)
 function checkSubmit()
 {
    if(document.form1.typename.value==""){
-		  alert("æ ç›®åç§°ä¸èƒ½ä¸ºç©ºï¼");
+		  alert("À¸Ä¿Ãû³Æ²»ÄÜÎª¿Õ£¡");
 		  return false;
 	 }
 	 return true;
@@ -116,7 +116,7 @@ function CheckPathSet()
     <td width="100%" height="20" valign="top">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td height="30">&nbsp;<a href="AdminUpdateArticleType.do?act=list"><u>æ ç›®ç®¡ç†</u></a>&gt;&gt;å¢åŠ æ–‡ç« ç±»å‹</td>
+          <td height="30">&nbsp;<a href="AdminUpdateArticleType.do?act=list"><u>À¸Ä¿¹ÜÀí</u></a>&gt;&gt;Ôö¼ÓÎÄÕÂÀàĞÍ</td>
         </tr>
       </table></td>
   </tr>
@@ -132,8 +132,8 @@ function CheckPathSet()
 <table width="168" height="24" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td width="84" align="center" bgcolor="#006600"><a href="#" onClick="ShowItem1()" class="STYLE1">
-                  	<u>å¸¸è§„é€‰é¡¹</u></a>&nbsp;</td>
-                  <td width="84" align="center" bgcolor="#FFFFFF">é«˜çº§é€‰é¡¹&nbsp;</td>
+                  	<u>³£¹æÑ¡Ïî</u></a>&nbsp;</td>
+                  <td width="84" align="center" bgcolor="#FFFFFF">¸ß¼¶Ñ¡Ïî&nbsp;</td>
                 </tr>
               </table>
             </td>
@@ -144,28 +144,28 @@ function CheckPathSet()
             <td colspan="2" align="left" bgcolor="#EDF9D5">
             <table width="168" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td width="84" height="24" align="center" bgcolor="#FFFFFF">&nbsp;å¸¸è§„é€‰é¡¹&nbsp;</td>
-                  <td width="84" align="center" bgcolor="#006600"><a href="#" class="STYLE1" onclick="ShowItem2()"><u>é«˜çº§é€‰é¡¹</u></a></td>
+                  <td width="84" height="24" align="center" bgcolor="#FFFFFF">&nbsp;³£¹æÑ¡Ïî&nbsp;</td>
+                  <td width="84" align="center" bgcolor="#006600"><a href="#" class="STYLE1" onclick="ShowItem2()"><u>¸ß¼¶Ñ¡Ïî</u></a></td>
                 </tr>
             </table></td>
           </tr>
         </table>
 	    <table width="98%" border="0"  id="needset" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="120" height="26" align="left" class='bline'>æ˜¯å¦æ”¯æŒæŠ•ç¨¿ï¼š</td>
+            <td width="120" height="26" align="left" class='bline'>ÊÇ·ñÖ§³ÖÍ¶¸å£º</td>
           <td align="left" class='bline'>
-           	  <input type='radio' name='issend' value='0' class='np' />ä¸æ”¯æŒ&nbsp;
-              <input type='radio' name='issend' value='1' class='np'  checked />æ”¯æŒ
+           	  <input type='radio' name='issend' value='0' class='np' />²»Ö§³Ö&nbsp;
+              <input type='radio' name='issend' value='1' class='np'  checked />Ö§³Ö
           </td>
           </tr>
       
           <tr>
-            <td height="26" align="left" class='bline'>ç±»å‹åç§°ï¼š</td>
+            <td height="26" align="left" class='bline'>ÀàĞÍÃû³Æ£º</td>
             <td align="left" class='bline'><input name="name" type="text" id="name" size="30" value="${ARTICLE_TYPE.name }" /></td>
           </tr>
           <tr>
-            <td height="26" align="left" class='bline'> æ’åˆ—é¡ºåºï¼š </td>
-            <td align="left" class='bline'><input name="disorder" size="6" type="text" value="${ARTICLE_TYPE.disorder }" /> ï¼ˆç”±ä½ -&gt; é«˜ï¼‰ </td>
+            <td height="26" align="left" class='bline'> ÅÅÁĞË³Ğò£º </td>
+            <td align="left" class='bline'><input name="disorder" size="6" type="text" value="${ARTICLE_TYPE.disorder }" /> £¨ÓÉµÍ -&gt; ¸ß£© </td>
           </tr>
 
           
@@ -174,20 +174,20 @@ function CheckPathSet()
 	    <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" id="adset" style="display:none">
    
           <tr>
-            <td height="65" align="left">å…³é”®å­—ï¼š</td>
+            <td height="65" align="left">¹Ø¼ü×Ö£º</td>
             <td align="left"> <textarea name="keywords" cols="40" rows="3" id="keywords">${ARTICLE_TYPE.keywords }</textarea>
             </td>
           </tr>
           <tr>
-            <td height="65" align="left">ç±»å‹æè¿°ï¼š</td>
+            <td height="65" align="left">ÀàĞÍÃèÊö£º</td>
             <td height="65" align="left"> <textarea name="description" cols="40" rows="3" id="description">${ARTICLE_TYPE.description }</textarea></td>
           </tr>
         </table>
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
             <td height="50">
-				<input name="imageField" type="submit" class="inputbut" value="ç¡®å®š" />&nbsp;&nbsp;&nbsp;
-            	<input type="button" name="button" id="button" value="è¿”å›" class="inputbut" onclick="javascript:location='AdminUpdateArticleType.do?act=list'" />
+				<input name="imageField" type="submit" class="inputbut" value="È·¶¨" />&nbsp;&nbsp;&nbsp;
+            	<input type="button" name="button" id="button" value="·µ»Ø" class="inputbut" onclick="javascript:location='AdminUpdateArticleType.do?act=list'" />
 			</td>
             </tr>
       </table></td>

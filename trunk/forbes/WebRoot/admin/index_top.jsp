@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -70,33 +70,33 @@ function resetBT(){
 <div class="topnav">
 	<div class="sitenav">
 		<div class="welcome">
-			ä½ å¥½ï¼š<span class="username">${sessionScope.ADMIN.username } </span>ï¼Œæ¬¢è¿Žä½¿ç”¨ èµ¤è„šç½‘ åŽå°ç®¡ç†ç³»ç»Ÿã€‚
+			ÄãºÃ£º<span class="username">${sessionScope.ADMIN.username } </span>£¬»¶Ó­Ê¹ÓÃ ³à½ÅÍø ºóÌ¨¹ÜÀíÏµÍ³¡£
 		</div>
 		<div class="welcome">
-			<a href="javascript:ChangeMenu(-1)"><img src='img/frame-l.gif' border='0' alt="å‡å°å·¦æ¡†æž¶" /></a>
-    		<a href="javascript:ChangeMenu(0)"><img src='img/frame_on.gif' border='0' alt="éšè—/æ˜¾ç¤ºå·¦æ¡†æž¶" /></a>
-    		<a href="javascript:ChangeMenu(1)" title="å¢žå¤§å·¦æ¡†æž¶"><img src='img/frame-r.gif' border='0' alt="å¢žå¤§å·¦æ¡†æž¶" /></a>
+			<a href="javascript:ChangeMenu(-1)"><img src='img/frame-l.gif' border='0' alt="¼õÐ¡×ó¿ò¼Ü" /></a>
+    		<a href="javascript:ChangeMenu(0)"><img src='img/frame_on.gif' border='0' alt="Òþ²Ø/ÏÔÊ¾×ó¿ò¼Ü" /></a>
+    		<a href="javascript:ChangeMenu(1)" title="Ôö´ó×ó¿ò¼Ü"><img src='img/frame-r.gif' border='0' alt="Ôö´ó×ó¿ò¼Ü" /></a>
     	</div>
 		<div class="sitelink">
-			<a href="javascript:OpenMenu(9,'','index_main.jsp',0)">ç®¡ç†ä¸»é¡µ</a> | 
-			<a href="javascript:OpenMenu(0,'index_menu.jsp','',0)">åŠŸèƒ½èœå•</a> | 
-			<a href="http://www.dedecms.com/archives/templethelp/help/index.htm" target="_blank">å¸®åŠ©</a> | 
-			<a href="../" target="_blank">ç½‘ç«™ä¸»é¡µ</a> | 
-			<a href="exit.jsp" target="_parent">æ³¨é”€ç™»å½•</a>
+			<a href="javascript:OpenMenu(9,'','index_main.jsp',0)">¹ÜÀíÖ÷Ò³</a> | 
+			<a href="javascript:OpenMenu(0,'index_menu.jsp','',0)">¹¦ÄÜ²Ëµ¥</a> | 
+			<a href="http://www.dedecms.com/archives/templethelp/help/index.htm" target="_blank">°ïÖú</a> | 
+			<a href="../" target="_blank">ÍøÕ¾Ö÷Ò³</a> | 
+			<a href="exit.jsp" target="_parent">×¢ÏúµÇÂ¼</a>
 		</div>
 	</div>
 	<div class="leftnav">
 		<ul>
 			<li class="navleft"></li>
-			<li id='d1'><a href="javascript:OpenMenu(1,'','catalog_main.php',1)">é¢‘é“ç®¡ç†</a></li>
-			<li id='d2'><a href="javascript:OpenMenu(-1,'catalog_menu.php','public_guide.php',2)">å†…å®¹å‘å¸ƒ</a></li>
-			<li id='d3'><a href="javascript:OpenMenu(2,'','content_list.php',3)">å†…å®¹ç»´æŠ¤</a></li>
-			<li id='d4'><a href="javascript:OpenMenu(3,'','makehtml_homepage.php',4)">HTMLæ›´æ–°</a></li>
-            <li id='d10'><a href="javascript:OpenMenu(10,'','file_manage_main.php?activepath=/templets',10)">æ¨¡æ¿ç®¡ç†</a></li>
-			<li id='d5'><a href="javascript:OpenMenu(4,'','member_main.php',5)">æ ¸å¿ƒæ¨¡å—</a></li>
-			<li id='d7'><a href="javascript:OpenMenu(6,'','module_main.php',7)">æ‰©å±•æ¨¡å—</a></li>
-			<li id='d6'><a href="javascript:OpenMenu(5,'','plus_main.php',6)">è¾…åŠ©æ’ä»¶</a></li>
-			<li id='d8'><a href="javascript:OpenMenu(7,'','sys_info.php',8)">ç³»ç»Ÿç®¡ç†</a></li>
+			<li id='d1'><a href="javascript:OpenMenu(1,'','catalog_main.php',1)">ÆµµÀ¹ÜÀí</a></li>
+			<li id='d2'><a href="javascript:OpenMenu(-1,'catalog_menu.php','public_guide.php',2)">ÄÚÈÝ·¢²¼</a></li>
+			<li id='d3'><a href="javascript:OpenMenu(2,'','content_list.php',3)">ÄÚÈÝÎ¬»¤</a></li>
+			<li id='d4'><a href="javascript:OpenMenu(3,'','makehtml_homepage.php',4)">HTML¸üÐÂ</a></li>
+            <li id='d10'><a href="javascript:OpenMenu(10,'','file_manage_main.php?activepath=/templets',10)">Ä£°å¹ÜÀí</a></li>
+			<li id='d5'><a href="javascript:OpenMenu(4,'','member_main.php',5)">ºËÐÄÄ£¿é</a></li>
+			<li id='d7'><a href="javascript:OpenMenu(6,'','module_main.php',7)">À©Õ¹Ä£¿é</a></li>
+			<li id='d6'><a href="javascript:OpenMenu(5,'','plus_main.php',6)">¸¨Öú²å¼þ</a></li>
+			<li id='d8'><a href="javascript:OpenMenu(7,'','sys_info.php',8)">ÏµÍ³¹ÜÀí</a></li>
 			<li class="navright"></li>
 		</ul>
 	</div>

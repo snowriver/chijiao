@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -12,13 +12,13 @@
 <body>
 <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
 	<tr>
-		<td style="color:#FF6600; line-height:31px;"><strong>èµ¤è„šç½‘ç®¡ç†ç³»ç»Ÿ</strong></td>
+		<td style="color:#FF6600; line-height:31px;"><strong>³à½ÅÍø¹ÜÀíÏµÍ³</strong></td>
 	</tr>
 </table>
 
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">æœ€æ–°æ¶ˆæ¯</div>
+	<div class="bodytitletxt">×îÐÂÏûÏ¢</div>
 </div>
 
 <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -32,7 +32,7 @@
 
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">å¿«æ·åŠŸèƒ½</div>
+	<div class="bodytitletxt">¿ì½Ý¹¦ÄÜ</div>
 </div>
 
 <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -40,12 +40,12 @@
 		<td height="60" align="center">
 			<table width="96%" border="0" cellspacing="10" cellpadding="0" style="margin-top:10px;">
 				<tr class="main_qbut">
-					<td width="16%" align="center"><div style="background-position:center 10px;"><a href="AdminUpdateArticleType.do?act=list">æ ç›®ç®¡ç†</a></div></td>
-					<td width="16%" align="center"><div style="background-position:center -130px;"><a href="catalog_menu.php" target="menu">å‘å¸ƒæ–‡æ¡£</a></div></td>
-					<td width="16%" align="center"><div style="background-position:center -270px;"><a href="content_list.php?arcrank=-1">å¾…å®¡æ ¸æ–‡æ¡£</a></div></td>
-					<td width="16%" align="center"><div style="background-position:center -414px;"><a href="feedback_main.php">è¯„è®ºç®¡ç†</a></div></td>
-					<td width="16%" align="center"><div style="background-position:center -554px;"><a href="makehtml_list.php">æ›´æ–°HTML</a></div></td>
-					<td width="16%" align="center"><div style="background-position:center -694px;"><a href="sys_info.php">æ›´æ”¹ç³»ç»Ÿå‚æ•°</a></div></td>
+					<td width="16%" align="center"><div style="background-position:center 10px;"><a href="AdminUpdateArticleType.do?act=list">À¸Ä¿¹ÜÀí</a></div></td>
+					<td width="16%" align="center"><div style="background-position:center -130px;"><a href="catalog_menu.php" target="menu">·¢²¼ÎÄµµ</a></div></td>
+					<td width="16%" align="center"><div style="background-position:center -270px;"><a href="content_list.php?arcrank=-1">´ýÉóºËÎÄµµ</a></div></td>
+					<td width="16%" align="center"><div style="background-position:center -414px;"><a href="feedback_main.php">ÆÀÂÛ¹ÜÀí</a></div></td>
+					<td width="16%" align="center"><div style="background-position:center -554px;"><a href="makehtml_list.php">¸üÐÂHTML</a></div></td>
+					<td width="16%" align="center"><div style="background-position:center -694px;"><a href="sys_info.php">¸ü¸ÄÏµÍ³²ÎÊý</a></div></td>
 					<td width="4%" align="center">&nbsp;</td>
 				</tr>
 			</table>
@@ -56,66 +56,66 @@
 
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">ç³»ç»ŸåŸºæœ¬ä¿¡æ¯</div>
+	<div class="bodytitletxt">ÏµÍ³»ù±¾ÐÅÏ¢</div>
 </div>
 
 <table width="96%" border="0" align="center" cellpadding="10" cellspacing="1" bgcolor="#E2F5BC" style="margin-top:6px;">
 	<tr>
-		<td align="right" bgcolor="#F9FFE6" class="main_bleft">ä½ çš„çº§åˆ«ï¼š</td>
+		<td align="right" bgcolor="#F9FFE6" class="main_bleft">ÄãµÄ¼¶±ð£º</td>
 			<td bgcolor="#FFFFFF" class="main_bright">
-				<strong>ç®¡ç†å‘˜</strong>
+				<strong>¹ÜÀíÔ±</strong>
        		</td>
 		</tr>
 	<tr>
-		<td width="22%" rowspan="5" align="right" bgcolor="#F9FFE6" class="main_bleft">JSPçŽ¯å¢ƒæ‘˜è¦ï¼š</td>
-		<td bgcolor="#FFFFFF" class="main_bright"><strong>æœåŠ¡å™¨åç§°</strong> <%=request.getServerName() %> </td>
+		<td width="22%" rowspan="5" align="right" bgcolor="#F9FFE6" class="main_bleft">JSP»·¾³ÕªÒª£º</td>
+		<td bgcolor="#FFFFFF" class="main_bright"><strong>·þÎñÆ÷Ãû³Æ</strong> <%=request.getServerName() %> </td>
 	</tr>
 	<tr>
-		<td bgcolor="#FFFFFF" class="main_bright"><strong>æœåŠ¡å™¨IP</strong> <%=request.getRemoteAddr() %> </td>
+		<td bgcolor="#FFFFFF" class="main_bright"><strong>·þÎñÆ÷IP</strong> <%=request.getRemoteAddr() %> </td>
 	</tr>
 	<tr>
-		<td bgcolor="#FFFFFF" class="main_bright"><strong>æœåŠ¡å™¨ç«¯å£</strong> <%=request.getRemotePort() %></td>
+		<td bgcolor="#FFFFFF" class="main_bright"><strong>·þÎñÆ÷¶Ë¿Ú</strong> <%=request.getRemotePort() %></td>
 	</tr>
 	<tr>
-		<td width="78%" bgcolor="#FFFFFF" class="main_bright"><strong>ç«™ç‚¹ç‰©ç†è·¯å¾„</strong> <%=request.getRealPath("/") %> </td>
+		<td width="78%" bgcolor="#FFFFFF" class="main_bright"><strong>Õ¾µãÎïÀíÂ·¾¶</strong> <%=request.getRealPath("/") %> </td>
 	</tr>
 	<tr>
-		<td bgcolor="#FFFFFF" class="main_bright"><strong>æœåŠ¡å™¨ç¼–ç </strong> <%=request.getCharacterEncoding() %> </td>
+		<td bgcolor="#FFFFFF" class="main_bright"><strong>·þÎñÆ÷±àÂë</strong> <%=request.getCharacterEncoding() %> </td>
 	</tr>
 		
 	<tr>
-		<td align="right" bgcolor="#F9FFE6" class="main_bleft">ç³»ç»Ÿæ‘˜è¦ï¼š</td>
-		<td bgcolor="#FFFFFF" class="main_bright"><strong>æ–‡ç« æ€»æ•°</strong></td>
+		<td align="right" bgcolor="#F9FFE6" class="main_bleft">ÏµÍ³ÕªÒª£º</td>
+		<td bgcolor="#FFFFFF" class="main_bright"><strong>ÎÄÕÂ×ÜÊý</strong></td>
 	</tr>
 	<tr>
-		<td align="right" bgcolor="#F9FFE6" class="main_bleft">è½¯ä»¶ç‰ˆæœ¬ä¿¡æ¯ï¼š</td>
-		<td bgcolor="#FFFFFF" class="main_bright"><strong>ç‰ˆæœ¬åç§°</strong> <strong>ç‰ˆæœ¬å·</strong> </td>
+		<td align="right" bgcolor="#F9FFE6" class="main_bleft">Èí¼þ°æ±¾ÐÅÏ¢£º</td>
+		<td bgcolor="#FFFFFF" class="main_bright"><strong>°æ±¾Ãû³Æ</strong> <strong>°æ±¾ºÅ</strong> </td>
   	</tr>
 	<tr>
-		<td align="right" bgcolor="#F9FFE6" class="main_bleft">å¼€å‘å›¢é˜Ÿï¼š</td>
-		<td bgcolor="#FFFFFF" class="main_bright"><strong>å¾å°‘æ•</strong></td>
+		<td align="right" bgcolor="#F9FFE6" class="main_bleft">¿ª·¢ÍÅ¶Ó£º</td>
+		<td bgcolor="#FFFFFF" class="main_bright"><strong>ÐìÉÙÃô</strong></td>
   	</tr>
 </table>
 
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">ä½¿ç”¨å¸®åŠ©</div>
+	<div class="bodytitletxt">Ê¹ÓÃ°ïÖú</div>
 </div>
 
 <table width="96%" border="0" align="center" cellpadding="10" cellspacing="1" bgcolor="#E2F5BC" style="margin-top:6px;">
 	<tr>
-		<td width="22%" align="right" bgcolor="#F9FFE6" class="main_bleft">QQï¼š</td>
+		<td width="22%" align="right" bgcolor="#F9FFE6" class="main_bleft">QQ£º</td>
 		<td width="78%" bgcolor="#FFFFFF" class="main_bright">746167</td>
 	</tr>
 	<tr>
-		<td align="right" bgcolor="#F9FFE6" class="main_bleft">é‚®ç®±ï¼š</td>
+		<td align="right" bgcolor="#F9FFE6" class="main_bleft">ÓÊÏä£º</td>
 		<td bgcolor="#FFFFFF" class="main_bright">xushaomin@qq.vip.com</td>
 	</tr>
 </table>
 
 <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
 	<tr>
-		<td align="center" style="line-height:51px;">ç½‘ç«™ç‰ˆæƒä¿¡æ¯<br /></td>
+		<td align="center" style="line-height:51px;">ÍøÕ¾°æÈ¨ÐÅÏ¢<br /></td>
   	</tr>
 </table>
 

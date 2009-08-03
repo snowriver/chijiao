@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
-	<title>è§†é¢‘ä¸“è¾‘ç®¡ç†</title>
+	<title>ÊÓÆµ×¨¼­¹ÜÀí</title>
 	<link href="css_body.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" src="js/context_menu.js"></script>
 	<script language="javascript" src="js/ieemu.js"></script>
@@ -44,7 +44,7 @@
 <body onLoad="ContextMenu.intializeContextMenu()">
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">æœåŠ¡ç»´æŠ¤</div>
+	<div class="bodytitletxt">·þÎñÎ¬»¤</div>
 </div>
 
 <table width='96%' border='0' cellpadding='0' cellspacing='0' align="center" class="tbtitle">
@@ -56,14 +56,14 @@
     					<table width="98%" border="0" cellspacing="0" cellpadding="0">
      						<tr>
      							<td align="center" style="padding-top:6px">
-  									<input type='button' onclick="location='service_add.jsp';" value='æ·»åŠ æœåŠ¡' class='inputbut' />
+  									<input type='button' onclick="location='service_add.jsp';" value='Ìí¼Ó·þÎñ' class='inputbut' />
   									
   									<!-- 
-									<input type='button' onclick="location='catalog_do.php?channelid=1&cid=0&dopost=listArchives&arcrank=-1&gurl=content_list.php';" value='ç¨¿ä»¶å®¡æ ¸' class='inputbut' /> 
-									<input type='button' onclick="location='AdminUpdateVideoType.do?act=list';" value='ç±»åˆ«ç®¡ç†' class='inputbut' />
-									<input type='button' onclick="location='makehtml_list.php?cid=0';" value='æ›´æ–°åˆ—è¡¨' class='inputbut' name='bb1' />
-									<input type='button' onclick="location='makehtml_archives.php?cid=0';" value='æ›´æ–°è§†é¢‘ä¸“è¾‘' class='inputbut' name='bb2' />
-									<input type='button' onclick="location='AdminUpdateVideo.do?act=list&deleteFlag=Y';" value='å›žæ”¶ç«™' class='inputbut' name='bb2' />
+									<input type='button' onclick="location='catalog_do.php?channelid=1&cid=0&dopost=listArchives&arcrank=-1&gurl=content_list.php';" value='¸å¼þÉóºË' class='inputbut' /> 
+									<input type='button' onclick="location='AdminUpdateVideoType.do?act=list';" value='Àà±ð¹ÜÀí' class='inputbut' />
+									<input type='button' onclick="location='makehtml_list.php?cid=0';" value='¸üÐÂÁÐ±í' class='inputbut' name='bb1' />
+									<input type='button' onclick="location='makehtml_archives.php?cid=0';" value='¸üÐÂÊÓÆµ×¨¼­' class='inputbut' name='bb2' />
+									<input type='button' onclick="location='AdminUpdateVideo.do?act=list&deleteFlag=Y';" value='»ØÊÕÕ¾' class='inputbut' name='bb2' />
        								 -->
        							</td>
      						</tr>
@@ -81,25 +81,25 @@
 				<tr>
 					<td height="24" colspan="10" align="left">
 						
-							æ‰€æœ‰æœåŠ¡&gt;æœåŠ¡åˆ—è¡¨ &nbsp;(ä½¿ç”¨é¼ æ ‡å³é”®è¿›è¡Œå¸¸ç”¨æ“ä½œ)
+							ËùÓÐ·þÎñ&gt;·þÎñÁÐ±í &nbsp;(Ê¹ÓÃÊó±êÓÒ¼ü½øÐÐ³£ÓÃ²Ù×÷)
 						
 					</td>
 				</tr>
 				<tr align="center" bgcolor="#F8FBFB" height="22">
 					<td width="2%">ID</td>
-					<td width="3%">é€‰æ‹©</td>
-					<td width="8%">æœåŠ¡åç§°</td>
-					<td width="4%">æ•°é‡</td>
-					<td width="4%">æ˜¯å¦æ˜¾ç¤º</td>
-					<td width="4%">åˆ†ç±»</td>
-					<td width="4%">ä»·æ ¼</td>
-					<td width="4%">æŠ˜æ‰£</td>
-					<td width="5%">æ‰£è´¹å‰æ˜¯å¦éœ€è¦ç¡®è®¤</td>
-					<td width="6%">æ˜¯å¦éœ€è¦å®¢æœæä¾›è¯¥æœåŠ¡</td>
-					<td width="8%">å¤„ç†ç±»</td>
-					<td width="8%">æœåŠ¡æè¿°</td>
-					<td width="8%">æ‰£è´¹æç¤ºè¯´æ˜Ž</td>
-					<td width="4%">æ“ä½œ</td>
+					<td width="3%">Ñ¡Ôñ</td>
+					<td width="8%">·þÎñÃû³Æ</td>
+					<td width="4%">ÊýÁ¿</td>
+					<td width="4%">ÊÇ·ñÏÔÊ¾</td>
+					<td width="4%">·ÖÀà</td>
+					<td width="4%">¼Û¸ñ</td>
+					<td width="4%">ÕÛ¿Û</td>
+					<td width="5%">¿Û·ÑÇ°ÊÇ·ñÐèÒªÈ·ÈÏ</td>
+					<td width="6%">ÊÇ·ñÐèÒª¿Í·þÌá¹©¸Ã·þÎñ</td>
+					<td width="8%">´¦ÀíÀà</td>
+					<td width="8%">·þÎñÃèÊö</td>
+					<td width="8%">¿Û·ÑÌáÊ¾ËµÃ÷</td>
+					<td width="4%">²Ù×÷</td>
 				</tr>
 
 				<c:forEach items="${SERVICE_LIST}" var="s" varStatus="is">
@@ -109,11 +109,11 @@
 					<td>${s.serviceNameCh}</td>
 		             <td>${s.serviceCount}${SERVICE_TPYE[s.serviceType].dvalueDescCh} </td>
 		             <td>${s.serviceDisp}</td>
-		             <td><c:if test="${s.serviceUser==0}">æ‰€æœ‰</c:if>
-		                 <c:if test="${s.serviceUser==1}">æ¥­ä¸»</c:if>
-		                 <c:if test="${s.serviceUser==2}">è²·å®¶</c:if></td>
-		             <td><c:if test="${s.price>0}">${s.price}å…ƒ</c:if>
-		                 <c:if test="${s.price<=0}">æŒ‰å¯¦éš›æƒ…æ³ä»˜è²»</c:if></td>
+		             <td><c:if test="${s.serviceUser==0}">ËùÓÐ</c:if>
+		                 <c:if test="${s.serviceUser==1}">˜IÖ÷</c:if>
+		                 <c:if test="${s.serviceUser==2}">ÙI¼Ò</c:if></td>
+		             <td><c:if test="${s.price>0}">${s.price}Ôª</c:if>
+		                 <c:if test="${s.price<=0}">°´ŒëHÇé›r¸¶ÙM</c:if></td>
 		             <td>${s.discount}%</td>
 		             <td>${s.needConfirm}</td>
 		             <td>${s.needCsDeal}</td>
@@ -121,8 +121,8 @@
 		             <td>${s.serviceDescs}</td>
 		             <td>${s.chargeNote}</td>
 		             <td>&nbsp;
-						<a href="javascript:editService(${s.id }, '|AdminManageService.do|act=list|pno=${PAGER.curPage}|type=${PARA['type'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')">ä¿®æ”¹</a>
-						<!-- <a href="javascript:viewVideo()">åˆ é™¤</a>&nbsp; -->&nbsp;
+						<a href="javascript:editService(${s.id }, '|AdminManageService.do|act=list|pno=${PAGER.curPage}|type=${PARA['type'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')">ÐÞ¸Ä</a>
+						<!-- <a href="javascript:viewVideo()">É¾³ý</a>&nbsp; -->&nbsp;
 					 </td>
 				</tr>
 				</c:forEach>
@@ -130,24 +130,24 @@
 
 				<tr bgcolor="#F8FBFB">
 					<td height="28" colspan="14" align="left" style="padding-left:6px;padding-top:8px">
-						<a href="javascript:selAll()" class="inputbutx">å…¨é€‰</a>
-						<a href="javascript:noSelAll()" class="inputbutx">å–æ¶ˆ</a>
+						<a href="javascript:selAll()" class="inputbutx">È«Ñ¡</a>
+						<a href="javascript:noSelAll()" class="inputbutx">È¡Ïû</a>
 						<!-- 
-						<a href="javascript:updateVideo(0)" class="inputbutx">æ›´æ–°</a>
-						<a href="javascript:checkVideo('|AdminUpdateVideo.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">å®¡æ ¸</a>
-						<a href="javascript:editVideo(0)" class="inputbutx">ç¼–è¾‘</a>
-						<a href="javascript:adArc('|AdminUpdateVideo.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">æŽ¨è</a>
-						<a href="javascript:moveVideo(0)" class="inputbutx">ç§»åŠ¨</a>
+						<a href="javascript:updateVideo(0)" class="inputbutx">¸üÐÂ</a>
+						<a href="javascript:checkVideo('|AdminUpdateVideo.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">ÉóºË</a>
+						<a href="javascript:editVideo(0)" class="inputbutx">±à¼­</a>
+						<a href="javascript:adArc('|AdminUpdateVideo.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">ÍÆ¼ö</a>
+						<a href="javascript:moveVideo(0)" class="inputbutx">ÒÆ¶¯</a>
 						 -->
-						<a href="javascript:delService('|AdminManageService.do|act=list|pno=${PAGER.curPage}|type=${PARA['type'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">åˆ é™¤</a>
+						<a href="javascript:delService('|AdminManageService.do|act=list|pno=${PAGER.curPage}|type=${PARA['type'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">É¾³ý</a>
 					</td>
 				</tr>
 
 				<tr align="right" bgcolor="#eaf8ce">
 					<td height="20" colspan="10" align="center">
-						å…± ${PAGER.totoalPage} é¡µ&nbsp;&nbsp;${PAGER.totoalCnt} æ¡è®°å½•&nbsp;&nbsp;
-						<A href="AdminManageService.do?act=list&pno=1&${PARA['parameter'] }">é¦–é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminManageService.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ä¸Šé¡µ</A>&nbsp;&nbsp;
+						¹² ${PAGER.totoalPage} Ò³&nbsp;&nbsp;${PAGER.totoalCnt} Ìõ¼ÇÂ¼&nbsp;&nbsp;
+						<A href="AdminManageService.do?act=list&pno=1&${PARA['parameter'] }">Ê×Ò³</A>&nbsp;&nbsp;
+        				<A href="AdminManageService.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ÉÏÒ³</A>&nbsp;&nbsp;
         
 						<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminManageService.do?act=list&&${PARA['parameter'] }')"> 
 							<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -160,8 +160,8 @@
 							</c:forEach>
 			 			</SELECT>&nbsp;&nbsp;
                   
-        				<A href="AdminManageService.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ä¸‹é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminManageService.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">æœ«é¡µ</A>&nbsp;&nbsp;
+        				<A href="AdminManageService.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ÏÂÒ³</A>&nbsp;&nbsp;
+        				<A href="AdminManageService.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">Ä©Ò³</A>&nbsp;&nbsp;
 	
 					</td>
 				</tr>
@@ -183,29 +183,29 @@
 				 						<table border='0' cellpadding='0' cellspacing='0'>
 									  		<tr>
 									  			<!-- 
-									   			<td width='80' align='center'>æœç´¢ï¼š</td>
+									   			<td width='80' align='center'>ËÑË÷£º</td>
 									   			<td width='160'>								   
-													<input type="button" name="selbtn" value="è¯·é€‰æ‹©ç±»åž‹..." style="height:21px;width:150px;border:0px;background-image:url(img/ctbg.gif);padding-top:2px; background-color: transparent" 
+													<input type="button" name="selbtn" value="ÇëÑ¡ÔñÀàÐÍ..." style="height:21px;width:150px;border:0px;background-image:url(img/ctbg.gif);padding-top:2px; background-color: transparent" 
 														onclick="SelectVideoType('typeid','selbtn');" />
 													<input type="hidden" id="typeid" name="typeid" value="" />	
 									  			</td>
 									  			 -->
-									  			<td width='70'>å…³é”®å­—ï¼š</td>
+									  			<td width='70'>¹Ø¼ü×Ö£º</td>
 									    		<td width='160'><input type='text' name='keyword' value='' style='width:150' /></td>
 									    		<!-- 
 									    		<td width='110'>
 											    	<select name="orderby" style='width:80'>
-											            <option value='id'>æŽ’åº...</option>
-											            <option value='senddate'>å½•å…¥æ—¶é—´</option>
-											            <option value='pubdate'>å‘å¸ƒæ—¶é—´</option>
-											            <option value='sortrank'>ç½®é¡¶æƒå€¼</option>
-											            <option value='click'>ç‚¹å‡»é‡</option>
-											            <option value='postnum'>è¯„è®ºæ¬¡æ•°</option>
-											            <option value='lastpost'>æœ€åŽè¯„è®º</option>
+											            <option value='id'>ÅÅÐò...</option>
+											            <option value='senddate'>Â¼ÈëÊ±¼ä</option>
+											            <option value='pubdate'>·¢²¼Ê±¼ä</option>
+											            <option value='sortrank'>ÖÃ¶¥È¨Öµ</option>
+											            <option value='click'>µã»÷Á¿</option>
+											            <option value='postnum'>ÆÀÂÛ´ÎÊý</option>
+											            <option value='lastpost'>×îºóÆÀÂÛ</option>
 											      	</select>
 									      		</td>
 									      		 -->
-									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="æœç´¢" /></td>
+									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="ËÑË÷" /></td>
 									    	</tr>
 										</table>
 									</td>       

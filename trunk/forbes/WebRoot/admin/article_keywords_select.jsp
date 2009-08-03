@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -8,9 +8,9 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>关键字管理</title>
+<title>�ؼ��ֹ���</title>
 <script language="javascript">
-//获得选中文件的文件名
+//���ѡ���ļ����ļ���
 function SelKw(kw)
 {
 	//alert(kw);
@@ -45,13 +45,13 @@ function AddNewKw()
           <form name='form1' method="post" action="AdminManageArticleKeyword.do?act=add&returnUrl=|AdminManageArticleKeyword.do|act=select|f=${F}|">
           <table border="0" cellspacing="0" cellpadding="0">
             <tr> 
-              <td width="60" align="center">关键字：</td>
+              <td width="60" align="center">�ؼ��֣�</td>
               <td width="140"><input name="keyword" type="text" id="keyword" style="width:130" /></td>
-              <td width="40">链接：</td>
+              <td width="40">���ӣ�</td>
               <td width="140"><input name="rpurl" type="text" id="rpurl" style="width:130" /></td>
-              <td width="40">频率：</td>
+              <td width="40">Ƶ�ʣ�</td>
               <td width="50"><input name="rank" type="text" id="rank" style="width:30" value="30" /></td>
-              <td width="80"><input type="submit" name="Submit" value="保存" /></td>
+              <td width="80"><input type="submit" name="Submit" value="����" /></td>
             </tr>
           </table>
           </form>
@@ -63,10 +63,10 @@ function AddNewKw()
         <td width="100%" height="26" colspan="2" bgcolor="#EDF9D5">
 		<table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr> 
-              <td width="31%"><strong>选择关键字</strong></td>
+              <td width="31%"><strong>ѡ��ؼ���</strong></td>
               <td width="69%" align="right">
-                <input type="button" name="kwa" value="新增关键字" onclick="AddNewKw()" class="inputbut" />
-                <input type="button" name="kwm" value="关键字管理" onclick="location='AdminManageArticleKeyword.do?act=list';" class="inputbut" />
+                <input type="button" name="kwa" value="�����ؼ���" onclick="AddNewKw()" class="inputbut" />
+                <input type="button" name="kwm" value="�ؼ��ֹ���" onclick="location='AdminManageArticleKeyword.do?act=list';" class="inputbut" />
                 </td>
             </tr>
           </table></td>
@@ -82,20 +82,20 @@ function AddNewKw()
         <td height="24" bgcolor="#EDF9D5" style="line-height:180%">
         <table border="0" cellspacing="0" cellpadding="0">
             <tr> 
-              <td width="120">已选的关键字：</td>
+              <td width="120">��ѡ�Ĺؼ��֣�</td>
               <td width="400">
               	<form name='form2'>
               	<input name="keywords" type="text" id="keywords" size="55" value="" />
               	</form>
               	</td>
-              <td width="93"><input type="button" name="Submit" value="选用" onclick="ReturnValue()" class="inputbut" /></td>
+              <td width="93"><input type="button" name="Submit" value="ѡ��" onclick="ReturnValue()" class="inputbut" /></td>
             </tr>
           </table>
         </td>
       </tr>
       <tr align="center"> 
         <td height="24" bgcolor="#F8FBF0">
-         	总共 ${ fn:length(ARTICLE_KEYWORD_LIST) } 个关键词
+         	�ܹ� ${ fn:length(ARTICLE_KEYWORD_LIST) } ���ؼ���
          	
          </td>
       </tr>

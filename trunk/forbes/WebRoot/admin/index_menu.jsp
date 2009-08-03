@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -49,19 +49,19 @@
 
 		<!-- Item 0 Strat -->
 		<dl>
-    		<dt><a href="###" onclick="showHide('items0');" target="_self">å¿«æ·èœå•</a></dt>
+    		<dt><a href="###" onclick="showHide('items0');" target="_self">¿ì½Ý²Ëµ¥</a></dt>
     		<dd id="items0" style="display:block;">
 				<ul>
-					<li><a href='AdminUpdateArticle.do?act=list' target='main'>æ‰€æœ‰æ–‡ç« åˆ—è¡¨</a></li>
-					<li><a href='AdminManageNews.do?act=list' target='main'>æ‰€æœ‰èµ„è®¯åˆ—è¡¨</a></li>
-					<li><a href='AdminUpdateVideo.do?act=list' target='main'>æ‰€æœ‰è§†é¢‘åˆ—è¡¨</a></li>
-					<li><a href='AdminManageAsk.do?act=list' target='main'>æ‰€æœ‰é—®ç­”åˆ—è¡¨</a></li>
-					<li><a href='full_list.php?adminid=1' target='main'>æˆ‘å‘å¸ƒçš„æ–‡æ¡£</a></li>
-					<li><a href='full_list.php?arcrank=-1' target='main'>ç­‰å®¡æ ¸çš„æ–‡æ¡£</a></li>
-					<li><a href='full_list.php?ismember=1' target='main'>ä¼šå‘˜æŠ•ç¨¿æ–‡æ¡£</a></li>
-					<li><a href='feedback_main.php' target='main'>æ–‡æ¡£è¯„è®ºç®¡ç†</a></li>
-					<li><a href='media_main.php' target='main'>é™„ä»¶æ•°æ®ç®¡ç†</a></li>
-					<li><a href='to_html.jsp' target='main'>ç”Ÿæˆé™æ€é¡µé¢</a></li>
+					<li><a href='AdminUpdateArticle.do?act=list' target='main'>ËùÓÐÎÄÕÂÁÐ±í</a></li>
+					<li><a href='AdminManageNews.do?act=list' target='main'>ËùÓÐ×ÊÑ¶ÁÐ±í</a></li>
+					<li><a href='AdminUpdateVideo.do?act=list' target='main'>ËùÓÐÊÓÆµÁÐ±í</a></li>
+					<li><a href='AdminManageAsk.do?act=list' target='main'>ËùÓÐÎÊ´ðÁÐ±í</a></li>
+					<li><a href='full_list.php?adminid=1' target='main'>ÎÒ·¢²¼µÄÎÄµµ</a></li>
+					<li><a href='full_list.php?arcrank=-1' target='main'>µÈÉóºËµÄÎÄµµ</a></li>
+					<li><a href='full_list.php?ismember=1' target='main'>»áÔ±Í¶¸åÎÄµµ</a></li>
+					<li><a href='feedback_main.php' target='main'>ÎÄµµÆÀÂÛ¹ÜÀí</a></li>
+					<li><a href='media_main.php' target='main'>¸½¼þÊý¾Ý¹ÜÀí</a></li>
+					<li><a href='to_html.jsp' target='main'>Éú³É¾²Ì¬Ò³Ãæ</a></li>
 	  			</ul>
 			</dd>
 		</dl>
@@ -70,11 +70,11 @@
 	
 		<!-- Item 1 Strat -->
 		<dl>
-		    <dt><a href="###" onclick="showHide('items1');" target="_self">æ–‡ç« ç®¡ç†</a></dt>
+		    <dt><a href="###" onclick="showHide('items1');" target="_self">ÎÄÕÂ¹ÜÀí</a></dt>
 		    <dd id="items1" style="display:block;">
 				<ul>
-					<li><a href='AdminUpdateArticleType.do?act=list' target='main'>æ–‡ç« ç±»åž‹ç®¡ç†</a></li>
-					<li><a href='AdminUpdateArticle.do?act=list' target='main'>æ‰€æœ‰æ–‡ç« åˆ—è¡¨</a></li>
+					<li><a href='AdminUpdateArticleType.do?act=list' target='main'>ÎÄÕÂÀàÐÍ¹ÜÀí</a></li>
+					<li><a href='AdminUpdateArticle.do?act=list' target='main'>ËùÓÐÎÄÕÂÁÐ±í</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -82,11 +82,11 @@
 		
 		<!-- Item 2 Strat -->
 		<dl>
-		    <dt><a href="###" onclick="showHide('items2');" target="_self">è§†é¢‘ç®¡ç†</a></dt>
+		    <dt><a href="###" onclick="showHide('items2');" target="_self">ÊÓÆµ¹ÜÀí</a></dt>
 		    <dd id="items2" style="display:block;">
 				<ul>
-					<li><a href='AdminUpdateVideoType.do?act=list' target='main'>è§†é¢‘ä¸“è¾‘ç±»åž‹ç®¡ç†</a></li>
-					<li><a href='AdminUpdateVideo.do?act=list' target='main'>æ‰€æœ‰è§†é¢‘ä¸“è¾‘åˆ—è¡¨</a></li>
+					<li><a href='AdminUpdateVideoType.do?act=list' target='main'>ÊÓÆµ×¨¼­ÀàÐÍ¹ÜÀí</a></li>
+					<li><a href='AdminUpdateVideo.do?act=list' target='main'>ËùÓÐÊÓÆµ×¨¼­ÁÐ±í</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -95,12 +95,12 @@
 		
 		<!-- Item 3 Strat -->
 		<dl>
-		    <dt><a href="###" onclick="showHide('items3');" target="_self">åˆ›ä¸šç™¾é—®ç®¡ç†</a></dt>
+		    <dt><a href="###" onclick="showHide('items3');" target="_self">´´Òµ°ÙÎÊ¹ÜÀí</a></dt>
 		    <dd id="items3" style="display:block;">
 				<ul>
-					<li><a href='AdminManageUserLevel.do?act=list' target='main'>ç”¨æˆ·ç­‰çº§ç®¡ç†</a></li>
-					<li><a href='AdminManageAskType.do?act=list' target='main'>é—®ç­”ç±»åž‹ç®¡ç†</a></li>
-					<li><a href='AdminManageAsk.do?act=list' target='main'>æ‰€æœ‰é—®ç­”åˆ—è¡¨</a></li>
+					<li><a href='AdminManageUserLevel.do?act=list' target='main'>ÓÃ»§µÈ¼¶¹ÜÀí</a></li>
+					<li><a href='AdminManageAskType.do?act=list' target='main'>ÎÊ´ðÀàÐÍ¹ÜÀí</a></li>
+					<li><a href='AdminManageAsk.do?act=list' target='main'>ËùÓÐÎÊ´ðÁÐ±í</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -109,23 +109,23 @@
 <!-- Item 5 Strat -->
 
 <dl>
-    <dt><a href="###" onclick="showHide('items4');" target="_self">å†…å®¹å‘å¸ƒ</a></dt>
+    <dt><a href="###" onclick="showHide('items4');" target="_self">ÄÚÈÝ·¢²¼</a></dt>
     <dd id="items4" style="display:block;">
 			<ul>
-				<li><a href='catalog_menu.php' target='_self'>æ ‘å½¢æ ç›®ç»“æž„</a></li>
-				<li><a href='AdminUpdateVideoType.do?act=list' target='main'>æ–‡ç« ç±»åž‹ç®¡ç†</a></li>
-				<li><a href='AdminUpdateVideo.do?act=list' target='main'>æ‰€æœ‰æ–‡ç« åˆ—è¡¨</a></li>
+				<li><a href='catalog_menu.php' target='_self'>Ê÷ÐÎÀ¸Ä¿½á¹¹</a></li>
+				<li><a href='AdminUpdateVideoType.do?act=list' target='main'>ÎÄÕÂÀàÐÍ¹ÜÀí</a></li>
+				<li><a href='AdminUpdateVideo.do?act=list' target='main'>ËùÓÐÎÄÕÂÁÐ±í</a></li>
   			</ul>
 		</dd>
 	</dl><!-- Item 5 End -->
 <!-- Item 13 Strat -->
 
 <dl>
-    <dt><a href="###" onclick="showHide('items12');" target="_self">ç”¨æˆ·ç®¡ç†</a></dt>
+    <dt><a href="###" onclick="showHide('items12');" target="_self">ÓÃ»§¹ÜÀí</a></dt>
     <dd id="items12" style="display:block;">
 			<ul>
-<li><a href='AdminListUser.do?act=admin' target='main'>ç³»ç»Ÿç®¡ç†å‘˜ç®¡ç†</a></li>
-<li><a href='AdminListUser.do?act=client' target='main'>ä¸ªäººä¼šå‘˜ç®¡ç†</a></li>
+<li><a href='AdminListUser.do?act=admin' target='main'>ÏµÍ³¹ÜÀíÔ±¹ÜÀí</a></li>
+<li><a href='AdminListUser.do?act=client' target='main'>¸öÈË»áÔ±¹ÜÀí</a></li>
 
   			</ul>
 		</dd>
@@ -134,12 +134,12 @@
 
 
 <dl>
-    <dt><a href="###" onclick="showHide('items5');" target="_self">è®¢å•ç®¡ç†</a></dt>
+    <dt><a href="###" onclick="showHide('items5');" target="_self">¶©µ¥¹ÜÀí</a></dt>
     <dd id="items12" style="display:block;">
 		<ul>
-			<li><a href='AdminManageService.do?act=list' target='main'>æœåŠ¡ç®¡ç†</a></li>
-			<li><a href='AdminListUser.do?act=member' target='main'>è®¢å•ç®¡ç†</a></li>
-			<li><a href='AdminListUser.do?act=client' target='main'>è®¢å•ç®¡ç†</a></li>
+			<li><a href='AdminManageService.do?act=list' target='main'>·þÎñ¹ÜÀí</a></li>
+			<li><a href='AdminListUser.do?act=member' target='main'>¶©µ¥¹ÜÀí</a></li>
+			<li><a href='AdminListUser.do?act=client' target='main'>¶©µ¥¹ÜÀí</a></li>
 		</ul>
 	</dd>
 </dl><!-- Item 13 End -->
@@ -148,14 +148,14 @@
 
 
 <dl>
-    <dt><a href="###" onclick="showHide('items20');" target="_self">äº’åŠ¨æ¨¡å—è®¾ç½®</a></dt>
+    <dt><a href="###" onclick="showHide('items20');" target="_self">»¥¶¯Ä£¿éÉèÖÃ</a></dt>
     <dd id="items20" style="display:block;">
 			<ul>
-				<li><a href='AdminUpdateSector.do?act=list' target='main'>è¡Œä¸šç®¡ç†</a></li>
-				<li><a href='AdminUpdateCity.do?act=list' target='main'>åœ°åŒºç®¡ç†</a></li>
-				<li><a href='AdminManageSearchKeyword.do?act=list' target='main'>å…³é”®è¯ç®¡ç†</a></li>
-				<li><a href='AdminManageBulletin.do?act=list' target='main'>å…¬å‘Šç®¡ç†</a></li>
-				<!-- <li><a href='sys_passport.php' target='main'>é€šè¡Œè¯è®¾ç½®</a></li> -->
+				<li><a href='AdminUpdateSector.do?act=list' target='main'>ÐÐÒµ¹ÜÀí</a></li>
+				<li><a href='AdminUpdateCity.do?act=list' target='main'>µØÇø¹ÜÀí</a></li>
+				<li><a href='AdminManageSearchKeyword.do?act=list' target='main'>¹Ø¼ü´Ê¹ÜÀí</a></li>
+				<li><a href='AdminManageBulletin.do?act=list' target='main'>¹«¸æ¹ÜÀí</a></li>
+				<!-- <li><a href='sys_passport.php' target='main'>Í¨ÐÐÖ¤ÉèÖÃ</a></li> -->
   			</ul>
 		</dd>
 	</dl><!-- Item 21 End -->
@@ -164,11 +164,11 @@
 	<!-- Item 24 Strat -->
 	<!-- 
 	<dl>
-	    <dt><a href="###" onclick="showHide('items23');" target="_self">ç³»ç»Ÿå¸®åŠ©</a></dt>
+	    <dt><a href="###" onclick="showHide('items23');" target="_self">ÏµÍ³°ïÖú</a></dt>
 	    <dd id="items23" style="display:block;">
 			<ul>
-				<li><a href='http://www.dedecms.com/archives/templethelp/help/index.htm' target='_blank'>æ¨¡æ¿ä»£ç å‚è€ƒ</a></li>
-				<li><a href='http://bbs.dedecms.com/' target='_blank'>å®˜æ–¹è®ºå›</a></li>
+				<li><a href='http://www.dedecms.com/archives/templethelp/help/index.htm' target='_blank'>Ä£°å´úÂë²Î¿¼</a></li>
+				<li><a href='http://bbs.dedecms.com/' target='_blank'>¹Ù·½ÂÛÌ³</a></li>
 		  	</ul>
 		</dd>
 	</dl>

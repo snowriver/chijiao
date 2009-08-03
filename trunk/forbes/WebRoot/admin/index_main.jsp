@@ -1,9 +1,9 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>璧よ剼缃戝悗鍙扮鐞嗙郴缁�</title>
+<title>赤脚网后台管理系统</title>
 </head>
 	<frameset rows="76,*" cols="*" frameborder="no" border="0" framespacing="0" >
 		<frame src="index_top.jsp" name="topFrame" id="topFrame" scrolling="no" noresize>
@@ -13,6 +13,6 @@
 		</frameset>
 	</frameset>
 	<noframes>
-		<body>浣犵殑娴忚鍣ㄤ笉鏀寔妗嗘灦锛�</body>
+		<body>你的浏览器不支持框架！</body>
 	</noframes>
 </html>

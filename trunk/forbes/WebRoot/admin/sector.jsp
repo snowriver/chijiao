@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>åœ°åŒºç®¡ç†</title>
+<title>µØÇø¹ÜÀí</title>
 <meta http-equiv='Content-Type' content='text/html; charset=gb2312' />
 <link href="css_body.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
@@ -46,7 +46,7 @@
 <body>
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">äº’åŠ¨æ¨¡å—</div>
+	<div class="bodytitletxt">»¥¶¯Ä£¿é</div>
 </div>
 
 <form name="form1" action="AdminUpdateSector.do?act=add&returnUrl=|AdminUpdateSector.do|act=list|pno=${PAGER.curPage }|" method="post">
@@ -54,17 +54,17 @@
 <input type="hidden" name="pid" value="0" />
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="	background:#E2F5BC;">
   <tr>
-    <td height="20" colspan="2" bgcolor="#EDF9D5">&nbsp;<strong>æ·»åŠ ä¸»è¡Œä¸š </strong></td>
+    <td height="20" colspan="2" bgcolor="#EDF9D5">&nbsp;<strong>Ìí¼ÓÖ÷ÐÐÒµ </strong></td>
   </tr>
   <tr>
   <td width="150" align="right" bgcolor="#FFFFFF">
-   &nbsp;è¡Œä¸šåç§°ï¼š</td>
+   &nbsp;ÐÐÒµÃû³Æ£º</td>
     <td height="35" bgcolor="#FFFFFF"><input type="text" name="name" value="" /></td>
   </tr>
   <tr>
     <td align="right" bgcolor="#FFFFFF">&nbsp;</td>
     <td height="35" bgcolor="#FFFFFF">&nbsp;
-    <input type="submit" name="submit1" value="æäº¤" class="inputbut"/></td>
+    <input type="submit" name="submit1" value="Ìá½»" class="inputbut"/></td>
   </tr>
 </table>
 </form>
@@ -73,18 +73,18 @@
 
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="	background:#E2F5BC;">
   <tr>
-    <td height="20" colspan="2" bgcolor="#EDF9D5"><strong>&nbsp;æ·»åŠ å­è¡Œä¸š</strong></td>
+    <td height="20" colspan="2" bgcolor="#EDF9D5"><strong>&nbsp;Ìí¼Ó×ÓÐÐÒµ</strong></td>
   </tr>
   <tr>
     <td width="150" align="right" bgcolor="#FFFFFF">
-	è¡Œä¸šåç§°ï¼š</td>
+	ÐÐÒµÃû³Æ£º</td>
     <td bgcolor="#FFFFFF"><input type="text" name="name" value="" /></td>
   </tr>
   <tr>
     <td bgcolor="#FFFFFF">&nbsp;</td>
     <td bgcolor="#FFFFFF">
     	<select name="pid">
-      		<option value="0">æ‰€å±žä¸»è¡Œä¸š</option>
+      		<option value="0">ËùÊôÖ÷ÐÐÒµ</option>
       		<c:forEach items="${TOP_SECTOR}" var="sector" varStatus="is">
       			<option value="${sector.id }">|- ${sector.name }</option>
       		</c:forEach>
@@ -93,7 +93,7 @@
   <tr>
     <td height="35" bgcolor="#FFFFFF">&nbsp;</td>
     <td bgcolor="#FFFFFF">&nbsp;
-    <input type="submit" name="submit2" value="æäº¤" class="inputbut"/></td>
+    <input type="submit" name="submit2" value="Ìá½»" class="inputbut"/></td>
   </tr>
 </table>
 </form>
@@ -102,16 +102,16 @@
 <input type="hidden" name="action" value="update" />
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="	background:#E2F5BC;">
     <tr>
-        <td height="20" bgcolor="#EDF9D5">&nbsp;<strong>ç¼–è¾‘è¡Œä¸š</strong></td>
+        <td height="20" bgcolor="#EDF9D5">&nbsp;<strong>±à¼­ÐÐÒµ</strong></td>
     </tr>
       <tr>
         <td bgcolor="#FFFFFF">
 <table width="100%" border="0" cellpadding="1" cellspacing="1" align="center" style="margin:0px auto" class="tblist">
           <tr>
-            <td height="20">ç¼–å·</td>
-            <td height="20">åç§°</td>
-            <td height="20">æŽ’åº</td>
-            <td height="20">ç®¡ç†æ“ä½œ</td>
+            <td height="20">±àºÅ</td>
+            <td height="20">Ãû³Æ</td>
+            <td height="20">ÅÅÐò</td>
+            <td height="20">¹ÜÀí²Ù×÷</td>
           </tr>
           <c:forEach items="${SECTOR_LIST}" var="pro" varStatus="is">
 	          <tr bgcolor="#f8f8f7">
@@ -119,8 +119,8 @@
 	          	<td><input type="text" id="names[${pro.id }]" name="names[${pro.id }]" value="${pro.name }" /></td>
 	          	<td><input type="text" id="disorders[${pro.id }]" name="disorders[${pro.id }]" value="${pro.disorder }" /></td>
 	          	<td>
-	          		<a href="#" onclick="modifyConfirm('${pro.id}','|AdminUpdateSector.do|act=list|pno=${PAGER.curPage}|');">ä¿®æ”¹</a> 
-	          		<a href="#" onclick="return deleteConfirm('AdminUpdateSector.do?act=delete&id=${pro.id}','|AdminUpdateSector.do|act=list|pno=${PAGER.curPage}|','åˆ é™¤è¯¥ä¸»è¡Œä¸šï¼Œå°†çº§è”åˆ é™¤è¯¥ä¸»è¡Œä¸šä¸‹çš„å­è¡Œä¸šï¼ï¼ï¼è¯·æ…Žé‡ï¼ï¼ï¼\n\nç¡®å®šè¦åˆ é™¤è¯¥ä¸»è¡Œä¸šå—ï¼Ÿ');"><u>åˆ é™¤</u></a> 
+	          		<a href="#" onclick="modifyConfirm('${pro.id}','|AdminUpdateSector.do|act=list|pno=${PAGER.curPage}|');">ÐÞ¸Ä</a> 
+	          		<a href="#" onclick="return deleteConfirm('AdminUpdateSector.do?act=delete&id=${pro.id}','|AdminUpdateSector.do|act=list|pno=${PAGER.curPage}|','É¾³ý¸ÃÖ÷ÐÐÒµ£¬½«¼¶ÁªÉ¾³ý¸ÃÖ÷ÐÐÒµÏÂµÄ×ÓÐÐÒµ£¡£¡£¡ÇëÉ÷ÖØ£¡£¡£¡\n\nÈ·¶¨ÒªÉ¾³ý¸ÃÖ÷ÐÐÒµÂð£¿');"><u>É¾³ý</u></a> 
 	          		
 	          	</td>
 	          </tr>
@@ -131,8 +131,8 @@
 	          		<td>|-----<input type="text"  id="names[${sector.id }]"  name="names[${sector.id }]" value="${sector.name }" /></td>
           			<td><input type="text" id="disorders[${sector.id }]" name="disorders[${sector.id }]" value="${sector.disorder }" /></td>
           			<td>
-          				<a href="#" onclick="modifyConfirm('${sector.id}','|AdminUpdateSector.do|act=list|pno=${PAGER.curPage}|');">ä¿®æ”¹</a> 
-          				<a href="#" onclick="return deleteConfirm('AdminUpdateSector.do?act=delete&id=${sector.id}','|AdminUpdateSector.do|act=list|pno=${PAGER.curPage}|','æ­¤æ“ä½œä¸èƒ½æ¢å¤ï¼ï¼ï¼è¯·æ…Žé‡ï¼ï¼ï¼\n\nç¡®å®šè¦åˆ é™¤è¯¥è¡Œä¸šå—ï¼Ÿ');"><u>åˆ é™¤</u></a>
+          				<a href="#" onclick="modifyConfirm('${sector.id}','|AdminUpdateSector.do|act=list|pno=${PAGER.curPage}|');">ÐÞ¸Ä</a> 
+          				<a href="#" onclick="return deleteConfirm('AdminUpdateSector.do?act=delete&id=${sector.id}','|AdminUpdateSector.do|act=list|pno=${PAGER.curPage}|','´Ë²Ù×÷²»ÄÜ»Ö¸´£¡£¡£¡ÇëÉ÷ÖØ£¡£¡£¡\n\nÈ·¶¨ÒªÉ¾³ý¸ÃÐÐÒµÂð£¿');"><u>É¾³ý</u></a>
           			</td>
           		</tr>
 				</c:forEach>
@@ -147,9 +147,9 @@
     
     <tr>
         <td height="20" bgcolor="#EDF9D5" align="center" valign="middle">
-			å…± ${PAGER.totoalPage} é¡µ&nbsp;&nbsp;${PAGER.totoalCnt} æ¡è®°å½•&nbsp;&nbsp;
-			<A href="AdminUpdateSector.do?act=list&pno=1">é¦–é¡µ</A>&nbsp;&nbsp;
-        	<A href="AdminUpdateSector.do?act=list&pno=${PAGER.prePage}">ä¸Šé¡µ</A>&nbsp;&nbsp;
+			¹² ${PAGER.totoalPage} Ò³&nbsp;&nbsp;${PAGER.totoalCnt} Ìõ¼ÇÂ¼&nbsp;&nbsp;
+			<A href="AdminUpdateSector.do?act=list&pno=1">Ê×Ò³</A>&nbsp;&nbsp;
+        	<A href="AdminUpdateSector.do?act=list&pno=${PAGER.prePage}">ÉÏÒ³</A>&nbsp;&nbsp;
         
 			<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminUpdateSector.do?act=list')"> 
 				<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -162,8 +162,8 @@
 				</c:forEach>
  			</SELECT>&nbsp;&nbsp;
                   
-        	<A href="AdminUpdateSector.do?act=list&pno=${PAGER.nextPage}">ä¸‹é¡µ</A>&nbsp;&nbsp;
-        	<A href="AdminUpdateSector.do?act=list&pno=${PAGER.totoalPage}">æœ«é¡µ</A>&nbsp;&nbsp;
+        	<A href="AdminUpdateSector.do?act=list&pno=${PAGER.nextPage}">ÏÂÒ³</A>&nbsp;&nbsp;
+        	<A href="AdminUpdateSector.do?act=list&pno=${PAGER.totoalPage}">Ä©Ò³</A>&nbsp;&nbsp;
 		</td>
     </tr>
     

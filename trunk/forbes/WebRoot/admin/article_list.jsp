@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
-	<title>æ–‡æ¡£ç®¡ç†</title>
+	<title>ÎÄµµ¹ÜÀí</title>
 	<link href="css_body.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" src="js/context_menu.js"></script>
 	<script language="javascript" src="js/ieemu.js"></script>
@@ -44,7 +44,7 @@
 <body onLoad="ContextMenu.intializeContextMenu()">
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">æ–‡ç« ç»´æŠ¤</div>
+	<div class="bodytitletxt">ÎÄÕÂÎ¬»¤</div>
 </div>
 
 <table width='96%' border='0' cellpadding='0' cellspacing='0' align="center" class="tbtitle">
@@ -56,19 +56,19 @@
     					<table width="98%" border="0" cellspacing="0" cellpadding="0">
      						<tr>
      							<td align="center" style="padding-top:6px">
-  									<input type='button' onclick="location='article_add.jsp?returnUrl=|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';" value='æ·»åŠ æ–‡ç« ' class='inputbut' />
-  									<input type='button' onclick="location='article_url.jsp?returnUrl=|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';" value='æ‰¹é‡æ·»åŠ ' class='inputbut' />
+  									<input type='button' onclick="location='article_add.jsp?returnUrl=|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';" value='Ìí¼ÓÎÄÕÂ' class='inputbut' />
+  									<input type='button' onclick="location='article_url.jsp?returnUrl=|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';" value='ÅúÁ¿Ìí¼Ó' class='inputbut' />
   									<c:if test="${empty PARA['userid'] || PARA['userid'] == '' }">
-  										<input type='button' onclick="location='AdminUpdateArticle.do?act=list&userid=${sessionScope.ADMIN.uid }';" value='æˆ‘çš„æ–‡æ¡£' class='inputbut' />
+  										<input type='button' onclick="location='AdminUpdateArticle.do?act=list&userid=${sessionScope.ADMIN.uid }';" value='ÎÒµÄÎÄµµ' class='inputbut' />
   									</c:if>
 								  	<c:if test="${not empty PARA['userid'] && PARA['userid'] != '' }">
-  										<input type='button' onclick="location='AdminUpdateArticle.do?act=list';" value='å…¨éƒ¨æ–‡æ¡£' class='inputbut' />
+  										<input type='button' onclick="location='AdminUpdateArticle.do?act=list';" value='È«²¿ÎÄµµ' class='inputbut' />
   									</c:if>
   									
-									<input type='button' onclick="location='AdminUpdateArticle.do?act=list&isverify=0';" value='ç¨¿ä»¶å®¡æ ¸' class='inputbut' /> 
-									<input type='button' onclick="location='AdminUpdateArticleType.do?act=list';" value='ç±»åˆ«ç®¡ç†' class='inputbut' />
-									<input type='button' onclick="location='AdminCreateArticleHtml.do?act=all&returnUrl=|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';" value='æ›´æ–°æ–‡æ¡£' class='inputbut' name='bb2' />
-									<input type='button' onclick="location='AdminUpdateArticle.do?act=list&deleteFlag=Y';" value='å›žæ”¶ç«™' class='inputbut' name='bb2' />
+									<input type='button' onclick="location='AdminUpdateArticle.do?act=list&isverify=0';" value='¸å¼þÉóºË' class='inputbut' /> 
+									<input type='button' onclick="location='AdminUpdateArticleType.do?act=list';" value='Àà±ð¹ÜÀí' class='inputbut' />
+									<input type='button' onclick="location='AdminCreateArticleHtml.do?act=all&returnUrl=|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';" value='¸üÐÂÎÄµµ' class='inputbut' name='bb2' />
+									<input type='button' onclick="location='AdminUpdateArticle.do?act=list&deleteFlag=Y';" value='»ØÊÕÕ¾' class='inputbut' name='bb2' />
        							</td>
      						</tr>
     					</table>
@@ -85,25 +85,25 @@
 				<tr>
 					<td height="24" colspan="10" align="left">
 						<c:if test="${empty PARA['deleteFlag'] || PARA['deleteFlag'] == '' || PARA['deleteFlag'] == 'N' }">
-							æ‰€æœ‰æ™®é€šæ–‡ç« &gt;æ–‡ç« åˆ—è¡¨ &nbsp;(ä½¿ç”¨é¼ æ ‡å³é”®è¿›è¡Œå¸¸ç”¨æ“ä½œ)
+							ËùÓÐÆÕÍ¨ÎÄÕÂ&gt;ÎÄÕÂÁÐ±í &nbsp;(Ê¹ÓÃÊó±êÓÒ¼ü½øÐÐ³£ÓÃ²Ù×÷)
 						</c:if>
 						<c:if test="${not empty PARA['deleteFlag'] && PARA['deleteFlag'] == 'Y' }">
-							æ‰€æœ‰æ™®é€šæ–‡ç« &gt;å›žæ”¶ç«™åˆ—è¡¨ &nbsp;(ä½¿ç”¨é¼ æ ‡å³é”®è¿›è¡Œå¸¸ç”¨æ“ä½œ)
+							ËùÓÐÆÕÍ¨ÎÄÕÂ&gt;»ØÊÕÕ¾ÁÐ±í &nbsp;(Ê¹ÓÃÊó±êÓÒ¼ü½øÐÐ³£ÓÃ²Ù×÷)
 						</c:if>
 					</td>
 				</tr>
 				<tr align="center" bgcolor="#F8FBFB" height="22">
 					<td width="4%">ID</td>
-					<td width="4%">é€‰æ‹©</td>
-					<td width="26%">æ–‡ç« æ ‡é¢˜</td>
-					<td width="3%">å®¡æ ¸</td>
-					<td width="5%">æŽ¨èçº§</td>
-					<td width="8%">å½•å…¥æ—¶é—´</td>
-					<td width="10%">æ–‡ç« æ‰€å±žç±»åž‹</td>
-					<td width="5%">ç‚¹å‡»</td>
+					<td width="4%">Ñ¡Ôñ</td>
+					<td width="26%">ÎÄÕÂ±êÌâ</td>
+					<td width="3%">ÉóºË</td>
+					<td width="5%">ÍÆ¼ö¼¶</td>
+					<td width="8%">Â¼ÈëÊ±¼ä</td>
+					<td width="10%">ÎÄÕÂËùÊôÀàÐÍ</td>
+					<td width="5%">µã»÷</td>
 					<td width="5%">HTML</td>					
-					<td width="12%">å½•å…¥äººå‘˜</td>
-					<td width="8%">æ“ä½œ</td>
+					<td width="12%">Â¼ÈëÈËÔ±</td>
+					<td width="8%">²Ù×÷</td>
 				</tr>
 
 				<c:forEach items="${ARTICLE_LIST}" var="article" varStatus="is">
@@ -115,24 +115,24 @@
 							<u>${article.shorttitle }</u>
 						</a>
 					</td>
-					<td><c:if test="${ article.isverify == 1 }">æ ¸</c:if></td>
+					<td><c:if test="${ article.isverify == 1 }">ºË</c:if></td>
 					<td><c:if test="${ article.iscommend > 0 }">${ article.iscommend }</c:if></td>					
 					<td><fmt:formatDate value='${article.pubdate }' type='date'/></td>
 					<td>
 						
 						<c:if test="${not empty article.articleType }">  ${article.articleType.name } </c:if>
-						<c:if test="${ empty article.articleType }"> æœªåˆ†ç±» </c:if>
+						<c:if test="${ empty article.articleType }"> Î´·ÖÀà </c:if>
 					</td>
 					<td>${article.click }</td>
-					<td>å·²ç”Ÿæˆ</td>
+					<td>ÒÑÉú³É</td>
 					
 					<td>
 						${article.user.username } 
 						
 					</td>
 					<td>
-						<a href="javascript:editArc(${article.id }, '|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')">ç¼–è¾‘</a> |
-						<a href="javascript:viewArc(3)">é¢„è§ˆ</a>
+						<a href="javascript:editArc(${article.id }, '|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')">±à¼­</a> |
+						<a href="javascript:viewArc(3)">Ô¤ÀÀ</a>
 					</td>
 				</tr>
 				</c:forEach>
@@ -140,23 +140,23 @@
 
 				<tr bgcolor="#F8FBFB">
 					<td height="28" colspan="11" align="left" style="padding-left:6px;padding-top:8px">
-						<a href="javascript:selAll()" class="inputbutx">å…¨é€‰</a>
-						<a href="javascript:noSelAll()" class="inputbutx">å–æ¶ˆ</a>
-						<a href="javascript:updateArc(0)" class="inputbutx">æ›´æ–°</a>
-						<a href="javascript:checkArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">å®¡æ ¸</a>
-						<a href="javascript:editArc(0)" class="inputbutx">ç¼–è¾‘</a>
-						<a href="javascript:adArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">æŽ¨è</a>
-						<a href="javascript:moveArc(0)" class="inputbutx">ç§»åŠ¨</a>
-						<a href="javascript:delArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">åˆ é™¤</a>
-						<a href="javascript:modArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">æ‰¹é‡ä¿®æ”¹</a>
+						<a href="javascript:selAll()" class="inputbutx">È«Ñ¡</a>
+						<a href="javascript:noSelAll()" class="inputbutx">È¡Ïû</a>
+						<a href="javascript:updateArc(0)" class="inputbutx">¸üÐÂ</a>
+						<a href="javascript:checkArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">ÉóºË</a>
+						<a href="javascript:editArc(0)" class="inputbutx">±à¼­</a>
+						<a href="javascript:adArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">ÍÆ¼ö</a>
+						<a href="javascript:moveArc(0)" class="inputbutx">ÒÆ¶¯</a>
+						<a href="javascript:delArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">É¾³ý</a>
+						<a href="javascript:modArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">ÅúÁ¿ÐÞ¸Ä</a>
 					</td>
 				</tr>
 
 				<tr align="right" bgcolor="#eaf8ce">
 					<td height="20" colspan="11" align="center">
-						å…± ${PAGER.totoalPage} é¡µ&nbsp;&nbsp;${PAGER.totoalCnt} æ¡è®°å½•&nbsp;&nbsp;
-						<A href="AdminUpdateArticle.do?act=list&pno=1&${PARA['parameter'] }">é¦–é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminUpdateArticle.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ä¸Šé¡µ</A>&nbsp;&nbsp;
+						¹² ${PAGER.totoalPage} Ò³&nbsp;&nbsp;${PAGER.totoalCnt} Ìõ¼ÇÂ¼&nbsp;&nbsp;
+						<A href="AdminUpdateArticle.do?act=list&pno=1&${PARA['parameter'] }">Ê×Ò³</A>&nbsp;&nbsp;
+        				<A href="AdminUpdateArticle.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ÉÏÒ³</A>&nbsp;&nbsp;
         
 						<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminUpdateArticle.do?act=list&&${PARA['parameter'] }')"> 
 							<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -169,8 +169,8 @@
 							</c:forEach>
 			 			</SELECT>&nbsp;&nbsp;
                   
-        				<A href="AdminUpdateArticle.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ä¸‹é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminUpdateArticle.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">æœ«é¡µ</A>&nbsp;&nbsp;
+        				<A href="AdminUpdateArticle.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ÏÂÒ³</A>&nbsp;&nbsp;
+        				<A href="AdminUpdateArticle.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">Ä©Ò³</A>&nbsp;&nbsp;
 	
 					</td>
 				</tr>
@@ -191,26 +191,26 @@
 				 					<td>
 				 						<table border='0' cellpadding='0' cellspacing='0'>
 									  		<tr>
-									   			<td width='80' align='center'>æœç´¢ï¼š</td>
+									   			<td width='80' align='center'>ËÑË÷£º</td>
 									   			<td width='160'>								   
-													<input type="button" name="selbtn" value="è¯·é€‰æ‹©ç±»åž‹..." style="height:21px;width:150px;border:0px;background-image:url(img/ctbg.gif);padding-top:2px; background-color: transparent" 
+													<input type="button" name="selbtn" value="ÇëÑ¡ÔñÀàÐÍ..." style="height:21px;width:150px;border:0px;background-image:url(img/ctbg.gif);padding-top:2px; background-color: transparent" 
 														onclick="SelectArticleType('typeid','selbtn');" />
 													<input type="hidden" id="typeid" name="typeid" value="" />	
 									  			</td>
-									  			<td width='70'>å…³é”®å­—ï¼š</td>
+									  			<td width='70'>¹Ø¼ü×Ö£º</td>
 									    		<td width='160'><input type='text' name='keyword' value='' style='width:150' /></td>
 									    		<td width='110'>
 											    	<select name="orderby" style='width:80'>
-											            <option value='id'>æŽ’åº...</option>
-											            <option value='senddate'>å½•å…¥æ—¶é—´</option>
-											            <option value='pubdate'>å‘å¸ƒæ—¶é—´</option>
-											            <option value='sortrank'>ç½®é¡¶æƒå€¼</option>
-											            <option value='click'>ç‚¹å‡»é‡</option>
-											            <option value='postnum'>è¯„è®ºæ¬¡æ•°</option>
-											            <option value='lastpost'>æœ€åŽè¯„è®º</option>
+											            <option value='id'>ÅÅÐò...</option>
+											            <option value='senddate'>Â¼ÈëÊ±¼ä</option>
+											            <option value='pubdate'>·¢²¼Ê±¼ä</option>
+											            <option value='sortrank'>ÖÃ¶¥È¨Öµ</option>
+											            <option value='click'>µã»÷Á¿</option>
+											            <option value='postnum'>ÆÀÂÛ´ÎÊý</option>
+											            <option value='lastpost'>×îºóÆÀÂÛ</option>
 											      	</select>
 									      		</td>
-									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="æœç´¢" /></td>
+									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="ËÑË÷" /></td>
 									    	</tr>
 										</table>
 									</td>       
