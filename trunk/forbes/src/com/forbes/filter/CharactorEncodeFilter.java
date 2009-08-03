@@ -69,14 +69,14 @@ public class CharactorEncodeFilter extends HttpServlet implements Filter {
 			String contextPath = req.getServletPath();
 
 			if( contextPath.indexOf(".do")>=0 || contextPath.indexOf(".jsp")>=0 ){				
-				req.setCharacterEncoding("GBK");
+				req.setCharacterEncoding("UTF-8");
 	        	if( req.getMethod().equals("GET")){
-	            	request = new Request(req,"GBK");
+	            	request = new Request(req,"UTF-8");
 	        	}
 			} else {
-				req.setCharacterEncoding("UTF-8");
+				req.setCharacterEncoding("GBK");
 				if( req.getMethod().equals("GET")){
-					request = new Request(req,"UTF-8");
+					request = new Request(req,"GBK");
 				}
 			}
 			filterChain.doFilter(request, response);
