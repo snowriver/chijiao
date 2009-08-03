@@ -4,6 +4,7 @@
  */
 package com.forbes.struts.action.article;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 import javax.servlet.http.Cookie;
@@ -48,10 +49,10 @@ public class NewsContentAddAction extends Action {
 	private ContentManager contentManager;
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) throws ForbesException {
+			HttpServletRequest request, HttpServletResponse response) throws ForbesException, Exception {
 		
 		//UserLoginForm userLoginForm = (UserLoginForm) form;// TODO Auto-generated method stub
-
+		request.setCharacterEncoding("UTF-8");
 		
 		String id	 		 = request.getParameter("id");
 		String content 		 = request.getParameter("content");
