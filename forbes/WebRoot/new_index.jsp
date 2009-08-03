@@ -20,14 +20,14 @@
 		
 
 		function loadLoginBox(){
-　　			var browser=navigator.appName 
-			var b_version=navigator.appVersion 
-			var version=b_version.split(";"); 
-			var trim_Version=version[1].replace(/[ ]/g,""); 
+　　			//var browser=navigator.appName 
+			//var b_version=navigator.appVersion 
+			//var version=b_version.split(";"); 
+			//var trim_Version=version[1].replace(/[ ]/g,""); 
 			
-			if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") { 
+			//if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") { 
 				document.frames('login_iframe').location.reload();
-			}
+			//}
 			
 		}
 </script>
