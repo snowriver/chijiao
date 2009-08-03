@@ -57,9 +57,10 @@ public class ClientManageUserDailyPlanAction extends DispatchAction {
 
 		
 		if(date == null || date.length() == 0) {
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-			date = formatter.format(new Date());
+			//SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());			
 		}
+		request.setAttribute("DATE", new SimpleDateFormat("yyyy-MM-dd E").format( new SimpleDateFormat("yyyy-MM-dd").parse(date) ));
 
 		// System.out.println("----------favType:" + favType);
 
