@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
@@ -22,7 +22,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>赤脚网后台管理系统</title>
+<title>�������̨����ϵͳ</title>
 <style type="text/css">
 <!--
 *{
@@ -181,7 +181,7 @@ a:hover{
 <c:set var="cfg_use_vdcode" value="Y" />
 
 	<div class="main">	
-		<div class="title">管理登陆</div>
+		<div class="title">������½</div>
 
 		<div class="login">
 		<form action="../admin/AdminLogin.do" method="post">
@@ -206,20 +206,20 @@ a:hover{
 			
             <div class="inputbox">
 				<dl>
-					<dt>用户名：</dt>
+					<dt>�û�����</dt>
 					<dd><input type="text" name="loginName" id="loginName" size="20" value="${LOGIN_NAME }" onfocus="this.style.borderColor='#F93'" onblur="this.style.borderColor='#888'" />
 					</dd>
 				</dl>
 				
 				<dl>
-					<dt>密码：</dt>
+					<dt>���룺</dt>
 					<dd><input type="password" name="password" size="20" value="${PASSWORD }" onfocus="this.style.borderColor='#F93'" onblur="this.style.borderColor='#888'" />
 					</dd>
 				</dl>
 				
 				<c:if test="${cfg_use_vdcode == 'Y'}">
 					<dl>
-						<dt>验证码：</dt>
+						<dt>��֤�룺</dt>
 						<dd>
 							<input type="text" name="validateCode" size="4" onfocus="this.style.borderColor='#F90'" onblur="this.style.borderColor='#888'" />
 							<img src="../include/validateCode.jsp" width="50" height="20" />
@@ -230,7 +230,7 @@ a:hover{
             <div class="butbox">
 	            <dl>
 					<dt><input name="submit" type="submit" value="" /></dt>
-					<dd align="center"><a href="../index.jsp">返回主页</a> </dd>
+					<dd align="center"><a href="../index.jsp">������ҳ</a> </dd>
 				</dl>
 			</div>
 		</form>
@@ -238,13 +238,13 @@ a:hover{
 		
 		<c:if test="${cfg_use_vdcode == 'N'}">
 			<div class="msg">
-				为了使程序有更大程度的兼容，后台默认关闭了验证码，为了你的登录更安全，请确认你的系统支持GD后，在后台参数中开启。
+				Ϊ��ʹ�����и���̶ȵļ��ݣ���̨Ĭ�Ϲر�����֤�룬Ϊ����ĵ�¼����ȫ����ȷ�����ϵͳ֧��GD���ں�̨�����п�����
 			</div>
 		</c:if>
 	</div>
 	
 	<div class="copyright">
-		Powered by <a href="http://www.chijiao.org">赤脚网 </a> Copyright &copy;2004-2008 
+		Powered by <a href="http://www.chijiao.org">����� </a> Copyright &copy;2004-2008 
 	</div>
 
 </body>

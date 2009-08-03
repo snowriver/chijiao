@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æœç´¢å…³é”®å­—ç®¡ç†</title>
+<title>ËÑË÷¹Ø¼ü×Ö¹ÜÀí</title>
 <link href="css_body.css" rel="stylesheet" type="text/css" />
 <link href="div.css" rel="stylesheet" type="text/css"/>
 <style>
@@ -39,8 +39,8 @@
 			//var kws = $Obj('spwords'+nid).value;
 			//var ct  = $Obj('count'+nid).value;
 		
-			//var errMsg = "ç½‘ç»œé€šä¿¡å‡ºé”™ï¼<br>[<a href=\"javascript:LoadPage('"+pageno+"')\"><u>ç‚¹å‡»æ­¤é‡æ–°åŠ è½½åˆ—è¡¨</u></a>]";
-			//var myajax = new DedeAjax(listArea,true,true,"",errMsg,"æ­£åœ¨å¤„ç†...");
+			//var errMsg = "ÍøÂçÍ¨ĞÅ³ö´í£¡<br>[<a href=\"javascript:LoadPage('"+pageno+"')\"><u>µã»÷´ËÖØĞÂ¼ÓÔØÁĞ±í</u></a>]";
+			//var myajax = new DedeAjax(listArea,true,true,"",errMsg,"ÕıÔÚ´¦Àí...");
 		  	//myajax.SendGet("search_keywords_main.php?dopost=update&aid="+nid+"&keyword="+kw+"&spwords="+kws+"&count="+ct+"&pageno="+pageno);
 		  	
 		}
@@ -66,7 +66,7 @@
 <body>
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">æ‰¹é‡ç®¡ç†</div>
+	<div class="bodytitletxt">ÅúÁ¿¹ÜÀí</div>
 </div>
 
 <div class="main">
@@ -75,21 +75,21 @@
       <td height="35" colspan="8" valign="bottom" bgcolor="#EDF9D5">
         <table width="96%" border="0" cellpadding="0" cellspacing="0">
           <tr>
-            <td width="20%" style="padding-top:6px"><strong>&nbsp;æœç´¢å…³é”®è¯ç»´æŠ¤</strong></td>
+            <td width="20%" style="padding-top:6px"><strong>&nbsp;ËÑË÷¹Ø¼ü´ÊÎ¬»¤</strong></td>
             <td width="60%" style="padding-top:6px">
             	<form action="AdminManageSearchKeyword.do?act=list" name="form1" method="post">            	
 				<table width="400" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td align="center" width="61%">
-                   		å…³é”®å­—ï¼š<input name="keyword" type="text" id="keywordse" style="width:150px" value="${PARA['keyword'] }" />
+                   		¹Ø¼ü×Ö£º<input name="keyword" type="text" id="keywordse" style="width:150px" value="${PARA['keyword'] }" />
                    	</td>
-                    <td width="39%"> <input type="submit" name="Submit" value="æœç´¢" class="inputbut" /> </td>
+                    <td width="39%"> <input type="submit" name="Submit" value="ËÑË÷" class="inputbut" /> </td>
                   </tr>
             	</table>
             	</form>
    			</td>
             <td width="20%" align="right" style="padding-top:6px">
-			<input name="n1" type="button" id="n1" value="æ–‡æ¡£å…³é”®å­—ç»´æŠ¤" onclick="location='AdminManageArticleKeyword.do?act=list';" class="inputbut" />
+			<input name="n1" type="button" id="n1" value="ÎÄµµ¹Ø¼ü×ÖÎ¬»¤" onclick="location='AdminManageArticleKeyword.do?act=list';" class="inputbut" />
 			</td>
           </tr>
         </table>
@@ -100,13 +100,13 @@
       	<form action="AdminManageSearchKeyword.do?act=add&returnUrl=|AdminManageSearchKeyword.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|" method="post" name="addkeyword">
 	    <table border='0' cellpadding='1' cellspacing='1'>
         <tr align='center' bgcolor='#ffffff'>
-          <td width="66" height='28' bgcolor="#EFFAC9">å…³é”®è¯ï¼š</td>
+          <td width="66" height='28' bgcolor="#EFFAC9">¹Ø¼ü´Ê£º</td>
           <td width="180" bgcolor="#EFFAC9"><input name='keyword' style="width:160px" type='text' id='keyword' value='' class='ininput' /></td>
-          <td width="72" bgcolor="#EFFAC9">åˆ†è¯ç»“æœï¼š</td>
+          <td width="72" bgcolor="#EFFAC9">·Ö´Ê½á¹û£º</td>
           <td width="180" bgcolor="#EFFAC9"><input name='spwords' style="width:160px" type='text' id='spwords' value='' class='ininput' /></td>
-          <td width="72" bgcolor="#EFFAC9">æœç´¢é¢‘ç‡ï¼š</td>
+          <td width="72" bgcolor="#EFFAC9">ËÑË÷ÆµÂÊ£º</td>
           <td width="80" bgcolor="#EFFAC9"><input name='count' style="width:60px" type='text' id='count' value='10' class='ininput' /></td>
-          <td bgcolor="#EFFAC9"><input type="submit" name="Submit" value="ã€–æ–°å¢ä¸€æ¡ã€—" class="inputbut" /></td>
+          <td bgcolor="#EFFAC9"><input type="submit" name="Submit" value="¡¼ĞÂÔöÒ»Ìõ¡½" class="inputbut" /></td>
         </tr>
       </table>
       </form>
@@ -120,13 +120,13 @@
     <table width='96%' border='0' cellpadding='1' cellspacing='1' bgcolor='#E2F5BC' style='margin-bottom:3px' align='center'>
     <tr align='center' bgcolor='' height='24'>
       <td width='6%' height='28'><a href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=id"><u>ID</u></a></td>
-      <td width='20%'>å…³é”®å­—</td>
-      <td width='25%'>åˆ†è¯ç»“æœ</td>
-      <td width='6%'><a href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=count desc"><u>é¢‘ç‡</u></a></td>
-      <td width='6%'><a href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=result desc"><u>ç»“æœ</u></a></td>
-      <td width='6%'>é€‰æ‹©</td>
-      <td width='20%'><a href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=lasttime desc"><u>æœ€åæœç´¢æ—¶é—´</u></a></td>
-      <td>ç®¡ç†</td>
+      <td width='20%'>¹Ø¼ü×Ö</td>
+      <td width='25%'>·Ö´Ê½á¹û</td>
+      <td width='6%'><a href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=count desc"><u>ÆµÂÊ</u></a></td>
+      <td width='6%'><a href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=result desc"><u>½á¹û</u></a></td>
+      <td width='6%'>Ñ¡Ôñ</td>
+      <td width='20%'><a href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.curPage}&keyword=${PARA['keyword']}&orderby=lasttime desc"><u>×îºóËÑË÷Ê±¼ä</u></a></td>
+      <td>¹ÜÀí</td>
     </tr>
     
     <c:forEach items="${SEARCH_KEYWORD_LIST}" var="skl" varStatus="is">
@@ -139,8 +139,8 @@
       <td><input type='checkbox' id='kids${skl.id }' name='kids' class='np' value='${skl.id }' /></td>
       <td>${skl.lasttime }</td>
       <td>
-      	<a href="#" onclick="UpdateNote(${skl.id }, '|AdminManageSearchKeyword.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|');">æ›´æ–°</a> |
-      	<a href="AdminManageSearchKeyword.do?act=delete&id=${skl.id }&returnUrl=|AdminManageSearchKeyword.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|" name="addkeyword">åˆ é™¤</a>
+      	<a href="#" onclick="UpdateNote(${skl.id }, '|AdminManageSearchKeyword.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|');">¸üĞÂ</a> |
+      	<a href="AdminManageSearchKeyword.do?act=delete&id=${skl.id }&returnUrl=|AdminManageSearchKeyword.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|" name="addkeyword">É¾³ı</a>
       </td>
     </tr>
     </c:forEach>
@@ -148,7 +148,7 @@
     </table>
     </span>
     <center>
- 		 <input type="submit" name="submit" value="åˆ é™¤é€‰ä¸­çš„å…³é”®è¯" />
+ 		 <input type="submit" name="submit" value="É¾³ıÑ¡ÖĞµÄ¹Ø¼ü´Ê" />
 	</center> 
     
     </form>
@@ -158,9 +158,9 @@
     <tr align="center">
       <td height="35" colspan="8" bgcolor="#F9FCF1">
       <span id='pagelist'></span>
-      			å…± ${PAGER.totoalPage} é¡µ&nbsp;&nbsp;${PAGER.totoalCnt} æ¡è®°å½•&nbsp;&nbsp;
-						<A href="AdminManageSearchKeyword.do?act=list&pno=1&${PARA['parameter'] }">é¦–é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ä¸Šé¡µ</A>&nbsp;&nbsp;
+      			¹² ${PAGER.totoalPage} Ò³&nbsp;&nbsp;${PAGER.totoalCnt} Ìõ¼ÇÂ¼&nbsp;&nbsp;
+						<A href="AdminManageSearchKeyword.do?act=list&pno=1&${PARA['parameter'] }">Ê×Ò³</A>&nbsp;&nbsp;
+        				<A href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ÉÏÒ³</A>&nbsp;&nbsp;
         
 						<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminManageSearchKeyword.do?act=list${PARA['parameter'] }')"> 
 							<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -173,8 +173,8 @@
 							</c:forEach>
 			 			</SELECT>&nbsp;&nbsp;
                   
-        				<A href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ä¸‹é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">æœ«é¡µ</A>&nbsp;&nbsp;
+        				<A href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ÏÂÒ³</A>&nbsp;&nbsp;
+        				<A href="AdminManageSearchKeyword.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">Ä©Ò³</A>&nbsp;&nbsp;
       </td>
     </tr>
 </table>

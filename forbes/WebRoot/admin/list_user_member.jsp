@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
 <meta http-equiv='Content-Type' content='text/html; charset=gb2312' />
-<title>ç®¡ç†å‘˜å¸å·</title> 
+<title>¹ÜÀíÔ±ÕÊºÅ</title> 
 <link href="css_body.css" rel="stylesheet" type="text/css" /> 
 <script type="text/javascript">	
 	function selectOnchange(pageNo, url) {
@@ -27,7 +27,7 @@
 <body> 
 <div class="bodytitle"> 
 	<div class="bodytitleleft"></div> 
-	<div class="bodytitletxt">å›¢é˜Ÿæˆå‘˜ç®¡ç†</div> 
+	<div class="bodytitletxt">ÍÅ¶Ó³ÉÔ±¹ÜÀí</div> 
 </div> 
 
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="background:#E2F5BC;"> 
@@ -36,12 +36,12 @@
       		<form action="AdminListUser.do?act=admin" name="form1" method="post"> 
 	    	<table border="0" cellspacing="0" cellpadding="0"> 
           		<tr>
-          			<td>&nbsp;å…³é”®å­—ï¼š</td> 
+          			<td>&nbsp;¹Ø¼ü×Ö£º</td> 
             		<td width="110" align="center"> 
             			<input name="keyword" type="text" id="keyword" size="12" style="width:100" value="${PARA['keyword'] }" /> 
             		</td>             		
             		<td width="100" align="center">
-            			<input name="imageField" type="submit" class="inputbut" value="æœç´¢" /> 
+            			<input name="imageField" type="submit" class="inputbut" value="ËÑË÷" /> 
             		</td> 
           		</tr> 
         	</table> 
@@ -55,10 +55,10 @@
     	<td height="40" colspan="7" bgcolor="#EDF9D5"> 
    	  		<table width="96%" border="0" cellspacing="1" cellpadding="1"> 
         		<tr> 
-          			<td width="24%"><b>&nbsp;å›¢é˜Ÿæˆå‘˜å¸å·</b> </td> 
+          			<td width="24%"><b>&nbsp;ÍÅ¶Ó³ÉÔ±ÕÊºÅ</b> </td> 
           			<td width="76%" align="right"><b> 
-          				<a href="sys_admin_user_add.php"><u>å¢åŠ ç®¡ç†å‘˜</u></a> |
-          				<a href="sys_group.php"><u>ç”¨æˆ·ç»„ç®¡ç†</u></a> </b> 
+          				<a href="sys_admin_user_add.php"><u>Ôö¼Ó¹ÜÀíÔ±</u></a> |
+          				<a href="sys_group.php"><u>ÓÃ»§×é¹ÜÀí</u></a> </b> 
           			</td> 
         		</tr> 
       		</table> 
@@ -67,12 +67,12 @@
 	
   	<tr bgcolor="#ECF8FF"  height="40">
   		<td width="5%" height="24" align="center" bgcolor="#EEF5D3">ID</td>  
-    	<td width="12%" height="24" align="center" bgcolor="#EEF5D3">ç™»å½•å</td> 
-    	<td width="13%" align="center" bgcolor="#EEF5D3">åå­—</td> 
-    	<td width="14%" align="center" bgcolor="#EEF5D3">çº§åˆ«</td> 
-    	<td width="10%" align="center" bgcolor="#EEF5D3">é¢‘é“</td> 
-    	<td width="25%" align="center" bgcolor="#EEF5D3">æœ€è¿‘ç™»å½•</td> 
-    	<td align="center" bgcolor="#EEF5D3">ç®¡ç†é¡¹</td> 
+    	<td width="12%" height="24" align="center" bgcolor="#EEF5D3">µÇÂ¼Ãû</td> 
+    	<td width="13%" align="center" bgcolor="#EEF5D3">Ãû×Ö</td> 
+    	<td width="14%" align="center" bgcolor="#EEF5D3">¼¶±ğ</td> 
+    	<td width="10%" align="center" bgcolor="#EEF5D3">ÆµµÀ</td> 
+    	<td width="25%" align="center" bgcolor="#EEF5D3">×î½üµÇÂ¼</td> 
+    	<td align="center" bgcolor="#EEF5D3">¹ÜÀíÏî</td> 
   	</tr> 
    
 	<c:forEach items="${USER_LIST}" var="user" varStatus="is">
@@ -80,17 +80,17 @@
     	<td>${user.id }</td> 		
     	<td>${user.loginName }</td> 
     	<td>${user.name }<br> </td> 
-    	<td>è¶…çº§ç®¡ç†å‘˜</td> 
-    	<td>è¯·æŸ¥çœ‹è¯¦ç»†</td> 
+    	<td>³¬¼¶¹ÜÀíÔ±</td> 
+    	<td>Çë²é¿´ÏêÏ¸</td> 
     	<td>
-			ç™»å½•æ—¶é—´ï¼š<fmt:formatDate value='${user.lastLoginTime }' type='both' pattern="yyyy-MM-dd HH:mm"/><br />
-			IPï¼š${user.lastLoginIp }
+			µÇÂ¼Ê±¼ä£º<fmt:formatDate value='${user.lastLoginTime }' type='both' pattern="yyyy-MM-dd HH:mm"/><br />
+			IP£º${user.lastLoginIp }
 		</td> 
     	<td> 
-	   		<a href='sys_admin_user_edit.php?ID=1&dopost=edit'><u>æ›´æ”¹</u></a> | 
-     		<a href="#" onclick="return deleteConfirm('AdminUpdateUser.do?act=delete&id=${user.id}','|AdminListUser.do|act=member|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|','æ­¤æ“ä½œ æ— æ³•æ¢å¤ï¼ï¼ï¼è¯·æ…é‡ï¼ï¼ï¼\n\nç¡®å®šè¦åˆ é™¤è¯¥ç”¨æˆ·å—ï¼Ÿ');"><u>åˆ é™¤</u></a> |
-     		<a href='content_list.php?adminid=1'><u>æ–‡æ¡£</u></a> |
-     		<a href='sys_admin_user_tj.php?ID=1'><u>è¯¦ç»†ç»Ÿè®¡</u></a>ã€€ã€€
+	   		<a href='sys_admin_user_edit.php?ID=1&dopost=edit'><u>¸ü¸Ä</u></a> | 
+     		<a href="#" onclick="return deleteConfirm('AdminUpdateUser.do?act=delete&id=${user.id}','|AdminListUser.do|act=member|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|','´Ë²Ù×÷ ÎŞ·¨»Ö¸´£¡£¡£¡ÇëÉ÷ÖØ£¡£¡£¡\n\nÈ·¶¨ÒªÉ¾³ı¸ÃÓÃ»§Âğ£¿');"><u>É¾³ı</u></a> |
+     		<a href='content_list.php?adminid=1'><u>ÎÄµµ</u></a> |
+     		<a href='sys_admin_user_tj.php?ID=1'><u>ÏêÏ¸Í³¼Æ</u></a>¡¡¡¡
     	</td> 
 	</tr>
 	
@@ -101,9 +101,9 @@
 		<td height="40" colspan="7" align="center" valign="middle" bgcolor="#EEF5D3"> 
     		
     		
-    		å…± ${PAGER.totoalPage} é¡µ&nbsp;&nbsp;${PAGER.totoalCnt} æ¡è®°å½•&nbsp;&nbsp;
-			<A href="AdminListUser.do?act=admin&pno=1&${PARA['parameter'] }">é¦–é¡µ</A>&nbsp;&nbsp;
-        	<A href="AdminListUser.do?act=admin&pno=${PAGER.prePage}&${PARA['parameter'] }">ä¸Šé¡µ</A>&nbsp;&nbsp;
+    		¹² ${PAGER.totoalPage} Ò³&nbsp;&nbsp;${PAGER.totoalCnt} Ìõ¼ÇÂ¼&nbsp;&nbsp;
+			<A href="AdminListUser.do?act=admin&pno=1&${PARA['parameter'] }">Ê×Ò³</A>&nbsp;&nbsp;
+        	<A href="AdminListUser.do?act=admin&pno=${PAGER.prePage}&${PARA['parameter'] }">ÉÏÒ³</A>&nbsp;&nbsp;
         
 			<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminListUser.do?act=admin&&${PARA['parameter'] }')"> 
 				<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -116,8 +116,8 @@
 				</c:forEach>
  			</SELECT>&nbsp;&nbsp;
                   
-        	<A href="AdminListUser.do?act=admin&pno=${PAGER.nextPage}&${PARA['parameter'] }">ä¸‹é¡µ</A>&nbsp;&nbsp;
-        	<A href="AdminListUser.do?act=admin&pno=${PAGER.totoalPage}&${PARA['parameter'] }">æœ«é¡µ</A>&nbsp;&nbsp;
+        	<A href="AdminListUser.do?act=admin&pno=${PAGER.nextPage}&${PARA['parameter'] }">ÏÂÒ³</A>&nbsp;&nbsp;
+        	<A href="AdminListUser.do?act=admin&pno=${PAGER.totoalPage}&${PARA['parameter'] }">Ä©Ò³</A>&nbsp;&nbsp;
         	
     	</td> 
 	</tr> 

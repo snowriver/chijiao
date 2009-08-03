@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -16,7 +16,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>å¢žåŠ æ–‡ç« </title>
+<title>Ôö¼ÓÎÄÕÂ</title>
 <link href="css_body.css" rel="stylesheet" type="text/css" />
 
 <script language='javascript' src='main.js' charset="gb2312"></script>
@@ -42,7 +42,7 @@
 		arr = response.replace(/(^\s*)|(\s*$)/g,"").split("#");
 		var op = new Array();
 		$("#typeid").empty();
-        $("<option value='0'>è¯·é€‰æ‹©å‰¯ç±»åž‹</option>").appendTo("#typeid");
+        $("<option value='0'>ÇëÑ¡Ôñ¸±ÀàÐÍ</option>").appendTo("#typeid");
 		for( var i = 0; i < arr.length-1; i++ ){
 			op = arr[i].split("&");
 			$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#typeid");
@@ -66,15 +66,15 @@
 
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">æ–‡ç« ç»´æŠ¤</div>
+	<div class="bodytitletxt">ÎÄÕÂÎ¬»¤</div>
 </div>
 
 <form name="form1" action="AdminUpdateArticle.do?act=bmod&arcID=${param.arcID }&returnUrl=${param.returnUrl }" method="post" onsubmit="return CS_ArchivesAdd();">
  
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="background:#E2F5BC;">
     <tr> 
- 		<td height="30">&nbsp;<a href="AdminUpdateArticle.do?act=list"><u>æ–‡ç« åˆ—è¡¨</u></a>&gt;&gt;æ‰¹é‡ä¿®æ”¹æ–‡ç« </td>
-      	<td width="10%">&nbsp;<a href="AdminUpdateArticleType.do?act=list">[<u>æ ç›®ç®¡ç†</u>]</a> </td>
+ 		<td height="30">&nbsp;<a href="AdminUpdateArticle.do?act=list"><u>ÎÄÕÂÁÐ±í</u></a>&gt;&gt;ÅúÁ¿ÐÞ¸ÄÎÄÕÂ</td>
+      	<td width="10%">&nbsp;<a href="AdminUpdateArticleType.do?act=list">[<u>À¸Ä¿¹ÜÀí</u>]</a> </td>
       	<td width="1%">&nbsp;</td>
     </tr>
 </table>
@@ -87,8 +87,8 @@
       				<td colspan="2" bgcolor="#E2F5BC">
       					<table border="0" cellpadding="0" cellspacing="0">
           					<tr> 
-            					<td width="84" height="24" align="center" bgcolor="#FFFFFF">&nbsp;å¸¸è§„å†…å®¹&nbsp;</td>
-            					<td width="84" align="center" bgcolor="#006600"><a href="#" class="STYLE1" onclick="ShowItem2()"><u>å…¶å®ƒå‚æ•°</u></a></td>
+            					<td width="84" height="24" align="center" bgcolor="#FFFFFF">&nbsp;³£¹æÄÚÈÝ&nbsp;</td>
+            					<td width="84" align="center" bgcolor="#006600"><a href="#" class="STYLE1" onclick="ShowItem2()"><u>ÆäËü²ÎÊý</u></a></td>
           					</tr>
         				</table>
         			</td>
@@ -100,8 +100,8 @@
 		      		<td colspan="2" bgcolor="#E2F5BC">
 		      			<table height="24" border="0" cellpadding="0" cellspacing="0">
 		          			<tr> 
-		            			<td width="84" align="center" bgcolor="#006600"><a href="#" class="STYLE1" onclick="ShowItem1()"><u>å¸¸è§„å†…å®¹</u></a>&nbsp;</td>
-		            			<td width="84" align="center" bgcolor="#FFFFFF">å…¶å®ƒå‚æ•°&nbsp;</td>
+		            			<td width="84" align="center" bgcolor="#006600"><a href="#" class="STYLE1" onclick="ShowItem1()"><u>³£¹æÄÚÈÝ</u></a>&nbsp;</td>
+		            			<td width="84" align="center" bgcolor="#FFFFFF">ÆäËü²ÎÊý&nbsp;</td>
 		          			</tr>
 		        		</table>
 		        	</td>
@@ -120,14 +120,14 @@
             		
             			<table width="800" border="0" cellspacing="0" cellpadding="0">
 			                <tr>
-			                  	<td width="90">&nbsp;é™„åŠ å‚æ•°ï¼š</td>
+			                  	<td width="90">&nbsp;¸½¼Ó²ÎÊý£º</td>
 			                  	<td width="350">
 									<!-- 
-	                  					<input name="iscommend" type="checkbox" id="iscommend" value="1"  />æŽ¨è
+	                  					<input name="iscommend" type="checkbox" id="iscommend" value="1"  />ÍÆ¼ö
 	                  				-->
-	                    			<input name="isverify" type="checkbox" id="isverify" value="1" checked /> å®¡æ ¸
-	                    			æŽ¨èæŒ‡æ•°<select name="iscommend">
-	                    				<option value="0">ä¸æŽ¨è </option>
+	                    			<input name="isverify" type="checkbox" id="isverify" value="1" checked /> ÉóºË
+	                    			ÍÆ¼öÖ¸Êý<select name="iscommend">
+	                    				<option value="0">²»ÍÆ¼ö </option>
 	                    				<option value="1">1</option>
 	                    				<option value="2">2</option>
 	                    				<option value="3">3</option>
@@ -148,15 +148,15 @@
             		<td height="24" class="bline">
 	            		<table width="800" border="0" cellspacing="0" cellpadding="0">
 	                		<tr>
-	                  			<td width="90" height="33">&nbsp;æ–‡ç« æ¥æºï¼š</td>
+	                  			<td width="90" height="33">&nbsp;ÎÄÕÂÀ´Ô´£º</td>
 	                  			<td width="240" height="33">
 	                  				<input name="source" type="text" id="source" style="width:160px" size="16" />
-	                      			<input name="selsource" type="button" id="selsource" value="é€‰æ‹©" class="inputbut" />
+	                      			<input name="selsource" type="button" id="selsource" value="Ñ¡Ôñ" class="inputbut" />
 	                      		</td>
-	                  			<td width="90" height="33">ä½œã€€è€…ï¼š</td>
+	                  			<td width="90" height="33">×÷¡¡Õß£º</td>
 	                  			<td height="33">
 	                  				<input name="writer" type="text" id="writer" style="width:120px" />
-	                      			<input name="selwriter" type="button" id="selwriter" value="é€‰æ‹©" class="inputbut" />
+	                      			<input name="selwriter" type="button" id="selwriter" value="Ñ¡Ôñ" class="inputbut" />
 	                  			</td>
 	                		</tr>
 	              		</table>
@@ -167,10 +167,10 @@
           <tr>
             <td height="24" class="bline"><table width="800" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                  <td width="90">&nbsp;æ–‡ç« ä¸»æ ç›®ï¼š</td>
+                  <td width="90">&nbsp;ÎÄÕÂÖ÷À¸Ä¿£º</td>
                   <td width="300">
             			<select id="maintypeid" name="maintypeid" style="width:240px" onchange="onSelectTopArticleType(this)">
-            				<option value="0">è¯·é€‰æ‹©ä¸»ç±»åž‹</option>
+            				<option value="0">ÇëÑ¡ÔñÖ÷ÀàÐÍ</option>
             				<c:forEach items="${TOP_ARTICLE_TYPE_LIST}" var="at" varStatus="is">
             					<option value="${at.id }">${at.name }</option>
             				</c:forEach>
@@ -178,16 +178,16 @@
             			</select>
 
                   </td>
-                  <td width="90" height="33">&nbsp;å‰¯æ ç›®ï¼š</td>
+                  <td width="90" height="33">&nbsp;¸±À¸Ä¿£º</td>
 		           <td height="33">
 		           		<!-- 
-			           	<input type="button" name="selbtn" value="è¯·é€‰æ‹©ç±»åž‹..." 
+			           	<input type="button" name="selbtn" value="ÇëÑ¡ÔñÀàÐÍ..." 
 			           		style="height:21px;width:150px;border:0px;background-image:url(img/ctbg.gif);padding-top:2px; background-color: transparent" 
 							onclick="SelectArticleType('typeid', 'selbtn');" />
 						<input type="hidden" id="typeid" name="typeid" value="" />
 						 -->
 						<select id="typeid" name="typeid" style="width:240px" onchange="onSelectType(this)">
-            				<option value="0">è¯·é€‰æ‹©å‰¯ç±»åž‹</option>            				
+            				<option value="0">ÇëÑ¡Ôñ¸±ÀàÐÍ</option>            				
             			</select>
 					</td>
                 </tr>
@@ -197,10 +197,10 @@
            <tr>
             <td width="100%" height="24" class="bline"><table width="800" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                  <td width="90">&nbsp;åˆ†é¡µæ–¹å¼ï¼š</td>
+                  <td width="90">&nbsp;·ÖÒ³·½Ê½£º</td>
                   <td>
-                  	<input type="radio" name="sptype" value="hand" checked />ä¸åˆ†é¡µ
-                    <input type="radio" name="sptype" value="auto" />è‡ªåŠ¨åˆ†é¡µã€€è‡ªåŠ¨åˆ†é¡µå¤§å°ï¼š
+                  	<input type="radio" name="sptype" value="hand" checked />²»·ÖÒ³
+                    <input type="radio" name="sptype" value="auto" />×Ô¶¯·ÖÒ³¡¡×Ô¶¯·ÖÒ³´óÐ¡£º
                     <input type="text" name="spsize" value="3" id="spsize" size="6" /> (K) 
                   </td>
                 </tr>
@@ -226,7 +226,7 @@
     <td height="24" class="bline">
 	  <table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr> 
-            <td width="90">&nbsp;å‘å¸ƒæ—¶é—´ï¼š</td>
+            <td width="90">&nbsp;·¢²¼Ê±¼ä£º</td>
             <td> 
                <%
                	java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -242,19 +242,19 @@
     <tr> 
       <td height="24" class="bline"> <table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr> 
-            <td width="90" height="22">&nbsp;æ–‡æ¡£æŽ’åºï¼š</td>
+            <td width="90" height="22">&nbsp;ÎÄµµÅÅÐò£º</td>
             <td width="240"> <select name="sortup" id="sortup" style="width:150px">
-                <option value="0" selected>é»˜è®¤æŽ’åº</option>
-                <option value="7">ç½®é¡¶ä¸€å‘¨</option>
-                <option value="30">ç½®é¡¶ä¸€ä¸ªæœˆ</option>
-                <option value="90">ç½®é¡¶ä¸‰ä¸ªæœˆ</option>
-                <option value="180">ç½®é¡¶åŠå¹´</option>
-                <option value="360">ç½®é¡¶ä¸€å¹´</option>
+                <option value="0" selected>Ä¬ÈÏÅÅÐò</option>
+                <option value="7">ÖÃ¶¥Ò»ÖÜ</option>
+                <option value="30">ÖÃ¶¥Ò»¸öÔÂ</option>
+                <option value="90">ÖÃ¶¥Èý¸öÔÂ</option>
+                <option value="180">ÖÃ¶¥°ëÄê</option>
+                <option value="360">ÖÃ¶¥Ò»Äê</option>
               </select> </td>
-            <td width="90">æ ‡é¢˜é¢œè‰²ï¼š</td>
+            <td width="90">±êÌâÑÕÉ«£º</td>
             <td>
             	<input name="color" type="text" id="color" style="width:120px" /> 
-                <input name="modcolor" type="button" id="modcolor" value="é€‰å–" onclick="ShowColor()" class="inputbut" />            
+                <input name="modcolor" type="button" id="modcolor" value="Ñ¡È¡" onclick="ShowColor()" class="inputbut" />            
             </td>
           </tr>
         </table></td>
@@ -262,16 +262,16 @@
     <tr> 
       <td height="24" class="bline"><table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr> 
-            <td width="90">&nbsp;é˜…è¯»æƒé™ï¼š</td>
+            <td width="90">&nbsp;ÔÄ¶ÁÈ¨ÏÞ£º</td>
             <td width="240">
 				<select name="arcrank" id="arcrank" style="width:150px">
                 	<option value='X'>X</option>
               	</select> 
             </td>
-            <td width="90">å‘å¸ƒé€‰é¡¹ï¼š</td>
+            <td width="90">·¢²¼Ñ¡Ïî£º</td>
             <td>
-				<input type="radio" name="ishtml" value="1" checked /> ç”ŸæˆHTML 
-                <input type="radio" name="ishtml" value="0" /> ä»…åŠ¨æ€æµè§ˆ</td>
+				<input type="radio" name="ishtml" value="1" checked /> Éú³ÉHTML 
+                <input type="radio" name="ishtml" value="0" /> ½ö¶¯Ì¬ä¯ÀÀ</td>
           </tr>
         </table></td>
     </tr>
@@ -280,10 +280,10 @@
 	  <td height="76" class="bline">
 	  	<table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="90" height="51">&nbsp;å…³é”®å­—ï¼š</td>
+          <td width="90" height="51">&nbsp;¹Ø¼ü×Ö£º</td>
           <td width="446"><textarea name="keywords" rows="3" id="keywords" style="width:80%">${TAG }</textarea></td>
-          <td>ç”¨ç©ºæ ¼åˆ†å¼€<br/>
-              <input type="button" name="Submit" value="æµè§ˆ..." style="width:56px;height:20" onclick="SelectKeywords('form1.keywords');" class="inputbut" /></td>
+          <td>ÓÃ¿Õ¸ñ·Ö¿ª<br/>
+              <input type="button" name="Submit" value="ä¯ÀÀ..." style="width:56px;height:20" onclick="SelectKeywords('form1.keywords');" class="inputbut" /></td>
         </tr>
       </table>
       </td>
@@ -292,13 +292,13 @@
 	  <td height="76" class="bline">
 	  <table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr> 
-            <td width="90">&nbsp;ç›¸å…³æ–‡æ¡£ï¼š</td>
+            <td width="90">&nbsp;Ïà¹ØÎÄµµ£º</td>
             <td width="446">
             	<textarea name="likeid" rows="3" id="likeid" style="width:80%;"></textarea>
             </td>
             <td>
-            	æŠŠæ–‡æ¡£IDï¼Œç”¨é€—å·â€œ,â€åˆ†å¼€<br/>
-                <input name="lsel" type="button" id="lsel" class="nbt" style="width:150px" onchange="" value="ä»Žå·²å‘å¸ƒæ–‡æ¡£ä¸­é€‰å–..." onclick="SelectArcListA();" />
+            	°ÑÎÄµµID£¬ÓÃ¶ººÅ¡°,¡±·Ö¿ª<br/>
+                <input name="lsel" type="button" id="lsel" class="nbt" style="width:150px" onchange="" value="´ÓÒÑ·¢²¼ÎÄµµÖÐÑ¡È¡..." onclick="SelectArcListA();" />
             </td>
           </tr>
         </table>
@@ -312,9 +312,9 @@
                   <td width="17%">&nbsp;</td>
                   <td width="83%"><table width="214" border="0" cellspacing="0" cellpadding="0">
                       <tr>
-                        <td width="115" height="35"><input name="imageField" type="submit" class="inputbut" value="ç¡®å®š" /></td>
+                        <td width="115" height="35"><input name="imageField" type="submit" class="inputbut" value="È·¶¨" /></td>
                         <td width="99" height="35"><a href="#">
-                          <input name="button" type="reset" class="inputbut" id="button" value="é‡ç½®"/>
+                          <input name="button" type="reset" class="inputbut" id="button" value="ÖØÖÃ"/>
                         </a></td>
                       </tr>
                   </table></td>

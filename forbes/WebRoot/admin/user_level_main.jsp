@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
-	<title>æ–‡æ¡£ç®¡ç†</title>
+	<title>ÎÄµµ¹ÜÀí</title>
 	<link href="css_body.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
 	<script language="javascript" src="js/context_menu.js"></script>
@@ -52,8 +52,8 @@
 			//var kws = $Obj('spwords'+nid).value;
 			//var ct  = $Obj('count'+nid).value;
 		
-			//var errMsg = "ç½‘ç»œé€šä¿¡å‡ºé”™ï¼<br>[<a href=\"javascript:LoadPage('"+pageno+"')\"><u>ç‚¹å‡»æ­¤é‡æ–°åŠ è½½åˆ—è¡¨</u></a>]";
-			//var myajax = new DedeAjax(listArea,true,true,"",errMsg,"æ­£åœ¨å¤„ç†...");
+			//var errMsg = "ÍøÂçÍ¨ĞÅ³ö´í£¡<br>[<a href=\"javascript:LoadPage('"+pageno+"')\"><u>µã»÷´ËÖØĞÂ¼ÓÔØÁĞ±í</u></a>]";
+			//var myajax = new DedeAjax(listArea,true,true,"",errMsg,"ÕıÔÚ´¦Àí...");
 		  	//myajax.SendGet("search_keywords_main.php?dopost=update&aid="+nid+"&keyword="+kw+"&spwords="+kws+"&count="+ct+"&pageno="+pageno);
 		  	
 		}
@@ -64,7 +64,7 @@
 <body onLoad="ContextMenu.intializeContextMenu()">
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">ç”¨æˆ·ç­‰çº§ç»´æŠ¤</div>
+	<div class="bodytitletxt">ÓÃ»§µÈ¼¶Î¬»¤</div>
 </div>
 
 <table width='96%' border='0' cellpadding='0' cellspacing='0' align="center" class="tbtitle">
@@ -78,13 +78,13 @@
      							<td align="center" style="padding-top:6px">
      								<form method="post" name="form3" action="AdminManageUserLevel.do?act=add">
      								<input type="hidden" name="returnUrl" value="|AdminManageUserLevel.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|" />
-  									çº§åˆ«ï¼š
+  									¼¶±ğ£º
 									<input type="text" name="level" style="width:30px" />&nbsp;&nbsp;
-									ç§¯åˆ†ï¼š
+									»ı·Ö£º
 									<input type="text" name="startScore" />-<input type="text" name="endScore" />&nbsp;&nbsp;
-									å¤´è¡”ï¼š
+									Í·ÏÎ£º
 									<input type="text" name="title" />&nbsp;&nbsp;
-									<input name="submit" type="submit" value="æœç´¢" />
+									<input name="submit" type="submit" value="ËÑË÷" />
 									</form>
        							</td>
      						</tr>
@@ -101,29 +101,29 @@
 			<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="background:#E2F5BC;">
 				<tr>
 					<td height="24" colspan="10" align="left">
-							æ‰€æœ‰ç”¨æˆ·ç­‰çº§åˆ—è¡¨ &nbsp;	
+							ËùÓĞÓÃ»§µÈ¼¶ÁĞ±í &nbsp;	
 					</td>
 				</tr>
 				<tr align="center" bgcolor="#F8FBFB" height="22">
 					<td width="5%">ID</td>
-					<td width="5%">é€‰æ‹©</td>
-					<td width="10%">ç­‰çº§</td>
-					<td width="30%">ç§¯åˆ†</td>
-					<td width="20%">å¤´è¡”</td>
-					<td width="10%">æ“ä½œ</td>
+					<td width="5%">Ñ¡Ôñ</td>
+					<td width="10%">µÈ¼¶</td>
+					<td width="30%">»ı·Ö</td>
+					<td width="20%">Í·ÏÎ</td>
+					<td width="10%">²Ù×÷</td>
 				</tr>
 
 				<c:forEach items="${USER_LEVEL_LIST}" var="level" varStatus="is">
 				<tr align='center' bgcolor="#FFFFFF"  onmousemove="javascript:this.bgColor='#EFEFEF';" onmouseout="javascript:this.bgColor='#FFFFFF';" height="22" oncontextmenu="ShowMenu(this,3,'%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB%CB%FB')">
 					<td>${level.id }</td>
 					<td><input name="levelID" type="checkbox" id="levelID" value="${level.id }" /></td>
-					<td><input type="text" id="level${level.id }" name="level${level.id }" value="${level.level}" style="width:30px" /> çº§</td>
+					<td><input type="text" id="level${level.id }" name="level${level.id }" value="${level.level}" style="width:30px" /> ¼¶</td>
 					<td><input type="text" id="startScore${level.id }" name="startScore${level.id }" value="${level.startScore }" />-<input type="text" id="endScore${level.id }" name="endScore${level.id }"  value="${level.endScore }" /></td>
 					<td><input type="text" id="title${level.id }" name="title${level.id }" value="${level.title }" /></td>
 					
 					<td>
-						<a href="javascript:UpdateUserLevel(${level.id }, '|AdminManageUserLevel.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|')">ä¿®æ”¹</a> |
-						<a href="AdminManageUserLevel.do?act=delete&levelID=${level.id }&returnUrl=|AdminManageUserLevel.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|">åˆ é™¤</a>
+						<a href="javascript:UpdateUserLevel(${level.id }, '|AdminManageUserLevel.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|')">ĞŞ¸Ä</a> |
+						<a href="AdminManageUserLevel.do?act=delete&levelID=${level.id }&returnUrl=|AdminManageUserLevel.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|">É¾³ı</a>
 					</td>
 				</tr>
 				</c:forEach>
@@ -131,17 +131,17 @@
 
 				<tr bgcolor="#F8FBFB">
 					<td height="28" colspan="10" align="left" style="padding-left:6px;padding-top:8px">
-						<a href="javascript:selAll()" class="inputbutx">å…¨é€‰</a>
-						<a href="javascript:noSelAll()" class="inputbutx">å–æ¶ˆ</a>
-						<a href="javascript:delUserLevel('|AdminManageUserLevel.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|')" class="inputbutx">åˆ é™¤</a>
+						<a href="javascript:selAll()" class="inputbutx">È«Ñ¡</a>
+						<a href="javascript:noSelAll()" class="inputbutx">È¡Ïû</a>
+						<a href="javascript:delUserLevel('|AdminManageUserLevel.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|')" class="inputbutx">É¾³ı</a>
 					</td>
 				</tr>
 
 				<tr align="right" bgcolor="#eaf8ce">
 					<td height="20" colspan="10" align="center">
-						å…± ${PAGER.totoalPage} é¡µ&nbsp;&nbsp;${PAGER.totoalCnt} æ¡è®°å½•&nbsp;&nbsp;
-						<A href="AdminManageUserLevel.do?act=list&pno=1&${PARA['parameter'] }">é¦–é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminManageUserLevel.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ä¸Šé¡µ</A>&nbsp;&nbsp;
+						¹² ${PAGER.totoalPage} Ò³&nbsp;&nbsp;${PAGER.totoalCnt} Ìõ¼ÇÂ¼&nbsp;&nbsp;
+						<A href="AdminManageUserLevel.do?act=list&pno=1&${PARA['parameter'] }">Ê×Ò³</A>&nbsp;&nbsp;
+        				<A href="AdminManageUserLevel.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">ÉÏÒ³</A>&nbsp;&nbsp;
         
 						<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminManageUserLevel.do?act=list&&${PARA['parameter'] }')"> 
 							<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -154,8 +154,8 @@
 							</c:forEach>
 			 			</SELECT>&nbsp;&nbsp;
                   
-        				<A href="AdminManageUserLevel.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ä¸‹é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminManageUserLevel.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">æœ«é¡µ</A>&nbsp;&nbsp;
+        				<A href="AdminManageUserLevel.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">ÏÂÒ³</A>&nbsp;&nbsp;
+        				<A href="AdminManageUserLevel.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">Ä©Ò³</A>&nbsp;&nbsp;
 	
 					</td>
 				</tr>
@@ -176,11 +176,11 @@
 				 					<td>
 				 						<table border='0' cellpadding='0' cellspacing='0'>
 									  		<tr>
-									   			<td width='80' align='center'>æœç´¢ï¼š</td>
+									   			<td width='80' align='center'>ËÑË÷£º</td>
 									   			
-									  			<td width='70'>å…³é”®å­—ï¼š</td>
+									  			<td width='70'>¹Ø¼ü×Ö£º</td>
 									    		<td width='160'><input type='text' name='keyword' value='' style='width:150' /></td>									  
-									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="æœç´¢" /></td>
+									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="ËÑË÷" /></td>
 									    	</tr>
 										</table>
 									</td>       

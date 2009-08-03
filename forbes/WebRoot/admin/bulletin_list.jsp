@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
-	<title>文档管理</title>
+	<title>�ĵ�����</title>
 	<link href="css_body.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" src="js/context_menu.js"></script>
 	<script language="javascript" src="js/ieemu.js"></script>
@@ -44,7 +44,7 @@
 <body onLoad="ContextMenu.intializeContextMenu()">
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">公告维护</div>
+	<div class="bodytitletxt">����ά��</div>
 </div>
 
 <table width='96%' border='0' cellpadding='0' cellspacing='0' align="center" class="tbtitle">
@@ -56,7 +56,7 @@
     					<table width="98%" border="0" cellspacing="0" cellpadding="0">
      						<tr>
      							<td align="center" style="padding-top:6px">
-  									<input type='button' onclick="location='article_add.jsp?returnUrl=|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';" value='添加公告' class='inputbut' />
+  									<input type='button' onclick="location='article_add.jsp?returnUrl=|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';" value='���ӹ���' class='inputbut' />
   									
        							</td>
      						</tr>
@@ -73,19 +73,19 @@
 			<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="background:#E2F5BC;">
 				<tr>
 					<td height="24" colspan="10" align="left">
-						所有普通文章&gt;文章列表 &nbsp;(使用鼠标右键进行常用操作)
+						������ͨ����&gt;�����б� &nbsp;(ʹ������Ҽ����г��ò���)
 					</td>
 				</tr>
 				<tr align="center" bgcolor="#F8FBFB" height="22">
 					<td width="4%">ID</td>
-					<td width="4%">选择</td>
-					<td width="20%">公告标题</td>
-					<td width="5%">排序</td>
-					<td width="8%">录入时间</td>
-					<td width="8%">截止时间</td>
-					<td width="5%">点击</td>
+					<td width="4%">ѡ��</td>
+					<td width="20%">�������</td>
+					<td width="5%">����</td>
+					<td width="8%">¼��ʱ��</td>
+					<td width="8%">��ֹʱ��</td>
+					<td width="5%">���</td>
 					<td width="5%">HTML</td>
-					<td width="8%">操作</td>
+					<td width="8%">����</td>
 				</tr>
 
 				<c:forEach items="${BULLETIN_LIST}" var="bulletin" varStatus="is">
@@ -101,10 +101,10 @@
 					<td><fmt:formatDate value='${bulletin.pubdate }' type='date'/></td>					
 					<td><fmt:formatDate value='${bulletin.pubdate }' type='date'/></td>
 					<td>${bulletin.click }</td>
-					<td>已生成</td>
+					<td>������</td>
 					<td>
-						<a href="javascript:editArc(${bulletin.id }, '|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')">编辑</a> |
-						<a href="javascript:viewArc(3)">预览</a>
+						<a href="javascript:editArc(${bulletin.id }, '|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')">�༭</a> |
+						<a href="javascript:viewArc(3)">Ԥ��</a>
 					</td>
 				</tr>
 				</c:forEach>
@@ -112,19 +112,19 @@
 
 				<tr bgcolor="#F8FBFB">
 					<td height="28" colspan="11" align="left" style="padding-left:6px;padding-top:8px">
-						<a href="javascript:selAll()" class="inputbutx">全选</a>
-						<a href="javascript:noSelAll()" class="inputbutx">取消</a>
-						<a href="javascript:editArc(0)" class="inputbutx">编辑</a>						
-						<a href="javascript:delArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">删除</a>
+						<a href="javascript:selAll()" class="inputbutx">ȫѡ</a>
+						<a href="javascript:noSelAll()" class="inputbutx">ȡ��</a>
+						<a href="javascript:editArc(0)" class="inputbutx">�༭</a>						
+						<a href="javascript:delArc('|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" class="inputbutx">ɾ��</a>
 						
 					</td>
 				</tr>
 
 				<tr align="right" bgcolor="#eaf8ce">
 					<td height="20" colspan="11" align="center">
-						共 ${PAGER.totoalPage} 页&nbsp;&nbsp;${PAGER.totoalCnt} 条记录&nbsp;&nbsp;
-						<A href="AdminManageBulletin.do?act=list&pno=1&${PARA['parameter'] }">首页</A>&nbsp;&nbsp;
-        				<A href="AdminManageBulletin.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">上页</A>&nbsp;&nbsp;
+						�� ${PAGER.totoalPage} ҳ&nbsp;&nbsp;${PAGER.totoalCnt} ����¼&nbsp;&nbsp;
+						<A href="AdminManageBulletin.do?act=list&pno=1&${PARA['parameter'] }">��ҳ</A>&nbsp;&nbsp;
+        				<A href="AdminManageBulletin.do?act=list&pno=${PAGER.prePage}&${PARA['parameter'] }">��ҳ</A>&nbsp;&nbsp;
         
 						<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminManageBulletin.do?act=list&&${PARA['parameter'] }')"> 
 							<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -137,8 +137,8 @@
 							</c:forEach>
 			 			</SELECT>&nbsp;&nbsp;
                   
-        				<A href="AdminManageBulletin.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">下页</A>&nbsp;&nbsp;
-        				<A href="AdminManageBulletin.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">末页</A>&nbsp;&nbsp;
+        				<A href="AdminManageBulletin.do?act=list&pno=${PAGER.nextPage}&${PARA['parameter'] }">��ҳ</A>&nbsp;&nbsp;
+        				<A href="AdminManageBulletin.do?act=list&pno=${PAGER.totoalPage}&${PARA['parameter'] }">ĩҳ</A>&nbsp;&nbsp;
 	
 					</td>
 				</tr>
@@ -159,22 +159,22 @@
 				 					<td>
 				 						<table border='0' cellpadding='0' cellspacing='0'>
 									  		<tr>
-									   			<td width='80' align='center'>搜索：</td>
+									   			<td width='80' align='center'>������</td>
 									   			
-									  			<td width='70'>关键字：</td>
+									  			<td width='70'>�ؼ��֣�</td>
 									    		<td width='160'><input type='text' name='keyword' value='' style='width:150' /></td>
 									    		<td width='110'>
 											    	<select name="orderby" style='width:80'>
-											            <option value='id'>排序...</option>
-											            <option value='senddate'>录入时间</option>
-											            <option value='pubdate'>发布时间</option>
-											            <option value='sortrank'>置顶权值</option>
-											            <option value='click'>点击量</option>
-											            <option value='postnum'>评论次数</option>
-											            <option value='lastpost'>最后评论</option>
+											            <option value='id'>����...</option>
+											            <option value='senddate'>¼��ʱ��</option>
+											            <option value='pubdate'>����ʱ��</option>
+											            <option value='sortrank'>�ö�Ȩֵ</option>
+											            <option value='click'>�����</option>
+											            <option value='postnum'>���۴���</option>
+											            <option value='lastpost'>�������</option>
 											      	</select>
 									      		</td>
-									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="搜索" /></td>
+									     		<td style='padding-top:5px;'><input name="imageField" type="submit" class="inputbut" value="����" /></td>
 									    	</tr>
 										</table>
 									</td>       

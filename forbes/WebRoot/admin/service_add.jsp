@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -12,7 +12,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>å¢åŠ è§†é¢‘</title>
+	<title>Ôö¼ÓÊÓÆµ</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 	<link href="css_body.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" src="../include/dedeajax2.js"></script>
@@ -21,25 +21,25 @@
 	<script language='javascript' src='main.js'></script>
 	<script language="javascript">
 		function onSubmit(){
-			if( !notNull( service.serviceName,"æœåŠ¡åä¸èƒ½ä¸ºç©º") ){
+			if( !notNull( service.serviceName,"·şÎñÃû²»ÄÜÎª¿Õ") ){
 				return false;
 			}
-			if( !notNull( service.price,"ä»·æ ¼ä¸èƒ½ä¸ºç©º") ){
+			if( !notNull( service.price,"¼Û¸ñ²»ÄÜÎª¿Õ") ){
 				return false;
 			}
-			if( !notNull( service.discount,"æŠ˜æ‰£ä¸èƒ½ä¸ºç©º") ){
+			if( !notNull( service.discount,"ÕÛ¿Û²»ÄÜÎª¿Õ") ){
 				return false;
 			}
-			if( !isnumeric( service.price,"ä»·æ ¼å¿…é¡»æ˜¯æ•°å­—") ){
+			if( !isnumeric( service.price,"¼Û¸ñ±ØĞëÊÇÊı×Ö") ){
 				return false;
 			}
-			if( !isnumeric( service.discount,"æŠ˜æ‰£å¿…é¡»æ˜¯æ•°å­—") ){
+			if( !isnumeric( service.discount,"ÕÛ¿Û±ØĞëÊÇÊı×Ö") ){
 				return false;
 			}
-			if( !isnumeric( service.serviceCount,"æ•°é‡å¿…é¡»æ˜¯æ•°å­—") ){
+			if( !isnumeric( service.serviceCount,"ÊıÁ¿±ØĞëÊÇÊı×Ö") ){
 				return false;
 			}
-			if( !notNull( service.dealClass,"å¤„ç†ç±»ä¸èƒ½ä¸ºç©º") ){
+			if( !notNull( service.dealClass,"´¦ÀíÀà²»ÄÜÎª¿Õ") ){
 				return false;
 			}
 			service.submit();
@@ -58,14 +58,14 @@
 <form name="service" action="AdminManageService.do?act=add" method="post" onsubmit="onSubmit();return false">
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">æœåŠ¡ç®¡ç†</div>
+	<div class="bodytitletxt">·şÎñ¹ÜÀí</div>
 </div>
 
 
 
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="background:#E2F5BC;">
     <tr>
-      <td height="30">&nbsp;<a href="AdminManageService.do?act=list"><u>æœåŠ¡åˆ—è¡¨</u></a>&gt;&gt;æ·»åŠ æœåŠ¡</td>
+      <td height="30">&nbsp;<a href="AdminManageService.do?act=list"><u>·şÎñÁĞ±í</u></a>&gt;&gt;Ìí¼Ó·şÎñ</td>
       <td width="31%" align="right">&nbsp; <br /></td>
       <td width="1%">&nbsp;</td>
     </tr>
@@ -80,7 +80,7 @@
 	          		<td colspan="2" bgcolor="#EDF9D5">
 	          			<table border="0" cellpadding="0" cellspacing="0">
 		          			<tr>
-	                			<td width="84" height="28" align="center" bgcolor="#FFFFFF">&nbsp;å¸¸è§„å‚æ•°&nbsp;</td>	                			
+	                			<td width="84" height="28" align="center" bgcolor="#FFFFFF">&nbsp;³£¹æ²ÎÊı&nbsp;</td>	                			
 	              			</tr>
 	          			</table>
 	          		</td>
@@ -96,7 +96,7 @@
 	           		<td width="100%" height="28" class="bline">
 				   		<table width="800" border="0" cellspacing="0" cellpadding="0">
 	                		<tr>
-	                  			<td width="180">&nbsp;æœåŠ¡åç§°ï¼š</td>
+	                  			<td width="180">&nbsp;·şÎñÃû³Æ£º</td>
 	                  			<td><input name="serviceName" type="text" id="serviceName" style="width:300px" /></td>	                  			
 	                		</tr>
 	             		</table>
@@ -107,7 +107,7 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;æœåŠ¡ç±»å‹ï¼š</td>
+	             				<td width="180">&nbsp;·şÎñÀàĞÍ£º</td>
 	             				<td>
 									<input name="serviceCount" type="text" value="1" size="5" />
 					                <select name="serviceType">
@@ -124,9 +124,9 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;ä»·æ ¼ï¼š</td>
+	             				<td width="180">&nbsp;¼Û¸ñ£º</td>
 	             				<td>
-									<input type="text" name="price" /> å…ƒ (å¦‚æœæ˜¯æŒ‰å®é™…æƒ…æ³æ”¶è´¹è¾“å…¥0)
+									<input type="text" name="price" /> Ôª (Èç¹ûÊÇ°´Êµ¼ÊÇé›rÊÕ·ÑÊäÈë0)
 								</td>
 	           				</tr>
 	         			</table>
@@ -137,11 +137,11 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;æ˜¯å¦æ˜¾ç¤ºç»™å®¢æˆ·è®¢è´­ï¼š</td>
+	             				<td width="180">&nbsp;ÊÇ·ñÏÔÊ¾¸ø¿Í»§¶©¹º£º</td>
 	             				<td>
 	             					<select type="select" name="serviceDisp">
-						                <option value="Y">æ˜¯</option>
-						                <option value="N">å¦</option>
+						                <option value="Y">ÊÇ</option>
+						                <option value="N">·ñ</option>
 						            </select>
             					</td>
 	           				</tr>
@@ -153,12 +153,12 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;æœåŠ¡åˆ†ç±»ï¼š</td>
+	             				<td width="180">&nbsp;·şÎñ·ÖÀà£º</td>
 	             				<td>
 	             					<select type="select" name="serviceUser">
-						                <option value="0">æ‰€æœ‰</option>
-						                <option value="1">ä»£ç†</option>
-						                <option value="2">å®¢æˆ·</option>
+						                <option value="0">ËùÓĞ</option>
+						                <option value="1">´úÀí</option>
+						                <option value="2">¿Í»§</option>
 						            </select>
 	             				 </td>
 	           				</tr>
@@ -170,11 +170,11 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;æ‰£æ¬¾æ˜¯å¦éœ€è¦ç¡®è®¤ï¼š</td>
+	             				<td width="180">&nbsp;¿Û¿îÊÇ·ñĞèÒªÈ·ÈÏ£º</td>
 	             				<td>
 	             					<select type="select" name="needConfirm">
-						                <option value="N">ä¸éœ€è¦</option>
-						                <option value="Y">éœ€è¦</option>
+						                <option value="N">²»ĞèÒª</option>
+						                <option value="Y">ĞèÒª</option>
 						            </select>
 	             				</td>
 	           				</tr>
@@ -186,11 +186,11 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;æ˜¯å¦éœ€è¦å®¢æœæä¾›è¯¥æœåŠ¡ï¼š</td>
+	             				<td width="180">&nbsp;ÊÇ·ñĞèÒª¿Í·şÌá¹©¸Ã·şÎñ£º</td>
 	             				<td>
 	             					<select type="select" name="needCsDeal">
-						                <option value="N">ä¸éœ€è¦</option>
-						                <option value="Y">éœ€è¦</option>
+						                <option value="N">²»ĞèÒª</option>
+						                <option value="Y">ĞèÒª</option>
 						            </select>
 	             				</td>
 	           				</tr>
@@ -202,7 +202,7 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;æŠ˜æ‰£ï¼š</td>
+	             				<td width="180">&nbsp;ÕÛ¿Û£º</td>
 	             				<td><input type="text" name="discount" /> %</td>
 	           				</tr>
 	         			</table>
@@ -213,7 +213,7 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;å¤„ç†ç±»ï¼š</td>
+	             				<td width="180">&nbsp;´¦ÀíÀà£º</td>
 	             				<td><input name="dealClass" type="text" id="dealClass" style="width:300px" value="" /> </td>
 	           				</tr>
 	         			</table>
@@ -224,7 +224,7 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;æœåŠ¡è¯¦ç»†ä»‹ç»ï¼š</td>
+	             				<td width="180">&nbsp;·şÎñÏêÏ¸½éÉÜ£º</td>
 	             				<td><textarea name="serviceDescs" cols="50" rows="8"></textarea></td>
 	           				</tr>
 	         			</table>
@@ -235,7 +235,7 @@
 					<td height="28" class="bline">
 		       			<table width="800" border="0" cellspacing="0" cellpadding="0">
 	           				<tr>
-	             				<td width="180">&nbsp;æ‰£è´¹æç¤ºè¯´æ˜ï¼š</td>
+	             				<td width="180">&nbsp;¿Û·ÑÌáÊ¾ËµÃ÷£º</td>
 	             				<td><textarea name="chargeNote" cols="50" rows="8"></textarea></td>
 	           				</tr>
 	         			</table>
@@ -249,7 +249,7 @@
 
 
 
-	<tr><td height="28" bgcolor="#FFFFFF" class="bline2" align=center>&nbsp;<input type="submit" name="Submit" value=" æ·»åŠ  " /></td></tr>
+	<tr><td height="28" bgcolor="#FFFFFF" class="bline2" align=center>&nbsp;<input type="submit" name="Submit" value=" Ìí¼Ó " /></td></tr>
 	
 </table>
 

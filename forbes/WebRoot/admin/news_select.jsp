@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -8,12 +8,12 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>é€‰æ‹©æ–‡ç« </title>
+<title>Ñ¡ÔñÎÄÕÂ</title>
 <link href="css_body.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="main.js"></script>
 
 <script language="javascript">
-//è·å¾—é€‰ä¸­æ–‡ä»¶çš„æ–‡ä»¶å
+//»ñµÃÑ¡ÖĞÎÄ¼şµÄÎÄ¼şÃû
 function getCheckboxItem()
 {
 	var allSel="";
@@ -58,7 +58,7 @@ function ReturnValue()
 	else{
 		window.opener.document.all.likeid.value += ","+getCheckboxItem();
 	}
-	alert("æˆåŠŸå¢åŠ ä½ é€‰ä¸­çš„IDï¼Œä½ å¯ä»¥ç»§ç»­å¢åŠ ");
+	alert("³É¹¦Ôö¼ÓÄãÑ¡ÖĞµÄID£¬Äã¿ÉÒÔ¼ÌĞøÔö¼Ó");
 	//window.opener=true;
   //window.close();
 }
@@ -69,20 +69,20 @@ function ReturnValue()
 
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">èµ„è®¯ç»´æŠ¤</div>
+	<div class="bodytitletxt">×ÊÑ¶Î¬»¤</div>
 </div>
 <form name="form2">
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="	background:#E2F5BC;">
 <tr> 
 <td height="24" colspan="9" bgcolor="#EDF9D5">
-<strong> Â§èµ„è®¯åˆ—è¡¨</strong></td>
+<strong> ¡ì×ÊÑ¶ÁĞ±í</strong></td>
 </tr>
 <tr align="center" bgcolor="#F8FBFB" height="22"> 
 <td width="6%">ID</td>
-<td width="4%">é€‰æ‹©</td>
-<td width="60%">æ–‡ç« æ ‡é¢˜</td>
-<td width="20%">å½•å…¥æ—¶é—´</td>
-<td>å›¾ç‰‡</td>
+<td width="4%">Ñ¡Ôñ</td>
+<td width="60%">ÎÄÕÂ±êÌâ</td>
+<td width="20%">Â¼ÈëÊ±¼ä</td>
+<td>Í¼Æ¬</td>
 </tr>
 
 
@@ -96,7 +96,7 @@ function ReturnValue()
 	<u>${news.shorttitle }</u></a></td>
 <td><fmt:formatDate value='${news.pubdate }' type='date'/></td>
 <td>
-	<c:if test="${ not empty news.litpic }"> <font color="red">(å›¾)</font> </c:if>
+	<c:if test="${ not empty news.litpic }"> <font color="red">(Í¼)</font> </c:if>
 </td>
 </tr>
 </c:forEach>
@@ -104,19 +104,19 @@ function ReturnValue()
 <tr bgcolor="#F8FBFB"> 
 <td height="24" colspan="6" style="padding-top:6px">
 &nbsp;
-<a href="javascript:selAll();" class="inputbutx">å…¨é€‰</a> 
+<a href="javascript:selAll();" class="inputbutx">È«Ñ¡</a> 
 &nbsp;
-<a href="javascript:noSelAll();" class="inputbutx">å–æ¶ˆ</a> 
+<a href="javascript:noSelAll();" class="inputbutx">È¡Ïû</a> 
 &nbsp;
-<a href="javascript:ReturnValue();" class="inputbutx">æŠŠé€‰å®šå€¼åŠ åˆ°åˆ—è¡¨</a></td>
+<a href="javascript:ReturnValue();" class="inputbutx">°ÑÑ¡¶¨Öµ¼Óµ½ÁĞ±í</a></td>
 </tr>
 
 <tr align="right" bgcolor="#eaf8ce"> 
 <td height="20" colspan="6" align="center" bgcolor="#EDF9D5">
 	
-						å…± ${PAGER.totoalPage} é¡µ&nbsp;&nbsp;${PAGER.totoalCnt} æ¡è®°å½•&nbsp;&nbsp;
-						<A href="AdminManageNews.do?act=select&pno=1&${PARA['parameter'] }">é¦–é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminManageNews.do?act=select&pno=${PAGER.prePage}&${PARA['parameter'] }">ä¸Šé¡µ</A>&nbsp;&nbsp;
+						¹² ${PAGER.totoalPage} Ò³&nbsp;&nbsp;${PAGER.totoalCnt} Ìõ¼ÇÂ¼&nbsp;&nbsp;
+						<A href="AdminManageNews.do?act=select&pno=1&${PARA['parameter'] }">Ê×Ò³</A>&nbsp;&nbsp;
+        				<A href="AdminManageNews.do?act=select&pno=${PAGER.prePage}&${PARA['parameter'] }">ÉÏÒ³</A>&nbsp;&nbsp;
         
 						<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminManageNews.do?act=select&&${PARA['parameter'] }')"> 
 							<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -129,8 +129,8 @@ function ReturnValue()
 							</c:forEach>
 			 			</SELECT>&nbsp;&nbsp;
                   
-        				<A href="AdminManageNews.do?act=select&pno=${PAGER.nextPage}&${PARA['parameter'] }">ä¸‹é¡µ</A>&nbsp;&nbsp;
-        				<A href="AdminManageNews.do?act=select&pno=${PAGER.totoalPage}&${PARA['parameter'] }">æœ«é¡µ</A>&nbsp;&nbsp;
+        				<A href="AdminManageNews.do?act=select&pno=${PAGER.nextPage}&${PARA['parameter'] }">ÏÂÒ³</A>&nbsp;&nbsp;
+        				<A href="AdminManageNews.do?act=select&pno=${PAGER.totoalPage}&${PARA['parameter'] }">Ä©Ò³</A>&nbsp;&nbsp;
         				
 </tr>
 </table>
@@ -149,11 +149,11 @@ function ReturnValue()
 <table width='600' border='0' cellpadding='0' cellspacing='0'>
   <tr>
   
-    <td width='70'> å…³é”®å­—ï¼š </td>
+    <td width='70'> ¹Ø¼ü×Ö£º </td>
     <td width='160'><input type='text' name='keyword' value='' style='width:150' />
     </td>
     <td style="padding-top:6px">
-    	<input name="imageField" type="submit" class="inputbut" value="æœç´¢" />
+    	<input name="imageField" type="submit" class="inputbut" value="ËÑË÷" />
     </td>
   </tr>
 </table>

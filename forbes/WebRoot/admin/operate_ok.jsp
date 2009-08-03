@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <%
@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>èµ¤è„šç½‘</title>
+<title>³à½ÅÍø</title>
 <style type="text/css">
 <!--
 *{
@@ -163,10 +163,10 @@ a:hover{
 	function JumpUrl(){
 		if(pgo==0){ location='${RETURN_URL}'; pgo=1; }
 	}
-	document.write("<br/><div style='width:400px;padding-top:4px;height:24;font-size:10pt;border-left:1px solid #b9df92;border-top:1px solid #b9df92;border-right:1px solid #b9df92;background-color:#def5c2;'>èµ¤è„šç½‘ æç¤ºä¿¡æ¯ï¼š</div>");
+	document.write("<br/><div style='width:400px;padding-top:4px;height:24;font-size:10pt;border-left:1px solid #b9df92;border-top:1px solid #b9df92;border-right:1px solid #b9df92;background-color:#def5c2;'>³à½ÅÍø ÌáÊ¾ĞÅÏ¢£º</div>");
 	document.write("<div style='width:400px;height:100;font-size:10pt;border:1px solid #b9df92;background-color:#f9fcf3'><br/><br/>");
 	document.write("<img src='../images/loading.gif' />&nbsp;&nbsp;&nbsp;&nbsp;${OK_MESSAGE}");
-	document.write("<br/><br/><a href='${RETURN_URL}'>å¦‚æœä½ çš„æµè§ˆå™¨æ²¡ååº”ï¼Œè¯·ç‚¹å‡»è¿™é‡Œ...</a><br/><br/></div>");
+	document.write("<br/><br/><a href='${RETURN_URL}'>Èç¹ûÄãµÄä¯ÀÀÆ÷Ã»·´Ó¦£¬Çëµã»÷ÕâÀï...</a><br/><br/></div>");
 	setTimeout('JumpUrl()',2000);
 </script>
 </center>

@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8" %>
+<%@ page language="java" pageEncoding="gbk" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -15,7 +15,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Е┘ЁИ■╝Е╜≈Г╝║Г░├</title>
+<title>╧ь╪Эвж╧эюМ</title>
 <link href="div.css" rel="stylesheet" type="text/css" />
 <link href="css_body.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
@@ -52,7 +52,7 @@
 <body>
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">Ф┴╧И┤▐Ф╥╩Е┼═Ф√┤Г╚═</div>
+	<div class="bodytitletxt">еЗа©лМ╪сндуб</div>
 </div>
 
 <div class="main"> 
@@ -61,7 +61,7 @@
       		<td height="26" colspan="6">
       			<table width="100%" border="0" align="center">
           			<tr> 
-            			<td width="100%" height="35" align="left"><strong>И─ Х©┤URLФ╥╩Е┼═Ф√┤Г╚═</strong></td>            
+            			<td width="100%" height="35" align="left"><strong>м╗╧ЩURLлМ╪сндуб</strong></td>            
           			</tr>
         		</table>
         	</td>
@@ -72,9 +72,9 @@
         		<form name='forma' method="post" action="AdminBatchAddArticle.do?act=url&returnUrl=${param.returnUrl}">
 	       	  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 	            	<tr> 
-	              		<td width="100%" align="left">Е┬⌡Д╦ Е┼═Ф╡╧Г╚≥ URLО╪ 
+	              		<td width="100%" align="left">╢╢р╣╪ссму╬ URLё╨
 	              			<input name="url" type="text" id="url" style="width:600px" />
-	              			<input type="submit" name="Submit" value="Ф▐░Д╨╓" class="inputbut" />
+	              			<input type="submit" name="Submit" value="лА╫╩" class="inputbut" />
 	              		</td>
 	            	</tr>
 	          	</table>
@@ -91,7 +91,7 @@
       		<td height="26" colspan="6">
       			<table width="100%" border="0" align="center">
           			<tr> 
-            			<td width="100%" height="35" align="left"><strong>И─ Х©┤RSSФ╥╩Е┼═Ф√┤Г╚═</strong></td>            
+            			<td width="100%" height="35" align="left"><strong>м╗╧ЩRSSлМ╪сндуб</strong></td>            
           			</tr>
         		</table>
         	</td>
@@ -102,9 +102,9 @@
         		<form name='forma' method="post" action="AdminManageArticleKeyword.do?act=add&returnUrl=|AdminManageArticleKeyword.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|">
 	       	  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 	            	<tr> 
-	              		<td width="100%" align="left">RSS URLО╪ 
+	              		<td width="100%" align="left">RSS URLё╨
 	              			<input name="keyword" type="text" id="keyword" style="width:600px" />
-	              			<input type="submit" name="Submit" value="Ф▐░Д╨╓" class="inputbut" />
+	              			<input type="submit" name="Submit" value="лА╫╩" class="inputbut" />
 	              		</td>
 	            	</tr>
 	          	</table>
@@ -121,7 +121,7 @@
       		<td height="26" colspan="6">
       			<table width="100%" border="0" align="center">
           			<tr> 
-            			<td width="100%" height="35" align="left"><strong>И─ Х©┤Д╦┼Д╪═AccessФ√┤Д╩╤Ф╥╩Е┼═Ф√┤Г╚═</strong></td>            
+            			<td width="100%" height="35" align="left"><strong>м╗╧Щио╢╚Accessнд╪ЧлМ╪сндуб</strong></td>            
           			</tr>
         		</table>
         	</td>
@@ -132,15 +132,15 @@
         		<form name='uploadform' method="post" enctype="multipart/form-data" action="AdminBatchAddArticle.do?act=access&returnUrl=${param.returnUrl}">
 	       	  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 	            	<tr> 
-	              		<td width="100%" align="left">RSS URLО╪ 
+	              		<td width="100%" align="left">RSS URLё╨
 	              			<select id="type" name="type" style="width:120px">
-	            				<option value="0">Х╞╥И─┴Ф▀╘Д╦╩Г╠╩Е·▀</option>
+	            				<option value="0">гКя║тЯжВюЮпм</option>
 	            				<c:forEach items="${TOP_ARTICLE_TYPE_LIST}" var="at" varStatus="is">
 	            					<option value="${at.id }">${at.name }</option>
 	            				</c:forEach>	            				
 	            			</select>
 	              			<input name="file" type="file" id="file" style="width:500px" />
-	              			<input type="submit" name="Submit" value="Ф▐░Д╨╓" class="inputbut" />&nbsp;&nbsp;&nbsp;&nbsp;<font color=red>${RESULT_MESSAGE }</font>
+	              			<input type="submit" name="Submit" value="лА╫╩" class="inputbut" />&nbsp;&nbsp;&nbsp;&nbsp;<font color=red>${RESULT_MESSAGE }</font>
 	              		</td>
 	            	</tr>
 	          	</table>

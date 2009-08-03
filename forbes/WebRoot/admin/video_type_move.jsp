@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ç§»åŠ¨åˆ—è¡¨</title>
+<title>ÒÆ¶¯ÁÐ±í</title>
 <link href="css_body.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -19,7 +19,7 @@
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="background:#E2F5BC;">
 	<tr>
    		<td width="100%" height="24" colspan="2" bgcolor="#EDF9D5">
-   		&nbsp;<a href="AdminUpdateVideoType.do?act=list"><u>æ ç›®ç®¡ç†</u></a>&gt;&gt;ç§»åŠ¨åˆ—è¡¨
+   		&nbsp;<a href="AdminUpdateVideoType.do?act=list"><u>À¸Ä¿¹ÜÀí</u></a>&gt;&gt;ÒÆ¶¯ÁÐ±í
 		</td>
 	</tr>
 	<tr>
@@ -29,14 +29,14 @@
        			<tr><td colspan="2" height="12"></td></tr>
        			<tr><td height="25" colspan="2" bgcolor="#F2F8FB">&nbsp;</td></tr>
           		<tr> 
-            		<td width="30%" height="25">ä½ é€‰æ‹©çš„æ ç›®æ˜¯ï¼š</td>
+            		<td width="30%" height="25">ÄãÑ¡ÔñµÄÀ¸Ä¿ÊÇ£º</td>
             		<td width="70%"> ${ARTICLE_TYPE.name }(${ARTICLE_TYPE.id })</td>
           		</tr>
           		<tr> 
-            		<td height="30">ä½ å¸Œæœ›ç§»åŠ¨åˆ°é‚£ä¸ªæ ç›®ï¼Ÿ</td>
+            		<td height="30">ÄãÏ£ÍûÒÆ¶¯µ½ÄÇ¸öÀ¸Ä¿£¿</td>
             		<td>
             			<select name="pid">
-              				<option value='0'>ç§»åŠ¨ä¸ºé¡¶çº§æ ç›®</option>
+              				<option value='0'>ÒÆ¶¯Îª¶¥¼¶À¸Ä¿</option>
               				<c:forEach items="${ARTICLE_TYPE_LIST}" var="atl" varStatus="is">
       							<option value="${atl.id }">|- ${atl.name }</option>
       		  				</c:forEach>
@@ -44,13 +44,13 @@
             		</td>
           		</tr>
           		<tr> 
-            		<td height="25" colspan="2" bgcolor="#F2F8FB">&nbsp;ä¸å…è®¸ä»Žçˆ¶çº§ç§»åŠ¨åˆ°å­çº§ç›®å½•ï¼Œåªå…è®¸å­çº§åˆ°æ›´é«˜çº§æˆ–åŒçº§æˆ–ä¸åŒçˆ¶çº§çš„æƒ…å†µã€‚</td>
+            		<td height="25" colspan="2" bgcolor="#F2F8FB">&nbsp;²»ÔÊÐí´Ó¸¸¼¶ÒÆ¶¯µ½×Ó¼¶Ä¿Â¼£¬Ö»ÔÊÐí×Ó¼¶µ½¸ü¸ß¼¶»òÍ¬¼¶»ò²»Í¬¸¸¼¶µÄÇé¿ö¡£</td>
           		</tr>
           		<tr> 
             		<td height="74">&nbsp;</td>
             		<td>
-            			<input type="submit" name="Submit" value="ç¡®å®šæ“ä½œ" class="inputbut" /> ã€€ 
-            			<input name="Submit11" type="button" id="Submit11" value="-ä¸ç†è¿”å›ž-" onclick="history.go(-1);" class="inputbut" />
+            			<input type="submit" name="Submit" value="È·¶¨²Ù×÷" class="inputbut" /> ¡¡ 
+            			<input name="Submit11" type="button" id="Submit11" value="-²»Àí·µ»Ø-" onclick="history.go(-1);" class="inputbut" />
             		</td>
           		</tr>
         	</table>

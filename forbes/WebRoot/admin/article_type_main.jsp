@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="gbk"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=gb2312' />
-<title>ç±»åˆ«ç®¡ç†</title>
+<title>Àà±ğ¹ÜÀí</title>
 <link href="css_body.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="js/context_menu.js"></script>
 <script language="javascript" src="js/ieemu.js"></script>
@@ -32,85 +32,85 @@ if(moz) {
 	extendElementModel();
 	emulateAttachEvent();
 }
-//æ™®é€šæ ç›®
+//ÆÕÍ¨À¸Ä¿
 function CommonMenu(obj,tid,returnUrl)
 {
   var eobj,popupoptions
   popupoptions = [
-    new ContextItem("å¢åŠ å†…å®¹",function(){ location="catalog_do.php?cid="+tid+"&dopost=addArchives"; }),
-    new ContextItem("ç®¡ç†å†…å®¹",function(){ location="catalog_do.php?cid="+tid+"&dopost=listArchives"; }),
+    new ContextItem("Ôö¼ÓÄÚÈİ",function(){ location="catalog_do.php?cid="+tid+"&dopost=addArchives"; }),
+    new ContextItem("¹ÜÀíÄÚÈİ",function(){ location="catalog_do.php?cid="+tid+"&dopost=listArchives"; }),
     new ContextSeperator(),
-    new ContextItem("é¢„è§ˆåˆ†ç±»",function(){ window.open("/plus/list.php?tid="+tid); }),
-    new ContextItem("æ›´æ–°HTML",function(){ location="makehtml_list.php?cid="+tid; }),
-    new ContextItem("è·å–JSæ–‡ä»¶",function(){ location="catalog_do.php?cid="+tid+"&dopost=GetJs"; }),
+    new ContextItem("Ô¤ÀÀ·ÖÀà",function(){ window.open("/plus/list.php?tid="+tid); }),
+    new ContextItem("¸üĞÂHTML",function(){ location="makehtml_list.php?cid="+tid; }),
+    new ContextItem("»ñÈ¡JSÎÄ¼ş",function(){ location="catalog_do.php?cid="+tid+"&dopost=GetJs"; }),
     new ContextSeperator(),
-    new ContextItem("å¢åŠ å­ç±»",function(){ location="catalog_add.php?ID="+tid; }),
-    new ContextItem("æ›´æ”¹æ ç›®",function(){ location="catalog_edit.php?ID="+tid; }),
+    new ContextItem("Ôö¼Ó×ÓÀà",function(){ location="catalog_add.php?ID="+tid; }),
+    new ContextItem("¸ü¸ÄÀ¸Ä¿",function(){ location="catalog_edit.php?ID="+tid; }),
     new ContextSeperator(),
-    new ContextItem("ç§»åŠ¨æ ç›®",function(){ location='catalog_move.php?job=movelist&typeid='+tid }),
-    new ContextItem("åˆ é™¤æ ç›®",function(){ location="AdminUpdateArticleType.do?act=delete&id="+tid+"&returnUrl="+returnUrl; }),
+    new ContextItem("ÒÆ¶¯À¸Ä¿",function(){ location='catalog_move.php?job=movelist&typeid='+tid }),
+    new ContextItem("É¾³ıÀ¸Ä¿",function(){ location="AdminUpdateArticleType.do?act=delete&id="+tid+"&returnUrl="+returnUrl; }),
     new ContextSeperator(),
-    new ContextItem("å‘ä¸Šæ’å‰ä¸€çº§",function(){ location="catalog_do.php?cid="+tid+"&dopost=upRank"; })
+    new ContextItem("ÏòÉÏÅÅÇ°Ò»¼¶",function(){ location="catalog_do.php?cid="+tid+"&dopost=upRank"; })
   ]
   ContextMenu.display(popupoptions)
 }
-//äº’åŠ¨æ ç›®
+//»¥¶¯À¸Ä¿
 function CommonMenuWd(obj,tid,returnUrl)
 {
   var eobj,popupoptions
   popupoptions = [
-    new ContextItem("é¢„è§ˆåˆ†ç±»",function(){ window.open("/plus/list.php?tid="+tid); } ),
+    new ContextItem("Ô¤ÀÀ·ÖÀà",function(){ window.open("/plus/list.php?tid="+tid); } ),
     new ContextSeperator(),
-    new ContextItem("å¢åŠ å†…å®¹",function(){location="catalog_do.php?cid="+tid+"&dopost=addArchives";}),
-    new ContextItem("ç®¡ç†å†…å®¹",function(){location="catalog_do.php?cid="+tid+"&dopost=listArchives";}),
+    new ContextItem("Ôö¼ÓÄÚÈİ",function(){location="catalog_do.php?cid="+tid+"&dopost=addArchives";}),
+    new ContextItem("¹ÜÀíÄÚÈİ",function(){location="catalog_do.php?cid="+tid+"&dopost=listArchives";}),
     new ContextSeperator(),
-    new ContextItem("å¢åŠ å­ç±»",function(){location="catalog_add.php?ID="+tid;}),
-    new ContextItem("æ›´æ”¹æ ç›®",function(){location="catalog_edit.php?ID="+tid;}),
+    new ContextItem("Ôö¼Ó×ÓÀà",function(){location="catalog_add.php?ID="+tid;}),
+    new ContextItem("¸ü¸ÄÀ¸Ä¿",function(){location="catalog_edit.php?ID="+tid;}),
     new ContextSeperator(),
-    new ContextItem("ç§»åŠ¨æ ç›®",function(){location='catalog_move.php?job=movelist&typeid='+tid}),
-    new ContextItem("åˆ é™¤æ ç›®",function(){location="AdminUpdateArticleType.do?act=delete&id="+tid+"&returnUrl="+returnUrl;}),
+    new ContextItem("ÒÆ¶¯À¸Ä¿",function(){location='catalog_move.php?job=movelist&typeid='+tid}),
+    new ContextItem("É¾³ıÀ¸Ä¿",function(){location="AdminUpdateArticleType.do?act=delete&id="+tid+"&returnUrl="+returnUrl;}),
     new ContextSeperator(),
-    new ContextItem("å‘ä¸Šæ’å‰ä¸€çº§",function(){ location="catalog_do.php?cid="+tid+"&dopost=upRank"; })
+    new ContextItem("ÏòÉÏÅÅÇ°Ò»¼¶",function(){ location="catalog_do.php?cid="+tid+"&dopost=upRank"; })
   ]
   ContextMenu.display(popupoptions)
 }
-//å°é¢æ¨¡æ¿
+//·âÃæÄ£°å
 function CommonMenuPart(obj,tid,returnUrl)
 {
   var eobj,popupoptions
   popupoptions = [
-    new ContextItem("å¢åŠ å†…å®¹",function(){top.document.frames['main'].location="catalog_do.php?cid="+tid+"&dopost=addArchives";}),
-    new ContextItem("ç®¡ç†å†…å®¹",function(){location="catalog_do.php?cid="+tid+"&dopost=listArchives";}),
+    new ContextItem("Ôö¼ÓÄÚÈİ",function(){top.document.frames['main'].location="catalog_do.php?cid="+tid+"&dopost=addArchives";}),
+    new ContextItem("¹ÜÀíÄÚÈİ",function(){location="catalog_do.php?cid="+tid+"&dopost=listArchives";}),
     new ContextSeperator(),
-    new ContextItem("é¢„è§ˆåˆ†ç±»",function(){ window.open("/plus/list.php?tid="+tid); }),
-    new ContextItem("æ›´æ–°HTML",function(){ location="makehtml_list.php?cid="+tid; }),
-    new ContextItem("è·å–JSæ–‡ä»¶",function(){ location="catalog_do.php?cid="+tid+"&dopost=GetJs"; }),
+    new ContextItem("Ô¤ÀÀ·ÖÀà",function(){ window.open("/plus/list.php?tid="+tid); }),
+    new ContextItem("¸üĞÂHTML",function(){ location="makehtml_list.php?cid="+tid; }),
+    new ContextItem("»ñÈ¡JSÎÄ¼ş",function(){ location="catalog_do.php?cid="+tid+"&dopost=GetJs"; }),
     new ContextSeperator(),
-    new ContextItem("å¢åŠ å­ç±»",function(){location="catalog_add.php?ID="+tid;}),
-    new ContextItem("æ›´æ”¹æ ç›®",function(){location="catalog_edit.php?ID="+tid;}),
+    new ContextItem("Ôö¼Ó×ÓÀà",function(){location="catalog_add.php?ID="+tid;}),
+    new ContextItem("¸ü¸ÄÀ¸Ä¿",function(){location="catalog_edit.php?ID="+tid;}),
     new ContextSeperator(),
-    new ContextItem("ç§»åŠ¨æ ç›®",function(){location='catalog_move.php?job=movelist&typeid='+tid}),
-    new ContextItem("åˆ é™¤æ ç›®",function(){location="AdminUpdateArticleType.do?act=delete&id="+tid+"&returnUrl="+returnUrl;}),
+    new ContextItem("ÒÆ¶¯À¸Ä¿",function(){location='catalog_move.php?job=movelist&typeid='+tid}),
+    new ContextItem("É¾³ıÀ¸Ä¿",function(){location="AdminUpdateArticleType.do?act=delete&id="+tid+"&returnUrl="+returnUrl;}),
     new ContextSeperator(),
-    new ContextItem("å‘ä¸Šæ’å‰ä¸€çº§",function(){ location="catalog_do.php?cid="+tid+"&dopost=upRank"; })
+    new ContextItem("ÏòÉÏÅÅÇ°Ò»¼¶",function(){ location="catalog_do.php?cid="+tid+"&dopost=upRank"; })
   ]
   ContextMenu.display(popupoptions)
 }
-//å•ä¸ªé¡µé¢
+//µ¥¸öÒ³Ãæ
 function SingleMenu(obj,tid,returnUrl)
 {
   var eobj,popupoptions
   popupoptions = [
-    new ContextItem("é¢„è§ˆé¡µé¢",function(){ window.open("catalog_do.php?cid="+tid+"&dopost=viewSgPage"); }),
-    new ContextItem("ç¼–è¾‘é¡µé¢",function(){ location="catalog_do.php?cid="+tid+"&dopost=editSgPage"; }),
-    new ContextItem("ç¼–è¾‘æ¨¡æ¿",function(){ location="catalog_do.php?cid="+tid+"&dopost=editSgTemplet"; }),
+    new ContextItem("Ô¤ÀÀÒ³Ãæ",function(){ window.open("catalog_do.php?cid="+tid+"&dopost=viewSgPage"); }),
+    new ContextItem("±à¼­Ò³Ãæ",function(){ location="catalog_do.php?cid="+tid+"&dopost=editSgPage"; }),
+    new ContextItem("±à¼­Ä£°å",function(){ location="catalog_do.php?cid="+tid+"&dopost=editSgTemplet"; }),
     new ContextSeperator(),
-    new ContextItem("æ›´æ”¹æ ç›®",function(){location="catalog_edit.php?ID="+tid;}),
+    new ContextItem("¸ü¸ÄÀ¸Ä¿",function(){location="catalog_edit.php?ID="+tid;}),
     new ContextSeperator(),
-    new ContextItem("ç§»åŠ¨æ ç›®",function(){location='catalog_move.php?job=movelist&typeid='+tid}),
-    new ContextItem("åˆ é™¤æ ç›®",function(){location="AdminUpdateArticleType.do?act=delete&id="+tid+"&returnUrl="+returnUrl;}),
+    new ContextItem("ÒÆ¶¯À¸Ä¿",function(){location='catalog_move.php?job=movelist&typeid='+tid}),
+    new ContextItem("É¾³ıÀ¸Ä¿",function(){location="AdminUpdateArticleType.do?act=delete&id="+tid+"&returnUrl="+returnUrl;}),
     new ContextSeperator(),
-    new ContextItem("å‘ä¸Šæ’å‰ä¸€çº§",function(){ window.location="catalog_do.php?cid="+tid+"&dopost=upRank"; })
+    new ContextItem("ÏòÉÏÅÅÇ°Ò»¼¶",function(){ window.location="catalog_do.php?cid="+tid+"&dopost=upRank"; })
   ]
   ContextMenu.display(popupoptions)
 }
@@ -161,14 +161,14 @@ function SingleMenu(obj,tid,returnUrl)
 <body leftmargin='8' topmargin='8' onload="ContextMenu.intializeContextMenu()">
 <div class="bodytitle">
 	<div class="bodytitleleft"></div>
-	<div class="bodytitletxt">æ–‡ç« ç±»åˆ«ç®¡ç†</div>
+	<div class="bodytitletxt">ÎÄÕÂÀà±ğ¹ÜÀí</div>
 </div>
 
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="	background:#E2F5BC;">
 	<tr>
 		<td bgcolor="#EDF9D5" class="tbtitletxt">
-			<div style='float:left'><strong>æ–‡ç« ç±»åˆ«ç®¡ç†</strong>(åœ¨IEæµè§ˆå™¨ä¸­å¯ä½¿ç”¨å³é”®èœå•è¿›è¡Œæ“ä½œã€‚)</div>
-			<div style='float:right;padding-right:30px'><a href='article_type_add.jsp?pid=0'><b>â†‘åˆ›å»ºæ–‡ç« ç±»åˆ«</b></a></div>
+			<div style='float:left'><strong>ÎÄÕÂÀà±ğ¹ÜÀí</strong>(ÔÚIEä¯ÀÀÆ÷ÖĞ¿ÉÊ¹ÓÃÓÒ¼ü²Ëµ¥½øĞĞ²Ù×÷¡£)</div>
+			<div style='float:right;padding-right:30px'><a href='article_type_add.jsp?pid=0'><b>¡ü´´½¨ÎÄÕÂÀà±ğ</b></a></div>
 		</td>
 	</tr>
 </table>
@@ -176,13 +176,13 @@ function SingleMenu(obj,tid,returnUrl)
 <form name="form1" action="catalog_do.php?dopost=upRankAll" method="post">
 <table width="96%" border="0" cellpadding="1" cellspacing="1" align="center" style="margin:0px auto" class="tblist">
 	<tr align="center">
-		<td width="7%" class="tbsname">é€‰æ‹©</td>
+		<td width="7%" class="tbsname">Ñ¡Ôñ</td>
 		<td width="6%" class="tbsname">ID</td>
-		<td width="27%" class="tbsname">åç§°</td>
-		<td width="10%" class="tbsname">è®°å½•æ•°</td>
-		<td width="8%" class="tbsname">å†…å®¹æ¨¡å‹</td>
-		<td width="8%" class="tbsname">æ’åº</td>
-		<td width="34%" class="tbsname">ç®¡ç†</td>
+		<td width="27%" class="tbsname">Ãû³Æ</td>
+		<td width="10%" class="tbsname">¼ÇÂ¼Êı</td>
+		<td width="8%" class="tbsname">ÄÚÈİÄ£ĞÍ</td>
+		<td width="8%" class="tbsname">ÅÅĞò</td>
+		<td width="34%" class="tbsname">¹ÜÀí</td>
 	</tr>
 </table>
 
@@ -195,16 +195,16 @@ function SingleMenu(obj,tid,returnUrl)
 			<img style='cursor:hand' onclick="LoadSuns('suns${at.id }',2);" src='images/class_sopen.gif' width='11' height='15' border='0' align='absmiddle' />  
 			<a href='catalog_do.php?cid=2&dopost=listArchives' style='font-size:14px; text-decoration:none;'>${at.name }</a>
 		</td>
-		<td width='10%'>(æ–‡æ¡£ï¼š${at.articleCnt })</td>
+		<td width='10%'>(ÎÄµµ£º${at.articleCnt })</td>
 		<td width='8%'>1</td>
 		<td width='8%'><label><input name='sortrank2' type='text' id='textfield2' value='${at.disorder }' size='2' maxlength='4' style='text-align:center;' /></label></td>
 		<td width='34%' align='center' style='letter-spacing:1px;'>
-			<a href='/plus/list.php?tid=2' target='_blank'>é¢„è§ˆ</a>
-			| <a href='catalog_do.php?cid=2&dopost=listArchives'>å†…å®¹</a>
-			| <a href='article_type_add.jsp?pid=${at.id }'>æ·»åŠ </a>
-			| <a href='AdminUpdateArticleType.do?act=get&id=${at.id }&returnUrl=|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|'>ä¿®æ”¹</a>
-			| <a href='AdminUpdateArticleType.do?act=move_get&id=${at.id }&returnUrl=|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|'>ç§»åŠ¨</a>
-			| <a href='ï¼ƒ' onclick="return deleteConfirm('AdminUpdateArticleType.do?act=delete&id=${at.id}','|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|','æ­¤æ“ä½œä¸èƒ½æ¢å¤ï¼ï¼ï¼è¯·æ…é‡ï¼ï¼ï¼\n\nç¡®å®šè¦åˆ é™¤è¯¥æ–‡ç« ç±»å‹å—ï¼Ÿ');">åˆ é™¤</a>
+			<a href='/plus/list.php?tid=2' target='_blank'>Ô¤ÀÀ</a>
+			| <a href='catalog_do.php?cid=2&dopost=listArchives'>ÄÚÈİ</a>
+			| <a href='article_type_add.jsp?pid=${at.id }'>Ìí¼Ó</a>
+			| <a href='AdminUpdateArticleType.do?act=get&id=${at.id }&returnUrl=|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|'>ĞŞ¸Ä</a>
+			| <a href='AdminUpdateArticleType.do?act=move_get&id=${at.id }&returnUrl=|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|'>ÒÆ¶¯</a>
+			| <a href='££' onclick="return deleteConfirm('AdminUpdateArticleType.do?act=delete&id=${at.id}','|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|','´Ë²Ù×÷²»ÄÜ»Ö¸´£¡£¡£¡ÇëÉ÷ÖØ£¡£¡£¡\n\nÈ·¶¨ÒªÉ¾³ı¸ÃÎÄÕÂÀàĞÍÂğ£¿');">É¾³ı</a>
 		</td>
 		
 	</tr>
@@ -216,19 +216,19 @@ function SingleMenu(obj,tid,returnUrl)
 		<tr align='center' class='trlbg'  oncontextmenu="CommonMenu(this,${a.id},'|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|')">
 			<td width='7%'><input class='np' type='checkbox' name='tids[]' value='1' /></td>
 			<td width='6%'>[ID:${a.id }]</td>
-			<td width='27%' align='left'>ã€€   â”œ  <a href='catalog_do.php?cid=1&dopost=listArchives' style='font-size:14px; text-decoration:none;'>${a.name }</a> </td>
-			<td width='10%'>(æ–‡æ¡£ï¼š${a.articleCnt })</td>
+			<td width='27%' align='left'>¡¡   ©À  <a href='catalog_do.php?cid=1&dopost=listArchives' style='font-size:14px; text-decoration:none;'>${a.name }</a> </td>
+			<td width='10%'>(ÎÄµµ£º${a.articleCnt })</td>
 			<td width='8%'>1</td>
 			<td width='8%'>
 				<label><input name='sortrank1' type='text' id='textfield2' value='${a.disorder }' size='2' maxlength='4' style='text-align:center;' /></label>
 			</td>
 			<td width='34%' align='center' style='letter-spacing:1px;'>
-				<a href='/plus/list.php?tid=1' target='_blank'>é¢„è§ˆ</a> | 
-				<a href='catalog_do.php?cid=1&dopost=listArchives'>å†…å®¹</a> | 
-				<a href='article_type_add.jsp?pid=${a.id }'>æ·»åŠ </a> | 
-				<a href='AdminUpdateArticleType.do?act=get&id=${a.id }&returnUrl=|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|'>ä¿®æ”¹</a> | 
-				<a href='AdminUpdateArticleType.do?act=move_get&id=${a.id }&returnUrl=|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|'>ç§»åŠ¨</a> | 
-				<a href='#' onclick="return deleteConfirm('AdminUpdateArticleType.do?act=delete&id=${a.id}','|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|','æ­¤æ“ä½œä¸èƒ½æ¢å¤ï¼ï¼ï¼è¯·æ…é‡ï¼ï¼ï¼\n\nç¡®å®šè¦åˆ é™¤è¯¥æ–‡ç« ç±»å‹å—ï¼Ÿ');">åˆ é™¤</a> 
+				<a href='/plus/list.php?tid=1' target='_blank'>Ô¤ÀÀ</a> | 
+				<a href='catalog_do.php?cid=1&dopost=listArchives'>ÄÚÈİ</a> | 
+				<a href='article_type_add.jsp?pid=${a.id }'>Ìí¼Ó</a> | 
+				<a href='AdminUpdateArticleType.do?act=get&id=${a.id }&returnUrl=|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|'>ĞŞ¸Ä</a> | 
+				<a href='AdminUpdateArticleType.do?act=move_get&id=${a.id }&returnUrl=|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|'>ÒÆ¶¯</a> | 
+				<a href='#' onclick="return deleteConfirm('AdminUpdateArticleType.do?act=delete&id=${a.id}','|AdminUpdateArticleType.do|act=list|pno=${PAGER.curPage}|','´Ë²Ù×÷²»ÄÜ»Ö¸´£¡£¡£¡ÇëÉ÷ÖØ£¡£¡£¡\n\nÈ·¶¨ÒªÉ¾³ı¸ÃÎÄÕÂÀàĞÍÂğ£¿');">É¾³ı</a> 
 			</td>
 			
 		</tr>
@@ -245,9 +245,9 @@ function SingleMenu(obj,tid,returnUrl)
 
 	<tr>
         <td height="20" bgcolor="#EDF9D5" align="center" valign="middle">
-			å…± ${PAGER.totoalPage} é¡µ&nbsp;&nbsp;${PAGER.totoalCnt} æ¡è®°å½•&nbsp;&nbsp;
-			<A href="AdminUpdateArticleType.do?act=list&pno=1">é¦–é¡µ</A>&nbsp;&nbsp;
-        	<A href="AdminUpdateArticleType.do?act=list&pno=${PAGER.prePage}">ä¸Šé¡µ</A>&nbsp;&nbsp;
+			¹² ${PAGER.totoalPage} Ò³&nbsp;&nbsp;${PAGER.totoalCnt} Ìõ¼ÇÂ¼&nbsp;&nbsp;
+			<A href="AdminUpdateArticleType.do?act=list&pno=1">Ê×Ò³</A>&nbsp;&nbsp;
+        	<A href="AdminUpdateArticleType.do?act=list&pno=${PAGER.prePage}">ÉÏÒ³</A>&nbsp;&nbsp;
         
 			<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value, 'AdminUpdateArticleType.do?act=list')"> 
 				<c:forEach var="i" begin="1" end="${PAGER.totoalPage}" step="1">
@@ -260,16 +260,16 @@ function SingleMenu(obj,tid,returnUrl)
 				</c:forEach>
  			</SELECT>&nbsp;&nbsp;
                   
-        	<A href="AdminUpdateArticleType.do?act=list&pno=${PAGER.nextPage}">ä¸‹é¡µ</A>&nbsp;&nbsp;
-        	<A href="AdminUpdateArticleType.do?act=list&pno=${PAGER.totoalPage}">æœ«é¡µ</A>&nbsp;&nbsp;
+        	<A href="AdminUpdateArticleType.do?act=list&pno=${PAGER.nextPage}">ÏÂÒ³</A>&nbsp;&nbsp;
+        	<A href="AdminUpdateArticleType.do?act=list&pno=${PAGER.totoalPage}">Ä©Ò³</A>&nbsp;&nbsp;
 		</td>
     </tr>
     
 	<tr>
 		<td height="35" align="center" style="background:#F9FFE6;padding:7px 6px 6px 10px;" >
-			<input type="button" value="å¢åŠ é¡¶çº§æ ç›®" class="inputbut" onclick="location='article_type_add.jsp?pid=0';"/>
-			<input type="button" value="æ›´æ–°æ’åº" class="inputbut" onclick="document.form1.submit();"/>
-			<input type="button" value="è·å–JS" class="inputbut" onclick="location='makehtml_js.php';"/>
+			<input type="button" value="Ôö¼Ó¶¥¼¶À¸Ä¿" class="inputbut" onclick="location='article_type_add.jsp?pid=0';"/>
+			<input type="button" value="¸üĞÂÅÅĞò" class="inputbut" onclick="document.form1.submit();"/>
+			<input type="button" value="»ñÈ¡JS" class="inputbut" onclick="location='makehtml_js.php';"/>
 		</td>
 	</tr>
 </table>
