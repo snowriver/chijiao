@@ -74,12 +74,12 @@ public class NewsContentAddAction extends Action {
 				//System.out.println("User.id = " + user.getUid());
 				Content ac = new Content();
 				ac.setUser(user);
+				ac.setUsername(user.getUsername());
 				ac.setContentType(contentType);
 				ac.setObjectId(Integer.parseInt(id));
 				ac.setContent(content);
 				ac.setIp(request.getRemoteAddr());
-				ac.setPubdate(new Date());
-												
+				ac.setPubdate(new Date());				
 				contentManager.addContent(ac);
 				request.setAttribute("RESULT_MESSAGE", "SUCCESS" );
 				//request.setAttribute("RETURN_URL", "ArticleView.do?id="+id );
