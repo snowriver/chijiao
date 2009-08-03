@@ -84,7 +84,7 @@
 <div class=mainbody>
 	<div id="append"></div>
 <div class="ucbody">
-	<h1>今日计划[${PARA['date'] }]</h1>
+	<h1>今日计划 [${DATE}]</h1>
 		
 	<div class="ucnav">
 		<a href="ClientManageUserDailyPlan.do?act=list">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
