@@ -121,6 +121,7 @@
 				<value>com/forbes/hibernate/hbm/UserDailyPlan.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserDailyAccredit.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserDailySumup.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/UserWeekAttitude.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 
@@ -468,4 +469,9 @@
     	</property>
     </bean>
 
-</beans>
+    <bean id="UserWeekAttitudeDAO"
+    	class="com.forbes.hibernate.dao.UserWeekAttitudeDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean></beans>
