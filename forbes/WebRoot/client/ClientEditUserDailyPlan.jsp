@@ -92,86 +92,34 @@
 						<TD class=tellmeInputTd id=select_day_container>
 	      					<DIV style="float:left">
 	      						<SELECT id=start_time_hh name=start_time_hh onchange="changeEndTimeHh(this.options[this.options.selectedIndex].value)"> 
-	      							<OPTION value="00">00</OPTION>
-	      							<OPTION value="01">01</OPTION>
-	      							<OPTION value="02">02</OPTION>
-	      							<OPTION value="03">03</OPTION>
-	      							<OPTION value="04">04</OPTION>
-	      							<OPTION value="05">05</OPTION>
-	      							<OPTION value="06">06</OPTION>
-	      							<OPTION value="07">07</OPTION>
-	      							<OPTION value="08">08</OPTION>
-	      							<OPTION value="09" selected>09</OPTION>
-	      							<OPTION value="10">10</OPTION>
-	      							<OPTION value="11">11</OPTION>
-	      							<OPTION value="12">12</OPTION>
-	      							<OPTION value="13">13</OPTION>
-	      							<OPTION value="14">14</OPTION>
-	      							<OPTION value="15">15</OPTION>
-	      							<OPTION value="16">16</OPTION>
-	      							<OPTION value="17">17</OPTION>	      							
-	      							<OPTION value="18">18</OPTION>
-	      							<OPTION value="19">19</OPTION>
-	      							<OPTION value="20">20</OPTION>
-	      							<OPTION value="21">21</OPTION>
-	      							<OPTION value="22">22</OPTION>
-	      							<OPTION value="23">23</OPTION>
+	      							<c:forEach var="start_time_hh" begin="0" end="24" step="1">
+	      								<c:if test="${start_time_hh < 10}"><c:set var="start_time_hh_temp" value="0${start_time_hh}" /></c:if>
+	      								<c:if test="${start_time_hh >= 10}"><c:set var="start_time_hh_temp" value="${start_time_hh}" /></c:if>
+	      								<OPTION value="${start_time_hh_temp }" <c:if test="${fn:substring(USER_DETAILY_PLAN.startTime, 11, 13) == start_time_hh_temp }">selected</c:if>>${start_time_hh_temp }</OPTION>
+	      							</c:forEach>
 	      						</SELECT>
-	      						<SELECT id=start_time_mm name=start_time_mm> 
-	      							<OPTION value="00" selected>00</OPTION>
-	      							<OPTION value="05">05</OPTION>
-	      							<OPTION value="10">10</OPTION>
-	      							<OPTION value="15">15</OPTION>
-	      							<OPTION value="20">20</OPTION>
-	      							<OPTION value="25">25</OPTION>
-	      							<OPTION value="30">30</OPTION>
-	      							<OPTION value="35">35</OPTION>
-	      							<OPTION value="40">40</OPTION>
-	      							<OPTION value="45">45</OPTION>
-	      							<OPTION value="50">50</OPTION>
-	      							<OPTION value="55">55</OPTION>	      			
+	      						<SELECT id=start_time_mm name=start_time_mm>
+	      							<c:forEach var="start_time_mm" begin="0" end="55" step="5">
+	      								<c:if test="${start_time_mm < 10}"><c:set var="start_time_mm_temp" value="0${start_time_mm}" /></c:if>
+	      								<c:if test="${start_time_mm >= 10}"><c:set var="start_time_mm_temp" value="${start_time_mm}" /></c:if>
+	      								<OPTION value="${start_time_mm_temp }" <c:if test="${fn:substring(USER_DETAILY_PLAN.startTime, 14, 16) == start_time_mm_temp }">selected</c:if>>${start_time_mm_temp }</OPTION>
+	      							</c:forEach>
 	      						</SELECT> жа  
 	      					</DIV>
 	      					<DIV style="float:left">					
 	      						<SELECT id=end_time_hh name=end_time_hh> 
-	      							<OPTION value="00">00</OPTION>
-	      							<OPTION value="01">01</OPTION>
-	      							<OPTION value="02">02</OPTION>
-	      							<OPTION value="03">03</OPTION>
-	      							<OPTION value="04">04</OPTION>
-	      							<OPTION value="05">05</OPTION>
-	      							<OPTION value="06">06</OPTION>
-	      							<OPTION value="07">07</OPTION>
-	      							<OPTION value="08">08</OPTION>
-	      							<OPTION value="09" selected>09</OPTION>
-	      							<OPTION value="10">10</OPTION>
-	      							<OPTION value="11">11</OPTION>
-	      							<OPTION value="12">12</OPTION>
-	      							<OPTION value="13">13</OPTION>
-	      							<OPTION value="14">14</OPTION>
-	      							<OPTION value="15">15</OPTION>
-	      							<OPTION value="16">16</OPTION>
-	      							<OPTION value="17">17</OPTION>
-	      							<OPTION value="18">18</OPTION>
-	      							<OPTION value="19">19</OPTION>
-	      							<OPTION value="20">20</OPTION>	      							
-	      							<OPTION value="21">21</OPTION>
-	      							<OPTION value="22">22</OPTION>
-	      							<OPTION value="23">23</OPTION>
+	      							<c:forEach var="end_time_hh" begin="0" end="24" step="1">
+	      								<c:if test="${end_time_hh < 10}"><c:set var="end_time_hh_temp" value="0${end_time_hh}" /></c:if>
+	      								<c:if test="${end_time_hh >= 10}"><c:set var="end_time_hh_temp" value="${end_time_hh}" /></c:if>
+	      								<OPTION value="${end_time_hh_temp }" <c:if test="${fn:substring(USER_DETAILY_PLAN.endTime, 11, 13) == end_time_hh_temp }">selected</c:if>>${end_time_hh_temp }</OPTION>
+	      							</c:forEach>
 	      						</SELECT>
 	      						<SELECT id=end_time_mm name=end_time_mm> 
-	      							<OPTION value="00">00</OPTION>
-	      							<OPTION value="05">05</OPTION>
-	      							<OPTION value="10">10</OPTION>
-	      							<OPTION value="15">15</OPTION>
-	      							<OPTION value="20">20</OPTION>
-	      							<OPTION value="25">25</OPTION>
-	      							<OPTION value="30">30</OPTION>
-	      							<OPTION value="35">35</OPTION>
-	      							<OPTION value="40">40</OPTION>
-	      							<OPTION value="45">45</OPTION>
-	      							<OPTION value="50">50</OPTION>
-	      							<OPTION value="55">55</OPTION>	      			
+	      							<c:forEach var="end_time_mm" begin="0" end="55" step="5">
+	      								<c:if test="${end_time_mm < 10}"><c:set var="end_time_mm_temp" value="0${end_time_mm}" /></c:if>
+	      								<c:if test="${end_time_mm >= 10}"><c:set var="end_time_mm_temp" value="${end_time_mm}" /></c:if>
+	      								<OPTION value="${end_time_mm_temp }" <c:if test="${fn:substring(USER_DETAILY_PLAN.endTime, 14, 16) == end_time_mm_temp }">selected</c:if>>${end_time_mm_temp }</OPTION>
+	      							</c:forEach>
 	      						</SELECT>
 	      						
 	      					</DIV>
