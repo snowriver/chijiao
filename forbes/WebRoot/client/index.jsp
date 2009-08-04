@@ -4,12 +4,13 @@
 
 <%
 	try{
-  		if(request.getSession().getAttribute("CLIENT") == null ) {
-			response.sendRedirect("ClientLogin.jsp");
-		}
-  		else {
-  			response.sendRedirect("ClientMain.jsp");
-  		}
+  		//if(request.getSession().getAttribute("CLIENT") == null ) {
+			//response.sendRedirect("ClientLogin.jsp");
+		//}
+  		//else {
+  			//response.sendRedirect("ClientMain.jsp");
+  		//}
+		response.sendRedirect("ClientLogin.do?act=cookie");
   	} catch(Exception e){
 		e.printStackTrace();
 	}	
