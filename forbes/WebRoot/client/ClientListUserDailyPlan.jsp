@@ -6,15 +6,22 @@
 
 <%
 	UcMembers ucMembers = (UcMembers)request.getSession().getAttribute("CLIENT");
+	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 	String date = request.getParameter("date");
 	if(date == null || date.length() < 1) {
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		date   = df.format(new Date()) ;		
 	}
+		
 	com.forbes.ajax.UserDailyCount udc = new com.forbes.ajax.UserDailyCount();
 	request.setAttribute("USER_DAILY_PLAN_COUNT", udc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
 	request.setAttribute("USER_DAILY_ACCREDIT_COUNT", udc.getUserDailyAccreditCount(ucMembers.getUid().toString(), date, null));
 	request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
+	
+	Date tempDate = df.parse(date);
+	if(tempDate.getDay() ==6 ) {
+		com.forbes.ajax.UserWeekCount uwc = new com.forbes.ajax.UserWeekCount();
+		request.setAttribute("USER_WEEK_ATTITUDE_COUNT", uwc.getUserWeekAttitudeCount(ucMembers.getUid().toString(), date));
+	}
 %>
 
 
@@ -181,6 +188,11 @@
 		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
 		<a href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
 		<a href="ClientManageUserDailySumup.do?act=list">今日反省[${USER_DAILY_SUMUP_COUNT }]</a>
+		
+		<c:if test="${not empty USER_WEEK_ATTITUDE_COUNT}">
+			<a href="ClientManageUserDailySumup.do?act=list">一周态度检查[${USER_WEEK_ATTITUDE_COUNT }]</a>
+		</c:if>
+		
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
