@@ -19,6 +19,11 @@
 			<ref bean="UserDailySumupDAO" />
 		</property>
 	</bean>
+	<bean id="weekAttitudeManager" class="com.forbes.service.plan.impl.WeekAttitudeManagerImpl">
+		<property name="userWeekAttitudeDAO">
+			<ref bean="UserWeekAttitudeDAO" />
+		</property>
+	</bean>
 	
 	<!-- -->	
 	<bean id="dailyPlanManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
@@ -60,6 +65,19 @@
 			</props>
 		</property>
 	</bean>
+	<bean id="weekAttitudeManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="weekAttitudeManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
 	
 	
 	<bean name="/client/ClientManageUserDailyPlan" class="com.forbes.struts.action.client.ClientManageUserDailyPlanAction" singleton="false">
@@ -75,6 +93,11 @@
 	<bean name="/client/ClientManageUserDailySumup" class="com.forbes.struts.action.client.ClientManageUserDailySumupAction" singleton="false">
 		<property name="dailySumupManager">
 			<ref bean="dailySumupManagerService" />
+		</property>
+	</bean>
+	<bean name="/client/ClientManageUserWeekAttitude" class="com.forbes.struts.action.client.ClientManageUserWeekAttitudeAction" singleton="false">
+		<property name="weekAttitudeManager">
+			<ref bean="weekAttitudeManagerService" />
 		</property>
 	</bean>
 
