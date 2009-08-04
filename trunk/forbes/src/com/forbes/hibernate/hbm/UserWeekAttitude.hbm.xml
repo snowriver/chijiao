@@ -18,222 +18,222 @@
         </property>
         <property name="confident" type="java.lang.String">
             <column name="confident" length="2">
-                <comment>鑷俊</comment>
+                <comment>自信</comment>
             </column>
         </property>
         <property name="intent" type="java.lang.String">
             <column name="intent" length="2">
-                <comment>鍐冲績</comment>
+                <comment>决心</comment>
             </column>
         </property>
         <property name="initiative" type="java.lang.String">
             <column name="initiative" length="2">
-                <comment>涓诲姩</comment>
+                <comment>主动</comment>
             </column>
         </property>
         <property name="ebullient" type="java.lang.String">
             <column name="ebullient" length="2">
-                <comment>鐑儏</comment>
+                <comment>热情</comment>
             </column>
         </property>
         <property name="love" type="java.lang.String">
             <column name="love" length="2">
-                <comment>鐖卞績</comment>
+                <comment>爱心</comment>
             </column>
         </property>
         <property name="study" type="java.lang.String">
             <column name="study" length="2">
-                <comment>瀛︿範</comment>
+                <comment>学习</comment>
             </column>
         </property>
         <property name="autonomic" type="java.lang.String">
             <column name="autonomic" length="2">
-                <comment>鑷緥</comment>
+                <comment>自律</comment>
             </column>
         </property>
         <property name="pertinacious" type="java.lang.String">
             <column name="pertinacious" length="2">
-                <comment>椤藉己</comment>
+                <comment>顽强</comment>
             </column>
         </property>
         <property name="insist" type="java.lang.String">
             <column name="insist" length="2">
-                <comment>鍧氭寔</comment>
+                <comment>坚持</comment>
             </column>
         </property>
         <property name="serious" type="java.lang.String">
             <column name="serious" length="2">
-                <comment>璁ょ湡</comment>
+                <comment>认真</comment>
             </column>
         </property>
         <property name="rapid" type="java.lang.String">
             <column name="rapid" length="2">
-                <comment>杩呴��</comment>
+                <comment>迅速��</comment>
             </column>
         </property>
         <property name="optimism" type="java.lang.String">
             <column name="optimism" length="2">
-                <comment>涔愯</comment>
+                <comment>乐观</comment>
             </column>
         </property>
         <property name="innovation" type="java.lang.String">
             <column name="innovation" length="2">
-                <comment>鍒涙柊</comment>
+                <comment>创新</comment>
             </column>
         </property>
         <property name="honest" type="java.lang.String">
             <column name="honest" length="2">
-                <comment>鐪熻瘹</comment>
+                <comment>真诚</comment>
             </column>
         </property>
         <property name="responsibility" type="java.lang.String">
             <column name="responsibility" length="2">
-                <comment>璐熻矗</comment>
+                <comment>负责</comment>
             </column>
         </property>
         <property name="sonsy" type="java.lang.String">
             <column name="sonsy" length="2">
-                <comment>璞佽揪</comment>
+                <comment>豁达</comment>
             </column>
         </property>
         <property name="diligence" type="java.lang.String">
             <column name="diligence" length="2">
-                <comment>鍕ゅ</comment>
+                <comment>勤奋</comment>
             </column>
         </property>
         <property name="humility" type="java.lang.String">
             <column name="humility" length="2">
-                <comment>璋﹁櫄</comment>
+                <comment>谦虚</comment>
             </column>
         </property>
         <property name="purpose" type="java.lang.String">
             <column name="purpose" length="2">
-                <comment>浼佸浘蹇�</comment>
+                <comment>企图心�</comment>
             </column>
         </property>
         <property name="clear" type="java.lang.String">
             <column name="clear" length="2">
-                <comment>鏃ユ竻鏃ユ柊</comment>
+                <comment>日清日新</comment>
             </column>
         </property>
         <property name="dobest" type="java.lang.String">
             <column name="dobest" length="2">
-                <comment>鍏ㄥ姏浠ヨ荡</comment>
+                <comment>全力以赴</comment>
             </column>
         </property>
         <property name="team" type="java.lang.String">
             <column name="team" length="2">
-                <comment>鍥㈤槦绮剧</comment>
+                <comment>团队精神</comment>
             </column>
         </property>
         <property name="sluggish" type="java.lang.String">
             <column name="sluggish" length="2">
-                <comment>鎷栨矒</comment>
+                <comment>拖沓</comment>
             </column>
         </property>
         <property name="inferiority" type="java.lang.String">
             <column name="inferiority" length="2">
-                <comment>鑷崙</comment>
+                <comment>自卑</comment>
             </column>
         </property>
         <property name="fluke" type="java.lang.String">
             <column name="fluke" length="2">
-                <comment>渚ュ垢</comment>
+                <comment>侥幸</comment>
             </column>
         </property>
         <property name="conceited" type="java.lang.String">
             <column name="conceited" length="2">
-                <comment>鑷弧</comment>
+                <comment>自满</comment>
             </column>
         </property>
         <property name="pride" type="java.lang.String">
             <column name="pride" length="2">
-                <comment>楠勫偛</comment>
+                <comment>骄傲</comment>
             </column>
         </property>
         <property name="boggle" type="java.lang.String">
             <column name="boggle" length="2">
-                <comment>鐘硅鲍</comment>
+                <comment>犹豫</comment>
             </column>
         </property>
         <property name="acedia" type="java.lang.String">
             <column name="acedia" length="2">
-                <comment>鎳掓儼</comment>
+                <comment>懒惰</comment>
             </column>
         </property>
         <property name="anxiety" type="java.lang.String">
             <column name="anxiety" length="2">
-                <comment>蹇ц檻</comment>
+                <comment>忧虑</comment>
             </column>
         </property>
         <property name="falsity" type="java.lang.String">
             <column name="falsity" length="2">
-                <comment>铏氫吉</comment>
+                <comment>虚伪</comment>
             </column>
         </property>
         <property name="dream" type="java.lang.String">
             <column name="dream" length="2">
-                <comment>绌烘兂</comment>
+                <comment>空想</comment>
             </column>
         </property>
         <property name="adamancy" type="java.lang.String">
             <column name="adamancy" length="2">
-                <comment>鍥烘墽</comment>
+                <comment>固执</comment>
             </column>
         </property>
         <property name="cynical" type="java.lang.String">
             <column name="cynical" length="2">
-                <comment>鎰や笘</comment>
+                <comment>愤世</comment>
             </column>
         </property>
         <property name="vulgar" type="java.lang.String">
             <column name="vulgar" length="2">
-                <comment>搴镐織</comment>
+                <comment>庸俗</comment>
             </column>
         </property>
         <property name="recreance" type="java.lang.String">
             <column name="recreance" length="2">
-                <comment>鎳﹀急</comment>
+                <comment>懦弱</comment>
             </column>
         </property>
         <property name="peacockery" type="java.lang.String">
             <column name="peacockery" length="2">
-                <comment>铏氳崳</comment>
+                <comment>虚荣</comment>
             </column>
         </property>
         <property name="avarice" type="java.lang.String">
             <column name="avarice" length="2">
-                <comment>璐┆</comment>
+                <comment>贪婪</comment>
             </column>
         </property>
         <property name="asocial" type="java.lang.String">
             <column name="asocial" length="2">
-                <comment>鑷</comment>
+                <comment>自私</comment>
             </column>
         </property>
         <property name="fussy" type="java.lang.String">
             <column name="fussy" length="2">
-                <comment>鎬ヨ簛</comment>
+                <comment>急躁</comment>
             </column>
         </property>
         <property name="testiness" type="java.lang.String">
             <column name="testiness" length="2">
-                <comment>鏄撴��</comment>
+                <comment>易怒</comment>
             </column>
         </property>
         <property name="despair" type="java.lang.String">
             <column name="despair" length="2">
-                <comment>缁濇湜</comment>
+                <comment>绝望</comment>
             </column>
         </property>
         <property name="begrudge" type="java.lang.String">
             <column name="begrudge" length="2">
-                <comment>瀚夊</comment>
+                <comment>嫉妒</comment>
             </column>
         </property>
         <property name="excuse" type="java.lang.String">
             <column name="excuse" length="2">
-                <comment>鎵惧�熷彛</comment>
+                <comment>找借口</comment>
             </column>
         </property>
     </class>
