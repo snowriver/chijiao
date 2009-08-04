@@ -453,6 +453,81 @@ public class ClientLoginAction extends DispatchAction {
 		} 
 		else
 			return mapping.findForward("top");
+
+	}
+	
+	//Cookie
+	public ActionForward cookie(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		
+		//System.out.println("---------select login");
+		UcMembers sessionUser = (UcMembers)request.getSession().getAttribute("CLIENT");
+		//System.out.println(sessionUser == null);
+		
+		String history       = request.getParameter("history");
+		
+		if(history != null && history.length() > 0)
+			request.setAttribute("RETURN_URL", BaseEncode.getFromBASE64(history));
+		
+		if (sessionUser == null) {
+			Cookie[] cookies = request.getCookies();
+	        boolean found_cookie = false;
+
+	        for(int i = 0; i < cookies.length; i++) {
+	            Cookie client = cookies[i];
+	            if (client.getName().equals("FORBES")) {
+	               
+	            	//System.out.println("client.getValue() =  " + client.getValue());
+	            	
+	                String[] info    = client.getValue().split("@");
+	                String id        = info[0];
+	                String username  = info[1];
+	                String password  = info[2];
+	                
+	                try {
+	                	
+	                	UcMembers user = userInfoManager.getUcMember(Integer.parseInt(id));
+	                	
+	                	/*System.out.println("password =  " + password);
+	                	System.out.println("user.getPassword() =  " + user.getPassword());
+	                	System.out.println("MD5.convert(password) =" + MD5.convert(password + user.getSalt()) );*/
+	                	
+	                    if(user.getUsername().equals(username) && 
+	                    		user.getPassword().equals(MD5.convert(password + user.getSalt()))) {
+	                    	//user.setLastLoginTime(new Date());
+	    					//user.setLastLoginIp(request.getRemoteAddr());
+	    					userLogin.updateLoginLog(user);
+	    					request.getSession().setAttribute("CLIENT", user);				
+	    					//System.out.println("---------client login ok");
+	    					
+	    					//Í¬²½ucneterµÇÂ¼
+							UCenterManager uc = new UCenterManager();
+							uc.login(user.getUsername(), password);
+							String syslogScript = uc.synlogin( user.getUid().toString() );
+						    request.setAttribute("SYN_LGIN", syslogScript );
+						    
+	    					found_cookie = true;
+	    	                return mapping.findForward("ok");
+	                    }
+	                    else
+	                    	return mapping.findForward("login_fail");
+	                } catch (Exception e) {
+	                	e.printStackTrace();
+	                	return mapping.findForward("login_fail");
+	                }
+	                
+	            }
+	        }
+
+	        if (!found_cookie) {
+	        	return mapping.findForward("login_fail");
+
+	        }
+	        else
+	        	return mapping.findForward("login_fail");
+		} 
+		else
+			return mapping.findForward("ok");
 			
 			
 
