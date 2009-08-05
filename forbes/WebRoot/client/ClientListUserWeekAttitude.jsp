@@ -19,7 +19,7 @@
 	
 	Date tempDate = df.parse(date);
 	if(tempDate.getDay() ==6 ) {
-	
+		//ClientManageUserWeekAttitude
 	}
 %>
 
@@ -111,20 +111,80 @@
 				<tbody>
 							
 		    		<tr class="onset">
-		    			<TD colspan="5" align="center">今日进步</TD>
+		    			<TD colspan="5" align="center">22种决定成功的积极心态（做到的打V，下周继续）</TD>
 		    		</tr>		    	
 					<tr class="onset">					
 						<td colspan="5">
-							<textarea id="advance" name="advance" rows="11" cols="90" style="width:98%">${USER_DAILY_SUMUP.advance }</textarea> 
+							
+							<table width="98%">
+							  <tr align=center>
+							    <td><input type="checkbox" name="confident" value="Y" />自信</td>
+							    <td><input type="checkbox" name="intent" value="Y" />决心</td>
+							    <td><input type="checkbox" name="initiative" value="Y" />主动</td>
+							    <td><input type="checkbox" name="ebullient" value="Y" />热情</td>
+							    <td><input type="checkbox" name="love" value="Y" />爱心</td>
+							    <td><input type="checkbox" name="study" value="Y" />学习</td>							  
+							    <td><input type="checkbox" name="autonomic" value="Y" />自律</td>
+							    <td><input type="checkbox" name="pertinacious" value="Y" />顽强</td>
+							    <td><input type="checkbox" name="insist" value="Y" />坚持</td>
+							    <td><input type="checkbox" name="serious" value="Y" />认真</td>
+							    <td><input type="checkbox" name="rapid" value="Y" />迅速</td>
+							    <td><input type="checkbox" name="optimism" value="Y" />乐观</td>
+							  </tr>
+							  <tr align=center>
+							    <td><input type="checkbox" name="innovation" value="Y" />创新</td>
+							    <td><input type="checkbox" name="honest" value="Y" />真诚</td>
+							    <td><input type="checkbox" name="responsibility" value="Y" />负责</td>
+							    <td><input type="checkbox" name="sonsy" value="Y" />豁达</td>
+							    <td><input type="checkbox" name="diligence" value="Y" />勤奋</td>
+							    <td><input type="checkbox" name="humility" value="Y" />谦虚</td>							 
+							    <td><input type="checkbox" name="purpose" value="Y" />企图心</td>
+							    <td><input type="checkbox" name="clear" value="Y" />日清日新</td>
+							    <td><input type="checkbox" name="dobest" value="Y" />全力以赴</td>
+							    <td><input type="checkbox" name="team" value="Y" />团队精神</td>
+							    <td>&nbsp;</td>
+							    <td>&nbsp;</td>
+							  </tr>
+							</table>
+
 						</td>
 					</tr>
 					
 					<tr class="onset">
-		    			<TD colspan="5" align="center">今日反省</TD>
+		    			<TD colspan="5" align="center">22种导致失败的消极心态（发生的打X，下周一定改掉）</TD>
 		    		</tr>		    	
 					<tr class="onset">					
 						<td colspan="5">
-							<textarea id="meditate" name="meditate" rows="11" cols="90" style="width:98%">${USER_DAILY_SUMUP.meditate }</textarea> 
+							<table width="98%" border="1">
+							  <tr>
+							    <td><input type="checkbox" name="sluggish" value="N" />拖沓</td>
+							    <td><input type="checkbox" name="inferiority" value="N" />自卑</td>
+							    <td><input type="checkbox" name="fluke" value="N" />侥幸</td>
+							    <td><input type="checkbox" name="conceited" value="N" />自满</td>
+							    <td><input type="checkbox" name="pride" value="N" />骄傲</td>
+							    <td><input type="checkbox" name="boggle" value="N" />犹豫</td>							  
+							    <td><input type="checkbox" name="acedia" value="N" />懒惰</td>
+							    <td><input type="checkbox" name="anxiety" value="N" />忧虑</td>
+							    <td><input type="checkbox" name="falsity" value="N" />虚伪</td>
+							    <td><input type="checkbox" name="dream" value="N" />空想</td>
+							    <td><input type="checkbox" name="adamancy" value="N" />固执</td>
+							    <td><input type="checkbox" name="cynical" value="N" />愤世</td>
+							  </tr>
+							  <tr>
+							    <td><input type="checkbox" name="vulgar" value="N" />庸俗</td>
+							    <td><input type="checkbox" name="recreance" value="N" />懦弱</td>
+							    <td><input type="checkbox" name="peacockery" value="N" />虚荣</td>
+							    <td><input type="checkbox" name="avarice" value="N" />贪婪</td>
+							    <td><input type="checkbox" name="asocial" value="N" />自私</td>
+							    <td><input type="checkbox" name="fussy" value="N" />急躁</td>							  
+							    <td><input type="checkbox" name="testiness" value="N" />易怒</td>
+							    <td><input type="checkbox" name="despair" value="N" />绝望</td>
+							    <td><input type="checkbox" name="begrudge" value="N" />嫉妒</td>
+							    <td><input type="checkbox" name="excuse" value="N" />找借口</td>
+							    <td>&nbsp;</td>
+							    <td>&nbsp;</td>
+							  </tr>
+							</table>
 						</td>
 					</tr>				
 				
