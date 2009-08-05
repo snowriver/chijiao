@@ -15,11 +15,15 @@
 	com.forbes.ajax.UserDailyCount udc = new com.forbes.ajax.UserDailyCount();
 	request.setAttribute("USER_DAILY_PLAN_COUNT", udc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
 	request.setAttribute("USER_DAILY_ACCREDIT_COUNT", udc.getUserDailyAccreditCount(ucMembers.getUid().toString(), date, null));
-	request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
-	
+			
 	Date tempDate = df.parse(date);
+	request.setAttribute("WEEK_DAY", tempDate.getDay());
+	
 	if(tempDate.getDay() ==6 ) {
-		//ClientManageUserWeekAttitude
+		com.forbes.ajax.UserWeekCount uwc = new com.forbes.ajax.UserWeekCount();
+		request.setAttribute("USER_WEEK_ATTITUDE_COUNT", uwc.getUserWeekAttitudeCount(ucMembers.getUid().toString(), date));
+	} else {
+		request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
 	}
 %>
 
@@ -95,7 +99,18 @@
 	<div class="ucnav">
 		<a href="ClientManageUserDailyPlan.do?act=list">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
 		<a href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
-		<a class="ucontype" href="javascript:void(0);">今日反省[${USER_DAILY_SUMUP_COUNT }]</a>
+		
+		<c:if test="${not empty USER_DAILY_SUMUP_COUNT}">			
+			<a href="ClientManageUserDailySumup.do?act=list">			
+				<c:if test="${WEEK_DAY == 0}">本周反省</c:if>	<c:if test="${WEEK_DAY != 0}">今日反省</c:if>
+				[${USER_DAILY_SUMUP_COUNT }]
+			</a>
+		</c:if>
+		
+		<c:if test="${not empty USER_WEEK_ATTITUDE_COUNT}">
+			<a href="ClientManageUserDailySumup.do?act=list">一周心态检查表[${USER_WEEK_ATTITUDE_COUNT }]</a>
+		</c:if>
+		
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
@@ -104,8 +119,8 @@
 	</div>
 	
 	<div>
-		<form method="post" name="form2" action="ClientManageUserDailySumup.do?act=add">
-			<input type="hidden" id="id" name="id" value="${USER_DAILY_SUMUP.id }" />
+		<form method="post" name="form2" action="ClientManageUserWeekAttitude.do?act=add">
+			<INPUT type="hidden" id="id" name="id" value="${USER_WEEK_ATTITUDE.id }" />
 			<INPUT type="hidden" id=date name=date value="${PARA['date'] }">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
 				<tbody>
@@ -118,30 +133,30 @@
 							
 							<table width="98%">
 							  <tr align=center>
-							    <td><input type="checkbox" name="confident" value="Y" />自信</td>
-							    <td><input type="checkbox" name="intent" value="Y" />决心</td>
-							    <td><input type="checkbox" name="initiative" value="Y" />主动</td>
-							    <td><input type="checkbox" name="ebullient" value="Y" />热情</td>
-							    <td><input type="checkbox" name="love" value="Y" />爱心</td>
-							    <td><input type="checkbox" name="study" value="Y" />学习</td>							  
-							    <td><input type="checkbox" name="autonomic" value="Y" />自律</td>
-							    <td><input type="checkbox" name="pertinacious" value="Y" />顽强</td>
-							    <td><input type="checkbox" name="insist" value="Y" />坚持</td>
-							    <td><input type="checkbox" name="serious" value="Y" />认真</td>
-							    <td><input type="checkbox" name="rapid" value="Y" />迅速</td>
-							    <td><input type="checkbox" name="optimism" value="Y" />乐观</td>
+							    <td><input type="checkbox" name="confident" value="Y" <c:if test="${USER_WEEK_ATTITUDE.confident == 'Y' }">checked</c:if> />自信</td>
+							    <td><input type="checkbox" name="intent" value="Y" <c:if test="${USER_WEEK_ATTITUDE.intent == 'Y' }">checked</c:if> />决心</td>
+							    <td><input type="checkbox" name="initiative" value="Y" <c:if test="${USER_WEEK_ATTITUDE.initiative == 'Y' }">checked</c:if> />主动</td>
+							    <td><input type="checkbox" name="ebullient" value="Y" <c:if test="${USER_WEEK_ATTITUDE.ebullient == 'Y' }">checked</c:if> />热情</td>
+							    <td><input type="checkbox" name="love" value="Y" <c:if test="${USER_WEEK_ATTITUDE.love == 'Y' }">checked</c:if> />爱心</td>
+							    <td><input type="checkbox" name="study" value="Y" <c:if test="${USER_WEEK_ATTITUDE.study == 'Y' }">checked</c:if> />学习</td>							  
+							    <td><input type="checkbox" name="autonomic" value="Y" <c:if test="${USER_WEEK_ATTITUDE.autonomic == 'Y' }">checked</c:if> />自律</td>
+							    <td><input type="checkbox" name="pertinacious" value="Y" <c:if test="${USER_WEEK_ATTITUDE.pertinacious == 'Y' }">checked</c:if> />顽强</td>
+							    <td><input type="checkbox" name="insist" value="Y" <c:if test="${USER_WEEK_ATTITUDE.insist == 'Y' }">checked</c:if> />坚持</td>
+							    <td><input type="checkbox" name="serious" value="Y" <c:if test="${USER_WEEK_ATTITUDE.serious == 'Y' }">checked</c:if> />认真</td>
+							    <td><input type="checkbox" name="rapid" value="Y" <c:if test="${USER_WEEK_ATTITUDE.rapid == 'Y' }">checked</c:if> />迅速</td>
+							    <td><input type="checkbox" name="optimism" value="Y" <c:if test="${USER_WEEK_ATTITUDE.optimism == 'Y' }">checked</c:if> />乐观</td>
 							  </tr>
 							  <tr align=center>
-							    <td><input type="checkbox" name="innovation" value="Y" />创新</td>
-							    <td><input type="checkbox" name="honest" value="Y" />真诚</td>
-							    <td><input type="checkbox" name="responsibility" value="Y" />负责</td>
-							    <td><input type="checkbox" name="sonsy" value="Y" />豁达</td>
-							    <td><input type="checkbox" name="diligence" value="Y" />勤奋</td>
-							    <td><input type="checkbox" name="humility" value="Y" />谦虚</td>							 
-							    <td><input type="checkbox" name="purpose" value="Y" />企图心</td>
-							    <td><input type="checkbox" name="clear" value="Y" />日清日新</td>
-							    <td><input type="checkbox" name="dobest" value="Y" />全力以赴</td>
-							    <td><input type="checkbox" name="team" value="Y" />团队精神</td>
+							    <td><input type="checkbox" name="innovation" value="Y" <c:if test="${USER_WEEK_ATTITUDE.innovation == 'Y' }">checked</c:if> />创新</td>
+							    <td><input type="checkbox" name="honest" value="Y" <c:if test="${USER_WEEK_ATTITUDE.honest == 'Y' }">checked</c:if> />真诚</td>
+							    <td><input type="checkbox" name="responsibility" value="Y" <c:if test="${USER_WEEK_ATTITUDE.responsibility == 'Y' }">checked</c:if> />负责</td>
+							    <td><input type="checkbox" name="sonsy" value="Y" <c:if test="${USER_WEEK_ATTITUDE.sonsy == 'Y' }">checked</c:if> />豁达</td>
+							    <td><input type="checkbox" name="diligence" value="Y" <c:if test="${USER_WEEK_ATTITUDE.diligence == 'Y' }">checked</c:if> />勤奋</td>
+							    <td><input type="checkbox" name="humility" value="Y" <c:if test="${USER_WEEK_ATTITUDE.humility == 'Y' }">checked</c:if> />谦虚</td>							 
+							    <td><input type="checkbox" name="purpose" value="Y" <c:if test="${USER_WEEK_ATTITUDE.purpose == 'Y' }">checked</c:if> />企图心</td>
+							    <td><input type="checkbox" name="clear" value="Y" <c:if test="${USER_WEEK_ATTITUDE.clear == 'Y' }">checked</c:if> />日清日新</td>
+							    <td><input type="checkbox" name="dobest" value="Y" <c:if test="${USER_WEEK_ATTITUDE.dobest == 'Y' }">checked</c:if> />全力以赴</td>
+							    <td><input type="checkbox" name="team" value="Y" <c:if test="${USER_WEEK_ATTITUDE.team == 'Y' }">checked</c:if> />团队精神</td>
 							    <td>&nbsp;</td>
 							    <td>&nbsp;</td>
 							  </tr>
@@ -155,32 +170,32 @@
 		    		</tr>		    	
 					<tr class="onset">					
 						<td colspan="5">
-							<table width="98%" border="1">
+							<table width="98%">
 							  <tr>
-							    <td><input type="checkbox" name="sluggish" value="N" />拖沓</td>
-							    <td><input type="checkbox" name="inferiority" value="N" />自卑</td>
-							    <td><input type="checkbox" name="fluke" value="N" />侥幸</td>
-							    <td><input type="checkbox" name="conceited" value="N" />自满</td>
-							    <td><input type="checkbox" name="pride" value="N" />骄傲</td>
-							    <td><input type="checkbox" name="boggle" value="N" />犹豫</td>							  
-							    <td><input type="checkbox" name="acedia" value="N" />懒惰</td>
-							    <td><input type="checkbox" name="anxiety" value="N" />忧虑</td>
-							    <td><input type="checkbox" name="falsity" value="N" />虚伪</td>
-							    <td><input type="checkbox" name="dream" value="N" />空想</td>
-							    <td><input type="checkbox" name="adamancy" value="N" />固执</td>
-							    <td><input type="checkbox" name="cynical" value="N" />愤世</td>
+							    <td><input type="checkbox" name="sluggish" value="N" <c:if test="${USER_WEEK_ATTITUDE.sluggish == 'N' }">checked</c:if> />拖沓</td>
+							    <td><input type="checkbox" name="inferiority" value="N" <c:if test="${USER_WEEK_ATTITUDE.inferiority == 'N' }">checked</c:if> />自卑</td>
+							    <td><input type="checkbox" name="fluke" value="N" <c:if test="${USER_WEEK_ATTITUDE.fluke == 'N' }">checked</c:if> />侥幸</td>
+							    <td><input type="checkbox" name="conceited" value="N" <c:if test="${USER_WEEK_ATTITUDE.conceited == 'N' }">checked</c:if> />自满</td>
+							    <td><input type="checkbox" name="pride" value="N" <c:if test="${USER_WEEK_ATTITUDE.pride == 'N' }">checked</c:if> />骄傲</td>
+							    <td><input type="checkbox" name="boggle" value="N" <c:if test="${USER_WEEK_ATTITUDE.boggle == 'N' }">checked</c:if> />犹豫</td>							  
+							    <td><input type="checkbox" name="acedia" value="N" <c:if test="${USER_WEEK_ATTITUDE.acedia == 'N' }">checked</c:if> />懒惰</td>
+							    <td><input type="checkbox" name="anxiety" value="N" <c:if test="${USER_WEEK_ATTITUDE.anxiety == 'N' }">checked</c:if> />忧虑</td>
+							    <td><input type="checkbox" name="falsity" value="N" <c:if test="${USER_WEEK_ATTITUDE.falsity == 'N' }">checked</c:if> />虚伪</td>
+							    <td><input type="checkbox" name="dream" value="N" <c:if test="${USER_WEEK_ATTITUDE.dream == 'N' }">checked</c:if> />空想</td>
+							    <td><input type="checkbox" name="adamancy" value="N" <c:if test="${USER_WEEK_ATTITUDE.adamancy == 'N' }">checked</c:if> />固执</td>
+							    <td><input type="checkbox" name="cynical" value="N" <c:if test="${USER_WEEK_ATTITUDE.cynical == 'N' }">checked</c:if> />愤世</td>
 							  </tr>
 							  <tr>
-							    <td><input type="checkbox" name="vulgar" value="N" />庸俗</td>
-							    <td><input type="checkbox" name="recreance" value="N" />懦弱</td>
-							    <td><input type="checkbox" name="peacockery" value="N" />虚荣</td>
-							    <td><input type="checkbox" name="avarice" value="N" />贪婪</td>
-							    <td><input type="checkbox" name="asocial" value="N" />自私</td>
-							    <td><input type="checkbox" name="fussy" value="N" />急躁</td>							  
-							    <td><input type="checkbox" name="testiness" value="N" />易怒</td>
-							    <td><input type="checkbox" name="despair" value="N" />绝望</td>
-							    <td><input type="checkbox" name="begrudge" value="N" />嫉妒</td>
-							    <td><input type="checkbox" name="excuse" value="N" />找借口</td>
+							    <td><input type="checkbox" name="vulgar" value="N" <c:if test="${USER_WEEK_ATTITUDE.vulgar == 'N' }">checked</c:if> />庸俗</td>
+							    <td><input type="checkbox" name="recreance" value="N" <c:if test="${USER_WEEK_ATTITUDE.recreance == 'N' }">checked</c:if> />懦弱</td>
+							    <td><input type="checkbox" name="peacockery" value="N" <c:if test="${USER_WEEK_ATTITUDE.peacockery == 'N' }">checked</c:if> />虚荣</td>
+							    <td><input type="checkbox" name="avarice" value="N" <c:if test="${USER_WEEK_ATTITUDE.avarice == 'N' }">checked</c:if> />贪婪</td>
+							    <td><input type="checkbox" name="asocial" value="N" <c:if test="${USER_WEEK_ATTITUDE.asocial == 'N' }">checked</c:if> />自私</td>
+							    <td><input type="checkbox" name="fussy" value="N" <c:if test="${USER_WEEK_ATTITUDE.fussy == 'N' }">checked</c:if> />急躁</td>							  
+							    <td><input type="checkbox" name="testiness" value="N" <c:if test="${USER_WEEK_ATTITUDE.testiness == 'N' }">checked</c:if> />易怒</td>
+							    <td><input type="checkbox" name="despair" value="N" <c:if test="${USER_WEEK_ATTITUDE.despair == 'N' }">checked</c:if> />绝望</td>
+							    <td><input type="checkbox" name="begrudge" value="N" <c:if test="${USER_WEEK_ATTITUDE.begrudge == 'N' }">checked</c:if> />嫉妒</td>
+							    <td><input type="checkbox" name="excuse" value="N" <c:if test="${USER_WEEK_ATTITUDE.excuse == 'N' }">checked</c:if> />找借口</td>
 							    <td>&nbsp;</td>
 							    <td>&nbsp;</td>
 							  </tr>
@@ -191,7 +206,7 @@
 				</tbody>
 				<tfoot>
 				<tr class="onset">
-					<td colspan="5"><input type="submit" value="<c:if test='${ empty USER_DAILY_SUMUP }'>添加</c:if><c:if test='${ not empty USER_DAILY_SUMUP }'>修改</c:if>"></td>
+					<td colspan="5"><input type="submit" value="<c:if test='${ empty USER_WEEK_ATTITUDE }'>添加</c:if><c:if test='${ not empty USER_WEEK_ATTITUDE }'>修改</c:if>"></td>
 				</tr>
 				</tfoot>
 			</table>
