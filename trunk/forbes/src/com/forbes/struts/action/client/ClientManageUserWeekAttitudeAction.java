@@ -6,7 +6,6 @@ package com.forbes.struts.action.client;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import javax.servlet.http.HttpServletRequest;
@@ -15,16 +14,10 @@ import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
 import com.forbes.hibernate.bean.UcMembers;
-import com.forbes.hibernate.bean.UserDailyPlan;
-import com.forbes.hibernate.bean.UserDailySumup;
-import com.forbes.service.plan.DailyPlanManager;
-import com.forbes.service.plan.DailySumupManager;
+import com.forbes.hibernate.bean.UserWeekAttitude;
 import com.forbes.service.plan.WeekAttitudeManager;
-import com.forbes.util.Pager;
-import com.forbes.util.UrlTool;
+
 
 /**
  * MyEclipse Struts Creation date: 07-09-2007
@@ -38,11 +31,7 @@ import com.forbes.util.UrlTool;
  * @struts.action-forward name="fail" path="/client/ClientLoginFail.jsp"
  */
 public class ClientManageUserWeekAttitudeAction extends DispatchAction {
-	/* #com.she.web.form.client.ClientLoginForm Dependency20 */
-	/*
-	 * Generated Methods
-	 */
-
+	
 	private WeekAttitudeManager weekAttitudeManager;
 	
 	
@@ -54,13 +43,13 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 		this.weekAttitudeManager = weekAttitudeManager;
 	}
 	
-
-	/*public ActionForward list(ActionMapping mapping, ActionForm form,
+	public ActionForward list(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		UcMembers user = (UcMembers) request.getSession()
 				.getAttribute("CLIENT");
 		
+		System.out.println("xxxxxxxxxxxxxx");
 		String date = request.getParameter("date");
 
 		if(date == null || date.length() == 0) {
@@ -74,10 +63,10 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 
 
 		try {
-			UserDailySumup sumup = dailySumupManager.getDailySumup(user.getUid().toString(), date);
+			UserWeekAttitude weekAttitude = weekAttitudeManager.getWeekAttitude(user.getUid().toString(), date);
 
 			request.setAttribute("PARA", map);
-			request.setAttribute("USER_DAILY_SUMUP", sumup);
+			request.setAttribute("USER_WEEK_ATTITUDE", weekAttitude);
 
 			return mapping.findForward("list");
 		} catch (Exception e) {
@@ -85,6 +74,8 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 			return mapping.findForward("fail");
 		}
 	}
+
+	/*
 	
 	public ActionForward add(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
