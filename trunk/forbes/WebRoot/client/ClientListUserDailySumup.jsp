@@ -6,15 +6,27 @@
 
 <%
 	UcMembers ucMembers = (UcMembers)request.getSession().getAttribute("CLIENT");
+	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 	String date = request.getParameter("date");
 	if(date == null || date.length() < 1) {
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		date   = df.format(new Date()) ;		
 	}
+		
 	com.forbes.ajax.UserDailyCount udc = new com.forbes.ajax.UserDailyCount();
 	request.setAttribute("USER_DAILY_PLAN_COUNT", udc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
 	request.setAttribute("USER_DAILY_ACCREDIT_COUNT", udc.getUserDailyAccreditCount(ucMembers.getUid().toString(), date, null));
-	request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
+			
+	Date tempDate = df.parse(date);
+	request.setAttribute("WEEK_DAY", tempDate.getDay());
+			
+	if(tempDate.getDay() ==6 ) {
+		com.forbes.ajax.UserWeekCount uwc = new com.forbes.ajax.UserWeekCount();
+		request.setAttribute("USER_WEEK_ATTITUDE_COUNT", uwc.getUserWeekAttitudeCount(ucMembers.getUid().toString(), date));
+	}
+	
+	if(tempDate.getDay() !=6 ) {
+		request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
+	}
 %>
 
 
@@ -86,10 +98,19 @@
 <div class="ucbody">
 	<h1>今日计划 [${DATE}]</h1>
 		
-	<div class="ucnav">
+	<div class="ucnav">	
+		
 		<a href="ClientManageUserDailyPlan.do?act=list">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
 		<a href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
-		<a class="ucontype" href="javascript:void(0);">今日反省[${USER_DAILY_SUMUP_COUNT }]</a>
+		<c:if test="${not empty USER_DAILY_SUMUP_COUNT}">
+			<a class="ucontype" href="ClientManageUserDailySumup.do?act=list">
+				<c:if test="${WEEK_DAY == 0}">本周反省</c:if>	<c:if test="${WEEK_DAY != 0}">今日反省</c:if>
+				[${USER_DAILY_SUMUP_COUNT }]
+			</a>
+		</c:if>
+		<c:if test="${not empty USER_WEEK_ATTITUDE_COUNT}">
+			<a href="ClientManageUserDailySumup.do?act=list">一周心态检查表[${USER_WEEK_ATTITUDE_COUNT }]</a>
+		</c:if>
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
@@ -105,7 +126,10 @@
 				<tbody>
 							
 		    		<tr class="onset">
-		    			<TD colspan="5" align="center">今日进步</TD>
+		    			<TD colspan="5" align="center">
+		    				<c:if test="${WEEK_DAY == 0}">本周检讨与成功感言：</c:if>
+		    				<c:if test="${WEEK_DAY != 0}">今日进步</c:if>
+		    			</TD>
 		    		</tr>		    	
 					<tr class="onset">					
 						<td colspan="5">
@@ -114,7 +138,10 @@
 					</tr>
 					
 					<tr class="onset">
-		    			<TD colspan="5" align="center">今日反省</TD>
+		    			<TD colspan="5" align="center">
+		    				<c:if test="${WEEK_DAY == 0}">这一周我遇到的最大的挑战是什么？我要从那些方面改善？我可以为我的公司和家人做更多的是？</c:if>
+		    				<c:if test="${WEEK_DAY != 0}">今日反省</c:if>
+		    			</TD>
 		    		</tr>		    	
 					<tr class="onset">					
 						<td colspan="5">

@@ -15,12 +15,15 @@
 	com.forbes.ajax.UserDailyCount udc = new com.forbes.ajax.UserDailyCount();
 	request.setAttribute("USER_DAILY_PLAN_COUNT", udc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
 	request.setAttribute("USER_DAILY_ACCREDIT_COUNT", udc.getUserDailyAccreditCount(ucMembers.getUid().toString(), date, null));
-	request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
-	
+			
 	Date tempDate = df.parse(date);
+	request.setAttribute("WEEK_DAY", tempDate.getDay());
+	
 	if(tempDate.getDay() ==6 ) {
 		com.forbes.ajax.UserWeekCount uwc = new com.forbes.ajax.UserWeekCount();
 		request.setAttribute("USER_WEEK_ATTITUDE_COUNT", uwc.getUserWeekAttitudeCount(ucMembers.getUid().toString(), date));
+	} else {
+		request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
 	}
 %>
 
@@ -187,10 +190,16 @@
 	<div class="ucnav">
 		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
 		<a href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
-		<a href="ClientManageUserDailySumup.do?act=list">今日反省[${USER_DAILY_SUMUP_COUNT }]</a>
+		
+		<c:if test="${not empty USER_DAILY_SUMUP_COUNT}">			
+			<a href="ClientManageUserDailySumup.do?act=list">			
+				<c:if test="${WEEK_DAY == 0}">本周反省</c:if>	<c:if test="${WEEK_DAY != 0}">今日反省</c:if>
+				[${USER_DAILY_SUMUP_COUNT }]
+			</a>
+		</c:if>
 		
 		<c:if test="${not empty USER_WEEK_ATTITUDE_COUNT}">
-			<a href="ClientManageUserDailySumup.do?act=list">一周态度检查[${USER_WEEK_ATTITUDE_COUNT }]</a>
+			<a href="ClientManageUserDailySumup.do?act=list">一周心态检查表[${USER_WEEK_ATTITUDE_COUNT }]</a>
 		</c:if>
 		
 		
@@ -223,22 +232,21 @@
 					<td width="10%">备注</td>
 				</tr>
 				
-		    	
 		    	<c:forEach items="${USER_PLAN_LIST}" var="plan" varStatus="status">
 				<tr class="onset">
 					<td width="5%"><input type="checkbox" name="planID" value="${plan.id}" /></td>
 					<td width="5%">
 						${ (PAGER.curPage -1) * 10 + status.index + 1 }
 					</td>
-					<td >
+					<td>
 						<fmt:formatDate value="${plan.startTime}" pattern="HH:mm"/>-
 						<fmt:formatDate value="${plan.endTime}" pattern="HH:mm"/>
 					</td>
-					<td ><a href="javascript:void(0)" onclick="openPage('修改今日事项','ClientManageUserDailyPlan.do?act=get&id=${plan.id }', '15', '0', '700','550');">${fn:substring(plan.title, 0,30) }</a></td>
-					<td >
+					<td><a href="javascript:void(0)" onclick="openPage('修改今日事项','ClientManageUserDailyPlan.do?act=get&id=${plan.id }', '15', '0', '700','550');">${fn:substring(plan.title, 0,30) }</a></td>
+					<td>
 						<fmt:formatDate value="${plan.limitTime}" pattern="yyyy-MM-dd HH:mm"/>
 					</td>
-					<td >
+					<td>
 						<input id="iscomplete_${plan.id}" name="iscomplete_${plan.id}" type="checkbox" value="${plan.isComplete}" onclick="completePlan(${plan.id});" <c:if test="${plan.isComplete == 1}">checked</c:if> />						
 					</td>
 					<td >${fn:substring(plan.note, 0,15) }</td>
