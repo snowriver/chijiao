@@ -49,7 +49,6 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 		UcMembers user = (UcMembers) request.getSession()
 				.getAttribute("CLIENT");
 		
-		System.out.println("xxxxxxxxxxxxxx");
 		String date = request.getParameter("date");
 
 		if(date == null || date.length() == 0) {
@@ -75,7 +74,7 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 		}
 	}
 
-	/*
+	
 	
 	public ActionForward add(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -85,29 +84,146 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 
 		String id = request.getParameter("id");
 		String date = request.getParameter("date");
-		String advance = request.getParameter("advance");
-		String meditate = request.getParameter("meditate");
+		
+		// 22种积极心态
+		String confident = request.getParameter("confident");
+		String intent = request.getParameter("intent");
 				
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
 
 		try {
 			if(id !=null && id.length() >0) {
-				UserDailySumup sumup = dailySumupManager.getDailySumup(Integer.parseInt(id));
-				sumup.setUserId(user.getUid());
-				sumup.setDate(dateFormatter.parse(date));
-				sumup.setAdvance(advance);
-				sumup.setMeditate(meditate);
-				sumup.setSn(0);				
-				dailySumupManager.updateDailySumup(sumup);
+				UserWeekAttitude attitude = weekAttitudeManager.getWeekAttitude(Integer.parseInt(id));
+				attitude.setUserId(user.getUid());
+				attitude.setDate(dateFormatter.parse(date));
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				if(confident.equals("Y")) 
+					attitude.setConfident("Y");
+				else
+					attitude.setConfident("N");
+				
+				
+				
+						
+				weekAttitudeManager.updateWeekAttitude(attitude);
 			}
 			else {
-				UserDailySumup sumup = new UserDailySumup();
-				sumup.setUserId(user.getUid());
-				sumup.setDate(dateFormatter.parse(date));
-				sumup.setAdvance(advance);
-				sumup.setMeditate(meditate);
-				sumup.setSn(0);
-				dailySumupManager.addDailySumup(sumup);
+				UserWeekAttitude attitude = new UserWeekAttitude();
+				attitude.setUserId(user.getUid());
+				attitude.setDate(dateFormatter.parse(date));
+
+				
+				weekAttitudeManager.addWeekAttitude(attitude);
 			}
 			
 			request.setAttribute("OK_MESSAGE", "操作成功");
@@ -118,7 +234,7 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 			e.printStackTrace();
 			return mapping.findForward("fail");
 		}
-	}*/
+	}
 
 	
 }
