@@ -9,6 +9,7 @@
 		<form-bean name="UserRegisterForm" type="com.forbes.struts.form.user.UserRegisterForm" />
 		<form-bean name="ClientModifyProfileForm" type="com.forbes.struts.form.client.ClientModifyProfileForm" />
 		<form-bean name="ArticleInfoForm" type="com.forbes.struts.form.article.ArticleInfoForm" />
+		<form-bean name="ClientUserWeekAttitudeForm" type="com.forbes.struts.form.client.ClientUserWeekAttitudeForm" />
 	</form-beans>
 
 	<global-exceptions />
@@ -160,7 +161,10 @@
     	</action>
     	
     	<action
-	    	parameter="act"
+    		attribute="ClientUserWeekAttitudeForm"
+    		input="/client/ClientListUserWeekAttitude.jsp"
+    		name="ClientUserWeekAttitudeForm"
+	    	parameter="act"	    	
       		path="/client/ClientManageUserWeekAttitude"
       		scope="request"
       		type="org.springframework.web.struts.DelegatingActionProxy">
