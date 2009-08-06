@@ -22,9 +22,11 @@ import org.apache.struts.action.ActionMapping;
  */
 public class ClientUserWeekAttitudeForm extends ActionForm {
 	
+	
+	// 22种积极心态
 	private Integer id;
 	private Integer userId;
-	private Date date;
+	private String date;
 	private String confident;
 	private String intent;
 	private String initiative;
@@ -47,6 +49,8 @@ public class ClientUserWeekAttitudeForm extends ActionForm {
 	private String clear;
 	private String dobest;
 	private String team;
+	
+	// 22种消极心态
 	private String sluggish;
 	private String inferiority;
 	private String fluke;
@@ -85,7 +89,7 @@ public class ClientUserWeekAttitudeForm extends ActionForm {
 	 */
 	public ActionErrors validate(ActionMapping mapping,
 			HttpServletRequest request) {
-		ActionErrors errors = new ActionErrors();		
+		//ActionErrors errors = new ActionErrors();		
 		
 		if ( confident == null || confident.length() < 1 ){
 			setConfident("N");
@@ -159,7 +163,113 @@ public class ClientUserWeekAttitudeForm extends ActionForm {
 			setHumility("N");
 		}
 		
-		return errors;
+		if ( purpose == null || purpose.length() < 1 ){
+			setPurpose("N");
+		}
+		
+		if ( clear == null || clear.length() < 1 ){
+			setClear("N");
+		}
+		
+		if ( dobest == null || dobest.length() < 1 ){
+			setDobest("N");
+		}
+		
+		if ( team == null || team.length() < 1 ){
+			setTeam("N");
+		}
+		
+		// 22种消极心态		
+		if ( sluggish == null || sluggish.length() < 1 ){
+			setSluggish("Y");
+		}
+		
+		if ( inferiority == null || inferiority.length() < 1 ){
+			setInferiority("Y");
+		}
+		
+		if ( fluke == null || fluke.length() < 1 ){
+			setFluke("Y");
+		}
+		
+		if ( conceited == null || conceited.length() < 1 ){
+			setConfident("Y");
+		}
+		
+		if ( pride == null || pride.length() < 1 ){
+			setPride("Y");
+		}
+		
+		if ( boggle == null || boggle.length() < 1 ){
+			setBoggle("Y");
+		}
+		
+		if ( acedia == null || acedia.length() < 1 ){
+			setAcedia("Y");
+		}
+		
+		if ( anxiety == null || anxiety.length() < 1 ){
+			setAnxiety("Y");
+		}
+		
+		if ( falsity == null || falsity.length() < 1 ){
+			setFalsity("Y");
+		}
+		
+		if ( dream == null || dream.length() < 1 ){
+			setDream("Y");
+		}
+		
+		if ( adamancy == null || adamancy.length() < 1 ){
+			setAdamancy("Y");
+		}
+		
+		if ( cynical == null || cynical.length() < 1 ){
+			setCynical("Y");
+		}
+		
+		if ( vulgar == null || vulgar.length() < 1 ){
+			setVulgar("Y");
+		}
+		
+		if ( recreance == null || recreance.length() < 1 ){
+			setRecreance("Y");
+		}
+		
+		if ( peacockery == null || peacockery.length() < 1 ){
+			setPeacockery("Y");
+		}
+		
+		if ( avarice == null || avarice.length() < 1 ){
+			setAvarice("Y");
+		}
+		
+		if ( asocial == null || asocial.length() < 1 ){
+			setAsocial("Y");
+		}
+		
+		if ( fussy == null || fussy.length() < 1 ){
+			setFussy("Y");
+		}
+		
+		if ( testiness == null || testiness.length() < 1 ){
+			setTestiness("Y");
+		}
+		
+		if ( despair == null || despair.length() < 1 ){
+			setDespair("Y");
+		}
+		
+		if ( begrudge == null || begrudge.length() < 1 ){
+			setBegrudge("Y");
+		}
+		
+		if ( excuse == null || excuse.length() < 1 ){
+			setExcuse("Y");
+		}
+		
+		//return errors;
+		return null;
 	}
 
 	/** 
@@ -187,11 +297,11 @@ public class ClientUserWeekAttitudeForm extends ActionForm {
 		this.userId = userId;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
