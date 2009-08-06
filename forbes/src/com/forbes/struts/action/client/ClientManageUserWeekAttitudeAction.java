@@ -17,6 +17,7 @@ import org.apache.struts.action.ActionMapping;
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.hibernate.bean.UserWeekAttitude;
 import com.forbes.service.plan.WeekAttitudeManager;
+import com.forbes.struts.form.client.ClientUserWeekAttitudeForm;
 
 
 /**
@@ -79,6 +80,8 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 	public ActionForward add(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+		ClientUserWeekAttitudeForm weekAttitudeForm = (ClientUserWeekAttitudeForm) form;
+		
 		UcMembers user = (UcMembers) request.getSession()
 				.getAttribute("CLIENT");
 
@@ -97,124 +100,51 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 				attitude.setUserId(user.getUid());
 				attitude.setDate(dateFormatter.parse(date));
 				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
+				attitude.setConfident(weekAttitudeForm.getConfident());
+				attitude.setIntent(weekAttitudeForm.getIntent());
+				attitude.setInitiative(weekAttitudeForm.getInitiative());
+				attitude.setEbullient(weekAttitudeForm.getEbullient());
+				attitude.setLove(weekAttitudeForm.getLove());
+				attitude.setStudy(weekAttitudeForm.getStudy());
+				attitude.setAutonomic(weekAttitudeForm.getAutonomic());
+				attitude.setPertinacious(weekAttitudeForm.getPertinacious());
+				attitude.setInsist(weekAttitudeForm.getInsist());
+				attitude.setSerious(weekAttitudeForm.getSerious());
+				attitude.setRapid(weekAttitudeForm.getRapid());
+				attitude.setOptimism(weekAttitudeForm.getOptimism());
+				attitude.setInnovation(weekAttitudeForm.getInnovation());
+				attitude.setHonest(weekAttitudeForm.getHonest());
+				attitude.setResponsibility(weekAttitudeForm.getResponsibility());
+				attitude.setSonsy(weekAttitudeForm.getSonsy());
+				attitude.setDiligence(weekAttitudeForm.getDiligence());
+				attitude.setHumility(weekAttitudeForm.getHumility());
+				attitude.setPurpose(weekAttitudeForm.getPurpose());
+				attitude.setClear(weekAttitudeForm.getClear());
+				attitude.setDobest(weekAttitudeForm.getDobest());
+				attitude.setTeam(weekAttitudeForm.getTeam());
+				attitude.setSluggish(weekAttitudeForm.getSluggish());
+				attitude.setInferiority(weekAttitudeForm.getInferiority());
+				attitude.setFluke(weekAttitudeForm.getFluke());
+				attitude.setConceited(weekAttitudeForm.getConceited());
+				attitude.setPride(weekAttitudeForm.getPride());
+				attitude.setBoggle(weekAttitudeForm.getBoggle());
+				attitude.setAcedia(weekAttitudeForm.getAcedia());
+				attitude.setAnxiety(weekAttitudeForm.getAnxiety());
+				attitude.setFalsity(weekAttitudeForm.getFalsity());
+				attitude.setDream(weekAttitudeForm.getDream()) ;
+				attitude.setAdamancy(weekAttitudeForm.getAdamancy());
+				attitude.setCynical(weekAttitudeForm.getCynical()) ;
+				attitude.setVulgar(weekAttitudeForm.getVulgar());
+				attitude.setRecreance(weekAttitudeForm.getRecreance()) ;
+				attitude.setPeacockery(weekAttitudeForm.getPeacockery()) ;
+				attitude.setAvarice(weekAttitudeForm.getAvarice());				
+				attitude.setAsocial(weekAttitudeForm.getAsocial());
+				attitude.setFussy(weekAttitudeForm.getFussy());
+				attitude.setTestiness(weekAttitudeForm.getTestiness());
+				attitude.setDespair(weekAttitudeForm.getDespair());
+				attitude.setBegrudge(weekAttitudeForm.getBegrudge());
+				attitude.setExcuse(weekAttitudeForm.getExcuse());
 				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				if(confident.equals("Y")) 
-					attitude.setConfident("Y");
-				else
-					attitude.setConfident("N");
-				
-				
-				
-						
 				weekAttitudeManager.updateWeekAttitude(attitude);
 			}
 			else {
@@ -222,12 +152,56 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 				attitude.setUserId(user.getUid());
 				attitude.setDate(dateFormatter.parse(date));
 
+				attitude.setConfident(weekAttitudeForm.getConfident());
+				attitude.setIntent(weekAttitudeForm.getIntent());
+				attitude.setInitiative(weekAttitudeForm.getInitiative());
+				attitude.setEbullient(weekAttitudeForm.getEbullient());
+				attitude.setLove(weekAttitudeForm.getLove());
+				attitude.setStudy(weekAttitudeForm.getStudy());
+				attitude.setAutonomic(weekAttitudeForm.getAutonomic());
+				attitude.setPertinacious(weekAttitudeForm.getPertinacious());
+				attitude.setInsist(weekAttitudeForm.getInsist());
+				attitude.setSerious(weekAttitudeForm.getSerious());
+				attitude.setRapid(weekAttitudeForm.getRapid());
+				attitude.setOptimism(weekAttitudeForm.getOptimism());
+				attitude.setInnovation(weekAttitudeForm.getInnovation());
+				attitude.setHonest(weekAttitudeForm.getHonest());
+				attitude.setResponsibility(weekAttitudeForm.getResponsibility());
+				attitude.setSonsy(weekAttitudeForm.getSonsy());
+				attitude.setDiligence(weekAttitudeForm.getDiligence());
+				attitude.setHumility(weekAttitudeForm.getHumility());
+				attitude.setPurpose(weekAttitudeForm.getPurpose());
+				attitude.setClear(weekAttitudeForm.getClear());
+				attitude.setDobest(weekAttitudeForm.getDobest());
+				attitude.setTeam(weekAttitudeForm.getTeam());
+				attitude.setSluggish(weekAttitudeForm.getSluggish());
+				attitude.setInferiority(weekAttitudeForm.getInferiority());
+				attitude.setFluke(weekAttitudeForm.getFluke());
+				attitude.setConceited(weekAttitudeForm.getConceited());
+				attitude.setPride(weekAttitudeForm.getPride());
+				attitude.setBoggle(weekAttitudeForm.getBoggle());
+				attitude.setAcedia(weekAttitudeForm.getAcedia());
+				attitude.setAnxiety(weekAttitudeForm.getAnxiety());
+				attitude.setFalsity(weekAttitudeForm.getFalsity());
+				attitude.setDream(weekAttitudeForm.getDream()) ;
+				attitude.setAdamancy(weekAttitudeForm.getAdamancy());
+				attitude.setCynical(weekAttitudeForm.getCynical()) ;
+				attitude.setVulgar(weekAttitudeForm.getVulgar());
+				attitude.setRecreance(weekAttitudeForm.getRecreance()) ;
+				attitude.setPeacockery(weekAttitudeForm.getPeacockery()) ;
+				attitude.setAvarice(weekAttitudeForm.getAvarice());				
+				attitude.setAsocial(weekAttitudeForm.getAsocial());
+				attitude.setFussy(weekAttitudeForm.getFussy());
+				attitude.setTestiness(weekAttitudeForm.getTestiness());
+				attitude.setDespair(weekAttitudeForm.getDespair());
+				attitude.setBegrudge(weekAttitudeForm.getBegrudge());
+				attitude.setExcuse(weekAttitudeForm.getExcuse());
 				
 				weekAttitudeManager.addWeekAttitude(attitude);
 			}
 			
 			request.setAttribute("OK_MESSAGE", "²Ù×÷³É¹¦");
-			request.setAttribute("RETURN_URL", "ClientManageUserDailySumup.do?act=list&date=" + date);
+			request.setAttribute("RETURN_URL", "ClientManageUserWeekAttitude.do?act=list&date=" + date);
 			
 			return mapping.findForward("ok");
 		} catch (Exception e) {
