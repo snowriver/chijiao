@@ -103,6 +103,8 @@ public class ArticleSearchAction extends DispatchAction {
 		try {
 			
 			Article article = articleListManager.getArticle(Integer.parseInt(id));
+			if(article == null)
+				return mapping.findForward("error");
 			article.setClick(article.getClick() + 1);
 			articleListManager.updateArticle(article);
 			request.setAttribute( "ARTICLE", article);
