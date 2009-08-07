@@ -133,7 +133,7 @@
 					<td>${ask.username }</td>
 					<td>
 						<a href="javascript:editArc(${ask.id }, '|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')">编辑</a> |
-						<a target="_blank" href="../ask/AskSearch.do?act=view&id=${ask.id }">查看</a>
+						<a target="_blank" href="../ask/AskView.do?id=${ask.id }">查看</a>
 					</td>
 				</tr>
 				</c:forEach>
