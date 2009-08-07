@@ -129,7 +129,7 @@
 									      		<TD width="20%"><A class=type href="#">[${fn:substring(ask.askType.name, 0, 5)}]</A></TD>
 									      		<TD>
 									        		<DIV style="OVERFLOW: hidden; WIDTH: 340px; LINE-HEIGHT: 30px; HEIGHT: 30px">
-									        			<A title=${ask.title } href="AskSearch.do?act=view&id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A>
+									        			<A title=${ask.title } href="AskView.do?id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A>
 									        		</DIV>
 									        	</TD>
 									      		<TD width="7%">${ask.answerCnt }</TD>

@@ -80,7 +80,7 @@ align=center>
                       </TD>
                       <TD style="COLOR: #ff8919" height=150 width="72%" 
                       align=middle>问题发表成功,<A 
-                        href="AskSearch.do?act=view&id=${ASK.id }"><FONT 
+                        href="AskView.do?id=${ASK.id }"><FONT 
                         color=red>点击查看</FONT></A></TD></TR>
                     <TR>
                       <TD height=20 align=middle><A 
