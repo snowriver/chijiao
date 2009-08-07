@@ -10,6 +10,7 @@
 		<form-bean name="ClientModifyProfileForm" type="com.forbes.struts.form.client.ClientModifyProfileForm" />
 		<form-bean name="ArticleInfoForm" type="com.forbes.struts.form.article.ArticleInfoForm" />
 		<form-bean name="ClientUserWeekAttitudeForm" type="com.forbes.struts.form.client.ClientUserWeekAttitudeForm" />
+		<form-bean name="ClientUserWeekAimExamForm" type="com.forbes.struts.form.client.ClientUserWeekAimExamForm" />
 	</form-beans>
 
 	<global-exceptions />
@@ -164,7 +165,7 @@
     		attribute="ClientUserWeekAttitudeForm"
     		input="/client/ClientListUserWeekAttitude.jsp"
     		name="ClientUserWeekAttitudeForm"
-	    	parameter="act"	    	
+	    	parameter="act"
       		path="/client/ClientManageUserWeekAttitude"
       		scope="request"
       		type="org.springframework.web.struts.DelegatingActionProxy">
@@ -172,6 +173,17 @@
       		<forward name="ok" path="/client/operate_ok.jsp" />
     	</action>
     	
+    	<action
+    		attribute="ClientUserWeekAimExamForm"
+    		input="/client/ClientListUserWeekAimExam.jsp"
+    		name="ClientUserWeekAimExamForm"
+	    	parameter="act"
+      		path="/client/ClientManageUserWeekAimExam"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="list" path="/client/ClientListUserWeekAimExam.jsp" />
+      		<forward name="ok" path="/client/operate_ok.jsp" />
+    	</action>
 	</action-mappings>
 	
 </struts-config>
