@@ -161,6 +161,14 @@
     </action>
 	
 	<action
+      path="/article/NewsView"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/article/news_view.jsp" />
+      <forward name="fail" path="/article/news_view_error.jsp" />
+    </action>
+    
+	<action
       path="/article/ArticleDigg"
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">

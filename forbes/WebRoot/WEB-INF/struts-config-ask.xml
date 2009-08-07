@@ -69,6 +69,13 @@
     </action>
     
     <action
+      path="/ask/AskView"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/ask/ask_view.jsp" />
+    </action>
+    
+    <action
       path="/ask/AnswerQuestion"
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">
