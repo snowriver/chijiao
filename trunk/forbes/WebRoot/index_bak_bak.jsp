@@ -276,8 +276,8 @@
 		<div class="newsFocus" id="ch_9">
 			
 			<c:forEach items="${FIRST_NEWS_LIST}" var="news" begin="0">	
-				<h1><a href="article/NewsSearch.do?act=view&id=${news.id}" target="_blank"><strong><font color="000000">${fn:substring(news.title, 0, 20)}</font></strong></a></h1>		
-				<p><a href="article/NewsSearch.do?act=view&id=${news.id}" target="_blank">${fn:substring(news.description, 0, 30)}<BR>${fn:substring(news.description, 31, 60)}</a></p>
+				<h1><a href="article/NewsView.do?id=${news.id}" target="_blank"><strong><font color="000000">${fn:substring(news.title, 0, 20)}</font></strong></a></h1>		
+				<p><a href="article/NewsView.do?id=${news.id}" target="_blank">${fn:substring(news.description, 0, 30)}<BR>${fn:substring(news.description, 31, 60)}</a></p>
 			</c:forEach>
 		</div>
 		<div class="lineA"></div><div class="blank8"></div>
@@ -290,7 +290,7 @@
 					<c:forEach items="${TOP_NEWS_LIST}" var="news" begin="0"> 
 					<li>
 						[<a href="article/NewsSearch.do?act=list&orderby=pubdate desc" target="_blank">最新资讯</a>]
-						<a href="article/NewsSearch.do?act=view&id=${news.id}" target="_blank">${fn:substring(news.title, 0, 20)}</a>
+						<a href="article/NewsView.do?id=${news.id}" target="_blank">${fn:substring(news.title, 0, 20)}</a>
 					</li>
 					
 					</c:forEach>
@@ -303,7 +303,7 @@
 					<li>
 						<div style="float:left">
 							[<a href="article/ArticleSearch.do?act=list&keyword=&orderby=pubdate desc" target="_blank">创业大学</a>]
-							<a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 20)}</a>
+							<a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 20)}</a>
 						</div>
 						<div style="float:right">
 							<span align="right"><a href="http://localhost/uc/home/space.php?uid=${article.user.uid}" target="_blank">${fn:substring(article.username, 0, 5)}</a></span>
@@ -318,7 +318,7 @@
 					<c:forEach items="${ASK_LIST}" var="ask" begin="0"> 
 						<li>
 							<div style="float:left">
-								[<a href="ask/AskSearch.do?act=search&status=0_1&keyword=&flag=newest&orderby=expiredTime%20desc" target="_blank">创业百问</a>]<a href="ask/AskSearch.do?act=view&id=${ask.id }" target="_blank">${fn:substring(ask.title, 0, 20)}</a>
+								[<a href="ask/AskSearch.do?act=search&status=0_1&keyword=&flag=newest&orderby=expiredTime%20desc" target="_blank">创业百问</a>]<a href="ask/AskView.do?id=${ask.id }" target="_blank">${fn:substring(ask.title, 0, 20)}</a>
 							</div>
 							<div style="float:right">
 								<span><a href="#" target="_blank">${fn:substring(ask.username, 0, 5)}</a></span>

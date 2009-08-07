@@ -72,26 +72,26 @@
 			<div class="r">
 				<div class="boxA">
 					<c:forEach items="${FIRST_NEWS_LIST}" var="news" begin="0">	
-					<h1><a href="article/NewsSearch.do?act=view&id=${news.id}" target="_blank"><font COLOR="#FF8A07"><b>${fn:substring(news.title, 0, 20)}</b></font></a></h1>
-					<p>[<a href="article/NewsSearch.do?act=view&id=${news.id}" target="_blank"><font color=red>${fn:substring(news.description, 0, 28)}...</font></a>]  </p>				
+					<h1><a href="article/NewsView.do?id=${news.id}" target="_blank"><font COLOR="#FF8A07"><b>${fn:substring(news.title, 0, 20)}</b></font></a></h1>
+					<p>[<a href="article/NewsView.do?id=${news.id}" target="_blank"><font color=red>${fn:substring(news.description, 0, 28)}...</font></a>]  </p>				
 					</c:forEach>
 				</div>
 				<div class="boxB">
 					<ul>
 						<c:forEach items="${TOP_NEWS_LIST}" var="news" begin="0"> 
-							<li><span>[<a href="article/NewsSearch.do?act=list&keyword=&orderby=pubdate desc" target="_blank">最新资讯</a>]</span><a href="article/NewsSearch.do?act=view&id=${news.id}" target="_blank"><font color=red>${fn:substring(news.title, 0, 16)}</font></a>&nbsp;</li>
+							<li><span>[<a href="article/NewsSearch.do?act=list&keyword=&orderby=pubdate desc" target="_blank">最新资讯</a>]</span><a href="article/NewsView.do?id=${news.id}" target="_blank"><font color=red>${fn:substring(news.title, 0, 16)}</font></a>&nbsp;</li>
 						</c:forEach>
 					</ul>
 					<div class="line"></div>
 					<ul>
 						<c:forEach items="${HOT_ARTICLE_LIST}" var="article" begin="0"> 
-							<li><span>[<a href="article/ArticleSearch.do?act=list&keyword=&orderby=pubdate desc" target="_blank">创业大学</a>]</span><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank"><font color=red>${fn:substring(article.title, 0, 16)}</font></a> <a href="${UC_HOME_URL }/space.php?uid=${article.user.uid}" target="_blank"><span style="font-size:12px;color:#8D4B07;font-family:'宋体'">${fn:substring(article.username, 0, 5)}</span></a></li>
+							<li><span>[<a href="article/ArticleSearch.do?act=list&keyword=&orderby=pubdate desc" target="_blank">创业大学</a>]</span><a href="article/ArticleView.do?id=${article.id}" target="_blank"><font color=red>${fn:substring(article.title, 0, 16)}</font></a> <a href="${UC_HOME_URL }/space.php?uid=${article.user.uid}" target="_blank"><span style="font-size:12px;color:#8D4B07;font-family:'宋体'">${fn:substring(article.username, 0, 5)}</span></a></li>
 						</c:forEach>
 					</ul>
 					<div class="line"></div>
 					<ul>
 						<c:forEach items="${ASK_LIST}" var="ask" begin="0"> 
-							<li><span>[<a href="ask/AskSearch.do?act=search&status=0_1&keyword=&flag=newest&orderby=expiredTime%20desc" target="_blank">创业百问</a>]</span><a href="ask/AskSearch.do?act=view&id=${ask.id }" target="_blank"><font color=red>${fn:substring(ask.title, 0, 16)}</font></a> <a href="ask/UserView.do?act=ask&uid=${ask.userId}" target="_blank"><span style="font-size:12px;color:#8D4B07;font-family:'宋体'">${fn:substring(ask.username, 0, 5)}</span></a></li>
+							<li><span>[<a href="ask/AskSearch.do?act=search&status=0_1&keyword=&flag=newest&orderby=expiredTime%20desc" target="_blank">创业百问</a>]</span><a href="ask/AskView.do?id=${ask.id }" target="_blank"><font color=red>${fn:substring(ask.title, 0, 16)}</font></a> <a href="ask/UserView.do?act=ask&uid=${ask.userId}" target="_blank"><span style="font-size:12px;color:#8D4B07;font-family:'宋体'">${fn:substring(ask.username, 0, 5)}</span></a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -147,7 +147,7 @@
 			<h3><span>创业阶段</span><a href="article/ArticleSearch.do?act=list&typeid=1&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
 			<ul>
 				<c:forEach items="${ARTICLE_01_LIST}" var="article" begin="0"> 
-					<li><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
+					<li><a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -155,7 +155,7 @@
 			<h3><span>创业投资</span><a href="article/ArticleSearch.do?act=list&typeid=26&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
 			<ul>
 				<c:forEach items="${ARTICLE_26_LIST}" var="article" begin="0"> 
-					<li><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
+					<li><a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -164,7 +164,7 @@
 			<h3><span>企业管理</span><a href="article/ArticleSearch.do?act=list&typeid=5&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
 			<ul>
 				<c:forEach items="${ARTICLE_05_LIST}" var="article" begin="0"> 
-					<li><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
+					<li><a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -173,7 +173,7 @@
 			<h3><span>理财规划</span><a href="article/ArticleSearch.do?act=list&typeid=17&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
 			<ul>
 				<c:forEach items="${ARTICLE_17_LIST}" var="article" begin="0"> 
-					<li><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
+					<li><a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -184,7 +184,7 @@
 			<h3><span>财富人生</span><a href="article/ArticleSearch.do?act=list&typeid=10&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
 			<ul>
 				<c:forEach items="${ARTICLE_10_LIST}" var="article" begin="0"> 
-					<li><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
+					<li><a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -192,7 +192,7 @@
 			<h3><span>成功激励</span><a href="article/ArticleSearch.do?act=list&typeid=42&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
 			<ul>
 				<c:forEach items="${ARTICLE_42_LIST}" var="article" begin="0"> 
-					<li><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
+					<li><a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -200,7 +200,7 @@
 			<h3><span>能力提升</span><a href="article/ArticleSearch.do?act=list&typeid=49&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
 			<ul>
 				<c:forEach items="${ARTICLE_49_LIST}" var="article" begin="0"> 
-					<li><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
+					<li><a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
 				</c:forEach>	
 			</ul>
 		</div>
@@ -209,7 +209,7 @@
 			<h3><span>职场规划</span><a href="article/ArticleSearch.do?act=list&typeid=35&keyword=&orderby=pubdate desc" target="_blank">更多&gt;&gt;</a></h3>
 			<ul>
 				<c:forEach items="${ARTICLE_35_LIST}" var="article" begin="0"> 
-					<li><a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
+					<li><a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 15)}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
