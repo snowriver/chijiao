@@ -97,15 +97,15 @@
 				<DIV style="Z-INDEX: 955" id=enclosure8 class=news-summary>
 					
 					<DIV class=news-body>
-				        <H3><A class="offsite ct-lifestyle" target="_blank" href="NewsSearch.do?act=view&id=${news.id}">${fn:substring(news.title, 0, 30)}</A> </H3>
+				        <H3><A class="offsite ct-lifestyle" target="_blank" href="NewsView.do?id=${news.id}">${fn:substring(news.title, 0, 30)}</A> </H3>
 				        				        
 				        <P>${fn:substring(news.description, 0, 145)}...</P>
 				        <DIV class=news-details>
 				        	
 				            <A class="tool comments" href="NewsContentSearch.do?act=list&id=${news.id }" target="_blank"><IMG alt="" src="images/comment_icon.gif" alt="ÆÀÂÛ">ÆÀÂÛ(${news.contentCnt })</A> 
-				            <A class="tool comments" href="NewsSearch.do?act=view&id=${news.id}" target="_blank"><IMG alt="" src="images/click_icon.gif" alt="ä¯ÀÀ">ä¯ÀÀ(${news.click })</A> 
+				            <A class="tool comments" href="NewsView.do?id=${news.id}" target="_blank"><IMG alt="" src="images/click_icon.gif" alt="ä¯ÀÀ">ä¯ÀÀ(${news.click })</A> 
 				            <A class="tool share" href="javascript:void(0)" onclick="openDIV('ÊÕ²Ø','../client/ClientManageNewsFavorite.do?act=add&id=${news.id }','500','350')"><IMG alt="" src="images/collect_icon.gif" alt="ÊÕ²Ø">ÊÕ²Ø</A>
-				             <A class="tool share" href="JavaScript:copyUserHomeToClipBoard('${news.title }  <%=(String)request.getRequestURL().substring(0, request.getRequestURL().indexOf("article") )%>article/NewsSearch.do?act=view&id=${news.id }');"><IMG alt="" src="images/recommand_icon.gif">ÍÆ¼ö</A> 
+				             <A class="tool share" href="JavaScript:copyUserHomeToClipBoard('${news.title }  <%=(String)request.getRequestURL().substring(0, request.getRequestURL().indexOf("article") )%>article/NewsView.do?id=${news.id }');"><IMG alt="" src="images/recommand_icon.gif">ÍÆ¼ö</A> 
 				           
 				            
 				            

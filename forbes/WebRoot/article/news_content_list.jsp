@@ -187,12 +187,12 @@
 	您现在的位置： 
 	<A href="../index.jsp" target=_blank>赤脚网</A> &gt;&gt; 
 	<A href="#" target=_blank>评论中心</A> &gt;&gt; 
-	<A href="NewsSearch.do?act=view&id=${NEWS.id }" target=_blank>${NEWS.title }</A>
+	<A href="NewsView.do?id=${NEWS.id }" target=_blank>${NEWS.title }</A>
 </DIV><!--admin buttons start-->
 
 <DIV><SPAN id=delbuttonDiv></SPAN></DIV><!--admin buttons end-->
 
-<H5 class=title_1>原文链接：<SPAN class=color_brown><A href="NewsSearch.do?act=view&id=${NEWS.id }" target=_blank>${NEWS.title }</A></SPAN></H5><!--comment:title_end-->
+<H5 class=title_1>原文链接：<SPAN class=color_brown><A href="NewsView.do?id=${NEWS.id }" target=_blank>${NEWS.title }</A></SPAN></H5><!--comment:title_end-->
 <FORM name=delForm><!--comment:itemlist_start-->
 
 

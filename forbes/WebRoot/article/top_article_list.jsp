@@ -9,7 +9,7 @@
 	<TBODY>	    	
     	<c:forEach items="${ARTICLE_LIST}" var="article"> 
   		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
     		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
     	</TR>
     	</c:forEach>

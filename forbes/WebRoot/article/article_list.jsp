@@ -100,7 +100,7 @@
 				<DIV style="Z-INDEX: 955" id=enclosure8 class=news-summary>
 					<A class="thumb offsite ct-lifestyle" target="_blank" href="${UC_HOME_URL }/space.php?uid=${article.user.uid}"><IMG alt="" src="${UC_CENTER_URL }/avatar.php?uid=&size=small&type=virtual" width=48 height=48></A>
 					<DIV class=news-body>
-				        <H3><A class="offsite ct-lifestyle" target="_blank" href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A> </H3>
+				        <H3><A class="offsite ct-lifestyle" target="_blank" href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A> </H3>
 				       
 				        	<P>${fn:substring(article.description, 0, 145)}...</P>
 				      
@@ -108,9 +108,9 @@
 				        <DIV class=news-details>
 				        	<A class="tool comments" href="ArticleSearch.do?act=list&typeid=${article.articleType.id }&keyword=&orderby=pubdate desc" target="_blank"><IMG alt="" src="images/sort_icon.gif" alt="分类">分类</A> 
 				            <A class="tool comments" href="ArticleContentSearch.do?act=list&id=${article.id }" target="_blank"><IMG alt="" src="images/comment_icon.gif" alt="评论">评论(${article.contentCnt })</A> 
-				            <A class="tool comments" href="ArticleSearch.do?act=view&id=${article.id}" target="_blank"><IMG alt="" src="images/click_icon.gif" alt="浏览">浏览(${article.click })</A> 
+				            <A class="tool comments" href="ArticleView.do?id=${article.id}" target="_blank"><IMG alt="" src="images/click_icon.gif" alt="浏览">浏览(${article.click })</A> 
 				            <A class="tool share" href="javascript:void(0)" onclick="openDIV('收藏','../client/ClientManageArticleFavorite.do?act=add&id=${article.id }','500','350')"><IMG alt="" src="images/collect_icon.gif" alt="收藏">收藏</A> 
-				            <A class="tool share" href="JavaScript:copyUserHomeToClipBoard('${article.title }  <%=(String)request.getRequestURL().substring(0, request.getRequestURL().indexOf("article") )%>article/ArticleSearch.do?act=view&id=${article.id }');"><IMG alt="" src="images/recommand_icon.gif">推荐</A> 
+				            <A class="tool share" href="JavaScript:copyUserHomeToClipBoard('${article.title }  <%=(String)request.getRequestURL().substring(0, request.getRequestURL().indexOf("article") )%>article/ArticleView.do?id=${article.id }');"><IMG alt="" src="images/recommand_icon.gif">推荐</A> 
 				           
 				            
 				            <SPAN class="tool share">				            	
