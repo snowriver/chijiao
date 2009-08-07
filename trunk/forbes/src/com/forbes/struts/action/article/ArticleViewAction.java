@@ -25,9 +25,7 @@ import com.forbes.service.article.ArticleListManager;
 public class ArticleViewAction extends Action {
 	/*
 	 * Generated Methods
-	 */
-	//private VideoTypeManager videoTypeManager;
-	
+	 */	
 	private ArticleListManager articleListManager;
 	/** 
 	 * Method execute
@@ -39,11 +37,8 @@ public class ArticleViewAction extends Action {
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-
 		
 		String  id = request.getParameter("id");
-		
-		System.out.print(id);
 		try {
 			
 			Article article = articleListManager.getArticle(Integer.parseInt(id));
@@ -61,12 +56,7 @@ public class ArticleViewAction extends Action {
 			return mapping.findForward("fail");
 		}
 	}
-	/*public VideoTypeManager getVideoTypeManager() {
-		return videoTypeManager;
-	}
-	public void setVideoTypeManager(VideoTypeManager videoTypeManager) {
-		this.videoTypeManager = videoTypeManager;
-	}*/
+
 	public ArticleListManager getArticleListManager() {
 		return articleListManager;
 	}
