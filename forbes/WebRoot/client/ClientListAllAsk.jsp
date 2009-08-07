@@ -117,7 +117,7 @@
 			    		<TD style="WIDTH:50px">
 			    			<A target=_blank href="../ask/AskSearch.do?act=search&typeid=${ask.askType.id }&orderby=expiredTime desc">${ask.askType.name }</A>
 			    		</TD>
-			    		<TD><P class=datalist_opt_video_title><A target=_blank href="../ask/AskSearch.do?act=view&id=${ask.id }"> ${ask.title }</A></P></TD>
+			    		<TD><P class=datalist_opt_video_title><A target=_blank href="../ask/AskView.do?id=${ask.id }"> ${ask.title }</A></P></TD>
 			    		
 			    		<TD><fmt:formatDate value='${ask.expiredTime}' pattern='yyyy-MM-dd' /></TD>
 			    		<TD align="center">

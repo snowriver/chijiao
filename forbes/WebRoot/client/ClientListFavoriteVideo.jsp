@@ -136,7 +136,7 @@
 		    		<TR>
 			    		<TD align=middle><INPUT id=articleid value=${fav[0].id } type=checkbox name=articleid></TD>
 			    		<TD style="WIDTH:50px"> ”∆µ ’≤ÿ</TD>
-			    		<TD><P class=datalist_opt_video_title><A target=_blank href="../article/ArticleSearch.do?act=view&id=${fav[0].id }"> ${fav[0].title }</A></P></TD>
+			    		<TD><P class=datalist_opt_video_title><A target=_blank href="../video/VideoView.do?id=${fav[0].id }"> ${fav[0].title }</A></P></TD>
 			    		
 			    		<TD><fmt:formatDate value='${fav[0].pubdate}' pattern='yyyy-MM-dd' /></TD>
 			    		<TD align="center">

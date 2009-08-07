@@ -96,7 +96,7 @@
 			    		<TD style="WIDTH: 90px">
 			    			<A target=_blank href="#">${ask.askType.name }</A>
 			    		</TD>
-			    		<TD><P class=datalist_opt_video_title><A target=_blank href="../ask/AskSearch.do?act=view&id=${ask.id }"> ${ask.title }</A></P></TD>
+			    		<TD><P class=datalist_opt_video_title><A target=_blank href="../ask/AskView.do?id=${ask.id }"> ${ask.title }</A></P></TD>
 			    		
 			    		<TD><fmt:formatDate value='${ask.expiredTime}' pattern='MM-dd' /></TD>
 			    		<TD class=collection_video_opt>
