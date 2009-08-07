@@ -192,7 +192,7 @@
 												<TD width="20%"><A class=type href="#">[${fn:substring(ask.askType.name, 0, 5)}]</A></TD>
 												<TD width="45%">
 													<DIV style="OVERFLOW: hidden; WIDTH: 340px; LINE-HEIGHT: 30px; HEIGHT: 30px">
-														<A target="_blank" title=${ask.title } href="AskSearch.do?act=view&id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A>
+														<A target="_blank" title=${ask.title } href="AskView.do?id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A>
 													</DIV>
 												</TD>					
 												<TD class=xuanshang_ico width="10%">${ask.reward}</TD>

@@ -421,7 +421,7 @@ name=answer></A>
 <DIV style="TEXT-ALIGN: right; PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; PADDING-TOP: 0px">
 	<A href="../index.jsp">主页</A>| 
 	<A style="CURSOR: hand" onclick=history.back() href="javascript:void(0);">返回</A> | 
-	<A style="CURSOR: hand; TEXT-DECORATION: none" onclick=scroll(0,0) href="AskSearch.do?act=view&id=${ASK.id }#null">顶部</A> | 
+	<A style="CURSOR: hand; TEXT-DECORATION: none" onclick=scroll(0,0) href="AskView.do?id=${ASK.id }#null">顶部</A> | 
 	<A href="javascript:win_open_bug();">报错</A></DIV></DIV>
 
 <!--我来回答结束--></DIV><!--问答内容结束--></DIV>

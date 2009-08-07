@@ -13,7 +13,7 @@
 		<TR>
     		<TD>
     			<DIV style="WIDTH: 190px; HEIGHT: 20px; OVERFLOW: hidden">
-    				<SPAN class=linktext><A class=linktext title="${ask.title }" href="AskSearch.do?act=view&id=${ask.id }">${fn:substring(ask.title, 0, 18)}</A></SPAN>
+    				<SPAN class=linktext><A class=linktext title="${ask.title }" href="AskView.do?id=${ask.id }">${fn:substring(ask.title, 0, 18)}</A></SPAN>
     			</DIV>
     		</TD>
     		<TD><SPAN class="text01"><IMG style="MARGIN-RIGHT: 3px" src="images/money.gif" width=12 height=12></SPAN>${ask.reward }</TD>

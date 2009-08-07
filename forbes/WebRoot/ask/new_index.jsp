@@ -245,7 +245,7 @@
 				<c:forEach items="${NOT_SOLVE_ASK_LIST}" var="ask"> 
 				<TR>
 		    		<TD width="20%">[<A style="COLOR: #3b5a90" href="AskSearch.do?act=search&typeid=${ask.askType.id }&status=0_1&orderby=expiredTime desc">${fn:substring(ask.askType.name, 0, 5)}</A>]</TD>
-		    		<TD>，<A class=linktext target="_blank" title="${ask.title }" href="AskSearch.do?act=view&id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A></TD>
+		    		<TD>，<A class=linktext target="_blank" title="${ask.title }" href="AskView.do?id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A></TD>
 		    		<TD style="PADDING-LEFT: 15px; BACKGROUND: url(images/money.gif) no-repeat left center" width="15%">${ask.reward}</TD>
 		    		<TD width="10%">${ask.expiredTimeString}</TD>
 		    	</TR>
@@ -276,7 +276,7 @@
 				<c:forEach items="${HEIGHT_REWARDE_ASK_LIST}" var="ask"> 
 				<TR>
 		    		<TD width="20%">[<A style="COLOR: #3b5a90" href="AskSearch.do?act=search&typeid=${ask.askType.id }&status=0_1&orderby=expiredTime desc">${fn:substring(ask.askType.name, 0, 5)}</A>]</TD>
-		    		<TD>，<A class=linktext target="_blank" title="${ask.title }" href="AskSearch.do?act=view&id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A></TD>
+		    		<TD>，<A class=linktext target="_blank" title="${ask.title }" href="AskView.do?id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A></TD>
 		    		<TD style="PADDING-LEFT: 15px; BACKGROUND: url(images/money.gif) no-repeat left center" width="15%">${ask.reward}</TD>
 		    		<TD width="10%">${ask.expiredTimeString}</TD>
 		    	</TR>
@@ -306,7 +306,7 @@
 				<c:forEach items="${ALREADY_SOLVE_ASK_LIST}" var="ask"> 
 				<TR>
 		    		<TD width="20%">[<A style="COLOR: #3b5a90" href="AskSearch.do?act=search&typeid=${ask.askType.id }&status=0_1&orderby=expiredTime desc">${fn:substring(ask.askType.name, 0, 5)}</A>]</TD>
-		    		<TD>，<A class=linktext target="_blank" title="${ask.title }" href="AskSearch.do?act=view&id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A></TD>
+		    		<TD>，<A class=linktext target="_blank" title="${ask.title }" href="AskView.do?id=${ask.id }">${fn:substring(ask.title, 0, 30)}</A></TD>
 		    		<TD style="PADDING-LEFT: 15px; BACKGROUND: url(images/money.gif) no-repeat left center" width="15%">${ask.reward}</TD>
 		    		<TD width="10%">${ask.expiredTimeString}</TD>
 		    	</TR>
@@ -343,7 +343,7 @@
 						<TR>
 				    		<TD>
 				    			<DIV style="WIDTH: 190px; HEIGHT: 20px; OVERFLOW: hidden">
-				    				<SPAN class=linktext><A class=linktext title="${ask.title }" href="AskSearch.do?act=view&id=${ask.id }">${fn:substring(ask.title, 0, 18)}</A></SPAN>
+				    				<SPAN class=linktext><A class=linktext title="${ask.title }" href="AskView.do?id=${ask.id }">${fn:substring(ask.title, 0, 18)}</A></SPAN>
 				    			</DIV>
 				    		</TD>
 				    		<TD><SPAN class="text01"><IMG style="MARGIN-RIGHT: 3px" src="images/money.gif" width=12 height=12></SPAN>${ask.reward }</TD>
