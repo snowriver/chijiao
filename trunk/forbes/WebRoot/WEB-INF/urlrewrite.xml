@@ -21,14 +21,10 @@
     </rule>
 	-->
 	
-	<rule> 
-		<note>
-            The rule means that requests to /test/status/ will be redirected to /rewrite-status
-            the url will be rewritten.
-        </note>
-　　		<from>/article/ArticleSearch/([a-z]+).html</from> 
-　　		<to type="redirect">%{context-path}/article/ArticleSearch.do?act=</to> 
-　　</rule> 
+	<rule>
+            <from>/article/article_([0-9]+).html</from>
+            <to>/article/ArticleView.do?id=$1</to>
+        </rule>
 	
 
     <outbound-rule>
