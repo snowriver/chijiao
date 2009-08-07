@@ -60,7 +60,7 @@ public class ManageAnswerAction extends DispatchAction {
 		try {
 			if(ask.getBestAnswer() != null) {
 				/*request.setAttribute("OK_MESSAGE", "设置成功！" );
-				request.setAttribute("RETURN_URL", "AskSearch.do?act=view&id=" +id );*/
+				request.setAttribute("RETURN_URL", "AskView.do?id=" +id );*/
 				
 				request.setAttribute("FAIL_MESSAGE", "您已经设置了最佳答案了！" );
 				return mapping.findForward("fail");
@@ -145,7 +145,7 @@ public class ManageAnswerAction extends DispatchAction {
 			//System.out.println("-------------> 1");
 			
 			request.setAttribute("OK_MESSAGE", "添加内容成功！" );
-			//request.setAttribute("RETURN_URL", "AskSearch.do?act=view&id=" +id );
+			//request.setAttribute("RETURN_URL", "AskView.do?id=" +id );
 			
 			//System.out.println("-------------> 2");
 			return mapping.findForward("succ");
@@ -181,7 +181,7 @@ public class ManageAnswerAction extends DispatchAction {
 			//System.out.println("-------------> 1");
 			
 			request.setAttribute("OK_MESSAGE", "修正成功！" );
-			//request.setAttribute("RETURN_URL", "AskSearch.do?act=view&id=" +id );
+			//request.setAttribute("RETURN_URL", "AskView.do?id=" +id );
 			
 			//System.out.println("-------------> 2");
 			return mapping.findForward("succ");

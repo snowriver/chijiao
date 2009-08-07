@@ -120,6 +120,18 @@
 		</property>
 	</bean>
 	
+	<bean name="/ask/AskView" class="com.forbes.struts.action.ask.AskViewAction" singleton="false">
+		<property name="askSearchManager">
+			<ref bean="askSearchManagerService" />
+		</property>
+		<property name="askManager">
+			<ref bean="askManagerService" />
+		</property>
+		<property name="askAnswerManager">
+			<ref bean="askAnswerManagerService" />
+		</property>
+	</bean>
+	
 	<bean name="/ask/AnswerQuestion" class="com.forbes.struts.action.ask.AnswerQuestionAction" singleton="false">
 		<property name="askSearchManager">
 			<ref bean="askSearchManagerService" />
