@@ -136,7 +136,7 @@
 		    		<TR>
 			    		<TD align=middle><INPUT id=articleid value=${art.id } type=checkbox name=articleid></TD>
 			    		<TD style="WIDTH:50px"> ${art.articleType.name }</TD>
-			    		<TD><P class=datalist_opt_video_title><A target=_blank href="../article/ArticleSearch.do?act=view&id=${art.id }"> ${art.title }</A></P></TD>
+			    		<TD><P class=datalist_opt_video_title><A target=_blank href="../article/ArticleView.do?id=${art.id }"> ${art.title }</A></P></TD>
 			    		
 			    		<TD><fmt:formatDate value='${art.pubdate}' pattern='yyyy-MM-dd' /></TD>
 			    		<TD align="center">
