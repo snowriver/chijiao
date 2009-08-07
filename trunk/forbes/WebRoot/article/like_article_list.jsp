@@ -7,7 +7,7 @@
 <!--相关资讯开始-->
 <c:if test="${not empty LIKE_ARTICLE_LIST}">
 	<c:forEach items="${LIKE_ARTICLE_LIST}" var="article"> 
-		<LI class=reationNews><A href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 20)}</A><FONT color=#828282>(<fmt:formatDate value='${article.pubdate}' pattern='MM-dd' />)</FONT>
+		<LI class=reationNews><A href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 20)}</A><FONT color=#828282>(<fmt:formatDate value='${article.pubdate}' pattern='MM-dd' />)</FONT>
 	</c:forEach>
 	</LI>
 </c:if>

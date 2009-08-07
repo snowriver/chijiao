@@ -10,7 +10,7 @@
 	<TBODY>	    	
     	<c:forEach items="${ARTICLE_LIST}" var="article"> 
   		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
     		<TD><fmt:formatDate value='${article.pubdate}' pattern='MM-dd' /></TD>
     	</TR>
     	</c:forEach>
@@ -24,7 +24,7 @@
 		<c:forEach items="${ARTICLE_LIST}" var="article" begin="0" varStatus="is"> 
   		<TR>
     		<TD width="10%" align=middle><IMG src="images/top_${is.index +1 }.gif"></TD>
-    		<TD class=daren_name><A class=linktext target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 25)}</A></TD>
+    		<TD class=daren_name><A class=linktext target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 25)}</A></TD>
     	</TR>
   		</c:forEach>
 	</TBODY>

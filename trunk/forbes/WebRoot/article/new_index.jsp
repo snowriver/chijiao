@@ -58,7 +58,7 @@
 				<DIV id="newslist">
 					<DIV class=headline>
 						<c:forEach items="${NEWS_LIST}" var="news" begin="0" end="0" >
-						<A target=_blank href="NewsSearch.do?act=view&id=${news.id }">${news.title}</A>
+						<A target=_blank href="NewsView.do?id=${news.id }">${news.title}</A>
 						<BR>${fn:substring(news.description, 0, 50)}...<BR>
 						</c:forEach>
 					</DIV>
@@ -67,7 +67,7 @@
 					  		<TBODY>
 					  			<c:forEach items="${NEWS_LIST}" var="news" begin="1"> 
 					  			<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-									<TD><A target=_blank href="NewsSearch.do?act=view&id=${news.id }">${news.title}</A></TD>
+									<TD><A target=_blank href="NewsView.do?id=${news.id }">${news.title}</A></TD>
 									<TD>[${news.pubdateString } ]</TD>
 								</TR>
 								</c:forEach>
@@ -98,7 +98,7 @@
 								<TBODY>	    	
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_5}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+							    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
 							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
@@ -127,7 +127,7 @@
 								<TBODY>	    	
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_26}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+							    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
 							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
@@ -161,7 +161,7 @@
 								<TBODY>	    	
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_42}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+							    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
 							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
@@ -188,7 +188,7 @@
 								<TBODY>	    	
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_17}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+							    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
 							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
@@ -214,7 +214,7 @@
 								<TBODY>	    	
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_10}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+							    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
 							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
@@ -246,7 +246,7 @@
 								<TBODY>	    	
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_49}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+							    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
 							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
@@ -277,7 +277,7 @@
 								<TBODY>	    	
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_35}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+							    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
 							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
@@ -306,7 +306,7 @@
 								<TBODY>	    	
 							    	<c:forEach items="${NEW_ARTICLE_LIST_TYPE_16}" var="article"> 
 							  		<TR onmouseover="this.className='highlight'" onmouseout="this.className=''">
-							    		<TD><A target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
+							    		<TD><A target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 30)}</A></TD>
 							    		<TD>${article.pubdateString }</TD>
 							    	</TR>
 							    	</c:forEach>
@@ -408,7 +408,7 @@
 							<c:forEach items="${COMMEND_ARTICLE_LIST}" var="article" begin="0" varStatus="is"> 
 					  		<TR>
 					    		<TD width="10%" align=middle><IMG src="images/top_${is.index +1 }.gif"></TD>
-					    		<TD class=daren_name><A class=linktext target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 25)}</A></TD>
+					    		<TD class=daren_name><A class=linktext target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 25)}</A></TD>
 					    	</TR>
 					  		</c:forEach>
 						</TBODY>
@@ -428,7 +428,7 @@
 							<c:forEach items="${TOP_ARTICLE_LIST}" var="article" begin="0" varStatus="is"> 
 					  		<TR>
 					    		<TD width="10%" align=middle><IMG src="images/top_${is.index +1 }.gif"></TD>
-					    		<TD class=daren_name><A class=linktext target=_blank href="ArticleSearch.do?act=view&id=${article.id}">${fn:substring(article.title, 0, 25)}</A></TD>
+					    		<TD class=daren_name><A class=linktext target=_blank href="ArticleView.do?id=${article.id}">${fn:substring(article.title, 0, 25)}</A></TD>
 					    	</TR>
 					  		</c:forEach>
 						</TBODY>

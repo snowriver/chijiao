@@ -238,8 +238,8 @@
 				</div><!-- /digg -->
 				<div class="context">
 					<ul>
-						<li>上一篇：<c:if test="${empty PRE_NEWS}">没有了</c:if> <c:if test="${not empty PRE_NEWS}"><a href="NewsSearch.do?act=view&id=${PRE_NEWS.id}">${PRE_NEWS.title}</a></c:if></li>
-						<li>下一篇：<c:if test="${empty NEXT_NEWS}">没有了</c:if> <c:if test="${not empty NEXT_NEWS}"><a href="NewsSearch.do?act=view&id=${NEXT_NEWS.id}">${NEXT_NEWS.title}</a></c:if></li>
+						<li>上一篇：<c:if test="${empty PRE_NEWS}">没有了</c:if> <c:if test="${not empty PRE_NEWS}"><a href="NewsView.do?id=${PRE_NEWS.id}">${PRE_NEWS.title}</a></c:if></li>
+						<li>下一篇：<c:if test="${empty NEXT_NEWS}">没有了</c:if> <c:if test="${not empty NEXT_NEWS}"><a href="NewsView.do?id=${NEXT_NEWS.id}">${NEXT_NEWS.title}</a></c:if></li>
 					</ul>
 				</div><!-- /context -->
 				<div class="actbox">
