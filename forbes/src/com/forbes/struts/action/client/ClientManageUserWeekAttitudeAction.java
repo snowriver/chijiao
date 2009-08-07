@@ -88,9 +88,6 @@ public class ClientManageUserWeekAttitudeAction extends DispatchAction {
 		String id = request.getParameter("id");
 		String date = request.getParameter("date");
 		
-		// 22种积极心态
-		String confident = request.getParameter("confident");
-		String intent = request.getParameter("intent");
 				
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
 
