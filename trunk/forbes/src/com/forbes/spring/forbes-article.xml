@@ -160,7 +160,13 @@
 		<property name="articleTypeManager">
 			<ref bean="articleTypeManagerService" />
 		</property>
-	</bean>	
+	</bean>
+	
+	<bean name="/article/ArticleView" class="com.forbes.struts.action.article.ArticleViewAction" singleton="false">
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+	</bean>
 
 	<bean name="/article/NewsSearch" class="com.forbes.struts.action.article.NewsSearchAction" singleton="false">
 		<property name="newsManager">
