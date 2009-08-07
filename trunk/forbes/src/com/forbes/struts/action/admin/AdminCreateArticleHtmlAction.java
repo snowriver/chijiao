@@ -52,7 +52,7 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 			List list = articleListManager.getAllArticleid();
 			for(int i=0; i<list.size(); i++) {
 				int articleid = (Integer)list.get(i);
-				flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleSearch.do?act=view&id="+articleid,
+				flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+articleid,
 						request.getRealPath("/") + "article" + "/" + articleid + ".html", "gbk", "gbk");
 				if(flag)
 					okCnt++;
@@ -86,7 +86,7 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 			for(int i=0; i<artID.length; i++) {
 				id = artID[i];
 				System.out.println(id);
-				flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleSearch.do?act=view&id="+id,
+				flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+id,
 						request.getRealPath("/") + "article" + "/" + id + ".html", "gbk", "gbk");
 				if(flag)
 					okCnt++;

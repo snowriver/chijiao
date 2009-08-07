@@ -167,7 +167,7 @@ public class AdminEditArticleAction extends DispatchAction {
 			
 			
 			//生成静态页面
-			boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleSearch.do?act=view&id="+a.getId(),
+			boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+a.getId(),
 					request.getRealPath("/") + "article" + "/" + a.getId() + ".html", "gbk", "gbk");
 			
 			request.setAttribute( "OK_MESSAGE", "成功发布文章！" );
@@ -344,7 +344,7 @@ public class AdminEditArticleAction extends DispatchAction {
 			
 			
 			//生成静态页面
-			boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleSearch.do?act=view&id="+a.getId(),
+			boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+a.getId(),
 					request.getRealPath("/") + "article/" + a.getId() + ".html", "gbk", "gbk");
 			//System.out.println(str);
 			
