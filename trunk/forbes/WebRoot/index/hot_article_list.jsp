@@ -9,7 +9,7 @@
 	<li>
 		<div style="float:left">
 			[<a href="article/ArticleSearch.do?act=list&keyword=&orderby=pubdate desc" target="_blank">创业大学</a>]
-			<a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">${fn:substring(article.title, 0, 18)}</a>
+			<a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 18)}</a>
 		</div>
 		<div style="float:right">
 			<span align="right"><a href="${UC_HOME_URL }/space.php?uid=${article.user.uid}" target="_blank">${fn:substring(article.username, 0, 5)}</a></span>

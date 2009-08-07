@@ -6,7 +6,7 @@
 <ul>
 	<c:forEach items="${ARTICLE_LIST}" var="article"> 
 	<li>
-		¡¤<a href="article/ArticleSearch.do?act=view&id=${article.id}" target="_blank">
+		¡¤<a href="article/ArticleView.do?id=${article.id}" target="_blank">
 			<c:choose> 
 				<c:when test="${fn:length(article.title) > 18}"> 
 					<c:out value="${fn:substring(article.title, 0, 17)}" />

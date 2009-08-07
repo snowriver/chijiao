@@ -7,7 +7,7 @@
 	<c:forEach items="${NEWS_LIST}" var="news" begin="0"> 
 	<li>
 		[<a href="article/NewsSearch.do?act=list&orderby=pubdate desc" target="_blank">最新资讯</a>]
-		<a href="article/NewsSearch.do?act=view&id=${news.id}" target="_blank">${fn:substring(news.title, 0, 20)}</a>
+		<a href="article/NewsView.do?id=${news.id}" target="_blank">${fn:substring(news.title, 0, 20)}</a>
 	</li>
 	
 	</c:forEach>
