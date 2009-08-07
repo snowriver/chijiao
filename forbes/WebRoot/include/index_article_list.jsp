@@ -6,7 +6,7 @@
 
 <UL>
 	<c:forEach items="${ARTICLE_LIST}" var="article"> 
-		<LI><A href="article/ArticleSearch.do?act=view&id=${article.id}" target=_blank>${fn:substring(article.title, 0, 16)}</A>
+		<LI><A href="article/ArticleView.do?id=${article.id}" target=_blank>${fn:substring(article.title, 0, 16)}</A>
 	</c:forEach>
 	</LI>
 </UL>
