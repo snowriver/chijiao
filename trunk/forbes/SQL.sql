@@ -100,3 +100,24 @@ CREATE TABLE `forbes_user_week_attitude` (
   `excuse` enum('Y','N') DEFAULT 'N' COMMENT 'ур╫Х©з',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+
+CREATE TABLE `forbes_user_week_aim_exam` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `career_done` varchar(255) DEFAULT NULL,
+  `career_next` varchar(255) DEFAULT NULL,
+  `family_done` varchar(255) DEFAULT NULL,
+  `family_next` varchar(255) DEFAULT NULL,
+  `contact_done` varchar(255) DEFAULT NULL,
+  `contact_next` varchar(255) DEFAULT NULL,
+  `finance_done` varchar(255) DEFAULT NULL,
+  `finance_next` varchar(255) DEFAULT NULL,
+  `spirit_done` varchar(255) DEFAULT NULL,
+  `spirit_next` varchar(255) DEFAULT NULL,
+  `health_done` varchar(255) DEFAULT NULL,
+  `health_next` varchar(255) DEFAULT NULL,
+  `other_done` varchar(255) DEFAULT NULL,
+  `other_next` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
