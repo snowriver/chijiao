@@ -1,22 +1,7 @@
 <%@ page language="java" pageEncoding="gbk"%>
-<%@ page import="com.forbes.hibernate.bean.UcMembers,java.text.SimpleDateFormat,java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
-
-<%
-	UcMembers ucMembers = (UcMembers)request.getSession().getAttribute("CLIENT");
-	String date = request.getParameter("date");
-	if(date == null || date.length() < 1) {
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		date   = df.format(new Date()) ;		
-	}
-	com.forbes.ajax.UserDailyCount udc = new com.forbes.ajax.UserDailyCount();
-	request.setAttribute("USER_DAILY_PLAN_COUNT", udc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
-	request.setAttribute("USER_DAILY_ACCREDIT_COUNT", udc.getUserDailyAccreditCount(ucMembers.getUid().toString(), date, null));
-	request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
-%>
-
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -156,7 +141,7 @@
 </head>
 <body>
 <c:set var="p" value="client_manage_daily_plan"></c:set>
-
+<c:set var="plan" value="accredit"></c:set>
 
 
 <div id=supevbox></div>
@@ -178,9 +163,7 @@
 	<h1>今日计划 [${DATE }]</h1>
 		
 	<div class="ucnav">
-		<a href="ClientManageUserDailyPlan.do?act=list">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
-		<a class="ucontype" href="javascript:void(0);">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
-		<a href="ClientManageUserDailySumup.do?act=list">今日反省[${USER_DAILY_SUMUP_COUNT }]</a>
+		<%@ include file="include/PlanMenu.jsp"%>
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />

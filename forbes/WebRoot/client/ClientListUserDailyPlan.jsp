@@ -1,32 +1,7 @@
 <%@ page language="java" pageEncoding="gbk"%>
-<%@ page import="com.forbes.hibernate.bean.UcMembers,java.text.SimpleDateFormat,java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
-
-<%
-	UcMembers ucMembers = (UcMembers)request.getSession().getAttribute("CLIENT");
-	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-	String date = request.getParameter("date");
-	if(date == null || date.length() < 1) {
-		date   = df.format(new Date()) ;		
-	}
-		
-	com.forbes.ajax.UserDailyCount udc = new com.forbes.ajax.UserDailyCount();
-	request.setAttribute("USER_DAILY_PLAN_COUNT", udc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
-	request.setAttribute("USER_DAILY_ACCREDIT_COUNT", udc.getUserDailyAccreditCount(ucMembers.getUid().toString(), date, null));
-			
-	Date tempDate = df.parse(date);
-	request.setAttribute("WEEK_DAY", tempDate.getDay());
-	
-	if(tempDate.getDay() ==6 ) {
-		com.forbes.ajax.UserWeekCount uwc = new com.forbes.ajax.UserWeekCount();
-		request.setAttribute("USER_WEEK_ATTITUDE_COUNT", uwc.getUserWeekAttitudeCount(ucMembers.getUid().toString(), date));
-	} else {
-		request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
-	}
-%>
-
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -166,7 +141,7 @@
 </head>
 <body>
 <c:set var="p" value="client_manage_daily_plan"></c:set>
-
+<c:set var="plan" value="plan"></c:set>
 
 
 <div id=supevbox></div>
@@ -188,20 +163,21 @@
 	<h1>今日计划 [${DATE }]</h1>
 	<h2>今日事项：诵读成功誓言并复习你的人生目标，再写下你的今日计划，付诸行动。</h2>
 	<div class="ucnav">
+		<!-- 
 		<a class="ucontype" href="javascript:void(0);">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
-		<a href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
-		
+		<a href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>		
 		<c:if test="${not empty USER_DAILY_SUMUP_COUNT}">			
 			<a href="ClientManageUserDailySumup.do?act=list">			
 				<c:if test="${WEEK_DAY == 0}">本周反省</c:if>	<c:if test="${WEEK_DAY != 0}">今日反省</c:if>
 				[${USER_DAILY_SUMUP_COUNT }]
 			</a>
-		</c:if>
-		
+		</c:if>		
 		<c:if test="${not empty USER_WEEK_ATTITUDE_COUNT}">
-			<a href="ClientManageUserDailySumup.do?act=list">一周心态检查表[${USER_WEEK_ATTITUDE_COUNT }]</a>
+			<a href="ClientManageUserWeekAttitude.do?act=list">一周心态检查表[${USER_WEEK_ATTITUDE_COUNT }]</a>
 		</c:if>
+		-->
 		
+		<%@ include file="include/PlanMenu.jsp"%>
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
