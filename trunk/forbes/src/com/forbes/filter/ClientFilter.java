@@ -73,7 +73,7 @@ public class ClientFilter extends HttpServlet implements Filter {
 					  }
 					  else {
 						  filterConfig.getServletContext().getRequestDispatcher(
-						  	"/client/ClientLogin.jsp").forward(request, response);
+						  	"/client/ClientLogin.do?act=cookie").forward(request, response);
 					  }
 		        						  
 					  
