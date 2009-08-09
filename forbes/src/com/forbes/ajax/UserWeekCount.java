@@ -1,11 +1,8 @@
 package com.forbes.ajax;
 
 import com.forbes.exception.ForbesException;
-import com.forbes.service.plan.DailyAccreditManager;
-import com.forbes.service.plan.DailyPlanManager;
-import com.forbes.service.plan.DailySumupManager;
+import com.forbes.service.plan.WeekAimExamManager;
 import com.forbes.service.plan.WeekAttitudeManager;
-
 import org.springframework.context.ApplicationContext;   
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -22,14 +19,9 @@ public class UserWeekCount {
 		return weekAttitudeManager.getWeekAttitudeCount(uid, date);
 	}
 	
-	/*public int getUserDailyAccreditCount(String uid, String date, String iscomplete) throws ForbesException{
-		DailyAccreditManager dailyAccreditManager =  (DailyAccreditManager)ctx.getBean("dailyAccreditManagerService");
-		return dailyAccreditManager.getDailyAccreditCount(uid, date, iscomplete);
+	public int getUserWeekAimExamCount(String uid, String date) throws ForbesException{
+		WeekAimExamManager weekAimExamManager =  (WeekAimExamManager)ctx.getBean("weekAimExamManagerService");
+		return weekAimExamManager.getWeekAimExamCount(uid, date);
 	}
 	
-	public int getUserDailySumupCount(String uid, String date) throws ForbesException{
-		DailySumupManager dailySumupManager =  (DailySumupManager)ctx.getBean("dailySumupManagerService");
-		return dailySumupManager.getDailySumupCount(uid, date);
-	}*/
-
 }
