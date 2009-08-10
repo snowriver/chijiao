@@ -40,5 +40,5 @@
 </c:if>
 
 <c:if test="${not empty USER_WEEK_AIM_EXAM_COUNT}">
-	<a <c:if test="${plan == 'aimExam'}">class="ucontype"</c:if> href="ClientManageUserWeekAimExam.do?act=list">本周目标查表[${USER_WEEK_AIM_EXAM_COUNT }]</a>
+	<a <c:if test="${plan == 'aimExam'}">class="ucontype"</c:if> href="ClientManageUserWeekAimExam.do?act=list">周目标达成检视表[${USER_WEEK_AIM_EXAM_COUNT }]</a>
 </c:if>
