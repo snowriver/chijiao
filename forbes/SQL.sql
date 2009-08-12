@@ -23,7 +23,7 @@ CREATE TABLE `forbes_user_daily_plan` (
   `is_complete` tinyint(3) DEFAULT '0',
   `note` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
 
 CREATE TABLE `forbes_user_daily_accredit` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -37,7 +37,7 @@ CREATE TABLE `forbes_user_daily_accredit` (
   `is_complete` tinyint(3) DEFAULT '0',
   `note` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
 
 CREATE TABLE `forbes_user_daily_sumup` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
