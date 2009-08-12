@@ -14,6 +14,7 @@
   <StrutsActivity path="/client/ClientManageUserDailyAccredit.do" location="350,1050" dimension="331,100" />
   <StrutsActivity path="/client/ClientManageUserDailySumup.do" location="1250,1050" dimension="362,104" />
   <StrutsActivity path="/client/ClientManageUserWeekAttitude.do" location="650,1250" dimension="362,104" />
+  <StrutsActivity path="/client/ClientManageUserWeekAimExam.do" location="1850,1250" dimension="362,104" />
   <StrutsActivity path="/include/passport.jsp" location="2696,689" dimension="155,52" />
   <StrutsActivity path="/client/ClientReLoginOk.jsp" location="1676,689" dimension="188,52" />
   <StrutsActivity path="/client/include/UserInfo.jsp" location="1250,850" dimension="188,52" />
@@ -47,10 +48,9 @@
   <StrutsActivity path="/client/ClientEditUserDailyAccredit.jsp" location="950,1050" dimension="248,53" />
   <StrutsActivity path="/client/ClientListUserDailySumup.jsp" location="50,1150" dimension="238,53" />
   <StrutsActivity path="/client/ClientListUserWeekAttitude.jsp" location="1850,1050" dimension="248,53" />
+  <StrutsActivity path="/client/ClientListUserWeekAimExam.jsp" location="1250,1250" dimension="256,53" />
   <StrutsActivity path="/article/userinfo.jsp" location="650,850" dimension="144,52" />
   <StrutsActivity path="/article/include/userinfo.jsp" location="950,850" dimension="190,52" />
-  <StrutsActivity path="/client/ClientListUserWeekAimExam.jsp" location="1250,1250" dimension="256,53" />
-  <StrutsActivity path="/client/ClientManageUserWeekAimExam.do" location="1850,1250" dimension="362,104" />
   <StrutsTransition id="/client/ClientPublishArticle.do,modify,/client/ClientModifyArticle.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="1791,252" />
@@ -247,12 +247,6 @@
       <AbsolutePoint location="2836,689" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/client/ClientManageUserWeekAimExam.do,list,/client/ClientListUserWeekAimExam.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="1850,1288" />
-      <AbsolutePoint location="1506,1288" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
   <StrutsTransition id="/client/ClientListNewsFeeds.do,in,/client/ClientMessageInBox.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="2514,202" />
@@ -273,6 +267,12 @@
       <AbsolutePoint location="1126,674" />
       <AbsolutePoint location="1126,398" />
       <AbsolutePoint location="1058,398" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/client/ClientManageUserWeekAimExam.do,list,/client/ClientListUserWeekAimExam.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,1288" />
+      <AbsolutePoint location="1506,1288" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageAsk.do,ok,/client/operate_ok.jsp,1" routingType="0">
@@ -376,12 +376,6 @@
     <AutomaticBendpoints>
       <AbsolutePoint location="2203,569" />
       <AbsolutePoint location="2203,689" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/client/ClientListUserWeekAimExam.jsp,null,/client/ClientManageUserWeekAttitude.do,2" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="1250,1276" />
-      <AbsolutePoint location="1012,1276" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/client/ClientManageArticle.do,list,/client/ClientListArticle.jsp,1" routingType="0">
