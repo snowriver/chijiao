@@ -30,8 +30,17 @@ public abstract class AbstractUserWeekAimExam implements java.io.Serializable {
 	private String healthNext;
 	private String otherDone;
 	private String otherNext;
-
+	private Date limitTime;
+	
 	// Constructors
+
+	public Date getLimitTime() {
+		return limitTime;
+	}
+
+	public void setLimitTime(Date limitTime) {
+		this.limitTime = limitTime;
+	}
 
 	/** default constructor */
 	public AbstractUserWeekAimExam() {
