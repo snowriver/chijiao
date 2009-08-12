@@ -9,18 +9,23 @@
 	}
 		
 	com.forbes.ajax.UserDailyCount udc = new com.forbes.ajax.UserDailyCount();
+	com.forbes.ajax.UserWeekCount uwc = new com.forbes.ajax.UserWeekCount();
+	
 	request.setAttribute("USER_DAILY_PLAN_COUNT", udc.getUserDailyPlanCount(ucMembers.getUid().toString(), date, null));
 	request.setAttribute("USER_DAILY_ACCREDIT_COUNT", udc.getUserDailyAccreditCount(ucMembers.getUid().toString(), date, null));
 			
 	java.util.Date tempDate = df.parse(date);
 	request.setAttribute("WEEK_DAY", tempDate.getDay());
 	
-	if(tempDate.getDay() ==6 ) {
-		com.forbes.ajax.UserWeekCount uwc = new com.forbes.ajax.UserWeekCount();
+	if(tempDate.getDay() ==6 ) {		
 		request.setAttribute("USER_WEEK_ATTITUDE_COUNT", uwc.getUserWeekAttitudeCount(ucMembers.getUid().toString(), date));
 		request.setAttribute("USER_WEEK_AIM_EXAM_COUNT", uwc.getUserWeekAimExamCount(ucMembers.getUid().toString(), date));
 	} else {
 		request.setAttribute("USER_DAILY_SUMUP_COUNT", udc.getUserDailySumupCount(ucMembers.getUid().toString(), date));
+	}
+	
+	if(tempDate.getDay() ==0 ) {
+		request.setAttribute("USER_WEEK_AIM_PLAN_COUNT", uwc.getUserWeekAimExamCount(ucMembers.getUid().toString(), date));
 	}
 %>
 
@@ -41,4 +46,8 @@
 
 <c:if test="${not empty USER_WEEK_AIM_EXAM_COUNT}">
 	<a <c:if test="${plan == 'aimExam'}">class="ucontype"</c:if> href="ClientManageUserWeekAimExam.do?act=list">周目标达成检视表[${USER_WEEK_AIM_EXAM_COUNT }]</a>
+</c:if>
+
+<c:if test="${not empty USER_WEEK_AIM_PLAN_COUNT}">
+	<a <c:if test="${plan == 'aimExam'}">class="ucontype"</c:if> href="ClientManageUserWeekAimExam.do?act=list">下周目标与计划[${USER_WEEK_AIM_PLAN_COUNT }]</a>
 </c:if>
