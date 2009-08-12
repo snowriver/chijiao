@@ -1,6 +1,7 @@
 package com.forbes.ajax;
 
 import com.forbes.exception.ForbesException;
+import com.forbes.service.plan.WeekAbilityManager;
 import com.forbes.service.plan.WeekAimExamManager;
 import com.forbes.service.plan.WeekAttitudeManager;
 import org.springframework.context.ApplicationContext;   
@@ -22,6 +23,11 @@ public class UserWeekCount {
 	public int getUserWeekAimExamCount(String uid, String date) throws ForbesException{
 		WeekAimExamManager weekAimExamManager =  (WeekAimExamManager)ctx.getBean("weekAimExamManagerService");
 		return weekAimExamManager.getWeekAimExamCount(uid, date);
+	}
+	
+	public int getUserWeekAbilityCount(String uid, String date) throws ForbesException{
+		WeekAbilityManager weekAbilityManager =  (WeekAbilityManager)ctx.getBean("weekAbilityManagerService");
+		return weekAbilityManager.getWeekAbilityCount(uid, date);
 	}
 	
 }

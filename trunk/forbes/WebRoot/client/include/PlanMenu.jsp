@@ -26,6 +26,7 @@
 	
 	if(tempDate.getDay() ==0 ) {
 		request.setAttribute("USER_WEEK_AIM_PLAN_COUNT", uwc.getUserWeekAimExamCount(ucMembers.getUid().toString(), date));
+		request.setAttribute("USER_WEEK_ABILITY_COUNT", uwc.getUserWeekAbilityCount(ucMembers.getUid().toString(), date));
 	}
 %>
 
@@ -46,6 +47,10 @@
 
 <c:if test="${not empty USER_WEEK_AIM_EXAM_COUNT}">
 	<a <c:if test="${plan == 'aimExam'}">class="ucontype"</c:if> href="ClientManageUserWeekAimExam.do?act=list">周目标达成检视表[${USER_WEEK_AIM_EXAM_COUNT }]</a>
+</c:if>
+
+<c:if test="${not empty USER_WEEK_ABILITY_COUNT}">
+	<a <c:if test="${plan == 'ability'}">class="ucontype"</c:if> href="ClientManageUserWeekAbility.do?act=list">下周能力提升[${USER_WEEK_ABILITY_COUNT }]</a>
 </c:if>
 
 <c:if test="${not empty USER_WEEK_AIM_PLAN_COUNT}">
