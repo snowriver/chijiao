@@ -71,8 +71,14 @@ $(function() {
 							<table width="98%">
 							  <tr class="onset">
 							    <td width="10%" style="font-weight: bold;"><div align="center"><strong>项目</strong></div></td>
-							    <td width="50%" style="font-weight: bold;">我达成目标了吗？</td>
-							    <td width="40%" style="font-weight: bold;">下周行动方案</td>
+							    <td width="50%" style="font-weight: bold;">
+							    	<c:if test="${WEEK_DAY != 0}">我达成目标了吗？</c:if>
+							    	<c:if test="${WEEK_DAY == 0}">目标</c:if>
+							    </td>
+							    <td width="40%" style="font-weight: bold;">
+							    	<c:if test="${WEEK_DAY != 0}">下周行动方案</c:if>
+							    	<c:if test="${WEEK_DAY == 0}">行动计划</c:if>
+							    </td>
 							  </tr>
 							  <tr>
 							    <td><div align="center"><strong>事业</strong></div></td>
