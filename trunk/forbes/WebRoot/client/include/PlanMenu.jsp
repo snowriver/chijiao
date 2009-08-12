@@ -36,7 +36,7 @@
 </c:if>
 		
 <c:if test="${not empty USER_WEEK_ATTITUDE_COUNT}">
-	<a <c:if test="${plan == 'attitude'}">class="ucontype"</c:if> href="ClientManageUserWeekAttitude.do?act=list">一周心态检查表[${USER_WEEK_ATTITUDE_COUNT }]</a>
+	<a <c:if test="${plan == 'attitude'}">class="ucontype"</c:if> href="ClientManageUserWeekAttitude.do?act=list">一周心态检视表[${USER_WEEK_ATTITUDE_COUNT }]</a>
 </c:if>
 
 <c:if test="${not empty USER_WEEK_AIM_EXAM_COUNT}">
