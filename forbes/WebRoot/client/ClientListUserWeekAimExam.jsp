@@ -76,58 +76,58 @@
 	</div>
 	
 	<div>
-		<form method="post" name="form2" action="ClientManageUserWeekAttitude.do?act=add">
-			<INPUT type="hidden" id="id" name="id" value="${USER_WEEK_ATTITUDE.id }" />
-			<INPUT type="hidden" id=date name=date value="${PARA['date'] }">
+		<form method="post" name="form2" action="ClientManageUserWeekAimExam.do?act=add">
+			<INPUT type="hidden" id="id" name="id" value="${USER_WEEK_AIM_EXAM.id }" />
+			<INPUT type="hidden" id="date" name="date" value="${PARA['date'] }">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
 				<tbody>
 							
 		    		<tr class="onset">
-		    			<TD colspan="5" align="center">xxxxxxxxvv</TD>
+		    			<TD colspan="5" align="center">目标检查</TD>
 		    		</tr>		    	
 					<tr class="onset">					
 						<td colspan="5">
 							
 							<table width="98%">
-							  <tr>
+							  <tr class="onset">
 							    <td width="10%">项目</td>
 							    <td width="50%">我达成目标了吗？</td>
 							    <td width="40%">下周行动方案</td>
 							  </tr>
 							  <tr>
 							    <td>事业</td>
-							    <td>&nbsp;</td>
-							    <td>&nbsp;</td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.careerDone }</textarea></td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.careerNext }</textarea></td>
 							  </tr>
 							  <tr>
 							    <td>家庭</td>
-							    <td>&nbsp;</td>
-							    <td>&nbsp;</td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.familyDone }</textarea></td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.familyNext }</textarea></td>
 							  </tr>
 							  <tr>
 							    <td>人际</td>
-							    <td>&nbsp;</td>
-							    <td>&nbsp;</td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.contactDone }</textarea></td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.contactNext }</textarea></td>
 							  </tr>
 							  <tr>
 							    <td>财务</td>
-							    <td>&nbsp;</td>
-							    <td>&nbsp;</td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.financeDone }</textarea></td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.financeNext }</textarea></td>
 							  </tr>
 							  <tr>
 							    <td>精神</td>
-							    <td>&nbsp;</td>
-							    <td>&nbsp;</td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.spiritDone }</textarea></td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.spiritNext }</textarea></td>
 							  </tr>
 							  <tr>
 							    <td>健康</td>
-							    <td>&nbsp;</td>
-							    <td>&nbsp;</td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.healthDone }</textarea></td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.healthDNext }</textarea></td>
 							  </tr>
 							  <tr>
 							    <td>其他</td>
-							    <td>&nbsp;</td>
-							    <td>&nbsp;</td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.otherDone }</textarea></td>
+							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.otherNext }</textarea></td>
 							  </tr>
 							</table>
 
@@ -139,7 +139,7 @@
 				</tbody>
 				<tfoot>
 				<tr class="onset">
-					<td colspan="5"><input type="submit" value="<c:if test='${ empty USER_WEEK_ATTITUDE }'>添加</c:if><c:if test='${ not empty USER_WEEK_ATTITUDE }'>修改</c:if>"></td>
+					<td colspan="5"><input type="submit" value="<c:if test='${ empty USER_WEEK_AIM_EXAM }'>添加</c:if><c:if test='${ not empty USER_WEEK_AIM_EXAM }'>修改</c:if>"></td>
 				</tr>
 				</tfoot>
 			</table>
