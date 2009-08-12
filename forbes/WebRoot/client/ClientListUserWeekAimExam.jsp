@@ -14,33 +14,17 @@
 
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/user_daily_plan.css">
-<link rel="stylesheet" type="text/css" href="../js/jquery/jquery.wysiwyg.css" />
 <script type="text/javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
-<script type="text/javascript" src="../js/jquery/jquery.wysiwyg.js"></script>
 <script type="text/javascript" src="../js/openPage.js" charset="gb2312"></script>
-
-<script language="javascript" type="text/javascript">
-	
-		$(function() {
+<!-- -
+<link rel="stylesheet" type="text/css" href="../js/jquery/jquery.wysiwyg.css" />
+<script type="text/javascript" src="../js/jquery/jquery.wysiwyg.js"></script>
+$(function() {
     		$('#advance').wysiwyg();
     		$('#meditate').wysiwyg();
     		
   		});
-	  	
-	  	function Check(form) {
-	  		var flag = false;
-			for (var i=0;i<form.elements.length;i++) {
-				var e = form.elements[i];
-	    		if (e.checked == true)
-	    			 flag = true;
-	   		}
-			if(flag == false) {
-				alert("请选择你要删除的提问！");
-				return false;
-			}
-		}
-		
-</script>
+ -->
 </head>
 <body>
 <c:set var="p" value="client_manage_daily_plan"></c:set>
@@ -71,63 +55,59 @@
 		
 		<span class="navinfo">
 			<img src="../res/icon_uptime.gif" />
-			<strong><a href="javascript:void(0);" onclick="openPage('添加今日事项','ClientAddUserDailyPlan.jsp', '15', '0', '700','550');">添加今日事项</a></strong> 
+			<strong><a href="javascript:void(0);" onClick="openPage('添加今日事项','ClientAddUserDailyPlan.jsp', '15', '0', '700','550');">添加今日事项</a></strong> 
 		</span>
 	</div>
 	
 	<div>
-		<form method="post" name="form2" action="ClientManageUserWeekAimExam.do?act=add">
+		<form method="post" name="ClientUserWeekAttitudeForm" action="ClientManageUserWeekAimExam.do?act=add">
 			<INPUT type="hidden" id="id" name="id" value="${USER_WEEK_AIM_EXAM.id }" />
 			<INPUT type="hidden" id="date" name="date" value="${PARA['date'] }">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
 				<tbody>
-							
-		    		<tr class="onset">
-		    			<TD colspan="5" align="center">目标检查</TD>
-		    		</tr>		    	
 					<tr class="onset">					
 						<td colspan="5">
 							
 							<table width="98%">
 							  <tr class="onset">
-							    <td width="10%">项目</td>
-							    <td width="50%">我达成目标了吗？</td>
-							    <td width="40%">下周行动方案</td>
+							    <td width="10%" style="font-weight: bold;"><div align="center"><strong>项目</strong></div></td>
+							    <td width="50%" style="font-weight: bold;">我达成目标了吗？</td>
+							    <td width="40%" style="font-weight: bold;">下周行动方案</td>
 							  </tr>
 							  <tr>
-							    <td>事业</td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.careerDone }</textarea></td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.careerNext }</textarea></td>
+							    <td><div align="center"><strong>事业</strong></div></td>
+							    <td><textarea id="careerDone" name="careerDone" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.careerDone }</textarea></td>
+							    <td><textarea id="careerNext" name="careerNext" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.careerNext }</textarea></td>
 							  </tr>
 							  <tr>
-							    <td>家庭</td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.familyDone }</textarea></td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.familyNext }</textarea></td>
+							    <td><div align="center"><strong>家庭</strong></div></td>
+							    <td><textarea id="familyDone" name="familyDone" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.familyDone }</textarea></td>
+							    <td><textarea id="familyNext" name="familyNext" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.familyNext }</textarea></td>
 							  </tr>
 							  <tr>
-							    <td>人际</td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.contactDone }</textarea></td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.contactNext }</textarea></td>
+							    <td><div align="center"><strong>人际</strong></div></td>
+							    <td><textarea id="contactDone" name="contactDone" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.contactDone }</textarea></td>
+							    <td><textarea id="contactNext" name="contactNext" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.contactNext }</textarea></td>
 							  </tr>
 							  <tr>
-							    <td>财务</td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.financeDone }</textarea></td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.financeNext }</textarea></td>
+							    <td><div align="center"><strong>财务</strong></div></td>
+							    <td><textarea id="financeDone" name="financeDone" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.financeDone }</textarea></td>
+							    <td><textarea id="financeNext" name="financeNext" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.financeNext }</textarea></td>
 							  </tr>
 							  <tr>
-							    <td>精神</td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.spiritDone }</textarea></td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.spiritNext }</textarea></td>
+							    <td><div align="center"><strong>精神</strong></div></td>
+							    <td><textarea id="spiritDone" name="spiritDone" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.spiritDone }</textarea></td>
+							    <td><textarea id="spiritNext" name="spiritNext" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.spiritNext }</textarea></td>
 							  </tr>
 							  <tr>
-							    <td>健康</td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.healthDone }</textarea></td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.healthDNext }</textarea></td>
+							    <td><div align="center"><strong>健康</strong></div></td>
+							    <td><textarea id="healthDone" name="healthDone" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.healthDone }</textarea></td>
+							    <td><textarea id="healthNext" name="healthNext" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.healthNext }</textarea></td>
 							  </tr>
 							  <tr>
-							    <td>其他</td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.otherDone }</textarea></td>
-							    <td><textarea id="advance" name="advance" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.otherNext }</textarea></td>
+							    <td><div align="center"><strong>其他</strong></div></td>
+							    <td><textarea id="otherDone" name="otherDone" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.otherDone }</textarea></td>
+							    <td><textarea id="otherNext" name="otherNext" rows="5" cols="90" style="width:98%">${USER_WEEK_AIM_EXAM.otherNext }</textarea></td>
 							  </tr>
 							</table>
 
