@@ -22,7 +22,7 @@ public class ClientUserWeekAimExamForm extends ActionForm {
 	
 	private Integer id;
 	private Integer userId;
-	private Date date;
+	private String date;
 	private String careerDone;
 	private String careerNext;
 	private String familyDone;
@@ -86,11 +86,11 @@ public class ClientUserWeekAimExamForm extends ActionForm {
 		this.userId = userId;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
