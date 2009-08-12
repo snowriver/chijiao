@@ -45,7 +45,7 @@
 </head>
 <body>
 <c:set var="p" value="client_manage_daily_plan"></c:set>
-<c:set var="plan" value="attitude"></c:set>
+<c:set var="plan" value="ability"></c:set>
 
 
 <div id=supevbox></div>
