@@ -121,3 +121,34 @@ CREATE TABLE `forbes_user_week_aim_exam` (
   `other_next` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+
+CREATE TABLE `forbes_user_week_ability` (
+  `id` int(11) unsigned NOT NULL auto_increment,
+  `user_id` int(11) unsigned default NULL,
+  `date` date default NULL,
+  `ardour` enum('Y','N') default 'Y' COMMENT '激情',
+  `promises` enum('Y','N') default 'Y' COMMENT '承诺',
+  `responsibility` enum('Y','N') default 'Y' COMMENT '负责任',
+  `admire` enum('Y','N') default 'Y' COMMENT '欣赏',
+  `contribute` enum('Y','N') default 'Y' COMMENT '贡献',
+  `believe` enum('Y','N') default 'Y' COMMENT '信任',
+  `win-win` enum('Y','N') default 'Y' COMMENT '共赢',
+  `listen` enum('Y','N') default 'Y' COMMENT '聆听',
+  `focus` enum('Y','N') default 'Y' COMMENT '注视',
+  `echo` enum('Y','N') default 'Y' COMMENT '回应',
+  `praise` enum('Y','N') default 'Y' COMMENT '赞美',
+  `convince` enum('Y','N') default 'Y' COMMENT '说服',
+  `feedback` enum('Y','N') default 'Y' COMMENT '反馈',
+  `thank` enum('Y','N') default 'Y' COMMENT '感谢',
+  `visualize` enum('Y','N') default 'Y' COMMENT '个人形象',
+  `study` enum('Y','N') default 'Y' COMMENT '学习',
+  `innovation` enum('Y','N') default 'Y' COMMENT '创新',
+  `love` enum('Y','N') default 'Y' COMMENT '爱心',
+  `gumption` enum('Y','N') default 'Y' COMMENT '进取心',
+  `purpose` enum('Y','N') default 'Y' COMMENT '企图心',
+  `intent` enum('Y','N') default 'Y' COMMENT '决心',
+  `professional` enum('Y','N') default 'Y' COMMENT '专业知识',
+  `willpower` enum('Y','N') default 'Y' COMMENT '毅力',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+
