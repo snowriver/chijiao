@@ -58,5 +58,8 @@
         <property name="otherNext" type="java.lang.String">
             <column name="other_next" />
         </property>
+        <property name="limitTime" type="java.util.Date">
+            <column name="limit_time" length="19" />
+        </property>
     </class>
 </hibernate-mapping>
