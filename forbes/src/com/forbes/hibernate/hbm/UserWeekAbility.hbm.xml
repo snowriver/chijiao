@@ -51,6 +51,11 @@
                 <comment>双赢</comment>
             </column>
         </property>
+        <property name="impel" type="java.lang.String">
+            <column name="impel" length="2">
+                <comment>感召</comment>
+            </column>
+        </property>
         <property name="listen" type="java.lang.String">
             <column name="listen" length="2">
                 <comment>聆听</comment>

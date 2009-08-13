@@ -31,6 +31,7 @@ public class ClientUserWeekAbilityForm extends ActionForm {
 	private String contribute;
 	private String believe;
 	private String winwin;
+	private String impel;
 	private String listen;
 	private String focus;
 	private String echo;
@@ -103,6 +104,10 @@ public class ClientUserWeekAbilityForm extends ActionForm {
 		
 		if ( winwin == null || winwin.length() < 1 ){
 			setWinwin("N");
+		}
+		
+		if ( impel == null || impel.length() < 1 ){
+			setImpel("N");
 		}
 		
 		if ( listen == null || listen.length() < 1 ){
@@ -398,6 +403,14 @@ public class ClientUserWeekAbilityForm extends ActionForm {
 
 	public void setWillpower(String willpower) {
 		this.willpower = willpower;
+	}
+
+	public String getImpel() {
+		return impel;
+	}
+
+	public void setImpel(String impel) {
+		this.impel = impel;
 	}
 
 }
