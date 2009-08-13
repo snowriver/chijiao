@@ -23,6 +23,7 @@ public abstract class AbstractUserWeekAbility implements java.io.Serializable {
 	private String contribute;
 	private String believe;
 	private String winwin;
+	private String impel;
 	private String listen;
 	private String focus;
 	private String echo;
@@ -289,6 +290,14 @@ public abstract class AbstractUserWeekAbility implements java.io.Serializable {
 
 	public void setWillpower(String willpower) {
 		this.willpower = willpower;
+	}
+
+	public String getImpel() {
+		return impel;
+	}
+
+	public void setImpel(String impel) {
+		this.impel = impel;
 	}
 
 }

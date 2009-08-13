@@ -91,8 +91,8 @@
 							
 		    		<tr class="onset">
 		    			<TD colspan="5" align="center">
-		    				<c:if test="${WEEK_DAY == 0}">本周检讨与成功感言：</c:if>
-		    				<c:if test="${WEEK_DAY != 0}">今日进步</c:if>
+		    				<c:if test="${WEEK_DAY == '0'}">本周检讨与成功感言：</c:if>
+		    				<c:if test="${WEEK_DAY != '0'}">今日进步</c:if>
 		    			</TD>
 		    		</tr>		    	
 					<tr class="onset">					
@@ -103,8 +103,8 @@
 					
 					<tr class="onset">
 		    			<TD colspan="5" align="center">
-		    				<c:if test="${WEEK_DAY == 0}">这一周我遇到的最大的挑战是什么？我要从那些方面改善？我可以为我的公司和家人做更多的是？</c:if>
-		    				<c:if test="${WEEK_DAY != 0}">今日反省</c:if>
+		    				<c:if test="${WEEK_DAY == '0'}">这一周我遇到的最大的挑战是什么？我要从那些方面改善？我可以为我的公司和家人做更多的是？</c:if>
+		    				<c:if test="${WEEK_DAY != '0'}">今日反省</c:if>
 		    			</TD>
 		    		</tr>		    	
 					<tr class="onset">					

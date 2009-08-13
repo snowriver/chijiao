@@ -15,7 +15,7 @@
 	request.setAttribute("USER_DAILY_ACCREDIT_COUNT", udc.getUserDailyAccreditCount(ucMembers.getUid().toString(), date, null));
 			
 	java.util.Date tempDate = df.parse(date);
-	request.setAttribute("WEEK_DAY", tempDate.getDay());
+	request.setAttribute("WEEK_DAY", tempDate.getDay());	
 	
 	if(tempDate.getDay() ==6 ) {		
 		request.setAttribute("USER_WEEK_ATTITUDE_COUNT", uwc.getUserWeekAttitudeCount(ucMembers.getUid().toString(), date));
