@@ -64,22 +64,10 @@
 <div class=mainbody>
 	<div id="append"></div>
 <div class="ucbody">
-	<h1>今日计划 [${DATE}]</h1>
+	<h1><div style="float:left">今日计划 [${DATE }]</div><div style="float:right" onclick="calendarOpen();" id="calendarButton"><a href="javascript:void(0)">显示日历</a>&nbsp;&nbsp;&nbsp;</div></h1>
+	<%@ include file="include/Calendar.jsp"%>
 		
-	<div class="ucnav">
-		<!-- 
-		<a href="ClientManageUserDailyPlan.do?act=list">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
-		<a href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>		
-		<c:if test="${not empty USER_DAILY_SUMUP_COUNT}">			
-			<a href="ClientManageUserDailySumup.do?act=list">			
-				<c:if test="${WEEK_DAY == 0}">本周反省</c:if>	<c:if test="${WEEK_DAY != 0}">今日反省</c:if>
-				[${USER_DAILY_SUMUP_COUNT }]
-			</a>
-		</c:if>		
-		<c:if test="${not empty USER_WEEK_ATTITUDE_COUNT}">
-			<a class="ucontype" href="ClientManageUserDailySumup.do?act=list">一周心态检查表[${USER_WEEK_ATTITUDE_COUNT }]</a>
-		</c:if>
-		-->
+	<div class="ucnav">		
 		<%@ include file="include/PlanMenu.jsp"%>
 		
 		
