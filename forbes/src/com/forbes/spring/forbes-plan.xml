@@ -146,5 +146,8 @@
 			<ref bean="weekAbilityManagerService" />
 		</property>
 	</bean>
+	
+	<bean name="/client/ClientManageUserPlanCalendar" class="com.forbes.struts.action.client.ClientManageUserPlanCalendarAction" singleton="false">
+	</bean>
 
 </beans>
