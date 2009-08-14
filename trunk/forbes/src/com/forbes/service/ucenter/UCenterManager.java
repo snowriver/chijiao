@@ -10,7 +10,7 @@ public class UCenterManager{
 	private String ucUrl="http://www.chijiao.org/ucenter/index.php";
 	private String ucIp="116.11.32.120";
 	private String key="123456";//pwd
-	private boolean disable = false;
+	private boolean disable = true;
 	private HttpInvoke httpInvoke = new HttpInvoke();
 	
 	public void login(String loginName, String password){
