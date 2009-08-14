@@ -160,8 +160,8 @@
 <div class=mainbody>
 	<div id="append"></div>
 <div class="ucbody">
-	<h1>今日计划 [${DATE }]</h1>
-		
+	<h1><div style="float:left">今日计划 [${DATE }]</div><div style="float:right" onclick="calendarOpen();" id="calendarButton"><a href="javascript:void(0)">显示日历</a>&nbsp;&nbsp;&nbsp;</div></h1>
+	<%@ include file="include/Calendar.jsp"%>
 	<div class="ucnav">
 		<%@ include file="include/PlanMenu.jsp"%>
 		

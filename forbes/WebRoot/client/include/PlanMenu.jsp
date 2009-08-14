@@ -30,29 +30,27 @@
 	}
 %>
 
-<a <c:if test="${plan == 'plan'}">class="ucontype"</c:if> href="ClientManageUserDailyPlan.do?act=list">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
-<a <c:if test="${plan == 'accredit'}">class="ucontype"</c:if> href="ClientManageUserDailyAccredit.do?act=list">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
+<a <c:if test="${plan == 'plan'}">class="ucontype"</c:if> href="ClientManageUserDailyPlan.do?act=list&date=${PARA['date'] }">今日事项<strong>[${USER_DAILY_PLAN_COUNT }]</strong></a>
+<a <c:if test="${plan == 'accredit'}">class="ucontype"</c:if> href="ClientManageUserDailyAccredit.do?act=list&date=${PARA['date'] }">今日授权[${USER_DAILY_ACCREDIT_COUNT }]</a>
 		
 <c:if test="${not empty USER_DAILY_SUMUP_COUNT}">			
-	<a <c:if test="${plan == 'sumup'}">class="ucontype"</c:if> href="ClientManageUserDailySumup.do?act=list">			
-		<c:if test="${WEEK_DAY == 0}">本周反省</c:if>
-		<c:if test="${WEEK_DAY != 0}">今日反省</c:if>
-		[${USER_DAILY_SUMUP_COUNT }]
+	<a <c:if test="${plan == 'sumup'}">class="ucontype"</c:if> href="ClientManageUserDailySumup.do?act=list&date=${PARA['date'] }">			
+		<c:if test="${WEEK_DAY == 0}">本周反省</c:if><c:if test="${WEEK_DAY != 0}">今日反省</c:if>[${USER_DAILY_SUMUP_COUNT }]
 	</a>
 </c:if>
 		
 <c:if test="${not empty USER_WEEK_ATTITUDE_COUNT}">
-	<a <c:if test="${plan == 'attitude'}">class="ucontype"</c:if> href="ClientManageUserWeekAttitude.do?act=list">一周心态检视表[${USER_WEEK_ATTITUDE_COUNT }]</a>
+	<a <c:if test="${plan == 'attitude'}">class="ucontype"</c:if> href="ClientManageUserWeekAttitude.do?act=list&date=${PARA['date'] }">一周心态检视表[${USER_WEEK_ATTITUDE_COUNT }]</a>
 </c:if>
 
 <c:if test="${not empty USER_WEEK_AIM_EXAM_COUNT}">
-	<a <c:if test="${plan == 'aimExam'}">class="ucontype"</c:if> href="ClientManageUserWeekAimExam.do?act=list">周目标达成检视表[${USER_WEEK_AIM_EXAM_COUNT }]</a>
+	<a <c:if test="${plan == 'aimExam'}">class="ucontype"</c:if> href="ClientManageUserWeekAimExam.do?act=list&date=${PARA['date'] }">周目标达成检视表[${USER_WEEK_AIM_EXAM_COUNT }]</a>
 </c:if>
 
 <c:if test="${not empty USER_WEEK_ABILITY_COUNT}">
-	<a <c:if test="${plan == 'ability'}">class="ucontype"</c:if> href="ClientManageUserWeekAbility.do?act=list">下周能力提升[${USER_WEEK_ABILITY_COUNT }]</a>
+	<a <c:if test="${plan == 'ability'}">class="ucontype"</c:if> href="ClientManageUserWeekAbility.do?act=list&date=${PARA['date'] }">下周能力提升[${USER_WEEK_ABILITY_COUNT }]</a>
 </c:if>
 
 <c:if test="${not empty USER_WEEK_AIM_PLAN_COUNT}">
-	<a <c:if test="${plan == 'aimExam'}">class="ucontype"</c:if> href="ClientManageUserWeekAimExam.do?act=list">下周目标与计划[${USER_WEEK_AIM_PLAN_COUNT }]</a>
+	<a <c:if test="${plan == 'aimExam'}">class="ucontype"</c:if> href="ClientManageUserWeekAimExam.do?act=list&date=${PARA['date'] }">下周目标与计划[${USER_WEEK_AIM_PLAN_COUNT }]</a>
 </c:if>

@@ -51,7 +51,9 @@
 				<tr> 
       				<% for(int i=j*7;i<(j+1)*7;i++) { %> 
      				<td width="15%" height="16"  valign="middle" align="center" 
+     					<% if(days[i] !=null && days[i].length() >0) { %>
      					onclick="goto('<%=year %>-<%=(month+1) %>-<%=days[i] %>');" 
+     					<%  } %>
      					onmouseover="this.style.backgroundColor='#DBF3FF'" 
      					onmouseout="this.style.backgroundColor='#ffffff'"> 
      					<%if((i-firstIndex+1)==today){ %>
@@ -98,9 +100,12 @@
 				success: function(rsHtml){
 					if(display == 'none') {
 						$("#planCalendar").css("display","block");
+						$("#calendarButton").html("<a href='javascript:void(0)'>关闭日历</a>&nbsp;&nbsp;&nbsp;");
+						
 					}
 					else {
 						$("#planCalendar").css("display","none");
+						$("#calendarButton").html("<a href='javascript:void(0)'>显示日历</a>&nbsp;&nbsp;&nbsp;");
 					}		
 				}
 			});
