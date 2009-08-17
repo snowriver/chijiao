@@ -4,14 +4,12 @@
  */
 package com.forbes.struts.action.index;
 
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
 import com.forbes.service.article.ArticleListManager;
 import com.forbes.service.article.NewsManager;
 import com.forbes.service.ask.AskSearchManager;
@@ -99,7 +97,7 @@ public class NewIndexAction extends Action {
 			request.setAttribute( "UC_HOME_MTAG_LIST", uchomeManager.getUchomeMtags(null, 0, 14));
 			
 			//home blog
-			request.setAttribute( "UC_HOME_BLOG_LIST", uchomeManager.getUchomeBlogs("viewnum DESC", 0, 10));
+			request.setAttribute( "UC_HOME_BLOG_LIST", uchomeManager.getUchomeBlogs("dateline DESC", 0, 10));
 
 			//bbs forums
 			String fup     = "1";
