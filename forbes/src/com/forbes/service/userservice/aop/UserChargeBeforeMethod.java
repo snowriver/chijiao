@@ -3,7 +3,9 @@ package com.forbes.service.userservice.aop;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 
-import org.acegisecurity.Authentication;
+import org.springframework.aop.MethodBeforeAdvice;
+
+/*import org.acegisecurity.Authentication;
 import org.acegisecurity.context.SecurityContextHolder;
 import org.springframework.aop.MethodBeforeAdvice;
 
@@ -17,10 +19,10 @@ import com.she.service.account.PaymentManager;
 import com.she.service.ord.OrderManager;
 import com.she.service.usrservice.UsrServiceProcessor;
 import com.she.service.usr.UserManager;
-import com.she.util.Config;
+import com.she.util.Config;*/
 
 public class UserChargeBeforeMethod implements MethodBeforeAdvice{
-	private UserManager userManager;
+	/*private UserManager userManager;
 	private PaymentManager paymentManager;
 	private OrderManager   orderManager;
     private UsrServiceProcessor usrServiceProcessor;
@@ -121,6 +123,6 @@ public class UserChargeBeforeMethod implements MethodBeforeAdvice{
 	}
 	public void setUserManager(UserManager userManager) {
 		this.userManager = userManager;
-	}
+	}*/
 
 }

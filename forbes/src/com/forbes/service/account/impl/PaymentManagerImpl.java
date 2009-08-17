@@ -31,7 +31,7 @@ import com.forbes.util.Pager;
 
 public class PaymentManagerImpl implements PaymentManager{
 	
-	private UserOrderDAO userOrderDAO;
+	/*private UserOrderDAO userOrderDAO;
 	private UserPaymentLogDAO userPaymentLogDAO;
 	private UserAccountDAO  userAccountDAO;
 
@@ -87,9 +87,9 @@ public class PaymentManagerImpl implements PaymentManager{
 		
 		return userOrderDAO.findOrderByPage(status,pager);
 	}
-	/**
+	*//**
 	 * 搜尋訂單
-	 */
+	 *//*
 	public List searchOrder( String logName,String name,String begDate,String endDate,String status,Pager pager){
         pager.setTotoalCnt(userOrderDAO.searchOderCount(logName, name, begDate, endDate, status));
 		return userOrderDAO.searchOrderByPage(logName, name, begDate, endDate, status, pager);
@@ -183,14 +183,14 @@ public class PaymentManagerImpl implements PaymentManager{
 		return true;
 		
 	}
-	/**
+	*//**
 	 * 收款和订单不符合的时候需要修改订单
 	 * @param orderId
 	 * @param userId
 	 * @param userType
 	 * @param amount
 	 * @return
-	 */
+	 *//*
 	public boolean verifyOrderByAccount(String orderId,String userId,String userType,int amount){
 		
 		return false;
@@ -208,9 +208,9 @@ public class PaymentManagerImpl implements PaymentManager{
 			
 		}
 	}
-	/**
+	*//**
 	 * 用戶賬戶上充值
-	 */
+	 *//*
 	public void rechargeUserByAccount(String orderId,String amount,String checkNo,String remark,short rechargeType){
 		OrdOrder order = userOrderDAO.findById( new Long(orderId) );
 		//List  accountLst = userAccountDAO.findByUserIdAndType(order.getUserId().toString(), order.getUserType().toString());
@@ -437,9 +437,9 @@ public void adminChangeUserPresentAccount(String userId,String userType,short pa
 	}
 	
 	
-	/**
+	*//**
 	 * 用戶賬戶上网上充值
-	 */
+	 *//*
 	public void rechargeUserByPaypal(UserPaymentLog usrPayment, String userType, String remark, short rechargeType){
 		usrPayment.setStatus((short)1);
 		usrPayment.setRemark(remark);
@@ -461,6 +461,6 @@ public void adminChangeUserPresentAccount(String userId,String userType,short pa
 		}
 			
 
-	}
+	}*/
 	
 }

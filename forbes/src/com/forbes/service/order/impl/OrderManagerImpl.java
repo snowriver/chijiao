@@ -26,7 +26,7 @@ import com.she.service.ord.impl.ShoppingCar;
 import com.she.service.usrservice.impl.IProcessor;*/
 public class OrderManagerImpl implements OrderManager{
 	
-	private UserOrderDAO     userOrderDAO;
+	/*private UserOrderDAO     userOrderDAO;
 	private UserOrderItemDAO userOrderItemDAO;
 	private UserServiceDAO   userServiceDAO;
 	private UserPaymentLogDAO uesrPaymentLogDAO;
@@ -71,7 +71,7 @@ public class OrderManagerImpl implements OrderManager{
 			userOrderItemDAO.save(orderItem);
 		}
 		//´´½¨Ö§¸¶Ó›ä›
-		/*
+		
 		UsrPaymentLog usrPayment = new UsrPaymentLog();
 		usrPayment.setUserOrder( order );
 		usrPayment.setPayMethod((short)payMethod);
@@ -79,7 +79,7 @@ public class OrderManagerImpl implements OrderManager{
 		usrPayment.setStatus((short)0);
 		usrPayment.setPayDate( Calendar.getInstance().getTime() );
 		uesrPaymentLogDAO.save(usrPayment);
-		*/
+		
 		return order;
 	}
 	public UserOrder createOrder(int payMethod,String serviceId,Object [] param,String userId,String userType){
@@ -118,7 +118,7 @@ public class OrderManagerImpl implements OrderManager{
 		
 	
 		return order;
-	}
+	}*/
 	
 }
  

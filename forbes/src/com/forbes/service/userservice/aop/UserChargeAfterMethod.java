@@ -18,7 +18,7 @@ import com.forbes.util.Config;
 
 public class UserChargeAfterMethod implements AfterReturningAdvice{
 	
-	private UserInfoManager userInfoManager;
+	/*private UserInfoManager userInfoManager;
 	private PaymentManager paymentManager;
 	private OrderManager   orderManager;
     private UserServiceProcessor userServiceProcessor;
@@ -119,7 +119,7 @@ public class UserChargeAfterMethod implements AfterReturningAdvice{
 	}
 	public void setOrderManager(OrderManager orderManager) {
 		this.orderManager = orderManager;
-	}
+	}*/
 
 
 
