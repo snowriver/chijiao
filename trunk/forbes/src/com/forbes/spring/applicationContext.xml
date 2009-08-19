@@ -123,7 +123,8 @@
 				<value>com/forbes/hibernate/hbm/UserDailySumup.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserWeekAttitude.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserWeekAimExam.hbm.xml</value>
-				<value>com/forbes/hibernate/hbm/UserWeekAbility.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/UserWeekAbility.hbm.xml</value>				
+				<value>com/forbes/hibernate/hbm/UserMonthAimPlan.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 
@@ -485,6 +486,12 @@
     </bean>
     <bean id="UserWeekAbilityDAO"
     	class="com.forbes.hibernate.dao.UserWeekAbilityDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>   
+    <bean id="UserMonthAimPlanDAO"
+    	class="com.forbes.hibernate.dao.UserMonthAimPlanDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>

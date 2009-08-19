@@ -9,11 +9,11 @@
 		<UL><LI <c:if test="${p == 'client_modify_info' }">class="li_page_on"</c:if>><A href="ClientModifyProfile.do?act=getdetail">修改基本信息</A> </LI></UL>
 	</DIV>
 	
-	<DIV class="side_navbox <c:if test="${p == 'client_manage_daily_plan' }">side_navbox_on</c:if>">
+	<DIV class="side_navbox <c:if test="${p == 'client_manage_daily_plan' || p == 'client_manage_month_plan' }">side_navbox_on</c:if>">
 		<H3>成功计划</H3>
 		<UL>
 			<LI <c:if test="${p == 'client_manage_daily_plan' }">class="li_page_on"</c:if>><A href="ClientManageUserDailyPlan.do?act=list">今日计划</A> 
-  			<LI><A href="#">日历管理</A> </LI>
+  			<LI <c:if test="${p == 'client_manage_month_plan' }">class="li_page_on"</c:if>><A href="ClientManageUserMonthAimPlan.do?act=list">月度计划表</A> </LI>
   		</UL>
   	</DIV>
 	
