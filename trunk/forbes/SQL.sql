@@ -174,3 +174,14 @@ CREATE TABLE `forbes_user_month_aim_plan` (
   `limit_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+
+CREATE TABLE `forbes_user_year_aim_plan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `year` smallint(4) unsigned DEFAULT '2010',
+  `quarter` tinyint(3) unsigned DEFAULT '1',
+  `first_month` text,
+  `second_month` text,
+  `third_month` text,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
