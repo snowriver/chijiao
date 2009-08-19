@@ -13,6 +13,7 @@
 		<form-bean name="ClientUserWeekAimExamForm" type="com.forbes.struts.form.client.ClientUserWeekAimExamForm" />
 		<form-bean name="ClientUserWeekAbilityForm" type="com.forbes.struts.form.client.ClientUserWeekAbilityForm" />
 		<form-bean name="ClientUserMonthAimPlanForm" type="com.forbes.struts.form.client.ClientUserMonthAimPlanForm" />
+		<form-bean name="ClientUserYearAimPlanForm" type="com.forbes.struts.form.client.ClientUserYearAimPlanForm" />
 	</form-beans>
 
 	<global-exceptions />
@@ -216,6 +217,18 @@
       		scope="request"
       		type="org.springframework.web.struts.DelegatingActionProxy">
       		<forward name="list" path="/client/ClientListUserMonthAimPlan.jsp" />
+      		<forward name="ok" path="/client/operate_ok.jsp" />
+    	</action>
+    	
+    	<action
+    		attribute="ClientUserYearAimPlanForm"
+    		input="/client/ClientListUserYearAimPlan.jsp"
+    		name="ClientUserYearAimPlanForm"
+	    	parameter="act"
+      		path="/client/ClientManageUserYearAimPlan"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="list" path="/client/ClientListUserYearAimPlan.jsp" />
       		<forward name="ok" path="/client/operate_ok.jsp" />
     	</action>
 	</action-mappings>

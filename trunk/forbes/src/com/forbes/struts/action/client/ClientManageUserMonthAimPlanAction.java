@@ -37,14 +37,12 @@ public class ClientManageUserMonthAimPlanAction extends DispatchAction {
 		String year = request.getParameter("year");
 		String month = request.getParameter("month");
 
-		if(year == null || year.length() == 0) {
-			//SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		if(year == null || year.length() == 0) {		
 			year = new SimpleDateFormat("yyyy").format(new Date());
 		}
 		
-		if(month == null || month.length() == 0) {
-			//SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-			month = String.valueOf(new Date().getMonth());
+		if(month == null || month.length() == 0) {			
+			month = String.valueOf(new Date().getMonth() + 1);
 		}	
 		
 		Map map = new TreeMap();
@@ -95,7 +93,7 @@ public class ClientManageUserMonthAimPlanAction extends DispatchAction {
 				monthAimPlan.setHealthAim(monthAimPlanForm.getHealthAim());
 				monthAimPlan.setHealthPlan(monthAimPlanForm.getHealthPlan());
 				monthAimPlan.setOtherAim(monthAimPlanForm.getOtherAim());
-				monthAimPlan.setOtherPlan(monthAimPlanForm.getOtherPlan());				
+				monthAimPlan.setOtherPlan(monthAimPlanForm.getOtherPlan());
 				
 				monthAimPlanManager.updateMonthAimPlan(monthAimPlan);
 			}
