@@ -198,3 +198,4 @@ CREATE TABLE `forbes_user_month_sumup` (
   `analyse` text,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+
