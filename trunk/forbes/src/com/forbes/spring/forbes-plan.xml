@@ -44,6 +44,11 @@
 			<ref bean="UserYearAimPlanDAO" />
 		</property>
 	</bean>
+	<bean id="monthSumupManager" class="com.forbes.service.plan.impl.MonthSumupManagerImpl">
+		<property name="userMonthSumupDAO">
+			<ref bean="UserMonthSumupDAO" />
+		</property>
+	</bean>
 	
 	<!-- -->	
 	<bean id="dailyPlanManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
@@ -150,6 +155,19 @@
 			</props>
 		</property>
 	</bean>
+	<bean id="monthSumupManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="monthSumupManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
 	
 	<!--  -->
 	<bean name="/client/ClientManageUserDailyPlan" class="com.forbes.struts.action.client.ClientManageUserDailyPlanAction" singleton="false">
@@ -191,6 +209,11 @@
 	<bean name="/client/ClientManageUserYearAimPlan" class="com.forbes.struts.action.client.ClientManageUserYearAimPlanAction" singleton="false">
 		<property name="yearAimPlanManager">
 			<ref bean="yearAimPlanManagerService" />
+		</property>
+	</bean>
+	<bean name="/client/ClientManageUserMonthSumup" class="com.forbes.struts.action.client.ClientManageUserMonthSumupAction" singleton="false">
+		<property name="monthSumupManager">
+			<ref bean="monthSumupManagerService" />
 		</property>
 	</bean>
 	

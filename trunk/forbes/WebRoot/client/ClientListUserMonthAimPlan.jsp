@@ -29,7 +29,7 @@ $(function() {
 <body>
 <c:set var="p" value="client_manage_month_plan"></c:set>
 <c:set var="month" value="${PARA['month'] }"></c:set>
-
+<c:set var="url" value="ClientManageUserMonthAimPlan.do?act=list"></c:set>
 
 <div id=supevbox></div>
 <!--header start-->
@@ -48,7 +48,7 @@ $(function() {
 	<div id="append"></div>
 <div class="ucbody">
 	<h1>
-		<div style="float:left">月度计划表 [${PARA['year'] }年-${PARA['month'] + 1}月]</div>
+		<div style="float:left">月度计划表 [${PARA['year'] }年-${PARA['month']}月]</div>
 		<div style="float:right">
 			<a href="ClientManageUserMonthAimPlan.do?act=list&year=${PARA['year']-1 }">上一年</a>			
 			<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value)"> 
