@@ -152,3 +152,25 @@ CREATE TABLE `forbes_user_week_ability` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=gbk;
 
+CREATE TABLE `forbes_user_month_aim_plan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `year` smallint(4) unsigned DEFAULT '2010',
+  `month` tinyint(3) unsigned DEFAULT NULL,
+  `career_aim` varchar(255) DEFAULT NULL,
+  `career_plan` varchar(255) DEFAULT NULL,
+  `family_aim` varchar(255) DEFAULT NULL,
+  `family_plan` varchar(255) DEFAULT NULL,
+  `contact_aim` varchar(255) DEFAULT NULL,
+  `contact_plan` varchar(255) DEFAULT NULL,
+  `finance_aim` varchar(255) DEFAULT NULL,
+  `finance_plan` varchar(255) DEFAULT NULL,
+  `spirit_aim` varchar(255) DEFAULT NULL,
+  `spirit_plan` varchar(255) DEFAULT NULL,
+  `health_aim` varchar(255) DEFAULT NULL,
+  `health_plan` varchar(255) DEFAULT NULL,
+  `other_aim` varchar(255) DEFAULT NULL,
+  `other_plan` varchar(255) DEFAULT NULL,
+  `limit_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
