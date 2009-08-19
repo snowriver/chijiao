@@ -47,8 +47,18 @@ $(function() {
 <div class=mainbody>
 	<div id="append"></div>
 <div class="ucbody">
-	<h1><div style="float:left">月度计划表 [${PARA['year'] }年-${PARA['month'] + 1}月]</div><div style="float:right" onclick="calendarOpen();" id="calendarButton"><a href="javascript:void(0)">显示日历</a>&nbsp;&nbsp;&nbsp;</div></h1>
-		
+	<h1>
+		<div style="float:left">月度计划表 [${PARA['year'] }年-${PARA['month'] + 1}月]</div>
+		<div style="float:right">
+			<a href="ClientManageUserMonthAimPlan.do?act=list&year=${PARA['year']-1 }">上一年</a>			
+			<SELECT onchange="selectOnchange(this.options[this.options.selectedIndex].value)"> 
+				<c:forEach var="year" begin="2000" end="2050" step="1" >				
+				<option value="${year }" <c:if test="${PARA['year'] == year }">selected</c:if> >${year }</option>
+				</c:forEach>
+			</select>			
+			<a href="ClientManageUserMonthAimPlan.do?act=list&year=${PARA['year']+1 }">下一年</a>&nbsp;&nbsp;&nbsp;
+		</div>
+	</h1>		
 	<div class="ucnav">
 		<%@ include file="include/MonthMenu.jsp"%>		
 	</div>
@@ -132,4 +142,12 @@ $(function() {
 <!--footer start-->
 <%@ include file="include/Footer.jsp"%>
 <!--footer end-->
+
+<script type="text/javascript">	
+	function selectOnchange(year) {
+		var gotoUrl = "ClientManageUserMonthAimPlan.do?act=list&year=" +  year;
+	    self.location= gotoUrl;
+	}
+</script>
+
 </body></html>
