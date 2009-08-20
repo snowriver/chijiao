@@ -43,7 +43,7 @@ public class ClientManageUserMonthAimPlanAction extends DispatchAction {
 		
 		if(month == null || month.length() == 0) {			
 			month = String.valueOf(new Date().getMonth() + 1);
-		}	
+		}
 		
 		Map map = new TreeMap();
 		map.put("year", year);
