@@ -199,3 +199,11 @@ CREATE TABLE `forbes_user_month_sumup` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=gbk;
 
+CREATE TABLE `forbes_user_life_stage_aim` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `years` tinyint(3) DEFAULT NULL,
+  `aim` text,
+  `limit_time` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;

@@ -127,6 +127,7 @@
 				<value>com/forbes/hibernate/hbm/UserMonthAimPlan.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserYearAimPlan.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserMonthSumup.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/UserLifeStageAim.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 
@@ -506,6 +507,12 @@
     </bean>
     <bean id="UserMonthSumupDAO"
     	class="com.forbes.hibernate.dao.UserMonthSumupDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="UserLifeStageAimDAO"
+    	class="com.forbes.hibernate.dao.UserLifeStageAimDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
