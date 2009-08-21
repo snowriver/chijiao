@@ -17,8 +17,8 @@ import org.apache.struts.action.ActionMapping;
 
 import com.forbes.exception.ForbesException;
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
-import com.forbes.hibernate.bean.ContentType;
+import com.forbes.hibernate.bean.Comment;
+import com.forbes.hibernate.bean.CommentType;
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.hibernate.bean.User;
 import com.forbes.service.article.ContentManager;
@@ -73,7 +73,7 @@ public class ArticleContentAddAction extends Action {
 		//System.out.println("user?null:"+(user==null) );
 		//System.out.println("a.id:"+a.getId() );
 	
-		ContentType contentType = contentManager.getContentType(new Short("1"));
+		CommentType contentType = contentManager.getContentType(new Short("1"));
 		//System.out.println("1---------------------" );
 		//System.out.println("1---------------------" );
 			//Ìí¼ÓÆÀÂÛ
@@ -84,7 +84,7 @@ public class ArticleContentAddAction extends Action {
 			//System.out.println("-----------1" );
 			try {
 				//System.out.println("User.id = " + user.getUid());
-				Content ac = new Content();
+				Comment ac = new Comment();
 				ac.setUser(user);
 				ac.setUsername(user.getUsername());
 				ac.setContentType(contentType);

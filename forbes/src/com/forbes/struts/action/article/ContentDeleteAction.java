@@ -16,8 +16,8 @@ import org.apache.struts.action.ActionMapping;
 
 import com.forbes.exception.ForbesException;
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
-import com.forbes.hibernate.bean.ContentType;
+import com.forbes.hibernate.bean.Comment;
+import com.forbes.hibernate.bean.CommentType;
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.hibernate.bean.User;
 import com.forbes.service.article.ContentManager;
@@ -63,7 +63,7 @@ public class ContentDeleteAction extends Action {
 		//UcMembers user = (UcMembers)request.getSession().getAttribute("CLIENT");
 		
 		try {
-			Content ac = contentManager.getContent(Long.parseLong(id));
+			Comment ac = contentManager.getContent(Long.parseLong(id));
 			contentManager.deleteContent(ac);
 			request.setAttribute("RESULT_MESSAGE", "SUCCESS" );
 			//request.setAttribute("RETURN_URL", "ArticleView.do?id="+id );
