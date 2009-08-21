@@ -167,7 +167,7 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 								  
 								  Article a = new Article();
 								  	a.setIsdelete("N");
-									a.setUser( member );
+									a.setUserid( member.getUid() );
 									a.setUsername(member.getUsername());
 									a.setUserip( request.getLocalAddr() );
 									a.setPubdate( new Date() );

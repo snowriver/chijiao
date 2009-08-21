@@ -65,7 +65,7 @@ public class AdminEditArticleAction extends DispatchAction {
 			if(articleListManager.verifyTitle(articleInfoForm.getTitle().trim())) {
 				
 				a.setIsdelete("N");
-				a.setUser( user );
+				a.setUserid( user.getUid() );
 				a.setUsername(user.getUsername());
 				a.setUserip( request.getLocalAddr() );
 				a.setPubdate( formatter.parse(articleInfoForm.getPubdate()) );
@@ -233,6 +233,7 @@ public class AdminEditArticleAction extends DispatchAction {
 	public ActionForward edit(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		ArticleInfoForm articleInfoForm = (ArticleInfoForm) form;
+		UcMembers admin = (UcMembers)request.getSession().getAttribute("ADMIN");
 		String returnUrl = request.getParameter("returnUrl");
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		System.out.println(returnUrl);
@@ -242,7 +243,7 @@ public class AdminEditArticleAction extends DispatchAction {
 			if(articleListManager.verifyTitle(articleInfoForm.getId(), articleInfoForm.getTitle().trim())) {
 				
 				a.setIsdelete("N");
-				a.setUser( (UcMembers)request.getSession().getAttribute("ADMIN") );
+				a.setUserid( admin.getUid()  );
 				a.setUserip( request.getLocalAddr() );
 				a.setPubdate( formatter.parse(articleInfoForm.getPubdate()) );
 				a.setTitle( articleInfoForm.getTitle() );
