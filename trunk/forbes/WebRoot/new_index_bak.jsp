@@ -85,7 +85,7 @@
 					<div class="line"></div>
 					<ul>
 						<c:forEach items="${HOT_ARTICLE_LIST}" var="article" begin="0"> 
-							<li><span>[<a href="article/ArticleSearch.do?act=list&keyword=&orderby=pubdate desc" target="_blank">创业大学</a>]</span><a href="article/ArticleView.do?id=${article.id}" target="_blank"><font color=red>${fn:substring(article.title, 0, 16)}</font></a> <a href="${UC_HOME_URL }/space.php?uid=${article.user.uid}" target="_blank"><span style="font-size:12px;color:#8D4B07;font-family:'宋体'">${fn:substring(article.username, 0, 5)}</span></a></li>
+							<li><span>[<a href="article/ArticleSearch.do?act=list&keyword=&orderby=pubdate desc" target="_blank">创业大学</a>]</span><a href="article/ArticleView.do?id=${article.id}" target="_blank"><font color=red>${fn:substring(article.title, 0, 16)}</font></a> <a href="${UC_HOME_URL }/space.php?uid=${article.userid}" target="_blank"><span style="font-size:12px;color:#8D4B07;font-family:'宋体'">${fn:substring(article.username, 0, 5)}</span></a></li>
 						</c:forEach>
 					</ul>
 					<div class="line"></div>

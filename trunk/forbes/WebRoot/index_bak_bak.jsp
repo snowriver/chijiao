@@ -306,7 +306,7 @@
 							<a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 20)}</a>
 						</div>
 						<div style="float:right">
-							<span align="right"><a href="http://localhost/uc/home/space.php?uid=${article.user.uid}" target="_blank">${fn:substring(article.username, 0, 5)}</a></span>
+							<span align="right"><a href="http://localhost/uc/home/space.php?uid=${article.userid}" target="_blank">${fn:substring(article.username, 0, 5)}</a></span>
 						</div>
 					</li>					
 					</c:forEach>
