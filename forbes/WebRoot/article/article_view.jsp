@@ -305,11 +305,11 @@
 				<TABLE cellSpacing=0 cellPadding=0 width="100%">
   					<TBODY>
   						<tr>
-						    <td rowspan="3" align="center" valign="middle"><img src="${UC_CENTER_URL }/avatar.php?uid=${ARTICLE.user.uid }&size=small&type=virtual" width="52" height="52" /></td>
+						    <td rowspan="3" align="center" valign="middle"><img src="${UC_CENTER_URL }/avatar.php?uid=${ARTICLE.userid }&size=small&type=virtual" width="52" height="52" /></td>
 						    <td colspan="3">&nbsp;${ARTICLE.username }</td>
 						  </tr>
 						  <tr>
-						    <td colspan="3">&nbsp;<a target="_blank" href="${UC_HOME_URL }/space.php?uid=${ARTICLE.user.uid }">查看详细资料</a></td>
+						    <td colspan="3">&nbsp;<a target="_blank" href="${UC_HOME_URL }/space.php?uid=${ARTICLE.userid }">查看详细资料</a></td>
 						  </tr>
 						  <tr>
 						    <td>&nbsp;发送留言</td>
