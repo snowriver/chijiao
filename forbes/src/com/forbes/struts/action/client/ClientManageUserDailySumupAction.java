@@ -16,7 +16,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
+import com.forbes.hibernate.bean.Comment;
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.hibernate.bean.UserDailyPlan;
 import com.forbes.hibernate.bean.UserDailySumup;
