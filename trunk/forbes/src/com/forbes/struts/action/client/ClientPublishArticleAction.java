@@ -68,7 +68,7 @@ public class ClientPublishArticleAction extends DispatchAction {
 			if(articleListManager.verifyTitle(articleInfoForm.getTitle().trim())) {
 				
 				a.setIsdelete("N");
-				a.setUser( user );
+				a.setUserid( user.getUid() );
 				a.setUsername(user.getUsername());
 				a.setUserip( request.getLocalAddr() );
 				a.setPubdate( new Date() );
@@ -122,7 +122,7 @@ public class ClientPublishArticleAction extends DispatchAction {
 				Short accountType = DictionaryManager.getInstance().getVal("ACCOUNT_TYPE", "2").getDvalue();
 				int amount = 10;
 				String remark = "您发布了文章 “ " + a.getTitle() + "”";
-				boolean updateRst = scoreManager.addScoreByUser(a.getId().toString(), a.getUser().getUid().toString(), 
+				boolean updateRst = scoreManager.addScoreByUser(a.getId().toString(), a.getUserid().toString(), 
 						accountType.toString(), (int)amount, remark);
 				if( updateRst){
 					//System.out.println("添加积分成功");
@@ -196,6 +196,7 @@ public class ClientPublishArticleAction extends DispatchAction {
 	public ActionForward edit(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		ArticleInfoForm articleInfoForm = (ArticleInfoForm) form;
+		UcMembers client = (UcMembers)request.getSession().getAttribute("CLIENT");
 		String returnUrl = request.getParameter("returnUrl");
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		//System.out.println(returnUrl);
@@ -205,7 +206,7 @@ public class ClientPublishArticleAction extends DispatchAction {
 			if(articleListManager.verifyTitle(articleInfoForm.getId(), articleInfoForm.getTitle().trim())) {
 				
 				a.setIsdelete("N");
-				a.setUser( (UcMembers)request.getSession().getAttribute("ADMIN") );
+				a.setUserid( client.getUid() );
 				a.setUserip( request.getLocalAddr() );
 				a.setPubdate( formatter.parse(articleInfoForm.getPubdate()) );
 				a.setTitle( articleInfoForm.getTitle() );
