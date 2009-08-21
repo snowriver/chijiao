@@ -19,7 +19,7 @@ public abstract class AbstractArticle implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private UcMembers user;
+	private Integer userid;
 	private String username;
 	private String userip;
 	private String likeid;
@@ -51,6 +51,8 @@ public abstract class AbstractArticle implements java.io.Serializable {
 	private ArticleType articleType;
 	private ArticleType articleType2;
 
+	private ArticleContent articleContent;
+	
 	public String getPubdateString() {
 		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
 		return sdf.format(pubdate);
@@ -77,13 +79,13 @@ public abstract class AbstractArticle implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractArticle(UcMembers user, String userip, String likeid, Short iscommend, Short isverify,
+	public AbstractArticle(Integer userid, String userip, String likeid, Short iscommend, Short isverify,
 			Integer click, String title, String shorttitle, String writer,
 			String source, Date pubdate, Date senddate, String description,
 			String keywords, Integer digg, Date diggtime, String isdelete,
 			Date lastpost, String litpic, Date sortrank, String color,
 			Short arcrank, String content) {
-		this.user = user;
+		this.userid = userid;
 		this.userip = userip;
 		this.likeid = likeid;
 		this.iscommend = iscommend;
@@ -118,13 +120,13 @@ public abstract class AbstractArticle implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public UcMembers getUser() {
+	/*public UcMembers getUser() {
 		return user;
 	}
 
 	public void setUser(UcMembers user) {
 		this.user = user;
-	}
+	}*/
 
 	public String getUserip() {
 		return this.userip;
@@ -316,6 +318,22 @@ public abstract class AbstractArticle implements java.io.Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public Integer getUserid() {
+		return userid;
+	}
+
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
+
+	public ArticleContent getArticleContent() {
+		return articleContent;
+	}
+
+	public void setArticleContent(ArticleContent articleContent) {
+		this.articleContent = articleContent;
 	}
 
 }
