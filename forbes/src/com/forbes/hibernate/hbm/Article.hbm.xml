@@ -11,10 +11,17 @@
             <generator class="native" />
         </id>
         
+        <!-- 
 		<many-to-one name="user" class="com.forbes.hibernate.bean.UcMembers" fetch="join" lazy="false">
             <column name="userid" />
         </many-to-one>
-		
+		 -->
+		 
+		<one-to-one  name="articleContent" class="com.forbes.hibernate.bean.ArticleContent" lazy="false" />
+		 
+		<property name="userid" type="java.lang.Integer">
+            <column name="userid" />
+        </property>
 		<property name="username" type="java.lang.String">
             <column name="username" length="20" />
         </property>
