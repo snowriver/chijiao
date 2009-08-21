@@ -14,7 +14,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
+import com.forbes.hibernate.bean.Comment;
 import com.forbes.service.article.ArticleListManager;
 import com.forbes.util.Constant;
 import com.forbes.util.ToHtml;

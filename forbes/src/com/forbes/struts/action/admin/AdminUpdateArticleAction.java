@@ -18,7 +18,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
+import com.forbes.hibernate.bean.Comment;
 import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.hibernate.bean.Sector;
 import com.forbes.service.account.ScoreManager;
@@ -158,7 +158,7 @@ public class AdminUpdateArticleAction extends DispatchAction {
 				List acs = contentManager.getContent(new Short("2"), a.getId());
 				System.out.println("acs.size = "+acs.size());
 				for(int j=0; j<acs.size(); j++) {
-					Content ac = (Content)acs.get(j);
+					Comment ac = (Comment)acs.get(j);
 					System.out.println("ac.id = "+ac.getId() );
 					contentManager.deleteContent(ac);
 				}
@@ -199,7 +199,7 @@ public class AdminUpdateArticleAction extends DispatchAction {
 					Short accountType = DictionaryManager.getInstance().getVal("ACCOUNT_TYPE", "2").getDvalue();
 					int amount = 10;
 					String remark = "文章 “" + a.getTitle() + "” 审核通过";
-					boolean updateRst = scoreManager.addScoreByUser(a.getId().toString(), a.getUser().getUid().toString(), 
+					boolean updateRst = scoreManager.addScoreByUser(a.getId().toString(), a.getUserid().toString(), 
 							accountType.toString(), (int)amount, remark);
 					if( updateRst){
 						System.out.println("添加积分成功");

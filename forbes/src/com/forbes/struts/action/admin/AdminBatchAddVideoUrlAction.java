@@ -24,7 +24,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Content;
+import com.forbes.hibernate.bean.Comment;
 import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.hibernate.bean.Sector;
 import com.forbes.hibernate.bean.Video;
