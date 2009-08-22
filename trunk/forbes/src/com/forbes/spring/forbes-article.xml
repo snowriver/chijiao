@@ -16,6 +16,9 @@
 		<property name="articleDAO">
 			<ref bean="ArticleDAO" />
 		</property>
+		<property name="articleContentDAO">
+			<ref bean="ArticleContentDAO" />
+		</property>
 	</bean>
 	<bean id="articleKeywordManager" class="com.forbes.service.article.impl.ArticleKeywordManagerImpl">
 		<property name="articleKeywordDAO">
@@ -42,6 +45,7 @@
 		<property name="target">
 			<ref bean="articleTypeManager" />
 		</property>
+		<property name="proxyTargetClass" value="true"/>
 		<property name="transactionAttributes">
 			<props>
 				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
@@ -55,6 +59,7 @@
 		<property name="target">
 			<ref bean="articleListManager" />
 		</property>
+		<property name="proxyTargetClass" value="true"/> 
 		<property name="transactionAttributes">
 			<props>
 				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>

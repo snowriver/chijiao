@@ -13,6 +13,8 @@ public abstract class AbstractArticleContent implements java.io.Serializable {
 
 	private Integer id;
 	private String content;
+	
+	private Article article;
 
 	// Constructors
 
@@ -41,6 +43,14 @@ public abstract class AbstractArticleContent implements java.io.Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
 	}
 
 }

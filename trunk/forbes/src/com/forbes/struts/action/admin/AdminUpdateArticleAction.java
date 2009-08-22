@@ -4,28 +4,23 @@
  */
 package com.forbes.struts.action.admin;
 
-import java.text.SimpleDateFormat;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Comment;
 import com.forbes.hibernate.bean.ArticleType;
-import com.forbes.hibernate.bean.Sector;
+import com.forbes.hibernate.bean.Content;
 import com.forbes.service.account.ScoreManager;
 import com.forbes.service.article.ArticleTypeManager;
 import com.forbes.service.article.ContentManager;
 import com.forbes.service.article.ArticleListManager;
-import com.forbes.service.basic.SectorManager;
 import com.forbes.struts.form.article.ArticleInfoForm;
 import com.forbes.util.DictionaryManager;
 import com.forbes.util.Pager;
@@ -158,7 +153,7 @@ public class AdminUpdateArticleAction extends DispatchAction {
 				List acs = contentManager.getContent(new Short("2"), a.getId());
 				System.out.println("acs.size = "+acs.size());
 				for(int j=0; j<acs.size(); j++) {
-					Comment ac = (Comment)acs.get(j);
+					Content ac = (Content)acs.get(j);
 					System.out.println("ac.id = "+ac.getId() );
 					contentManager.deleteContent(ac);
 				}

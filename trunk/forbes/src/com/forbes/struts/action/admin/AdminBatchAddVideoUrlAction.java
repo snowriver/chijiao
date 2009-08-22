@@ -5,39 +5,18 @@
 package com.forbes.struts.action.admin;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.net.URL;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
-import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Comment;
-import com.forbes.hibernate.bean.ArticleType;
-import com.forbes.hibernate.bean.Sector;
 import com.forbes.hibernate.bean.Video;
 import com.forbes.hibernate.bean.VideoUrl;
-import com.forbes.service.account.ScoreManager;
-import com.forbes.service.article.ArticleTypeManager;
-import com.forbes.service.article.ContentManager;
-import com.forbes.service.article.ArticleListManager;
-import com.forbes.service.basic.SectorManager;
 import com.forbes.service.video.VideoListManager;
 import com.forbes.service.video.VideoUrlManager;
-import com.forbes.util.DictionaryManager;
-import com.forbes.util.Pager;
 import com.forbes.util.UrlTool;
 
 /**

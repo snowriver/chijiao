@@ -3,6 +3,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
 
+<%
+    com.forbes.ajax.ArticleTypeSelector ss = new com.forbes.ajax.ArticleTypeSelector();
+	java.util.Map types = ss.getALlArticleTypes();
+	request.setAttribute("ARTICLE_TYPE_LIST", types);
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -118,16 +124,14 @@
 					<td><c:if test="${ article.isverify == 1 }">核</c:if></td>
 					<td><c:if test="${ article.iscommend > 0 }">${ article.iscommend }</c:if></td>					
 					<td><fmt:formatDate value='${article.pubdate }' type='date'/></td>
-					<td>
-						
-						<c:if test="${not empty article.articleType }">  ${article.articleType.name } </c:if>
-						<c:if test="${ empty article.articleType }"> 未分类 </c:if>
+					<td>						
+						${ARTICLE_TYPE_LIST[article.articleType.id] }
 					</td>
 					<td>${article.click }</td>
 					<td>已生成</td>
 					
 					<td>
-						${article.user.username } 
+						${article.username } 
 						
 					</td>
 					<td>

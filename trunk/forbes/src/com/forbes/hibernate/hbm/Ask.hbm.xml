@@ -35,10 +35,10 @@
             <column name="username" length="20" />
         </property>
         
-        <many-to-one name="askType" class="com.forbes.hibernate.bean.AskType" fetch="join" lazy="false">
+        <many-to-one name="askType" class="com.forbes.hibernate.bean.AskType" fetch="join" lazy="proxy">
             <column name="type_id" />
         </many-to-one>
-        <many-to-one name="askType2" class="com.forbes.hibernate.bean.AskType" fetch="join" lazy="false">
+        <many-to-one name="askType2" class="com.forbes.hibernate.bean.AskType" fetch="join" lazy="proxy">
             <column name="type_id2" />
         </many-to-one>
         

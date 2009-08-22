@@ -33,7 +33,18 @@ public class ToHtml {
 			e.printStackTrace();
 			return false;
 		}
-		
-		
+	}
+	
+	public static boolean toTxt(String content, String toUrl, String toEnCode) throws Exception {
+		try {			
+			Writer out = new BufferedWriter(new OutputStreamWriter( new FileOutputStream(toUrl), toEnCode));
+			out.write(content);
+			out.close();
+			//System.out.println(content);
+			return true;
+		} catch( Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 }

@@ -341,7 +341,7 @@
           <tr>
             <td>
 	            <FCK:editor instanceName="content" height="500" width="100%">
-					<jsp:attribute name="value">${ARTICLE.content }</jsp:attribute>
+					<jsp:attribute name="value">${ARTICLE.articleContent.content }</jsp:attribute>
 				</FCK:editor>
             </td>
           </tr>
