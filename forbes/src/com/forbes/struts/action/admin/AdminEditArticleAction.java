@@ -15,6 +15,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 import com.forbes.hibernate.bean.Article;
+import com.forbes.hibernate.bean.ArticleContent;
 import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.service.article.ArticleListManager;
@@ -62,16 +63,20 @@ public class AdminEditArticleAction extends DispatchAction {
 			System.out.println(" Maintypeid = " + articleInfoForm.getMaintypeid());
 			System.out.println(" Typeid	    = " + articleInfoForm.getTypeid());
 			
-			if(articleListManager.verifyTitle(articleInfoForm.getTitle().trim())) {
+			if(articleListManager.verifyTitle(articleInfoForm.getTitle().trim())) {				
+				
+				ArticleContent content = new ArticleContent();
+				content.setContent(articleInfoForm.getContent());				
 				
 				a.setIsdelete("N");
 				a.setUserid( user.getUid() );
 				a.setUsername(user.getUsername());
 				a.setUserip( request.getLocalAddr() );
+				a.setArticleContent( content );
 				a.setPubdate( formatter.parse(articleInfoForm.getPubdate()) );
 				a.setLastpost(new Date());
 				a.setTitle( articleInfoForm.getTitle() );
-				a.setContent( articleInfoForm.getContent() );
+				a.setArticleContent( content );
 				a.setClick( 0 );
 				a.setIscommend( new Short("0") );
 				a.setIsverify( new Short("0") );
@@ -157,7 +162,11 @@ public class AdminEditArticleAction extends DispatchAction {
 					
 				}
 				
+				content.setArticle(a);
 				articleListManager.addArticle(a);
+				articleListManager.addArticleContent(content);
+				
+				
 				
 			}
 			else {
@@ -167,8 +176,11 @@ public class AdminEditArticleAction extends DispatchAction {
 			
 			
 			//生成静态页面
-			boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+a.getId(),
-					request.getRealPath("/") + "article" + "/" + a.getId() + ".html", "gbk", "gbk");
+			/*boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+a.getId(),
+					request.getRealPath("/") + "article" + "/" + a.getId() + ".html", "gbk", "gbk");*/
+			
+			boolean txtFlag = ToHtml.toTxt(articleInfoForm.getContent(),
+					request.getRealPath("/") + "article/txt/" + a.getId() + ".txt", "gbk");
 			
 			request.setAttribute( "OK_MESSAGE", "成功发布文章！" );
 			request.setAttribute( "RETURN_URL", new UrlTool().getUrl2(returnUrl, "[|]") );
@@ -242,12 +254,16 @@ public class AdminEditArticleAction extends DispatchAction {
 			
 			if(articleListManager.verifyTitle(articleInfoForm.getId(), articleInfoForm.getTitle().trim())) {
 				
+				ArticleContent content = a.getArticleContent();
+				content.setContent(articleInfoForm.getContent());
+				
+				
 				a.setIsdelete("N");
 				a.setUserid( admin.getUid()  );
 				a.setUserip( request.getLocalAddr() );
 				a.setPubdate( formatter.parse(articleInfoForm.getPubdate()) );
 				a.setTitle( articleInfoForm.getTitle() );
-				a.setContent( articleInfoForm.getContent() );
+				a.setArticleContent( content );
 				a.setLastpost(new Date());
 				//a.setClick( 0 );
 				//a.setIscommend( new Short("0") );
@@ -336,6 +352,8 @@ public class AdminEditArticleAction extends DispatchAction {
 				}
 				
 				articleListManager.updateArticle(a);
+				articleListManager.updateArticleContent(content);
+				
 				
 			}
 			else {
@@ -345,9 +363,13 @@ public class AdminEditArticleAction extends DispatchAction {
 			
 			
 			//生成静态页面
-			boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+a.getId(),
-					request.getRealPath("/") + "article/" + a.getId() + ".html", "gbk", "gbk");
+			/*boolean htmlFlag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+a.getId(),
+					request.getRealPath("/") + "article/" + a.getId() + ".html", "gbk", "gbk");*/
 			//System.out.println(str);
+			
+			//生成TXT文件
+			boolean txtFlag = ToHtml.toTxt(articleInfoForm.getContent(),
+					request.getRealPath("/") + "article/txt/" + a.getId() + ".txt", "gbk");
 			
 			
 			request.setAttribute( "OK_MESSAGE", "修改文章成功！" );

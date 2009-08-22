@@ -224,8 +224,8 @@
 			
 			<UL class=news_con_main>
   				<LI>
-  					${ARTICLE.content }
-  					  					
+  					<jsp:include page="txt/${ARTICLE.id }.txt" /> 
+  					
   					<!-- <P align=right>&nbsp;<A target=_blank href="#">进入论坛</A></P> -->
   				</LI>
   			</UL>
@@ -315,7 +315,7 @@
 						    <td>&nbsp;发送留言</td>
 						    <td colspan="2">&nbsp;
 						    	<c:if test="${empty sessionScope.CLIENT}"><a href="javascript:void(0);">加为好友</a></c:if>
-						    	<c:if test="${not empty sessionScope.CLIENT}"><a target="_blank" href="${UC_HOME_URL }/cp.php?ac=friend&op=add&uid=${ARTICLE.user.uid }">加为好友</a></c:if>
+						    	<c:if test="${not empty sessionScope.CLIENT}"><a target="_blank" href="${UC_HOME_URL }/cp.php?ac=friend&op=add&uid=${ARTICLE.userid }">加为好友</a></c:if>
 						    	
 						    </td>
 						  </tr>
@@ -325,11 +325,11 @@
 						  </tr>
 						  <tr>
 						    <td align="center">&nbsp;注册时间:</td>
-						    <td colspan="3">&nbsp;${ARTICLE.user.regdate }</td>
+						    <td colspan="3">&nbsp;${ARTICLE }</td>
 						  </tr>
 						  <tr>
 						    <td align="center">&nbsp;最后登录:</td>
-						    <td colspan="3">&nbsp;${ARTICLE.user.lastlogintime }</td>
+						    <td colspan="3">&nbsp;${ARTICLE }</td>
 						  </tr>
   					</TBODY>
   				</TABLE>

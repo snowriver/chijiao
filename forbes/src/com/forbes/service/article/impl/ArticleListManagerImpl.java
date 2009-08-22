@@ -1,10 +1,10 @@
 package com.forbes.service.article.impl;
 
 import java.util.List;
-
 import com.forbes.exception.ForbesException;
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.ArticleType;
+import com.forbes.hibernate.bean.ArticleContent;
+import com.forbes.hibernate.dao.ArticleContentDAO;
 import com.forbes.hibernate.dao.ArticleDAO;
 import com.forbes.hibernate.dao.ArticleTypeDAO;
 import com.forbes.service.article.ArticleListManager;
@@ -15,6 +15,7 @@ public class ArticleListManagerImpl implements ArticleListManager {
 	
 	private ArticleTypeDAO articleTypeDAO;
 	private ArticleDAO articleDAO;
+	private ArticleContentDAO articleContentDAO;
 	
 	public ArticleTypeDAO getArticleTypeDAO() {
 		return articleTypeDAO;
@@ -32,6 +33,13 @@ public class ArticleListManagerImpl implements ArticleListManager {
 		this.articleDAO = articleDAO;
 	}
 	
+	public ArticleContentDAO getArticleContentDAO() {
+		return articleContentDAO;
+	}
+
+	public void setArticleContentDAO(ArticleContentDAO articleContentDAO) {
+		this.articleContentDAO = articleContentDAO;
+	}
 	
 
 	public List getArticleByPage(Pager pager, int pageNo, String deleteFlag, String userid, String typeid, String isverify, String keyword, String orderby ) throws ForbesException{
@@ -66,6 +74,10 @@ public class ArticleListManagerImpl implements ArticleListManager {
 		return articleDAO.findById(id);
 	}
 
+	public void updateArticle(Article article) {
+		articleDAO.attachDirty(article);
+	}
+	
 	public Article getNextArticle(Integer id) {
 		List list = articleDAO.findNextArticle(id.toString());
 		if(list.size() >0 )
@@ -82,9 +94,7 @@ public class ArticleListManagerImpl implements ArticleListManager {
 			return null;
 	}
 	
-	public void updateArticle(Article article) {
-		articleDAO.attachDirty(article);
-	}
+	
 
 	public boolean verifyTitle( String title ){
 		List list = articleDAO.findByTitle(title);
@@ -145,5 +155,23 @@ public class ArticleListManagerImpl implements ArticleListManager {
 			throw new ForbesException(se.getMessage());
 		}
 	}
+
+	
+	public void addArticleContent(ArticleContent articleContent) {
+		articleContentDAO.save(articleContent);
+	}
+	
+	public void deleteArticleContent(ArticleContent articleContent) {
+		articleContentDAO.delete(articleContent);
+	}
+	
+	public ArticleContent getArticleContent(Integer id) {
+		return articleContentDAO.findById(id);
+	}
+
+	public void updateArticleContent(ArticleContent articleContent) {
+		articleContentDAO.merge(articleContent);
+	}
+	
 	
 }

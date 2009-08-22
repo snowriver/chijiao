@@ -21,11 +21,11 @@ public class Article extends AbstractArticle implements java.io.Serializable {
 			String source, Date pubdate, Date senddate, String description,
 			String keywords, Integer digg, Date diggtime, String isdelete,
 			Date lastpost, String litpic, Date sortrank, String color,
-			Short arcrank, String content) {
+			Short arcrank) {
 		super(userid, userip, likeid, iscommend, isverify,
 				click, title, shorttitle, writer, source, pubdate, senddate,
 				description, keywords, digg, diggtime, isdelete, lastpost,
-				litpic, sortrank, color, arcrank, content);
+				litpic, sortrank, color, arcrank);
 	}
 
 }

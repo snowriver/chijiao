@@ -2,12 +2,25 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>	
-	
 	<import resource="forbes-admin.xml" />
-    <import resource="forbes-user.xml" />
+	<import resource="forbes-user.xml" />
 	<import resource="forbes-basic.xml" />
 	<import resource="forbes-article.xml" />
+	<import resource="forbes-ask.xml" />
 	<import resource="forbes-video.xml" />
 	<import resource="forbes-client.xml" />
 	<import resource="forbes-newsfeed.xml" />
+	<import resource="forbes-aop.xml" />
+	<import resource="forbes-action-analysis.xml" />
+	<import resource="forbes-index.xml" />
+	<import resource="forbes-content.xml" />
+	<import resource="forbes-favorite.xml" />
+	<import resource="forbes-feedback.xml" />
+	<import resource="forbes-order.xml" />
+	<import resource="forbes-account.xml" />
+	<import resource="forbes-sms.xml" />
+	<import resource="forbes-task.xml" />
+	<import resource="uc-home.xml" />
+	<import resource="uc-bbs.xml" />
+	<import resource="forbes-plan.xml" />
 </beans>

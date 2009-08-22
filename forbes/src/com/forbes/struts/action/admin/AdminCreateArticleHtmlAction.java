@@ -12,9 +12,7 @@ import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
 import com.forbes.hibernate.bean.Article;
-import com.forbes.hibernate.bean.Comment;
 import com.forbes.service.article.ArticleListManager;
 import com.forbes.util.Constant;
 import com.forbes.util.ToHtml;
@@ -52,8 +50,13 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 			List list = articleListManager.getAllArticleid();
 			for(int i=0; i<list.size(); i++) {
 				int articleid = (Integer)list.get(i);
-				flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+articleid,
-						request.getRealPath("/") + "article" + "/" + articleid + ".html", "gbk", "gbk");
+				/*flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+articleid,
+						request.getRealPath("/") + "article" + "/" + articleid + ".html", "gbk", "gbk");*/
+				
+				//生成TXT文件
+				Article article = articleListManager.getArticle(articleid);
+				boolean txtFlag = ToHtml.toTxt(article.getContent(),
+						request.getRealPath("/") + "article/txt/" + articleid + ".txt", "gbk");
 				if(flag)
 					okCnt++;
 				else
@@ -88,6 +91,11 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 				System.out.println(id);
 				flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+id,
 						request.getRealPath("/") + "article" + "/" + id + ".html", "gbk", "gbk");
+				
+				Article article = articleListManager.getArticle(Integer.parseInt(id));
+				boolean txtFlag = ToHtml.toTxt(article.getContent(),
+						request.getRealPath("/") + "article/txt/" + id + ".txt", "gbk");
+				
 				if(flag)
 					okCnt++;
 				else

@@ -28,7 +28,7 @@
 	<message-resources parameter="com.forbes.struts.ApplicationResources" />
 	
 	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
-		<set-property property="contextConfigLocation" value="/WEB-INF/classes/com/forbes/spring/applicationContext.xml" />
+		<set-property property="contextConfigLocation" value="/WEB-INF/classes/com/forbes/spring/forbes-module.xml" />
 	</plug-in>
 	
 </struts-config>

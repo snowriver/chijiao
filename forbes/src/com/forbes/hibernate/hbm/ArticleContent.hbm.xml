@@ -8,10 +8,19 @@
     <class name="com.forbes.hibernate.bean.ArticleContent" table="forbes_article_content">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="native" />
+            <generator class="foreign">
+            	<param name="property">article</param>
+            </generator>
         </id>
         <property name="content" type="java.lang.String">
             <column name="content" length="16277215" />
         </property>
+        
+         <one-to-one 
+         	name="article" 
+         	class="com.forbes.hibernate.bean.Article" 
+         	constrained="true" 
+         	lazy="proxy" 
+         	fetch="select" />
     </class>
 </hibernate-mapping>

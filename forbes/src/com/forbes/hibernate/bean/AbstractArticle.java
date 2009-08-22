@@ -32,7 +32,7 @@ public abstract class AbstractArticle implements java.io.Serializable {
 	private String source;
 	private Date pubdate;
 	private Date senddate;
-	private String content;
+	//private String content;
 	private String description;
 	private String keywords;
 	private Integer digg;
@@ -84,7 +84,7 @@ public abstract class AbstractArticle implements java.io.Serializable {
 			String source, Date pubdate, Date senddate, String description,
 			String keywords, Integer digg, Date diggtime, String isdelete,
 			Date lastpost, String litpic, Date sortrank, String color,
-			Short arcrank, String content) {
+			Short arcrank) {
 		this.userid = userid;
 		this.userip = userip;
 		this.likeid = likeid;
@@ -107,7 +107,7 @@ public abstract class AbstractArticle implements java.io.Serializable {
 		this.sortrank = sortrank;
 		this.color = color;
 		this.arcrank = arcrank;
-		this.content = content;
+		//this.content = content;
 	}
 
 	// Property accessors
@@ -296,13 +296,13 @@ public abstract class AbstractArticle implements java.io.Serializable {
 		this.arcrank = arcrank;
 	}
 
-	public String getContent() {
+	/*public String getContent() {
 		return content;
 	}
 
 	public void setContent(String content) {
 		this.content = content;
-	}
+	}*/
 
 	public Integer getContentCnt() {
 		return contentCnt;
