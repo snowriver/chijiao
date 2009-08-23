@@ -13,7 +13,7 @@
 	<import resource="forbes-aop.xml" />
 	<import resource="forbes-action-analysis.xml" />
 	<import resource="forbes-index.xml" />
-	<import resource="forbes-content.xml" />
+	<import resource="forbes-comment.xml" />
 	<import resource="forbes-favorite.xml" />
 	<import resource="forbes-feedback.xml" />
 	<import resource="forbes-order.xml" />

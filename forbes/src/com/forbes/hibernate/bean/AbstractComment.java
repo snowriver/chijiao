@@ -9,7 +9,7 @@ import java.util.Date;
  * @author MyEclipse Persistence Tools
  */
 
-public abstract class AbstractContent implements java.io.Serializable {
+public abstract class AbstractComment implements java.io.Serializable {
 
 	// Fields
 
@@ -18,7 +18,7 @@ public abstract class AbstractContent implements java.io.Serializable {
 	private UcMembers user;
 	private String username;
 	//private Article article;
-	private ContentType contentType;
+	private CommentType commentType;
 	private Integer objectId;
 	private String content;
 	private Date pubdate;
@@ -28,11 +28,11 @@ public abstract class AbstractContent implements java.io.Serializable {
 	// Constructors
 
 	/** default constructor */
-	public AbstractContent() {
+	public AbstractComment() {
 	}
 
 	/** full constructor */
-	public AbstractContent( String content, Date pubdate,
+	public AbstractComment( String content, Date pubdate,
 			String ip, Integer reId) {
 		//this.uerId = uerId;
 		this.content = content;
@@ -100,12 +100,12 @@ public abstract class AbstractContent implements java.io.Serializable {
 		this.user = user;
 	}
 
-	public ContentType getContentType() {
-		return contentType;
+	public CommentType getCommentType() {
+		return commentType;
 	}
 
-	public void setContentType(ContentType contentType) {
-		this.contentType = contentType;
+	public void setCommentType(CommentType commentType) {
+		this.commentType = commentType;
 	}
 
 	public Integer getObjectId() {

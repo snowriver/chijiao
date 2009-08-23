@@ -43,7 +43,7 @@ public abstract class AbstractArticle implements java.io.Serializable {
 	private Date sortrank;
 	private String color;
 	private Short arcrank;
-	private Integer contentCnt;
+	private Integer commentCnt;
 	
 	private String pubdateString;
 
@@ -304,13 +304,7 @@ public abstract class AbstractArticle implements java.io.Serializable {
 		this.content = content;
 	}*/
 
-	public Integer getContentCnt() {
-		return contentCnt;
-	}
-
-	public void setContentCnt(Integer contentCnt) {
-		this.contentCnt = contentCnt;
-	}
+	
 
 	public String getUsername() {
 		return username;
@@ -334,6 +328,14 @@ public abstract class AbstractArticle implements java.io.Serializable {
 
 	public void setArticleContent(ArticleContent articleContent) {
 		this.articleContent = articleContent;
+	}
+
+	public Integer getCommentCnt() {
+		return commentCnt;
+	}
+
+	public void setCommentCnt(Integer commentCnt) {
+		this.commentCnt = commentCnt;
 	}
 
 }

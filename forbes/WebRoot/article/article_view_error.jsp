@@ -62,7 +62,7 @@
 			}
 			else{
 					$.ajax({
-							url: 'ArticleContentAdd.do',
+							url: 'ArticleCommentAdd.do',
 							type: 'post',
 							dataType: 'html',
 							data:"id=${ARTICLE.id}&content=" + $("#content").val(),

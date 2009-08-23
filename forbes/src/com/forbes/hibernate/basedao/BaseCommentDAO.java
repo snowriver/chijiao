@@ -7,28 +7,30 @@ import org.hibernate.LockMode;
 import org.hibernate.Query;
 import org.hibernate.criterion.Example;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-
-import com.forbes.hibernate.bean.ContentType;
+import com.forbes.hibernate.bean.Comment;
 
 /**
  * A data access object (DAO) providing persistence and search support for
- * ContentType entities. Transaction control of the save(), update() and
+ * Comment entities. Transaction control of the save(), update() and
  * delete() operations can directly support Spring container-managed
  * transactions or they can be augmented to handle user-managed Spring
  * transactions. Each of these methods provides additional information for how
  * to configure it for the desired type of transaction control.
  * 
- * @see com.forbes.hibernate.bean.ContentType
+ * @see com.forbes.hibernate.bean.Comment
  * @author MyEclipse Persistence Tools
  */
 
-public class BaseContentTypeDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(BaseContentTypeDAO.class);
+public class BaseCommentDAO extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(BaseCommentDAO.class);
 	// property constants
-	public static final String TYPE_NAME = "typeName";
+	public static final String UER_ID = "uerId";
+	public static final String CONTENT = "content";
+	public static final String IP = "ip";
+	public static final String RE_ID = "reId";
 
-	public void save(ContentType transientInstance) {
-		log.debug("saving ContentType instance");
+	public void save(Comment transientInstance) {
+		log.debug("saving Comment instance");
 		try {
 			getSession().save(transientInstance);
 			log.debug("save successful");
@@ -38,8 +40,8 @@ public class BaseContentTypeDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void delete(ContentType persistentInstance) {
-		log.debug("deleting ContentType instance");
+	public void delete(Comment persistentInstance) {
+		log.debug("deleting Comment instance");
 		try {
 			getSession().delete(persistentInstance);
 			log.debug("delete successful");
@@ -49,11 +51,11 @@ public class BaseContentTypeDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public ContentType findById(java.lang.Short id) {
-		log.debug("getting ContentType instance with id: " + id);
+	public Comment findById(java.lang.Long id) {
+		log.debug("getting Comment instance with id: " + id);
 		try {
-			ContentType instance = (ContentType) getSession().get(
-					"com.forbes.hibernate.bean.ContentType", id);
+			Comment instance = (Comment) getSession().get(
+					"com.forbes.hibernate.bean.Comment", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -61,11 +63,11 @@ public class BaseContentTypeDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByExample(ContentType instance) {
-		log.debug("finding ContentType instance by example");
+	public List findByExample(Comment instance) {
+		log.debug("finding Comment instance by example");
 		try {
 			List results = getSession().createCriteria(
-					"com.forbes.hibernate.bean.ContentType").add(
+					"com.forbes.hibernate.bean.Comment").add(
 					Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
@@ -77,10 +79,10 @@ public class BaseContentTypeDAO extends HibernateDaoSupport {
 	}
 
 	public List findByProperty(String propertyName, Object value) {
-		log.debug("finding ContentType instance with property: " + propertyName
-				+ ", value: " + value);
+		log.debug("finding Comment instance with property: "
+				+ propertyName + ", value: " + value);
 		try {
-			String queryString = "from ContentType as model where model."
+			String queryString = "from Comment as model where model."
 					+ propertyName + "= ?";
 			Query queryObject = getSession().createQuery(queryString);
 			queryObject.setParameter(0, value);
@@ -91,14 +93,26 @@ public class BaseContentTypeDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByTypeName(Object typeName) {
-		return findByProperty(TYPE_NAME, typeName);
+	public List findByUerId(Object uerId) {
+		return findByProperty(UER_ID, uerId);
+	}
+
+	public List findByContent(Object content) {
+		return findByProperty(CONTENT, content);
+	}
+
+	public List findByIp(Object ip) {
+		return findByProperty(IP, ip);
+	}
+
+	public List findByReId(Object reId) {
+		return findByProperty(RE_ID, reId);
 	}
 
 	public List findAll() {
-		log.debug("finding all ContentType instances");
+		log.debug("finding all Comment instances");
 		try {
-			String queryString = "from ContentType";
+			String queryString = "from Comment";
 			Query queryObject = getSession().createQuery(queryString);
 			return queryObject.list();
 		} catch (RuntimeException re) {
@@ -107,10 +121,10 @@ public class BaseContentTypeDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public ContentType merge(ContentType detachedInstance) {
-		log.debug("merging ContentType instance");
+	public Comment merge(Comment detachedInstance) {
+		log.debug("merging Comment instance");
 		try {
-			ContentType result = (ContentType) getSession().merge(
+			Comment result = (Comment) getSession().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -120,8 +134,8 @@ public class BaseContentTypeDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachDirty(ContentType instance) {
-		log.debug("attaching dirty ContentType instance");
+	public void attachDirty(Comment instance) {
+		log.debug("attaching dirty Comment instance");
 		try {
 			getSession().saveOrUpdate(instance);
 			log.debug("attach successful");
@@ -131,8 +145,8 @@ public class BaseContentTypeDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachClean(ContentType instance) {
-		log.debug("attaching clean ContentType instance");
+	public void attachClean(Comment instance) {
+		log.debug("attaching clean Comment instance");
 		try {
 			getSession().lock(instance, LockMode.NONE);
 			log.debug("attach successful");

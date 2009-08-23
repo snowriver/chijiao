@@ -51,6 +51,26 @@
       		window.clipboardData.setData("Text",msg);  
          	alert("复制成功，请粘贴到你的QQ/MSN上推荐给你的好友！\r\n\r\n内容如下：\r\n" + msg);  
         }
+        
+        function Digg(id) {
+			$.ajax({
+				url: 'NewsDigg.do',
+				type: 'post',
+				dataType: 'html',
+				data:"id="+id,
+				timeout: 10000,
+				error: function(){
+					alert("操作失败，请稍后再试");
+				},
+				success: function(rsHtml){
+					var result = rsHtml.replace(/(^\s*)|(\s*$)/g,""); 
+					$("#diggs-strong-"+id).html(result);
+					//$("#digg").empty();
+					//$("#digg").append("<center>顶过了</center>");
+				}
+			});
+			
+		}
 	</SCRIPT>
 
 </HEAD>
@@ -85,7 +105,7 @@
 				<UL id=sorts>
 					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=pubdate desc"> 最新资讯 </A>
 					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=click desc">	最多点击 </A> 
-					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=contentCnt desc"> 最多评论 </A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=commentCnt desc"> 最多评论 </A> 
 					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=pubdate desc">	最多收藏 </A> 
 					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=digg desc"> 最多顶</A> 
 					<FONT style="COLOR: #ccc">|</FONT>  
@@ -102,7 +122,7 @@
 				        <P>${fn:substring(news.description, 0, 145)}...</P>
 				        <DIV class=news-details>
 				        	
-				            <A class="tool comments" href="NewsContentSearch.do?act=list&id=${news.id }" target="_blank"><IMG alt="" src="images/comment_icon.gif" alt="评论">评论(${news.contentCnt })</A> 
+				            <A class="tool comments" href="NewsCommentSearch.do?act=list&id=${news.id }" target="_blank"><IMG alt="" src="images/comment_icon.gif" alt="评论">评论(${news.commentCnt })</A> 
 				            <A class="tool comments" href="NewsView.do?id=${news.id}" target="_blank"><IMG alt="" src="images/click_icon.gif" alt="浏览">浏览(${news.click })</A> 
 				            <A class="tool share" href="javascript:void(0)" onclick="openDIV('收藏','../client/ClientManageNewsFavorite.do?act=add&id=${news.id }','500','350')"><IMG alt="" src="images/collect_icon.gif" alt="收藏">收藏</A>
 				             <A class="tool share" href="JavaScript:copyUserHomeToClipBoard('${news.title }  <%=(String)request.getRequestURL().substring(0, request.getRequestURL().indexOf("article") )%>article/NewsView.do?id=${news.id }');"><IMG alt="" src="images/recommand_icon.gif">推荐</A> 
@@ -116,8 +136,8 @@
 				 		</DIV>
 					</DIV>				
 					<UL class=news-digg>
-				  		<LI id=main8 class=digg-count><A id=diggs8 href="#"><STRONG id=diggs-strong-8>${news.digg }</STRONG><br>顶一下</A></LI>
-				  		<LI id=diglink8 class=digg-it><A onclick="openDIV('收藏','../client/ClientManageNewsFavorite.do?act=add&id=${news.id }','500','350')" href="javascript:void(0);">收藏</A> </LI>
+				  		<LI id=main${news.id } class=digg-count><A id=diggs${news.id } href="javascript:void(0);" onclick="Digg(${news.id});"><STRONG id=diggs-strong-${news.id }>${news.digg }</STRONG><br>顶一下</A></LI>
+				  		<LI id=diglink${news.id } class=digg-it><A onclick="openDIV('收藏','../client/ClientManageNewsFavorite.do?act=add&id=${news.id }','500','350')" href="javascript:void(0);">收藏</A> </LI>
 				    </UL>
 				</DIV>				
 				<DIV class="boxoff"></DIV>

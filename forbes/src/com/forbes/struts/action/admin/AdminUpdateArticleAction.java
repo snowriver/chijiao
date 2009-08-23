@@ -16,10 +16,10 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import com.forbes.hibernate.bean.Article;
 import com.forbes.hibernate.bean.ArticleType;
-import com.forbes.hibernate.bean.Content;
+import com.forbes.hibernate.bean.Comment;
 import com.forbes.service.account.ScoreManager;
 import com.forbes.service.article.ArticleTypeManager;
-import com.forbes.service.article.ContentManager;
+import com.forbes.service.article.CommentManager;
 import com.forbes.service.article.ArticleListManager;
 import com.forbes.struts.form.article.ArticleInfoForm;
 import com.forbes.util.DictionaryManager;
@@ -42,7 +42,7 @@ public class AdminUpdateArticleAction extends DispatchAction {
 	
 	private ArticleTypeManager articleTypeManager;	
 
-	private ContentManager contentManager;
+	private CommentManager commentManager;
 	
 	private ScoreManager scoreManager;
 	
@@ -150,12 +150,12 @@ public class AdminUpdateArticleAction extends DispatchAction {
 				id = artID[i];
 				System.out.println(id);
 				Article a = articleListManager.getArticle(Integer.parseInt(id));
-				List acs = contentManager.getContent(new Short("2"), a.getId());
+				List acs = commentManager.getComment(new Short("2"), a.getId());
 				System.out.println("acs.size = "+acs.size());
 				for(int j=0; j<acs.size(); j++) {
-					Content ac = (Content)acs.get(j);
+					Comment ac = (Comment)acs.get(j);
 					System.out.println("ac.id = "+ac.getId() );
-					contentManager.deleteContent(ac);
+					commentManager.deleteComment(ac);
 				}
 				a.setIsdelete("Y");
 				articleListManager.updateArticle(a);
@@ -313,11 +313,11 @@ public class AdminUpdateArticleAction extends DispatchAction {
 			return mapping.findForward("fail");
 		}
 	}
-	public ContentManager getContentManager() {
-		return contentManager;
+	public CommentManager getCommentManager() {
+		return commentManager;
 	}
-	public void setContentManager(ContentManager contentManager) {
-		this.contentManager = contentManager;
+	public void setCommentManager(CommentManager commentManager) {
+		this.commentManager = commentManager;
 	}
 
 	//ÅúÁ¿ÐÞ¸Ä

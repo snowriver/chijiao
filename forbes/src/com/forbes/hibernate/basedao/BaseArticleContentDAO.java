@@ -17,7 +17,7 @@ import com.forbes.hibernate.bean.ArticleContent;
  * transactions. Each of these methods provides additional information for how
  * to configure it for the desired type of transaction control.
  * 
- * @see com.forbes.hibernate.bean,ArticleContent
+ * @see com.forbes.hibernate.bean.ArticleContent
  * @author MyEclipse Persistence Tools
  */
 
@@ -56,7 +56,7 @@ public class BaseArticleContentDAO extends HibernateDaoSupport {
 		log.debug("getting ArticleContent instance with id: " + id);
 		try {
 			ArticleContent instance = (ArticleContent) getHibernateTemplate()
-					.get("com.forbes.hibernate.bean,ArticleContent", id);
+					.get("com.forbes.hibernate.bean.ArticleContent", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);

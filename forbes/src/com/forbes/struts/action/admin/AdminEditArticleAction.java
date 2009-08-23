@@ -66,7 +66,7 @@ public class AdminEditArticleAction extends DispatchAction {
 			if(articleListManager.verifyTitle(articleInfoForm.getTitle().trim())) {				
 				
 				ArticleContent content = new ArticleContent();
-				content.setContent(articleInfoForm.getContent());				
+				content.setContent(articleInfoForm.getContent());
 				
 				a.setIsdelete("N");
 				a.setUserid( user.getUid() );

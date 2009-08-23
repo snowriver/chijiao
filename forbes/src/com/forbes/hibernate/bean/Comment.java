@@ -7,17 +7,17 @@ import java.util.Date;
  * 
  * @author MyEclipse Persistence Tools
  */
-public class Content extends AbstractContent implements
+public class Comment extends AbstractComment implements
 		java.io.Serializable {
 
 	// Constructors
 
 	/** default constructor */
-	public Content() {
+	public Comment() {
 	}
 
 	/** full constructor */
-	public Content( String content, Date pubdate,
+	public Comment( String content, Date pubdate,
 			String ip,Integer reId) {
 		super( content, pubdate, ip, reId);
 	}

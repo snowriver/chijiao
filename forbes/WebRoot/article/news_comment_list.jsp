@@ -33,7 +33,7 @@
   
 		function pageselectCallback(page_id, jq){
 		 
-		  window.location="ArticleContentSearch.do?act=list&id=${PARA['id']}&pno=" + (page_id+1);
+		  window.location="NewsCommentSearch.do?act=list&id=${PARA['id']}&pno=" + (page_id+1);
 	      //$('#Searchresult').text("Showing search results "+((page_id*10)+1)+"-"+((page_id*10)+10));
 	    }
 		
@@ -78,10 +78,10 @@
 			}
 			else{
 					$.ajax({
-							url: 'ArticleContentAdd.do',
+							url: 'NewsCommentAdd.do',
 							type: 'post',
 							dataType: 'html',
-							data:"id=${ARTICLE.id}&content=" + $("#content").val(),
+							data:"id=${NEWS.id}&content=" + $("#content").val(),
 							timeout: 10000,
 							error: function(){
 								alert("留言失敗，請稍後再試");
@@ -128,7 +128,7 @@
 		function delCommentInfo(id) {	//发送留言
 			
 					$.ajax({
-							url: 'ContentDelete.do',
+							url: 'CommentDelete.do',
 							type: 'post',
 							dataType: 'html',
 							data:"id=" + id,
@@ -187,25 +187,25 @@
 	您现在的位置： 
 	<A href="../index.jsp" target=_blank>赤脚网</A> &gt;&gt; 
 	<A href="#" target=_blank>评论中心</A> &gt;&gt; 
-	<A href="ArticleView.do?id=${ARTICLE.id }" target=_blank>${ARTICLE.title }</A>
+	<A href="NewsView.do?id=${NEWS.id }" target=_blank>${NEWS.title }</A>
 </DIV><!--admin buttons start-->
 
 <DIV><SPAN id=delbuttonDiv></SPAN></DIV><!--admin buttons end-->
 
-<H5 class=title_1>原文链接：<SPAN class=color_brown><A href="ArticleView.do?id=${ARTICLE.id }" target=_blank>${ARTICLE.title }</A></SPAN></H5><!--comment:title_end-->
+<H5 class=title_1>原文链接：<SPAN class=color_brown><A href="NewsView.do?id=${NEWS.id }" target=_blank>${NEWS.title }</A></SPAN></H5><!--comment:title_end-->
 <FORM name=delForm><!--comment:itemlist_start-->
 
 
-<c:forEach items="${ARTICLE_CONTENT_LIST}" var="content"> 
+<c:forEach items="${NEWS_COMMENT_LIST}" var="comment"> 
 <TABLE class=comt_tb id=commentinfo_1738 cellSpacing=0 cellPadding=0 border=0>
 	<TBODY>
 	<TR>
     	<TD class=comt_title>
-    		<SPAN class="comt_boy left"><a target="_blank" href="${UC_HOME_URL }/space.php?uid=${content.user.uid }">${content.username }</a></SPAN>
-    		<SPAN class="comt_info left">&nbsp;&nbsp;${content.pubdate }</SPAN> 
+    		<SPAN class="comt_boy left"><a target="_blank" href="${UC_HOME_URL }/space.php?uid=${comment.user.uid }">${comment.username }</a></SPAN>
+    		<SPAN class="comt_info left">&nbsp;&nbsp;${comment.pubdate }</SPAN> 
     		<SPAN class="alarm right" id=itemId_1738>[<A onclick="window.open('#','_blank','width=480,height=350')" href="javascript:;">举报</A>] </SPAN>
-    		<c:if test="${ sessionScope.CLIENT.uid == content.user.uid || not empty sessionScope.ADMIN }">
-    			<SPAN class="del right" id=itemId_1738><A onClick="delCommentInfo('${content.id }')" href="javascript:void(0);">删除</A></SPAN>
+    		<c:if test="${ sessionScope.CLIENT.uid == comment.user.uid || not empty sessionScope.ADMIN }">
+    			<SPAN class="del right" id=itemId_1738><A onClick="delCommentInfo('${comment.id }')" href="javascript:void(0);">删除</A></SPAN>
     		</c:if>
     		<!-- <SPAN class="quote right" id=itemId_1738><A onclick=javascript:fz(1738) href="#">引用</A></SPAN> -->
     		<SPAN id=itemId_1738></SPAN>&nbsp; 
@@ -215,11 +215,11 @@
     	<TD class=comt_ctn><BR>
 	    	<!-- 
 	    		<SCRIPT>
-      			doStr("<div class=\"defind\"><span class=\"defindword\">引用&nbsp;赤脚网用户&nbsp;发表的内容: </span><br /><div class=\"defindinfo\">${content.content }</div></div>");
+      			doStr("<div class=\"defind\"><span class=\"defindword\">引用&nbsp;赤脚网用户&nbsp;发表的内容: </span><br /><div class=\"defindinfo\">${comment.content }</div></div>");
       		</SCRIPT>
 	    	 -->
       		
-      		${content.content }
+      		${comment.content }
       		<BR>
       	</TD>
 	</TR>

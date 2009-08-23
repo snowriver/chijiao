@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Set;
 import com.forbes.hibernate.bean.User;
 
-
-
 /**
  * AbstractArticle entity provides the base persistence definition of the
  * Article entity.
@@ -21,7 +19,8 @@ public abstract class AbstractVideo implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private UcMembers user;
+	// private UcMembers user;
+	private Integer userid;
 	private String username;
 	private String userip;
 	private String likeid;
@@ -50,10 +49,10 @@ public abstract class AbstractVideo implements java.io.Serializable {
 	// Constructors
 	private VideoType videoType;
 	private VideoType videoType2;
-	
+
 	private VideoUrl firstVideoUrl;
 
-	private Set videoUrls = new HashSet(0); 
+	private Set videoUrls = new HashSet(0);
 
 	public VideoType getVideoType() {
 		return videoType;
@@ -76,13 +75,14 @@ public abstract class AbstractVideo implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractVideo(UcMembers user, String userip, String likeid, Short iscommend, Short isverify,
-			Integer click, String title, String shorttitle, String writer,
-			String source, Date pubdate, Date senddate, String description,
-			String keywords, Integer digg, Date diggtime, String isdelete,
-			Date lastpost, String litpic, Short litpictype, Date sortrank, String color,
-			Short videorank, String content ) {
-		this.user = user;
+	public AbstractVideo(Integer userid, String userip, String likeid,
+			Short iscommend, Short isverify, Integer click, String title,
+			String shorttitle, String writer, String source, Date pubdate,
+			Date senddate, String description, String keywords, Integer digg,
+			Date diggtime, String isdelete, Date lastpost, String litpic,
+			Short litpictype, Date sortrank, String color, Short videorank,
+			String content) {
+		this.userid = userid;
 		this.userip = userip;
 		this.likeid = likeid;
 		this.iscommend = iscommend;
@@ -106,11 +106,11 @@ public abstract class AbstractVideo implements java.io.Serializable {
 		this.color = color;
 		this.videorank = videorank;
 		this.content = content;
-		
-		/*this.width = width;
-		this.height = height;
-		this.videourl = videourl;
-		this.fromweb = fromweb;*/
+
+		/*
+		 * this.width = width; this.height = height; this.videourl = videourl;
+		 * this.fromweb = fromweb;
+		 */
 	}
 
 	// Property accessors
@@ -123,16 +123,12 @@ public abstract class AbstractVideo implements java.io.Serializable {
 		this.id = id;
 	}
 
-
-
-	
-
-	public UcMembers getUser() {
-		return user;
+	public Integer getUserid() {
+		return userid;
 	}
 
-	public void setUser(UcMembers user) {
-		this.user = user;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 
 	public String getUserip() {
@@ -295,7 +291,6 @@ public abstract class AbstractVideo implements java.io.Serializable {
 		this.color = color;
 	}
 
-
 	public Short getVideorank() {
 		return videorank;
 	}
@@ -312,37 +307,23 @@ public abstract class AbstractVideo implements java.io.Serializable {
 		this.content = content;
 	}
 
-	/*public Integer getWidth() {
-		return width;
-	}
-
-	public void setWidth(Integer width) {
-		this.width = width;
-	}
-
-	public Integer getHeight() {
-		return height;
-	}
-
-	public void setHeight(Integer height) {
-		this.height = height;
-	}
-
-	public String getVideourl() {
-		return videourl;
-	}
-
-	public void setVideourl(String videourl) {
-		this.videourl = videourl;
-	}
-
-	public String getFromweb() {
-		return fromweb;
-	}
-
-	public void setFromweb(String fromweb) {
-		this.fromweb = fromweb;
-	}*/
+	/*
+	 * public Integer getWidth() { return width; }
+	 * 
+	 * public void setWidth(Integer width) { this.width = width; }
+	 * 
+	 * public Integer getHeight() { return height; }
+	 * 
+	 * public void setHeight(Integer height) { this.height = height; }
+	 * 
+	 * public String getVideourl() { return videourl; }
+	 * 
+	 * public void setVideourl(String videourl) { this.videourl = videourl; }
+	 * 
+	 * public String getFromweb() { return fromweb; }
+	 * 
+	 * public void setFromweb(String fromweb) { this.fromweb = fromweb; }
+	 */
 
 	public Set getVideoUrls() {
 		return videoUrls;
@@ -361,16 +342,16 @@ public abstract class AbstractVideo implements java.io.Serializable {
 	}
 
 	public VideoUrl getFirstVideoUrl() {
-		if ( !videoUrls.isEmpty() ) {
-			List <VideoUrl> urls = new ArrayList(this.getVideoUrls());
+		if (!videoUrls.isEmpty()) {
+			List<VideoUrl> urls = new ArrayList(this.getVideoUrls());
 			return urls.get(0);
-		}
-		else return null;
+		} else
+			return null;
 	}
 
 	public void setFirstVideoUrl(VideoUrl firstVideoUrl) {
-		if ( !videoUrls.isEmpty() ) {
-			List <VideoUrl> urls = new ArrayList(this.getVideoUrls());
+		if (!videoUrls.isEmpty()) {
+			List<VideoUrl> urls = new ArrayList(this.getVideoUrls());
 			this.firstVideoUrl = urls.get(0);
 		}
 	}
@@ -382,8 +363,5 @@ public abstract class AbstractVideo implements java.io.Serializable {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
-	
-
 
 }

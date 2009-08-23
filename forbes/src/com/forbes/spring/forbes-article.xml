@@ -117,8 +117,8 @@
 		<property name="articleListManager">
 			<ref bean="articleListManagerService" />
 		</property>
-		<property name="contentManager">
-			<ref bean="contentManagerService" />
+		<property name="commentManager">
+			<ref bean="commentManagerService" />
 		</property>
 		<property name="scoreManager">
 			<ref bean="scoreManagerService" />

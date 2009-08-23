@@ -7,7 +7,7 @@ package com.forbes.hibernate.bean;
  * @author MyEclipse Persistence Tools
  */
 
-public abstract class AbstractContentType implements java.io.Serializable {
+public abstract class AbstractCommentType implements java.io.Serializable {
 
 	// Fields
 
@@ -17,11 +17,11 @@ public abstract class AbstractContentType implements java.io.Serializable {
 	// Constructors
 
 	/** default constructor */
-	public AbstractContentType() {
+	public AbstractCommentType() {
 	}
 
 	/** full constructor */
-	public AbstractContentType(String typeName) {
+	public AbstractCommentType(String typeName) {
 		this.typeName = typeName;
 	}
 

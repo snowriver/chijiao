@@ -1,13 +1,8 @@
 package com.forbes.hibernate.dao;
 
-import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.LockMode;
-import org.hibernate.Query;
-import org.hibernate.criterion.Example;
-
-import com.forbes.hibernate.basedao.BaseContentTypeDAO;
+import com.forbes.hibernate.basedao.BaseCommentTypeDAO;
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -17,12 +12,12 @@ import com.forbes.hibernate.basedao.BaseContentTypeDAO;
  * transactions. Each of these methods provides additional information for how
  * to configure it for the desired type of transaction control.
  * 
- * @see com.forbes.hibernate.ContentType
+ * @see com.forbes.hibernate.CommentType
  * @author MyEclipse Persistence Tools
  */
 
-public class ContentTypeDAO extends BaseContentTypeDAO {
-	private static final Log log = LogFactory.getLog(ContentTypeDAO.class);
+public class CommentTypeDAO extends BaseCommentTypeDAO {
+	private static final Log log = LogFactory.getLog(CommentTypeDAO.class);
 	// property constants
 	
 }

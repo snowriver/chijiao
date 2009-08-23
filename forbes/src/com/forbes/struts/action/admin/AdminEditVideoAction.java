@@ -59,7 +59,7 @@ public class AdminEditVideoAction extends DispatchAction {
 			if(videoListManager.verifyTitle(videoInfoForm.getTitle().trim())) {
 				Video v = new Video();
 				v.setIsdelete("N");
-				v.setUser( user );
+				v.setUserid( user.getUid() );
 				v.setUsername(user.getUsername());
 				v.setUserip( request.getLocalAddr() );
 				v.setPubdate( formatter.parse(videoInfoForm.getPubdate()) );
@@ -233,6 +233,8 @@ public class AdminEditVideoAction extends DispatchAction {
 	public ActionForward edit(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		VideoInfoForm videoInfoForm = (VideoInfoForm) form;
+		
+		UcMembers admin = (UcMembers)request.getSession().getAttribute("ADMIN");
 		String returnUrl = request.getParameter("returnUrl");
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		System.out.println(returnUrl);
@@ -241,7 +243,7 @@ public class AdminEditVideoAction extends DispatchAction {
 			if(videoListManager.verifyTitle(videoInfoForm.getId(), videoInfoForm.getTitle().trim())) {
 				Video v = videoListManager.getVideo(videoInfoForm.getId());
 				v.setIsdelete("N");
-				v.setUser( (UcMembers)request.getSession().getAttribute("ADMIN") );
+				v.setUserid( admin.getUid()  );
 				v.setUserip( request.getLocalAddr() );
 				v.setPubdate( formatter.parse(videoInfoForm.getPubdate()) );
 				v.setTitle( videoInfoForm.getTitle() );

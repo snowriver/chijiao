@@ -3,12 +3,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
 
-<%
-    com.forbes.ajax.ArticleTypeSelector ss = new com.forbes.ajax.ArticleTypeSelector();
-	java.util.Map types = ss.getALlArticleTypes();
-	request.setAttribute("ARTICLE_TYPE_LIST", types);
-%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -125,7 +119,7 @@
 					<td><c:if test="${ article.iscommend > 0 }">${ article.iscommend }</c:if></td>					
 					<td><fmt:formatDate value='${article.pubdate }' type='date'/></td>
 					<td>						
-						${ARTICLE_TYPE_LIST[article.articleType.id] }
+						${article.articleType.name }
 					</td>
 					<td>${article.click }</td>
 					<td>ÒÑÉú³É</td>

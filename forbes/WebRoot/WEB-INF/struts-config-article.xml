@@ -110,21 +110,21 @@
     </action>
     
     <action
-      path="/article/ArticleContentAdd"
+      path="/article/ArticleCommentAdd" 
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">
       <forward name="ok" path="/article/operate_result.jsp" />
     </action>
     
     <action
-      path="/article/ContentDelete"
+      path="/article/CommentDelete"
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">
       <forward name="ok" path="/article/operate_result.jsp" />
     </action>
     
     <action
-      path="/article/NewsContentAdd"
+      path="/article/NewsCommentAdd"
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">
       <forward name="ok" path="/article/operate_result.jsp" />
@@ -132,20 +132,20 @@
     
     <action
       parameter="act"
-      path="/article/ArticleContentSearch"
+      path="/article/ArticleCommentSearch" 
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">
-      <forward name="top" path="/article/top_article_content_list.jsp" />
-      <forward name="list" path="/article/article_content_list.jsp" />
+      <forward name="top" path="/article/top_article_comment_list.jsp" />
+      <forward name="list" path="/article/article_comment_list.jsp" />
     </action>
     
     <action
       parameter="act"
-      path="/article/NewsContentSearch"
+      path="/article/NewsCommentSearch"
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">
-      <forward name="top" path="/article/top_news_content_list.jsp" />
-      <forward name="list" path="/article/news_content_list.jsp" />
+      <forward name="top" path="/article/top_news_comment_list.jsp" />
+      <forward name="list" path="/article/news_comment_list.jsp" />
     </action>
     
     <action

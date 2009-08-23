@@ -13,6 +13,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import com.forbes.hibernate.bean.Article;
+import com.forbes.hibernate.bean.ArticleContent;
 import com.forbes.service.article.ArticleListManager;
 import com.forbes.util.Constant;
 import com.forbes.util.ToHtml;
@@ -54,8 +55,10 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 						request.getRealPath("/") + "article" + "/" + articleid + ".html", "gbk", "gbk");*/
 				
 				//生成TXT文件
-				Article article = articleListManager.getArticle(articleid);
-				boolean txtFlag = ToHtml.toTxt(article.getContent(),
+				//Article article = articleListManager.getArticle(articleid);
+				ArticleContent content = articleListManager.getArticleContent(articleid);
+				
+				boolean txtFlag = ToHtml.toTxt(content.getContent(),
 						request.getRealPath("/") + "article/txt/" + articleid + ".txt", "gbk");
 				if(flag)
 					okCnt++;
@@ -66,6 +69,7 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 			request.setAttribute( "RETURN_URL", new UrlTool().getUrl2(returnUrl, "[|]") );
 			return mapping.findForward("ok");
 		} catch (Exception e) {
+			e.printStackTrace();
 			request.setAttribute( "FAIL_MESSAGE", "生成失败，请稍后再试。" );
 			return mapping.findForward("fail");
 		}
@@ -92,8 +96,9 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 				flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+id,
 						request.getRealPath("/") + "article" + "/" + id + ".html", "gbk", "gbk");
 				
-				Article article = articleListManager.getArticle(Integer.parseInt(id));
-				boolean txtFlag = ToHtml.toTxt(article.getContent(),
+				//Article article = articleListManager.getArticle(Integer.parseInt(id));
+				ArticleContent content = articleListManager.getArticleContent(Integer.parseInt(id));
+				boolean txtFlag = ToHtml.toTxt(content.getContent(),
 						request.getRealPath("/") + "article/txt/" + id + ".txt", "gbk");
 				
 				if(flag)

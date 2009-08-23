@@ -17,7 +17,7 @@
 			<LI <c:if test="${p == 'client_manage_daily_plan' }">class="li_page_on"</c:if>><A href="ClientManageUserDailyPlan.do?act=list">今日计划</A> </LI>
   			<LI <c:if test="${p == 'client_manage_month_plan' }">class="li_page_on"</c:if>><A href="ClientManageUserMonthAimPlan.do?act=list">月度计划表</A> </LI>
   			<LI <c:if test="${p == 'client_manage_month_sumup' }">class="li_page_on"</c:if>><A href="ClientManageUserMonthSumup.do?act=list">月度总结</A> </LI>
-  			<LI <c:if test="${p == 'client_manage_year_plan' }">class="li_page_on"</c:if>><A href="ClientManageUserYearAimPlan.do?act=list">年度计划表</A> </LI>
+  			<LI <c:if test="${p == 'client_manage_year_plan' }">class="li_page_on"</c:if>><A href="ClientManageUserYearAimPlan.do?act=list">年度计划进度表</A> </LI>
   			<LI <c:if test="${p == 'client_manage_life_aim' }">class="li_page_on"</c:if>><A href="ClientManageUserLifeStageAim.do?act=list">人生阶段目标</A> </LI>
   		</UL>
   	</DIV>

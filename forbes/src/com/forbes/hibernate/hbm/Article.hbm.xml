@@ -102,8 +102,8 @@
         <property name="arcrank" type="java.lang.Short">
             <column name="arcrank" />
         </property>
-        <property name="contentCnt" type="java.lang.Integer" lazy="true">
-		    <formula>( select count(*) from forbes_content as content where content.content_type_id = 1 and content.object_id = id )</formula> 
+        <property name="commentCnt" type="java.lang.Integer" lazy="true">
+		    <formula>( select count(*) from forbes_comment as comment where comment.comment_type_id = 1 and comment.object_id = id )</formula> 
 		</property>
     </class>
 </hibernate-mapping>

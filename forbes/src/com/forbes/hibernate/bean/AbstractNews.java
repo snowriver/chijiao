@@ -35,7 +35,7 @@ public abstract class AbstractNews implements java.io.Serializable {
 	private String color;
 	private Short arcrank;
 	private String content;
-	private Integer contentCnt;
+	private Integer commentCnt;
 
 	private String pubdateString;
 	
@@ -45,13 +45,7 @@ public abstract class AbstractNews implements java.io.Serializable {
 	}
 	// Constructors
 
-	public Integer getContentCnt() {
-		return contentCnt;
-	}
-
-	public void setContentCnt(Integer contentCnt) {
-		this.contentCnt = contentCnt;
-	}
+	
 
 	/** default constructor */
 	public AbstractNews() {
@@ -254,6 +248,18 @@ public abstract class AbstractNews implements java.io.Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+
+
+	public Integer getCommentCnt() {
+		return commentCnt;
+	}
+
+
+
+	public void setCommentCnt(Integer commentCnt) {
+		this.commentCnt = commentCnt;
 	}
 
 }
