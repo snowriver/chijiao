@@ -13,7 +13,7 @@
 	<import resource="forbes-aop.xml" />
 	<import resource="forbes-action-analysis.xml" />
 	<import resource="forbes-index.xml" />
-	<import resource="forbes-content.xml" />
+	<import resource="forbes-comment.xml" />
 	<import resource="forbes-favorite.xml" />
 	<import resource="forbes-feedback.xml" />
 	<import resource="forbes-order.xml" />
@@ -81,8 +81,8 @@
 				<value>com/forbes/hibernate/hbm/UserLevel.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserLevelPromotion.hbm.xml</value>
 				
-				<value>com/forbes/hibernate/hbm/Content.hbm.xml</value>
-				<value>com/forbes/hibernate/hbm/ContentType.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/Comment.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/CommentType.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/VideoType.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/Article.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/Video.hbm.xml</value>
@@ -234,13 +234,13 @@
     	</property>
     </bean>
     
-    <bean id="ContentDAO" class="com.forbes.hibernate.dao.ContentDAO">
+    <bean id="CommentDAO" class="com.forbes.hibernate.dao.CommentDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
     
-    <bean id="ContentTypeDAO" class="com.forbes.hibernate.dao.ContentTypeDAO">
+    <bean id="CommentTypeDAO" class="com.forbes.hibernate.dao.CommentTypeDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>

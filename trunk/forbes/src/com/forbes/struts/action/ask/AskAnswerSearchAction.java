@@ -11,7 +11,7 @@ import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import com.forbes.service.article.ContentManager;
+import com.forbes.service.article.CommentManager;
 import com.forbes.service.ask.AskAnswerManager;
 
 

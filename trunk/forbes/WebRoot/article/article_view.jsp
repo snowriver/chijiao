@@ -25,7 +25,7 @@
 		function listComments(divid){
 			
 			$.ajax({
-				url: 'ArticleContentSearch.do',
+				url: 'ArticleCommentSearch.do',
 				type: 'post',
 				dataType: 'html',
 				data:'act=top&id=' + ${ARTICLE.id },
@@ -94,7 +94,7 @@
 			}
 			else{
 					$.ajax({
-							url: 'ArticleContentAdd.do',
+							url: 'ArticleCommentAdd.do',
 							type: 'post',
 							dataType: 'html',
 							data:"id=${ARTICLE.id}&content=" + $("#content").val(),
@@ -127,16 +127,7 @@
 		}
 		
 		
-		function Digg() {	//发送留言
-	    	//openDIV('登录','../client/ClientReLogin.jsp','500','350');
-			//alert($("#loginName").val());
-			
-			
-			
-				//if($("#userid").val().length <1) {
-					//openDIV('登录','../client/ClientReLogin.jsp','500','350');
-				//}
-				//alert("Digg");
+		function Digg() {
 					$.ajax({
 							url: 'ArticleDigg.do',
 							type: 'post',
@@ -269,7 +260,10 @@
   		</DIV>
   		
   		<DIV class=news_about>
-  			<DIV class=news_about_tit><A target=_blank href="ArticleContentSearch.do?act=list&id=${ARTICLE.id }">发表/查看所有评论</A>(<STRONG><SPAN id=total_con1>${ARTICLE.contentCnt }</SPAN></STRONG>)</DIV>
+  			<DIV class=news_about_tit>
+  				<A target=_blank href="ArticleCommentSearch.do?act=list&id=${ARTICLE.id }">发表/查看所有评论</A>
+  				(<STRONG><SPAN id=total_con1>${ARTICLE.commentCnt }</SPAN></STRONG>)
+  			</DIV>
 			<DIV class=news_about_con>
 				<DIV class=news_about_con_1>
 				<!--around this table start-->

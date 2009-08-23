@@ -11,7 +11,7 @@
 
   	if(request.getSession().getAttribute("ADMIN") != null ) {
 		try{
-			request.getRequestDispatcher("index_main.jsp").forward(request,response);
+			//request.getRequestDispatcher("index_main.jsp").forward(request,response);
 		} catch(Exception e){
 			e.printStackTrace();
 		}	

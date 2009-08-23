@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	
+	<bean id="commentManager" class="com.forbes.service.article.impl.CommentManagerImpl">
+		<property name="commentDAO">
+			<ref bean="CommentDAO" />
+		</property>
+		<property name="commentTypeDAO">
+			<ref bean="CommentTypeDAO" />
+		</property>
+	</bean>
+	
+	
+	<!-- -->	
+	
+	
+	<bean id="commentManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="commentManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<!--  -->
+	
+	<bean name="/article/ArticleCommentAdd" class="com.forbes.struts.action.article.ArticleCommentAddAction" singleton="false">
+		<property name="commentManager">
+			<ref bean="commentManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/article/CommentDelete" class="com.forbes.struts.action.article.CommentDeleteAction" singleton="false">
+		<property name="commentManager">
+			<ref bean="commentManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/article/NewsCommentAdd" class="com.forbes.struts.action.article.NewsCommentAddAction" singleton="false">
+		<property name="commentManager">
+			<ref bean="commentManagerService" />
+		</property>
+	</bean>
+	
+	<bean name="/article/ArticleCommentSearch" class="com.forbes.struts.action.article.ArticleCommentSearchAction" singleton="false">
+		<property name="commentManager">
+			<ref bean="commentManagerService" />
+		</property>
+		<property name="articleListManager">
+			<ref bean="articleListManagerService" />
+		</property>
+	</bean>
+
+	<bean name="/article/NewsCommentSearch" class="com.forbes.struts.action.article.NewsCommentSearchAction" singleton="false">
+		<property name="commentManager">
+			<ref bean="commentManagerService" />
+		</property>
+		<property name="newsManager">
+			<ref bean="newsManagerService" />
+		</property>
+	</bean>
+	
+</beans>

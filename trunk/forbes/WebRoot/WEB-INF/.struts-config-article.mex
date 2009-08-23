@@ -8,12 +8,12 @@
   <StrutsActivity path="/admin/AdminManageSearchKeyword.do" location="1635,0" dimension="362,100" />
   <StrutsActivity path="/article/ArticleSearch.do" location="563,437" dimension="362,100" />
   <StrutsActivity path="/article/ArticleView.do" location="50,150" dimension="362,104" />
-  <StrutsActivity path="/article/ArticleContentAdd.do" location="0,754" dimension="362,100" />
-  <StrutsActivity path="/article/ContentDelete.do" location="1850,650" dimension="362,100" />
-  <StrutsActivity path="/article/NewsContentAdd.do" location="462,754" dimension="362,100" />
-  <StrutsActivity path="/article/ArticleContentSearch.do" location="1068,1348" dimension="362,100" />
-  <StrutsActivity path="/article/NewsContentSearch.do" location="0,1645" dimension="362,100" />
+  <StrutsActivity path="/article/CommentDelete.do" location="1250,950" dimension="362,104" />
+  <StrutsActivity path="/article/NewsCommentAdd.do" location="1850,1050" dimension="362,104" />
+  <StrutsActivity path="/article/ArticleCommentSearch.do" location="1550,1750" dimension="362,104" />
+  <StrutsActivity path="/article/NewsCommentSearch.do" location="50,1950" dimension="362,104" />
   <StrutsActivity path="/article/NewsSearch.do" location="276,1348" dimension="362,100" />
+  <StrutsActivity path="/article/NewsView.do" location="1850,450" dimension="362,104" />
   <StrutsActivity path="/article/ArticleDigg.do" location="924,754" dimension="362,100" />
   <StrutsActivity path="/article/NewsDigg.do" location="1386,754" dimension="362,100" />
   <StrutsActivity path="/article/NewRegister.do" location="407,1645" dimension="362,100" />
@@ -45,10 +45,10 @@
   <StrutsActivity path="/article/top_article_list.jsp" location="1348,657" dimension="178,52" />
   <StrutsActivity path="/article/article_view_error.jsp" location="1250,1150" dimension="197,53" />
   <StrutsActivity path="/article/operate_result.jsp" location="784,954" dimension="180,52" />
-  <StrutsActivity path="/article/article_content_list.jsp" location="992,1548" dimension="201,52" />
-  <StrutsActivity path="/article/top_article_content_list.jsp" location="1293,1548" dimension="226,52" />
-  <StrutsActivity path="/article/news_content_list.jsp" location="1550,1250" dimension="195,53" />
-  <StrutsActivity path="/article/top_news_content_list.jsp" location="71,1845" dimension="220,52" />
+  <StrutsActivity path="/article/article_comment_list.jsp" location="1850,650" dimension="212,53" />
+  <StrutsActivity path="/article/top_article_comment_list.jsp" location="2150,650" dimension="237,53" />
+  <StrutsActivity path="/article/news_comment_list.jsp" location="650,850" dimension="206,53" />
+  <StrutsActivity path="/article/top_news_comment_list.jsp" location="2150,850" dimension="231,53" />
   <StrutsActivity path="/article/news_list.jsp" location="0,1548" dimension="147,52" />
   <StrutsActivity path="/article/news_view.jsp" location="247,1548" dimension="156,52" />
   <StrutsActivity path="/article/like_news_list.jsp" location="503,1548" dimension="172,52" />
@@ -58,11 +58,20 @@
   <StrutsActivity path="/article/top_ten_bbs_thread.jsp" location="890,1845" dimension="210,52" />
   <StrutsActivity path="/article/top_ten_home_blog.jsp" location="1850,1550" dimension="210,53" />
   <StrutsActivity path="/article/new_index.jsp" location="1250,1650" dimension="156,53" />
-  <StrutsActivity path="/article/NewsView.do" />
-  <StrutsTransition id="/article/NewsView.do,fail,/article/news_view_error.jsp,1" routingType="0">
+  <StrutsActivity path="/article/article_content_list.jsp" location="992,1548" dimension="201,52" />
+  <StrutsActivity path="/article/top_article_content_list.jsp" location="1293,1548" dimension="226,52" />
+  <StrutsActivity path="/article/news_content_list.jsp" location="1550,1250" dimension="195,53" />
+  <StrutsActivity path="/article/top_news_content_list.jsp" location="71,1845" dimension="220,52" />
+  <StrutsActivity path="/article/article_Comment_list.jsp" location="1250,1350" dimension="214,53" />
+  <StrutsActivity path="/article/top_article_Comment_list.jsp" location="50,1650" dimension="239,53" />
+  <StrutsActivity path="/article/news_Comment_list.jsp" location="1250,1850" dimension="208,53" />
+  <StrutsActivity path="/article/top_news_Comment_list.jsp" location="650,1950" dimension="233,53" />
+  <StrutsActivity path="/article/ArticleCommentAdd.do" location="50,850" dimension="362,104" />
+  <StrutsTransition id="/article/ArticleCommentAdd.do,ok,/article/operate_result.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="0,0" />
-      <AbsolutePoint location="1945,1376" />
+      <AbsolutePoint location="231,954" />
+      <AbsolutePoint location="231,980" />
+      <AbsolutePoint location="784,980" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageSearchKeyword.do,ok,/admin/operate_ok.jsp,1" routingType="0">
@@ -76,6 +85,14 @@
     <AutomaticBendpoints>
       <AbsolutePoint location="3111,340" />
       <AbsolutePoint location="3111,100" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/article/NewsView.do,fail,/article/news_view_error.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,502" />
+      <AbsolutePoint location="1815,502" />
+      <AbsolutePoint location="1815,1368" />
+      <AbsolutePoint location="1850,1368" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageSearchKeyword.do,fail,/admin/operate_fail.jsp,1" routingType="0">
@@ -106,8 +123,18 @@
   </StrutsTransition>
   <StrutsTransition id="/article/ArticleView.do,fail,/article/article_view_error.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="0,0" />
-      <AbsolutePoint location="1348,1176" />
+      <AbsolutePoint location="50,202" />
+      <AbsolutePoint location="-150,202" />
+      <AbsolutePoint location="-150,1196" />
+      <AbsolutePoint location="1250,1196" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/article/NewsCommentSearch.do,list,/article/news_comment_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="412,2018" />
+      <AbsolutePoint location="1208,2018" />
+      <AbsolutePoint location="1208,876" />
+      <AbsolutePoint location="856,876" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminEditArticle.do,add,/admin/article_add.jsp,1" routingType="0">
@@ -124,10 +151,11 @@
   </StrutsTransition>
   <StrutsTransition id="/article/ArticleSearch.do,error,/article/article_view_error.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="744,537" />
-      <AbsolutePoint location="744,724" />
-      <AbsolutePoint location="1363,724" />
-      <AbsolutePoint location="1363,1150" />
+      <AbsolutePoint location="744,437" />
+      <AbsolutePoint location="744,407" />
+      <AbsolutePoint location="2765,407" />
+      <AbsolutePoint location="2765,1196" />
+      <AbsolutePoint location="1447,1196" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/SelectArticleType.do,fail,/operate_fail.jsp,1" routingType="0">
@@ -140,16 +168,27 @@
   <StrutsTransition id="/admin/article_batch_modify.jsp,null,/admin/AdminUpdateArticle.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="2065,876" />
-      <AbsolutePoint location="2287,876" />
-      <AbsolutePoint location="2287,265" />
-      <AbsolutePoint location="1288,265" />
-      <AbsolutePoint location="1288,100" />
+      <AbsolutePoint location="2110,876" />
+      <AbsolutePoint location="2110,569" />
+      <AbsolutePoint location="1142,569" />
+      <AbsolutePoint location="1142,100" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/article/ArticleContentSearch.do,list,/article/article_content_list.jsp,1" routingType="0">
+  <StrutsTransition id="/article/NewsCommentAdd.do,ok,/article/operate_result.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1178,1448" />
-      <AbsolutePoint location="1178,1548" />
+      <AbsolutePoint location="2080,1050" />
+      <AbsolutePoint location="2080,724" />
+      <AbsolutePoint location="874,724" />
+      <AbsolutePoint location="874,954" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/article/ArticleCommentSearch.do,list,/article/article_comment_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1912,1832" />
+      <AbsolutePoint location="3062,1832" />
+      <AbsolutePoint location="3062,799" />
+      <AbsolutePoint location="1956,799" />
+      <AbsolutePoint location="1956,703" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageSearchKeyword.do,list,/admin/search_keywords_main.jsp,1" routingType="0">
@@ -162,9 +201,9 @@
   <StrutsTransition id="/article/NewsDigg.do,ok,/article/operate_result.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="1567,854" />
-      <AbsolutePoint location="1567,1021" />
-      <AbsolutePoint location="874,1021" />
-      <AbsolutePoint location="874,1006" />
+      <AbsolutePoint location="1567,918" />
+      <AbsolutePoint location="904,918" />
+      <AbsolutePoint location="904,954" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/article/ArticleSearch.do,top,/article/top_ten_article.jsp,1" routingType="0">
@@ -214,15 +253,15 @@
   </StrutsTransition>
   <StrutsTransition id="/article/NewsSearch.do,view,/article/news_view.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="388,1448" />
-      <AbsolutePoint location="388,1548" />
+      <AbsolutePoint location="325,1448" />
+      <AbsolutePoint location="325,1548" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/article/NewIndex.do,ok,/article/new_index.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="1612,502" />
-      <AbsolutePoint location="2433,502" />
-      <AbsolutePoint location="2433,1676" />
+      <AbsolutePoint location="1785,502" />
+      <AbsolutePoint location="1785,1676" />
       <AbsolutePoint location="1406,1676" />
     </AutomaticBendpoints>
   </StrutsTransition>
@@ -238,19 +277,6 @@
       <AbsolutePoint location="2604,50" />
       <AbsolutePoint location="2773,50" />
       <AbsolutePoint location="2773,340" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/article/ContentDelete.do,ok,/article/operate_result.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="2080,750" />
-      <AbsolutePoint location="2080,980" />
-      <AbsolutePoint location="964,980" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/article/NewsContentSearch.do,top,/article/top_news_content_list.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="181,1745" />
-      <AbsolutePoint location="181,1845" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/article/TopUchomeBlog.do,ok,/article/top_ten_home_blog.jsp,1" routingType="0">
@@ -271,20 +297,18 @@
   </StrutsTransition>
   <StrutsTransition id="/article/NewsView.do,ok,/article/news_view.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="0,0" />
-      <AbsolutePoint location="325,1574" />
+      <AbsolutePoint location="2212,502" />
+      <AbsolutePoint location="2433,502" />
+      <AbsolutePoint location="2433,1463" />
+      <AbsolutePoint location="388,1463" />
+      <AbsolutePoint location="388,1548" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/article/ArticleView.do,ok,/article/article_view.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="0,0" />
-      <AbsolutePoint location="609,683" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/article/NewsContentAdd.do,ok,/article/operate_result.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="799,854" />
-      <AbsolutePoint location="799,954" />
+      <AbsolutePoint location="412,205" />
+      <AbsolutePoint location="548,205" />
+      <AbsolutePoint location="548,657" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateArticle.do,select,/admin/article_select.jsp,1" routingType="0">
@@ -315,6 +339,14 @@
       <AbsolutePoint location="774,629" />
       <AbsolutePoint location="1437,629" />
       <AbsolutePoint location="1437,657" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/article/ArticleCommentSearch.do,top,/article/top_article_comment_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1912,1802" />
+      <AbsolutePoint location="2493,1802" />
+      <AbsolutePoint location="2493,676" />
+      <AbsolutePoint location="2387,676" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/article/ArticleDigg.do,ok,/article/operate_result.jsp,1" routingType="0">
@@ -352,37 +384,22 @@
       <AbsolutePoint location="1510,340" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/admin/AdminUpdateArticle.do,ok,/admin/operate_ok.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="1443,100" />
-      <AbsolutePoint location="1443,340" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
   <StrutsTransition id="/article/NewRegister.do,ok,/article/new_register_list.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="588,1745" />
       <AbsolutePoint location="588,1845" />
     </AutomaticBendpoints>
   </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUpdateArticle.do,ok,/admin/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1443,100" />
+      <AbsolutePoint location="1443,340" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
   <StrutsTransition id="/article/TopCdbThreads.do,ok,/article/top_ten_bbs_thread.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="995,1745" />
       <AbsolutePoint location="995,1845" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/article/ArticleContentAdd.do,ok,/article/operate_result.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="181,854" />
-      <AbsolutePoint location="181,980" />
-      <AbsolutePoint location="784,980" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/article/NewsContentSearch.do,list,/article/news_content_list.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="211,1745" />
-      <AbsolutePoint location="211,1790" />
-      <AbsolutePoint location="1647,1790" />
-      <AbsolutePoint location="1647,1303" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/article/NewsSearch.do,like,/article/like_news_list.jsp,1" routingType="0">
@@ -404,6 +421,13 @@
       <AbsolutePoint location="378,1251" />
     </AutomaticBendpoints>
   </StrutsTransition>
+  <StrutsTransition id="/article/NewsCommentSearch.do,top,/article/top_news_comment_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="412,2048" />
+      <AbsolutePoint location="2265,2048" />
+      <AbsolutePoint location="2265,903" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
   <StrutsTransition id="/admin/AdminCreateArticleHtml.do,ok,/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="852,1151" />
@@ -418,10 +442,10 @@
       <AbsolutePoint location="493,340" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/article/ArticleContentSearch.do,top,/article/top_article_content_list.jsp,1" routingType="0">
+  <StrutsTransition id="/article/CommentDelete.do,ok,/article/operate_result.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1308,1448" />
-      <AbsolutePoint location="1308,1548" />
+      <AbsolutePoint location="1250,991" />
+      <AbsolutePoint location="964,991" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateArticle.do,fail,/admin/operate_fail.jsp,1" routingType="0">

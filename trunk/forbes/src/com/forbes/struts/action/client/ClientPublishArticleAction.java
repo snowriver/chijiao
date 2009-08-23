@@ -16,6 +16,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 
 import com.forbes.hibernate.bean.Article;
+import com.forbes.hibernate.bean.ArticleContent;
 import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.hibernate.bean.User;
@@ -67,13 +68,15 @@ public class ClientPublishArticleAction extends DispatchAction {
 			
 			if(articleListManager.verifyTitle(articleInfoForm.getTitle().trim())) {
 				
+				ArticleContent content = new ArticleContent();
+				content.setContent(articleInfoForm.getContent());
+				
 				a.setIsdelete("N");
 				a.setUserid( user.getUid() );
 				a.setUsername(user.getUsername());
 				a.setUserip( request.getLocalAddr() );
 				a.setPubdate( new Date() );
 				a.setTitle( articleInfoForm.getTitle() );
-				a.setContent( articleInfoForm.getContent() );
 				a.setClick( 0 );
 				a.setIscommend( new Short("0") );
 				a.setIsverify( new Short("0") );
@@ -117,7 +120,10 @@ public class ClientPublishArticleAction extends DispatchAction {
 				
 				//System.out.println(articleInfoForm.getLitpictype());				
 				
+				a.setArticleContent(content);
+				content.setArticle(a);
 				articleListManager.addArticle(a);
+				articleListManager.addArticleContent(content);
 				
 				Short accountType = DictionaryManager.getInstance().getVal("ACCOUNT_TYPE", "2").getDvalue();
 				int amount = 10;
@@ -205,12 +211,14 @@ public class ClientPublishArticleAction extends DispatchAction {
 			
 			if(articleListManager.verifyTitle(articleInfoForm.getId(), articleInfoForm.getTitle().trim())) {
 				
+				ArticleContent content = a.getArticleContent();
+				content.setContent(articleInfoForm.getContent());
+				
 				a.setIsdelete("N");
 				a.setUserid( client.getUid() );
 				a.setUserip( request.getLocalAddr() );
 				a.setPubdate( formatter.parse(articleInfoForm.getPubdate()) );
-				a.setTitle( articleInfoForm.getTitle() );
-				a.setContent( articleInfoForm.getContent() );
+				a.setTitle( articleInfoForm.getTitle() );				
 				a.setClick( 0 );
 				a.setIscommend( new Short("0") );
 				a.setIsverify( new Short("0") );
@@ -297,6 +305,7 @@ public class ClientPublishArticleAction extends DispatchAction {
 				}
 				
 				articleListManager.updateArticle(a);
+				articleListManager.updateArticleContent(content);
 				
 			}
 			else {

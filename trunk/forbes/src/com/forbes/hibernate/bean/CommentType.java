@@ -5,17 +5,17 @@ package com.forbes.hibernate.bean;
  * 
  * @author MyEclipse Persistence Tools
  */
-public class ContentType extends AbstractContentType implements
+public class CommentType extends AbstractCommentType implements
 		java.io.Serializable {
 
 	// Constructors
 
 	/** default constructor */
-	public ContentType() {
+	public CommentType() {
 	}
 
 	/** full constructor */
-	public ContentType(String typeName) {
+	public CommentType(String typeName) {
 		super(typeName);
 	}
 

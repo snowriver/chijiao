@@ -21,6 +21,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 import com.forbes.hibernate.bean.Article;
+import com.forbes.hibernate.bean.ArticleContent;
 import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.service.article.ArticleTypeManager;
@@ -166,6 +167,11 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 							  if(articleListManager.verifyTitle(title.trim())) {
 								  
 								  Article a = new Article();
+								  
+								  ArticleContent acontent = new ArticleContent();
+								  acontent.setContent( content );
+									
+									
 								  	a.setIsdelete("N");
 									a.setUserid( member.getUid() );
 									a.setUsername(member.getUsername());
@@ -173,7 +179,6 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 									a.setPubdate( new Date() );
 									a.setTitle( title.trim() );
 									a.setShorttitle( title.trim() );
-									a.setContent( content );
 									a.setClick( 0 );
 									a.setIscommend( new Short("0") );
 									a.setIsverify( new Short("0") );
@@ -183,7 +188,11 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 										ArticleType at = articleTypeManager.getArticleType( Integer.parseInt(adminUploadFileForm.getType()) );
 										a.setArticleType(at);
 									}
+									
+									
+									acontent.setArticle(a);
 									articleListManager.addArticle(a);
+									articleListManager.addArticleContent(acontent);
 								  System.out.println(title.trim());
 								  //System.out.println(rs.getString(2));
 							  	  //System.out.println();

@@ -6,7 +6,7 @@
 
 <UL class=send_comment_tit>
 						<c:if test="${not empty sessionScope.CLIENT}">
-					<FORM id="pubForm" method="post" name="pubForm" action="NewsContentAdd.do">
+					<FORM id="pubForm" method="post" name="pubForm" action="NewsCommentAdd.do">
 					<SCRIPT language=JavaScript>function reply_clearfield(){if(document.formComment.name.value == "≥‡Ω≈Õ¯”√ªß") document.formComment.name.value = "";}</SCRIPT>
   					<TABLE class="commentSend" border="0" cellSpacing="1" cellPadding="1">
     					<TBODY>

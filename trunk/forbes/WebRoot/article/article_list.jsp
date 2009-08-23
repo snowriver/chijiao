@@ -40,7 +40,7 @@
 			$("#Pagination").pagination(${PAGER.totoalCnt}, 
 			{   
 				current_page:${PAGER.curPage-1},
-				items_per_page:5,
+				items_per_page:8,
 				num_edge_entries: 1,
 				num_display_entries: 8,
 				callback: pageselectCallback
@@ -52,6 +52,26 @@
       		window.clipboardData.setData("Text",msg);  
          	alert("复制成功，请粘贴到你的QQ/MSN上推荐给你的好友！\r\n\r\n内容如下：\r\n" + msg);  
         }
+        
+        function Digg(id) {
+			$.ajax({
+				url: 'ArticleDigg.do',
+				type: 'post',
+				dataType: 'html',
+				data:"id="+id,
+				timeout: 10000,
+				error: function(){
+					alert("操作失败，请稍后再试");
+				},
+				success: function(rsHtml){
+					var result = rsHtml.replace(/(^\s*)|(\s*$)/g,""); 
+					$("#diggs-strong-"+id).html(result);
+					//$("#digg").empty();
+					//$("#digg").append("<center>顶过了</center>");
+				}
+			});
+			
+		}
 	</SCRIPT>
 
 </HEAD>
@@ -88,7 +108,7 @@
 				<UL id=sorts>
 					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=list&typeid=${PARA['typeid'] }&keyword=&orderby=pubdate desc"> 最新文章 </A>
 					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'click desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=list&typeid=${PARA['typeid'] }&keyword=&orderby=click desc">	最多点击 </A> 
-					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'contentCnt desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=list&typeid=${PARA['typeid'] }&keyword=&orderby=contentCnt desc"> 最多评论 </A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'commentCnt desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=list&typeid=${PARA['typeid'] }&keyword=&orderby=commentCnt desc"> 最多评论 </A> 
 					<!-- <FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=list&typeid=${PARA['typeid'] }&keyword=&orderby=pubdate desc"> 最多收藏 </A> --> 
 					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'digg desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=list&typeid=${PARA['typeid'] }&keyword=&orderby=digg desc"> 最多顶</A> 
 					<FONT style="COLOR: #ccc">|</FONT>  
@@ -107,7 +127,7 @@
 				        
 				        <DIV class=news-details>
 				        	<A class="tool comments" href="ArticleSearch.do?act=list&typeid=${article.articleType.id }&keyword=&orderby=pubdate desc" target="_blank"><IMG alt="" src="images/sort_icon.gif" alt="分类">分类</A> 
-				            <A class="tool comments" href="ArticleContentSearch.do?act=list&id=${article.id }" target="_blank"><IMG alt="" src="images/comment_icon.gif" alt="评论">评论(${article.contentCnt })</A> 
+				            <A class="tool comments" href="ArticleCommentSearch.do?act=list&id=${article.id }" target="_blank"><IMG alt="" src="images/comment_icon.gif" alt="评论">评论(${article.commentCnt })</A> 
 				            <A class="tool comments" href="ArticleView.do?id=${article.id}" target="_blank"><IMG alt="" src="images/click_icon.gif" alt="浏览">浏览(${article.click })</A> 
 				            <A class="tool share" href="javascript:void(0)" onclick="openDIV('收藏','../client/ClientManageArticleFavorite.do?act=add&id=${article.id }','500','350')"><IMG alt="" src="images/collect_icon.gif" alt="收藏">收藏</A> 
 				            <A class="tool share" href="JavaScript:copyUserHomeToClipBoard('${article.title }  <%=(String)request.getRequestURL().substring(0, request.getRequestURL().indexOf("article") )%>article/ArticleView.do?id=${article.id }');"><IMG alt="" src="images/recommand_icon.gif">推荐</A> 
@@ -124,8 +144,8 @@
 				 		</DIV>
 					</DIV>				
 					<UL class=news-digg>
-				  		<LI id=main8 class=digg-count><A id=diggs8 href="#"><STRONG id=diggs-strong-8>${article.digg }</STRONG><br>顶一下</A></LI>
-				  		<LI id=diglink8 class=digg-it><A href="javascript:void(0)" onclick="openDIV('收藏','../client/ClientManageArticleFavorite.do?act=add&id=${article.id }','500','350')">收藏</A> </LI>
+				  		<LI id=main${article.id} class=digg-count><A id=diggs${article.id} href="javascript:void(0);" onclick="Digg(${article.id});"><STRONG id=diggs-strong-${article.id}>${article.digg }</STRONG><br>顶一下</A></LI>
+				  		<LI id=diglink${article.id} class=digg-it><A href="javascript:void(0)" onclick="openDIV('收藏','../client/ClientManageArticleFavorite.do?act=add&id=${article.id }','500','350')">收藏</A> </LI>
 				    </UL>
 				</DIV>				
 				<DIV class="boxoff"></DIV>

@@ -40,7 +40,7 @@ public class ArticleFilter extends HttpServlet implements Filter {
 			  
 			  if( url.indexOf(".do")>0 ){
 	        	
-				  if ( client == null && url.indexOf("ArticleContentAdd")>0 ){
+				  if ( client == null && url.indexOf("ArticleCommentAdd")>0 ){
 					  filterConfig.getServletContext().getRequestDispatcher(
 					  	"/client/index.jsp").forward(request, response);
 				  }

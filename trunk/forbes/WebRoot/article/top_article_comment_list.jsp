@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jstl/fn" %>
 
-<c:forEach items="${ARTICLE_CONTENT_LIST}" var="acl"> 
+<c:forEach items="${ARTICLE_COMMENT_LIST}" var="acl"> 
 <br>
 <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tbody>

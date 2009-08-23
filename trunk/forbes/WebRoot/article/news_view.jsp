@@ -24,7 +24,7 @@
   
 		function listComments(id, divid){
 			$.ajax({
-				url: 'NewsContentSearch.do',
+				url: 'NewsCommentSearch.do',
 				type: 'post',
 				dataType: 'html',
 				data:"act=top&id=" + id,
@@ -88,7 +88,7 @@
 			else{
 				
 					$.ajax({
-							url: 'NewsContentAdd.do',
+							url: 'NewsCommentAdd.do',
 							type: 'post',
 							dataType: 'html',
 							data:"id=${NEWS.id }&content=" + $("#content").val(),
@@ -264,7 +264,7 @@
   		</DIV>
   		
   		<DIV class=news_about>
-  			<DIV class=news_about_tit><A target=_blank href="NewsContentSearch.do?act=list&id=${NEWS.id }">发表/查看所有评论</A>(<STRONG><SPAN id=total_con1>${NEWS.contentCnt }</SPAN></STRONG>)</DIV>
+  			<DIV class=news_about_tit><A target=_blank href="NewsCommentSearch.do?act=list&id=${NEWS.id }">发表/查看所有评论</A>(<STRONG><SPAN id=total_con1>${NEWS.commentCnt }</SPAN></STRONG>)</DIV>
 			<DIV class=news_about_con>
 				<DIV class=news_about_con_1>
 				<!--around this table start-->
