@@ -43,10 +43,16 @@ public class ArticleViewAction extends Action {
 			
 			Article article = articleListManager.getArticle(Integer.parseInt(id));
 			if(article == null)
-				return mapping.findForward("fail");
+				return mapping.findForward("error");
 			article.setClick(article.getClick() + 1);
 			articleListManager.updateArticle(article);
 			request.setAttribute( "ARTICLE", article);
+			
+			Article nextArticle  = articleListManager.getNextArticle(Integer.parseInt(id));
+			Article preArticle   = articleListManager.getPreArticle(Integer.parseInt(id));
+			
+			request.setAttribute( "NEXT_ARTICLE", nextArticle);
+			request.setAttribute( "PRE_ARTICLE", preArticle);
 			
 			return mapping.findForward("ok");
 

@@ -85,7 +85,7 @@ public class NewsSearchAction extends DispatchAction {
 
 			List list = null;
 			Pager pager = new Pager();
-			pager.setCntOfPage( 5 );
+			pager.setCntOfPage( 8 );
 			pager.setCurPage( iPageNo );
 			
 			list = newsManager.getNewsByPage(pager, iPageNo, keyword, orderby);

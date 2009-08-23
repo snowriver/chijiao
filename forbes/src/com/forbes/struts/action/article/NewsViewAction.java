@@ -40,11 +40,15 @@ public class NewsViewAction extends Action {
 		try {
 			
 			News news = newsManager.getNews(Integer.parseInt(id));
-			if(news == null)
-				return mapping.findForward("fail");
 			news.setClick(news.getClick() + 1);
 			newsManager.updateNews(news);
 			request.setAttribute( "NEWS", news);
+			
+			News nextNews  = newsManager.getNextNews(Integer.parseInt(id));
+			News preNews   = newsManager.getPreNews(Integer.parseInt(id));
+			
+			request.setAttribute( "NEXT_NEWS", nextNews);
+			request.setAttribute( "PRE_NEWS", preNews);
 			
 			return mapping.findForward("ok");
 

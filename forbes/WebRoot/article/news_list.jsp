@@ -39,7 +39,7 @@
 			$("#Pagination").pagination(${PAGER.totoalCnt}, 
 			{   
 				current_page:${PAGER.curPage-1},
-				items_per_page:5,
+				items_per_page:8,
 				num_edge_entries: 1,
 				num_display_entries: 8,
 				callback: pageselectCallback
