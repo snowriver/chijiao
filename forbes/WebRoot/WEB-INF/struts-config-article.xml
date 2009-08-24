@@ -106,7 +106,7 @@
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">
       <forward name="ok" path="/article/article_view.jsp" />
-      <forward name="fail" path="/article/article_view_error.jsp" />
+      <forward name="error" path="/article/article_view_error.jsp" />
     </action>
     
     <action
@@ -165,7 +165,7 @@
       scope="request"
       type="org.springframework.web.struts.DelegatingActionProxy">
       <forward name="ok" path="/article/news_view.jsp" />
-      <forward name="fail" path="/article/news_view_error.jsp" />
+      <forward name="error" path="/article/news_view_error.jsp" />
     </action>
     
 	<action
