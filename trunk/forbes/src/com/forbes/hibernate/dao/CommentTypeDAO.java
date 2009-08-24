@@ -12,7 +12,7 @@ import com.forbes.hibernate.basedao.BaseCommentTypeDAO;
  * transactions. Each of these methods provides additional information for how
  * to configure it for the desired type of transaction control.
  * 
- * @see com.forbes.hibernate.CommentType
+ * @see com.forbes.hibernate.bean.CommentType
  * @author MyEclipse Persistence Tools
  */
 
