@@ -40,6 +40,8 @@ public class NewsViewAction extends Action {
 		try {
 			
 			News news = newsManager.getNews(Integer.parseInt(id));
+			if(news == null)
+				return mapping.findForward("error");
 			news.setClick(news.getClick() + 1);
 			newsManager.updateNews(news);
 			request.setAttribute( "NEWS", news);
@@ -55,7 +57,7 @@ public class NewsViewAction extends Action {
 		}catch( Exception e ){
 			e.printStackTrace();
 			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
-			return mapping.findForward("fail");
+			return mapping.findForward("error");
 		}
 	}
 	public NewsManager getNewsManager() {
