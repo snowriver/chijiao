@@ -11,8 +11,8 @@ public abstract class AbstractSysConfig implements java.io.Serializable {
 
 	// Fields
 
+	private String varname;
 	private Integer id;
-	private String key;
 	private String info;
 	private String value;
 	private String type;
@@ -24,10 +24,16 @@ public abstract class AbstractSysConfig implements java.io.Serializable {
 	public AbstractSysConfig() {
 	}
 
+	/** minimal constructor */
+	public AbstractSysConfig(Integer id, Integer group) {
+		this.id = id;
+		this.group = group;
+	}
+
 	/** full constructor */
-	public AbstractSysConfig(String key, String info, String value,
+	public AbstractSysConfig(Integer id, String info, String value,
 			String type, Integer group) {
-		this.key = key;
+		this.id = id;
 		this.info = info;
 		this.value = value;
 		this.type = type;
@@ -36,20 +42,14 @@ public abstract class AbstractSysConfig implements java.io.Serializable {
 
 	// Property accessors
 
+	
+
 	public Integer getId() {
 		return this.id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public String getKey() {
-		return this.key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
 	}
 
 	public String getInfo() {
@@ -82,6 +82,14 @@ public abstract class AbstractSysConfig implements java.io.Serializable {
 
 	public void setGroup(Integer group) {
 		this.group = group;
+	}
+
+	public String getVarname() {
+		return varname;
+	}
+
+	public void setVarname(String varname) {
+		this.varname = varname;
 	}
 
 }
