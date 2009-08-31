@@ -1,33 +1,6 @@
 <%@ page contentType="text/html; charset=gbk" %>
 
-<SCRIPT language="javascript" type="text/javascript">
-  
-	function listSideBarArticles(divid, orderby){
-			$.ajax({
-				url: '../article/ArticleSearch.do',
-				type: 'post',
-				dataType: 'html',
-				data:"act=top&orderby="+orderby,
-				timeout: 10000,
-				error: function(){
-					//alert('System error');
-					$("#" + divid +"").html("导入失败，请刷新");
-				},
-				success: function(rsHtml){
-					//alert("#" + divid);
-					$("#" + divid +"").html(rsHtml);
-				}
-			});
-		}
-		
-		$(window).bind("load",function(){
-				listSideBarArticles("top_article", "click DESC");
-				listSideBarArticles("command_article", "iscommend DESC");
-				
-				$('#home_blog').load('TopUchomeBlog.do');
-        	}
-		);
-		
+<SCRIPT language="javascript" type="text/javascript">	
 		function search_y(){
 			if($("#channel").val() == '2'){
 				location.href="ArticleSearch.do?act=search&keyword=" +$("#keyword").val() + "&orderby=pubdate desc"; 
@@ -94,7 +67,7 @@
 		<H2><SPAN class=left>推荐内容</SPAN><A class="more right" target=_blank href="ArticleSearch.do?act=search&orderby=iscommend desc">更多推荐</A></H2>
 		<DIV class=con>
 			<DIV id="command_article">
-					<img src="images/loading.gif" />
+					<jsp:include page="ten_top_comment_article.html" /> 
 			</DIV>
 		</DIV>
 	</DIV>
@@ -105,7 +78,7 @@
 		<H2><SPAN class=left>本月热点</SPAN><A class="more right" target=_blank href="ArticleSearch.do?act=search&orderby=click desc">更多热点</A></H2>
 		<DIV class=con>
 			<DIV id="top_article">
-					<img src="images/loading.gif" />
+					<jsp:include page="ten_top_click_article.html" /> 
 			</DIV>
 		</DIV>
 	</DIV>
@@ -114,7 +87,9 @@
 	<!--手机论坛开始-->
 	<DIV class=sidebox>
 		<H2><SPAN class=left>创业圈日志</SPAN><A class="more right" target=_blank href="${UC_HOME_URL }">更多内容</A></H2>
-		<DIV class=con id="home_blog"><IFRAME height=120 src="" frameBorder=0 width=260 scrolling=no></IFRAME></DIV>
+		<DIV class=con id="home_blog">
+			<jsp:include page="ten_top_uchome_blog.html" /> 
+		</DIV>
 	</DIV>
 	<!--手机论坛结束-->
 	
