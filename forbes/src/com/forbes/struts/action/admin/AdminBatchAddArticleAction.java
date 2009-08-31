@@ -162,7 +162,9 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 							String title = rs.getString(1);
 							String content = rs.getString(2);
 
-							if (articleListManager.verifyTitle(title.trim())) {
+							if (articleListManager.verifyTitle(title.trim()) &&
+									title!=null && title.length() >0 &&
+									content !=null && content.length() >0) {
 
 								Article a = new Article();
 

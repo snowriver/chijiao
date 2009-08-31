@@ -67,7 +67,7 @@
 		<H2><SPAN class=left>推荐内容</SPAN><A class="more right" target=_blank href="ArticleSearch.do?act=search&orderby=iscommend desc">更多推荐</A></H2>
 		<DIV class=con>
 			<DIV id="command_article">
-					<jsp:include page="ten_top_comment_article.html" /> 
+					<jsp:include page="ten_top_commend_article.html" /> 
 			</DIV>
 		</DIV>
 	</DIV>
