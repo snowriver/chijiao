@@ -1,20 +1,21 @@
 package com.forbes.service.ucenter;
 import java.net.URLEncoder;
-
 import com.forbes.hibernate.bean.UcMembers;
-import com.forbes.hibernate.bean.User;
 import com.forbes.util.HttpInvoke;
+import com.forbes.util.SysConfigManager;
 
 public class UCenterManager{
-	private String appId="3";
-	private String ucUrl="http://www.chijiao.org/ucenter/index.php";
-	private String ucIp="116.11.32.120";
-	private String key="123456";//pwd
-	private boolean disable = true;
+	
+	private String appId = (String)SysConfigManager.getValue("cfg_uc_app_id");
+	private String ucUrl = (String)SysConfigManager.getValue("cfg_uc_center_url");
+	private String ucIp = (String)SysConfigManager.getValue("cfg_uc_ip");
+	private String key = (String)SysConfigManager.getValue("cfg_uc_key");
+	private boolean syn = (Boolean)SysConfigManager.getValue("cfg_uc_syn_log");
+	
 	private HttpInvoke httpInvoke = new HttpInvoke();
 	
 	public void login(String loginName, String password){
-		if( disable ){
+		if( !syn ){
 			return;
 		}
 		String data = "username=" + loginName + "&password=" + password+"&isuid=0";
@@ -30,7 +31,7 @@ public class UCenterManager{
         }
 	}
 	public String synlogin(String uid){
-		if( disable ){
+		if( !syn ){
 			return "";
 		}
 		String data = "uid=" + uid;
@@ -48,7 +49,7 @@ public class UCenterManager{
         }
 	}
 	public void register( UcMembers  client, String password ){
-		if( disable ){
+		if( !syn ){
 			return;
 		}
 		String data = "uid=" + client.getUid() + "&username=" + client.getUsername() + "&password=" 
@@ -65,7 +66,7 @@ public class UCenterManager{
         }
 	}
 	public String synLogout( UcMembers client ){
-		if( disable ){
+		if( !syn ){
 			return null;
 		}
 		String data= "uid=" + client.getUid(); 
@@ -84,13 +85,13 @@ public class UCenterManager{
 		}
 	}
 	public void delUser( UcMembers client ){
-		if( disable ){
+		if( !syn ){
 			return;
 		}
 		
 	}
 	public void editUser( UcMembers client ){
-		if( disable ){
+		if( !syn ){
 			return;
 		}
 		String data = "username=" + client.getUsername() + "&oldpw=&newpw"
