@@ -40,8 +40,7 @@ public class AdminTohtmlAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 
-		String serviceIDs[] = request.getParameterValues("serviceID");
-		String forbesUrl = (String)SysConfigManager.getValue("cfg_forbes_url");
+		String serviceIDs[] = request.getParameterValues("serviceID");		
 		for(int i=0; i<serviceIDs.length; i++) {
 			
 			String serviceID = serviceIDs[i];
@@ -55,7 +54,7 @@ public class AdminTohtmlAction extends Action {
 					if (!myFilePath.exists()) {
 						myFilePath.mkdir();
 					}					
-					boolean flag = ToHtml.toHtml(forbesUrl + "/NewIndex.do",
+					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/NewIndex.do",
 							Constant.APPSERV_VIRTUAL_ADDRESS + "\\index.html", "gbk", "gbk");
 					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS + "\\index.html", 
 							Constant.TOMCAT_VIRTUAL_ADDRESS + "\\index.html");
@@ -67,23 +66,23 @@ public class AdminTohtmlAction extends Action {
 					if (!myFilePath.exists()) {
 						myFilePath.mkdir();
 					}
-					boolean flag = ToHtml.toHtml(forbesUrl + "/article/NewIndex.do",
+					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/NewIndex.do",
 							Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\index.html", "gbk", "gbk");
 					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\index.html", 
 							Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\index.html");
 					
 					// Article Top
-					ToHtml.toHtml(forbesUrl + "/article/ArticleSearch.do?act=top&orderby=click%20DESC",
+					ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleSearch.do?act=top&orderby=click%20DESC",
 							Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_click_article.html", "gbk", "gbk");
 					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_click_article.html", 
 							Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_click_article.html");
 					
-					ToHtml.toHtml(forbesUrl + "/article/ArticleSearch.do?act=top&orderby=iscommend%20DESC",
+					ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleSearch.do?act=top&orderby=iscommend%20DESC",
 							Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_commend_article.html", "gbk", "gbk");
 					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_commend_article.html", 
 							Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_commend_article.html");
 					
-					ToHtml.toHtml(forbesUrl + "/article/TopUchomeBlog.do",
+					ToHtml.toHtml(Constant.FORBES_URL + "/article/TopUchomeBlog.do",
 							Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_uchome_blog.html", "gbk", "gbk");
 					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_uchome_blog.html", 
 							Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_uchome_blog.html");
@@ -95,7 +94,7 @@ public class AdminTohtmlAction extends Action {
 					if (!myFilePath.exists()) {
 						myFilePath.mkdir();
 					}					
-					boolean flag = ToHtml.toHtml(forbesUrl + "/video/NewIndex.do",
+					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/video/NewIndex.do",
 							Constant.APPSERV_VIRTUAL_ADDRESS_VIDEO + "\\index.html", "gbk", "gbk");
 					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_VIDEO + "\\index.html", 
 							Constant.TOMCAT_VIRTUAL_ADDRESS_VIDEO + "\\index.html");
@@ -108,7 +107,7 @@ public class AdminTohtmlAction extends Action {
 						myFilePath.mkdir();
 					}
 					
-					boolean flag = ToHtml.toHtml(forbesUrl + "/ask/NewIndex.do",
+					boolean flag = ToHtml.toHtml(Constant.FORBES_URL + "/ask/NewIndex.do",
 							Constant.APPSERV_VIRTUAL_ADDRESS_ASK + "\\index.html", "gbk", "gbk");
 					FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ASK + "\\index.html", 
 							Constant.TOMCAT_VIRTUAL_ADDRESS_ASK + "\\index.html");
