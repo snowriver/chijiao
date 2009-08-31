@@ -51,7 +51,7 @@ public class TohtmlTask {
 				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ASK + "\\index.html", 
 						Constant.TOMCAT_VIRTUAL_ADDRESS_ASK + "\\index.html");
 				
-				
+								
 				// Article Top
 				ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleSearch.do?act=top&orderby=click%20DESC",
 						Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_click_article.html", "gbk", "gbk");
@@ -67,6 +67,7 @@ public class TohtmlTask {
 						Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_uchome_blog.html", "gbk", "gbk");
 				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_uchome_blog.html", 
 						Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_uchome_blog.html");
+				
 				
 			
 		} catch (Exception e) {
