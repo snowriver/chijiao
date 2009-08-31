@@ -16,7 +16,7 @@ public class TohtmlTask {
 				if (!myFilePath.exists()) {
 					myFilePath.mkdir();
 				}					
-				boolean flag_index = ToHtml.toHtml(Constant.FORBES_URL + "/NewIndex.do",
+				ToHtml.toHtml(Constant.FORBES_URL + "/NewIndex.do",
 						Constant.APPSERV_VIRTUAL_ADDRESS + "\\index.html", "gbk", "gbk");
 				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS + "\\index.html", 
 						Constant.TOMCAT_VIRTUAL_ADDRESS + "\\index.html");
@@ -26,7 +26,7 @@ public class TohtmlTask {
 				if (!myFilePath.exists()) {
 					myFilePath.mkdir();
 				}
-				boolean flag_article = ToHtml.toHtml(Constant.FORBES_URL + "/article/NewIndex.do",
+				ToHtml.toHtml(Constant.FORBES_URL + "/article/NewIndex.do",
 						Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\index.html", "gbk", "gbk");
 				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\index.html", 
 						Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\index.html");
@@ -36,7 +36,7 @@ public class TohtmlTask {
 				if (!myFilePath.exists()) {
 					myFilePath.mkdir();
 				}
-				boolean flag_video = ToHtml.toHtml(Constant.FORBES_URL + "/video/NewIndex.do",
+				ToHtml.toHtml(Constant.FORBES_URL + "/video/NewIndex.do",
 						Constant.APPSERV_VIRTUAL_ADDRESS_VIDEO + "\\index.html", "gbk", "gbk");
 				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_VIDEO + "\\index.html", 
 						Constant.TOMCAT_VIRTUAL_ADDRESS_VIDEO + "\\index.html");
@@ -46,10 +46,27 @@ public class TohtmlTask {
 				if (!myFilePath.exists()) {
 					myFilePath.mkdir();
 				}				
-				boolean flag_ask = ToHtml.toHtml(Constant.FORBES_URL + "/ask/NewIndex.do",
+				ToHtml.toHtml(Constant.FORBES_URL + "/ask/NewIndex.do",
 						Constant.APPSERV_VIRTUAL_ADDRESS_ASK + "\\index.html", "gbk", "gbk");
 				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ASK + "\\index.html", 
 						Constant.TOMCAT_VIRTUAL_ADDRESS_ASK + "\\index.html");
+				
+				
+				// Article Top
+				ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleSearch.do?act=top&orderby=click%20DESC",
+						Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_click_article.html", "gbk", "gbk");
+				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_click_article.html", 
+						Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_click_article.html");
+				
+				ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleSearch.do?act=top&orderby=iscommend%20DESC",
+						Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_commend_article.html", "gbk", "gbk");
+				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_commend_article.html", 
+						Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_commend_article.html");
+				
+				ToHtml.toHtml(Constant.FORBES_URL + "/article/TopUchomeBlog.do",
+						Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_uchome_blog.html", "gbk", "gbk");
+				FileAccess.Copy(Constant.APPSERV_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_uchome_blog.html", 
+						Constant.TOMCAT_VIRTUAL_ADDRESS_ARTICLE + "\\ten_top_uchome_blog.html");
 				
 			
 		} catch (Exception e) {
