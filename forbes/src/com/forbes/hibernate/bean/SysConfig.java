@@ -14,10 +14,15 @@ public class SysConfig extends AbstractSysConfig implements
 	public SysConfig() {
 	}
 
+	/** minimal constructor */
+	public SysConfig(Integer id, Integer group) {
+		super(id, group);
+	}
+
 	/** full constructor */
-	public SysConfig(String key, String info, String value, String type,
+	public SysConfig(Integer id, String info, String value, String type,
 			Integer group) {
-		super(key, info, value, type, group);
+		super(id, info, value, type, group);
 	}
 
 }
