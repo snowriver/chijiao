@@ -2,7 +2,6 @@ package com.forbes.util;
 
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.Collection;
 import java.util.List;
 import org.springframework.context.ApplicationContext;   
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,7 +11,6 @@ import com.forbes.hibernate.dao.SysConfigDAO;
 public class SysConfigManager {
 	
 	public static ApplicationContext ctx = null;
-	//public static SysConfigManager scm = new SysConfigManager();
 	public static Map scMap = new TreeMap();
 	public static Map gMap  = new TreeMap();
 
@@ -31,7 +29,7 @@ public class SysConfigManager {
 			for( Object obj : scList ){
 				SysConfig scObj = ( SysConfig )obj;
 
-				Map groupMap = (TreeMap)gMap.get( scObj.getGroup() );
+				/*Map groupMap = (TreeMap)gMap.get( scObj.getGroup() );
 
 				if( groupMap == null ){
 					groupMap = new TreeMap();
@@ -44,8 +42,8 @@ public class SysConfigManager {
 
 				if( valMap == null ){
 					valMap = new TreeMap();
-				}
-				scMap.put(scObj.getKey(), obj );
+				}*/
+				scMap.put(scObj.getVarname(), obj );
 			}
 		}catch( Exception e){
 			e.printStackTrace();
@@ -58,40 +56,28 @@ public class SysConfigManager {
 		init();
 	}
 	
-	public SysConfig getValue( String group, String key){
-		Map groupMap = (Map)gMap.get( group );
-		return ( SysConfig )groupMap.get( key );
+	public static Object getValue ( String key ){
+		SysConfig config = (SysConfig)scMap.get(key);
+		if (config!=null) {
+			if(config.getType().equals("boolean")) {
+				return new Boolean(config.getValue());
+			} 
+			else if(config.getType().equals("integer")) {
+				return new Integer(config.getValue());
+			} else {
+				return config.getValue();
+			}			
+		} else {
+			return null;
+		}
 	}
 	
-	public SysConfig getValue( String key) {
-		return ( SysConfig )scMap.get( key );
-	}
 	
-	public String getId( String group, String key) {
-		Map groupMap = (Map)gMap.get( group );
-		return (( SysConfig )groupMap.get( key )).getId().toString();
-	}
-	
-	public String getId( String key ) {
-		return (( SysConfig )scMap.get( key )).getId().toString();
-	}
-	
-	public TreeMap getGroup( String group ) {
-		return ( TreeMap )gMap.get( group );
-	}
-	
-	/*public static SysConfigManager getInstance(){
-		return scm;
-	}*/
 	
 	public static void main( String args [] ){
-		/*SysConfig sc = (SysConfig)SysConfigManager.scMap.get("cfg_adminemail");
-		System.out.println( SysConfigManager.scMap.get("cfg_adminemail"));
 		
-		Map gm = (TreeMap)SysConfigManager.gMap.get(1);
-		System.out.println( gm.size() );*/
-		//System.out.println( SysConfigManager.scMap.get("cfg_adminemail"));
-		//System.out.println(((SysConfig)SysConfigManager.getInstance().getVal("cfg_adminemail")).getValue());
+		System.out.println( (String)SysConfigManager.getValue("cfg_uc_center_url") );
+		
 	}
 
 }
