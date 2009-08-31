@@ -23,6 +23,7 @@ import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.service.article.ArticleTypeManager;
 import com.forbes.service.article.ArticleListManager;
 import com.forbes.struts.form.admin.AdminUploadFileForm;
+import com.forbes.util.ToHtml;
 import com.forbes.util.UploadFile;
 import com.forbes.util.UrlTool;
 
@@ -184,7 +185,7 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 								}
 								a.setClick(0);
 								a.setIscommend(new Short("0"));
-								a.setIsverify(new Short("0"));
+								a.setIsverify(new Short("1"));
 								a.setDigg(0);
 
 								if (adminUploadFileForm.getType() != null) {
@@ -194,6 +195,15 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 															.getType()));
 									a.setArticleType(at);
 								}
+								
+								if (adminUploadFileForm.getTypeid() != null &&
+										adminUploadFileForm.getTypeid().trim() != "0"	) {
+									ArticleType at = articleTypeManager
+											.getArticleType(Integer
+													.parseInt(adminUploadFileForm
+															.getTypeid().trim()));
+									a.setArticleType2(at);
+								}
 
 								ac.setArticle(a);
 								articleListManager.addArticle(a);
@@ -201,6 +211,10 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 								System.out.println(title.trim());
 								// System.out.println(rs.getString(2));
 								// System.out.println();
+								
+								boolean txtFlag = ToHtml.toTxt(content,
+										request.getRealPath("/") + "article/txt/" + a.getId() + ".txt", "gbk");
+								
 								addCnt++;
 								totalCnt++;
 
@@ -213,6 +227,9 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 						e.printStackTrace();
 					} catch (ClassNotFoundException ex) {
 						ex.printStackTrace();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
 
 					//
