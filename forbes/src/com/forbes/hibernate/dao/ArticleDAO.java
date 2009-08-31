@@ -37,7 +37,7 @@ public class ArticleDAO extends BaseArticleDAO {
 			if(userid != null && !userid.equals(""))
 				queryString += "AND model.user = " + userid + " ";
 			if(typeid != null && !typeid.equals(""))
-				queryString += "AND ( model.articleType in (" + typeid  + ") OR model.articleType2 in (" + typeid  + ") )";
+				queryString += "AND ( model.articleType in (" + typeid  + ") OR model.articleType2 in (" + typeid  + ") ) ";
 			if(isverify != null && isverify.length() >0)
 				queryString += "AND model.isverify in (" + isverify + ") ";
 			
@@ -65,7 +65,7 @@ public class ArticleDAO extends BaseArticleDAO {
 			if(userid != null && !userid.equals(""))
 				queryString += "AND model.user = " + userid + " ";
 			if(typeid != null && !typeid.equals(""))
-				queryString += "AND ( model.articleType in (" + typeid  + ") OR model.articleType2 in (" + typeid  + ") )";
+				queryString += "AND ( model.articleType in (" + typeid  + ") OR model.articleType2 in (" + typeid  + ") ) ";
 			if(isverify != null && isverify.length() >0)
 				queryString += "AND model.isverify in (" + isverify + ") ";
 			queryString += " ORDER BY model." + orderby;
