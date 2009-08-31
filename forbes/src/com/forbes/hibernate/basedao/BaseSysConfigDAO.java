@@ -4,12 +4,10 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
-import org.hibernate.Query;
-import org.hibernate.criterion.Example;
+import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.forbes.hibernate.bean.SysConfig;
-
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -19,23 +17,27 @@ import com.forbes.hibernate.bean.SysConfig;
  * methods provides additional information for how to configure it for the
  * desired type of transaction control.
  * 
- * @see com.forbes.hibernate.SysConfigBean
+ * @see com.forbes.hibernate.bean.SysConfig
  * @author MyEclipse Persistence Tools
  */
 
 public class BaseSysConfigDAO extends HibernateDaoSupport {
 	private static final Log log = LogFactory.getLog(BaseSysConfigDAO.class);
 	// property constants
-	public static final String KEY = "key";
+	public static final String ID = "id";
 	public static final String INFO = "info";
 	public static final String VALUE = "value";
 	public static final String TYPE = "type";
 	public static final String GROUP = "group";
 
+	protected void initDao() {
+		// do nothing
+	}
+
 	public void save(SysConfig transientInstance) {
 		log.debug("saving SysConfig instance");
 		try {
-			getSession().save(transientInstance);
+			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -46,7 +48,7 @@ public class BaseSysConfigDAO extends HibernateDaoSupport {
 	public void delete(SysConfig persistentInstance) {
 		log.debug("deleting SysConfig instance");
 		try {
-			getSession().delete(persistentInstance);
+			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -54,10 +56,10 @@ public class BaseSysConfigDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public SysConfig findById(java.lang.Integer id) {
+	public SysConfig findById(java.lang.String id) {
 		log.debug("getting SysConfig instance with id: " + id);
 		try {
-			SysConfig instance = (SysConfig) getSession().get(
+			SysConfig instance = (SysConfig) getHibernateTemplate().get(
 					"com.forbes.hibernate.bean.SysConfig", id);
 			return instance;
 		} catch (RuntimeException re) {
@@ -69,9 +71,7 @@ public class BaseSysConfigDAO extends HibernateDaoSupport {
 	public List findByExample(SysConfig instance) {
 		log.debug("finding SysConfig instance by example");
 		try {
-			List results = getSession().createCriteria(
-					"com.forbes.hibernate.bean.SysConfig").add(
-					Example.create(instance)).list();
+			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -87,17 +87,15 @@ public class BaseSysConfigDAO extends HibernateDaoSupport {
 		try {
 			String queryString = "from SysConfig as model where model."
 					+ propertyName + "= ?";
-			Query queryObject = getSession().createQuery(queryString);
-			queryObject.setParameter(0, value);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
 		}
 	}
 
-	public List findByVarname(Object key) {
-		return findByProperty(KEY, key);
+	public List findById(Object id) {
+		return findByProperty(ID, id);
 	}
 
 	public List findByInfo(Object info) {
@@ -120,8 +118,7 @@ public class BaseSysConfigDAO extends HibernateDaoSupport {
 		log.debug("finding all SysConfig instances");
 		try {
 			String queryString = "from SysConfig";
-			Query queryObject = getSession().createQuery(queryString);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -131,7 +128,8 @@ public class BaseSysConfigDAO extends HibernateDaoSupport {
 	public SysConfig merge(SysConfig detachedInstance) {
 		log.debug("merging SysConfig instance");
 		try {
-			SysConfig result = (SysConfig) getSession().merge(detachedInstance);
+			SysConfig result = (SysConfig) getHibernateTemplate().merge(
+					detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -143,7 +141,7 @@ public class BaseSysConfigDAO extends HibernateDaoSupport {
 	public void attachDirty(SysConfig instance) {
 		log.debug("attaching dirty SysConfig instance");
 		try {
-			getSession().saveOrUpdate(instance);
+			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -154,11 +152,15 @@ public class BaseSysConfigDAO extends HibernateDaoSupport {
 	public void attachClean(SysConfig instance) {
 		log.debug("attaching clean SysConfig instance");
 		try {
-			getSession().lock(instance, LockMode.NONE);
+			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
 			throw re;
 		}
+	}
+
+	public static BaseSysConfigDAO getFromApplicationContext(ApplicationContext ctx) {
+		return (BaseSysConfigDAO) ctx.getBean("SysConfigDAO");
 	}
 }
