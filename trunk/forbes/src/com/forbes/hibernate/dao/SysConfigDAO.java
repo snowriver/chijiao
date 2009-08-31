@@ -2,6 +2,8 @@ package com.forbes.hibernate.dao;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 import com.forbes.hibernate.basedao.BaseSysConfigDAO;
 
 /**
@@ -12,7 +14,7 @@ import com.forbes.hibernate.basedao.BaseSysConfigDAO;
  * methods provides additional information for how to configure it for the
  * desired type of transaction control.
  * 
- * @see com.forbes.hibernate.SysConfigBean
+ * @see com.forbes.hibernate.SysConfig
  * @author MyEclipse Persistence Tools
  */
 
