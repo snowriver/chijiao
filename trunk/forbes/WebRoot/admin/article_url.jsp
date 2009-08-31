@@ -44,7 +44,32 @@
 			return false;
 		}
 		
+		function onSelectTopArticleType(obj){
+		$.post(
+			"../ajax/ArticleTypeSelector.jsp",
+		    {				
+				pid:""+obj.value
+		    },
+		    updateSelectTopArticleType
+		);
+	}
+	
+	function updateSelectTopArticleType(response){
+		var arr = new Array();
+		arr = response.replace(/(^\s*)|(\s*$)/g,"").split("#");
+		var op = new Array();
+		$("#typeid").empty();
+        $("<option value='0'>请选择副类型</option>").appendTo("#typeid");
+		for( var i = 0; i < arr.length-1; i++ ){
+			op = arr[i].split("&");
+			$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#typeid");
+		}
 		
+	}
+	
+	function onSelectType(obj){
+		$("#typeid").val(obj.value);
+	}
 		
 	</script>
 	
@@ -133,12 +158,15 @@
 	       	  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 	            	<tr> 
 	              		<td width="100%" align="left">RSS URL：
-	              			<select id="type" name="type" style="width:120px">
+	              			<select id="type" name="type" style="width:120px" onchange="onSelectTopArticleType(this)">
 	            				<option value="0">请选择主类型</option>
 	            				<c:forEach items="${TOP_ARTICLE_TYPE_LIST}" var="at" varStatus="is">
 	            					<option value="${at.id }">${at.name }</option>
 	            				</c:forEach>	            				
 	            			</select>
+	            			<select id="typeid" name="typeid" style="width:240px" onchange="onSelectType(this);">
+            					<option value="0">请选择副类型</option>            				
+            				</select>
 	              			<input name="file" type="file" id="file" style="width:500px" />
 	              			<input type="submit" name="Submit" value="提交" class="inputbut" />&nbsp;&nbsp;&nbsp;&nbsp;<font color=red>${RESULT_MESSAGE }</font>
 	              		</td>
