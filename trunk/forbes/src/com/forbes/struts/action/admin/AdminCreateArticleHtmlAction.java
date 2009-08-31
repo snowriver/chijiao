@@ -16,6 +16,7 @@ import com.forbes.hibernate.bean.Article;
 import com.forbes.hibernate.bean.ArticleContent;
 import com.forbes.service.article.ArticleListManager;
 import com.forbes.util.Constant;
+import com.forbes.util.SysConfigManager;
 import com.forbes.util.ToHtml;
 import com.forbes.util.UrlTool;
 
@@ -44,6 +45,8 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 	public ActionForward all(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		String returnUrl = request.getParameter("returnUrl");
+		String fobresUrl = (String)SysConfigManager.getValue("cfg_forbes_url");
+		
 		boolean flag = false;
 		int okCnt 	 = 0;
 		int failCnt  = 0;
@@ -51,7 +54,7 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 			List list = articleListManager.getAllArticleid();
 			for(int i=0; i<list.size(); i++) {
 				int articleid = (Integer)list.get(i);
-				/*flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+articleid,
+				/*flag = ToHtml.toHtml(fobresUrl + "/article/ArticleView.do?id="+articleid,
 						request.getRealPath("/") + "article" + "/" + articleid + ".html", "gbk", "gbk");*/
 				
 				//生成TXT文件
@@ -80,6 +83,7 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 		String returnUrl = request.getParameter("returnUrl");
 		String arcID     = request.getParameter("arcID");
+		String fobresUrl = (String)SysConfigManager.getValue("cfg_forbes_url");
 		String id = ""; //`
 		System.out.println(arcID);
 		String artID [] = arcID.split("`");
@@ -93,7 +97,7 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 			for(int i=0; i<artID.length; i++) {
 				id = artID[i];
 				System.out.println(id);
-				flag = ToHtml.toHtml(Constant.FORBES_URL + "/article/ArticleView.do?id="+id,
+				flag = ToHtml.toHtml(fobresUrl + "/article/ArticleView.do?id="+id,
 						request.getRealPath("/") + "article" + "/" + id + ".html", "gbk", "gbk");
 				
 				//Article article = articleListManager.getArticle(Integer.parseInt(id));
