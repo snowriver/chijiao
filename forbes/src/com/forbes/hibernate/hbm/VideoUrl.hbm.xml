@@ -33,7 +33,8 @@
             <column name="litpictype" />
         </property>
         
-        <many-to-one name="video" class="com.forbes.hibernate.bean.Video" fetch="join" lazy="false">
+        <many-to-one name="video" class="com.forbes.hibernate.bean.Video" 
+        	fetch="select" lazy="proxy">
             <column name="video_id" />
         </many-to-one>
     </class>
