@@ -140,7 +140,7 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 					String url = "jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ="
 							+ accessurl;
 
-					String sql = "select 标题,内容 from content ";
+					String sql = "select 标题,内容,摘要 from content ";
 
 					// String url = "jdbc:odbc:Driver={MicroSoft Access Driver
 					// *.mdb)};DBQ = Northwind.mdb";
@@ -161,6 +161,7 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 						while (rs.next()) {
 							String title = rs.getString(1);
 							String content = rs.getString(2);
+							String description = rs.getString(3);
 
 							if (articleListManager.verifyTitle(title.trim()) &&
 									title!=null && title.length() >0 &&
@@ -179,12 +180,23 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 								a.setPubdate(new Date());
 								a.setLastpost(new Date());
 								a.setTitle(title);
-								if (title.length() > 40) {									
+								if (title.length() > 40) {
 									a.setShorttitle( title.substring(0, 39) );
 								}
 								else {
 									a.setShorttitle( title );
 								}
+								
+								if (description!=null && description.length() > 0) {
+									if (description.length() > 250) {
+										a.setDescription( description.substring(0, 248) );
+									}
+									else if (description.length() > 1 && description.length() <250) {
+										a.setDescription( description );
+									}
+								}
+								
+								
 								a.setClick(0);
 								a.setIscommend(new Short("0"));
 								a.setIsverify(new Short("1"));

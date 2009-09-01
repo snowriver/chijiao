@@ -215,7 +215,7 @@
 			
 			<UL class=news_con_main>
   				<LI>
-  					<jsp:include page="txt/${ARTICLE.id }.txt" /> 
+  					<jsp:include page="txt/${ARTICLE.id }.txt" />
   					
   					<!-- <P align=right>&nbsp;<A target=_blank href="#">╫ЬхКбшлЁ</A></P> -->
   				</LI>

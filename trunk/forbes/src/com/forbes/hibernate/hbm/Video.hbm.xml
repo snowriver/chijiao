@@ -28,10 +28,12 @@
             <column name="username" length="20" />
         </property>
         
-		<many-to-one name="videoType" class="com.forbes.hibernate.bean.VideoType" fetch="select" lazy="proxy">
+		<many-to-one name="videoType" class="com.forbes.hibernate.bean.VideoType" 
+			fetch="select" lazy="proxy">
             <column name="typeid" />
         </many-to-one>
-        <many-to-one name="videoType2" class="com.forbes.hibernate.bean.VideoType" fetch="select" lazy="proxy">
+        <many-to-one name="videoType2" class="com.forbes.hibernate.bean.VideoType" 
+        	fetch="select" lazy="proxy">
             <column name="typeid2" />
         </many-to-one>
 		
@@ -102,7 +104,8 @@
             <column name="videorank" />
         </property>
         
-        <set name="videoUrls" cascade="save-update" inverse="true" lazy="true" order-by="id"> 
+        <set name="videoUrls" cascade="save-update" inverse="true" 
+        	lazy="true" fetch="select" order-by="id"> 
 			<key> 
 				<column name="video_id"></column> 
 			</key> 
