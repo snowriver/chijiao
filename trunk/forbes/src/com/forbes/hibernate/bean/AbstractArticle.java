@@ -44,6 +44,7 @@ public abstract class AbstractArticle implements java.io.Serializable {
 	private String color;
 	private Short arcrank;
 	private Integer commentCnt;
+	private Short isbuild;
 	
 	private String pubdateString;
 
@@ -336,6 +337,14 @@ public abstract class AbstractArticle implements java.io.Serializable {
 
 	public void setCommentCnt(Integer commentCnt) {
 		this.commentCnt = commentCnt;
+	}
+
+	public Short getIsbuild() {
+		return isbuild;
+	}
+
+	public void setIsbuild(Short isbuild) {
+		this.isbuild = isbuild;
 	}
 
 }

@@ -110,9 +110,8 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 
 		AdminUploadFileForm adminUploadFileForm = (AdminUploadFileForm) form;
-		String returnUrl = request.getParameter("returnUrl");
-		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat(
-				"yyyy-MM-dd HH:mm:ss");
+		//String returnUrl = request.getParameter("returnUrl");
+		//java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		// System.out.println(returnUrl);
 		UcMembers member = (UcMembers) request.getSession().getAttribute(
 				"ADMIN");
@@ -180,6 +179,7 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 								a.setPubdate(new Date());
 								a.setLastpost(new Date());
 								a.setTitle(title);
+								a.setIsbuild((short)0);
 								if (title.length() > 40) {
 									a.setShorttitle( title.substring(0, 39) );
 								}
@@ -198,8 +198,8 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 								
 								
 								a.setClick(0);
-								a.setIscommend(new Short("0"));
-								a.setIsverify(new Short("1"));
+								a.setIscommend((short)0);
+								a.setIsverify((short)1);
 								a.setDigg(0);
 
 								if (adminUploadFileForm.getType() != null) {
@@ -227,7 +227,8 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 								// System.out.println();
 								
 								boolean txtFlag = ToHtml.toTxt(content,
-										request.getRealPath("/") + "article/txt/" + a.getId() + ".txt", "gbk");
+										request.getRealPath("/") + "article/txt/" + a.getId() + ".txt", 
+										"gbk");
 								
 								addCnt++;
 								totalCnt++;
