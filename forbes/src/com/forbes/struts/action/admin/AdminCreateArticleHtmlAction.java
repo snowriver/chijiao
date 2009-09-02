@@ -5,17 +5,16 @@
 package com.forbes.struts.action.admin;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+
 import com.forbes.hibernate.bean.Article;
 import com.forbes.hibernate.bean.ArticleContent;
 import com.forbes.service.article.ArticleListManager;
-import com.forbes.util.Constant;
 import com.forbes.util.SysConfigManager;
 import com.forbes.util.ToHtml;
 import com.forbes.util.UrlTool;
@@ -44,29 +43,37 @@ public class AdminCreateArticleHtmlAction extends DispatchAction {
 	 */
 	public ActionForward all(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		String returnUrl = request.getParameter("returnUrl");
-		String fobresUrl = (String)SysConfigManager.getValue("cfg_forbes_url");
+		String returnUrl = request.getParameter("returnUrl");		
 		
 		boolean flag = false;
 		int okCnt 	 = 0;
 		int failCnt  = 0;
 		try {
 			List list = articleListManager.getAllArticleid();
+			
 			for(int i=0; i<list.size(); i++) {
 				int articleid = (Integer)list.get(i);
 				/*flag = ToHtml.toHtml(fobresUrl + "/article/ArticleView.do?id="+articleid,
 						request.getRealPath("/") + "article" + "/" + articleid + ".html", "gbk", "gbk");*/
 				
 				//生成TXT文件
-				//Article article = articleListManager.getArticle(articleid);
-				ArticleContent content = articleListManager.getArticleContent(articleid);
-				
-				boolean txtFlag = ToHtml.toTxt(content.getContent(),
-						request.getRealPath("/") + "article/txt/" + articleid + ".txt", "gbk");
-				if(flag)
-					okCnt++;
-				else
+				Article article = articleListManager.getArticle(articleid);
+				if(article.getIsbuild() == 0) {
+					ArticleContent content = article.getArticleContent();
+					
+					boolean txtFlag = ToHtml.toTxt(content.getContent(),
+							request.getRealPath("/") + "article/txt/" + articleid + ".txt", "gbk");
+					article.setIsbuild((short)1);
+					articleListManager.updateArticle(article);
+					
+					if(flag)
+						okCnt++;
+					else
+						failCnt++;
+				} else {
 					failCnt++;
+				}
+					
 			}
 			request.setAttribute( "OK_MESSAGE", "成功生成" + okCnt + "个，失败" + failCnt + "个！" );
 			request.setAttribute( "RETURN_URL", new UrlTool().getUrl2(returnUrl, "[|]") );
