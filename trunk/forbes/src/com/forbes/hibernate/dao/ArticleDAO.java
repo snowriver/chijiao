@@ -191,5 +191,19 @@ public class ArticleDAO extends BaseArticleDAO {
 			throw re;
 		}
 	}
+	
+	public List getAllDeletedArticle() {
+		
+		try {			
+			String queryString = "SELECT DISTINCT model.id FROM Article AS model WHERE model.isdelete = 'Y' ";
+			
+			org.hibernate.Query query = getSession().createQuery(queryString);			
+
+			return query.list();
+		} catch (RuntimeException re) {
+			log.error("find by property name failed", re);
+			throw re;
+		}
+	}
 
 }
