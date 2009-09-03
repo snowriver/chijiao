@@ -381,6 +381,34 @@ public class AdminUpdateArticleAction extends DispatchAction {
 		}
 	}
 
-	
+	public ActionForward clear(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+
+		String returnUrl = request.getParameter("returnUrl");
+		
+		try {
+		
+			List<Article> list = articleListManager.getDeletedArticle();
+			for (Article article : list) {
+				List acs = commentManager.getComment(new Short("2"), article.getId());
+				for(int j=0; j<acs.size(); j++) {
+					Comment ac = (Comment)acs.get(j);
+					System.out.println("ac.id = "+ac.getId() );
+					commentManager.deleteComment(ac);
+				}
+				articleListManager.deleteArticleContent(article.getArticleContent());
+				articleListManager.deleteArticle(article);
+			}
+			
+			request.setAttribute("OK_MESSAGE", "清空回收站成功！");
+			request.setAttribute( "RETURN_URL", new UrlTool().getUrl2(returnUrl, "[|]"));
+			return mapping.findForward("ok");
+
+		}catch( Exception e ){
+			e.printStackTrace();
+			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
+			return mapping.findForward("fail");
+		}
+	}
 	
 }

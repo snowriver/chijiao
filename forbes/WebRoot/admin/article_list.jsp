@@ -85,6 +85,9 @@
 											<input type='button'
 												onclick="location='AdminUpdateArticle.do?act=list&deleteFlag=Y';"
 												value='回收站' class='inputbut' name='bb2' />
+											<input type='button'
+												onclick="location='AdminUpdateArticle.do?act=clear';"
+												value='清空回收站' class='inputbut' name='bb2' />
 										</td>
 									</tr>
 								</table>

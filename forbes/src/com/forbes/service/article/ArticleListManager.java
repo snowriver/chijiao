@@ -58,4 +58,6 @@ public interface ArticleListManager {
 
 	public void updateArticleContent(ArticleContent articleContent);
 	
+	public List getDeletedArticle( ) throws ForbesException;
+	
 }

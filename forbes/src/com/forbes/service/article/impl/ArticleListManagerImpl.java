@@ -173,5 +173,15 @@ public class ArticleListManagerImpl implements ArticleListManager {
 		articleContentDAO.merge(articleContent);
 	}
 	
+	public List getDeletedArticle( ) throws ForbesException{
+		
+		try {
+			List list = articleDAO.getAllDeletedArticle();
+			return list;
+		} catch (Exception se) {
+			se.printStackTrace();
+			throw new ForbesException(se.getMessage());
+		}
+	}
 	
 }
