@@ -86,7 +86,7 @@
 												onclick="location='AdminUpdateArticle.do?act=list&deleteFlag=Y';"
 												value='回收站' class='inputbut' name='bb2' />
 											<input type='button'
-												onclick="location='AdminUpdateArticle.do?act=clear';"
+												onclick="location='AdminUpdateArticle.do?act=clear&returnUrl=|AdminUpdateArticle.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';"
 												value='清空回收站' class='inputbut' name='bb2' />
 										</td>
 									</tr>

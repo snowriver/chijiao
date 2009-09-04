@@ -35,7 +35,7 @@ public class ArticleDAO extends BaseArticleDAO {
 					"AND (model.title LIKE ? OR model.description LIKE ? ) ";
 			
 			if(userid != null && !userid.equals(""))
-				queryString += "AND model.user = " + userid + " ";
+				queryString += "AND model.userid = " + userid + " ";
 			if(typeid != null && !typeid.equals(""))
 				queryString += "AND ( model.articleType in (" + typeid  + ") OR model.articleType2 in (" + typeid  + ") ) ";
 			if(isverify != null && isverify.length() >0)
@@ -63,7 +63,7 @@ public class ArticleDAO extends BaseArticleDAO {
 					"AND (model.title LIKE ? OR model.description LIKE ? ) ";
 
 			if(userid != null && !userid.equals(""))
-				queryString += "AND model.user = " + userid + " ";
+				queryString += "AND model.userid = " + userid + " ";
 			if(typeid != null && !typeid.equals(""))
 				queryString += "AND ( model.articleType in (" + typeid  + ") OR model.articleType2 in (" + typeid  + ") ) ";
 			if(isverify != null && isverify.length() >0)
@@ -195,7 +195,7 @@ public class ArticleDAO extends BaseArticleDAO {
 	public List getAllDeletedArticle() {
 		
 		try {			
-			String queryString = "SELECT DISTINCT model.id FROM Article AS model WHERE model.isdelete = 'Y' ";
+			String queryString = "SELECT DISTINCT model FROM Article AS model WHERE model.isdelete = 'Y' ";
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 
