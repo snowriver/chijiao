@@ -181,7 +181,8 @@ public class ArticleDAO extends BaseArticleDAO {
 	public List getAllArticleid() {
 		
 		try {			
-			String queryString = "SELECT DISTINCT model.id FROM Article AS model WHERE model.isdelete = 'N' ";
+			String queryString = "SELECT DISTINCT model.id FROM Article AS model" +
+					" WHERE model.isdelete = 'N' AND model.isbuild = 0 ";
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 
