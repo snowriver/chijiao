@@ -310,9 +310,10 @@
 						    <td colspan="2">&nbsp;
 						    	<c:if test="${empty sessionScope.CLIENT}"><a href="javascript:void(0);">加为好友</a></c:if>
 						    	<c:if test="${not empty sessionScope.CLIENT}"><a target="_blank" href="${UC_HOME_URL }/cp.php?ac=friend&op=add&uid=${ARTICLE.userid }">加为好友</a></c:if>
-						    	
 						    </td>
 						  </tr>
+						  
+						  <!-- 
 						  <tr>
 						    <td align="center">&nbsp;用户等级:</td>
 						    <td colspan="3">&nbsp;高级会员</td>
@@ -325,6 +326,7 @@
 						    <td align="center">&nbsp;最后登录:</td>
 						    <td colspan="3">&nbsp;${ARTICLE }</td>
 						  </tr>
+						   -->
   					</TBODY>
   				</TABLE>
   			</DIV>
