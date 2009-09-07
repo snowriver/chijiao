@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlowViewLayout Version="1.2">
-  <StrutsActivity path="/admin/AdminLogin.do" location="892,527" dimension="362,100" />
   <StrutsActivity path="/admin/AdminListUser.do" location="197,527" dimension="362,100" />
   <StrutsActivity path="/admin/AdminUpdateUser.do" location="1302,0" dimension="362,100" />
   <StrutsActivity path="/admin/AdminUpdateCity.do" location="1764,0" dimension="362,100" />
@@ -13,6 +12,7 @@
   <StrutsActivity path="/admin/AdminTohtml.do" location="650,250" dimension="362,104" />
   <StrutsActivity path="/admin/AdminManageBulletin.do" location="1250,250" dimension="362,104" />
   <StrutsActivity path="/admin/AdminUploadFileProgress.do" location="950,950" dimension="362,104" />
+  <StrutsActivity path="/admin/AdminUploadFile.do" location="50,1050" dimension="362,104" />
   <StrutsActivity path="/admin/index_goto.jsp" location="807,727" dimension="162,52" />
   <StrutsActivity path="/admin/login.jsp" location="650,850" dimension="127,53" />
   <StrutsActivity path="/admin/index.jsp" location="1069,727" dimension="129,52" />
@@ -33,7 +33,7 @@
   <StrutsActivity path="/admin/article_add.jsp" location="650,550" dimension="161,52" />
   <StrutsActivity path="/admin/bulletin_list.jsp" location="350,850" dimension="161,53" />
   <StrutsActivity path="/admin/operate_result.jsp" location="950,1350" dimension="181,53" />
-  <StrutsActivity path="/admin/AdminUploadFile.do" />
+  <StrutsActivity path="/admin/AdminLogin.do" location="892,527" dimension="362,100" />
   <StrutsTransition id="/admin/AdminManageService.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="3008,100" />
@@ -160,8 +160,9 @@
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminLogin.do,fail,/admin/login.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1073,577" />
-      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1054,627" />
+      <AbsolutePoint location="1054,876" />
+      <AbsolutePoint location="777,876" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateUser.do,fail,/admin/operate_fail.jsp,1" routingType="0">

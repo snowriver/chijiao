@@ -57,16 +57,22 @@ public class UserLoginForm extends ActionForm {
 		request.setAttribute("PASSWORD", password);
 		
 		if ( loginName == null || loginName.length() < 1 ){
-			errors.add("loginName.error", new ActionMessage("请输入用户名", false));
+			//errors.add("loginName.error", new ActionMessage("请输入用户名", false));
+			request.setAttribute("ERROR_INFO", "请输入用户名。");
+			return errors;
 		}
 
 		if ( password == null || password.length() < 1 ){
-			errors.add("password.error", new ActionMessage("请输入密碼", false));
+			//errors.add("password.error", new ActionMessage("请输入密碼", false));
+			request.setAttribute("ERROR_INFO", "请输入密碼。");
+			return errors;
 		}
 		
 		if ( validateFlag != null && validateFlag.equals("Y") ){
 			if ( validateCode == null || validateCode.length() < 1 ){
-				errors.add("validateCode", new ActionMessage("请输入验证码", false));
+				//errors.add("validateCode", new ActionMessage("请输入验证码", false));
+				request.setAttribute("ERROR_INFO", "请输入验证码。");
+				return errors;
 			}
 			else {
 				HttpSession session = request.getSession();
@@ -74,8 +80,10 @@ public class UserLoginForm extends ActionForm {
 				session.removeAttribute("VALIDATE_CODE");
 				
 				if (!request.getParameter("validateCode").equals(checkCode)) {
-					errors.add("validateCode.error", new ActionMessage("验证碼错误，請重新登錄。", false));
+					//errors.add("validateCode.error", new ActionMessage("验证碼错误，請重新登錄。", false));
 					//request.setAttribute("ERROR_INFO", "验证碼错误，請重新登錄。");
+					request.setAttribute("ERROR_INFO", "验证碼错误，請重新登錄。。");
+					return errors;
 				}
 			}
 		}
