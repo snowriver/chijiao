@@ -101,11 +101,12 @@
 
 						<iframe id='target_upload' name='target_upload' src='' 
 							style='display: none'></iframe>
-						<form action="AdminBatchAddArticle.do?act=upload" id="uploadForm"
+						<form action="AdminUploadFile.do" id="uploadForm"
 							enctype="multipart/form-data" method="post"
 							target="target_upload">
 							<input type="file" name="upload" />
 							<input type="button" id="subButton" value="上传" />
+							<input type="button" id="addButton" value="批量添加" onclick="href='AdminBatchAddArticle.do?act=access'" />
 						</form>
 						<div id="progress">
 							<div id="title">

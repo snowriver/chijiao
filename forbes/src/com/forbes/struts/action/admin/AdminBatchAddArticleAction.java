@@ -272,54 +272,152 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 						"请选择上传的文件或者您上传的文件过大，不能大于100M!");
 				return mapping.findForward("fail");
 			}
-		}
-
-		else {
-
-			request.setAttribute("FAIL_MESSAGE", "请上传Access文件。");
-			return mapping.findForward("fail");
-		}
+		
 	}
 	
 	public ActionForward upload(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		DiskFileItemFactory factory = new DiskFileItemFactory();
-		factory.setSizeThreshold(2048*1024);
-		FileUploadListener getBarListener = new FileUploadListener(request);
-		ServletFileUpload upload = new ServletFileUpload(factory);
-		upload.setProgressListener(getBarListener);
-		try {
-			List formList = upload.parseRequest(request);
-			Iterator<Object> formItem = formList.iterator();
-			
-			while (formItem.hasNext()) {
-				FileItem item = (FileItem) formItem.next();
-				if (item.isFormField()) {
-					System.out.println("Field Name:" + item.getFieldName());
+
+		//String returnUrl = request.getParameter("returnUrl");
+		//java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		// System.out.println(returnUrl);
+		String filePath = (String) request.getSession().getAttribute("FILE_PATH");
+
+		if (filePath !=null && filePath.length() >0);
+
+			String ext = filePath.substring(filePath.indexOf("."));
+				
+				if (ext.toLowerCase().equals(".mdb")) {
+
+					System.out.println(filePath);
+
+					//
+					// String driver = "sun.jdbc.odbc.JdbcOdbcDriver";
+					String url = "jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ="
+							+ filePath;
+
+					String sql = "select 标题,内容,摘要 from content ";
+
+					// String url = "jdbc:odbc:Driver={MicroSoft Access Driver
+					// *.mdb)};DBQ = Northwind.mdb";
+					String username = "";
+					String password = "";
+					Connection conn = null;
+					Statement stmt = null;
+					ResultSet rs = null;
+					int addCnt = 0;
+					int totalCnt = 0;
+					try {
+						Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+						conn = DriverManager.getConnection(url, username,
+								password);
+						stmt = conn.createStatement();
+						rs = stmt.executeQuery(sql);
+
+						while (rs.next()) {
+							String title = rs.getString(1);
+							String content = rs.getString(2);
+							String description = rs.getString(3);
+
+							if (articleListManager.verifyTitle(title.trim()) &&
+									title!=null && title.length() >0 &&
+									content !=null && content.length() >0) {
+
+								Article a = new Article();
+
+								ArticleContent ac = new ArticleContent();
+								ac.setContent(content);
+
+								a.setIsdelete("N");
+								a.setUserid(member.getUid());
+								a.setUsername(member.getUsername());
+								a.setUserip(request.getLocalAddr());
+								a.setArticleContent(ac);
+								a.setPubdate(new Date());
+								a.setLastpost(new Date());
+								a.setTitle(title);
+								a.setIsbuild((short)0);
+								if (title.length() > 40) {
+									a.setShorttitle( title.substring(0, 39) );
+								}
+								else {
+									a.setShorttitle( title );
+								}
+								
+								if (description!=null && description.length() > 0) {
+									if (description.length() > 250) {
+										a.setDescription( description.substring(0, 248) );
+									}
+									else if (description.length() > 1 && description.length() <250) {
+										a.setDescription( description );
+									}
+								}
+																
+								a.setClick(0);
+								a.setIscommend((short)0);
+								a.setIsverify((short)1);
+								a.setDigg(0);
+
+								if (adminUploadFileForm.getType() != null) {
+									ArticleType at = articleTypeManager
+											.getArticleType(Integer
+													.parseInt(adminUploadFileForm
+															.getType()));
+									a.setArticleType(at);
+								}
+								
+								if (adminUploadFileForm.getTypeid() != null &&
+										adminUploadFileForm.getTypeid().trim() != "0"	) {
+									ArticleType at = articleTypeManager
+											.getArticleType(Integer
+													.parseInt(adminUploadFileForm
+															.getTypeid().trim()));
+									a.setArticleType2(at);
+								}
+
+								ac.setArticle(a);
+								articleListManager.addArticle(a);
+								articleListManager.addArticleContent(ac);
+								System.out.println(title.trim());
+								// System.out.println(rs.getString(2));
+								// System.out.println();
+								
+								if( ToHtml.toTxt(content,
+										request.getRealPath("/") + "article/txt/" + a.getId() + ".txt", 
+										"gbk") ){
+									a.setIsbuild((short)1);
+									articleListManager.updateArticle(a);
+								}
+								
+								addCnt++;
+								totalCnt++;
+
+							} else
+								totalCnt++;
+
+						}
+
+					} catch (SQLException e) {
+						e.printStackTrace();
+					} catch (ClassNotFoundException ex) {
+						ex.printStackTrace();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					//
+					request.setAttribute("RESULT_MESSAGE", "数据库共" + totalCnt
+							+ "条记录，成功添加" + addCnt + "条记录");
+					return mapping.findForward("access");
 				} else {
-					String fileName = item.getName().substring(item.getName().lastIndexOf("\\")+1);
-					
-					String filePath     = request.getRealPath("/") + "UploadFile/access";//取當前系统路径
-					
-					File file = new File(filePath + "\\" + fileName);
-					System.out.println(filePath	+ "\\" + fileName);
-					OutputStream out = item.getOutputStream();
-					InputStream in = item.getInputStream();
-					request.getSession().setAttribute("outPutStream", out);
-					request.getSession().setAttribute("inPutStream", in);
-					item.write(file);
-					
+					request.setAttribute("FAIL_MESSAGE", "只能上传Access文件!");
+					return mapping.findForward("fail");
 				}
-			}
-		} catch (FileUploadException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+			
 		}
-		return null;
+	
 	}
 
 }
