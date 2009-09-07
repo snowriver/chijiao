@@ -12,12 +12,12 @@ public class FileUploadListener implements ProgressListener {
 	public FileUploadListener(HttpServletRequest req) {
 		session = req.getSession();
 		FileUploadStatus status = new FileUploadStatus();
-		session.setAttribute("status", status);
+		session.setAttribute("FILE_UPLOAD_STATUS", status);
 	}
 
 	public void update(long pBytesRead, long pContentLength, int pItems) {
 		// TODO Auto-generated method stub
-		FileUploadStatus status = (FileUploadStatus) session.getAttribute("status");
+		FileUploadStatus status = (FileUploadStatus) session.getAttribute("FILE_UPLOAD_STATUS");
 		status.setPBytesRead(pBytesRead);
 		status.setPContentLength(pContentLength);
 		status.setPItems(pItems);

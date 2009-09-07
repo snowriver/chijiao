@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlowViewLayout Version="1.2">
+  <StrutsActivity path="/admin/AdminLogin.do" location="892,527" dimension="362,100" />
   <StrutsActivity path="/admin/AdminListUser.do" location="197,527" dimension="362,100" />
   <StrutsActivity path="/admin/AdminUpdateUser.do" location="1302,0" dimension="362,100" />
   <StrutsActivity path="/admin/AdminUpdateCity.do" location="1764,0" dimension="362,100" />
@@ -33,7 +34,7 @@
   <StrutsActivity path="/admin/article_add.jsp" location="650,550" dimension="161,52" />
   <StrutsActivity path="/admin/bulletin_list.jsp" location="350,850" dimension="161,53" />
   <StrutsActivity path="/admin/operate_result.jsp" location="950,1350" dimension="181,53" />
-  <StrutsActivity path="/admin/AdminLogin.do" location="892,527" dimension="362,100" />
+  <StrutsActivity path="/admin/AdminImportArticleProgress.do" />
   <StrutsTransition id="/admin/AdminManageService.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="3008,100" />

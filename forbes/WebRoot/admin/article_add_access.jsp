@@ -21,6 +21,7 @@
 <link type="text/css" rel="stylesheet" href="css/progressBar.css" />
 <script language="javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
 <script language="javascript" src="js/progressBar.js"></script>
+<script language="javascript" src="js/importProgressBar.js"></script>
 
 <style>
 	.nnpp{

@@ -18,7 +18,10 @@
 <title>关键字管理</title>
 <link href="div.css" rel="stylesheet" type="text/css" />
 <link href="css_body.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="css/progressBar.css" />
 <script language="javascript" src="../js/jquery/jquery-1.2.6.min.js"></script>
+<script language="javascript" src="js/progressBar.js"></script>
+<script language="javascript" src="js/importProgressBar.js"></script>
 
 <style>
 	.nnpp{
@@ -141,7 +144,7 @@
       		<td width="100%"></td>      
     	</tr>
     	
-    	
+    	<!-- 
     	<tr> 
       		<td height="26" colspan="6">
       			<table width="100%" border="0" align="center">
@@ -173,6 +176,61 @@
 	            	</tr>
 	          	</table>
 	  			</form>
+          	</td>
+      	</tr>
+      	
+		<tr align="center" bgcolor="#F8FBFB" height="24"> 
+      		<td width="100%"></td>      
+    	</tr>
+    	 -->
+    	<tr> 
+      		<td height="26" colspan="6">
+      			<table width="100%" border="0" align="center">
+          			<tr> 
+            			<td width="100%" height="35" align="left"><strong>Ajax上传Access文件后添加文章</strong></td>            
+          			</tr>
+        		</table>
+        	</td>
+		</tr>
+    
+		<tr align="center" bgcolor="#F0FDDB"> 
+        	<td width="100%" height="24" colspan="6" bgcolor="#EDF9D5">
+        		<iframe id='target_upload' name='target_upload' src='' style='display: none'></iframe>
+        		<form action="AdminUploadFile.do" id="uploadForm" enctype="multipart/form-data" method="post" target="target_upload">
+	       	  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	            	<tr> 
+	              		<td width="100%" align="left">
+	              			<input name="file" type="file" id="file" style="width:500px" />
+	              			<input type="button" id="subButton" value="上传" />
+							
+	              		</td>
+	            	</tr>
+	          	</table>
+	  			</form>
+	  			<form action="AdminBatchAddArticle.do?act=importArticle" id="importForm" method="post" target="target_upload">
+	  			类型：
+	              			
+	              			<select id="type" name="type" style="width:120px" onchange="onSelectTopArticleType(this)">
+	            				<option value="0">请选择主类型</option>
+	            				<c:forEach items="${TOP_ARTICLE_TYPE_LIST}" var="at" varStatus="is">
+	            					<option value="${at.id }">${at.name }</option>
+	            				</c:forEach>	            				
+	            			</select>
+	            			<select id="typeid" name="typeid" style="width:240px" onchange="onSelectType(this);">
+            					<option value="0">请选择副类型</option>            				
+            				</select>
+	  			<input type="button" id="importButton" value="导入" />
+	  			</form>
+	  			<div id="progress">
+							<div id="title">
+								<span id="text">上传进度</span>
+								<div id="close">X</div>
+							</div>
+							<div id="progressBar">
+								<div id="uploaded"></div>
+							</div>
+							<div id="info"></div>
+				</div>
           	</td>
       	</tr>
       	
