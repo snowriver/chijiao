@@ -149,6 +149,12 @@
       		type="org.springframework.web.struts.DelegatingActionProxy">
       		<forward name="ok" path="/admin/operate_result.jsp" />
     	</action>
+    	
+    	<action
+      		path="/admin/AdminUploadFile"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+    	</action>
 		
 	</action-mappings>
 	
