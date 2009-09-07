@@ -79,6 +79,8 @@
 	
 	<bean name="/admin/AdminTohtml" class="com.forbes.struts.action.admin.AdminTohtmlAction" singleton="false"></bean>
 	
+	<bean name="/admin/AdminUploadFileProgress" class="com.forbes.struts.action.admin.AdminUploadFileProgressAction" singleton="false"></bean>
+	
 	<bean name="/admin/AdminManageBulletin" class="com.forbes.struts.action.admin.AdminManageBulletinAction" singleton="false">
 		<property name="bulletinManager">
 			<ref bean="bulletinManagerService" />
