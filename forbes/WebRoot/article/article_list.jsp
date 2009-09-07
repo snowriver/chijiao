@@ -40,9 +40,9 @@
 			$("#Pagination").pagination(${PAGER.totoalCnt}, 
 			{   
 				current_page:${PAGER.curPage-1},
-				items_per_page:8,
+				items_per_page:10,
 				num_edge_entries: 1,
-				num_display_entries: 8,
+				num_display_entries: 10,
 				callback: pageselectCallback
 			});
 			}
