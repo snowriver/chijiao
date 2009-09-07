@@ -1,13 +1,10 @@
 package com.forbes.hibernate.dao;
 
-
 import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import com.forbes.hibernate.basedao.BaseArticleDAO;
-import com.forbes.hibernate.bean.Article;
+
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -110,9 +107,7 @@ public class ArticleDAO extends BaseArticleDAO {
 	}
 	
 	public List findNextArticle(String id) {
-		
 		//if (typeid == null) typeid = "";
-		
 		try {			
 			String queryString = "SELECT DISTINCT model FROM Article AS model WHERE model.isdelete = 'N' AND model.isverify > 0 ";			
 			/*if(typeid != null && !typeid.equals(""))
@@ -132,9 +127,7 @@ public class ArticleDAO extends BaseArticleDAO {
 	}
 	
 	public List findPreArticle(String id) {
-		
 		//if (typeid == null) typeid = "";
-		
 		try {			
 			String queryString = "SELECT DISTINCT model FROM Article AS model WHERE model.isdelete = 'N' AND model.isverify > 0 ";			
 			/*if(typeid != null && !typeid.equals(""))
@@ -179,7 +172,6 @@ public class ArticleDAO extends BaseArticleDAO {
 	}
 	
 	public List getAllArticleid() {
-		
 		try {			
 			String queryString = "SELECT DISTINCT model.id FROM Article AS model" +
 					" WHERE model.isdelete = 'N' AND model.isbuild = 0 ";
@@ -194,7 +186,6 @@ public class ArticleDAO extends BaseArticleDAO {
 	}
 	
 	public List getAllDeletedArticle() {
-		
 		try {			
 			String queryString = "SELECT DISTINCT model FROM Article AS model WHERE model.isdelete = 'Y' ";
 			
