@@ -1,7 +1,10 @@
 package com.forbes.struts.action.admin;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,8 +12,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -20,6 +31,7 @@ import com.forbes.hibernate.bean.Article;
 import com.forbes.hibernate.bean.ArticleContent;
 import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.hibernate.bean.UcMembers;
+import com.forbes.listener.FileUploadListener;
 import com.forbes.service.article.ArticleTypeManager;
 import com.forbes.service.article.ArticleListManager;
 import com.forbes.struts.form.admin.AdminUploadFileForm;
@@ -113,15 +125,14 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 		//String returnUrl = request.getParameter("returnUrl");
 		//java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		// System.out.println(returnUrl);
-		UcMembers member = (UcMembers) request.getSession().getAttribute(
-				"ADMIN");
+		UcMembers member = (UcMembers) request.getSession().getAttribute("ADMIN");
 
 		if (adminUploadFileForm.getFile() != null) {
 			FormFile file = adminUploadFileForm.getFile();
 
 			String ext = "";
 
-			if (file.getFileSize() > 0 && file.getFileSize() <= 30000000) {
+			if (file.getFileSize() > 0 && file.getFileSize() <= 100000000) {
 				System.out.println(" 大小：" + file.getFileSize());
 				System.out.println(" 后缀："
 						+ file.getFileName().substring(
@@ -258,7 +269,7 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 
 			} else {
 				request.setAttribute("FAIL_MESSAGE",
-						"请选择上传的文件或者您上传的文件过大，不能大于30M!");
+						"请选择上传的文件或者您上传的文件过大，不能大于100M!");
 				return mapping.findForward("fail");
 			}
 		}
@@ -268,6 +279,47 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 			request.setAttribute("FAIL_MESSAGE", "请上传Access文件。");
 			return mapping.findForward("fail");
 		}
+	}
+	
+	public ActionForward upload(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		DiskFileItemFactory factory = new DiskFileItemFactory();
+		factory.setSizeThreshold(2048*1024);
+		FileUploadListener getBarListener = new FileUploadListener(request);
+		ServletFileUpload upload = new ServletFileUpload(factory);
+		upload.setProgressListener(getBarListener);
+		try {
+			List formList = upload.parseRequest(request);
+			Iterator<Object> formItem = formList.iterator();
+			
+			while (formItem.hasNext()) {
+				FileItem item = (FileItem) formItem.next();
+				if (item.isFormField()) {
+					System.out.println("Field Name:" + item.getFieldName());
+				} else {
+					String fileName = item.getName().substring(item.getName().lastIndexOf("\\")+1);
+					
+					String filePath     = request.getRealPath("/") + "UploadFile/access";//取當前系统路径
+					
+					File file = new File(filePath + "\\" + fileName);
+					System.out.println(filePath	+ "\\" + fileName);
+					OutputStream out = item.getOutputStream();
+					InputStream in = item.getInputStream();
+					request.getSession().setAttribute("outPutStream", out);
+					request.getSession().setAttribute("inPutStream", in);
+					item.write(file);
+					
+				}
+			}
+		} catch (FileUploadException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }
