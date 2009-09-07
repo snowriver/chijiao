@@ -57,7 +57,8 @@ public class AdminFilter extends HttpServlet implements Filter {
 		        //System.out.println(" admin url = " + url);
 		        
 		        if ( admin == null ){
-		        	if ( url.indexOf("AdminLogin")>0 || url.indexOf("index.jsp")>0 ){
+		        	if ( url.indexOf("AdminLogin")>0 || url.indexOf("index.jsp")>0
+		        			|| url.indexOf("login.jsp")>0 ){
 		        		filterChain.doFilter(request, response);
 		        	}
 		        	else {
@@ -71,7 +72,7 @@ public class AdminFilter extends HttpServlet implements Filter {
 			        	
 			        	else*/
 			        		filterConfig.getServletContext().getRequestDispatcher(
-			                	"/admin/logout.jsp").forward(request, response);
+			                	"/admin/index.jsp").forward(request, response);
 			        }
 		        	
 		        	
