@@ -17,7 +17,7 @@ function getProgressBar() {
 	var contentLengthToShow = 0;
 	var bytesReadGtMB = 0;
 	var contentLengthGtMB = 0;
-	$.getJSON("/uploadProgress/getBar", {"t":timestamp}, function (json) {
+	$.getJSON("AdminUploadFileProgress.do", {"t":timestamp}, function (json) {
 		var bytesRead = (json.pBytesRead / 1024).toString();
 		if (bytesRead > 1024) {
 			bytesReadToShow = (bytesRead / 1024).toString();
