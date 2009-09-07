@@ -117,7 +117,7 @@ public class ArticleSearchAction extends DispatchAction {
 
 			List list = null;
 			Pager pager = new Pager();
-			pager.setCntOfPage( 8 );
+			pager.setCntOfPage( 10 );
 			pager.setCurPage( iPageNo );
 			
 			list = articleListManager.getArticleByPage(pager, iPageNo, "N", null, null, "1", keyword, orderby);
@@ -181,7 +181,7 @@ public class ArticleSearchAction extends DispatchAction {
 
 			List list = null;
 			Pager pager = new Pager();
-			pager.setCntOfPage( 8 );
+			pager.setCntOfPage( 10 );
 			pager.setCurPage( iPageNo );
 			
 			list = articleListManager.getArticleByPage(pager, iPageNo, "N", null, typeid, "1",keyword, orderby);
