@@ -58,7 +58,7 @@ public class AdminFilter extends HttpServlet implements Filter {
 		        
 		        if ( admin == null ){
 		        	if ( url.indexOf("AdminLogin")>0 || url.indexOf("index.jsp")>0
-		        			|| url.indexOf("login.jsp")>0 ){
+		        			|| url.indexOf("login")>0  || url.indexOf("validate_code.jsp")>0 ){
 		        		filterChain.doFilter(request, response);
 		        	}
 		        	else {

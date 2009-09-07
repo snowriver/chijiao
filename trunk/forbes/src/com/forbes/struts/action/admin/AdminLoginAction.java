@@ -56,11 +56,15 @@ public class AdminLoginAction extends Action {
 						return mapping.findForward("ok");
 					}
 					else{
+						request.setAttribute("LOGIN_NAME", loginName);
+						request.setAttribute("PASSWORD", password);
 						request.setAttribute("ERROR_INFO", "密码错误，或者该用户已被注销。");
 						return mapping.findForward("fail");
 					}
 				}
 				else {
+					request.setAttribute("LOGIN_NAME", loginName);
+					request.setAttribute("PASSWORD", password);
 					request.setAttribute("ERROR_INFO", "本系统中无该用户，或者该用户无权限访问该后台管理系统。");
 					return mapping.findForward("fail");
 				}
