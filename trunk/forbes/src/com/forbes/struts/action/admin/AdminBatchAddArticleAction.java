@@ -17,6 +17,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -31,6 +32,7 @@ import com.forbes.hibernate.bean.Article;
 import com.forbes.hibernate.bean.ArticleContent;
 import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.hibernate.bean.UcMembers;
+import com.forbes.listener.ArticleImportStatus;
 import com.forbes.listener.FileUploadListener;
 import com.forbes.service.article.ArticleTypeManager;
 import com.forbes.service.article.ArticleListManager;
@@ -272,22 +274,34 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 						"请选择上传的文件或者您上传的文件过大，不能大于100M!");
 				return mapping.findForward("fail");
 			}
+		}else {
+			request.setAttribute("FAIL_MESSAGE", "只能上传Access文件!");
+			return mapping.findForward("fail");
+		}
 		
 	}
 	
-	public ActionForward upload(ActionMapping mapping, ActionForm form,
+	public ActionForward importArticle(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-
-		//String returnUrl = request.getParameter("returnUrl");
-		//java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		// System.out.println(returnUrl);
+		
+		
 		String filePath = (String) request.getSession().getAttribute("FILE_PATH");
+		UcMembers member = (UcMembers) request.getSession().getAttribute("ADMIN");
+		
+		System.out.println("importArticle file path =  " + filePath);
+		ArticleImportStatus status = new ArticleImportStatus();
+		status.setCurrentCnt(0);
+		status.setFailCnt(0);
+		status.setImportCnt(0);
+		status.setTotalCnt(0);
+		request.getSession().setAttribute("ARTICLE_IMPORT_STATUS", status);
+		
+		if (filePath !=null && filePath.length() >0) {
 
-		if (filePath !=null && filePath.length() >0);
-
-			String ext = filePath.substring(filePath.indexOf("."));
+			//String ext = filePath.substring(filePath.indexOf("."));
 				
-				if (ext.toLowerCase().equals(".mdb")) {
+			//System.out.println("importArticle ext =  " + ext);
+				if (filePath.indexOf(".mdb") > 0) {
 
 					System.out.println(filePath);
 
@@ -296,7 +310,7 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 					String url = "jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ="
 							+ filePath;
 
-					String sql = "select 标题,内容,摘要 from content ";
+					String sql = "select 标题,内容,摘要,count(ID) from content ";
 
 					// String url = "jdbc:odbc:Driver={MicroSoft Access Driver
 					// *.mdb)};DBQ = Northwind.mdb";
@@ -306,18 +320,25 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 					Statement stmt = null;
 					ResultSet rs = null;
 					int addCnt = 0;
-					int totalCnt = 0;
+					int failCnt = 0;
+				
 					try {
 						Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 						conn = DriverManager.getConnection(url, username,
 								password);
 						stmt = conn.createStatement();
 						rs = stmt.executeQuery(sql);
+						
+						
 
 						while (rs.next()) {
 							String title = rs.getString(1);
 							String content = rs.getString(2);
 							String description = rs.getString(3);
+							int count = rs.getInt(4);
+							status.setTotalCnt(count);
+							request.getSession().setAttribute("ARTICLE_IMPORT_STATUS", status);
+							
 
 							if (articleListManager.verifyTitle(title.trim()) &&
 									title!=null && title.length() >0 &&
@@ -358,20 +379,18 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 								a.setIsverify((short)1);
 								a.setDigg(0);
 
-								if (adminUploadFileForm.getType() != null) {
+								if (request.getParameter("type") != null) {
 									ArticleType at = articleTypeManager
 											.getArticleType(Integer
-													.parseInt(adminUploadFileForm
-															.getType()));
+													.parseInt(request.getParameter("type")));
 									a.setArticleType(at);
 								}
 								
-								if (adminUploadFileForm.getTypeid() != null &&
-										adminUploadFileForm.getTypeid().trim() != "0"	) {
+								if (request.getParameter("typeid") != null &&
+										request.getParameter("typeid").trim() != "0"	) {
 									ArticleType at = articleTypeManager
 											.getArticleType(Integer
-													.parseInt(adminUploadFileForm
-															.getTypeid().trim()));
+													.parseInt(request.getParameter("typeid").trim()));
 									a.setArticleType2(at);
 								}
 
@@ -390,10 +409,15 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 								}
 								
 								addCnt++;
-								totalCnt++;
+								status.setImportCnt(addCnt);								
+								request.getSession().setAttribute("ARTICLE_IMPORT_STATUS", status);
 
-							} else
-								totalCnt++;
+							} else {
+								failCnt ++;								
+								status.setFailCnt(failCnt);								
+								request.getSession().setAttribute("ARTICLE_IMPORT_STATUS", status);								
+							}
+								
 
 						}
 
@@ -405,19 +429,17 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					
 
-					//
-					request.setAttribute("RESULT_MESSAGE", "数据库共" + totalCnt
-							+ "条记录，成功添加" + addCnt + "条记录");
-					return mapping.findForward("access");
+					
+					return null;
 				} else {
 					request.setAttribute("FAIL_MESSAGE", "只能上传Access文件!");
 					return mapping.findForward("fail");
 				}
-
-			
-		}
-	
+		
+	}
+		return null;
 	}
 
 }

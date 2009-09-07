@@ -13,6 +13,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.forbes.listener.ArticleImportStatus;
 import com.forbes.listener.FileUploadStatus;
 
 /** 
@@ -23,7 +24,7 @@ import com.forbes.listener.FileUploadStatus;
  * @struts.action scope="request" validate="true"
  * @struts.action-forward name="ok" path="/info.jsp"
  */
-public class AdminUploadFileProgressAction extends Action {
+public class AdminImportArticleProgressAction extends Action {
 	/*
 	 * Generated Methods
 	 */
@@ -40,7 +41,7 @@ public class AdminUploadFileProgressAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		FileUploadStatus status = (FileUploadStatus) session.getAttribute("FILE_UPLOAD_STATUS");
+		ArticleImportStatus status = (ArticleImportStatus) session.getAttribute("ARTICLE_IMPORT_STATUS");
 		
 			//response.reset();
 			/*
@@ -48,9 +49,9 @@ public class AdminUploadFileProgressAction extends Action {
 			 * +status.getPBytesRead()+",\"pContentLength\":"+status.getPContentLength()+"}");
 			 */
 		System.out.println("{\"pBytesRead\":"
-				+status.getPBytesRead()+",\"pContentLength\":"+status.getPContentLength()+"}");
+				+status.getImportCnt()+",\"pContentLength\":"+status.getTotalCnt()+"}");
 		request.setAttribute("MESSAGE", "{\"pBytesRead\":"
-				+status.getPBytesRead()+",\"pContentLength\":"+status.getPContentLength()+"}");
+				+status.getImportCnt()+",\"pContentLength\":"+status.getTotalCnt()+"}");
 		return mapping.findForward("ok");
 	}
 }

@@ -111,6 +111,11 @@
 		class="com.forbes.struts.action.admin.AdminUploadFileAction"
 		singleton="false">
 	</bean>
+	
+	<bean name="/admin/AdminImportArticleProgress"
+		class="com.forbes.struts.action.admin.AdminImportArticleProgressAction"
+		singleton="false">
+	</bean>
 
 	<bean name="/admin/AdminManageBulletin"
 		class="com.forbes.struts.action.admin.AdminManageBulletinAction"
