@@ -25,7 +25,7 @@
 	      scope="request"
 	      type="org.springframework.web.struts.DelegatingActionProxy">
 	      <forward name="ok" path="/admin/index_goto.jsp" />
-	      <forward name="fail" path="/admin/index.jsp" />
+	      <forward name="fail" path="/admin/login.jsp" />
 	    </action>
     	
     	<action
@@ -141,6 +141,13 @@
       		<forward name="list" path="/admin/bulletin_list.jsp" />
       		<forward name="ok" path="/admin/operate_ok.jsp" />
       		<forward name="fail" path="/admin/operate_fail.jsp" />
+    	</action>
+    	
+    	<action
+      		path="/admin/AdminUploadFileProgress"
+      		scope="request"
+      		type="org.springframework.web.struts.DelegatingActionProxy">
+      		<forward name="ok" path="/admin/operate_result.jsp" />
     	</action>
 		
 	</action-mappings>

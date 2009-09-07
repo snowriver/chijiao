@@ -10,7 +10,10 @@
   <StrutsActivity path="/admin/AdminManageUserLevel.do" location="840,0" dimension="362,100" />
   <StrutsActivity path="/admin/AdminBatchAddArticle.do" location="50,250" dimension="362,100" />
   <StrutsActivity path="/admin/AdminBatchAddVideoUrl.do" location="1250,750" dimension="362,100" />
+  <StrutsActivity path="/admin/AdminTohtml.do" location="650,250" dimension="362,104" />
+  <StrutsActivity path="/admin/AdminManageBulletin.do" location="1250,250" dimension="362,104" />
   <StrutsActivity path="/admin/index_goto.jsp" location="807,727" dimension="162,52" />
+  <StrutsActivity path="/admin/login.jsp" location="650,850" dimension="127,53" />
   <StrutsActivity path="/admin/index.jsp" location="1069,727" dimension="129,52" />
   <StrutsActivity path="/admin/list_user_client.jsp" location="0,727" dimension="179,52" />
   <StrutsActivity path="/admin/list_user_member.jsp" location="279,727" dimension="198,52" />
@@ -27,227 +30,238 @@
   <StrutsActivity path="/admin/user_level_main.jsp" location="807,430" dimension="187,52" />
   <StrutsActivity path="/admin/article_url.jsp" location="50,850" dimension="153,52" />
   <StrutsActivity path="/admin/article_add.jsp" location="650,550" dimension="161,52" />
-  <StrutsActivity path="/admin/AdminTohtml.do" />
+  <StrutsActivity path="/admin/bulletin_list.jsp" location="350,850" dimension="161,53" />
+  <StrutsActivity path="/admin/AdminUploadFileProgress.do" />
+  <StrutsActivity path="/admin/operate_result.jsp" />
   <StrutsTransition id="/admin/AdminManageService.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2770,100" />
-      <AbsolutePoint location="2770,370" />
-      <AbsolutePoint location="1372,370" />
-      <AbsolutePoint location="1372,430" />
+      <AbsolutePoint location="3008,100" />
+      <AbsolutePoint location="3008,572" />
+      <AbsolutePoint location="1333,572" />
+      <AbsolutePoint location="1333,482" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateSector.do,ok,/admin/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="2407,100" />
-      <AbsolutePoint location="2407,340" />
-      <AbsolutePoint location="1832,340" />
-      <AbsolutePoint location="1832,430" />
+      <AbsolutePoint location="2407,295" />
+      <AbsolutePoint location="1858,295" />
+      <AbsolutePoint location="1858,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageNews.do,ok,/admin/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="643,100" />
-      <AbsolutePoint location="643,190" />
-      <AbsolutePoint location="1723,190" />
-      <AbsolutePoint location="1723,430" />
+      <AbsolutePoint location="498,100" />
+      <AbsolutePoint location="498,205" />
+      <AbsolutePoint location="1791,205" />
+      <AbsolutePoint location="1791,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateCity.do,ok,/admin/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1945,100" />
-      <AbsolutePoint location="1945,280" />
-      <AbsolutePoint location="1805,280" />
-      <AbsolutePoint location="1805,430" />
+      <AbsolutePoint location="1821,100" />
+      <AbsolutePoint location="1821,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageService.do,ok,/admin/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2860,100" />
-      <AbsolutePoint location="2860,400" />
-      <AbsolutePoint location="1859,400" />
-      <AbsolutePoint location="1859,430" />
+      <AbsolutePoint location="2906,0" />
+      <AbsolutePoint location="2906,-75" />
+      <AbsolutePoint location="1749,-75" />
+      <AbsolutePoint location="1749,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateSector.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2287,100" />
-      <AbsolutePoint location="2287,310" />
-      <AbsolutePoint location="1345,310" />
-      <AbsolutePoint location="1345,430" />
+      <AbsolutePoint location="2437,100" />
+      <AbsolutePoint location="2437,369" />
+      <AbsolutePoint location="1333,369" />
+      <AbsolutePoint location="1333,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminLogin.do,ok,/admin/index_goto.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="952,627" />
-      <AbsolutePoint location="952,677" />
-      <AbsolutePoint location="888,677" />
-      <AbsolutePoint location="888,727" />
+      <AbsolutePoint location="954,627" />
+      <AbsolutePoint location="954,727" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageNews.do,list,/admin/news_list.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="498,100" />
-      <AbsolutePoint location="498,280" />
-      <AbsolutePoint location="593,280" />
-      <AbsolutePoint location="593,430" />
+      <AbsolutePoint location="534,100" />
+      <AbsolutePoint location="534,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminListUser.do,admin,/admin/list_user_admin.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="498,627" />
-      <AbsolutePoint location="498,677" />
-      <AbsolutePoint location="669,677" />
-      <AbsolutePoint location="669,727" />
+      <AbsolutePoint location="526,627" />
+      <AbsolutePoint location="526,753" />
+      <AbsolutePoint location="577,753" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageNews.do,select,/admin/news_select.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="425,100" />
-      <AbsolutePoint location="425,160" />
-      <AbsolutePoint location="336,160" />
-      <AbsolutePoint location="336,430" />
+      <AbsolutePoint location="438,100" />
+      <AbsolutePoint location="438,456" />
+      <AbsolutePoint location="419,456" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageNews.do,edit,/admin/news_edit.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="353,100" />
-      <AbsolutePoint location="353,130" />
-      <AbsolutePoint location="77,130" />
-      <AbsolutePoint location="77,430" />
+      <AbsolutePoint location="317,50" />
+      <AbsolutePoint location="35,50" />
+      <AbsolutePoint location="35,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/index.jsp,null,/admin/AdminLogin.do,2" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1165,727" />
-      <AbsolutePoint location="1165,677" />
-      <AbsolutePoint location="1193,677" />
-      <AbsolutePoint location="1193,627" />
+      <AbsolutePoint location="1133,727" />
+      <AbsolutePoint location="1133,627" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminTohtml.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="0,0" />
-      <AbsolutePoint location="1303,456" />
+      <AbsolutePoint location="825,250" />
+      <AbsolutePoint location="825,175" />
+      <AbsolutePoint location="1627,175" />
+      <AbsolutePoint location="1627,456" />
+      <AbsolutePoint location="1386,456" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminTohtml.do,ok,/admin/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="0,0" />
-      <AbsolutePoint location="1791,456" />
+      <AbsolutePoint location="855,250" />
+      <AbsolutePoint location="855,235" />
+      <AbsolutePoint location="2005,235" />
+      <AbsolutePoint location="2005,456" />
+      <AbsolutePoint location="1873,456" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateCity.do,list,/admin/city.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2066,100" />
-      <AbsolutePoint location="2066,130" />
-      <AbsolutePoint location="2119,130" />
-      <AbsolutePoint location="2119,430" />
+      <AbsolutePoint location="2076,100" />
+      <AbsolutePoint location="2076,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminBatchAddArticle.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="0,0" />
-      <AbsolutePoint location="1303,456" />
+      <AbsolutePoint location="201,350" />
+      <AbsolutePoint location="201,497" />
+      <AbsolutePoint location="1273,497" />
+      <AbsolutePoint location="1273,482" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminListUser.do,client,/admin/list_user_client.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="257,627" />
-      <AbsolutePoint location="257,677" />
-      <AbsolutePoint location="89,677" />
+      <AbsolutePoint location="197,577" />
+      <AbsolutePoint location="89,577" />
       <AbsolutePoint location="89,727" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminLogin.do,fail,/admin/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1073,577" />
+      <AbsolutePoint location="0,0" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateUser.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1393,100" />
-      <AbsolutePoint location="1393,220" />
-      <AbsolutePoint location="1289,220" />
-      <AbsolutePoint location="1289,430" />
+      <AbsolutePoint location="1302,50" />
+      <AbsolutePoint location="1235,50" />
+      <AbsolutePoint location="1235,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateUser.do,ok,/admin/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1574,100" />
-      <AbsolutePoint location="1574,130" />
-      <AbsolutePoint location="1777,130" />
-      <AbsolutePoint location="1777,430" />
+      <AbsolutePoint location="1664,50" />
+      <AbsolutePoint location="1719,50" />
+      <AbsolutePoint location="1719,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminBatchAddVideoUrl.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1371,750" />
-      <AbsolutePoint location="1371,482" />
+      <AbsolutePoint location="1303,750" />
+      <AbsolutePoint location="1303,482" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageBulletin.do,ok,/admin/operate_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1461,354" />
+      <AbsolutePoint location="1461,672" />
+      <AbsolutePoint location="1791,672" />
+      <AbsolutePoint location="1791,482" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageUserLevel.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1021,100" />
-      <AbsolutePoint location="1021,220" />
-      <AbsolutePoint location="1262,220" />
-      <AbsolutePoint location="1262,430" />
+      <AbsolutePoint location="1057,100" />
+      <AbsolutePoint location="1057,456" />
+      <AbsolutePoint location="1220,456" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateSector.do,list,/admin/sector.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2528,100" />
-      <AbsolutePoint location="2528,430" />
+      <AbsolutePoint location="2476,100" />
+      <AbsolutePoint location="2476,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageService.do,detail,/admin/service_edit.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="3041,100" />
-      <AbsolutePoint location="3041,130" />
-      <AbsolutePoint location="3175,130" />
+      <AbsolutePoint location="3087,50" />
+      <AbsolutePoint location="3175,50" />
       <AbsolutePoint location="3175,430" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageBulletin.do,list,/admin/bulletin_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1431,354" />
+      <AbsolutePoint location="1431,702" />
+      <AbsolutePoint location="492,702" />
+      <AbsolutePoint location="492,850" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminBatchAddArticle.do,access,/admin/article_url.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="231,300" />
-      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="50,300" />
+      <AbsolutePoint location="-75,300" />
+      <AbsolutePoint location="-75,876" />
+      <AbsolutePoint location="50,876" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageService.do,list,/admin/service_list.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="2951,100" />
-      <AbsolutePoint location="2951,130" />
-      <AbsolutePoint location="2913,130" />
-      <AbsolutePoint location="2913,430" />
+      <AbsolutePoint location="2906,100" />
+      <AbsolutePoint location="2906,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageUserLevel.do,list,/admin/user_level_main.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="901,100" />
-      <AbsolutePoint location="901,430" />
+      <AbsolutePoint location="1027,100" />
+      <AbsolutePoint location="1027,399" />
+      <AbsolutePoint location="900,399" />
+      <AbsolutePoint location="900,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminBatchAddArticle.do,ok,/admin/article_add.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="231,300" />
-      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="231,350" />
+      <AbsolutePoint location="231,399" />
+      <AbsolutePoint location="730,399" />
+      <AbsolutePoint location="730,550" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminBatchAddVideoUrl.do,ok,/admin/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1431,800" />
-      <AbsolutePoint location="1791,456" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/admin/AdminLogin.do,fail,/admin/index.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="1073,627" />
-      <AbsolutePoint location="1073,677" />
-      <AbsolutePoint location="1101,677" />
-      <AbsolutePoint location="1101,727" />
+      <AbsolutePoint location="1612,800" />
+      <AbsolutePoint location="1821,800" />
+      <AbsolutePoint location="1821,482" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageNews.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="570,100" />
-      <AbsolutePoint location="570,250" />
-      <AbsolutePoint location="1234,250" />
-      <AbsolutePoint location="1234,430" />
+      <AbsolutePoint location="468,100" />
+      <AbsolutePoint location="468,369" />
+      <AbsolutePoint location="1273,369" />
+      <AbsolutePoint location="1273,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminListUser.do,member,/admin/list_user_member.jsp,1" routingType="0">
@@ -258,18 +272,31 @@
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminUpdateCity.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1825,100" />
-      <AbsolutePoint location="1825,250" />
-      <AbsolutePoint location="1317,250" />
-      <AbsolutePoint location="1317,430" />
+      <AbsolutePoint location="1945,100" />
+      <AbsolutePoint location="1945,399" />
+      <AbsolutePoint location="1371,399" />
+      <AbsolutePoint location="1371,430" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminUploadFileProgress.do,ok,/admin/operate_result.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminManageBulletin.do,fail,/admin/operate_fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1303,354" />
+      <AbsolutePoint location="1303,430" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminManageUserLevel.do,ok,/admin/operate_ok.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="1142,100" />
-      <AbsolutePoint location="1142,160" />
-      <AbsolutePoint location="1750,160" />
-      <AbsolutePoint location="1750,430" />
+      <AbsolutePoint location="997,100" />
+      <AbsolutePoint location="997,115" />
+      <AbsolutePoint location="1679,115" />
+      <AbsolutePoint location="1679,456" />
+      <AbsolutePoint location="1709,456" />
     </AutomaticBendpoints>
   </StrutsTransition>
 </FlowViewLayout>
