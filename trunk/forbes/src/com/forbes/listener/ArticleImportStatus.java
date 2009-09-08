@@ -6,6 +6,7 @@ public class ArticleImportStatus {
 	private int totalCnt = 0;
 	private int currentCnt = 0;
 	private int failCnt = 0;
+	private int repeatCnt = 0;
 
 	public int getImportCnt() {
 		return importCnt;
@@ -43,6 +44,14 @@ public class ArticleImportStatus {
 		importCnt = 0;
 		totalCnt = 0;
 		currentCnt = 0;
+	}
+
+	public int getRepeatCnt() {
+		return repeatCnt;
+	}
+
+	public void setRepeatCnt(int repeatCnt) {
+		this.repeatCnt = repeatCnt;
 	}
 
 	
