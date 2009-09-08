@@ -27,8 +27,9 @@ function getImportProgressBar() {
 		$("#info").html("总共:" + totalCnt + "条, 已经导入:" + importCnt + '条，重复：' + repeatCnt + "条，失败：" + failCnt + "条，当前：" + currentCnt);
 		
 		if( failCnt + repeatCnt + importCnt == totalCnt ){
-			$("#uploaded").css("width", "300px");
 			window.clearTimeout(interval);
+			$("#uploaded").css("width", "300px");
+			$("#close").show();
 		}
 		else {
 			var percent = Math.floor((currentCnt / totalCnt) * 100) + "%";
