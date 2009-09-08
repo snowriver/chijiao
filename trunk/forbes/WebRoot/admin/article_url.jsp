@@ -48,31 +48,58 @@
 		}
 		
 		function onSelectTopArticleType(obj){
-		$.post(
-			"../ajax/ArticleTypeSelector.jsp",
-		    {				
-				pid:""+obj.value
-		    },
-		    updateSelectTopArticleType
-		);
-	}
-	
-	function updateSelectTopArticleType(response){
-		var arr = new Array();
-		arr = response.replace(/(^\s*)|(\s*$)/g,"").split("#");
-		var op = new Array();
-		$("#typeid").empty();
-        $("<option value='0'>请选择副类型</option>").appendTo("#typeid");
-		for( var i = 0; i < arr.length-1; i++ ){
-			op = arr[i].split("&");
-			$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#typeid");
+			$.post(
+				"../ajax/ArticleTypeSelector.jsp",
+			    {				
+					pid:""+obj.value
+			    },
+			    updateSelectTopArticleType
+			);
 		}
 		
-	}
+		function onSelectTopArticleType2(obj){
+			$.post(
+				"../ajax/ArticleTypeSelector.jsp",
+			    {				
+					pid:""+obj.value
+			    },
+			    updateSelectTopArticleType2
+			);
+		}
 	
-	function onSelectType(obj){
-		$("#typeid").val(obj.value);
-	}
+		function updateSelectTopArticleType(response){
+			var arr = new Array();
+			arr = response.replace(/(^\s*)|(\s*$)/g,"").split("#");
+			var op = new Array();
+			$("#typeid").empty();
+	        $("<option value='0'>请选择副类型</option>").appendTo("#typeid");
+			for( var i = 0; i < arr.length-1; i++ ){
+				op = arr[i].split("&");
+				$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#typeid");
+			}
+			
+		}
+		
+		function updateSelectTopArticleType2(response){
+			var arr = new Array();
+			arr = response.replace(/(^\s*)|(\s*$)/g,"").split("#");
+			var op = new Array();
+			$("#typeid2").empty();
+	        $("<option value='0'>请选择副类型</option>").appendTo("#typeid2");
+			for( var i = 0; i < arr.length-1; i++ ){
+				op = arr[i].split("&");
+				$("<option value='" + op[0] + "'>" + op[1] + "</option>").appendTo("#typeid2");
+			}
+			
+		}
+	
+		function onSelectType(obj){
+			$("#typeid").val(obj.value);
+		}
+		
+		function onSelectType2(obj){
+			$("#typeid2").val(obj.value);
+		}
 		
 	</script>
 	
@@ -144,7 +171,7 @@
       		<td width="100%"></td>      
     	</tr>
     	
-    	<!-- 
+    	
     	<tr> 
       		<td height="26" colspan="6">
       			<table width="100%" border="0" align="center">
@@ -182,7 +209,7 @@
 		<tr align="center" bgcolor="#F8FBFB" height="24"> 
       		<td width="100%"></td>      
     	</tr>
-    	 -->
+    	 
     	<tr> 
       		<td height="26" colspan="6">
       			<table width="100%" border="0" align="center">
@@ -194,7 +221,7 @@
 		</tr>
     
 		<tr align="center" bgcolor="#F0FDDB"> 
-        	<td width="100%" height="24" colspan="6" bgcolor="#EDF9D5">
+        	<td width="100%" height="24" colspan="6" bgcolor="#EDF9D5" align="left">
         		<iframe id='target_upload' name='target_upload' src='' style='display: none'></iframe>
         		<form action="AdminUploadFile.do" id="uploadForm" enctype="multipart/form-data" method="post" target="target_upload">
 	       	  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -202,7 +229,6 @@
 	              		<td width="100%" align="left">
 	              			<input name="file" type="file" id="file" style="width:500px" />
 	              			<input type="button" id="subButton" value="上传" />
-							
 	              		</td>
 	            	</tr>
 	          	</table>
@@ -210,13 +236,13 @@
 	  			<form action="AdminBatchAddArticle.do?act=importArticle" id="importForm" method="post" target="target_upload">
 	  			类型：
 	              			
-	              			<select id="type" name="type" style="width:120px" onchange="onSelectTopArticleType(this)">
+	              			<select id="type2" name="type" style="width:120px" onchange="onSelectTopArticleType2(this)">
 	            				<option value="0">请选择主类型</option>
 	            				<c:forEach items="${TOP_ARTICLE_TYPE_LIST}" var="at" varStatus="is">
 	            					<option value="${at.id }">${at.name }</option>
 	            				</c:forEach>	            				
 	            			</select>
-	            			<select id="typeid" name="typeid" style="width:240px" onchange="onSelectType(this);">
+	            			<select id="typeid2" name="typeid" style="width:240px" onchange="onSelectType2(this);">
             					<option value="0">请选择副类型</option>            				
             				</select>
 	  			<input type="button" id="importButton" value="导入" />
