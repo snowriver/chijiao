@@ -14,6 +14,7 @@
   <StrutsActivity path="/admin/AdminManageBulletin.do" location="1250,250" dimension="362,104" />
   <StrutsActivity path="/admin/AdminUploadFileProgress.do" location="950,950" dimension="362,104" />
   <StrutsActivity path="/admin/AdminUploadFile.do" location="50,1050" dimension="362,104" />
+  <StrutsActivity path="/admin/AdminImportArticleProgress.do" location="650,1150" dimension="362,104" />
   <StrutsActivity path="/admin/index_goto.jsp" location="807,727" dimension="162,52" />
   <StrutsActivity path="/admin/login.jsp" location="650,850" dimension="127,53" />
   <StrutsActivity path="/admin/index.jsp" location="1069,727" dimension="129,52" />
@@ -34,7 +35,6 @@
   <StrutsActivity path="/admin/article_add.jsp" location="650,550" dimension="161,52" />
   <StrutsActivity path="/admin/bulletin_list.jsp" location="350,850" dimension="161,53" />
   <StrutsActivity path="/admin/operate_result.jsp" location="950,1350" dimension="181,53" />
-  <StrutsActivity path="/admin/AdminImportArticleProgress.do" />
   <StrutsTransition id="/admin/AdminManageService.do,fail,/admin/operate_fail.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="3008,100" />
@@ -142,6 +142,12 @@
     <AutomaticBendpoints>
       <AbsolutePoint location="2076,100" />
       <AbsolutePoint location="2076,430" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/AdminImportArticleProgress.do,ok,/admin/operate_result.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="965,1254" />
+      <AbsolutePoint location="965,1350" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/admin/AdminBatchAddArticle.do,fail,/admin/operate_fail.jsp,1" routingType="0">

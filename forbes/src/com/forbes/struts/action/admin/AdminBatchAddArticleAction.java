@@ -1,10 +1,7 @@
 package com.forbes.struts.action.admin;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,17 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.struts.actions.DispatchAction;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -33,13 +23,13 @@ import com.forbes.hibernate.bean.ArticleContent;
 import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.listener.ArticleImportStatus;
-import com.forbes.listener.FileUploadListener;
 import com.forbes.service.article.ArticleTypeManager;
 import com.forbes.service.article.ArticleListManager;
 import com.forbes.struts.form.admin.AdminUploadFileForm;
 import com.forbes.util.ToHtml;
 import com.forbes.util.UploadFile;
 import com.forbes.util.UrlTool;
+import com.sun.java_cup.internal.internal_error;
 
 public class AdminBatchAddArticleAction extends DispatchAction {
 	
@@ -304,13 +294,15 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 				if (filePath.indexOf(".mdb") > 0) {
 
 					System.out.println(filePath);
-
+					
+					status.setTotalCnt(this.getCount(filePath));
+					request.getSession().setAttribute("ARTICLE_IMPORT_STATUS", status);
 					//
 					// String driver = "sun.jdbc.odbc.JdbcOdbcDriver";
 					String url = "jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ="
 							+ filePath;
 
-					String sql = "select 标题,内容,摘要,count(ID) from content ";
+					String sql = "select 标题,内容,摘要 from content ";
 
 					// String url = "jdbc:odbc:Driver={MicroSoft Access Driver
 					// *.mdb)};DBQ = Northwind.mdb";
@@ -319,9 +311,10 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 					Connection conn = null;
 					Statement stmt = null;
 					ResultSet rs = null;
-					int addCnt = 0;
+					int importCnt = 0;
 					int failCnt = 0;
-				
+					int currentCnt = 0;
+					int repeatCnt = 0;
 					try {
 						Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 						conn = DriverManager.getConnection(url, username,
@@ -335,11 +328,11 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 							String title = rs.getString(1);
 							String content = rs.getString(2);
 							String description = rs.getString(3);
-							int count = rs.getInt(4);
-							status.setTotalCnt(count);
+							
+							currentCnt ++;
+							status.setCurrentCnt(currentCnt);								
 							request.getSession().setAttribute("ARTICLE_IMPORT_STATUS", status);
 							
-
 							if (articleListManager.verifyTitle(title.trim()) &&
 									title!=null && title.length() >0 &&
 									content !=null && content.length() >0) {
@@ -408,19 +401,21 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 									articleListManager.updateArticle(a);
 								}
 								
-								addCnt++;
-								status.setImportCnt(addCnt);								
+								importCnt++;
+								status.setImportCnt(importCnt);								
 								request.getSession().setAttribute("ARTICLE_IMPORT_STATUS", status);
 
 							} else {
-								failCnt ++;								
-								status.setFailCnt(failCnt);								
+								repeatCnt ++;								
+								status.setRepeatCnt(repeatCnt);								
 								request.getSession().setAttribute("ARTICLE_IMPORT_STATUS", status);								
 							}
 								
 
 						}
-
+						rs.close();
+						stmt.close();
+						conn.close();
 					} catch (SQLException e) {
 						e.printStackTrace();
 					} catch (ClassNotFoundException ex) {
@@ -442,4 +437,43 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 		return null;
 	}
 
+	
+	public int getCount(String filePath) {
+		String url = "jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ="
+					+ filePath;
+
+		String sql = "select count(*) from content ";
+
+		String username = "";
+		String password = "";
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		int count = 0;
+		
+		try {
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			conn = DriverManager.getConnection(url, username, password);
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+		
+			while (rs.next()) {
+				count = rs.getInt(1);
+			}
+			rs.close();
+			stmt.close();
+			conn.close();
+			return count;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+			return 0;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return 0;
+		}
+	}
 }

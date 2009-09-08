@@ -157,10 +157,11 @@
     	</action>
     	
     	<action
-      		path="/admin/AdminImportArticleProgress"
-      		scope="request"
-      		type="org.springframework.web.struts.DelegatingActionProxy">
-    	</action>
+      path="/admin/AdminImportArticleProgress"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/admin/operate_result.jsp" />
+    </action>
 		
 	</action-mappings>
 	

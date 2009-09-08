@@ -18,50 +18,23 @@ function getImportProgressBar() {
 	var bytesReadGtMB = 0;
 	var contentLengthGtMB = 0;
 	$.getJSON("AdminImportArticleProgress.do", {"t":timestamp}, function (json) {
-		var bytesRead = (json.pBytesRead / 1024).toString();
-		if (bytesRead > 1024) {
-			bytesReadToShow = (bytesRead / 1024).toString();
-			bytesReadGtMB = 1;
-		}else{
-			bytesReadToShow = bytesRead.toString();
-		}
-		var contentLength = (json.pContentLength / 1024).toString();
-		if (contentLength > 1024) {
-			contentLengthToShow = (contentLength / 1024).toString();
-			contentLengthGtMB = 1;
-		}else{
-			contentLengthToShow= contentLength.toString();
-		}
-		bytesReadToShow = bytesReadToShow.substring(0, bytesReadToShow.lastIndexOf(".") + 3);
-		contentLengthToShow = contentLengthToShow.substring(0, contentLengthToShow.lastIndexOf(".") + 3);
-		if (bytesRead == contentLength) {
-			$("#close").show();
+		var currentCnt = parseInt(json.currentCnt);
+		var totalCnt = parseInt(json.totalCnt);
+		var failCnt = parseInt(json.failCnt);
+		var repeatCnt = parseInt(json.repeatCnt);
+		var importCnt = parseInt(json.importCnt);
+		
+		$("#info").html("总共:" + totalCnt + "条, 已经导入:" + importCnt + '条，重复：' + repeatCnt + "条，失败：" + failCnt + "条，当前：" + currentCnt);
+		
+		if( failCnt + repeatCnt + importCnt == totalCnt ){
 			$("#uploaded").css("width", "300px");
-			if (contentLengthGtMB == 0) {
-				$("div#info").html("\u4e0a\u4f20\u5b8c\u6210\uff01\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "KB.\u5b8c\u6210100%");
-			} else {
-				$("div#info").html("\u4e0a\u4f20\u5b8c\u6210\uff01\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "MB.\u5b8c\u6210100%");
-			}
 			window.clearTimeout(interval);
-			$("#subButton").attr("disabled", false);
-		} else {
-			var pastTimeBySec = (new Date().getTime() - startTime) / 1000;
-			var sp = (bytesRead / pastTimeBySec).toString();
-			var speed = sp.substring(0, sp.lastIndexOf(".") + 3);
-			var percent = Math.floor((bytesRead / contentLength) * 100) + "%";
-			$("#uploaded").css("width", percent);
-			if (bytesReadGtMB == 0 && contentLengthGtMB == 0) {
-				$("div#info").html("\u4e0a\u4f20\u901f\u5ea6:" + speed + "KB/Sec,\u5df2\u7ecf\u8bfb\u53d6" + bytesReadToShow + "KB,\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "KB.\u5b8c\u6210" + percent);
-			} else {
-				if (bytesReadGtMB == 0 && contentLengthGtMB == 1) {
-					$("div#info").html("\u4e0a\u4f20\u901f\u5ea6:" + speed + "KB/Sec,\u5df2\u7ecf\u8bfb\u53d6" + bytesReadToShow + "KB,\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "MB.\u5b8c\u6210" + percent);
-				} else {
-					if (bytesReadGtMB == 1 && contentLengthGtMB == 1) {
-						$("div#info").html("\u4e0a\u4f20\u901f\u5ea6:" + speed + "KB/Sec,\u5df2\u7ecf\u8bfb\u53d6" + bytesReadToShow + "MB,\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "MB.\u5b8c\u6210" + percent);
-					}
-				}
-			}
 		}
+		else {
+			var percent = Math.floor((currentCnt / totalCnt) * 100) + "%";
+			$("#uploaded").css("width", percent);			
+		}
+		
 	});
 	var interval = window.setTimeout("getImportProgressBar()", 500);
 }
