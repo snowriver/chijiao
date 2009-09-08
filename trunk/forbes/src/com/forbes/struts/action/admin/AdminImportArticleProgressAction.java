@@ -24,11 +24,11 @@ public class AdminImportArticleProgressAction extends Action {
 			 * response.getWriter().write("{\"pBytesRead\":"
 			 * +status.getPBytesRead()+",\"pContentLength\":"+status.getPContentLength()+"}");
 			 */
-		System.out.println("{\"totalCnt\":" +status.getTotalCnt()
+		/*System.out.println("{\"totalCnt\":" +status.getTotalCnt()
 				+",\"importCnt\":"+status.getImportCnt()
 				+",\"currentCnt\":"+status.getCurrentCnt()
 				+",\"failCnt\":"+status.getFailCnt()
-				+",\"repeatCnt\":"+status.getRepeatCnt()+"}");
+				+",\"repeatCnt\":"+status.getRepeatCnt()+"}");*/
 		request.setAttribute("MESSAGE", "{\"totalCnt\":" +status.getTotalCnt()
 				+",\"importCnt\":"+status.getImportCnt()
 				+",\"currentCnt\":"+status.getCurrentCnt()
