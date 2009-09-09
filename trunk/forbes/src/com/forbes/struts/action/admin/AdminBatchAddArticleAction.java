@@ -1,6 +1,7 @@
 package com.forbes.struts.action.admin;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.sql.Connection;
@@ -29,7 +30,6 @@ import com.forbes.struts.form.admin.AdminUploadFileForm;
 import com.forbes.util.ToHtml;
 import com.forbes.util.UploadFile;
 import com.forbes.util.UrlTool;
-import com.sun.java_cup.internal.internal_error;
 
 public class AdminBatchAddArticleAction extends DispatchAction {
 	
@@ -425,8 +425,9 @@ public class AdminBatchAddArticleAction extends DispatchAction {
 						e.printStackTrace();
 					}
 					
-
 					
+					File file = new File(filePath);
+					file.deleteOnExit();
 					return null;
 				} else {
 					request.setAttribute("FAIL_MESSAGE", "只能上传Access文件!");
