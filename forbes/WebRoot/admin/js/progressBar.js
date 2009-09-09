@@ -51,13 +51,13 @@ function getProgressBar() {
 			var percent = Math.floor((bytesRead / contentLength) * 100) + "%";
 			$("#uploaded").css("width", percent);
 			if (bytesReadGtMB == 0 && contentLengthGtMB == 0) {
-				$("div#info").html("\u4e0a\u4f20\u901f\u5ea6:" + speed + "KB/Sec,\u5df2\u7ecf\u8bfb\u53d6" + bytesReadToShow + "KB,\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "KB.\u5b8c\u6210" + percent);
+				$("div#info").html("\u4e0a\u4f20\u901f\u5ea6:" + speed + "KB/S,\u5df2\u7ecf\u8bfb\u53d6" + bytesReadToShow + "KB,\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "KB.\u5b8c\u6210" + percent);
 			} else {
 				if (bytesReadGtMB == 0 && contentLengthGtMB == 1) {
-					$("div#info").html("\u4e0a\u4f20\u901f\u5ea6:" + speed + "KB/Sec,\u5df2\u7ecf\u8bfb\u53d6" + bytesReadToShow + "KB,\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "MB.\u5b8c\u6210" + percent);
+					$("div#info").html("\u4e0a\u4f20\u901f\u5ea6:" + speed + "KB/S,\u5df2\u7ecf\u8bfb\u53d6" + bytesReadToShow + "KB,\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "MB.\u5b8c\u6210" + percent);
 				} else {
 					if (bytesReadGtMB == 1 && contentLengthGtMB == 1) {
-						$("div#info").html("\u4e0a\u4f20\u901f\u5ea6:" + speed + "KB/Sec,\u5df2\u7ecf\u8bfb\u53d6" + bytesReadToShow + "MB,\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "MB.\u5b8c\u6210" + percent);
+						$("div#info").html("\u4e0a\u4f20\u901f\u5ea6:" + speed + "KB/S,\u5df2\u7ecf\u8bfb\u53d6" + bytesReadToShow + "MB,\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "MB.\u5b8c\u6210" + percent);
 					}
 				}
 			}
