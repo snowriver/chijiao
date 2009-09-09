@@ -36,7 +36,7 @@ function getProgressBar() {
 		contentLengthToShow = contentLengthToShow.substring(0, contentLengthToShow.lastIndexOf(".") + 3);
 		if (bytesRead == contentLength) {
 			$("#close").show();
-			$("#uploaded").css("width", "300px");
+			$("#uploaded").css("width", "350px");
 			if (contentLengthGtMB == 0) {
 				$("div#info").html("\u4e0a\u4f20\u5b8c\u6210\uff01\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "KB.\u5b8c\u6210100%");
 			} else {

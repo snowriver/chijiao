@@ -28,7 +28,7 @@ function getImportProgressBar() {
 		
 		if( failCnt + repeatCnt + importCnt == totalCnt ){
 			window.clearTimeout(interval);
-			$("#uploaded").css("width", "300px");
+			$("#uploaded").css("width", "350px");
 			$("#close").show();
 		}
 		else {
