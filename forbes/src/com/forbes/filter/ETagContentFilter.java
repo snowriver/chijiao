@@ -33,7 +33,7 @@ public class ETagContentFilter implements Filter {
 		if (queryString != null) 
 			id += queryString;
 		logger.debug(id);
-		System.out.println(id);
+		//System.out.println(id);
 		
 		if(id.indexOf(".css")>0 || id.indexOf(".gif") > 0
 				|| id.indexOf(".jpg") > 0 || id.indexOf(".js") > 0
