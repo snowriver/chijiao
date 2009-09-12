@@ -14,26 +14,27 @@ import com.forbes.hibernate.bean.UcMembers;
 import com.forbes.service.article.CommentManager;
 
 public class ArticleCommentAddAction extends Action {
-	
+
 	private CommentManager commentManager;
-	
+
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) throws ForbesException, Exception {
-		
-		
+			HttpServletRequest request, HttpServletResponse response)
+			throws ForbesException, Exception {
+
 		request.setCharacterEncoding("UTF-8");
-		
-		String id	 		 = request.getParameter("id");
-		String content 		 = request.getParameter("content");
-		
-		
-		UcMembers user = (UcMembers)request.getSession().getAttribute("CLIENT");
-	
+
+		String id = request.getParameter("id");
+		String content = request.getParameter("content");
+
+		UcMembers user = (UcMembers) request.getSession()
+				.getAttribute("CLIENT");
+
 		CommentType commentType = commentManager.getCommentType(new Short("1"));
-		
-		int commentCnt = commentManager.getCount(user.getUid(), commentType.getId(), Integer.parseInt(id));
-		
-		if(commentCnt <=1 ) {
+
+		int commentCnt = commentManager.getCount(user.getUid(), 
+				commentType.getId(), Integer.parseInt(id));
+
+		if (commentCnt <= 1) {
 			try {
 				Comment ac = new Comment();
 				ac.setUser(user);
@@ -43,39 +44,35 @@ public class ArticleCommentAddAction extends Action {
 				ac.setContent(content);
 				ac.setIp(request.getRemoteAddr());
 				ac.setPubdate(new Date());
-				
+
 				commentManager.addComment(ac);
-				//System.out.println("-----------3" );
-				
-				//积分处理
-				/*Short accountType = DictionaryManager.getInstance().getVal("ACCOUNT_TYPE", "2").getDvalue();
-				int amount = 10;
-				String remark = "您发布了文章 “ " + a.getTitle() + "”";
-				boolean updateRst = scoreManager.addScoreByUser(a.getId().toString(), a.getUser().getUid().toString(), 
-						accountType.toString(), (int)amount, remark);
-				if( updateRst){
-					System.out.println("添加积分成功");
-				}*/
-				
-				request.setAttribute("RESULT_MESSAGE", "SUCCESS" );
+
+				// 积分处理
+				/*
+				 * Short accountType =
+				 * DictionaryManager.getInstance().getVal("ACCOUNT_TYPE",
+				 * "2").getDvalue(); int amount = 10; String remark = "您发布了文章 “ " +
+				 * a.getTitle() + "”"; boolean updateRst =
+				 * scoreManager.addScoreByUser(a.getId().toString(),
+				 * a.getUser().getUid().toString(), accountType.toString(),
+				 * (int)amount, remark); if( updateRst){
+				 * System.out.println("添加积分成功"); }
+				 */
+
+				request.setAttribute("RESULT_MESSAGE", "SUCCESS");
 				return mapping.findForward("ok");
 			} catch (Exception e) {
 				e.printStackTrace();
-				request.setAttribute("RESULT_MESSAGE", "FAIL" );
+				request.setAttribute("RESULT_MESSAGE", "FAIL");
 				return mapping.findForward("ok");
 			}
-		
-		}
-		else {
-			request.setAttribute("RESULT_MESSAGE", "ALREADY" );
+
+		} else {
+			request.setAttribute("RESULT_MESSAGE", "ALREADY");
 			return mapping.findForward("ok");
 		}
-		
-	
-		
-		
-	}
 
+	}
 
 	public CommentManager getCommentManager() {
 		return commentManager;
@@ -84,5 +81,5 @@ public class ArticleCommentAddAction extends Action {
 	public void setCommentManager(CommentManager commentManager) {
 		this.commentManager = commentManager;
 	}
-	
+
 }

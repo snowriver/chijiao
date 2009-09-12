@@ -21,41 +21,6 @@ public class ArticleSearchAction extends DispatchAction {
 	
 	private ArticleTypeManager articleTypeManager;
 	
-	public ActionForward index(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
-				
-		try {
-			
-			List list = articleListManager.getTopArticleByArticleType(null, null, 0, 5);
-			request.setAttribute( "ARTICLE_LIST", list);
-			
-			return mapping.findForward("index");
-
-		}catch( Exception e ){
-			e.printStackTrace();
-			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
-			return mapping.findForward("fail");
-		}
-	}
-	
-	public ActionForward type(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
-		
-		String typeid = request.getParameter("typeid");
-		try {
-			
-			List list = articleListManager.getTopArticleByArticleType(typeid, "pubdate DESC", 0, 10);
-			request.setAttribute( "ARTICLE_LIST", list);
-			
-			return mapping.findForward("type");
-
-		}catch( Exception e ){
-			e.printStackTrace();
-			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
-			return mapping.findForward("fail");
-		}
-	}
-
 	public ArticleListManager getArticleListManager() {
 		return articleListManager;
 	}
@@ -64,14 +29,43 @@ public class ArticleSearchAction extends DispatchAction {
 		this.articleListManager = articleListManager;
 	}
 	
+	
+	public ActionForward index(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {				
+		try {			
+			List list = articleListManager.getTopArticleByArticleType(null, null, 0, 5);
+			request.setAttribute( "ARTICLE_LIST", list);			
+			return mapping.findForward("index");
+		}catch( Exception e ){
+			e.printStackTrace();
+			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
+			return mapping.findForward("fail");
+		}
+	}
+	
+	public ActionForward type(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {		
+		String typeid = request.getParameter("typeid");
+		try {			
+			List list = articleListManager.
+				getTopArticleByArticleType(typeid, "pubdate DESC", 0, 10);
+			request.setAttribute( "ARTICLE_LIST", list);			
+			return mapping.findForward("type");
+
+		}catch( Exception e ){
+			e.printStackTrace();
+			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");
+			return mapping.findForward("fail");
+		}
+	}	
+	
 	public ActionForward view(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		
 		String  id = request.getParameter("id");
 		
-		try {
-			
+		try {			
 			Article article = articleListManager.getArticle(Integer.parseInt(id));
 			if(article == null)
 				return mapping.findForward("error");
@@ -85,7 +79,6 @@ public class ArticleSearchAction extends DispatchAction {
 			request.setAttribute( "NEXT_ARTICLE", nextArticle);
 			request.setAttribute( "PRE_ARTICLE", preArticle);
 			return mapping.findForward("view");
-
 		}catch( Exception e ){
 			return mapping.findForward("error");
 		}
@@ -120,12 +113,12 @@ public class ArticleSearchAction extends DispatchAction {
 			pager.setCntOfPage( 10 );
 			pager.setCurPage( iPageNo );
 			
-			list = articleListManager.getArticleByPage(pager, iPageNo, "N", null, null, "1", keyword, orderby);
+			list = articleListManager.
+				getArticleByPage(pager, iPageNo, "N", null, null, "1", keyword, orderby);
 
 			request.setAttribute( "PARA", map );
 			request.setAttribute( "PAGER", pager );
 			request.setAttribute( "ARTICLE_LIST", list);
-
 			request.setAttribute( "ARTICLE_TYPE_LIST", topType);
 			
 			return mapping.findForward("search");
@@ -155,7 +148,7 @@ public class ArticleSearchAction extends DispatchAction {
 		try {
 			
 			ArticleType parantType = null;
-			ArticleType type 	   = null; //articleTypeManager.getArticleType(Integer.parseInt(typeid));
+			ArticleType type 	   = null;
 			List 	    topType    = null;
 			
 			if( typeid != null && typeid.length() > 0) {
@@ -184,7 +177,8 @@ public class ArticleSearchAction extends DispatchAction {
 			pager.setCntOfPage( 10 );
 			pager.setCurPage( iPageNo );
 			
-			list = articleListManager.getArticleByPage(pager, iPageNo, "N", null, typeid, "1",keyword, orderby);
+			list = articleListManager.
+				getArticleByPage(pager, iPageNo, "N", null, typeid, "1",keyword, orderby);
 
 			request.setAttribute( "PARA", map );
 			request.setAttribute( "PAGER", pager );
@@ -247,14 +241,18 @@ public class ArticleSearchAction extends DispatchAction {
 			}
 			else {
 				if( article.getArticleType2() != null)
-					list = articleListManager.getTopArticleByArticleType(article.getArticleType2().getId().toString(), "pubdate DESC", 0, 10);
+					list = articleListManager.
+						getTopArticleByArticleType(
+								article.getArticleType2().getId().toString(), 
+									"pubdate DESC", 0, 10);
 				if(list!=null && list.size() <= 1)
-					list = articleListManager.getTopArticleByArticleType(article.getArticleType().getId().toString(), "pubdate DESC", 0, 10);
-			}
-			
+					list = articleListManager.
+						getTopArticleByArticleType(
+								article.getArticleType().getId().toString(), 
+								"pubdate DESC", 0, 10);
+			}	
 			
 			request.setAttribute( "LIKE_ARTICLE_LIST", list);
-
 			return mapping.findForward("like");
 
 		}catch( Exception e ){

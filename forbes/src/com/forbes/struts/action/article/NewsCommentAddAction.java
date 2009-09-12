@@ -28,9 +28,7 @@ public class NewsCommentAddAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws ForbesException, Exception {
-
-		// UserLoginForm userLoginForm = (UserLoginForm) form;// TODO
-		// Auto-generated method stub
+		
 		request.setCharacterEncoding("UTF-8");
 
 		String id = request.getParameter("id");
@@ -46,9 +44,7 @@ public class NewsCommentAddAction extends Action {
 
 		if (commentCnt <= 1) {
 			// Ìí¼ÓÆÀÂÛ
-			// System.out.println("-----------1" );
-			try {
-				// System.out.println("User.id = " + user.getUid());
+			try {			
 				Comment ac = new Comment();
 				ac.setUser(user);
 				ac.setUsername(user.getUsername());
@@ -58,8 +54,7 @@ public class NewsCommentAddAction extends Action {
 				ac.setIp(request.getRemoteAddr());
 				ac.setPubdate(new Date());
 				commentManager.addComment(ac);
-				request.setAttribute("RESULT_MESSAGE", "SUCCESS");
-				// request.setAttribute("RETURN_URL", "ArticleView.do?id="+id );
+				request.setAttribute("RESULT_MESSAGE", "SUCCESS");				
 				return mapping.findForward("ok");
 			} catch (Exception e) {
 				request.setAttribute("RESULT_MESSAGE", "FAIL");

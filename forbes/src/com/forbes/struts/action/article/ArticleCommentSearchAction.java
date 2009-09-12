@@ -24,13 +24,11 @@ public class ArticleCommentSearchAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 
 		String id = request.getParameter("id");
-
 		try {
-
-			List list = commentManager.getTopComment(new Short("1"), Integer.parseInt(id), null, 0, 10);
+			List list = commentManager.
+				getTopComment(new Short("1"), Integer.parseInt(id), null, 0, 10);
 
 			request.setAttribute("ARTICLE_COMMENT_LIST", list);
-
 			return mapping.findForward("top");
 
 		} catch (Exception e) {
@@ -78,10 +76,10 @@ public class ArticleCommentSearchAction extends DispatchAction {
 			Article article = articleListManager.getArticle(Integer.parseInt(id));
 			request.setAttribute("ARTICLE", article);
 
-			list = commentManager.getCommentByPage(pager, iPageNo, new Short("1"), Integer.parseInt(id), orderby);
+			list = commentManager.getCommentByPage(pager, iPageNo, 
+					new Short("1"), Integer.parseInt(id), orderby);
 
 			request.setAttribute("ARTICLE_COMMENT_LIST", list);
-			System.out.println(list.size());
 			request.setAttribute("PAGER", pager);
 			return mapping.findForward("list");
 
