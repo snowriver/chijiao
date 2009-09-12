@@ -1,11 +1,9 @@
 package com.forbes.hibernate.bean;
 
-import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import com.forbes.hibernate.bean.ArticleType;
-import com.forbes.hibernate.bean.User;
+
 
 /**
  * AbstractArticle entity provides the base persistence definition of the
