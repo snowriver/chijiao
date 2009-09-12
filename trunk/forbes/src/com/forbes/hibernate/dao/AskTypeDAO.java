@@ -27,7 +27,7 @@ public class AskTypeDAO extends BaseAskTypeDAO {
 
 			String queryString = "SELECT COUNT(*) FROM AskType AS model WHERE model.id > 0 AND model.pid = ? ";			
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, pid );
 			
@@ -40,7 +40,7 @@ public class AskTypeDAO extends BaseAskTypeDAO {
 	public List findAskTypeByPage(String pid, int beg, int len) {
 		try {			
 			String queryString = "SELECT DISTINCT model FROM AskType AS model WHERE model.id > 0 AND model.pid = ? ORDER BY model.disorder ";
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, pid );

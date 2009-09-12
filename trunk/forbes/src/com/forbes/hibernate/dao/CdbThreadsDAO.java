@@ -33,7 +33,7 @@ public class CdbThreadsDAO extends BaseCdbThreadsDAO {
 			String queryString = "SELECT DISTINCT model FROM CdbThreads AS model WHERE model.closed = 0 ";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);

@@ -31,7 +31,7 @@ public class NewsDAO extends BaseNewsDAO {
 		try {
 
 			String queryString = "SELECT COUNT(*) FROM News AS model WHERE (model.title LIKE ? OR model.content LIKE ? ) ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, "%" + keyword + "%" );
 			query.setParameter(1, "%" + keyword + "%" );
@@ -50,7 +50,7 @@ public class NewsDAO extends BaseNewsDAO {
 		try {			
 			String queryString = "SELECT DISTINCT model FROM News AS model WHERE (model.title LIKE ? OR model.content LIKE ? ) ";
 			queryString += "ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, "%" + keyword + "%" );
@@ -71,7 +71,7 @@ public class NewsDAO extends BaseNewsDAO {
 		
 		try {			
 			String queryString = "SELECT DISTINCT model FROM News AS model ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);
@@ -96,7 +96,7 @@ public class NewsDAO extends BaseNewsDAO {
 				queryString += "AND ( model.id in( " + likeid  + " ) )";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);
@@ -120,7 +120,7 @@ public class NewsDAO extends BaseNewsDAO {
 				queryString += "AND ( model.articleType = " + typeid  + " ) ";*/
 			
 			queryString += "AND model.id > " + id +" ORDER BY model.id ASC";
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);	
 			query.setFirstResult(0);
@@ -142,7 +142,7 @@ public class NewsDAO extends BaseNewsDAO {
 				queryString += "AND ( model.articleType = " + typeid  + " ) ";*/
 			
 			queryString += "AND model.id < " + id +" ORDER BY model.id DESC";
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setFirstResult(0);

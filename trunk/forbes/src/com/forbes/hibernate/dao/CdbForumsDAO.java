@@ -40,7 +40,7 @@ public class CdbForumsDAO extends BaseCdbForumsDAO {
 				queryString += "AND model.fup > 0 ";
 			
 			queryString += " ORDER BY model." + orderby +" DESC";
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);

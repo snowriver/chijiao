@@ -26,7 +26,7 @@ public class AskAnswerDAO extends BaseAskAnswerDAO {
 		
 		try {
 			String queryString = "SELECT COUNT(*) FROM AskAnswer AS model WHERE model.ask = ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, askId );
 			return Integer.parseInt("" + query.list().get(0));
@@ -55,7 +55,7 @@ public class AskAnswerDAO extends BaseAskAnswerDAO {
 		
 		try {			
 			String queryString = "SELECT DISTINCT model FROM AskAnswer AS model WHERE model.ask = ? ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, askId );
@@ -76,7 +76,7 @@ public class AskAnswerDAO extends BaseAskAnswerDAO {
 		try {			
 			String queryString = "SELECT DISTINCT model FROM AskAnswer AS model WHERE model.ask = ? " +
 					" ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);	
 			query.setParameter(0, askId );
@@ -93,7 +93,7 @@ public class AskAnswerDAO extends BaseAskAnswerDAO {
 	public List findAskAnswerByAsk(Integer askId) {
 		try {			
 			String queryString = "SELECT DISTINCT model FROM AskAnswer AS model WHERE model.ask = ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);	
 			query.setParameter(0, askId );
 			return query.list();

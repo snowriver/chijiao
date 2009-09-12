@@ -33,7 +33,7 @@ public class UserLevelPromotionDAO extends BaseUserLevelPromotionDAO {
 			
 			String queryString = "SELECT DISTINCT model FROM UserLevelPromotion AS model ORDER BY model.promotDate DESC ";
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			
 			query.setFirstResult(beg);

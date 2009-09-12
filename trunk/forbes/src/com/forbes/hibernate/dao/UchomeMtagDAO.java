@@ -29,7 +29,7 @@ public class UchomeMtagDAO extends BaseUchomeMtagDAO {
 			String queryString = "SELECT DISTINCT model FROM UchomeMtag AS model WHERE model.close = 0 ";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);

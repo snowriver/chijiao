@@ -38,7 +38,7 @@ public class ArticleDAO extends BaseArticleDAO {
 			if(isverify != null && isverify.length() >0)
 				queryString += "AND model.isverify in (" + isverify + ") ";
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, (deleteFlag==null || deleteFlag.equals(""))?"N":deleteFlag );
 			query.setParameter(1, "%" + keyword + "%" );
@@ -66,7 +66,7 @@ public class ArticleDAO extends BaseArticleDAO {
 			if(isverify != null && isverify.length() >0)
 				queryString += "AND model.isverify in (" + isverify + ") ";
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, (deleteFlag==null || deleteFlag.equals(""))?"N":deleteFlag );
@@ -94,7 +94,7 @@ public class ArticleDAO extends BaseArticleDAO {
 				queryString += "AND ( model.articleType in( " + typeid  + " ) )";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);
@@ -114,7 +114,7 @@ public class ArticleDAO extends BaseArticleDAO {
 				queryString += "AND ( model.articleType = " + typeid  + " ) ";*/
 			
 			queryString += "AND model.id > " + id +" ORDER BY model.id ASC";
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);	
 			query.setFirstResult(0);
@@ -134,7 +134,7 @@ public class ArticleDAO extends BaseArticleDAO {
 				queryString += "AND ( model.articleType = " + typeid  + " ) ";*/
 			
 			queryString += "AND model.id < " + id +" ORDER BY model.id DESC";
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setFirstResult(0);
@@ -159,7 +159,7 @@ public class ArticleDAO extends BaseArticleDAO {
 				queryString += "AND ( model.id in( " + likeid  + " ) )";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);

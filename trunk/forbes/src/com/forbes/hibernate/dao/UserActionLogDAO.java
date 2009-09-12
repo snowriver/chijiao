@@ -39,7 +39,7 @@ public class UserActionLogDAO extends BaseUserActionLogDAO {
 				queryString = queryString + " and act.insertDate <= '" + etime + "' ";
 			}
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, userId);
 			query.setParameter(0, "%" + loginName + "%" );

@@ -33,7 +33,7 @@ public class UchomeBlogDAO extends BaseUchomeBlogDAO {
 			String queryString = "SELECT DISTINCT model FROM UchomeBlog AS model";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);

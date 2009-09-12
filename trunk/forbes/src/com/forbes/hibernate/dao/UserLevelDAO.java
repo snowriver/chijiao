@@ -32,7 +32,7 @@ public class UserLevelDAO extends BaseUserLevelDAO {
 			//String queryString = "SELECT COUNT(*) FROM UserLevel AS model WHERE model.title LIKE ? ";
 			String queryString = "SELECT COUNT(*) FROM UserLevel AS model ";			
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, "%" + keyword + "%" );
 			
@@ -47,7 +47,7 @@ public class UserLevelDAO extends BaseUserLevelDAO {
 			//String queryString = "SELECT DISTINCT model FROM UserLevel AS model WHERE model.title LIKE ? ";
 			String queryString = "SELECT DISTINCT model FROM UserLevel AS model ";
 			
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, "%" + keyword + "%" );

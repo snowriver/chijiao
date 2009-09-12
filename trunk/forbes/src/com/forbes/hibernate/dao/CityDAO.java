@@ -31,7 +31,7 @@ public class CityDAO extends BaseCityDAO {
 
 			String queryString = "SELECT COUNT(*) FROM City AS model WHERE model.pid = ? ";			
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, pid );
 			

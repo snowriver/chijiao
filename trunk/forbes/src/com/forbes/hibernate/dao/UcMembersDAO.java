@@ -29,7 +29,7 @@ public class UcMembersDAO extends BaseUcMembersDAO {
 		try {
 			String queryString = "SELECT DISTINCT model FROM UcMembers AS model " +
 					"WHERE model.username = ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, username );
 			return query.list();
@@ -43,7 +43,7 @@ public class UcMembersDAO extends BaseUcMembersDAO {
 		try {
 			String queryString = "SELECT COUNT(*) FROM UcMembers AS model WHERE " +
 								 "model." +  propertyName + " = ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, value );
 			return Integer.parseInt("" + query.list().get(0));

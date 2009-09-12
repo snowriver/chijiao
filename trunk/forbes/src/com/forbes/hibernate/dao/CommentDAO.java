@@ -27,7 +27,7 @@ public class CommentDAO extends BaseCommentDAO {
 		
 		try {
 			String queryString = "SELECT COUNT(*) FROM Comment AS model WHERE model.commentType = ? AND model.objectId = ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, commentType );
 			query.setParameter(1, objectId );
@@ -43,7 +43,7 @@ public class CommentDAO extends BaseCommentDAO {
 		
 		try {			
 			String queryString = "SELECT DISTINCT model FROM Comment AS model WHERE model.commentType = ? AND model.objectId = ? ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, commentType );
@@ -65,7 +65,7 @@ public class CommentDAO extends BaseCommentDAO {
 		try {			
 			String queryString = "SELECT DISTINCT model FROM Comment AS model WHERE model.commentType = ? AND model.objectId = ? " +
 					" ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, commentType );
@@ -83,7 +83,7 @@ public class CommentDAO extends BaseCommentDAO {
 	public List findComment(Short commentType, Integer objectId) {
 		try {			
 			String queryString = "SELECT DISTINCT model FROM Comment AS model WHERE model.commentType = ? AND model.objectId = ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, commentType );
 			query.setParameter(1, objectId );
@@ -97,7 +97,7 @@ public class CommentDAO extends BaseCommentDAO {
 	public int getCount(Integer userId, Short commentType, Integer objectId) {
 		try {			
 			String queryString = "SELECT COUNT(*)  FROM Comment AS model WHERE model.user = ? AND model.commentType = ? AND model.objectId = ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, userId );
 			query.setParameter(1, commentType );

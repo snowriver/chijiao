@@ -53,7 +53,7 @@ public class UcAdminsDAO extends BaseUcAdminsDAO {
 			
 			if( orderBy!= null && orderBy.length()>0 )
 				queryString += "ORDER BY model." + orderBy;
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
 			query.setParameter(0, "%" + keyword + "%" );

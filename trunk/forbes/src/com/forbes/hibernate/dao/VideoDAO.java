@@ -37,7 +37,7 @@ public class VideoDAO extends BaseVideoDAO {
 			if(typeid != null && !typeid.equals(""))
 				queryString += "AND ( model.videoType = " + typeid  + " OR model.videoType2 = " + typeid + " ) ";
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, (deleteFlag==null || deleteFlag.equals(""))?"N":deleteFlag );
 			query.setParameter(1, "%" + keyword + "%" );
@@ -65,7 +65,7 @@ public class VideoDAO extends BaseVideoDAO {
 			if(typeid != null && !typeid.equals(""))
 				queryString += "AND ( model.videoType = " + typeid  + " OR model.videoType2 = " + typeid + " ) ";
 			queryString += "ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, (deleteFlag==null || deleteFlag.equals(""))?"N":deleteFlag );
@@ -96,7 +96,7 @@ public class VideoDAO extends BaseVideoDAO {
 				queryString += "AND ( model.videoType = " + typeid  + " ) ";
 			
 			queryString += "ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);
@@ -121,7 +121,7 @@ public class VideoDAO extends BaseVideoDAO {
 				queryString += "AND ( model.id in( " + likeid  + " ) )";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);

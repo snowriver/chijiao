@@ -27,7 +27,7 @@ public class SectorDAO extends BaseSectorDAO {
 
 			String queryString = "SELECT COUNT(*) FROM Sector AS model WHERE model.pid = ? ";			
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, pid );
 			

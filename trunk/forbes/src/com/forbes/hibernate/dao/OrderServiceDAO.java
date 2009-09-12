@@ -35,7 +35,7 @@ public class OrderServiceDAO extends BaseOrderServiceDAO {
 			if( type!= null && type.length()>0 )
 				queryString += "AND model.serviceType = " + type + " ";
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
 			query.setParameter(0, "%" + keyword + "%" );
@@ -59,7 +59,7 @@ public class OrderServiceDAO extends BaseOrderServiceDAO {
 				queryString += "AND model.serviceType = " + type + " ";
 			if( orderBy!= null && orderBy.length()>0 )
 				queryString += "ORDER BY model." + orderBy;
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
 			query.setParameter(0, "%" + keyword + "%" );

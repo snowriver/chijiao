@@ -40,7 +40,7 @@ public class AskDAO extends BaseAskDAO {
 			if(status != null && !status.equals(""))
 				queryString += "AND model.status in ( " + status + ") ";
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, (deleteFlag==null || deleteFlag.equals(""))?"N":deleteFlag );
 			query.setParameter(0, "%" + keyword + "%" );
@@ -84,7 +84,7 @@ public class AskDAO extends BaseAskDAO {
 				queryString += "AND model.status in ( " + status + ") ";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, (deleteFlag==null || deleteFlag.equals(""))?"N":deleteFlag );
@@ -112,7 +112,7 @@ public class AskDAO extends BaseAskDAO {
 		
 			
 			queryString += " ORDER BY ask." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			
@@ -139,7 +139,7 @@ public class AskDAO extends BaseAskDAO {
 				queryString += "AND model.status in (" + status  + " ) ";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);

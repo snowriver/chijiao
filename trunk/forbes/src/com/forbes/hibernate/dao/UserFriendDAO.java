@@ -27,7 +27,7 @@ public class UserFriendDAO extends BaseUserFriendDAO {
     		
 			String queryString = "SELECT COUNT(*) FROM UserFriend AS model WHERE model.userId = ? ";
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, userId );
 			
@@ -41,7 +41,7 @@ public class UserFriendDAO extends BaseUserFriendDAO {
 		
 		try {
 			String queryString = "SELECT COUNT(*) FROM UserFriend AS model WHERE model.friend = ? AND model.userId = ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, friendId );
 			query.setParameter(1, userId );
@@ -57,7 +57,7 @@ public class UserFriendDAO extends BaseUserFriendDAO {
 			String queryString = "SELECT DISTINCT model FROM UserFriend AS model WHERE model.userId = ? ";
 			if( orderBy!= null && orderBy.length()>0 )
 				queryString += "ORDER BY " + orderBy;
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, userId );
 
