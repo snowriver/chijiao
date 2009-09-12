@@ -10,6 +10,7 @@ import com.forbes.aop.newsfeed.MessageGeneratorInf;
 
 
 public class NewsFeedInterceptor implements AfterReturningAdvice{
+	
 	private Map genClassMap;
 	private static ApplicationContext ctx = null;
 	static{
