@@ -57,7 +57,7 @@ public class FavoriteDAO extends BaseFavoriteDAO {
 				queryString = "SELECT COUNT(video) FROM Favorite AS fav, Video as video " +
 					"WHERE fav.userId = ? AND fav.favoriteType = 3 AND fav.objectId = video.id AND video.title LIKE ? ";
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, userId );
 			query.setParameter(1, "%" + keyword + "%" );

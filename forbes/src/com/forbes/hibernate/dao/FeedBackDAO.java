@@ -37,7 +37,7 @@ public class FeedBackDAO extends BaseFeedBackDAO {
 			if(errorType != null)
 				queryString = "AND fb.errorType =  " + errorType;
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, "%" + keyword + "%" );
 			
@@ -60,7 +60,7 @@ public class FeedBackDAO extends BaseFeedBackDAO {
 				queryString += " AND fb.errorType =  " + errorType;
 			
 			queryString += " ORDER BY fb.feedTime DESC ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, "%" + keyword + "%" );
 			

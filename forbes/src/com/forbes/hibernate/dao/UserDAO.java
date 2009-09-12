@@ -34,7 +34,7 @@ public class UserDAO extends BaseUserDAO {
 			
 			if( type!= null && type.length()>0 )
 				queryString += "AND model.type = '" + type + "' ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
 			query.setParameter(0, "%" + keyword + "%" );
@@ -58,7 +58,7 @@ public class UserDAO extends BaseUserDAO {
 				queryString += "AND model.type = '" + type + "' ";
 			if( orderBy!= null && orderBy.length()>0 )
 				queryString += "ORDER BY model." + orderBy;
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, type );
 			query.setParameter(0, "%" + keyword + "%" );
@@ -77,7 +77,7 @@ public class UserDAO extends BaseUserDAO {
 		try {
 			String queryString = "SELECT DISTINCT model FROM User AS model WHERE model.deleteFlag = 'N' AND model.type in(" + inType + ") " +
 								 "AND model.loginName = ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, inType );
 			query.setParameter(0, loginName );
@@ -92,7 +92,7 @@ public class UserDAO extends BaseUserDAO {
 		try {
 			String queryString = "SELECT COUNT(*) FROM User AS model WHERE model.deleteFlag = 'N' AND model.type in(" + inType + ") " +
 								 "AND model." +  propertyName + "= ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			//query.setParameter(0, inType );
 			query.setParameter(0, value );

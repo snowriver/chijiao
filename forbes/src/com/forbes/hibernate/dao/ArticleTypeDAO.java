@@ -27,7 +27,7 @@ public class ArticleTypeDAO extends BaseArticleTypeDAO {
 
 			String queryString = "SELECT COUNT(*) FROM ArticleType AS model WHERE model.id > 0 AND model.pid = ? ";			
 			
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, pid );
 			
@@ -40,7 +40,7 @@ public class ArticleTypeDAO extends BaseArticleTypeDAO {
 	public List findArticleTypeByPage(String pid, int beg, int len) {
 		try {			
 			String queryString = "SELECT DISTINCT model FROM ArticleType AS model WHERE model.id > 0 AND model.pid = ? ORDER BY disorder ";
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, pid );

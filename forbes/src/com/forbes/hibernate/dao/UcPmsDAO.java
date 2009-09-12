@@ -50,7 +50,7 @@ public class UcPmsDAO extends BaseUcPmsDAO {
 			if (fromappid != null && fromappid.length()>0)
 				queryString += "AND pm.fromappid = " + fromappid + " ";
 
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 
 			return Integer.parseInt("" + query.list().get(0));

@@ -27,7 +27,7 @@ public class VideoUrlDAO extends BaseVideoUrlDAO {
 			
 			String queryString = "SELECT COUNT(*) FROM VideoUrl AS model WHERE model.video = ? " +
 								 "AND model.title LIKE ? ";
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, videoid );
 			query.setParameter(1, "%" + keyword + "%" );
@@ -47,7 +47,7 @@ public class VideoUrlDAO extends BaseVideoUrlDAO {
 			
 			String queryString = "SELECT DISTINCT model FROM VideoUrl AS model WHERE model.video = ? " +
 								 "AND model.title LIKE ? ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, videoid );
 			query.setParameter(1, "%" + keyword + "%" );

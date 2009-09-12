@@ -30,7 +30,7 @@ public class UchomeFeedDAO extends BaseUchomeFeedDAO {
 			String queryString = "SELECT DISTINCT model FROM UchomeFeed AS model";
 			
 			queryString += " ORDER BY model." + orderby;
-			//System.out.println("queryString = "+queryString);
+			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);			
 			query.setFirstResult(beg);
