@@ -21,7 +21,6 @@ public class Log4jInit extends HttpServlet {
 		String prefix = getServletContext().getRealPath("/");
 		String file = getInitParameter("log4j");
 		// if the log4j-init-file is not set, then no point in trying
-		System.out.println("................log4j start");
 		if (file != null) {
 			PropertyConfigurator.configure(prefix + file);
 		}
