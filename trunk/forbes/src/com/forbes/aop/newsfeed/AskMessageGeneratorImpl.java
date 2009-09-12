@@ -72,13 +72,9 @@ public class AskMessageGeneratorImpl extends DefaultMessageGeneratorImpl{
 		String userName = user.getUsername();
 		String act = "ASK_QUESTION_TO_UC";
 		int msgTypeId = 1;
-			
-		//System.out.println("begin to update msg to db!!!!!!!");
+				
 		List friends = userFriendDAO.findByUserId(user.getUid());
-		
-		/*System.out.println("user.id = " + user.getUid());
-		System.out.println("friends.list = " + friends.size());*/
-		
+				
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM月dd日");
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH點mm分");
@@ -133,13 +129,9 @@ public class AskMessageGeneratorImpl extends DefaultMessageGeneratorImpl{
 		String userName = user.getUsername();
 		String act = "ANSWER_QUESTION_TO_UC";
 		int msgTypeId = 2;
-			
-		//System.out.println("begin to update msg to db!!!!!!!");
+				
 		List friends = userFriendDAO.findByUserId(user.getUid());
-		
-		/*System.out.println("user.id = " + user.getUid());
-		System.out.println("friends.list = " + friends.size());*/
-		
+				
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM月dd日");
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH點mm分");
