@@ -83,8 +83,6 @@
 			<ref bean="userInfoManagerService" />
 		</property>
 	</bean>
-	
-	<bean name="/GetUCenterInfo" class="com.forbes.struts.action.ucenter.GetUCenterInfoAction" singleton="false"></bean>
 
 	<bean name="/BulletinView" class="com.forbes.struts.action.index.BulletinViewAction" singleton="false">
 		<property name="bulletinManager">
