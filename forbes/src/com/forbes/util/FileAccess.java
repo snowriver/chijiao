@@ -40,7 +40,7 @@ public class FileAccess {
 			int bytesum = 0;
 			int byteread = 0;
 			File oldfile = new File(oldPath);
-			if (oldfile.exists()) {  
+			if (oldfile.exists()) {
 				InputStream inStream = new FileInputStream(oldPath); 
 				FileOutputStream fs = new FileOutputStream(newPath);
 				byte[] buffer = new byte[1444];
