@@ -126,7 +126,7 @@ public class UserLoginImpl implements UserLogin {
 	public UcMembers login(String username,  String password, String remember,
 			HttpServletRequest request, HttpServletResponse response) {
 		
-		//UserLoginForm userLoginForm = (UserLoginForm) form;// TODO Auto-generated method stub
+		//UserLoginForm userLoginForm = (UserLoginForm) form;
 		/*String loginName     = userLoginForm.getLoginName();
 		String password      = userLoginForm.getPassword();
 		String remember      = userLoginForm.getRemember();*/

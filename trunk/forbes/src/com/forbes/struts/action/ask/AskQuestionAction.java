@@ -60,7 +60,7 @@ public class AskQuestionAction extends DispatchAction {
 	public ActionForward first(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws ForbesException {
 		
-		//UserLoginForm userLoginForm = (UserLoginForm) form;// TODO Auto-generated method stub
+		//UserLoginForm userLoginForm = (UserLoginForm) form;
 		String keyword = request.getParameter("keyword");
 		
 		UcMembers ucMember = (UcMembers)request.getSession().getAttribute("CLIENT");
@@ -87,7 +87,7 @@ public class AskQuestionAction extends DispatchAction {
 	public ActionForward search(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws ForbesException {
 		
-		//UserLoginForm userLoginForm = (UserLoginForm) form;// TODO Auto-generated method stub
+		//UserLoginForm userLoginForm = (UserLoginForm) form;
 		
 		String keyword = request.getParameter("keyword");
 		String pageNo = request.getParameter("pno");
@@ -123,7 +123,7 @@ public class AskQuestionAction extends DispatchAction {
 	public ActionForward second(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws ForbesException {
 		
-		//UserLoginForm userLoginForm = (UserLoginForm) form;// TODO Auto-generated method stub
+		//UserLoginForm userLoginForm = (UserLoginForm) form;
 		
 		
 		UcMembers user = (UcMembers)request.getSession().getAttribute("CLIENT");
