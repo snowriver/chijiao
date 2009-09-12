@@ -74,10 +74,10 @@ public class SysConfigManager {
 	
 	
 	
-	public static void main( String args [] ){
+	/*public static void main( String args [] ){
 		
 		System.out.println( (String)SysConfigManager.getValue("cfg_uc_center_url") );
 		
-	}
+	}*/
 
 }

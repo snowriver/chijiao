@@ -252,11 +252,10 @@ public class HttpInvoke {
 		return null;
 	}
 
-	public void httclient() {
+	public void httpClient(String url) {
 		HttpClient client = new HttpClient();
 
-		GetMethod get = new GetMethod(
-				"http://www.ucloo.com/?m=detail&pid=12035289");
+		GetMethod get = new GetMethod(url);
 
 		get.setDoAuthentication(true);
 
@@ -273,21 +272,19 @@ public class HttpInvoke {
 			e.printStackTrace();
 		}
 		get.releaseConnection();
-
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		HttpInvoke httpInvoke1 = new HttpInvoke();
 		try {
-			//String c = httpInvoke1.getUrlRspBySession("http://www.ucloo.com/","m=detail&pid=12035289");
+			String c = httpInvoke1.getUrlRspBySession("http://www.ucloo.com/","m=detail&pid=12035289");
 			String rst = httpInvoke1.invoke("ip=211.139.151.42&action=2", "http://www.ip138.com/ips8.asp", "GB2312");
-			//System.out.println(rst);
-			//System.out.println(c);
+			System.out.println(rst);
+			System.out.println(c);
 
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {			
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 }

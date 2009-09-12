@@ -59,8 +59,7 @@ public class IndexAction extends Action {
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		//System.out.println(" top video list...");
-		
+				
 		try {
 
 			//video 
