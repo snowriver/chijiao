@@ -96,7 +96,5 @@ public class ForbesMail {
 	public void setToList(List toList) {
 		this.toList = toList;
 	}
-    
-	
 	
 }
