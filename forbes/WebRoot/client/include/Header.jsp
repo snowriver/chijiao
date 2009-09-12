@@ -39,11 +39,6 @@
 	</DIV>
 	<DIV class=topmenu>
 		<DIV class=topmenu_tools id="topmenu">
-			<!-- 
-			<iframe frameborder=0 height=100% marginheight=1 marginwidth=1 src="include/userinfo.jsp" width="589" bordercolor="#000000" name="I4" noresize scrolling=no>
-			</iframe>
-			<img src="images/loadings.gif">
-		 	-->
 		 	
 		</DIV>
 		<DIV class=searchtool>
@@ -52,19 +47,10 @@
   	</DIV>
 	<DIV class=clear></DIV>
 	<DIV class=mainnav>
-		
 		<UL>
 	  		<LI style="BACKGROUND: none transparent scroll repeat 0% 0%">
 	  		<A title=""  href="JavaScript:void(0);">希望 “赤脚网” 成为你我结交新朋友的天地！是你我互助的平台！是你我知识，经验和心得分享的创业加油站！让我们一起共勉！</A> </LI>
-
-			<!-- 
-			<LI><A title="" href="#">栏目</A> </LI>
-		  	<LI><A title="" href="#">栏目</A> </LI>
-		  	<LI><A title="" href="#">栏目</A> </LI>
-		  	 -->
 		</UL>
-
-		
 	</DIV>
 </DIV>
 <!--header end-->
