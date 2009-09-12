@@ -16,12 +16,7 @@
 	</DIV>
 	<DIV class=topmenu>
 		<DIV class=topmenu_tools id="topmenu">
-			<!-- 
-			<iframe frameborder=0 height=100% marginheight=1 marginwidth=1 src="include/userinfo.jsp" width="589" bordercolor="#000000" name="I4" noresize scrolling=no>
-			</iframe>
-			<img src="images/loadings.gif">
-		 	-->
-		 	
+		
 		</DIV>
 		<DIV class=searchtool>
 			
