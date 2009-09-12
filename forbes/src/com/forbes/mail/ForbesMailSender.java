@@ -6,16 +6,12 @@ import javax.mail.*;
 import javax.mail.internet.*;
 
 public class ForbesMailSender {
-	private MimeMessage mimeMsg; // MIME邮件對象
-
-	private Session session; // 邮件會话對象
-
-	private Properties props = System.getProperties() ; // 系统属性
-
-	private boolean needAuth = true; // smtp是否需要認证
-    
-	private String user ;
 	
+	private MimeMessage mimeMsg; // MIME邮件對象
+	private Session session; // 邮件會话對象
+	private Properties props = System.getProperties() ; // 系统属性
+	private boolean needAuth = true; // smtp是否需要認证    
+	private String user ;	
 	private String password;
 
 	public ForbesMailSender(String smtpHost, String userName, String password) {
@@ -27,6 +23,7 @@ public class ForbesMailSender {
 		this.user = userName;
 		this.password = password;
 	}
+	
 	public boolean doSend( ForbesMail mail ){
 		try {
 			session = Session.getDefaultInstance(props, null); // 获得邮件會话對象
@@ -60,6 +57,7 @@ public class ForbesMailSender {
 		}
 		return true;
 	}
+	
 	public static void main( String [] args ){
 		ForbesMailSender sender = new ForbesMailSender("smtp.163.com","xuxiaomin123","19830501");
 		ForbesMail mail = new ForbesMail();
