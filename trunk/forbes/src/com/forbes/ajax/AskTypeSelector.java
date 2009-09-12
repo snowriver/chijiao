@@ -4,8 +4,6 @@ import java.util.*;
 
 import com.forbes.exception.ForbesException;
 import com.forbes.service.ask.AskTypeManager;
-import com.forbes.service.basic.CityManager;
-
 
 import org.springframework.context.ApplicationContext;   
 import org.springframework.context.support.ClassPathXmlApplicationContext;

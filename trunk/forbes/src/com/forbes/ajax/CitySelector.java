@@ -18,15 +18,11 @@ public class CitySelector {
 	}
 	
 	public List getProvinces() throws ForbesException{
-		/*CityDAO cityDAO  = (CityDAO )ctx.getBean("CityDAO");
-		return cityDAO.findByPid(0);*/
 		CityManager cityManager =  (CityManager)ctx.getBean("cityManagerService");
 		return cityManager.getAllProvince();
 	}
 
 	public List getCitys(String pid) throws ForbesException{
-		/*CityDAO cityDAO  = (CityDAO )ctx.getBean("CityDAO");
-		return cityDAO.findByPid(Integer.parseInt(pid));*/
 		CityManager cityManager =  (CityManager)ctx.getBean("cityManagerService");
 		return cityManager.getCity(pid);
 	}

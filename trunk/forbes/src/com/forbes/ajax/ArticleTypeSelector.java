@@ -5,9 +5,6 @@ import java.util.*;
 import com.forbes.exception.ForbesException;
 import com.forbes.hibernate.bean.ArticleType;
 import com.forbes.service.article.ArticleTypeManager;
-import com.forbes.service.ask.AskTypeManager;
-import com.forbes.service.basic.CityManager;
-
 
 import org.springframework.context.ApplicationContext;   
 import org.springframework.context.support.ClassPathXmlApplicationContext;

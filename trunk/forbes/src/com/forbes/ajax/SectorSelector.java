@@ -17,15 +17,11 @@ public class SectorSelector {
 	}
 	
 	public List getSectors() throws ForbesException{
-		/*CityDAO cityDAO  = (CityDAO )ctx.getBean("CityDAO");
-		return cityDAO.findByPid(0);*/
 		SectorManager sectorManager =  (SectorManager)ctx.getBean("sectorManagerService");
 		return sectorManager.getTopSector();
 	}
 
 	public List getSectors(String pid) throws ForbesException{
-		/*CityDAO cityDAO  = (CityDAO )ctx.getBean("CityDAO");
-		return cityDAO.findByPid(Integer.parseInt(pid));*/
 		SectorManager sectorManager =  (SectorManager)ctx.getBean("sectorManagerService");
 		return sectorManager.getSectors(pid);
 	}
