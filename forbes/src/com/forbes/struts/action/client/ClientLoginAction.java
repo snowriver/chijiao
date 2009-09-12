@@ -160,6 +160,13 @@ public class ClientLoginAction extends DispatchAction {
 	    					request.getSession().setAttribute("CLIENT", user);				
 	    					//System.out.println("---------client login ok");
 	    					
+	    					//产生活动日志
+	    					UserActionTask actionTask = new UserActionTask();
+	    					UserLoginAction action = new UserLoginAction( user );
+	    					actionTask.setAction(action);
+	    					//异步执行，放入任务管理器中
+	    					TaskManager.getInstance().addTask( actionTask );
+	    					
 	    					//同步ucneter登录
 							UCenterManager uc = new UCenterManager();
 							uc.login(user.getUsername(), password);
@@ -250,12 +257,12 @@ public class ClientLoginAction extends DispatchAction {
 								e.printStackTrace();
 							}
 							
-							//産生活動日志
-							//UserActionTask actionTask = new UserActionTask();
-							//UserLoginAction action = new UserLoginAction( user );
-							//actionTask.setAction(action);
-							//异步执行，放入任務管理器中
-							//TaskManager.getInstance().addTask( actionTask );
+							//产生活动日志
+							UserActionTask actionTask = new UserActionTask();
+							UserLoginAction action = new UserLoginAction( user );
+							actionTask.setAction(action);
+							//异步执行，放入任务管理器中
+							TaskManager.getInstance().addTask( actionTask );
 
 							//同步ucneter登录
 							UCenterManager uc = new UCenterManager();
@@ -425,6 +432,13 @@ public class ClientLoginAction extends DispatchAction {
 	    					request.getSession().setAttribute("CLIENT", user);				
 	    					//System.out.println("---------client login ok");
 	    					
+	    					//产生活动日志
+	    					UserActionTask actionTask = new UserActionTask();
+	    					UserLoginAction action = new UserLoginAction( user );
+	    					actionTask.setAction(action);
+	    					//异步执行，放入任务管理器中
+	    					TaskManager.getInstance().addTask( actionTask );
+	    					
 	    					//同步ucneter登录
 							UCenterManager uc = new UCenterManager();
 							uc.login(user.getUsername(), password);
@@ -508,6 +522,13 @@ public class ClientLoginAction extends DispatchAction {
 	 	    					userLogin.updateLoginLog(user);
 	 	    					request.getSession().setAttribute("CLIENT", user);				
 	 	    					//System.out.println("---------client login ok");
+	 	    					
+	 	    					//产生活动日志
+	 	    					UserActionTask actionTask = new UserActionTask();
+	 	    					UserLoginAction action = new UserLoginAction( user );
+	 	    					actionTask.setAction(action);
+	 	    					//异步执行，放入任务管理器中
+	 	    					TaskManager.getInstance().addTask( actionTask );
 	 	    					
 	 	    					//同步ucneter登录
 	 							UCenterManager uc = new UCenterManager();

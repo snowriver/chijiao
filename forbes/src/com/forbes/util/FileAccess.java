@@ -53,7 +53,7 @@ public class FileAccess {
 				inStream.close();
 			}
 		} catch (Exception e) {
-			System.out.println( "error  ");
+			System.out.println( oldPath +  " copy to " + newPath + " error  ");
 			e.printStackTrace();
 		}
 	}
@@ -76,7 +76,7 @@ public class FileAccess {
 				inStream.close();
 			}
 		} catch (Exception e) {
-			System.out.println( "error  ");
+			System.out.println( oldfile +  " copy to " + newPath + " error  ");
 			e.printStackTrace();
 		}
 	}

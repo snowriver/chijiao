@@ -80,9 +80,7 @@ public class ClientManageFriendAction extends DispatchAction {
 			request.setAttribute( "PARA", map );
 			request.setAttribute( "PAGER", pager );
 			request.setAttribute( "FRIEND_LIST", list);
-			
-			//System.out.println(" ClientManageFriendAction list = "+list.size());
-			
+						
 			return mapping.findForward("list");
 		}catch( Exception e ){
 			e.printStackTrace();
