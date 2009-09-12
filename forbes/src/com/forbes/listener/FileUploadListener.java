@@ -16,7 +16,7 @@ public class FileUploadListener implements ProgressListener {
 	}
 
 	public void update(long pBytesRead, long pContentLength, int pItems) {
-		// TODO Auto-generated method stub
+		
 		FileUploadStatus status = (FileUploadStatus) session.getAttribute("FILE_UPLOAD_STATUS");
 		status.setPBytesRead(pBytesRead);
 		status.setPContentLength(pContentLength);
