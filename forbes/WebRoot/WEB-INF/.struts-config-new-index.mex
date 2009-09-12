@@ -6,7 +6,6 @@
   <StrutsActivity path="/IndexAskList.do" location="5433,0" dimension="362,100" />
   <StrutsActivity path="/IndexNewsList.do" location="3894,0" dimension="362,100" />
   <StrutsActivity path="/IndexUserList.do" location="2040,0" dimension="362,100" />
-  <StrutsActivity path="/GetUCenterInfo.do" location="3426,0" dimension="362,100" />
   <StrutsActivity path="/GetTopUchomeMtag.do" location="1578,0" dimension="362,100" />
   <StrutsActivity path="/GetTopUchomeFeed.do" location="2964,0" dimension="362,100" />
   <StrutsActivity path="/GetTopUchomeDoing.do" location="1116,0" dimension="362,100" />
@@ -41,14 +40,6 @@
       <AbsolutePoint location="142,587" />
       <AbsolutePoint location="91,587" />
       <AbsolutePoint location="91,637" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/GetUCenterInfo.do,fail,/operate_fail.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="3516,100" />
-      <AbsolutePoint location="3516,160" />
-      <AbsolutePoint location="2934,160" />
-      <AbsolutePoint location="2934,340" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/IndexArticleList.do,hot,/index/hot_article_list.jsp,1" routingType="0">
@@ -203,12 +194,6 @@
       <AbsolutePoint location="373,130" />
       <AbsolutePoint location="379,130" />
       <AbsolutePoint location="379,340" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/GetUCenterInfo.do,ok,/operate_result.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="3697,100" />
-      <AbsolutePoint location="3697,340" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/GetTopCdbThreads.do,ok,/index/hot_bbs_thread_list.jsp,1" routingType="0">

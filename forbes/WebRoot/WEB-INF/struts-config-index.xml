@@ -78,15 +78,7 @@
 	      <forward name="ok" path="/index/new_user_list.jsp" />
 	      <forward name="fail" path="/operate_fail.jsp" />
 	    </action>
-	    
-	    <action
-	      path="/GetUCenterInfo"
-	      scope="request"
-	      type="org.springframework.web.struts.DelegatingActionProxy">
-	      <forward name="fail" path="/operate_fail.jsp" />
-	      <forward name="ok" path="/operate_result.jsp" />
-	    </action>
-	    
+	    	    
 	    <action
 	      path="/GetTopUchomeMtag"
 	      scope="request"
