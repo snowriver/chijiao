@@ -1,5 +1,5 @@
 #
-#Mon Aug 31 10:31:18 CST 2009
+#Mon Sep 14 16:30:56 CST 2009
 genBasicCompId=false
 sessionFactoryName=com.forbes.hibernate.HibernateSessionFactory
 profile=
