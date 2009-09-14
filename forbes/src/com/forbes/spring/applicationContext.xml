@@ -129,6 +129,8 @@
 				<value>com/forbes/hibernate/hbm/UserMonthSumup.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UserLifeStageAim.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/ArticleContent.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/UchomeBlogFilter.hbm.xml</value>
+				<value>com/forbes/hibernate/hbm/UchomeBlogfield.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 
@@ -524,4 +526,15 @@
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
-</beans>
+    <bean id="UchomeBlogFilterDAO"
+    	class="com.forbes.hibernate.dao.UchomeBlogFilterDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="UchomeBlogfieldDAO"
+    	class="com.forbes.hibernate.dao.UchomeBlogfieldDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean></beans>

@@ -5,6 +5,12 @@
 
 	<bean name="tohtmlTask" class="com.forbes.task.TohtmlTask">
 	</bean>
+	
+	<bean name="uchomeBlogFilterTask" class="com.forbes.task.UchomeBlogFilterTask">
+    <property name="uchomeBlogManager">
+      <ref bean="uchomeBlogManagerService" />
+    </property>
+  </bean>
 
 	<bean id="tohtmlTaskJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
     	<property name="targetObject">
@@ -15,6 +21,15 @@
 		</property>
 	</bean>
 	
+	<bean id="uchomeBlogFilterDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+      <property name="targetObject">
+          <ref bean="uchomeBlogFilterTask" />
+    </property>
+    <property name="targetMethod">
+          <value>doTask</value>
+    </property>
+  </bean>
+	
 	<bean id="tohtmlTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
 		<property name="jobDetail">
 			<ref bean="tohtmlTaskJobDetail" />
@@ -24,10 +39,20 @@
 		</property>
 	</bean>	
 	
+	<bean id="uchomeBlogFilterTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+    <property name="jobDetail">
+      <ref bean="uchomeBlogFilterDetail" />
+    </property>
+    <property name="cronExpression">
+      <value>0 * 19 * * ?</value>
+    </property>
+  </bean> 
+	
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
 			<list>
 				<ref local="tohtmlTaskTrigger" />
+				<ref local="uchomeBlogFilterTaskTrigger" />
 			</list>
 		</property>
 	</bean>
