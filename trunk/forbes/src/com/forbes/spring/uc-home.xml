@@ -20,6 +20,19 @@
 	</bean>
 	
 	<!-- -->
+  <bean id="uchomeBlogManager" class="com.forbes.service.ucenter.impl.UchomeBlogManagerImpl">
+    <property name="uchomeBlogFilterDAO">
+      <ref bean="UchomeBlogFilterDAO" />
+    </property>
+    <property name="uchomeBlogDAO">
+      <ref bean="UchomeBlogDAO" />
+    </property>
+    <property name="uchomeBlogfieldDAO">
+      <ref bean="UchomeBlogfieldDAO" />
+    </property>
+  </bean>
+	
+	<!-- -->
 	<bean id="uchomeManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager">
 			<ref bean="transactionManager" />
@@ -33,6 +46,20 @@
 			</props>
 		</property>
 	</bean>
+	
+	<bean id="uchomeBlogManagerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager" />
+    </property>
+    <property name="target">
+      <ref bean="uchomeBlogManager" />
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED,-ForbesException</prop>
+      </props>
+    </property>
+  </bean>
 	
 	<!-- -->
 	<bean name="/GetTopUchomeMtag" class="com.forbes.struts.action.index.GetTopUchomeMtagAction" singleton="false">
