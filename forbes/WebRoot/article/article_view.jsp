@@ -194,9 +194,9 @@
 	<DIV id=news>
 		<DIV class=newsmapbg>
 			<DIV class=news_map>
-				<A href="ArticleSearch.do?act=list&orderby=pubdate desc">所有</A> &gt;
-				<c:if test="${not empty ARTICLE.articleType}"><A href="ArticleSearch.do?act=list&typeid=${ARTICLE.articleType.id}&keyword=&orderby=pubdate desc">${ARTICLE.articleType.name}</A> &gt; </c:if>
-				<c:if test="${not empty ARTICLE.articleType2}"><A href="ArticleSearch.do?act=list&typeid=${ARTICLE.articleType2.id}&keyword=&orderby=pubdate desc">${ARTICLE.articleType2.name}</A> &gt; </c:if>
+				<A href="ArticleSearch.do?act=list&orderby=pubdate%20desc">所有</A> &gt;
+				<c:if test="${not empty ARTICLE.articleType}"><A href="ArticleSearch.do?act=list&typeid=${ARTICLE.articleType.id}&keyword=&orderby=pubdate%20desc">${ARTICLE.articleType.name}</A> &gt; </c:if>
+				<c:if test="${not empty ARTICLE.articleType2}"><A href="ArticleSearch.do?act=list&typeid=${ARTICLE.articleType2.id}&keyword=&orderby=pubdate%20desc">${ARTICLE.articleType2.name}</A> &gt; </c:if>
 				正文
 			</DIV>
 		</DIV>
@@ -343,7 +343,7 @@
 							<c:forEach items="${ARTICLE.articleType.articleTypes}" var="type" begin="0"> 
 					  		<TR>
 								<TD width="10%" align=middle></TD>
-					    		<TD class=daren_name><A class=linktext href="ArticleSearch.do?act=list&typeid=${type.id}&keyword=&orderby=pubdate desc">${type.name}</A></TD>
+					    		<TD class=daren_name><A class=linktext href="ArticleSearch.do?act=list&typeid=${type.id}&keyword=&orderby=pubdate%20desc">${type.name}</A></TD>
 					    	</TR>					    	
 					  		</c:forEach>
 					  		
@@ -351,7 +351,7 @@
 					  		<c:forEach items="${ARTICLE_TYPE_LIST}" var="type" begin="0"> 
 					  		<TR>
 								<TD width="10%" align=middle></TD>
-					    		<TD class=daren_name><A class=linktext href="ArticleSearch.do?act=list&typeid=${type.id}&keyword=&orderby=pubdate desc">${type.name}</A></TD>
+					    		<TD class=daren_name><A class=linktext href="ArticleSearch.do?act=list&typeid=${type.id}&keyword=&orderby=pubdate%20desc">${type.name}</A></TD>
 					    	</TR>					    	
 					  		</c:forEach>
 					  		
