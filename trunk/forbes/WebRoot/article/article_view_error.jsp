@@ -171,9 +171,9 @@
 	<DIV id=news>
 		<DIV class=newsmapbg>
 			<DIV class=news_map>
-				<A href="ArticleSearch.do?act=list&orderby=pubdate desc">所有</A> &gt;
-				<c:if test="${not empty ARTICLE.articleType}"><A href="ArticleSearch.do?act=list&typeid=${ARTICLE.articleType.id}&keyword=&orderby=pubdate desc">${ARTICLE.articleType.name}</A> &gt; </c:if>
-				<c:if test="${not empty ARTICLE.articleType2}"><A href="ArticleSearch.do?act=list&typeid=${ARTICLE.articleType2.id}&keyword=&orderby=pubdate desc">${ARTICLE.articleType2.name}</A> &gt; </c:if>
+				<A href="ArticleSearch.do?act=list&orderby=pubdate%20desc">所有</A> &gt;
+				<c:if test="${not empty ARTICLE.articleType}"><A href="ArticleSearch.do?act=list&typeid=${ARTICLE.articleType.id}&keyword=&orderby=pubdate%20desc">${ARTICLE.articleType.name}</A> &gt; </c:if>
+				<c:if test="${not empty ARTICLE.articleType2}"><A href="ArticleSearch.do?act=list&typeid=${ARTICLE.articleType2.id}&keyword=&orderby=pubdate%20desc">${ARTICLE.articleType2.name}</A> &gt; </c:if>
 				正文
 			</DIV>
 		</DIV>
