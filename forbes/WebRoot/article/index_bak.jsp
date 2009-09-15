@@ -280,7 +280,7 @@ var FlashObject=com.deconcept.FlashObject;
 			<DIV id=news>
 				<H2>
 					<SPAN class=left>最新资讯</SPAN>
-					<A class="more right" target=_blank href="NewsSearch.do?act=list&orderby=pubdate desc"><font color="black">+更多资讯</font></A>
+					<A class="more right" target=_blank href="NewsSearch.do?act=list&orderby=pubdate%20desc"><font color="black">+更多资讯</font></A>
 				</H2>
 				
 				<DIV id="newslist">
@@ -298,7 +298,7 @@ var FlashObject=com.deconcept.FlashObject;
 				<DIV id=softtab_1>
 					<H2>
 						<SPAN class="left">企业管理</SPAN>						
-						<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=5&keyword=&orderby=pubdate desc">+更多</A>
+						<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=5&keyword=&orderby=pubdate%20desc">+更多</A>
 					</H2>
 					
 					<DIV class=clear></DIV>
@@ -317,7 +317,7 @@ var FlashObject=com.deconcept.FlashObject;
 				<DIV id=gametab_1>
 					<H2>
 						<SPAN class="left">创业投资</SPAN>						
-						<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=26&keyword=&orderby=pubdate desc">+更多</A>
+						<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=26&keyword=&orderby=pubdate%20desc">+更多</A>
 					</H2>
 
 					<DIV class=con>
@@ -341,7 +341,7 @@ var FlashObject=com.deconcept.FlashObject;
 				<SPAN class="left">成功激励</SPAN>
 			
 				
-				<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=42&keyword=&orderby=pubdate desc">+更多</A></H2>
+				<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=42&keyword=&orderby=pubdate%20desc">+更多</A></H2>
 			<DIV>
 				
 				<DIV class=con>
@@ -355,7 +355,7 @@ var FlashObject=com.deconcept.FlashObject;
 <DIV class="pingce swpatch">
 <H2>
 <SPAN class="left">理财规划</SPAN>
-<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=17&keyword=&orderby=pubdate desc">+更多</A></H2>
+<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=17&keyword=&orderby=pubdate%20desc">+更多</A></H2>
 <DIV id=pctab_1>
 
 
@@ -371,7 +371,7 @@ var FlashObject=com.deconcept.FlashObject;
 <!--教程评测开始-->
 		<DIV class="jiaocheng swpatch">
 			<H2>
-				<SPAN class="left">财富人生</SPAN> <A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=10&keyword=&orderby=pubdate desc">+更多</A></H2>
+				<SPAN class="left">财富人生</SPAN> <A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=10&keyword=&orderby=pubdate%20desc">+更多</A></H2>
 			<DIV>
 				
 				<DIV class=con>
@@ -390,7 +390,7 @@ var FlashObject=com.deconcept.FlashObject;
 <H2>
 
 <SPAN class="left">能力提升</SPAN>
-				<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=49&keyword=&orderby=pubdate desc">+更多</A></H2>
+				<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=49&keyword=&orderby=pubdate%20desc">+更多</A></H2>
 <DIV id=pctab_1>
 
 
@@ -410,7 +410,7 @@ var FlashObject=com.deconcept.FlashObject;
 			<DIV class="jiaocheng swpatch">
 				<DIV id=softtab_1>
 					<H2>
-						<SPAN class="left">职场晋级</SPAN> <A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=35&keyword=&orderby=pubdate desc">+更多</A>
+						<SPAN class="left">职场晋级</SPAN> <A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=35&keyword=&orderby=pubdate%20desc">+更多</A>
 					</H2>
 					
 					<DIV class=clear></DIV>
@@ -429,7 +429,7 @@ var FlashObject=com.deconcept.FlashObject;
 				<DIV id=gametab_1>
 					<H2>
 						<SPAN class="left">健康养生</SPAN>						
-						<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=16&keyword=&orderby=pubdate desc">+更多</A>
+						<A class="more right" target=_blank href="ArticleSearch.do?act=list&typeid=16&keyword=&orderby=pubdate%20desc">+更多</A>
 					</H2>
 
 					<DIV class=con>
