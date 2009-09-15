@@ -632,6 +632,9 @@ SPAN.blue {
 *.list_left {
 	WIDTH: 734px; FLOAT: left; MARGIN-RIGHT: 4px
 }
+*.list_right {
+   FLOAT: right;
+}
 .sub_nav {
 	MARGIN-TOP: 4px
 }
