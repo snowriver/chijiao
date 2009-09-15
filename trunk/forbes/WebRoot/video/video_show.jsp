@@ -104,8 +104,8 @@
 		
 		$(window).bind("load",function(){
 			//listComments(${ARTICLE.id }, "commentinfoDiv1");
-			listCommends("iscommend DESC", "commend_video");
-			listLikes("pubdate DESC", "like_video");
+			listCommends("iscommend%20DESC", "commend_video");
+			listLikes("pubdate%20desc", "like_video");
 	    });
 </script>
 </HEAD>
