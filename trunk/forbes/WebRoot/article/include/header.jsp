@@ -26,10 +26,10 @@
 	
 	function search_x(){
 		if($("#stype").val() == '2'){
-			location.href="ArticleSearch.do?act=search&keyword=" +$("#keyword").val() + "&orderby=pubdate desc"; 
+			location.href="ArticleSearch.do?act=search&keyword=" +$("#keyword").val() + "&orderby=pubdate%20desc"; 
 		}
 		else {
-			location.href="NewsSearch.do?act=list&keyword=" +$("#keyword").val() + "&orderby=pubdate desc"; 
+			location.href="NewsSearch.do?act=list&keyword=" +$("#keyword").val() + "&orderby=pubdate%20desc"; 
 		}
 		
 	}
@@ -88,43 +88,43 @@
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=1&keyword=&orderby=pubdate desc">创业阶段</A>
+					href="ArticleSearch.do?act=list&typeid=1&keyword=&orderby=pubdate%20desc">创业阶段</A>
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=5&keyword=&orderby=pubdate desc">企业管理</A>
+					href="ArticleSearch.do?act=list&typeid=5&keyword=&orderby=pubdate%20desc">企业管理</A>
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=26&keyword=&orderby=pubdate desc">创业投资</A>
+					href="ArticleSearch.do?act=list&typeid=26&keyword=&orderby=pubdate%20desc">创业投资</A>
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=17&keyword=&orderby=pubdate desc">理财规划</A>
+					href="ArticleSearch.do?act=list&typeid=17&keyword=&orderby=pubdate%20desc">理财规划</A>
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=11&keyword=&orderby=pubdate desc">经济金融</A>
+					href="ArticleSearch.do?act=list&typeid=11&keyword=&orderby=pubdate%20desc">经济金融</A>
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=42&keyword=&orderby=pubdate desc">成功激励</A>
+					href="ArticleSearch.do?act=list&typeid=42&keyword=&orderby=pubdate%20desc">成功激励</A>
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=49&keyword=&orderby=pubdate desc">能力提升</A>
+					href="ArticleSearch.do?act=list&typeid=49&keyword=&orderby=pubdate%20desc">能力提升</A>
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=10&keyword=&orderby=pubdate desc">财富人生</A>
+					href="ArticleSearch.do?act=list&typeid=10&keyword=&orderby=pubdate%20desc">财富人生</A>
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=16&keyword=&orderby=pubdate desc">健康养生</A>
+					href="ArticleSearch.do?act=list&typeid=16&keyword=&orderby=pubdate%20desc">健康养生</A>
 			</LI>
 			<LI>
 				<A title=""
-					href="ArticleSearch.do?act=list&typeid=35&keyword=&orderby=pubdate desc">职场晋级</A>
+					href="ArticleSearch.do?act=list&typeid=35&keyword=&orderby=pubdate%20desc">职场晋级</A>
 			</LI>
 
 		</UL>

@@ -3,10 +3,10 @@
 <SCRIPT language="javascript" type="text/javascript">	
 		function search_y(){
 			if($("#channel").val() == '2'){
-				location.href="ArticleSearch.do?act=search&keyword=" +$("#keyword").val() + "&orderby=pubdate desc"; 
+				location.href="ArticleSearch.do?act=search&keyword=" +$("#keyword").val() + "&orderby=pubdate%20desc"; 
 			}
 			else {
-				location.href="NewsSearch.do?act=list&keyword=" +$("#keyword").val() + "&orderby=pubdate desc"; 
+				location.href="NewsSearch.do?act=list&keyword=" +$("#keyword").val() + "&orderby=pubdate%20desc"; 
 			}
 			
 		}
@@ -40,16 +40,16 @@
 		<H2>热门资讯标签</H2>
 		<DIV class=hotkeys>
 
-			<A href="ArticleSearch.do?act=search&keyword=创业&orderby=pubdate desc" target=_blank><FONT color=#d38f64>创业</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=激情&orderby=pubdate desc" target=_blank><FONT color=#97591c>激情</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=财富&orderby=pubdate desc" target=_blank><FONT color=#dba0bd>财富</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=人生&orderby=pubdate desc" target=_blank><FONT color=#ca1762>人生</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=理财&orderby=pubdate desc" target=_blank><FONT color=#c1cd63>理财</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=职业&orderby=pubdate desc" target=_blank><FONT color=#9732d6>职业</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=规划&orderby=pubdate desc" target=_blank><FONT color=#b12765>规划</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=项目&orderby=pubdate desc" target=_blank><FONT color=#ebc054>项目</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=健康&orderby=pubdate desc" target=_blank><FONT color=#9edd4>健康</FONT></A> 
-			<A href="ArticleSearch.do?act=search&keyword=经济&orderby=pubdate desc" target=_blank><FONT color=#a4535d>经济</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=创业&orderby=pubdate%20desc" target=_blank><FONT color=#d38f64>创业</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=激情&orderby=pubdate%20desc" target=_blank><FONT color=#97591c>激情</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=财富&orderby=pubdate%20desc" target=_blank><FONT color=#dba0bd>财富</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=人生&orderby=pubdate%20desc" target=_blank><FONT color=#ca1762>人生</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=理财&orderby=pubdate%20desc" target=_blank><FONT color=#c1cd63>理财</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=职业&orderby=pubdate%20desc" target=_blank><FONT color=#9732d6>职业</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=规划&orderby=pubdate%20desc" target=_blank><FONT color=#b12765>规划</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=项目&orderby=pubdate%20desc" target=_blank><FONT color=#ebc054>项目</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=健康&orderby=pubdate%20desc" target=_blank><FONT color=#9edd4>健康</FONT></A> 
+			<A href="ArticleSearch.do?act=search&keyword=经济&orderby=pubdate%20desc" target=_blank><FONT color=#a4535d>经济</FONT></A> 
 
 	</DIV>
 </DIV>
@@ -75,7 +75,7 @@
 	
 	<!--本月热点开始-->
 	<DIV class=sidebox>
-		<H2><SPAN class=left>本月热点</SPAN><A class="more right" target=_blank href="ArticleSearch.do?act=search&orderby=click desc">更多热点</A></H2>
+		<H2><SPAN class=left>本月热点</SPAN><A class="more right" target=_blank href="ArticleSearch.do?act=search&orderby=click%20desc">更多热点</A></H2>
 		<DIV class=con>
 			<DIV id="top_article">
 					<jsp:include page="ten_top_click_article.html" /> 
