@@ -84,7 +84,7 @@
 	<DIV id=news>
 		<DIV class=newsmapbg>
 			<DIV class=news_map>
-				<A href="NewsSearch.do?act=list&orderby=pubdate desc">所有资讯</A> &gt; 正文
+				<A href="NewsSearch.do?act=list&orderby=pubdate%20desc">所有资讯</A> &gt; 正文
 			</DIV>
 		</DIV>
 		

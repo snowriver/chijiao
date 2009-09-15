@@ -94,7 +94,7 @@
 	<DIV id=news>
 		<DIV class=newsmapbg>
 			<DIV class=news_map>
-				<A href="NewsSearch.do?act=list&orderby=pubdate desc">所有</A> &gt;				
+				<A href="NewsSearch.do?act=list&orderby=pubdate%20desc">所有</A> &gt;				
 				正文
 			</DIV>
 		</DIV>
@@ -103,11 +103,11 @@
 			<BR>
 			<DIV align="right">
 				<UL id=sorts>
-					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=pubdate desc"> 最新资讯 </A>
-					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=click desc">	最多点击 </A> 
-					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=commentCnt desc"> 最多评论 </A> 
-					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=pubdate desc">	最多收藏 </A> 
-					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=digg desc"> 最多顶</A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=pubdate%20desc"> 最新资讯 </A>
+					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=click%20desc">	最多点击 </A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=commentCnt%20desc"> 最多评论 </A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=pubdate%20desc">	最多收藏 </A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A href="NewsSearch.do?act=list&keyword=${PARA['keyword'] }&orderby=digg%20desc"> 最多顶</A> 
 					<FONT style="COLOR: #ccc">|</FONT>  
 				</UL>
   			</DIV>
