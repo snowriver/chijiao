@@ -94,7 +94,7 @@
 	<DIV id=news>
 		<DIV class=newsmapbg>
 			<DIV class=news_map>
-				<A href="ArticleSearch.do?act=list&orderby=pubdate desc">所有</A> &gt;
+				<A href="ArticleSearch.do?act=list&orderby=pubdate%20desc">所有</A> &gt;
 				正文
 			</DIV>
 		</DIV>
@@ -103,11 +103,11 @@
 			<BR>
 			<DIV align="right">
 				<UL id=sorts>
-					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=pubdate desc"> 最新文章 </A>
-					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'click desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=click desc">	最多点击 </A> 
-					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'commentCnt desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=commentCnt desc"> 最多评论 </A> 
-					<!-- <FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=pubdate desc">	最多收藏 </A> -->
-					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'digg desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=digg desc"> 最多顶</A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=pubdate%20desc"> 最新文章 </A>
+					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'click desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=click%20desc"> 最多点击 </A> 
+					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'commentCnt desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=commentCnt%20desc"> 最多评论 </A> 
+					<!-- <FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'pubdate desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=pubdate%20desc">	最多收藏 </A> -->
+					<FONT style="COLOR: #ccc">|</FONT> <A <c:if test="${PARA['orderby'] == 'digg desc'}">style="COLOR: #FF0000; font-weight: bold;"</c:if> href="ArticleSearch.do?act=search&keyword=${PARA['keyword'] }&orderby=digg%20desc"> 最多顶</A> 
 					<FONT style="COLOR: #ccc">|</FONT>  
 				</UL>
   			</DIV>
@@ -185,7 +185,7 @@
 							<c:forEach items="${ARTICLE_TYPE.articleTypes}" var="type" begin="0"> 
 					  		<TR>
 								<TD width="10%" align=middle></TD>
-					    		<TD class=daren_name><A class=linktext href="ArticleSearch.do?act=list&typeid=${type.id}&keyword=&orderby=pubdate desc">${type.name}</A></TD>
+					    		<TD class=daren_name><A class=linktext href="ArticleSearch.do?act=list&typeid=${type.id}&keyword=&orderby=pubdate%20desc">${type.name}</A></TD>
 					    	</TR>					    	
 					  		</c:forEach>
 					  		
@@ -193,7 +193,7 @@
 					  		<c:forEach items="${ARTICLE_TYPE_LIST}" var="type" begin="0"> 
 					  		<TR>
 								<TD width="10%" align=middle></TD>
-					    		<TD class=daren_name><A class=linktext href="ArticleSearch.do?act=list&typeid=${type.id}&keyword=&orderby=pubdate desc">${type.name}</A></TD>
+					    		<TD class=daren_name><A class=linktext href="ArticleSearch.do?act=list&typeid=${type.id}&keyword=&orderby=pubdate%20desc">${type.name}</A></TD>
 					    	</TR>					    	
 					  		</c:forEach>
 					  		
