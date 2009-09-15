@@ -16,7 +16,7 @@
 				</c:otherwise>
 			</c:choose>       
 		</a>
-		<span>[<a href="article/ArticleSearch.do?act=list&typeid=${article.articleType2.id }&keyword=&orderby=pubdate desc" target="_blank">${article.articleType2.name }</a>]</span>
+		<span>[<a href="article/ArticleSearch.do?act=list&typeid=${article.articleType2.id }&keyword=&orderby=pubdate%20desc" target="_blank">${article.articleType2.name }</a>]</span>
 	</li>
 	</c:forEach>
 </ul>
