@@ -463,10 +463,6 @@
 	</div>
 
 	<!-- <div id="ADAREA"><div> -->
-</div></div>
-
-
-
 </div>
 
 <div class="area" id="contentC">
