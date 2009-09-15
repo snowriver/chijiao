@@ -16,6 +16,7 @@
 		<link type="text/css" rel="stylesheet" href="css/new_index_style.css" />
 		<link type="text/css" rel="stylesheet" href="css/index_top.css" />
 
+    <script type="text/javascript" src="js/index_flash_1.js"></script>
 		<script type="text/javascript">
 			function loadLoginBox(){
         document.frames('login_iframe').location.reload();
@@ -160,7 +161,7 @@
 			<div class="right">
 				<iframe name="login_iframe" width=280 height=160 frameborder=0
 					marginheight=0 marginwidth=0 scrolling=no
-					src='client/ClientLogin.do?act=select'></iframe>
+					src="client/ClientLogin.do?act=select"></iframe>
 
 				<div class="blank5 whiteBg"></div>
 				<div class="blank5 whiteBg"></div>
@@ -222,7 +223,7 @@
 									src="${UC_CENTER_URL }/avatar.php?uid=${user.uid }&size=middle&type=virtual"
 									border="0" height="64" width="64" />
 							</a>
-							<BR>
+							<BR />
 							<span><a href="${UC_HOME_URL }/space.php?uid=${user.uid }"
 								target="_blank">${user.username }</a>
 							</span>
@@ -549,7 +550,7 @@
 		<!-- START WRating v1.0-->
 
 		<!-- END WRating v1.0 -->
-    <script type="text/javascript" src="js/index_flash_1.js"></script>
+    
     <script type="text/javascript" id="dynamicSrc"></script>
 	</body>
 </html>
