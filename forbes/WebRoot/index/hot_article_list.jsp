@@ -8,7 +8,7 @@
 	<c:forEach items="${ARTICLE_LIST}" var="article" begin="0"> 
 	<li>
 		<div style="float:left">
-			[<a href="article/ArticleSearch.do?act=list&keyword=&orderby=pubdate desc" target="_blank">创业大学</a>]
+			[<a href="article/ArticleSearch.do?act=list&keyword=&orderby=pubdate%20desc" target="_blank">创业大学</a>]
 			<a href="article/ArticleView.do?id=${article.id}" target="_blank">${fn:substring(article.title, 0, 18)}</a>
 		</div>
 		<div style="float:right">
