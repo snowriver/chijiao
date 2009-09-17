@@ -44,7 +44,7 @@
       <ref bean="uchomeBlogFilterDetail" />
     </property>
     <property name="cronExpression">
-      <value>0 * 19 * * ?</value>
+      <value>0 0 3 * * ?</value>
     </property>
   </bean> 
 	
