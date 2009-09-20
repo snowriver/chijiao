@@ -54,6 +54,12 @@ public class ArticleDAO extends BaseArticleDAO {
 		
 		if (keyword == null) keyword = "";
 		if (orderby == null || orderby.equals("")) orderby = "id DESC ";
+		if(orderby.equals("contentCnt"))
+			orderby = "commentCnt ";
+		if(orderby.equals("contentCnt desc"))
+			orderby = "commentCnt desc ";
+		if(orderby.equals("contentCnt DESC"))
+			orderby = "commentCnt DESC ";
 		
 		try {			
 			String queryString = "SELECT DISTINCT model FROM Article AS model WHERE model.isdelete = ? " +
