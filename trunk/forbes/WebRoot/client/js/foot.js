@@ -17,7 +17,7 @@ document.write('\
 		<a href="#" target=_blank>联系方式 </a> -\
 		<a href="#" target=_blank>保护隐私权</a> -\
 		<a class=eng href="#" target=_blank>关于我们</a><BR>\
-		客服电话：000-00000000 客服邮箱：<a href="mailto:xushaomin@vip.qq.com" target=_blank>xushaomin#vip.qq.com</a>\
+		客服电话：000-00000000 客服邮箱：<a href="mailto:service@chijiao.org" target=_blank>service#chijiao.org</a>\
       </div>\
     </div>\
   </div>\
