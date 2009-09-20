@@ -135,7 +135,7 @@ function checkSubmit()
           </tr> 
           <tr> 
             <td height="25" align="right" >µÁ◊”” œ‰£∫</td> 
-            <td height="25" ><input name="email" type="text" id="email" value="xushaomin@vip.qq.com" style="width:150;height:20" > 
+            <td height="25" ><input name="email" type="text" id="email" value="service@chijiao.org" style="width:150;height:20" > 
             </td> 
           </tr> 
           <tr> 
