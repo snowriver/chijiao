@@ -1,17 +1,13 @@
 package com.forbes.service.client.impl;
 
-
 import java.util.*;
-import com.forbes.exception.ForbesException;
 import com.forbes.hibernate.bean.UcMembers;
-import com.forbes.hibernate.bean.User;
 import com.forbes.hibernate.bean.UserDetail;
 import com.forbes.hibernate.dao.UcMembersDAO;
 import com.forbes.hibernate.dao.UserDAO;
 import com.forbes.hibernate.dao.UserDetailDAO;
 import com.forbes.mail.ForbesMail;
 import com.forbes.mail.ForbesMailSender;
-import com.forbes.mail.SendMailToRegister;
 import com.forbes.service.client.ClientRegister;
 import com.forbes.util.MD5;
 
