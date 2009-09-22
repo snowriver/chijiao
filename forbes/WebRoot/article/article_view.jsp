@@ -31,11 +31,9 @@
 				data:'act=top&id=' + ${ARTICLE.id },
 				timeout: 10000,
 				error: function(){
-					alert('System error');
+					$("#" + divid +"").html("系统错误，请稍后再试！");
 				},
 				success: function(rsHtml){
-					//alert(rsHtml);
-					//alert("#" + divid);
 					$("#" + divid +"").html(rsHtml);
 				}
 			});
@@ -49,10 +47,9 @@
 				data:"act=like&id=" + ${ARTICLE.id },
 				timeout: 10000,
 				error: function(){
-					//alert('System error');
+					$("#" + divid +"").html("系统错误，请稍后再试！");
 				},
 				success: function(rsHtml){
-					//alert("#" + divid);
 					$("#" + divid +"").html(rsHtml);
 				}
 			});
@@ -66,7 +63,7 @@
 				data:"",
 				timeout: 10000,
 				error: function(){
-					//alert('System error');
+					$("#login_form").html("系统错误，请稍后再试！");
 				},
 				success: function(rsHtml){
 					$("#login_form").html(rsHtml);
@@ -139,7 +136,6 @@
 							},
 							success: function(rsHtml){
 								var result = rsHtml.replace(/(^\s*)|(\s*$)/g,""); 
-								//alert(result);
 								$("#diggshow").html(result);
 								//$("#digg").attr("disabled","true"); 
 								$("#digg").empty();
