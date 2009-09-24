@@ -20,10 +20,10 @@ public class News extends AbstractNews implements java.io.Serializable {
 			String title, String shorttitle, String writer, String source,
 			Date pubdate, Date senddate, String description, String keywords,
 			Integer digg, Date diggtime, String isdelete, String litpic,
-			Date sortrank, String color, Short arcrank, String content) {
+			Date sortrank, String color, Short arcrank) {
 		super(userid, likeid, iscommend, click, title, shorttitle, writer,
 				source, pubdate, senddate, description, keywords, digg,
-				diggtime, isdelete, litpic, sortrank, color, arcrank, content);
+				diggtime, isdelete, litpic, sortrank, color, arcrank);
 	}
 
 }

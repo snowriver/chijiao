@@ -1,7 +1,7 @@
 #
-#Mon Sep 14 16:30:56 CST 2009
+#Thu Sep 24 14:32:44 CST 2009
 genBasicCompId=false
-sessionFactoryName=com.forbes.hibernate.HibernateSessionFactory
+sessionFactoryName=
 profile=
 daoSFId=sessionFactory
 version=3.1

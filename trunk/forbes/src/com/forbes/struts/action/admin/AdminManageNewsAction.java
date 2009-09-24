@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 import com.forbes.hibernate.bean.News;
+import com.forbes.hibernate.bean.NewsContent;
 import com.forbes.service.article.NewsManager;
 import com.forbes.struts.form.article.NewsForm;
 import com.forbes.util.Pager;
@@ -147,11 +148,15 @@ public class AdminManageNewsAction extends DispatchAction {
 		try {
 			
 			if(newsManager.verifyTitle(newsForm.getTitle().trim())) {
+				NewsContent content = new NewsContent();
+				content.setContent(newsForm.getContent());
+				
 				News a = new News();
 				a.setIsdelete("N");
 				a.setPubdate( formatter.parse(newsForm.getPubdate()) );
 				a.setTitle( newsForm.getTitle() );
-				a.setContent( newsForm.getContent() );
+				//a.setContent( newsForm.getContent() );
+				a.setNewsContent(content);
 				a.setClick( 0 );
 				a.setIscommend( new Short("0") );
 				a.setDigg( 0 );
@@ -224,7 +229,9 @@ public class AdminManageNewsAction extends DispatchAction {
 					
 				}
 				
+				content.setNews(a);
 				newsManager.addNews(a);
+				newsManager.addNewsContent(content);
 				
 			}
 			else {
@@ -277,11 +284,17 @@ public class AdminManageNewsAction extends DispatchAction {
 		try {
 			
 			if(newsManager.verifyTitle(newsForm.getId(), newsForm.getTitle().trim())) {
+				
 				News a = newsManager.getNews(newsForm.getId());
+				
+				NewsContent content = a.getNewsContent();
+				content.setContent( newsForm.getContent() );
+				
+				
 				a.setIsdelete("N");
 				a.setPubdate( formatter.parse(newsForm.getPubdate()) );
 				a.setTitle( newsForm.getTitle() );
-				a.setContent( newsForm.getContent() );
+				//a.setContent( newsForm.getContent() );
 				a.setClick( 0 );
 				a.setIscommend( new Short("0") );
 				a.setDigg( 0 );
@@ -354,6 +367,7 @@ public class AdminManageNewsAction extends DispatchAction {
 					
 				}
 				
+				newsManager.updateNewsContent(content);
 				newsManager.updateNews(a);
 				
 			}

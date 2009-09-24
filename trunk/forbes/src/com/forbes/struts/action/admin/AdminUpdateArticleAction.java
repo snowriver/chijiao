@@ -4,7 +4,6 @@
  */
 package com.forbes.struts.action.admin;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -147,14 +146,11 @@ public class AdminUpdateArticleAction extends DispatchAction {
 		try {
 		
 			for(int i=0; i<artID.length; i++) {
-				id = artID[i];
-				System.out.println(id);
+				id = artID[i];				
 				Article a = articleListManager.getArticle(Integer.parseInt(id));
-				List acs = commentManager.getComment(new Short("2"), a.getId());
-				System.out.println("acs.size = "+acs.size());
+				List acs = commentManager.getComment(new Short("2"), a.getId());				
 				for(int j=0; j<acs.size(); j++) {
-					Comment ac = (Comment)acs.get(j);
-					System.out.println("ac.id = "+ac.getId() );
+					Comment ac = (Comment)acs.get(j);					
 					commentManager.deleteComment(ac);
 				}
 				a.setIsdelete("Y");
@@ -385,25 +381,20 @@ public class AdminUpdateArticleAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 
 		String returnUrl = request.getParameter("returnUrl");
-		
 		try {
-		
 			List<Article> list = articleListManager.getDeletedArticle();
 			for (Article article : list) {
 				List acs = commentManager.getComment(new Short("2"), article.getId());
 				for(int j=0; j<acs.size(); j++) {
-					Comment ac = (Comment)acs.get(j);
-					System.out.println("ac.id = "+ac.getId() );
+					Comment ac = (Comment)acs.get(j);					
 					commentManager.deleteComment(ac);
 				}
 				articleListManager.deleteArticleContent(article.getArticleContent());
 				articleListManager.deleteArticle(article);
-			}
-			
+			}			
 			request.setAttribute("OK_MESSAGE", "清空回收站成功！");
 			request.setAttribute( "RETURN_URL", new UrlTool().getUrl2(returnUrl, "[|]"));
 			return mapping.findForward("ok");
-
 		}catch( Exception e ){
 			e.printStackTrace();
 			request.setAttribute("FAIL_MESSAGE", "系统错误，请稍后再试。");

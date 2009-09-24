@@ -131,7 +131,7 @@
 				<value>com/forbes/hibernate/hbm/ArticleContent.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UchomeBlogFilter.hbm.xml</value>
 				<value>com/forbes/hibernate/hbm/UchomeBlogfield.hbm.xml</value>
-			</list>
+				<value>com/forbes/hibernate/hbm/NewsContent.hbm.xml</value></list>
 		</property>
 		<!-- 
 		<property name="eventListeners">
@@ -534,6 +534,12 @@
     </bean>
     <bean id="UchomeBlogfieldDAO"
     	class="com.forbes.hibernate.dao.UchomeBlogfieldDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="NewsContentDAO"
+    	class="com.forbes.hibernate.dao.NewsContentDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
     	</property>

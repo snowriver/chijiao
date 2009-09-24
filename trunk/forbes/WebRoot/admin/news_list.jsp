@@ -58,17 +58,17 @@
      							<td align="center" style="padding-top:6px">
   									<input type='button' onclick="location='news_add.jsp?&returnUrl=|AdminManageNews.do|act=list|pno=${PAGER.curPage}|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|';" value='添加资讯' class='inputbut' />
   									<c:if test="${empty PARA['userid'] || PARA['userid'] == '' }">
-  										<input type='button' onclick="location='AdminUpdateNew.do?act=list&userid=${sessionScope.ADMIN.uid }';" value='我的文档' class='inputbut' />
+  										<input type='button' onclick="location='AdminManageNews.do?act=list&userid=${sessionScope.ADMIN.uid }';" value='我的文档' class='inputbut' />
   									</c:if>
 								  	<c:if test="${not empty PARA['userid'] && PARA['userid'] != '' }">
-  										<input type='button' onclick="location='AdminUpdateNew.do?act=list';" value='全部文档' class='inputbut' />
+  										<input type='button' onclick="location='AdminManageNews.do?act=list';" value='全部文档' class='inputbut' />
   									</c:if>
   									
 									<input type='button' onclick="location='catalog_do.php?channelid=1&cid=0&dopost=listArchives&arcrank=-1&gurl=content_list.php';" value='稿件审核' class='inputbut' /> 
-									<input type='button' onclick="location='AdminUpdateNewType.do?act=list';" value='类别管理' class='inputbut' />
+									<input type='button' onclick="location='AdminManageNewsType.do?act=list';" value='类别管理' class='inputbut' />
 									<input type='button' onclick="location='makehtml_list.php?cid=0';" value='更新列表' class='inputbut' name='bb1' />
 									<input type='button' onclick="location='makehtml_archives.php?cid=0';" value='更新文档' class='inputbut' name='bb2' />
-									<input type='button' onclick="location='AdminUpdateNew.do?act=list&deleteFlag=Y';" value='回收站' class='inputbut' name='bb2' />
+									<input type='button' onclick="location='AdminManageNews.do?act=list&deleteFlag=Y';" value='回收站' class='inputbut' name='bb2' />
        							</td>
      						</tr>
     					</table>
@@ -104,7 +104,7 @@
 					<td>${news.id }</td>
 					<td><input name="arcID" type="checkbox" id="arcID" value="${news.id }" /></td>
 					<td align='left'>
-						<a href="javascript:editNews(${news.id }, '|AdminUpdateNew.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" oncontextmenu="ShowMenu(this,3,'CB')">
+						<a href="javascript:editNews(${news.id }, '|AdminManageNews.do|act=list|pno=${PAGER.curPage}|deleteFlag=${PARA['deleteFlag'] }|userid=${PARA['userid'] }|typeid=${PARA['typeid'] }|keyword=${PARA['keyword'] }|orderby=${PARA['orderby'] }|')" oncontextmenu="ShowMenu(this,3,'CB')">
 							<u>${news.shorttitle }
 								<font color='blue'>
 									<c:if test="${ news.iscommend == 1 }">(荐)</c:if>	

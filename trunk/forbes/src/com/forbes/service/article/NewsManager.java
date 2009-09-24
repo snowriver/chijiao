@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.forbes.exception.ForbesException;
 import com.forbes.hibernate.bean.News;
+import com.forbes.hibernate.bean.NewsContent;
+import com.forbes.hibernate.dao.NewsContentDAO;
 import com.forbes.hibernate.dao.NewsDAO;
 import com.forbes.util.Pager;
 
@@ -12,6 +14,10 @@ public interface NewsManager {
 	public NewsDAO getNewsDAO();
 
 	public void setNewsDAO(NewsDAO newsDAO);
+	
+	public NewsContentDAO getNewsContentDAO();
+
+	public void setNewsContentDAO(NewsContentDAO newsContentDAO);
 
 	public void addNews(News news);
 	
@@ -34,4 +40,13 @@ public interface NewsManager {
 	public News getNextNews(Integer id);
 	
 	public News getPreNews(Integer id);
+	
+	public void addNewsContent(NewsContent newsContent);
+	
+	public void deleteNewsContent(NewsContent newsContent);
+	
+	public NewsContent getNewsContent(Integer id);
+
+	public void updateNewsContent(NewsContent newsContent);
+	
 }

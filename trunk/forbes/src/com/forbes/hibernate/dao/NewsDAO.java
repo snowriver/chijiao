@@ -30,11 +30,10 @@ public class NewsDAO extends BaseNewsDAO {
 		
 		try {
 
-			String queryString = "SELECT COUNT(*) FROM News AS model WHERE (model.title LIKE ? OR model.content LIKE ? ) ";
+			String queryString = "SELECT COUNT(*) FROM News AS model WHERE (model.title LIKE ? ) ";
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, "%" + keyword + "%" );
-			query.setParameter(1, "%" + keyword + "%" );
 			
 			return Integer.parseInt("" + query.list().get(0));
 		} catch (RuntimeException re) {
@@ -48,13 +47,12 @@ public class NewsDAO extends BaseNewsDAO {
 		if (orderby == null || orderby.equals("")) orderby = "id DESC ";
 		
 		try {			
-			String queryString = "SELECT DISTINCT model FROM News AS model WHERE (model.title LIKE ? OR model.content LIKE ? ) ";
+			String queryString = "SELECT DISTINCT model FROM News AS model WHERE (model.title LIKE ? ) ";
 			queryString += "ORDER BY model." + orderby;
 			
 			
 			org.hibernate.Query query = getSession().createQuery(queryString);
 			query.setParameter(0, "%" + keyword + "%" );
-			query.setParameter(1, "%" + keyword + "%" );
 			
 			query.setFirstResult(beg);
 			query.setMaxResults(len);
