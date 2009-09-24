@@ -3,8 +3,9 @@ package com.forbes.service.article.impl;
 import java.util.List;
 
 import com.forbes.exception.ForbesException;
-import com.forbes.hibernate.bean.Article;
 import com.forbes.hibernate.bean.News;
+import com.forbes.hibernate.bean.NewsContent;
+import com.forbes.hibernate.dao.NewsContentDAO;
 import com.forbes.hibernate.dao.NewsDAO;
 import com.forbes.service.article.NewsManager;
 import com.forbes.util.Pager;
@@ -14,6 +15,8 @@ public class NewsManagerImpl implements NewsManager {
 	
 	private NewsDAO newsDAO;
 	
+	private NewsContentDAO newsContentDAO;	
+
 	public NewsDAO getNewsDAO() {
 		return newsDAO;
 	}
@@ -22,6 +25,14 @@ public class NewsManagerImpl implements NewsManager {
 		this.newsDAO = newsDAO;
 	}
 
+	public NewsContentDAO getNewsContentDAO() {
+		return newsContentDAO;
+	}
+
+	public void setNewsContentDAO(NewsContentDAO newsContentDAO) {
+		this.newsContentDAO = newsContentDAO;
+	}
+	
 	public List getNewsByPage( Pager pager, int pageNo, String keywords, String orderby ) throws ForbesException{
 		try {			
 			pager.setTotoalCnt(newsDAO.getCount(keywords));
@@ -111,5 +122,23 @@ public class NewsManagerImpl implements NewsManager {
 		else 
 			return null;
 	}
+	
+	public void addNewsContent(NewsContent newsContent) {
+		newsContentDAO.save(newsContent);
+	}
+	
+	public void deleteNewsContent(NewsContent newsContent) {
+		newsContentDAO.delete(newsContent);
+	}
+	
+	public NewsContent getNewsContent(Integer id) {
+		return newsContentDAO.findById(id);
+	}
+
+	public void updateNewsContent(NewsContent newsContent) {
+		newsContentDAO.attachDirty(newsContent);
+	}
+
+	
 		
 }

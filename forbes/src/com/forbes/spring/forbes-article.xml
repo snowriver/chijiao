@@ -35,6 +35,9 @@
 		<property name="newsDAO">
 			<ref bean="NewsDAO" />
 		</property>
+		<property name="newsContentDAO">
+      <ref bean="NewsContentDAO" />
+    </property>
 	</bean>
 	
 	<!-- -->	

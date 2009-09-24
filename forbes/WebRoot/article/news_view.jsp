@@ -215,7 +215,7 @@
 			
 			<UL class=news_con_main>
   				<LI>
-  					${NEWS.content }
+  					${NEWS.newsContent.content }
   					
   					<P align=center>&nbsp;</P>
   					<!-- <P align=right>&nbsp;<A target=_blank href="#">½øÈëÂÛÌ³</A></P> -->

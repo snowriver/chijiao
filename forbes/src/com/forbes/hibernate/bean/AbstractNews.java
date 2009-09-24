@@ -34,8 +34,10 @@ public abstract class AbstractNews implements java.io.Serializable {
 	private Date sortrank;
 	private String color;
 	private Short arcrank;
-	private String content;
+	//private String content;
 	private Integer commentCnt;
+	
+	private NewsContent newsContent;
 
 	private String pubdateString;
 	
@@ -56,8 +58,7 @@ public abstract class AbstractNews implements java.io.Serializable {
 			Integer click, String title, String shorttitle, String writer,
 			String source, Date pubdate, Date senddate, String description,
 			String keywords, Integer digg, Date diggtime, String isdelete,
-			String litpic, Date sortrank, String color, Short arcrank,
-			String content) {
+			String litpic, Date sortrank, String color, Short arcrank ) {
 		this.userid = userid;
 		this.likeid = likeid;
 		this.iscommend = iscommend;
@@ -77,7 +78,7 @@ public abstract class AbstractNews implements java.io.Serializable {
 		this.sortrank = sortrank;
 		this.color = color;
 		this.arcrank = arcrank;
-		this.content = content;
+		//this.content = content;
 	}
 
 	// Property accessors
@@ -242,24 +243,28 @@ public abstract class AbstractNews implements java.io.Serializable {
 		this.arcrank = arcrank;
 	}
 
-	public String getContent() {
+	/*public String getContent() {
 		return this.content;
 	}
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-
+	}*/
 
 	public Integer getCommentCnt() {
 		return commentCnt;
 	}
 
-
-
 	public void setCommentCnt(Integer commentCnt) {
 		this.commentCnt = commentCnt;
+	}
+
+	public NewsContent getNewsContent() {
+		return newsContent;
+	}
+
+	public void setNewsContent(NewsContent newsContent) {
+		this.newsContent = newsContent;
 	}
 
 }
