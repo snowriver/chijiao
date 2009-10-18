@@ -12,7 +12,7 @@
 		<!-- <A href="#">项目挖贝</A> -->
 		<A href="ask/">创业百问</A> 
 		<A target="_blank" href="${UC_HOME_URL }/index.php">创业圈子</A> 
-		<!-- <A target="_blank" href="${UC_BBS_URL }/index.php">创业论坛</A>   -->
+		<A href="client/ClientManageUserDailyPlan.do?act=list">成功计划</A>
 	</DIV>
 	<DIV class=topmenu>
 		<DIV class=topmenu_tools id="topmenu">
